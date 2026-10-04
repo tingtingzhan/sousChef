@@ -7,6 +7,7 @@
 \alias{raw_recipe}
 \alias{raw.-class}
 \alias{show,raw.-method}
+\alias{show,raw_mergeH2O-method}
 \alias{recipe-class}
 \alias{show,recipe-method}
 \alias{Junior_cappuccino_cheesecake}
@@ -15,6 +16,8 @@
 \title{Raw Ingredients and Recipe}
 \usage{
 \S4method{show}{raw.}(object)
+
+\S4method{show}{raw_mergeH2O}(object)
 
 \S4method{show}{recipe}(object)
 
@@ -120,8 +123,6 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 \item{\code{iceWater}}{\link[base]{numeric} scalar, weight of ice water (in grams)}
 
 \item{\code{carbonatedWater}}{\link[base]{numeric} scalar, weight of carbonated water (in grams)}
-
-\item{\code{shavedIce}}{\link[base]{numeric} scalar, weight of shaved ice (in grams)}
 
 \item{\code{ice}}{\link[base]{numeric} scalar, weight of ice (in grams)}
 

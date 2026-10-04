@@ -3,8 +3,8 @@
 setAs(from = 'nutrition', to = 'recipe', def = \(from) {
   
   x <- from; from <- NULL
-  suggestion <- x@suggestion
-  if (!length(suggestion)) return(invisible())
+  
+  if (!length(x@suggestion)) return(invisible())
   
   do.call(what = new, args = c(list(
     Class = 'recipe', 
@@ -16,7 +16,7 @@ setAs(from = 'nutrition', to = 'recipe', def = \(from) {
       bg_br_white() |> 
       c(),
     misc = setNames(x@servingGram, nm = as.character(x@call))
-  ), suggestion))
+  ), x@suggestion))
   
 })
 

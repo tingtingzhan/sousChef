@@ -25,6 +25,7 @@ Meyenberg_goat_drymilk <- \() new(
   calorie = 90,
   cholesterol = .010, sodium = .1, carbohydrate = 12, sugar = 12, protein = 10,
   suggestion = list(water80_cup = 1))
+  # suggestion = list(water_cup = c(c80 = 1))) # not ready
 
 
 

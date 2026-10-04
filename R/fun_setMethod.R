@@ -49,14 +49,13 @@ setMethod(f = '+', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition =
   e1 <- as(e1, Class = 'raw.', strict = TRUE)
   e2 <- as(e2, Class = 'raw.', strict = TRUE)
   
-  slt0 <- names(getSlots(x = 'raw.'))
-  names(slt0) <- slt0
-  ret0 <- lapply(slt0, FUN = \(i) sum_by_name(slot(e1, name = i), slot(e2, name = i)))
-  
-  ret1 <- ret0[lengths(ret0) > 0L]
+  ret0 <- names(getSlots(x = 'raw.')) |>
+    setNames(nm = _) |>
+    lapply(FUN = \(i) sum_by_name(slot(e1, name = i), slot(e2, name = i)))
+
   ret <- do.call(what = new, args = c(list(
     Class = 'raw.'
-  ), ret1))
+  ), ret0[lengths(ret0) > 0L]))
   return(ret)
   
 })

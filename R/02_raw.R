@@ -83,7 +83,6 @@
 #' @slot boilingWater \link[base]{numeric} scalar, weight of boiling water (in grams)
 #' @slot iceWater \link[base]{numeric} scalar, weight of ice water (in grams)
 #' @slot carbonatedWater \link[base]{numeric} scalar, weight of carbonated water (in grams)
-#' @slot shavedIce \link[base]{numeric} scalar, weight of shaved ice (in grams)
 #' @slot ice \link[base]{numeric} scalar, weight of ice (in grams)
 #' 
 #' @slot sauce,sauce_tsp,sauce_Tbsp,sauce_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more sauces
@@ -153,7 +152,6 @@ setClass(Class = 'raw.', slots = c(
   water_ext = 'numeric',
   iceWater = 'numeric',
   carbonatedWater = 'numeric',
-  shavedIce = 'numeric',
   ice = 'numeric',
   water40 = 'numeric', water70 = 'numeric', 
   water80 = 'numeric', water80_tsp = 'numeric', water80_Tbsp = 'numeric', water80_cup = 'numeric',
@@ -169,12 +167,29 @@ setClass(Class = 'raw.', slots = c(
 
 
 
+# combined water at different temperature
+setClass(
+  Class = 'raw_mergeH2O', 
+  #contains = 'raw.',
+  slots = getSlots('raw.')[names(getSlots('raw.')) %notin% c(
+    'iceWater', 'ice', 
+    # 'carbonatedWater' # do NOT merge!! `ph != 7`
+    'water40', 'water70', 'water80', 
+    'water80_tsp', 'water80_Tbsp', 'water80_cup', 'water90', 'water95', 'boilingWater'
+  )])
+
+
+
 
 
 #' @rdname raw_recipe
 #' @param object see **Usage**
 #' @export
 setMethod(f = show, signature = 'raw.', definition = \(object) print.raw.(object))
+
+#' @rdname raw_recipe
+#' @export
+setMethod(f = show, signature = 'raw_mergeH2O', definition = \(object) print.raw.(object))
 
 
 #' @method labels raw.
@@ -250,38 +265,38 @@ print.raw. <- \(x, ...) {
     }
   }
   
-  if (length(x@water40)) {
+  if (('water40' %in% slotNames(x)) && length(x@water40)) {
     sprintf(fmt = '%s Warm Water, 104\u00b0F %.0f grams %s\n', col_orchid4('40\u00b0C\u6e29\u6c34'), x@water40, fmt_vol(x@water40)) |> 
       format_inline() |>
       cat()
   }
-  if (length(x@water70)) {
+  if (('water70' %in% slotNames(x)) && length(x@water70)) {
     sprintf(fmt = '%s Hot Water, 160\u00b0F %.0f grams %s\n', col_orchid4('70\u00b0C\u70ed\u6c34'), x@water70, fmt_vol(x@water70)) |> 
       format_inline() |>
       cat()
   }
-  if (length(x@water80)) {
+  if (('water80' %in% slotNames(x)) && length(x@water80)) {
     sprintf(fmt = '%s Hot Water, 175\u00b0F %.0f grams %s\n', col_orchid4('80\u00b0C\u70ed\u6c34'), x@water80, fmt_vol(x@water80)) |> 
       format_inline() |>
       cat()
   }
-  if (length(x@water90)) {
+  if (('water90' %in% slotNames(x)) && length(x@water90)) {
     sprintf(fmt = '%s Hot Water, 195\u00b0F %.0f grams %s\n', col_orchid4('90\u00b0C\u70ed\u6c34'), x@water90, fmt_vol(x@water90)) |> 
       format_inline() |>
       cat()
   }
-  if (length(x@water95)) {
+  if (('water95' %in% slotNames(x)) && length(x@water95)) {
     sprintf(fmt = '%s Hot Water, 203\u00b0F %.0f grams %s\n', col_orchid4('95\u00b0C\u70ed\u6c34'), x@water95, fmt_vol(x@water95)) |> 
       format_inline() |>
       cat()
   }
   
-  if (length(x@boilingWater)) {
+  if (('boilingWater' %in% slotNames(x)) && length(x@boilingWater)) {
     sprintf(fmt = '%s Boiling Water %.0f grams %s\n', col_orchid4('\u5f00\u6c34'), x@boilingWater, fmt_vol(x@boilingWater)) |> 
       format_inline() |>
       cat()
   }
-  if (length(x@iceWater)) {
+  if (('iceWater' %in% slotNames(x)) && length(x@iceWater)) {
     sprintf(fmt = '%s Iced Water %.0f grams %s\n', col_orchid4('\u51b0\u6c34'), x@iceWater, fmt_vol(x@iceWater)) |> 
       format_inline() |>
       cat()
@@ -291,12 +306,7 @@ print.raw. <- \(x, ...) {
       format_inline() |>
       cat()
   }
-  if (length(x@shavedIce)) {
-    sprintf(fmt = '%s Shaved Ice\U1f367 %.0f grams %s\n', col_orchid4('\u51b0\u6c99'), x@shavedIce, fmt_vol(x@shavedIce)) |> 
-      format_inline() |>
-      cat()
-  }
-  if (length(x@ice)) {
+  if (('ice' %in% slotNames(x)) && length(x@ice)) {
     sprintf(fmt = '%s Ice\U1f9ca Cubes %.0f grams\n', col_orchid4('\u51b0\u5757'), x@ice) |> 
       format_inline() |>
       cat()
@@ -316,41 +326,40 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
   x <- callNextMethod(.Object, ...)
   
   x <- x |> 
-    combnPc(which = 'gelatin') |>
-    combnPc(which = 'egg') |>
-    combnPc(which = 'fruit') |>
-    combnPc(which = 'puree') |>
-    combnPc(which = 'tea') |>
-    combnVol(which = 'flour') |>
-    combnVol(which = 'water', nm = 'Wegmans_water') |>
+    mergePc(which = 'gelatin') |>
+    mergePc(which = 'egg') |>
+    mergePc(which = 'fruit') |>
+    mergePc(which = 'puree') |>
+    mergePc(which = 'tea') |>
+    mergeVol(which = 'flour') |>
+    mergeVol(which = 'water', nm = 'Wegmans_water') |>
     addname1(which = 'iceWater', nm = 'Wegmans_water') |>
     addname1(which = 'carbonatedWater', nm = 'Wegmans_water') |>
-    addname1(which = 'shavedIce', nm = 'Wegmans_water') |>
     addname1(which = 'ice', nm = 'Wegmans_water') |>
     addname1(which = 'water40', nm = 'Wegmans_water') |>
     addname1(which = 'water70', nm = 'Wegmans_water') |>
-    combnVol(which = 'water80', nm = 'Wegmans_water') |>
+    mergeVol(which = 'water80', nm = 'Wegmans_water') |>
     addname1(which = 'water90', nm = 'Wegmans_water') |>
     addname1(which = 'water95', nm = 'Wegmans_water') |> 
     addname1(which = 'water_ext', nm = 'Wegmans_water') |>
     addname1(which = 'boilingWater', nm = 'Wegmans_water') |>
-    combnVol(which = 'misc') |>
-    combnVol(which = 'fat') |>
-    combnVol(which = 'spice') |>
-    combnVol(which = 'sugar', nm = 'US_10x') |>
-    combnVol(which = 'syrup') |>
-    combnVol(which = 'salt', nm = 'Morton_salt') |>
-    combnVol(which = 'NaHCO3', nm = 'ArmHammer_NaHCO3') |>
-    combnVol(which = 'Na2CO3', nm = 'Na2CO3') |>
-    combnVol(which = 'bakingPowder', nm = 'TraderJoes_bakingPowder') |>
-    combnVol(which = 'starch') |>
-    combnVol(which = 'oil') |>
-    combnVol(which = 'sauce') |>
-    combnVol(which = 'liqueur') |>
-    combnVol(which = 'dairy') |> 
-    combnVol(which = 'grain') |> 
-    combnVol(which = 'nut') |>
-    combnVol(which = 'seed')
+    mergeVol(which = 'misc') |>
+    mergeVol(which = 'fat') |>
+    mergeVol(which = 'spice') |>
+    mergeVol(which = 'sugar', nm = 'US_10x') |>
+    mergeVol(which = 'syrup') |>
+    mergeVol(which = 'salt', nm = 'Morton_salt') |>
+    mergeVol(which = 'NaHCO3', nm = 'ArmHammer_NaHCO3') |>
+    mergeVol(which = 'Na2CO3', nm = 'Na2CO3') |>
+    mergeVol(which = 'bakingPowder', nm = 'TraderJoes_bakingPowder') |>
+    mergeVol(which = 'starch') |>
+    mergeVol(which = 'oil') |>
+    mergeVol(which = 'sauce') |>
+    mergeVol(which = 'liqueur') |>
+    mergeVol(which = 'dairy') |> 
+    mergeVol(which = 'grain') |> 
+    mergeVol(which = 'nut') |>
+    mergeVol(which = 'seed')
   
   for (i in names(getSlots(x = 'raw.'))) {
     x <- x |>
@@ -364,10 +373,14 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
 })
 
 
+
 #' @importFrom stats na.omit
 #' @method as.double raw.
 #' @export
 as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
+  
+  # x <- x |>
+  #   as(Class = 'raw_mergeH2O')
   
   # detailed ingredients
   ingredient <- attributes(x)[names(getSlots(x = 'raw.'))] |>

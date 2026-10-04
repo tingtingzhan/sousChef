@@ -139,7 +139,7 @@ addname1 <- \(x, which, ...) {
 
 
 
-combnPc <- \(x, which, ...) {
+mergePc <- \(x, which, ...) {
   pc <- paste0(which, '_pc')
   v_pc <- slot(x, name = pc)
   if (!length(v_pc)) return(x)
@@ -164,45 +164,39 @@ combnPc <- \(x, which, ...) {
 
 
 
-combnVol <- \(x, which, ...) {
+mergeVol <- \(x, which, ...) {
   
-  slt0 <- names(getSlots(x = 'raw.'))
+  slt <- names(getSlots(x = 'raw.'))
   
-  ._tsp <- paste0(which, '_tsp')
-  has_tsp <- ._tsp %in% slt0
+  tsp <- paste0(which, '_tsp')
+  has_tsp <- tsp %in% slt
+  Tbsp <- paste0(which, '_Tbsp')
+  has_Tbsp <- Tbsp %in% slt
+  cup <- paste0(which, '_cup')
+  has_cup <- cup %in% slt
+  brick <- paste0(which, '_brick')
+  has_brick <- brick %in% slt
   
-  ._Tbsp <- paste0(which, '_Tbsp')
-  has_Tbsp <- ._Tbsp %in% slt0
-  ._cup <- paste0(which, '_cup')
-  has_cup <- ._cup %in% slt0
-  ._brick <- paste0(which, '_brick')
-  has_brick <- ._brick %in% slt0
-  x_gram <- addname1(x, which = which, ...) |>
-    slot(name = which)
-  x_tsp <- if (has_tsp) {
-    addname1(x, which = ._tsp, ...) |>
-      slot(name = ._tsp)
-  } # else NULL
-  x_Tbsp <- if (has_Tbsp) addname1(x, which = ._Tbsp, ...) |>
-    slot(name = ._Tbsp) # else NULL
-  x_cup <- if (has_cup) addname1(x, which = ._cup, ...) |>
-    slot(name = ._cup) # else NULL
-  x_brick <- if (has_brick) addname1(x, which = ._brick, ...) |>
-    slot(name = ._brick) # else NULL
-  
-  slot(x, name = which) <- sum_by_name(
-    x_gram, 
-    if (has_tsp) gram_per_tsp(names(x_tsp)) * x_tsp, 
-    if (has_Tbsp) gram_per_tsp(names(x_Tbsp)) * (3 * x_Tbsp), # parenthesis needed!! otherwise floating issue!!!
-    if (has_cup) gram_per_tsp(names(x_cup)) * (48 * x_cup),
-    if (has_brick) 226.796 * x_brick
+  x_tsp <- sum_by_name(
+    if (has_tsp) .addname1(slot(x, name = tsp), ...),
+    if (has_Tbsp) 3 * .addname1(slot(x, name = Tbsp), ...),
+    if (has_cup) 48 * .addname1(slot(x, name = cup), ...), 
+    if (has_brick) 3 * 16 * .addname1(slot(x, name = brick), ...)
   )
   
-  if (has_tsp) slot(x, name = ._tsp) <- numeric()
-  if (has_Tbsp) slot(x, name = ._Tbsp) <- numeric() 
-  if (has_cup) slot(x, name = ._cup) <- numeric() 
-  if (has_brick) slot(x, name = ._brick) <- numeric()
+  z <- sum_by_name(
+    .addname1(slot(x, name = which), ...), # weight in gram 
+    gram_per_tsp(names(x_tsp)) * x_tsp
+  )
+
+  slot(x, name = which) <- z
+  
+  if (has_tsp) slot(x, name = tsp) <- numeric()
+  if (has_Tbsp) slot(x, name = Tbsp) <- numeric() 
+  if (has_cup) slot(x, name = cup) <- numeric() 
+  if (has_brick) slot(x, name = brick) <- numeric()
   return(x)
+  
 }
 
 

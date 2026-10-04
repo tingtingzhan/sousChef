@@ -322,14 +322,16 @@ get_flavor_ <- \(x) {
 
 
 
-
+#' @importFrom stats setNames
 gram_per_tsp <- \(x) {
+  
   if (!length(x)) return(double())
   
   x1 <- if (is.character(x)) {
     if (anyNA(x) || !all(nzchar(x))) stop('input degenerated')
-    names(x) <- x
+    #names(x) <- x
     x |> 
+      setNames(nm = _) |>
       lapply(FUN = \(i) {
         call(name = i) |>
           eval() |>
@@ -342,9 +344,10 @@ gram_per_tsp <- \(x) {
   
   x1 |> 
     vapply(FUN = \(i) {
-      if (!length(i@servingTsp)) return(NA_real_) #stop(ix@name, ' does not have volume info')
+      if (!length(i@servingTsp)) return(NA_real_)
       i@servingGram / i@servingTsp
     }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
+  
 }
 
 

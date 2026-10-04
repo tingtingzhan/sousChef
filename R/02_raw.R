@@ -398,7 +398,6 @@ as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
         'msg', 'yeast',
         'starch', 'gelatin',
         'tea', 'matcha', 'cocoa', 'coffee'
-        # 'chiliMix', 'curry' # deprecated slot
         # 'puree', # waterLost after cooking!  only meaningful for \linkS4class{.raw}, not \linkS4class{recipe}
       ) |>
         vapply(FUN = \(i) {

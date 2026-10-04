@@ -341,25 +341,23 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
     } else if (ginger() %in% x) {
       '\u59dc\u9999\U1fada'
     } else if (length(x@liqueur)) {
-      get_flavor_(names(x@liqueur))
+      x@liqueur |> names() |> get_flavor_()
     } else if (length(x@sauce)) {
       if (grepl(pattern = 'tomyum', x = names(x@sauce)) |> any()) {
         '\u51ac\u9634'
       } else character()
     } else if (length(x@syrup)) {
       x@syrup |> names() |> get_flavor_()
-    #} else if (length(x@curry)) {
-    #  get_flavor_(names(x@curry))
-    #} else if (length(x@chiliMix)) {
-    #  get_flavor_(names(x@chiliMix))
     } else if (length(x@tea)) {
       x@tea |> names() |> get_flavor_()
     } else if (length(x@spice)) {
-      x@spice |> names() |> setdiff(y = 'Kirkland_noSaltSeasoning') |> get_flavor_()
+      x@spice |> names() |> setdiff(y = c(
+        'Kirkland_noSaltSeasoning'
+      )) |> get_flavor_()
     } else if (length(x@grain)) {
-      get_flavor_(names(x@grain))
+      x@grain |> names() |> get_flavor_()
     } else if (length(x@homemade)) {
-      get_flavor_(names(x@homemade))
+      x@homemade |> names() |> get_flavor_()
     } else switch(
       class(x), 
       matchaLatte_ =, matchaGoatLatte_ = {

@@ -7,7 +7,6 @@
 \alias{raw_recipe}
 \alias{raw.-class}
 \alias{show,raw.-method}
-\alias{show,raw_mergeH2O-method}
 \alias{recipe-class}
 \alias{show,recipe-method}
 \alias{Junior_cappuccino_cheesecake}
@@ -16,8 +15,6 @@
 \title{Raw Ingredients and Recipe}
 \usage{
 \S4method{show}{raw.}(object)
-
-\S4method{show}{raw_mergeH2O}(object)
 
 \S4method{show}{recipe}(object)
 

@@ -132,8 +132,6 @@ setClass(
 
 
 
-# combined water at different temperature
-setClass(Class = 'raw_mergeH2O', contains = 'raw.')
 
 
 
@@ -144,9 +142,6 @@ setClass(Class = 'raw_mergeH2O', contains = 'raw.')
 #' @export
 setMethod(f = show, signature = 'raw.', definition = \(object) print.raw.(object))
 
-#' @rdname raw_recipe
-#' @export
-setMethod(f = show, signature = 'raw_mergeH2O', definition = \(object) print.raw.(object))
 
 
 #' @method labels raw.
@@ -284,7 +279,7 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
 as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
   
   x <- x |>
-    as(Class = 'raw_mergeH2O')
+    mergeH2O()
   
   # detailed ingredients
   ingredient <- attributes(x)[names(getSlots(x = 'raw.'))] |>

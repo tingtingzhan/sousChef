@@ -161,6 +161,19 @@ mergePc <- \(x, which, ...) {
 
 
 
+
+# combine water at different temperature
+mergeH2O <- \(x) {
+  # `x` is \linkS4class{raw.}
+  x@water <- x@water |>
+    sum() |>
+    setNames(nm = 'Wegmans_water')
+  return(x)
+}
+
+
+
+
 mergeVol_H2O <- \(x) {
 
   x_tsp <- sum_by_name(
@@ -174,9 +187,9 @@ mergeVol_H2O <- \(x) {
       .addname1(nm = 'c22'),
     4.92892 * x_tsp # tsp -> ml
   )
-  x@water_tsp <- numeric()
-  x@water_Tbsp <- numeric() 
-  x@water_cup <- numeric() 
+  
+  x@water_tsp <- x@water_Tbsp <- x@water_cup <- numeric()
+  
   return(x)
   
 }

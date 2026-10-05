@@ -7,6 +7,14 @@
 # water in flour is *not* included!!!
 
 
+rep_names <- \(x, nm) {
+  rep(x, times = length(nm)) |>
+    setNames(nm = nm)
+}
+
+
+#setClass(Class = 'tmp', slots = rep_names('numeric', nm = letters))
+
 
 #' @title Raw Ingredients and Recipe
 #' 
@@ -14,14 +22,14 @@
 #' \linkS4class{raw.} allows negative ingredients.
 #' 
 #' @slot homemade \link[base]{numeric} vector
-#' @slot misc,misc_tsp,misc_Tbsp,misc_cup \link[base]{numeric} vector, weight of one or more miscellaneous ingredients (in grams)
+#' @slot misc,misc_tsp,misc_Tbsp,misc_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more miscellaneous ingredients
 #' 
-#' @slot puree,puree_tsp,puree_Tbsp,puree_cup,puree_pc \link[base]{numeric} vector, weight of one or more puree (in grams)
+#' @slot puree,puree_tsp,puree_Tbsp,puree_cup,puree_pc \link[base]{numeric} vector, weight (in grams) and volume of one or more puree
 #' 
 #' @slot fruit \link[base]{numeric} vector, weight of fresh fruit pulp or juice (in grams)
 #' @slot fruit_pc \link[base]{numeric} vector, number of fresh fruit pulp or juice
 #' 
-#' @slot dairy,dairy_tsp,dairy_Tbsp,dairy_cup,dairy_brick \link[base]{numeric} scalar, weight of dairy products (in grams)
+#' @slot dairy,dairy_tsp,dairy_Tbsp,dairy_cup,dairy_brick \link[base]{numeric} scalar, weight (in grams) and volume of dairy products
 #' 
 #' @slot oil,oil_tsp,oil_Tbsp,oil_cup \link[base]{numeric} scalar, weight (in grams) and volume of liquid oil
 #' @slot fat,fat_tsp,fat_Tbsp,fat_cup \link[base]{numeric} scalar, weight (in grams) and volume of solid fat
@@ -30,126 +38,97 @@
 #' 
 #' @slot tea,tea_pc \link[base]{numeric} \link[base]{vector}s, weight of loose tea in grams and number of tea bags, respectively
 #' 
-#' @slot flour,flour_tsp,flour_Tbsp,flour_cup \link[base]{numeric} \link[base]{vector}, weight of King Arthur all purpose flour (in grams)
+#' @slot flour,flour_tsp,flour_Tbsp,flour_cup \link[base]{numeric} \link[base]{vector}, weight (in grams) and volume of King Arthur all purpose flour
 #' @slot beverage,beverage_tsp,beverage_Tbsp,beverage_cup \link[base]{numeric} \link[base]{vector}
 #' 
-#' @slot starch,starch_tsp,starch_Tbsp,starch_cup \link[base]{numeric} scalar or \link[base]{vector}, named weight (in grams) and volume of various starch
+#' @slot starch,starch_tsp,starch_Tbsp,starch_cup \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various starch
 #' 
-#' @slot grain,grain_tsp,grain_Tbsp,grain_cup \link[base]{numeric} scalar or \link[base]{vector}, named weight of various grains
+#' @slot grain,grain_tsp,grain_Tbsp,grain_cup \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various grains
 #' 
 #' @slot bean \link[base]{numeric} \link[base]{vector}, weight of dry beans (in grams)
 #' 
-#' @slot nut \link[base]{numeric} scalar, weight of various dry nuts (in grams)
-#' @slot seed \link[base]{numeric} scalar, weight of various dry seed (in grams)
+#' @slot nut \link[base]{numeric} scalar, weight of dry nuts (in grams)
+#' @slot seed \link[base]{numeric} scalar, weight of dry seed (in grams)
 #' 
 #' 
-#' @slot sugar,sugar_tsp,sugar_Tbsp,sugar_cup \link[base]{numeric} scalar, weight (in grams) and volume of 10x powdered confectioners sugar 
+#' @slot sugar,sugar_tsp,sugar_Tbsp,sugar_cup \link[base]{numeric} scalar, weight (in grams) and volume of sugar 
 #' 
-#' @slot syrup,syrup_tsp,syrup_Tbsp,syrup_cup \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various (maple) syrup
+#' @slot syrup,syrup_tsp,syrup_Tbsp,syrup_cup \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various syrup
 #' 
 #' @slot NaHCO3,NaHCO3_tsp,NaHCO3_Tbsp,NaHCO3_cup \link[base]{numeric} scalars, weight (in grams) and volume of Arm and Hammer baking soda
 #' 
-#' @slot Na2CO3,Na2CO3_tsp,Na2CO3_Tbsp,Na2CO3_cup \link[base]{numeric} scalars, 
-#' weight (in grams) and volume of Na2CO3, respectively.
-#' Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes
+#' @slot Na2CO3,Na2CO3_tsp,Na2CO3_Tbsp,Na2CO3_cup \link[base]{numeric} scalars, weight (in grams) and volume of Na2CO3, respectively.  Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes
 #' 
 #' @slot bakingPowder,bakingPowder_tsp,bakingPowder_Tbsp,bakingPowder_cup \link[base]{numeric} scalar, weight (in grams) and volume of baking powder
 #' @slot salt,salt_tsp,salt_Tbsp,salt_cup \link[base]{numeric} scalar, weight (in grams) and volume of salt
 #' @slot msg,msg_tsp,msg_Tbsp,msg_cup \link[base]{numeric} scalar, weight (in grams) and volume of monosodium glutamate (MSG)
 #' @slot vanilla,vanilla_tsp,vanilla_Tbsp,vanilla_cup \link[base]{numeric} scalar, weight (in grams) and volume of vanilla extract
-#' 
-# @slot blackSesame \link[base]{numeric} scalar, weight (in grams) of Greenmax powdered black sesame seed
+#' @slot yeast,yeast_tsp,yeast_Tbsp,yeast_cup \link[base]{numeric} scalar, weight (in grams) and volume of yeast
 #' 
 #' @slot cocoa,cocoa_tsp,cocoa_Tbsp,cocoa_cup \link[base]{numeric} scalar, weight (in grams) and volume of Dutch-processed cocoa powder
 #' @slot matcha,matcha_tsp,matcha_Tbsp,matcha_cup \link[base]{numeric} scalar, weight (in grams) and volume of culinary matcha powder 
 #' @slot spice,spice_tsp,spice_Tbsp,spice_cup named \link[base]{numeric} \link[base]{vector}, weight (in grams) and volume of compound spices
 #' 
-#' @slot coffee,coffee_tsp,coffee_Tbsp,coffee_cup \link[base]{numeric} scalar, weight (in grams) and volume of `superior = 'NescafeGold_blonde'`
+#' @slot coffee,coffee_tsp,coffee_Tbsp,coffee_cup \link[base]{numeric} scalar, weight (in grams) and volume of instant coffee
 #' 
+#' @slot meat \link[base]{numeric} vector, weight of one or more cuts of meat (in grams)
 #' @slot poultry \link[base]{numeric} vector, weight of one or more cuts of poultry (in grams)
 #' @slot seafood \link[base]{numeric} vector, weight of one or more other sea food (in grams)
 #' 
-#' @slot meat \link[base]{numeric} vector, weight of one or more cuts of meat (in grams)
-#' 
 #' @slot vegetable \link[base]{numeric} vector, weight of one or more vegetables (in grams)
 #' 
-#' @slot water,water_tsp,water_Tbsp,water_cup \link[base]{numeric} scalar, weight of water (in grams)
+#' @slot water,water_tsp,water_Tbsp,water_cup \link[base]{numeric} scalar, weight (in grams) and volume of water
 # @slot water_ext \link[base]{numeric} scalar, weight of extra water (in grams) to hydrate powders in a dough
 #' @slot carbonatedWater \link[base]{numeric} scalar, weight of carbonated water (in grams)
 #' 
 #' @slot sauce,sauce_tsp,sauce_Tbsp,sauce_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more sauces
 #' @slot liqueur,liqueur_tsp,liqueur_Tbsp,liqueur_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more liqueurs
 #' 
-#' @slot yeast,yeast_tsp,yeast_Tbsp,yeast_cup \link[base]{numeric} scalar, weight (in grams) and volume of yeast
-#' 
 #' @slot gelatin,gelatin_pc \link[base]{numeric} \link[base]{vector}s
 #' 
 #' @name raw_recipe
 #' @aliases raw.-class
 #' @export
-setClass(Class = 'raw.', slots = c(
+setClass(
+  Class = 'raw.', 
   # dQuote('raw') has a sealed class definition and cannot be redefined
-  
-  homemade = 'numeric',
-  
-  misc = 'numeric', misc_tsp = 'numeric', misc_Tbsp = 'numeric', misc_cup = 'numeric',
-  puree = 'numeric', puree_tsp = 'numeric', puree_Tbsp = 'numeric', puree_cup = 'numeric', puree_pc = 'numeric',
-  
-  fruit = 'numeric', 
-  fruit_pc = 'numeric',
-  
-  oil = 'numeric', oil_tsp = 'numeric', oil_Tbsp = 'numeric', oil_cup = 'numeric', 
-  
-  fat = 'numeric', fat_tsp = 'numeric', fat_Tbsp = 'numeric', fat_cup = 'numeric',
-  
-  egg = 'numeric', egg_pc = 'numeric', 
-  
-  tea = 'numeric', tea_pc = 'numeric', 
-  
-  dairy = 'numeric', dairy_tsp = 'numeric', dairy_Tbsp = 'numeric', dairy_cup = 'numeric', dairy_brick = 'numeric',
-  
-  yeast = 'numeric', yeast_tsp = 'numeric', yeast_Tbsp = 'numeric', yeast_cup = 'numeric',
-  
-  sugar = 'numeric', sugar_tsp = 'numeric', sugar_Tbsp = 'numeric', sugar_cup = 'numeric',
-  syrup = 'numeric', syrup_tsp = 'numeric', syrup_Tbsp = 'numeric', syrup_cup = 'numeric',
-  salt = 'numeric', salt_tsp = 'numeric', salt_Tbsp = 'numeric', salt_cup = 'numeric',
-  msg = 'numeric', msg_tsp = 'numeric', msg_Tbsp = 'numeric', msg_cup = 'numeric',
-  NaHCO3 = 'numeric', NaHCO3_tsp = 'numeric', NaHCO3_Tbsp = 'numeric', NaHCO3_cup = 'numeric',
-  Na2CO3 = 'numeric', Na2CO3_tsp = 'numeric', Na2CO3_Tbsp = 'numeric', Na2CO3_cup = 'numeric',
-  bakingPowder = 'numeric', bakingPowder_tsp = 'numeric', bakingPowder_Tbsp = 'numeric', bakingPowder_cup = 'numeric',
-  
-  flour = 'numeric', flour_tsp = 'numeric', flour_Tbsp = 'numeric', flour_cup = 'numeric',
-  starch = 'numeric', starch_tsp = 'numeric', starch_Tbsp = 'numeric', starch_cup = 'numeric',
-  beverage = 'numeric', beverage_tsp = 'numeric', beverage_Tbsp = 'numeric', beverage_cup = 'numeric', 
-  
-  grain = 'numeric', grain_tsp = 'numeric', grain_Tbsp = 'numeric', grain_cup = 'numeric',
-  bean = 'numeric',
-  nut = 'numeric',
-  seed = 'numeric',
-  
-  vanilla = 'numeric', vanilla_tsp = 'numeric', vanilla_Tbsp = 'numeric', vanilla_cup = 'numeric',
-  cocoa = 'numeric', cocoa_tsp = 'numeric', cocoa_Tbsp = 'numeric', cocoa_cup = 'numeric',
-  coffee = 'numeric', coffee_tsp = 'numeric', coffee_Tbsp = 'numeric', coffee_cup = 'numeric',
-  matcha = 'numeric', matcha_tsp = 'numeric', matcha_Tbsp = 'numeric', matcha_cup = 'numeric', 
-  #blackSesame = 'numeric',
-  spice = 'numeric', spice_tsp = 'numeric', spice_Tbsp = 'numeric', spice_cup = 'numeric',
-  
-  meat = 'numeric',
-  poultry = 'numeric',
-  seafood = 'numeric',
-  
-  vegetable = 'numeric',
-  
-  water = 'numeric', water_tsp = 'numeric', water_Tbsp = 'numeric', water_cup = 'numeric',
-  #water_ext = 'numeric',
-  carbonatedWater = 'numeric',
-  
-  sauce = 'numeric', sauce_tsp = 'numeric', sauce_Tbsp = 'numeric', sauce_cup = 'numeric',
-  
-  liqueur = 'numeric', liqueur_tsp = 'numeric', liqueur_Tbsp = 'numeric', liqueur_cup = 'numeric',
-  
-  gelatin = 'numeric', gelatin_pc = 'numeric'
-))
+  slots = rep_names('numeric', nm = c(
+    'homemade',
+    'misc', 'misc_tsp', 'misc_Tbsp', 'misc_cup',
+    'puree', 'puree_tsp', 'puree_Tbsp', 'puree_cup', 'puree_pc',
+    'fruit', 'fruit_pc',
+    'oil', 'oil_tsp', 'oil_Tbsp', 'oil_cup', 
+    'fat', 'fat_tsp', 'fat_Tbsp', 'fat_cup',
+    'egg', 'egg_pc', 
+    'tea', 'tea_pc', 
+    'dairy', 'dairy_tsp', 'dairy_Tbsp', 'dairy_cup', 'dairy_brick',
+    'yeast', 'yeast_tsp', 'yeast_Tbsp', 'yeast_cup',
+    'sugar', 'sugar_tsp', 'sugar_Tbsp', 'sugar_cup',
+    'syrup', 'syrup_tsp', 'syrup_Tbsp', 'syrup_cup',
+    'salt', 'salt_tsp', 'salt_Tbsp', 'salt_cup',
+    'msg', 'msg_tsp', 'msg_Tbsp', 'msg_cup',
+    'NaHCO3', 'NaHCO3_tsp', 'NaHCO3_Tbsp', 'NaHCO3_cup',
+    'Na2CO3', 'Na2CO3_tsp', 'Na2CO3_Tbsp', 'Na2CO3_cup',
+    'bakingPowder', 'bakingPowder_tsp', 'bakingPowder_Tbsp', 'bakingPowder_cup',
+    'flour', 'flour_tsp', 'flour_Tbsp', 'flour_cup',
+    'starch', 'starch_tsp', 'starch_Tbsp', 'starch_cup',
+    'beverage', 'beverage_tsp', 'beverage_Tbsp', 'beverage_cup', 
+    'grain', 'grain_tsp', 'grain_Tbsp', 'grain_cup',
+    'bean', 'nut', 'seed',
+    'vanilla', 'vanilla_tsp', 'vanilla_Tbsp', 'vanilla_cup',
+    'cocoa', 'cocoa_tsp', 'cocoa_Tbsp', 'cocoa_cup',
+    'coffee', 'coffee_tsp', 'coffee_Tbsp', 'coffee_cup',
+    'matcha', 'matcha_tsp', 'matcha_Tbsp', 'matcha_cup', 
+    'spice', 'spice_tsp', 'spice_Tbsp', 'spice_cup',
+    'meat', 'poultry', 'seafood',
+    'vegetable',
+    'water', 'water_tsp', 'water_Tbsp', 'water_cup',
+    # 'water_ext',
+    'carbonatedWater',
+    'sauce', 'sauce_tsp', 'sauce_Tbsp', 'sauce_cup',
+    'liqueur', 'liqueur_tsp', 'liqueur_Tbsp', 'liqueur_cup',
+    'gelatin', 'gelatin_pc'
+)))
 
 
 

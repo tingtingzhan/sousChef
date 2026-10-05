@@ -56,29 +56,22 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
   author = 'character',
   tool = 'list',
   date = 'Date',
+
+  rep_names(x = 'character', nm = c(
+    'allrecipes',
+    'daatgo', 'dad1966', 'guga', 'happytears',
+    'ippodotea', 'ippodoteajpn',
+    'joshuaweissman',
+    'julieseatsandtreats', 'just1cookbook',
+    'kingarthur', 'laofangu', 'natashaskitchen',
+    'nytimes', 'pino', 'preppykitchen',
+    'quakeroats', 'shangshikitchen',
+    'wegmans', 'xiaogaojie',
+    'youtube', 'url'
+  )),
   
-  url = 'character',
-  allrecipes = 'character',
-  daatgo = 'character',
-  dad1966 = 'character',
-  guga = 'character',
-  happytears = 'character',
-  ippodotea = 'character', ippodoteajpn = 'character',
-  joshuaweissman = 'character',
-  julieseatsandtreats = 'character',
   juniorscheesecakecookbook = 'integer',
-  just1cookbook = 'character',
-  kingarthur = 'character',
-  laofangu = 'character',
-  natashaskitchen = 'character',
-  nytimes = 'character',
-  pino = 'character',
-  preppykitchen = 'character', # must len-1
-  quakeroats = 'character',
-  shangshikitchen = 'character',
-  wegmans = 'character',
-  xiaogaojie = 'character',
-  youtube = 'character',
+  
   #doi = 'character',
   
   review = 'character',

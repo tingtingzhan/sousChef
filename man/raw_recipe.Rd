@@ -38,15 +38,15 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 \describe{
 \item{\code{homemade}}{\link[base]{numeric} vector}
 
-\item{\code{misc,misc_tsp,misc_Tbsp,misc_cup}}{\link[base]{numeric} vector, weight of one or more miscellaneous ingredients (in grams)}
+\item{\code{misc,misc_tsp,misc_Tbsp,misc_cup}}{\link[base]{numeric} vector, weight (in grams) and volume of one or more miscellaneous ingredients}
 
-\item{\code{puree,puree_tsp,puree_Tbsp,puree_cup,puree_pc}}{\link[base]{numeric} vector, weight of one or more puree (in grams)}
+\item{\code{puree,puree_tsp,puree_Tbsp,puree_cup,puree_pc}}{\link[base]{numeric} vector, weight (in grams) and volume of one or more puree}
 
 \item{\code{fruit}}{\link[base]{numeric} vector, weight of fresh fruit pulp or juice (in grams)}
 
 \item{\code{fruit_pc}}{\link[base]{numeric} vector, number of fresh fruit pulp or juice}
 
-\item{\code{dairy,dairy_tsp,dairy_Tbsp,dairy_cup,dairy_brick}}{\link[base]{numeric} scalar, weight of dairy products (in grams)}
+\item{\code{dairy,dairy_tsp,dairy_Tbsp,dairy_cup,dairy_brick}}{\link[base]{numeric} scalar, weight (in grams) and volume of dairy products}
 
 \item{\code{oil,oil_tsp,oil_Tbsp,oil_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of liquid oil}
 
@@ -56,29 +56,27 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 
 \item{\code{tea,tea_pc}}{\link[base]{numeric} \link[base]{vector}s, weight of loose tea in grams and number of tea bags, respectively}
 
-\item{\code{flour,flour_tsp,flour_Tbsp,flour_cup}}{\link[base]{numeric} \link[base]{vector}, weight of King Arthur all purpose flour (in grams)}
+\item{\code{flour,flour_tsp,flour_Tbsp,flour_cup}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) and volume of King Arthur all purpose flour}
 
 \item{\code{beverage,beverage_tsp,beverage_Tbsp,beverage_cup}}{\link[base]{numeric} \link[base]{vector}}
 
-\item{\code{starch,starch_tsp,starch_Tbsp,starch_cup}}{\link[base]{numeric} scalar or \link[base]{vector}, named weight (in grams) and volume of various starch}
+\item{\code{starch,starch_tsp,starch_Tbsp,starch_cup}}{\link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various starch}
 
-\item{\code{grain,grain_tsp,grain_Tbsp,grain_cup}}{\link[base]{numeric} scalar or \link[base]{vector}, named weight of various grains}
+\item{\code{grain,grain_tsp,grain_Tbsp,grain_cup}}{\link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various grains}
 
 \item{\code{bean}}{\link[base]{numeric} \link[base]{vector}, weight of dry beans (in grams)}
 
-\item{\code{nut}}{\link[base]{numeric} scalar, weight of various dry nuts (in grams)}
+\item{\code{nut}}{\link[base]{numeric} scalar, weight of dry nuts (in grams)}
 
-\item{\code{seed}}{\link[base]{numeric} scalar, weight of various dry seed (in grams)}
+\item{\code{seed}}{\link[base]{numeric} scalar, weight of dry seed (in grams)}
 
-\item{\code{sugar,sugar_tsp,sugar_Tbsp,sugar_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of 10x powdered confectioners sugar}
+\item{\code{sugar,sugar_tsp,sugar_Tbsp,sugar_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of sugar}
 
-\item{\code{syrup,syrup_tsp,syrup_Tbsp,syrup_cup}}{\link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various (maple) syrup}
+\item{\code{syrup,syrup_tsp,syrup_Tbsp,syrup_cup}}{\link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various syrup}
 
 \item{\code{NaHCO3,NaHCO3_tsp,NaHCO3_Tbsp,NaHCO3_cup}}{\link[base]{numeric} scalars, weight (in grams) and volume of Arm and Hammer baking soda}
 
-\item{\code{Na2CO3,Na2CO3_tsp,Na2CO3_Tbsp,Na2CO3_cup}}{\link[base]{numeric} scalars,
-weight (in grams) and volume of Na2CO3, respectively.
-Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
+\item{\code{Na2CO3,Na2CO3_tsp,Na2CO3_Tbsp,Na2CO3_cup}}{\link[base]{numeric} scalars, weight (in grams) and volume of Na2CO3, respectively.  Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{bakingPowder,bakingPowder_tsp,bakingPowder_Tbsp,bakingPowder_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of baking powder}
 
@@ -88,31 +86,31 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{vanilla,vanilla_tsp,vanilla_Tbsp,vanilla_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of vanilla extract}
 
+\item{\code{yeast,yeast_tsp,yeast_Tbsp,yeast_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of yeast}
+
 \item{\code{cocoa,cocoa_tsp,cocoa_Tbsp,cocoa_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of Dutch-processed cocoa powder}
 
 \item{\code{matcha,matcha_tsp,matcha_Tbsp,matcha_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of culinary matcha powder}
 
 \item{\code{spice,spice_tsp,spice_Tbsp,spice_cup}}{named \link[base]{numeric} \link[base]{vector}, weight (in grams) and volume of compound spices}
 
-\item{\code{coffee,coffee_tsp,coffee_Tbsp,coffee_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of \code{superior = 'NescafeGold_blonde'}}
+\item{\code{coffee,coffee_tsp,coffee_Tbsp,coffee_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of instant coffee}
+
+\item{\code{meat}}{\link[base]{numeric} vector, weight of one or more cuts of meat (in grams)}
 
 \item{\code{poultry}}{\link[base]{numeric} vector, weight of one or more cuts of poultry (in grams)}
 
 \item{\code{seafood}}{\link[base]{numeric} vector, weight of one or more other sea food (in grams)}
 
-\item{\code{meat}}{\link[base]{numeric} vector, weight of one or more cuts of meat (in grams)}
-
 \item{\code{vegetable}}{\link[base]{numeric} vector, weight of one or more vegetables (in grams)}
 
-\item{\code{water,water_tsp,water_Tbsp,water_cup}}{\link[base]{numeric} scalar, weight of water (in grams)}
+\item{\code{water,water_tsp,water_Tbsp,water_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of water}
 
 \item{\code{carbonatedWater}}{\link[base]{numeric} scalar, weight of carbonated water (in grams)}
 
 \item{\code{sauce,sauce_tsp,sauce_Tbsp,sauce_cup}}{\link[base]{numeric} vector, weight (in grams) and volume of one or more sauces}
 
 \item{\code{liqueur,liqueur_tsp,liqueur_Tbsp,liqueur_cup}}{\link[base]{numeric} vector, weight (in grams) and volume of one or more liqueurs}
-
-\item{\code{yeast,yeast_tsp,yeast_Tbsp,yeast_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of yeast}
 
 \item{\code{gelatin,gelatin_pc}}{\link[base]{numeric} \link[base]{vector}s}
 

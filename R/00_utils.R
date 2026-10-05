@@ -1,6 +1,6 @@
 
 
-# used in methods::setClass
+# functions for methods::setClass
 
 rep_names <- \(x, nm) {
   rep(x, times = length(nm)) |>

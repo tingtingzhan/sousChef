@@ -344,6 +344,47 @@ brand_url <- \(x, name, fmt, text) {
 }
 
 
+add_youtube <- \(x, name, text) {
+  v <- slot(x, name = name)
+  nv <- length(v)
+  if (!nv) return(x)
+  if (nv > 1L) stop('only allow len-1 ', sQuote(name))
+  x@author <- v |>
+    sprintf(fmt = 'https://youtu.be/%s') |>
+    style_hyperlink(url = _, text = text) |> 
+    c()
+  slot(x, name = name) <- character()
+  return(x)
+}
+
+
+
+add_youtube_recipe <- \(x, name, fmt, text1, text2) {
+  v <- slot(x, name = name)
+  nv <- length(v)
+  if (!nv) return(x)
+  if (nv > 1L) stop('only allow len-1 ', sQuote(name))
+  if (length(x@author)) {
+    print(x@author)
+    print(v)
+    stop('`@author` already exists!')
+  }
+  x@author <- paste(
+    v |>
+      names() |> # len0-name compatible!!
+      sprintf(fmt = 'https://youtu.be/%s') |>
+      style_hyperlink(url = _, text = text1),
+    v |>
+      sprintf(fmt = fmt) |>
+      style_hyperlink(url = _, text = text2)
+  )
+  slot(x, name = name) <- character()
+  return(x)
+}
+
+
+
+
 
 get_flavor_ <- \(x) {
   # `x` is base::character base::vector

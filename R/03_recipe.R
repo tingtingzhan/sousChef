@@ -127,32 +127,22 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   } # before `if (!length(x@author))` !!!
   
   # youtubers
-  for (yt in c('daatgo', 'dad1966', 'guga', 'happytears', 'laofangu', 'pino', 'shangshikitchen', 'xiaogaojie')) {
-    if (length(yt. <- slot(x, name = yt))) {
-      if (length(yt.) > 1L) stop('only allow len-1 @', yt)
-      x@author <- switch(
-        yt, 
-        daatgo = '\u8fbe\u54e5\u53a8\u623f',
-        dad1966 = '\u8001\u7238\u7684\u98df\u5149',
-        guga = 'Guga',
-        happytears = '\u5e78\u798f\u7684\u773c\u6cea',
-        laofangu = '\u8001\u996d\u9aa8',
-        pino = '\u54c1\u8bfa', # http://www.pinochina.com # temporarily down
-        shangshikitchen = '\u5c1a\u98df\u53a8\u623f',
-        xiaogaojie = '\u5c0f\u9ad8\u59d0'
-      ) |>
-        style_hyperlink(
-          url = sprintf(fmt = 'https://youtu.be/%s', yt.),
-          text = _
-        ) |> 
-        c()
-      slot(x, name = yt) <- character()
-    }
-  }
+  x <- x |>
+    add_youtube(name = 'daatgo', text = '\u8fbe\u54e5\u53a8\u623f') |>
+    add_youtube(name = 'dad1966', text = '\u8001\u7238\u7684\u98df\u5149') |>
+    add_youtube(name = 'guga', text = 'Guga') |>
+    add_youtube(name = 'happytears', text = '\u5e78\u798f\u7684\u773c\u6cea') |>
+    add_youtube(name = 'laofangu', text = '\u8001\u996d\u9aa8') |>
+    add_youtube(name = 'pino', text = '\u54c1\u8bfa') |> # http://www.pinochina.com # temporarily down
+    add_youtube(name = 'shangshikitchen', text = '\u5c1a\u98df\u53a8\u623f') |>
+    add_youtube(name = 'xiaogaojie', text = '\u5c0f\u9ad8\u59d0')
   
   if (length(x@ippodotea)) {
     if (length(x@ippodotea) > 1L) stop('only allow len-1 @ippodotea')
-    x@author <- style_hyperlink(url = sprintf(fmt = 'https://ippodotea.com/products/%s', x@ippodotea), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5') |> c()
+    x@author <- x@ippodotea |>
+      sprintf(fmt = 'https://ippodotea.com/products/%s') |>
+      style_hyperlink(url = _, text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5') |> 
+      c()
     x@ippodotea <- character()
   }
   
@@ -162,39 +152,17 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
     x@ippodoteajpn <- character()
   }
   
-  if (length(x@joshuaweissman)) {
-    if (length(x@author)) stop('@author will be overwritten by @joshuaweissman')
-    if (length(x@joshuaweissman) > 1L) stop('only allow len-1 @joshuaweissman')
-    x@author <- paste(
-      style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@joshuaweissman)), text = 'Joshua') |> c(),
-      style_hyperlink(url = sprintf(fmt = 'https://www.joshuaweissman.com/post/%s', x@joshuaweissman), text = 'Weissman') |> c()
-    )
-    x@joshuaweissman <- character()
-  } 
-  
-  if (length(x@julieseatsandtreats)) {
-    if (length(x@author)) stop('@author will be overwritten by @julieseatsandtreats')
-    if (length(x@julieseatsandtreats) > 1L) stop('only allow len-1 @julieseatsandtreats')
-    x@author <- paste(
-      style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@julieseatsandtreats)), text = 'Julie\'s') |> c(),
-      style_hyperlink(url = sprintf(fmt = 'https://www.julieseatsandtreats.com/%s', x@julieseatsandtreats), text = 'Eats & Treats') |> c()
-    )
-    x@julieseatsandtreats <- character()
-  } 
+  x <- x |>
+    add_youtube_recipe(name = 'joshuaweissman', fmt = 'https://www.joshuaweissman.com/post/%s', text1 = 'Joshua', text2 = 'Weissman') |>
+    add_youtube_recipe(name = 'julieseatsandtreats', fmt = 'https://www.julieseatsandtreats.com/%s', text1 = 'Julie\'s', text2 = 'Eats & Treats') |>
+    add_youtube_recipe(name = 'just1cookbook', fmt = 'https://www.justonecookbook.com/%s', text1 = 'Just One', text2 = 'Cookbook') |>
+    add_youtube_recipe(name = 'natashaskitchen', fmt = 'https://natashaskitchen.com/%s/', text1 = 'Natasha\'s', text2 = 'Kitchen') |>
+    add_youtube_recipe(name = 'preppykitchen', fmt = 'https://preppykitchen.com/%s/', text1 = 'Preppy', text2 = 'Kitchen')# |>
   
   if (length(x@juniorscheesecakecookbook)) {
     if (length(x@juniorscheesecakecookbook) > 1L) stop('only allow len-1 @juniorscheesecakecookbook')
     x@author <- style_hyperlink(url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook p.%d', x@juniorscheesecakecookbook)) |> c()
     x@juniorscheesecakecookbook <- integer()
-  }
-  
-  if (length(x@just1cookbook)) {
-    if (length(x@just1cookbook) > 1L) stop('only allow len-1 @just1cookbook')
-    x@author <- paste(
-      c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@just1cookbook)), text = 'Just One')),
-      c(style_hyperlink(url = sprintf(fmt = 'https://www.justonecookbook.com/%s', x@just1cookbook), text = 'Cookbook'))
-    )
-    x@just1cookbook <- character()
   }
   
   if (length(x@kingarthur)) {
@@ -207,31 +175,11 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
     x@kingarthur <- character()
   }
   
-  if (length(x@natashaskitchen)) {
-    if (length(x@author)) stop('@author will be overwritten by @natashaskitchen')
-    if (length(x@natashaskitchen) > 1L) stop('only allow len-1 @natashaskitchen')
-    x@author <- paste(
-      c(style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@natashaskitchen)), text = 'Natasha\'s')),
-      c(style_hyperlink(url = sprintf(fmt = 'https://natashaskitchen.com/%s/', x@natashaskitchen), text = 'Kitchen'))
-    )
-    x@natashaskitchen <- character()
-  } 
-  
   if (length(x@nytimes)) {
     if (length(x@nytimes) > 1L) stop('only allow len-1 @nytimes')
     x@author <- style_hyperlink(url = sprintf(fmt = 'https://cooking.nytimes.com/recipes/%s', x@nytimes), text = 'New York Times Cooking') |> c()
     x@nytimes <- character()
   }
-  
-  if (length(x@preppykitchen)) {
-    if (length(x@author)) stop('@author will be overwritten by @preppykitchen')
-    if (length(x@preppykitchen) > 1L) stop('only allow len-1 @preppykitchen')
-    x@author <- paste(
-      style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', names(x@preppykitchen)), text = 'Preppy') |> c(),
-      style_hyperlink(url = sprintf(fmt = 'https://preppykitchen.com/%s/', x@preppykitchen), text = 'Kitchen') |> c()
-    )
-    x@preppykitchen <- character()
-  } 
   
   if (length(x@quakeroats)) {
     if (length(x@quakeroats) > 1L) stop('only allow len-1 @quakeroats')

@@ -17,8 +17,7 @@ setClass(Class = 'drinkmix', contains = 'recipe', prototype = prototype(
 ))
 
 setValidity(Class = 'drinkmix', method = \(object) {
-  if (length(object@boilingWater) || length(object@iceWater) ||
-      length(object@water95) || length(object@water90) || length(object@water80) || length(object@water70)) # all kind of water
+  if (length(object@water)) # all kind of water
     stop('`drinkmix` cannot have water')
 })
 
@@ -43,7 +42,7 @@ setClass(Class = 'milktea_', contains = 'drink')
 #' 
 #' @param x \linkS4class{drinkmix} object
 #' 
-#' @param water,water80,water90 \link[base]{numeric} scalars, for [hotdrink]
+#' @param water,water80 \link[base]{numeric} scalars, for [hotdrink]
 #' 
 #' @param ice,iceWater \link[base]{numeric} scalars, for [frappe]
 #' 
@@ -71,12 +70,10 @@ hotdrink.function <- \(x, ...) hotdrink(x = x(), ...)
 #' @export
 hotdrink.drinkmix <- \(
     x, 
-    water = 70,
-    water90 = 560 - 70 - sum(x['_pumpkin$'], x@liqueur, x['_heavyCream$']), 
+    water = c(c22 = 70, c90 = 560 - 70 - sum(x['_pumpkin$'], x@liqueur, x['_heavyCream$'])), 
     ...
 ) {
   x@water <- water
-  x@water90 <- water90
   x@alias <- character(); x@class2 <- '' # '\u70ed\u996e'
   x@tool <- list(Stanley20(treatment = c(
     'add room-temperature water',
@@ -136,8 +133,10 @@ frappe.drinkmix <- \(
     iceWater = ice,
     ...
 ) {
-  x@ice <- ice
-  x@iceWater <- if (length(x['_milk$'])) numeric() else iceWater
+  x@water <- sum_by_name(x@water, c(ice = ice))
+  if (!length(x['_milk$'])) {
+    x@water <- sum_by_name(x@water, c(c0 = iceWater))
+  }
   x@alias <- character(); x@class2 <- 'Frapp\u00e9'
   x@tool <- list(nutribullet24(treatment = c(
     'put in ice cubes \u21d2 powders \u21d2 non-alcoholic liquid',
@@ -175,7 +174,7 @@ setMethod(f = show, signature = 'drinkmix', definition = \(object) {
   z@per <- sprintf(
     fmt = '%s + %.0fg Water, US\U1f4b5 %.2f', 
     z@per, 
-    sum(hot@water, hot@water80, hot@water90, hot@water95),
+    sum(hot@water),
     nutri_@usd)
   print(z)
 })

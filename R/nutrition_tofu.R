@@ -6,7 +6,7 @@ tofu <- \() new(
   sauce_tsp = c(
     Heinz_whiteVinegar = 7
   ),
-  iceWater = 33,
+  water = c(c0 = 33),
   # waterLost = 100, # in coagulation (??)
   tool = list(JoyoungDJ13U(
     treatment = c(

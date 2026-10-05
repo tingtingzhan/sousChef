@@ -16,7 +16,7 @@ setClass(Class = 'shortcrust', contains = 'recipe', prototype = prototype(
   dairy_brick = c(Kerrygold_butter = 1),
   sugar = 7.5,
   # salt_tsp = 1/4,
-  iceWater = 50, # 60g-90g,
+  water = c(c0 = 50), # 60g-90g,
   #instruction (legacy) = c(
   #  'food processor',
   #  'Philips pasta maker'

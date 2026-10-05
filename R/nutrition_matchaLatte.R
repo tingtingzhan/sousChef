@@ -59,7 +59,7 @@ Starbucks_matchaLatteMix <- \() new(
   servingGram = 24, 
   calorie = 103,
   protein = 3.4, fat = 2.8, carbohydrate = 16, sugar = 16, sodium = .13,
-  suggestion = list(water80 = 180))
+  suggestion = list(water = c(c80 = 180)))
 
 
 
@@ -68,7 +68,7 @@ Ippodo_sayakaLatte <- \() new(
   flavor = 'Sayaka Latte', 
   ippodotea = 'sayaka-100g',
   matcha = c(Ippodo_sayaka = 3), # matcha 1.5%
-  water80 = 100, 
+  water = c(c80 = 100), 
   dairy = c(WegmansOrganic_whole_milk = 96))
 
 
@@ -81,7 +81,7 @@ Ippodo_uji_shimizu <- \() new(
   servingGram = 15, servingTbsp = 1.5,
   calorie = 60,
   carbohydrate = 15, addedSugar = 14, 
-  suggestion = list(water80 = 150))
+  suggestion = list(water = c(c80 = 150)))
 
 
 ItoEn_sweet_matcha <- \() new(
@@ -89,7 +89,7 @@ ItoEn_sweet_matcha <- \() new(
   itoen = 'ito-en-matcha-green-tea-sweet-powder-sticks', jfc = '45783',
   name = 'Sweet Matcha',
   servingGram = 12, sugar = 11,
-  suggestion = list(water80 = 120))
+  suggestion = list(water = c(c80 = 120)))
 
 
 

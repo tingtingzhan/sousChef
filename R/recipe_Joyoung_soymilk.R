@@ -85,6 +85,6 @@ veggie_soymilk <- \() new(
   Class = 'soymilk', alias = '\u852c\u83dc\u8c46\u6d46',
   bean = c(Laura_soybean = 100), # weigh and confirm
   puree = c(Kirkland_mixedVeggies = 123), # weigh and confirm
-  water = 1100, # weigh and confirm
+  water = c(c22 = 1100), # weigh and confirm
   pros = 'Nice!')
 

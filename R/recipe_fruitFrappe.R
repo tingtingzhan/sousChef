@@ -21,7 +21,7 @@ strawberry_frappe <- \() new(
 strawberry_frappe0 <- \() new(
   Class = 'fruitFrappe',
   puree = c(Kirkland_strawberry = 275), # yes, cannot pack any tighter!!
-  iceWater = 225, # yes, need that much..
+  water = c(c0 = 225), # yes, need that much..
   #dairy = c(Carnation_drymilk = 25, Nido_drymilk = 15)
   dairy = c(Carnation_drymilk = 30), # before I go to Walmart again..
   cons = c(

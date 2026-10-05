@@ -65,7 +65,7 @@ cocoa_gateau_FAIL <- \() new(
   dairy = c(Wegmans_heavyCream = 180),
   egg_pc = c(eggYolk = 1, eggWhite = 1),
   bakingPowder_tsp = .5,
-  water = 165, # still very dry # boilingWater?
+  water = 165, # still very dry
   # waterLost = 35, # 50 min
   #waterLost = 50, # 65min, need to reconfirm!! (I ate a piece already!) 
   #instruction (legacy) = c(
@@ -117,7 +117,7 @@ AddaPinch_chocolate_cake <- \() new(
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 99),
   vanilla_tsp = c(NielsenMassey_Madagascar = 2),
-  boilingWater = 227)
+  water = c(c100 = 227))
 
 
 #' @rdname gateau-class
@@ -131,7 +131,7 @@ PreppyKitchen_chocolate_cake <- \() new(
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 14*8), # ½ cup vegetable oil (180mL)
   vanilla_Tbsp = c(NielsenMassey_Madagascar = 1),
-  boilingWater = 240,
+  water = c(c100 = 240),
   preppykitchen = c('vI5w-fK25w4' = 'ultimate-chocolate-cake'))
 
 #' @rdname gateau-class

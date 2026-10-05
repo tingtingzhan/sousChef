@@ -30,8 +30,7 @@
 #' @export
 setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
   class2 = '\u6d41\u5fc3\u9985',
-  water = 80,
-  water80 = 640,
+  water = c(c22 = 80, c80 = 640),
   flour = c(Erawan_glutinousRiceFlr = 32),
   gelatin_pc = c(Champion_gold_gelatin = 12)#,
   #instruction (legacy) = c(

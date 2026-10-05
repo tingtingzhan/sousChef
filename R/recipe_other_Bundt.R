@@ -61,7 +61,7 @@ Bundt_OLD1 <- \() new(
 
 PreppyKitchen_chocolate_Bundt <- \() new(
   Class = 'recipe', flavor = 'Chocolate Bundt',
-  water40 = 360,
+  water = c(c40 = 360),
   cocoa_cup = c(Ghirardelli_cocoa = 1.25),
   flour = c(KingArthur_allPurposeFlr = 420),
   sugar_cup = c(Domino_granulated = 2.5),

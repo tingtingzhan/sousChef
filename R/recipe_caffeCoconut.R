@@ -24,7 +24,7 @@ caffeCoconut <- \() new(
   Class = 'caffeCoconut', 
   flavor = 'FreeNow',
   beverage = c(Freenow_coconutBar = 115),
-  water95 = 325, # 596 - 272
+  water = c(c95 = 325), # 596 - 272
   date = as.Date('2026-09-02'),
   review = 'been drinking for >1yr'
   )

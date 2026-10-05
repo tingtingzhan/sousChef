@@ -14,7 +14,7 @@ sweetPotatoNoodle_soaked <- \() new(
   Class = 'soaked',
   flavor = '\u7ea2\u85af\u7c89', 
   misc = c(JayOne_sweetPotato = 300), # weighed
-  boilingWater = 1060 - 300#, # confirmed!!
+  water = c(c100 = 1060 - 300)#, # confirmed!!
   #instruction (legacy) = c(
   #  'prepare 1.2x boiling water',
   #  'remove from heat as long as noodle softens',
@@ -26,5 +26,5 @@ sweetPotatoNoodle_soaked <- \() new(
 #sweetPotatoNoodle <- \() new(
 #  Class = 'recipe',
 #  homemade = c(sweetPotatoNoodle_soaked = 150),
-#  boilingWater = 50
+#  water = c(c100 = 50)
 #)

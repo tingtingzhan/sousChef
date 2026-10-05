@@ -5,7 +5,7 @@
 #' @export
 setClass(Class = 'SodaStream', contains = 'recipe', prototype = prototype(
   class2 = 'SodaStream\u6c7d\u6c34',
-  iceWater = 450
+  water = c(c0 = 450)
 ))
 
 

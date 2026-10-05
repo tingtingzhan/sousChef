@@ -19,9 +19,10 @@
 invertSugar <- \() new(
   Class = 'recipe', 
   flavor = '\u8f6c\u5316\u7cd6\u6d46 Invert Sugar Syrup',
-  sugar = 600, boilingWater = 300, 
+  sugar = 600, 
+  water = c(c22 = 60, c100 = 300), 
   fruit_pc = c(lemon = 1),
-  water = 60, NaHCO3_tsp = 1/4,
+  NaHCO3_tsp = 1/4,
   xiaogaojie = 'ijG7Yn96B-g',
   pros = 'Great!!')
 

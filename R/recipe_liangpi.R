@@ -29,8 +29,7 @@ ricePi <- \() new(
   class2 = '\u7c73\u76ae',
   youtube = 'cditsCOMQ4I', # 1kg dry rice + 500g boiling water
   flour = c(Erawan_riceFlr = 454),
-  water = 300, # experiment! Look at PinNuo's rice paste texture!!
-  boilingWater = 454/2
+  water = c(c22 = 300, c100 = 454/2) # experiment! Look at PinNuo's rice paste texture!!
 )
 
 

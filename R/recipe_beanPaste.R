@@ -93,11 +93,10 @@ redKidneyBeanPaste <- \() new(
 xiaogaojie_adzukiBeanPaste1 <- \() new(
   Class = 'recipe', flavor = '\u7ea2\u8c46\u6c991',
   bean = c(HaiTai_adzukibean = 500),
-  water = 350, # actual water absorbed
+  water = c(c22 = 350), # actual water absorbed
   oil = c(Wegmans_corn_oil = 12),
   sugar = c(Domino_darkBrown = 75),
   homemade = c(invertSugar = 80),
-  #糖（调整量）24克  2 大勺
   salt_tsp = 1/4,
   xiaogaojie = 'mg1XeWsfHoQ')
 

@@ -45,7 +45,7 @@ beefball <- \() new(
   Class = 'meatball',
   meat = c(beef_eyeRound = 500),
   NaHCO3_tsp = 4/16, # 1 Chinese soup spoon 
-  iceWater = 400/16, # looks like
+  water = c(c0 = 400/16), # looks like
   salt_tsp = .5,
   spice = c(McCormick_garlic = 130/16),
   starch_tsp = c(Wegmans_corn_starch = 2.5),
@@ -59,7 +59,7 @@ GaaDai_beefball <- \() new(
   youtube = '5nJKNVBRztM',
   meat = c(beef_eyeRound = 16*500),
   NaHCO3_tsp = 4, # 1 Chinese soup spoon 
-  iceWater = 400, # looks like
+  water = c(c0 = 400), # looks like
   salt = 120,
   msg = c(Ajinomoto_msg = 50),
   spice = c(McCormick_garlic = 130),

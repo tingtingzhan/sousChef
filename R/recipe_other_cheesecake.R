@@ -19,7 +19,7 @@ Junior_cappuccino_cheesecake <- \() new(
   flavor = 'Cappuccino Cheesecake',
   dairy_brick = c(Philadelphia_creamCheese = 4),
   coffee_Tbsp = c(NescafeGold_blonde = 1),
-  boilingWater = 15,
+  water = c(c100 = 15),
   sugar_cup = c(Domino_granulated = 1+2/3),
   starch_cup = c(Wegmans_corn_starch = 1/3),
   vanilla_Tbsp = c(NielsenMassey_Madagascar = 1),

@@ -16,7 +16,7 @@ yuenyeungCoconut <- \() new(
   Class = 'yuenyeungCoconut', 
   #flavor = 'FreeNow',
   beverage = c(Freenow_coconutBar = 180),
-  boilingWater = 255,
+  water = c(c100 = 255),
   dairy = c(Carnation_drymilk = 10),
   coffee_tsp = c(NescafeGold_blonde = 1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
@@ -35,10 +35,9 @@ yuenyeungCoconut_summer <- \() new(
   #flavor = 'FreeNow',
   # beverage = c(Freenow_coconutBar = 560), # was 225*2.5
   beverage = c(Freenow_coconutBar = 450), # try 180*2.5
-  #total water = 210*2.5, # was
-  #total water = 255*2.5, # try
-  boilingWater = 310,
-  ice = 330,
+  #total water = c(c22 = 210*2.5), # was
+  #total water = c(c22 = 255*2.5), # try
+  water = c(c100 = 310, ice = 330),
   dairy = c(Carnation_drymilk = 25),
   coffee_tsp = c(NescafeGold_blonde = 2.5),
   cocoa_tsp = c(KingArthur_Bensdorp = .625),
@@ -71,7 +70,7 @@ yuenyeungCoconut_jelly <- \() new(
   # adding gelatin
   # reducing coconut to fit Stanley JAR + SPORK | 36 OZ
   beverage = c(Freenow_coconutBar = 400),
-  water95 = 530,
+  water = c(c95 = 530),
   gelatin_pc = c(Champion_gold_gelatin = 8),
   dairy = c(Carnation_drymilk = 25),
   coffee_tsp = c(NescafeGold_blonde = 2.5),
@@ -100,7 +99,7 @@ yuenyeungLatte_try2 <- \() new(
   coffee_tsp = c(NescafeGold_blonde = 1.5),
   cocoa_tsp = c(KingArthur_Bensdorp = .5),
   tea_pc = c(Twinings_EnglishBreakfast = 3),
-  boilingWater = 400
+  water = c(c100 = 400)
 )
 
 yuenyeungLatte_try1 <- \() new(
@@ -111,6 +110,6 @@ yuenyeungLatte_try1 <- \() new(
   coffee_tsp = c(NescafeGold_blonde = 1),
   cocoa_tsp = c(KingArthur_Bensdorp = .25),
   tea_pc = c(Twinings_EnglishBreakfast = 2),
-  boilingWater = 400,
+  water = c(c100 = 400),
   cons = c('add flavor')
 )

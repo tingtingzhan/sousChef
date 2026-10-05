@@ -171,7 +171,7 @@ coffee_bread <- \() new(
   Class = 'bread', bread(), 
   coffee_tsp = c(NescafeGold_blonde = 11), 
   dairy = c(Carnation_drymilk = 30), sugar = 40, 
-  water80 = 100, water = 200,
+  water = c(c80 = 100, c22 = 200),
   pros = 'Ethanol from fermentation, tastes like tiramisu!')
 
 

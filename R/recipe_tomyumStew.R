@@ -20,7 +20,7 @@ setClass(Class = 'tomyumStew', contains = 'recipe', prototype = prototype(
 tomyumStew <- \() new(
   Class = 'tomyumStew',
   liqueur = c(Wegmans_Marsala = 25),
-  water = 20,
+  water = c(c22 = 20),
   date = as.Date('2024-08-13'),
   pros = 'I love!!')
 
@@ -31,7 +31,7 @@ tomyumStew <- \() new(
 tomyumStew_Sherry <- \() new(
   Class = 'tomyumStew',
   liqueur = c(Wegmans_Sherry = 20),
-  water = 25,
+  water = c(c22 = 25),
   date = as.Date('2024-05-26'),
   pros = 'also nice')
 
@@ -44,7 +44,7 @@ tomyumStew_redWegmans <- \() new(
   Class = 'tomyumStew',
   liqueur = c(Wegmans_redCookingWine = 30),
   sugar_tsp = 1.5,
-  water = 20,
+  water = c(c22 = 20),
   review = 'try')
   #date = as.Date('2024-05-26'),
   #pros = 'also nice')
@@ -52,6 +52,6 @@ tomyumStew_redWegmans <- \() new(
 tomyumStew_whiteWegmans <- \() new(
   Class = 'tomyumStew',
   liqueur = c(Wegmans_whiteCookingWine = 25),
-  water = 20,
+  water = c(c22 = 20),
   sugar_tsp = 1,
   review = 'try')

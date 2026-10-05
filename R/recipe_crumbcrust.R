@@ -127,7 +127,7 @@ ginger_crumbcrust <- \() new(
   flour = c(Wegmans_pastryFlr = 370), # to have 50% fat:flour
   dairy_brick = c(Kerrygold_butter = 1),
   sugar = 7.5,
-  #iceWater = 50, # 60g-90g,
+  #water = c(c0 = 50), # 60g-90g,
   spice = c(SimplyOrganic_ginger = 10), 
   sugar = 80,
   review = 'try'

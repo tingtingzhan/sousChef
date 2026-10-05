@@ -31,7 +31,7 @@ youtiao <- \() new(
   sugar = 10,
   NaHCO3 = 3,
   bakingPowder = 8,
-  water = 250,
+  water = c(c22 = 250),
   review = 'try'
 )
 
@@ -57,7 +57,7 @@ mathstar_youtiao <- \() new(
   salt = 6,
   oil = c(Wegmans_corn_oil = 30), 
   egg_pc = c(eggYolk = 1, eggWhite = 1),
-  water = 280)
+  water = c(c22 = 280))
 
 
 
@@ -67,7 +67,8 @@ PinNuo_youtiao1 <- \() new(
   flour = c(KingArthur_allPurposeFlr = 500),
   bakingPowder = 6, NaHCO3 = 3, salt = 5, sugar = 5,
   egg_pc = c(eggYolk = 1, eggWhite = 1), 
-  dairy = c(Kerrygold_butter = 30), water = 250)
+  dairy = c(Kerrygold_butter = 30), 
+  water = c(c22 = 250))
 
 
 PinNuo_youtiao2 <- \() new(
@@ -79,7 +80,7 @@ PinNuo_youtiao2 <- \() new(
   salt = 5,
   sugar = 5,
   oil = c(Wegmans_corn_oil = 40), 
-  water = 250)
+  water = c(c22 = 250))
 
 
 PinNuo_youtiao3 <- \() new(
@@ -92,7 +93,7 @@ PinNuo_youtiao3 <- \() new(
   sugar = 8,
   egg_pc = c(eggYolk = 2, eggWhite = 2), 
   oil = c(Wegmans_corn_oil = 60), 
-  water = 480)
+  water = c(c22 = 480))
 
 PinNuo_youtiao4 <- \() new(
   Class = 'recipe', flavor = '\u6cb9\u67614', 
@@ -100,7 +101,8 @@ PinNuo_youtiao4 <- \() new(
   flour = c(KingArthur_allPurposeFlr = 1000),
   yeast = c(Fleischmanns_instant = 10), NaHCO3 = 5, salt = 10, sugar = 8,
   egg_pc = c(eggYolk = 2, eggWhite = 2), 
-  oil = c(Wegmans_corn_oil = 30), water = 500)
+  oil = c(Wegmans_corn_oil = 30), 
+  water = c(c22 = 500))
 
 
 PinNuo_youtiao5 <- \() new(
@@ -111,7 +113,7 @@ PinNuo_youtiao5 <- \() new(
   # youtiao puffing mix = 5
   egg_pc = c(eggYolk = 1, eggWhite = 1), 
   oil = c(Wegmans_corn_oil = 20), 
-  water = 260)
+  water = c(c22 = 260))
 
 PinNuo_youtiao6 <- \() new(
   Class = 'recipe', flavor = '\u6cb9\u67616', 
@@ -122,7 +124,7 @@ PinNuo_youtiao6 <- \() new(
   salt = 5, sugar = 5,
   egg_pc = c(eggYolk = 1, eggWhite = 1), 
   oil = c(Wegmans_corn_oil = 30), 
-  water = 250)
+  water = c(c22 = 250))
 
 PinNuo_youtiao7 <- \() new(
   Class = 'recipe', flavor = '\u6cb9\u67617', 
@@ -133,4 +135,4 @@ PinNuo_youtiao7 <- \() new(
   # youtiao su-cui mix = 8
   egg_pc = c(eggYolk = 2, eggWhite = 2), 
   oil = c(Wegmans_corn_oil = 60), 
-  water = 500)
+  water = c(c22 = 500))

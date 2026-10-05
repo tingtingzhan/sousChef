@@ -16,7 +16,7 @@
 setClass(Class = 'froyo', contains = 'recipe', prototype = prototype(
   class2 = 'Froyo',
   dairy = c(Nancys_yogurt = 680*2), # 2x jar
-  iceWater = 200#, # to confirm
+  water = c(c0 = 200)#, # to confirm
   #instruction (legacy) = c(
   #  'Mix everything with a spatula',
   #  'Turn on the ice cream makers.  Add batter through chute')

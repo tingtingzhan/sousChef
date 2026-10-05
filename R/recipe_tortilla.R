@@ -78,12 +78,12 @@ setClass(Class = 'tortillaLard', contains = 'tortilla', prototype = prototype(
 
 tortillaOlive <- \() new(
   Class = 'tortillaOlive',
-  water = 370, # based on [pumpkin_tortillaOlive]
+  water = c(c22 = 370), # based on [pumpkin_tortillaOlive]
   review = 'A hypothetical model')
 
 tortillaLard <- \() new(
   Class = 'tortillaLard',
-  water = 370,
+  water = c(c22 = 370),
   review = 'A hypothetical model')
 
 
@@ -122,7 +122,7 @@ tomato_tortillaLard <- \() new(
 xiaogaojie_flatbread <- \() new(
   Class = 'recipe', flavor = 'Flatbread',
   flour = c(KingArthur_allPurposeFlr = 300),
-  water = 150+15,
+  water = c(c22 = 150+15),
   yeast_tsp = c(Fleischmanns_instant = 1/4),
   dairy = c(Kerrygold_butter = 40),
   salt_tsp = 1/4,

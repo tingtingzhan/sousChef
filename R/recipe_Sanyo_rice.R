@@ -29,7 +29,7 @@ setClass(Class = 'rice', contains = 'recipe', prototype = prototype(
 rice_Botan <- \() new(
   Class = 'rice', 
   grain = c(Botan_rice = 95*3.75),
-  water = 700, # to confirmed!!
+  water = c(c22 = 700), # to confirmed!!
   # whole bowl: ??
   #pros = 'perfect wetness, brown rice fluffy and soft',
   #date = as.Date('2024-10-15')

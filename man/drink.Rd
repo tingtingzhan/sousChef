@@ -21,8 +21,7 @@ hotdrink(x, ...)
 
 \method{hotdrink}{drinkmix}(
   x,
-  water = 70,
-  water90 = 560 - 70 - sum(x["_pumpkin$"], x@liqueur, x["_heavyCream$"]),
+  water = c(c22 = 70, c90 = 560 - 70 - sum(x["_pumpkin$"], x@liqueur, x["_heavyCream$"])),
   ...
 )
 
@@ -46,7 +45,7 @@ frappe(x, ...)
 
 \item{...}{..}
 
-\item{water, water80, water90}{\link[base]{numeric} scalars, for \link{hotdrink}}
+\item{water, water80}{\link[base]{numeric} scalars, for \link{hotdrink}}
 
 \item{ice, iceWater}{\link[base]{numeric} scalars, for \link{frappe}}
 

@@ -104,7 +104,7 @@ cornbread <- \() new(
   
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   dairy = c(Lucerne_heavyCream = 175), 
-  water95 = 320, # good for muffin; yet to experiment for skillet
+  water = c(c95 = 320), # good for muffin; yet to experiment for skillet
   
   #instruction (legacy) = c(
   #  'mix cornmeal and hot water. Let dough sit for 5min',

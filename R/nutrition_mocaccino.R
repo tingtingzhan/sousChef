@@ -232,7 +232,7 @@ Nestle_richChocolate <- \() new(
   fat = 2, sodium = .19, carbohydrate = 16, sugar = 12, addedSugar = 10,
   suggestion = list(
     #6 fl. oz. hot water or milk
-    water80_cup = 6/8
+    water_cup = c(c80 = 6/8)
   ))
 
 
@@ -245,7 +245,7 @@ Nestle_skimCocoa <- \() new(
   sodium = .135, carbohydrate = 5, sugar = 4, protein = 1,
   suggestion = list(
     # 6 fl. oz. hot water or milk
-    water80_cup = 6/8
+    water_cup = c(c80 = 6/8)
   ))
 
 

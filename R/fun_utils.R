@@ -161,7 +161,25 @@ mergePc <- \(x, which, ...) {
 
 
 
+mergeVol_H2O <- \(x) {
 
+  x_tsp <- sum_by_name(
+    x@water_tsp,
+    3 * x@water_Tbsp,
+    48 * x@water_cup
+  )
+  
+  x@water <- sum_by_name(
+    x@water |> 
+      .addname1(nm = 'c22'),
+    4.92892 * x_tsp # tsp -> ml
+  )
+  x@water_tsp <- numeric()
+  x@water_Tbsp <- numeric() 
+  x@water_cup <- numeric() 
+  return(x)
+  
+}
 
 
 mergeVol <- \(x, which, ...) {
@@ -245,6 +263,17 @@ fmt_vol <- \(x, nm = names(x)) {
     col_br_blue() |> 
     style_bold()
 }
+
+
+fmt_vol_H2O <- \(x) {
+  nx <- length(x)
+  if (!nx) return(character())
+  (x / 4.92892) |> # ml -> tsp
+    cmod(e1 = _, e2 = consec::teaspoon, n = 3L, tol = 1e-6) |>
+    col_br_blue() |> 
+    style_bold()
+}
+
 
 
 
@@ -387,10 +416,57 @@ fmt_pc <- \(x) {
 
 
 
+prt_vol_H2O <- \(x) {
+  
+  if (!length(x)) return(invisible())
+  
+  z <- x |>
+    fmt_vol_H2O()
+  
+  label <- names(x)
+  label[label == 'ice'] <- '\u51b0\u5757' |>
+    col_orchid4() |>
+    sprintf(fmt = '%s Ice\U1f9ca Cubes')
+  label[label == 'c0'] <- '0\u00b0C\u51b0\u6c34' |>
+    col_orchid4() |>
+    sprintf(fmt = '%s Iced Water, 32\u00b0F')
+  label[label == 'c22'] <- '22\u00b0C\u5e38\u6e29\u6c34' |>
+    col_orchid4() |>
+    sprintf(fmt = '%s Water, 72\u00b0F')
+  label[label == 'c40'] <- '40\u00b0C\u6e29\u6c34' |>
+    col_orchid4() |>
+    sprintf(fmt = '%s Warm Water, 104\u00b0F')
+  label[label == 'c70'] <- '70\u00b0C\u70ed\u6c34' |>
+    col_orchid4() |>
+    sprintf(fmt = '%s Hot Water, 160\u00b0F')
+  label[label == 'c80'] <- '80\u00b0C\u70ed\u6c34' |>
+    col_orchid4() |>
+    sprintf(fmt = '%s Hot Water, 175\u00b0F')
+  label[label == 'c90'] <- '90\u00b0C\u70ed\u6c34' |>
+    col_orchid4() |>
+    sprintf(fmt = '%s Hot Water, 195\u00b0F')
+  label[label == 'c95'] <- '95\u00b0C\u70ed\u6c34' |>
+    col_orchid4() |>
+    sprintf(fmt = '%s Hot Water, 203\u00b0F')
+  label[label == 'c100'] <- '100\u00b0C\u5f00\u6c34' |>
+    col_orchid4() |>
+    sprintf(fmt = '%s Boiling Water, 212\u00b0F')
+  
+  sprintf(fmt = '%s %.0f grams %s\n', label, x, z) |>
+    format_inline() |>
+    cat()
+  
+}
+
+
+
+
+
 
 prt_vol <- \(x) {
   
-  if (!length(x)) return(invisible())
+  nx <- length(x)
+  if (!nx) return(invisible())
   
   nm <- x |> 
     names()
@@ -404,7 +480,7 @@ prt_vol <- \(x) {
       length(i@pieceGram) > 0L
     }, FUN.VALUE = NA)
   
-  z <- character(length = length(x))
+  z <- character(length = nx)
   z[id] <- fmt_pc(x[id])
   z[!id] <- fmt_vol(x[!id])
   

@@ -24,8 +24,7 @@ Meyenberg_goat_drymilk <- \() new(
   servingCup = 28/40*(1/4), # actual experiment: 40g = 1/4cup !!!
   calorie = 90,
   cholesterol = .010, sodium = .1, carbohydrate = 12, sugar = 12, protein = 10,
-  suggestion = list(water80_cup = 1))
-  # suggestion = list(water_cup = c(c80 = 1))) # not ready
+  suggestion = list(water_cup = c(c80 = 1)))
 
 
 
@@ -39,7 +38,7 @@ Meyenberg_goatWhole_drymilk <- \() new(
   servingCup = 28/30*(1/4), # actual experiment: 1/4cup = 30g
   calorie = 140,
   fat = 8, cholesterol = .035, sodium = .085, carbohydrate = 10, sugar = 10, protein = 7,
-  suggestion = list(water80_cup = 1))
+  suggestion = list(water_cup = c(c80 = 1)))
 
 
 
@@ -55,7 +54,7 @@ Carnation_drymilk <- \() new(
   servingCup = 23/87, # actual experiment: 1 cup = 87 gram
   calorie = 80,
   cholesterol = .005, sodium = .095, carbohydrate = 12, sugar = 12, protein = 8,
-  suggestion = list(water80_cup = 1))
+  suggestion = list(water_cup = c(c80 = 1)))
 
 
 
@@ -78,7 +77,7 @@ Nido_drymilk <- \() new(
   walmart = '14869811', usd = 19.98/1600*30, # 2023-11-11
   servingGram = 30, servingCup = 1/4,
   fat = 8, sodium = .105, carbohydrate = 11, sugar = 11, protein = 8,
-  suggestion = list(water80_cup = 1))
+  suggestion = list(water_cup = c(c80 = 1)))
 
 
 
@@ -114,7 +113,7 @@ GreatValue_drymilk <- \() new(
   servingCup = 1/3,
   calorie = 80,
   cholesterol = .005, sodium = .125, carbohydrate = 12, sugar = 12, protein = 8,
-  suggestion = list(water80_cup = 7/8))
+  suggestion = list(water_cup = c(c80 = 7/8)))
 
 
 
@@ -127,7 +126,7 @@ MembersMark_drymilk <- \() new(
   servingCup = 1/3, # packaging
   calorie = 80,
   cholesterol = .005, sodium = .125, carbohydrate = 12, sugar = 12, protein = 8,
-  suggestion = list(water80_cup = 7/8))
+  suggestion = list(water_cup = c(c80 = 7/8)))
 
 
 
@@ -154,7 +153,7 @@ Horizon_whole_drymilk <- \() new(
   servingGram = 29, servingCup = 1/4, # packaging
   calorie = 140,
   fat = 8, cholesterol = .030, sodium = .105, carbohydrate = 11, sugar = 10, protein = 8,
-  suggestion = list(water80_cup = 1))
+  suggestion = list(water_cup = c(c80 = 1)))
 
 
 # skim

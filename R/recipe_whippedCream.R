@@ -39,7 +39,7 @@
 #' nutritionlist(
 #'  new(Class = 'recipe', class2 = 'Mascarpone\u88f1\u82b1', 
 #'  dairy_cup = c(BelGioioso_mascarpone = 1),
-#'  water = 70, 
+#'  water = c(c22 = 70), 
 #'  sugar_tsp = 10.5, 
 #'  matcha_tsp = c(Sencha_everyday_matcha = 4), 
 #'  pros = 'Effie\'s Signature!'),
@@ -48,7 +48,7 @@
 #'  
 #'  new(Class = 'recipe', class2 = 'Mascarpone\u5976\u6cb9\u971c',
 #'  dairy_cup = c(BelGioioso_mascarpone = 1),
-#'  water = 110, 
+#'  water = c(c22 = 110), 
 #'  sugar_tsp = 11.5, 
 #'  matcha_tsp = c(Sencha_everyday_matcha = 4.5), 
 #'  pros = 'Xu Chang, Gloria', 
@@ -186,7 +186,7 @@ matcha_frosting <- \() new(
 matcha_ganache <- \() new(
   Class = 'ganache', 
   # sugar = 30, matcha_tsp = c(Sencha_everyday_matcha = 4), # too hard after chilled
-  water = 15, sugar = 32, matcha_tsp = c(Sencha_everyday_matcha = 4), # try
+  water = c(c22 = 15), sugar = 32, matcha_tsp = c(Sencha_everyday_matcha = 4), # try
   review = 'try')
 
 
@@ -290,7 +290,7 @@ if (FALSE) {
     class2 = 'Mascarpone\u5976\u6cb9\u971c',
     dairy_cup = c(BelGioioso_mascarpone = 1),
     liqueur_Tbsp = c(Kahlua_coffee = 2),
-    water = 47,
+    water = c(c22 = 47),
     sugar_tsp = 4.5,
     pros = 'I like')
 }
@@ -406,7 +406,7 @@ setClass(Class = 'whippedCreamCheese', contains = 'recipe', prototype = prototyp
 #' @export
 whippedCreamCheese <- \() new(
   Class = 'whippedCreamCheese', 
-  water = 40, # needs to experiment!!
+  water = c(c22 = 40), # needs to experiment!!
   sugar = 12,
   review = 'a hypothetical model')
 

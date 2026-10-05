@@ -106,25 +106,7 @@ Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{water,water_tsp,water_Tbsp,water_cup}}{\link[base]{numeric} scalar, weight of water (in grams)}
 
-\item{\code{water_ext}}{\link[base]{numeric} scalar, weight of extra water (in grams) to hydrate powders in a dough}
-
-\item{\code{water40}}{\link[base]{numeric} scalar, weight of warm (100F–110F, 37.8C-43.3C) water (in grams)}
-
-\item{\code{water70}}{\link[base]{numeric} scalar, weight of hot (70C-75C) water (in grams)}
-
-\item{\code{water80,water80_tsp,water80_Tbsp,water80_cup}}{\link[base]{numeric} scalar, weight of hot (80C, 175F) water (in grams)}
-
-\item{\code{water90}}{\link[base]{numeric} scalar, weight of hot (90C, 195F) water (in grams)}
-
-\item{\code{water95}}{\link[base]{numeric} scalar, weight of hot (95C, 203F) water (in grams)}
-
-\item{\code{boilingWater}}{\link[base]{numeric} scalar, weight of boiling water (in grams)}
-
-\item{\code{iceWater}}{\link[base]{numeric} scalar, weight of ice water (in grams)}
-
 \item{\code{carbonatedWater}}{\link[base]{numeric} scalar, weight of carbonated water (in grams)}
-
-\item{\code{ice}}{\link[base]{numeric} scalar, weight of ice (in grams)}
 
 \item{\code{sauce,sauce_tsp,sauce_Tbsp,sauce_cup}}{\link[base]{numeric} vector, weight (in grams) and volume of one or more sauces}
 

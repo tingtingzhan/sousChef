@@ -3,14 +3,16 @@
 
 
 Stonewall_Bourbon_syrup <- \() new(
-  Class = 'nutrition',  stonewall = 553167L,
+  Class = 'nutrition',  
+  stonewall = '553167',
   name = 'Bourbon Barrel-Aged Maple\U1f341 Syrup',
   usd = 19.95/250*30, # 2023-11-11
   servingGram = 40, servingTbsp = 2, #serving_ml = 30,
   sodium = .005, addedSugar = 24)
 
 Stonewall_maple_syrup <- \() new(
-  Class = 'nutrition',  stonewall = 170801L,
+  Class = 'nutrition',  
+  stonewall = '170801',
   name = 'Maine Maple\U1f341 Syrup', alias = '\u67ab\u7cd6',
   # servingGram = 60, servingCup = 1/4, sodium = .005, addedSugar = 36) # webpage
   # empty bottle 253g
@@ -19,14 +21,16 @@ Stonewall_maple_syrup <- \() new(
   sodium = .005, addedSugar = 24) # bottle label, I tasted it and think this is correct
 
 Stonewall_blueberry_syrup <- \() new(
-  Class = 'nutrition',  stonewall = 170802L,
+  Class = 'nutrition',  
+  stonewall = '170802',
   name = 'Wild Maine Blueberry\U1fad0 Syrup', alias = '\u84dd\u8393\u7cd6\u6d46',
   usd = 8.95/250*60, # 2023-11-11
   servingGram = 80, servingCup = 1/4, #serving_ml = 60,
   addedSugar = 34)
 
 Stonewall_raspberry_syrup <- \() new(
-  Class = 'nutrition',  stonewall = 170804L,
+  Class = 'nutrition',  
+  stonewall = '170804',
   name = 'Raspberry Syrup', alias = '\u8986\u76c6\u5b50\u7cd6\u6d46',
   # full bottle 580g
   usd = 9.95/250*60, # 2023-11-11
@@ -36,12 +40,14 @@ Stonewall_raspberry_syrup <- \() new(
 
 
 Stonewall_fig <- \() new(
-  Class = 'nutrition',  stonewall = 100825L,
+  Class = 'nutrition',  
+  stonewall = '100825',
   name = 'Classic Fig Jam, Organic',
   servingGram = 21, sodium = .01, sugar = 11, review = 'okay')
 
 Stonewall_figWalnut <- \() new(
-  Class = 'nutrition',  stonewall = 161014L,
+  Class = 'nutrition',  
+  stonewall = '161014',
   name = 'Fig & Walnut Butter', alias = '\u6838\u6843\u65e0\u82b1\u679c\u9171',
   servingGram = 15, servingTbsp = 1,
   usd = 9.50/361*15,
@@ -49,35 +55,40 @@ Stonewall_figWalnut <- \() new(
   carbohydrate = 9, sugar = 8, addedSugar = 6)#, review = 'okay')
 
 Stonewall_mimosa <- \() new(
-  Class = 'nutrition',  stonewall = 101340L,
+  Class = 'nutrition',
+  stonewall = '101340',
   name = 'Mimosa Jam',
   servingGram = 19, sugar = 10, review = 'super nice to eat directly!')
 
 
 
 Stonewall_apricot <- \() new(
-  Class = 'nutrition',  stonewall = 101328L,
+  Class = 'nutrition',  
+  stonewall = '101328',
   name = 'Apricot Jam',
   servingGram = 15, sugar = 7, review = 'okay')
 
 
 
 Stonewall_wildBlueberryJam <- \() new(
-  Class = 'nutrition',  stonewall = 101305L,
+  Class = 'nutrition',  
+  stonewall = '101305',
   name = 'Wild Maine Blueberry\U1fad0 Jam',
   servingGram = 15, sugar = 7, review = 'Nice!')
 
 
 
 Stonewall_raspberryJam <- \() new(
-  Class = 'nutrition',  stonewall = 101339L,
+  Class = 'nutrition',  
+  stonewall = '101339',
   servingGram = 19, sugar = 10,
   review = 'Not good for cooking, purely pectin.  Do not buy non-seedless version!')
 
 
 
 Stonewall_blackRaspberry <- \() new(
-  Class = 'nutrition',  stonewall = 101353L,
+  Class = 'nutrition',  
+  stonewall = '101353',
   servingGram = 15, sugar = 8, review = 'try.  Do not buy non-seedless version!')
 
 
@@ -87,7 +98,7 @@ Stonewall_blackRaspberry <- \() new(
 Stonewall_lemonHerbAioli <- \() new(
   Class = 'nutrition',  
   name = 'Lemon Herb Aioli',
-  stonewall = 111310L,
+  stonewall = '111310',
   servingGram = 15, fat = 10, sodium = .105, review = 'I like it.')
 
 
@@ -95,7 +106,7 @@ Stonewall_lemonHerbAioli <- \() new(
 Stonewall_basilPestoAioli <- \() new(
   Class = 'nutrition',  
   name = 'Basil Pesto Aioli',
-  stonewall = 111314L,
+  stonewall = '111314',
   servingGram = 13, fat = 9, sodium = .085, review = 'Not crazy about it')
 
 
@@ -103,7 +114,7 @@ Stonewall_basilPestoAioli <- \() new(
 Stonewall_srirachaAioli <- \() new(
   Class = 'nutrition',  
   name = 'Sriracha Aioli',
-  stonewall = 111317L,
+  stonewall = '111317',
   servingGram = 14, fat = 8, sodium = .08, review = 'love it!!')
 
 
@@ -111,7 +122,7 @@ Stonewall_srirachaAioli <- \() new(
 Stonewall_horseradishCreamSauce <- \() new(
   Class = 'nutrition',  
   name = 'Horseradish Cream Sauce',
-  stonewall = 551900L,
+  stonewall = '551900',
   servingGram = 31, fat = 4.5, sodium = .11, sugar = 2, protein = 1, review = 'love it!!')
 
 

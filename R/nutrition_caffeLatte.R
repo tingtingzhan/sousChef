@@ -1,6 +1,6 @@
 
 Starbucks_caffeLatte <- \() new(
-  Class = 'nutrition',  starbucks_hot = 407L,
+  Class = 'nutrition', starbucks_hot = '407',
   name = 'Caff\u00e8 Latte',
   servingGram = 470, serving_floz = 16,
   #caffeine 150 mg*

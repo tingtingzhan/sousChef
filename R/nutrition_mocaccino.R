@@ -55,7 +55,7 @@ WilliamsSonoma_mocha <- \() new(
 
 
 Starbucks_mocha <- \() new(
-  Class = 'nutrition',  starbucks_hot = 408L,
+  Class = 'nutrition', starbucks_hot = '408',
   name = 'Caff\u00e8 Mocha',
   servingGram = 470, serving_floz = 16,
   #caffeine 175 mg*
@@ -66,7 +66,8 @@ Starbucks_mocha <- \() new(
 
 
 Starbucks_mochaFrappuccino <- \() new(
-  Class = 'nutrition',  starbucks_iced = 426L,
+  Class = 'nutrition',
+  starbucks_iced = '426',
   name = 'Mocha Frappuccino',
   servingGram = 470, serving_floz = 16,
   calorie = 370,
@@ -251,7 +252,8 @@ Nestle_skimCocoa <- \() new(
 
 
 KingArthur_milkChocolate <- \() new(
-  Class = 'nutrition',  kingarthur = 212571L,
+  Class = 'nutrition',  
+  kingarthur = '212571',
   name = 'Milk Hot Chocolate',
   usd = 12.95/510*28,
   servingGram = 28, servingTbsp = 4,

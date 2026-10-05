@@ -82,7 +82,8 @@ Nido_drymilk <- \() new(
 
 
 KingArthur_baker_drymilk <- \() new(
-  Class = 'nutrition',  kingarthur = 213100L,
+  Class = 'nutrition',  
+  kingarthur = '213100',
   name = 'Baker\'s Special Dry Milk', alias = '\u8131\u8102\u5976\u7c89',
   usd = 12.95/454*28, # 2023-11-11
   servingGram = 28, 
@@ -94,7 +95,8 @@ KingArthur_baker_drymilk <- \() new(
 
 
 KingArthur_drymilk <- \() new(
-  Class = 'nutrition',  kingarthur = 211706L,
+  Class = 'nutrition',  
+  kingarthur = '211706',
   name = 'Dried Whole Milk', alias = '\u5168\u8102\u5976\u7c89',
   usd = 12.95/397*6, # 2023-11-11
   servingGram = 6, 

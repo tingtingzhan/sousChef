@@ -69,9 +69,9 @@ Nutrition information.
 
 \item{\code{costco,costcoBiz}}{\link[base]{character} scalar. Costco product ID may be too long for \link[base]{integer}}
 
-\item{\code{giantfood}}{\link[base]{integer} scalar}
+\item{\code{giantfood}}{\link[base]{character} scalar}
 
-\item{\code{lucerne}}{\link[base]{integer} scalar}
+\item{\code{lucerne}}{\link[base]{character} scalar}
 
 \item{\code{sams}}{\link[base]{character} scalar, Sam's Club ID}
 
@@ -167,7 +167,7 @@ Nutrition information.
 
 \item{\code{kikkomanusa}}{\link[base]{character} scalar}
 
-\item{\code{kingarthur,kingarthurpro}}{\link[base]{integer} scalars}
+\item{\code{kingarthur,kingarthurpro}}{\link[base]{character} scalars}
 
 \item{\code{kraftheinzawayfromhome,philadelphia}}{\link[base]{character} scalars}
 
@@ -190,6 +190,8 @@ Nutrition information.
 \item{\code{meyenberg}}{\link[base]{character} scalar}
 
 \item{\code{mizkanjpn,mizkanusa}}{\link[base]{character} scalars}
+
+\item{\code{mortonsalt}}{\link[base]{character} scalar}
 
 \item{\code{nancysyogurt}}{\link[base]{character} scalar}
 
@@ -223,11 +225,11 @@ Nutrition information.
 
 \item{\code{starbucks}}{\link[base]{character} scalar}
 
-\item{\code{starbucks_hot,starbucks_iced}}{\link[base]{integer} scalars}
+\item{\code{starbucks_hot,starbucks_iced}}{\link[base]{character} scalars}
 
 \item{\code{stassentea}}{\link[base]{character} scalar}
 
-\item{\code{stonewall}}{\link[base]{integer} scalar}
+\item{\code{stonewall}}{\link[base]{character} scalar}
 
 \item{\code{stonyfield}}{\link[base]{character} scalar}
 

@@ -562,7 +562,7 @@ LandOLakes_whippedHeavyCream <- \() new(
 Lucerne_lightCream <- \() new(
   Class = 'nutrition',  
   name = 'Light Cream',
-  lucerne = 960044744L, usd = 3.19/32,
+  lucerne = '960044744', usd = 3.19/32,
   servingGram = 15, servingTbsp = 1,
   calorie = 30,
   water = 15*.635,
@@ -575,7 +575,7 @@ Lucerne_heavyCream <- \() new(
   Class = 'nutrition',  
   name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
   fdc = 170859L,
-  lucerne = 136150034L, usd = 3.19/32, # disappeared?
+  lucerne = '136150034', usd = 3.19/32, # disappeared?
   servingGram = 240/16, servingTbsp = 1, # actual experiment: 1 cup = 240g
   calorie = 50,
   water = 15*.577,

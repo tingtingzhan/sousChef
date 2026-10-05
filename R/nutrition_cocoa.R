@@ -44,7 +44,8 @@ OrganicTraditions_cacao <- \() new(
 
 
 KingArthur_blackCocoa <- \() new(
-  Class = 'nutrition',  kingarthur = 211821L, 
+  Class = 'nutrition',  
+  kingarthur = '211821', 
   name = 'Black Cocoa', alias = '\u9ed1\u53ef\u53ef\u7c89',
   usd = 14.95/397*5, # 2023-11-12
   servingGram = 5, 
@@ -59,7 +60,8 @@ KingArthur_blackCocoa <- \() new(
 
 
 KingArthur_Bensdorp <- \() new(
-  Class = 'nutrition',  kingarthur = 211698L,
+  Class = 'nutrition',  
+  kingarthur = '211698',
   name = 'Bensdorp Cocoa', alias = '\u53ef\u53ef\u7c89',
   usd = 14.95/397*6, # 2023-11-12
   servingGram = 6, 
@@ -71,7 +73,8 @@ KingArthur_Bensdorp <- \() new(
 
 
 KingArthur_Burgundy <- \() new(
-  Class = 'nutrition',  kingarthur = 211822L,
+  Class = 'nutrition',  
+  kingarthur = '211822',
   name = 'Burgundy Cocoa', alias = '\u53ef\u53ef\u7c89',
   usd = 14.95/397*5, # 2023-11-12
   servingGram = 5, 

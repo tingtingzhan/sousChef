@@ -34,7 +34,7 @@ TraderJoes_matchaLatte <- \() new(
 
 
 Starbucks_matchaLatte <- \() new(
-  Class = 'nutrition',  starbucks_hot = 468L,
+  Class = 'nutrition', starbucks_hot = '468',
   name = 'Matcha\U1f375 Latte',
   servingGram = 450, serving_floz = 16,
   usd = 4.95, # Spring 2024
@@ -43,7 +43,7 @@ Starbucks_matchaLatte <- \() new(
 
 
 Starbucks_matchaFrappuccino <- \() new(
-  Class = 'nutrition',  starbucks_iced = 439L,
+  Class = 'nutrition', starbucks_iced = '439',
   name = 'Matcha\U1f375 Frappuccino',
   servingGram = 450, serving_floz = 16,
   usd = 5.45, # Spring 2024

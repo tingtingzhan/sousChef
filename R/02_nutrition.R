@@ -21,8 +21,8 @@
 #' @slot amazon \link[base]{character} scalar, amazon ID
 #' @slot bjs \link[base]{character} scalar, BJ's ID
 #' @slot costco,costcoBiz \link[base]{character} scalar. Costco product ID may be too long for \link[base]{integer}
-#' @slot giantfood \link[base]{integer} scalar
-#' @slot lucerne \link[base]{integer} scalar
+#' @slot giantfood \link[base]{character} scalar
+#' @slot lucerne \link[base]{character} scalar
 #' @slot sams \link[base]{character} scalar, Sam's Club ID
 #' @slot target \link[base]{character} scalar, Target ID
 #' @slot totalwine \link[base]{character} scalar
@@ -71,7 +71,7 @@
 #' @slot kahlua \link[base]{character} scalar
 #' @slot kerrygold,kerrygoldusa \link[base]{character} scalar
 #' @slot kikkomanusa \link[base]{character} scalar
-#' @slot kingarthur,kingarthurpro \link[base]{integer} scalars
+#' @slot kingarthur,kingarthurpro \link[base]{character} scalars
 #' @slot kraftheinzawayfromhome,philadelphia \link[base]{character} scalars
 #' @slot krusteaz \link[base]{character} scalar
 #' @slot landolakes \link[base]{character} scalar
@@ -100,9 +100,9 @@
 #' @slot simplyorganic \link[base]{character} scalar
 #' @slot sodastream \link[base]{character} scalar
 #' @slot starbucks \link[base]{character} scalar
-#' @slot starbucks_hot,starbucks_iced \link[base]{integer} scalars
+#' @slot starbucks_hot,starbucks_iced \link[base]{character} scalars
 #' @slot stassentea \link[base]{character} scalar
-#' @slot stonewall \link[base]{integer} scalar
+#' @slot stonewall \link[base]{character} scalar
 #' @slot stonyfield \link[base]{character} scalar
 #' @slot swiftmeats \link[base]{character} scalar
 #' @slot swissmiss \link[base]{character} scalar
@@ -164,12 +164,6 @@ setClass(Class = 'nutrition', slots = c(
   
   suggestion = 'list',
   
-  giantfood = 'integer',
-  kingarthur = 'integer', kingarthurpro = 'integer',
-  lucerne = 'integer',
-  starbucks_hot = 'integer', starbucks_iced = 'integer',
-  stonewall = 'integer',
-  
   fdc = 'integer',
   
   rep_names('character', nm = c(
@@ -179,6 +173,7 @@ setClass(Class = 'nutrition', slots = c(
     'acme', 'amazon',
     'bjs',
     'costco', 'costcoBiz',
+    'giantfood',
     'kraftheinzawayfromhome', 
     'sams',
     'target', 'totalwine', 'traderjoes',
@@ -194,15 +189,15 @@ setClass(Class = 'nutrition', slots = c(
     'haagendazs', 'haitaiusa', 'harney', 'heinz', 'hellmanns', 'horizon',
     'ippodoglobal', 'ippodojpn', 'ippodousa', 'itoen',
     'jayone', 'jfc', 'juniorscheesecake', 'justtea',
-    'kahlua', 'kerrygold', 'kerrygoldusa', 'kikkomanusa', 'krusteaz',
-    'landolakes', 'leaperrins', 'lkkhk', 'lkkusa',
+    'kahlua', 'kerrygold', 'kerrygoldusa', 'kikkomanusa', 'kingarthur', 'kingarthurpro', 'krusteaz',
+    'landolakes', 'leaperrins', 'lkkhk', 'lkkusa', 'lucerne',
     'maeda', 'marukyu', 'mccormick', 'mccormickculinary', 'meyenberg', 'mizkanjpn', 'mizkanusa', 'mortonsalt',
     'nanak', 'nancysyogurt', 'navitas', 'nescafeGold', 'nestle', 'nido', 'nielsenmassey', 'nishiki',
     'oldbay', 'oreo', 'organicvalley',
     'paromi', 'philadelphia',
     'quakeroats',
     'raos', 'runamok',
-    'sanford', 'siggis', 'simplyorganic', 'sodastream', 'starbucks', 'stassentea', 'stonyfield', 'swiftmeats', 'swissmiss',
+    'sanford', 'siggis', 'simplyorganic', 'sodastream', 'starbucks', 'starbucks_hot', 'starbucks_iced', 'stassentea', 'stonewall', 'stonyfield', 'swiftmeats', 'swissmiss',
     'thaikitchen', 'tsemporium', 'twinings',
     'wesson', 'whistlepigwhiskey',
     'yaomazi', 'yogi', 'youjia'
@@ -216,27 +211,29 @@ setClass(Class = 'nutrition', slots = c(
   superior = 'character',
   contain = 'character',
   
-  servingGram = 'numeric', serving_oz = 'numeric', serving_lb = 'numeric',
-  servingCup = 'numeric', servingTbsp = 'numeric', servingTsp = 'numeric',
-  #servingBag = 'numeric',
-  serving_floz = 'numeric',
-  serving_ml = 'numeric',
-  pieceGram = 'numeric', piece_fmt = 'character',
-  
-  usd = 'numeric',
-  jpy = 'numeric',
+  piece_fmt = 'character',
   date = 'Date',
   cost_ = 'character',
-  calorie = 'numeric',
-  water = 'numeric',
-  carbohydrate = 'numeric',
-  fiber = 'numeric', sugar = 'numeric', addedSugar = 'numeric',
-  fat = 'numeric',
-  cholesterol = 'numeric',
-  sodium = 'numeric',
-  protein = 'numeric',
-  alcohol = 'numeric', AbV = 'numeric',
-  portion = 'numeric'
+  
+  rep_names('numeric', nm = c(
+    'servingGram', 'serving_oz', 'serving_lb',
+    'servingCup', 'servingTbsp', 'servingTsp',
+    # 'servingBag',
+    'serving_floz', 'serving_ml',
+    'pieceGram', 
+    
+    'usd', 'jpy',
+    'calorie',
+    'water',
+    'carbohydrate', 'fiber', 'sugar', 'addedSugar',
+    'fat',
+    'cholesterol',
+    'sodium',
+    'protein',
+    'alcohol', 'AbV',
+    
+    'portion'
+  ))
 ), prototype = prototype(
   piece_fmt = '%.1gpcs',
   machine = \(x) NULL,
@@ -335,7 +332,9 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     add_brand_url(name = 'justtea', fmt = 'https://shop.wegmans.com/product/%s', text = 'Just Tea\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'kahlua', fmt = 'https://www.kahlua.com/en-us/products/%s', text = 'Kahlu\u0301a\U1f1f2\U1f1fd') |> 
     add_brand_url(name = 'kikkomanusa', fmt = 'https://kikkomanusa.com/foodservice/products/%s', text = 'Kikkoman\u4e80\u7532\u842c\U1f1ef\U1f1f5') |> 
-    add_brand_url(name = 'kingarthur', fmt = 'https://www.kingarthurbaking.com/search?query=%d', text = 'King Arthur\U1f1fa\U1f1f8') |> 
+    add_brand_url(name = 'kingarthur', fmt = 'https://www.kingarthurbaking.com/search?query=%s', text = 'King Arthur\U1f1fa\U1f1f8') |> 
+    add_brand_url(name = 'kingarthurpro', fmt = 'https://www.kingarthurbaking.com/pro/products/%s', text = 'King Arthur\U1f1fa\U1f1f8') |> 
+    # url: https://www.kingarthurbaking.com/pro/products
     add_brand_url(name = 'philadelphia', fmt = 'https://www.kraftheinz.com/philadelphia/products/%s', text = 'Philadelphia\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'krusteaz', fmt = 'https://www.krusteaz.com/products/%s', text = 'Krusteaz\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'landolakes', fmt = 'https://www.landolakes.com/products/%s', text = 'Land O Lakes\U1f1fa\U1f1f8') |> 
@@ -372,7 +371,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     add_brand_url(name = 'starbucks_hot', fmt = 'https://www.starbucks.com/menu/product/%s/hot/nutrition', text = 'Starbucks\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'starbucks_iced', fmt = 'https://www.starbucks.com/menu/product/%s/iced/nutrition', text = 'Starbucks\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'stassentea', fmt = 'https://www.stassentea.com/shop-now/%s', text = 'Stassen\U1f1f1\U1f1f0') |> 
-    add_brand_url(name = 'stonewall', fmt = 'https://www.stonewallkitchen.com/%d.html', text = 'Stonewall Kitchen\U1f1fa\U1f1f8') |> 
+    add_brand_url(name = 'stonewall', fmt = 'https://www.stonewallkitchen.com/%s.html', text = 'Stonewall Kitchen\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'stonyfield', fmt = 'https://www.stonyfield.com/products/%s', text = 'Stonyfield\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'swiftmeats', fmt = 'https://swiftmeats.com/products/%s', text = 'Swift\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'swissmiss', fmt = 'https://www.swissmiss.com/%s', text = 'Swiss Miss\U1f1fa\U1f1f8') |> 
@@ -403,10 +402,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
       if (length(x@kerrygoldusa)) {
         paste0(kg_, brand_url(x, name = 'kerrygoldusa', fmt = 'https://www.kerrygoldusa.com/products/%s', text = '\U1f1fa\U1f1f8'))
       } else kg_
-    } else if (length(x@kingarthurpro)) {
-      'https://www.kingarthurbaking.com/pro/products' |>
-        style_hyperlink(text = 'King Arthur\U1f1fa\U1f1f8') |> 
-        c()
     } else if (length(x@marukyu)) {
       x@url <- c(x@url, style_hyperlink(url = 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf', text = '2024 Catalog'))
       paste(
@@ -428,7 +423,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     add_store_url_(name = 'bjs', fmt = 'https://www.bjs.com/product/%s', store_brand = 'BJ\'s', store_name = 'BJ\'s') |> # Wellsley Farms and Berkley Jensen
     add_store_url_(name = 'costco', fmt = 'https://www.costco.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco') |>
     add_store_url_(name = 'costcoBiz', fmt = 'https://www.costcobusinessdelivery.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco Business Delivery') |>
-    #if (length(x@giantfood)) x@brand <- 'Giant Food\U1f1fa\U1f1f8'
+    # add_store_url_(name = 'giantfood', fmt = '???', store_brand = 'Giant Food\U1f1fa\U1f1f8') |>
     add_store_url_(name = 'jfc', fmt = 'https://www.jfc.com/product/item/%s', store_brand = NA_character_, store_name = 'JFC International Inc.') |>
     add_store_url_(name = 'kraftheinzawayfromhome', fmt = 'https://www.kraftheinzawayfromhome.com/products/%s', store_brand = NA_character_, store_name = 'Kraft Heinz Away From Home\U1f1fa\U1f1f8') |>
     add_store_url_(name = 'lucerne', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Lucerne\U1f1fa\U1f1f8') |>

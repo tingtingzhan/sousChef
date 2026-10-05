@@ -51,7 +51,8 @@ BobsRedMill_cornbreadMix <- \() new(
 
 
 Stonewall_cornbreadMix <- \() new(
-  Class = 'nutrition',  stonewall = 552594L, usd = 7.95/12,
+  Class = 'nutrition',  
+  stonewall = '552594', usd = 7.95/12,
   name = 'Cornbread Mix',
   servingGram = 38,
   calorie = 140,

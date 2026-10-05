@@ -57,7 +57,8 @@ Wegmans_wheatFlr <- \() new(
 # https://shop.kingarthurbaking.com/items/100-organic-whole-wheat-flour # 13.8% protein content
 
 KingArthur_whiteWheat <- \() new(
-  Class = 'nutrition',  kingarthur = 305555L,
+  Class = 'nutrition',  
+  kingarthur = '305555',
   name = 'White Whole Wheat Flour', alias = '12.2%\u767d\u5168\u9ea6\u9762\u7c89',
   # https://shop.kingarthurbaking.com/items/stone-ground-white-whole-wheat-flour # 12.2% protein content
   usd = 6.95/2270*30,
@@ -67,7 +68,8 @@ KingArthur_whiteWheat <- \() new(
   fat = 1, carbohydrate = 22, protein = 30*.122)
 
 KingArthur_whiteWheat_organic <- \() new(
-  Class = 'nutrition',  kingarthur = 308102L,
+  Class = 'nutrition',  
+  kingarthur = '308102',
   name = 'White Whole Wheat Flour, Organic', alias = '12.2%\u767d\u5168\u9ea6\u9762\u7c89',
   usd = 10.95/2270*30,
   servingGram = 28, 
@@ -77,7 +79,8 @@ KingArthur_whiteWheat_organic <- \() new(
 
 
 KingArthur_organic_breadFlr <- \() new(
-  Class = 'nutrition',  kingarthur = 308104L, 
+  Class = 'nutrition',  
+  kingarthur = '308104', 
   name = 'Bread\U1f35e Flour, Organic', alias = '12.7%\u9ad8\u7b4b\u9762\u7c89',
   usd = 10.95/2270*30,
   servingGram = 30, 
@@ -86,7 +89,8 @@ KingArthur_organic_breadFlr <- \() new(
   carbohydrate = 23, protein = 30*.127) # 12.7% protein content
 
 KingArthur_breadFlr <- \() new(
-  Class = 'nutrition',  kingarthur = 304105L, 
+  Class = 'nutrition',  
+  kingarthur = '304105', 
   name = 'Bread\U1f35e Flour', alias = '12.7%\u9ad8\u7b4b\u9762\u7c89',
   usd = 6.95/2270*30,
   servingGram = 30, 
@@ -96,7 +100,8 @@ KingArthur_breadFlr <- \() new(
   carbohydrate = 23, protein = 30*.127) # 12.7% protein content
 
 KingArthur_highGluten <- \() new(
-  Class = 'nutrition',  kingarthur = 100185L, 
+  Class = 'nutrition',  
+  kingarthur = '100185', 
   name = 'High-Gluten Flour', alias = '14.2%\u9ad8\u7b4b\u9762\u7c89',
   usd = 12.95/1360*30,
   servingGram = 30, servingCup = 1/4, 
@@ -105,7 +110,7 @@ KingArthur_highGluten <- \() new(
 
 KingArthur_Lancelot <- \() new(
   Class = 'nutrition',  webstaurant = '104NFL5100S',
-  kingarthurpro = 13050L,
+  kingarthurpro = 'sir-lancelot',
   name = 'Sir Lancelot', alias = '14%\u9ad8\u7b4b\u9762\u7c89',
   usd = 28.49/(50*454)*100,
   servingGram = 100, servingCup = (100/30)*(1/4), # using [KingArthur_breadFlr] info
@@ -114,7 +119,7 @@ KingArthur_Lancelot <- \() new(
 
 KingArthur_Galahad <- \() new(
   Class = 'nutrition',  webstaurant = '104NFL5110S',
-  kingarthurpro = 12050L,
+  kingarthurpro = 'sir-galahad',
   name = 'Sir Galahad', alias = '11.7%\u4e2d\u7b4b\u9762\u7c89',
   usd = 25.14/(50*454)*100,
   servingGram = 100, 
@@ -123,7 +128,8 @@ KingArthur_Galahad <- \() new(
 
 
 KingArthur_allPurposeFlr <- \() new(
-  Class = 'nutrition',  kingarthur = 301050L, 
+  Class = 'nutrition',  
+  kingarthur = '301050', 
   name = 'All-Purpose Flour', alias = '11.7%\u4e2d\u7b4b\u9762\u7c89',
   usd = 6.95/2270*30,
   servingGram = 30, 
@@ -132,7 +138,8 @@ KingArthur_allPurposeFlr <- \() new(
   carbohydrate = 23, protein = 30*.117) # 11.7% protein content
 
 KingArthur_allPurposeFlr_organic <- \() new(
-  Class = 'nutrition',  kingarthur = 308006L, 
+  Class = 'nutrition',  
+  kingarthur = '308006', 
   alias = '\u4e2d\u7b4b\u9762\u7c89', name = 'All-Purpose Flour, Organic',
   usd = 10.95/2270*30,
   servingGram = 30, 
@@ -144,25 +151,27 @@ KingArthur_allPurposeFlr_organic <- \() new(
 
 KingArthur_cake <- \() new(
   Class = 'nutrition',  
-  kingarthur = 300004L, 
+  kingarthur = '300004', 
   name = 'Cake\U1f370 Flour', alias = '10%\u4f4e\u7b4b\u9762\u7c89',
   servingGram = 32, servingCup = 1/4, 
   carbohydrate = 25, protein = 32*.1)
-# kingarthurpro = 19050L, # professional 'unbleached cake flour' is 7% !!!
+# kingarthurpro = '19050', # professional 'unbleached cake flour' is 7% !!!
 
 
 KingArthur_pastry <- \() new(
-  Class = 'nutrition',  kingarthur = 100184L, 
+  Class = 'nutrition',  
+  kingarthur = '100184', 
   name = 'Pastry\U1f370 Flour', alias = '8%\u4f4e\u7b4b\u9762\u7c89',
   usd = 12.95/1360*26,
   servingGram = 26, servingCup = 1/4, 
   calorie = 100,
   carbohydrate = 20, protein = 26*.08) # 8.0% gluten-forming protein
-# kingarthurpro = c(29025L, 28050L), # professional 'pastry flour' is 9% !!! 
+# kingarthurpro = c('29025', '28050'), # professional 'pastry flour' is 9% !!! 
 
 
 KingArthur_selfRising <- \() new(
-  Class = 'nutrition',  kingarthur = 301330L, 
+  Class = 'nutrition',  
+  kingarthur = '301330', 
   name = 'Self-Rising Flour, Unbleached',
   usd = 6.95/2270*30,
   servingGram = 30, 

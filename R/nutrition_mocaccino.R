@@ -311,7 +311,7 @@ AmandaRettke_cocoa <- \() new(
   cocoa = c(KingArthur_Bensdorp = 118),
   dairy = c(Carnation_drymilk = 170),
   starch_tsp = c(Wegmans_corn_starch = 2),
-  salt_tsp = 1/2 # 1 teaspoon kosher salt
+  salt_tsp = c(Morton_kosher_salt = 1)
 )
 
 

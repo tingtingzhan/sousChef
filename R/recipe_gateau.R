@@ -37,7 +37,7 @@ setClass(Class = 'gateau', contains = 'recipe', prototype = prototype(
   flour = c(Wegmans_pastryFlr = 120), #flour = c(KingArthur_allPurposeFlr = 120),
   dairy = c(Wegmans_heavyCream = 150),
   egg_pc = c(eggYolk = 1, eggWhite = 1),
-  bakingPowder_tsp = .5,
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = .5),
   water = 110#, # try
   #waterLost = 50#, # re-confirm!!
   #instruction (legacy) = c(
@@ -64,7 +64,7 @@ cocoa_gateau_FAIL <- \() new(
   
   dairy = c(Wegmans_heavyCream = 180),
   egg_pc = c(eggYolk = 1, eggWhite = 1),
-  bakingPowder_tsp = .5,
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = .5),
   water = 165, # still very dry
   # waterLost = 35, # 50 min
   #waterLost = 50, # 65min, need to reconfirm!! (I ate a piece already!) 
@@ -112,7 +112,8 @@ AddaPinch_chocolate_cake <- \() new(
   flour = c(KingArthur_allPurposeFlr = 240), sugar = 396,
   cocoa = c(KingArthur_Bensdorp = 63), 
   coffee = c(NescafeGold_blonde = 2.3),
-  bakingPowder_tsp = 2, NaHCO3_tsp = 1.5, salt = 2.8,
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2), 
+  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1.5), salt = 2.8,
   dairy_cup = c(Wegmans_whole_milk = 1),
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 99),
@@ -126,7 +127,9 @@ PreppyKitchen_chocolate_cake <- \() new(
   Class = 'recipe', flavor = 'Chocolate Cake',
   flour = c(KingArthur_allPurposeFlr = 240), sugar = 400,
   cocoa = c(KingArthur_Bensdorp = 50),
-  bakingPowder_tsp = 1.5, NaHCO3_tsp = 1.5, salt_tsp = 1/4, # ½ teaspoon kosher salt
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 1.5),
+  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1.5), 
+  salt_tsp = c(Morton_kosher_salt = 1/2),
   dairy_cup = c(Wegmans_whole_milk = 1), 
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 14*8), # ½ cup vegetable oil (180mL)
@@ -144,7 +147,7 @@ DessertFor2_matcha_cake <- \() new(
   vanilla_tsp = c(NielsenMassey_Madagascar = 1),
   matcha_tsp = c(Sencha_everyday_matcha = 1.5*3),
   flour = c(KingArthur_allPurposeFlr = 120),
-  bakingPowder_tsp = 1,
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 1),
   dairy_cup = c(OakFarms_buttermilk = 1/3),
   url = 'https://www.dessertfortwo.com/matcha-cake/')
 
@@ -152,8 +155,8 @@ DessertFor2_matcha_cake <- \() new(
 Sallys_pumpkin_cake <- \() new(
   Class = 'recipe', author = 'Sally\'s', flavor = 'Pumpkin Cake',
   flour = c(KingArthur_allPurposeFlr = 250),
-  bakingPowder_tsp = 2,
-  NaHCO3_tsp = 1,
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2),
+  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1),
   salt_tsp = 1, 
   spice_tsp = c(
     SimplyOrganic_cinnamonCeylon = 1.5,

@@ -17,15 +17,22 @@ Ohsawa_nigari <- \() new(
   servingTsp = 1, # packaging
   sodium = 1.966)
 
-# different size of salt rock has different density!!!
+
 Morton_salt <- \() new(
   Class = 'nutrition',  
-  brand = style_hyperlink(text = 'Morton\U1f1fa\U1f1f8', url = 'https://www.mortonsalt.com/article/mortonplain-table-salt-nutritional-facts/') |> c(),
+  mortonsalt = 'table-salt/morton-iodized-table-salt-26-oz/',
   name = 'Salt\U1f9c2', alias = '\u76d0',
-  # packaging!
   #servingTsp = 1/4, servingGram = 1.5, sodium = 23/(23+35.5) * 1.5 # packaging!
-  # actual experiment (1tbsp = 21g)
-  servingTbsp = 1, servingGram = 21, sodium = 23/(23+35.5) * 21)
+  servingTbsp = 1, servingGram = 21, sodium = 23/(23+35.5) * 21 # actual experiment (1tbsp = 21g)
+)
+
+Morton_kosher_salt <- \() new(
+  Class = 'nutrition',  
+  mortonsalt = 'kosher-salt/morton-coarse-kosher-salt/',
+  name = 'Kosher Salt\U1f9c2', alias = '\u7c97\u76d0',
+  servingTsp = 1/4, servingGram = 1.2, sodium = 23/(23+35.5) * 1.2 # packaging!
+)
+
 
 
 Ajinomoto_msg <- \() new(

@@ -47,7 +47,7 @@ maple_sacima <- \() new(
 #' @export
 sacima <- \() new(
   Class = 'sacima',
-  #bakingPowder_tsp = 1/8,
+  #bakingPowder_tsp = c(TraderJoes_bakingPowder = 1/8),
   #homemade = c(invertSugar = 50),
   dairy = c(Carnation_condensMilk = 80),
   tool = list(PhilipsHD9867(fahrenheit = 350, minute = 6)),
@@ -76,7 +76,7 @@ xiaogaojie_sacima <- \() new(
   Class = 'recipe', flavor = 'sacima', 
   xiaogaojie = 'VkgWeCxZfi4',
   flour = c(KingArthur_allPurposeFlr = 200),
-  NaHCO3_tsp = 1/8,
+  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1/8),
   water = 15,
   egg_pc = c(eggYolk = 2, eggWhite = 2))
 
@@ -87,5 +87,5 @@ Dad_sacima <- \() new(
   dad1966 = 'ZK4ZoCewr0E',
   flour = c(KingArthur_allPurposeFlr = 270),
   egg_pc = c(eggYolk = 3, eggWhite = 3),
-  NaHCO3 = 1)
+  NaHCO3 = c(ArmHammer_NaHCO3 = 1))
 

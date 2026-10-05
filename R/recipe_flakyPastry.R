@@ -238,7 +238,7 @@ PinNuo_oxTongue_waterDough <- \() new(
   Class = 'recipe', flavor = '\u725b\u820c\u997c(\u6c34)',
   flour = c(KingArthur_allPurposeFlr = 500),
   yeast = c(Fleischmanns_instant = 4), 
-  Na2CO3 = 1, water = 320, 
+  Na2CO3 = c(Na2CO3 = 1), water = 320, 
   pino = 'fC2zXSK9PxM') # this video has no largeYouSu recipe!
 
 #' @rdname flakyPastry

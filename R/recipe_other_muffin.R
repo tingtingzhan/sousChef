@@ -22,7 +22,7 @@ muffin_tmp <- \() new(
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 90),
   water = 100, # 140g, from Brody's milk
-  bakingPowder_tsp = 2.25, # try next
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2.25), # try next
   # note (legacy) = 'Steam Bake, 300F/25min', # next time
   vanilla_tsp = c(NielsenMassey_Madagascar = 1))
 
@@ -39,7 +39,7 @@ Brody_muffin <- \() new(
   ), 
   vanilla_tsp = c(NielsenMassey_Madagascar = 2), # original
   flour_cup = c(KingArthur_allPurposeFlr = 2.25),
-  bakingPowder_tsp = 2.5, # original
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2.5), # original
   salt_tsp = .5)
 
 
@@ -48,7 +48,7 @@ Introvert_muffin <- \() new(
   url = 'https://www.bakedbyanintrovert.com/basic-muffin-recipe/',
   flour_cup = c(KingArthur_allPurposeFlr = 2),
   sugar = 100,
-  bakingPowder_tsp = 2,
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2),
   salt_tsp = .5,
   dairy_cup = c(Kerrygold_butter = 1/2,
                 Wegmans_whole_milk = .75),
@@ -60,7 +60,7 @@ CulinaryHill_muffin <- \() new(
   url = 'https://www.culinaryhill.com/blueberry-muffins/',
   flour = c(KingArthur_allPurposeFlr = 240),
   sugar = 200,
-  bakingPowder_tsp = 2,
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2),
   salt_tsp = 1/2,
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   dairy_cup = c(Kerrygold_butter = 1/2,
@@ -71,7 +71,7 @@ CulinaryHill_muffin <- \() new(
 Lori_muffin <- \() new(
   Class = 'recipe', author = 'Lori', flavor = 'Muffin', allrecipes = '6874/best-ever-muffins/',
   flour = c(KingArthur_allPurposeFlr = 240), 
-  bakingPowder_Tbsp = 1,
+  bakingPowder_Tbsp = c(TraderJoes_bakingPowder = 1),
   salt_tsp = 1/2,
   sugar = 150, 
   egg_pc = c(eggYolk = 1, eggWhite = 1),
@@ -84,7 +84,7 @@ Sallys_pumpkin_muffin <- \() new(
   Class = 'recipe', author = 'Sally\'s', flavor = 'Pumpkin Muffin',
   url = 'https://sallysbakingaddiction.com/pumpkin-muffins-recipe/',
   flour_cup = c(KingArthur_allPurposeFlr = 1.75),
-  NaHCO3_tsp = 1,
+  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1),
   spice_tsp = c(
     SimplyOrganic_ginger = 1/4,
     SimplyOrganic_cinnamonCeylon = 1.5,

@@ -110,7 +110,7 @@ xiaogaojie_adzukiBeanPaste2 <- \() new(
   bean = c(HaiTai_adzukibean = 200),
   water = 700, 
   #waterLost = 350, # this is high oil!   !!!to reach water 37.5% as xiaogaojie_adzukiBeanPaste1()
-  Na2CO3_tsp = 1/8,
+  Na2CO3_tsp = c(Na2CO3 = 1/8),
   oil = c(Wegmans_corn_oil = 120),
   sugar = c(Domino_darkBrown = 100))
 

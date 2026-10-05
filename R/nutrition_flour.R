@@ -177,7 +177,7 @@ KingArthur_selfRising_homemade <- \() new(
   author = 'brinna-sands',
   kingarthur = 'homemade-self-rising-flour-recipe',
   flour_cup = c(KingArthur_allPurposeFlr = 1),
-  bakingPowder_tsp = 1.5,
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 1.5),
   salt_tsp = 1/4)
 
 

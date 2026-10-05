@@ -7,10 +7,6 @@
 # water in flour is *not* included!!!
 
 
-rep_names <- \(x, nm) {
-  rep(x, times = length(nm)) |>
-    setNames(nm = nm)
-}
 
 
 #setClass(Class = 'tmp', slots = rep_names('numeric', nm = letters))
@@ -237,20 +233,15 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     mergePc(which = 'puree') |>
     mergePc(which = 'tea') |>
     mergeVol(which = 'flour') |>
-    #mergeVol(which = 'water', nm = 'Wegmans_water') |>
     mergeVol_H2O() |>
     addname1(which = 'carbonatedWater', nm = 'Wegmans_water') |>
-    #addname1(which = 'ice', nm = 'Wegmans_water') |>
     #addname1(which = 'water_ext', nm = 'Wegmans_water') |> # think more...
     mergeVol(which = 'misc') |>
     mergeVol(which = 'fat') |>
     mergeVol(which = 'spice') |>
-    mergeVol(which = 'sugar', nm = 'US_10x') |>
     mergeVol(which = 'syrup') |>
+    mergeVol(which = 'sugar', nm = 'US_10x') |>
     mergeVol(which = 'salt', nm = 'Morton_salt') |>
-    mergeVol(which = 'NaHCO3', nm = 'ArmHammer_NaHCO3') |>
-    mergeVol(which = 'Na2CO3', nm = 'Na2CO3') |>
-    mergeVol(which = 'bakingPowder', nm = 'TraderJoes_bakingPowder') |>
     mergeVol(which = 'starch') |>
     mergeVol(which = 'oil') |>
     mergeVol(which = 'sauce') |>

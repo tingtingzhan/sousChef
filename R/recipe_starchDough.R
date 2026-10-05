@@ -28,7 +28,8 @@ sweetPotato_Noodle_step1 <- \() new(
 sweetPotato_Noodle_step2 <- \() new(
   Class = 'starchDough',
   youtube = 'enleTlAvjCY',
-  Na2CO3_tsp = .125, starch = c(sweetPotato_starch = 100), water = 40
+  Na2CO3_tsp = c(Na2CO3 = .125), 
+  starch = c(sweetPotato_starch = 100), water = 40
 )
 
 

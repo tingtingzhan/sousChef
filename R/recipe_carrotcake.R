@@ -17,8 +17,8 @@ AmishHeritage_carrotcake <- \() new(
   # 1 cup crushed pineapple, drained
   # ¾ c. chopped pecans or walnuts (optional)
   flour_cup = c(KingArthur_allPurposeFlr = 2), 
-  bakingPowder_tsp = 2,
-  NaHCO3_tsp = 1.5,
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2),
+  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1.5),
   salt_tsp = 1,
   spice_tsp = c(SimplyOrganic_cinnamonCeylon = 2)
 )

@@ -29,7 +29,8 @@
 #' @export
 setClass(Class = 'pastalinda', contains = 'recipe', prototype = prototype(
   flour = c(Wegmans_breadFlr = 500), 
-  salt_tsp = 1/4, Na2CO3_tsp = 1/4,
+  salt_tsp = 1/4, 
+  Na2CO3_tsp = c(Na2CO3 = 1/4),
   tool = list(KSM8990(
     program = 'Level 2. Stop immediately after dough forms', 
     treatment = c(

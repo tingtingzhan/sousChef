@@ -10,7 +10,7 @@ Bundt_OLD2 <- \() new(
     Carnation_drymilk = 50,
     Wegmans_heavyCream = 160
   ),
-  bakingPowder_tsp = .75,
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = .75),
   water = 100, 
   egg_pc = c(eggYolk = 2, eggWhite = 2)
   #instruction (legacy) = c(
@@ -34,7 +34,7 @@ Bundt_OLD1 <- \() new(
   #water = 160, # a little too wet
   water = 150,
   sugar = 15,
-  bakingPowder_tsp = 1,
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 1),
   dairy = c(Carnation_drymilk = 80), # tried 50g
   oil = c(Wegmans_vegetable_oil = 100), # a little wet inside
   dairy = c(Daisy_sourCream = 110),
@@ -65,7 +65,7 @@ PreppyKitchen_chocolate_Bundt <- \() new(
   cocoa_cup = c(Ghirardelli_cocoa = 1.25),
   flour = c(KingArthur_allPurposeFlr = 420),
   sugar_cup = c(Domino_granulated = 2.5),
-  NaHCO3_tsp = 2.5,
+  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 2.5),
   salt_tsp = 1,
   dairy = c(Kerrygold_butter = 213),
   dairy_cup = c(Daisy_sourCream = 1),
@@ -79,8 +79,8 @@ PreppyKitchen_chocolate_Bundt <- \() new(
 PreppyKitchen_Bundt <- \() new(
   Class = 'recipe', flavor = 'Bundt',
   flour = c(KingArthur_allPurposeFlr = 360),
-  bakingPowder_tsp = 1,
-  NaHCO3_tsp = .5,
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 1),
+  NaHCO3_tsp = c(ArmHammer_NaHCO3 = .5),
   salt_tsp = 1.5,
   dairy_brick = c(
     Philadelphia_creamCheese = 1,

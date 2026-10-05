@@ -86,7 +86,7 @@ cornbreadMix <- \() new(
   flour = c(Wegmans_pastryFlr = 50), # breadFlour does **not** work!!!
   grain = c(Albertsons_yellow_cornmeal = 320),
   sugar = 45,
-  bakingPowder_tsp = 1#, # best, so far
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 1)#, # best, so far
   # note (legacy) = 'Do NOT pre-mix. Need to soak cornmeal alone in boiling water!'
 )
 
@@ -100,7 +100,7 @@ cornbread <- \() new(
   flour = c(Wegmans_pastryFlr = 50), # breadFlour does **not** work!!!
   grain = c(Albertsons_yellow_cornmeal = 320),
   sugar = 45,
-  bakingPowder_tsp = 1, # best, so far
+  bakingPowder_tsp = c(TraderJoes_bakingPowder = 1), # best, so far
   
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   dairy = c(Lucerne_heavyCream = 175), 

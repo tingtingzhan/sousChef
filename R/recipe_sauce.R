@@ -12,7 +12,7 @@
 meatTenderizer <- \() new(
   Class = 'recipe', 
   alias = '\u5ae9\u8089/\u6d17\u8840\u6c34',
-  NaHCO3_tsp = 1/4, 
+  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1/4), 
   water = 300,
   # note (legacy) = c(
   #  'NaHCO3 must not exceed 3 grams per 500 grams of meat',

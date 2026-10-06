@@ -199,14 +199,16 @@ fourC_panko <- \() new(
 # volume: (292-143) / 14.7868 approx 10Tbsp
 
 SimplyOrganic_Italian <- \() new(
-  Class = 'nutrition',  simplyorganic = 'italian-seasoning-0-95-oz',
+  Class = 'nutrition',  
+  simplyorganic = 'italian-seasoning-0-95-oz',
   name = 'Italian Seasoning',
   servingGram = 27, usd = 6.29, # 2023-11-09
   servingTbsp = 10,
   contain = c('oregano', 'marjoram', 'thyme', 'basil', 'rosemary', 'sage'))
 
 SimplyOrganic_Provence <- \() new(
-  Class = 'nutrition',  simplyorganic = 'simply-organic-herbes-de-provence-1-oz',
+  Class = 'nutrition',
+  simplyorganic = 'simply-organic-herbes-de-provence-1-oz',
   name = 'Herbes de Provence',
   servingGram = 28, usd = 6.29, # Dec 2024
   servingTbsp = 10,
@@ -223,14 +225,16 @@ SimplyOrganic_Southwest <- \() new(
 
 
 SimplyOrganic_parsley <- \() new(
-  Class = 'nutrition',  simplyorganic = 'parsley-0-26-oz',
+  Class = 'nutrition',
+  simplyorganic = 'parsley-0-26-oz',
   name = 'Parsley',
   servingGram = 7, usd = 5.39, # Feb 2024
   servingTbsp = 10)
 
 
 SimplyOrganic_pumpkinSpice <- \() new(
-  Class = 'nutrition',  simplyorganic = 'pumpkin-spice-1-94-oz',
+  Class = 'nutrition',
+  simplyorganic = 'pumpkin-spice-1-94-oz',
   name = 'Pumpkin\U1f383 Spice', alias = '\u5357\u74dc\u8089\u6842\u9999\u6599',
   servingGram = 55, usd = 6.79, # 2023-12-06
   servingTbsp = 10,
@@ -238,7 +242,8 @@ SimplyOrganic_pumpkinSpice <- \() new(
 
 
 SimplyOrganic_5spice <- \() new(
-  Class = 'nutrition', simplyorganic = 'five-spice-powder-2-01-oz',
+  Class = 'nutrition', 
+  simplyorganic = 'five-spice-powder-2-01-oz',
   name = 'Five Spice Powder', alias = '\u4e94\u9999\u7c89',
   # wegmans = '202649', usd = 8.49, date = as.Date('2026-09-14'), # no longer available?
   servingGram = 57, 
@@ -247,7 +252,8 @@ SimplyOrganic_5spice <- \() new(
 
 
 SimplyOrganic_ginger <- \() new(
-  Class = 'nutrition', simplyorganic = 'ginger-root-ground-1-64-oz',
+  Class = 'nutrition', 
+  simplyorganic = 'ginger-root-ground-1-64-oz',
   name = 'Ginger\U1fada Root, Ground', alias = '\u59dc\u7c89',
   wegmans = '791544',
   servingGram = 46, usd = 7.09, date = as.Date('2026-09-14'),
@@ -255,7 +261,8 @@ SimplyOrganic_ginger <- \() new(
 
 
 SimplyOrganic_dill <- \() new(
-  Class = 'nutrition',  simplyorganic = 'dill-weed-0-81-oz',
+  Class = 'nutrition',
+  simplyorganic = 'dill-weed-0-81-oz',
   name = 'Dill Weed', alias = '\u83b3\u841d\u8349',
   # not at Wegmans?
   servingGram = 23, usd = 6.79,  # 2023-11-09
@@ -263,7 +270,8 @@ SimplyOrganic_dill <- \() new(
 
 
 SimplyOrganic_clove <- \() new(
-  Class = 'nutrition',  simplyorganic = 'cloves-ground-2-82-oz',
+  Class = 'nutrition',
+  simplyorganic = 'cloves-ground-2-82-oz',
   name = 'Cloves', alias = '\u4e01\u9999',
   wegmans = '791605',
   servingGram = 80, usd = 6.49, date = as.Date('2026-09-17'),
@@ -271,7 +279,8 @@ SimplyOrganic_clove <- \() new(
 
 
 SimplyOrganic_cinnamonCeylon <- \() new(
-  Class = 'nutrition',  simplyorganic = 'ceylon-cinnamon-ground-2-08-oz',
+  Class = 'nutrition',
+  simplyorganic = 'ceylon-cinnamon-ground-2-08-oz',
   name = 'Ceylon Cinnamon', alias = '\u8089\u6842\u7c89',
   wegmans = '791633',
   servingGram = 59, usd = 7.29, date = as.Date('2026-09-17'),
@@ -279,14 +288,16 @@ SimplyOrganic_cinnamonCeylon <- \() new(
 
 
 SimplyOrganic_cumin <- \() new(
-  Class = 'nutrition',  simplyorganic = 'cumin-seed-ground-2-31-oz',
+  Class = 'nutrition',
+  simplyorganic = 'cumin-seed-ground-2-31-oz',
   name = 'Cumin Seed, Ground', alias = '\u5b5c\u7136\u7c89',
   wegmans = '791542',
   servingGram = 65, usd = 7.29, date = as.Date('2026-09-17'),
   servingTbsp = 10)
 
 SimplyOrganic_coriander <- \() new(
-  Class = 'nutrition',  simplyorganic = 'coriander-seed-ground-2-29-oz',
+  Class = 'nutrition',
+  simplyorganic = 'coriander-seed-ground-2-29-oz',
   name = 'Coriander Seed', alias = '\u82ab\u837d\u7c7d\u7c89',
   wegmans = '791590',
   servingGram = 65, usd = 6.29,  # 2023-11-09
@@ -294,7 +305,8 @@ SimplyOrganic_coriander <- \() new(
 
 
 SimplyOrganic_garlic <- \() new(
-  Class = 'nutrition',  simplyorganic = 'garlic-powder-3-64-oz',
+  Class = 'nutrition',
+  simplyorganic = 'garlic-powder-3-64-oz',
   name = 'Garlic\U1f9c4', alias = '\u849c\u7c89',
   wegmans = '791543',
   servingGram = 103, usd = 8.99, # Jan 2024
@@ -318,7 +330,7 @@ Chinata_paprika <- \() new(
 
 TakShing_starAnise <- \() new(
   Class = 'nutrition', 
-  tsemporium = '640769097776',
+  tsemporium = '640769115159',
   name = 'Dried Star Anise Powder', alias = '\u516b\u89d2\u7c89',
   serving_oz = 16, usd = 9.99
 )
@@ -326,7 +338,7 @@ TakShing_starAnise <- \() new(
 
 TakShing_KGalanga <- \() new(
   Class = 'nutrition', 
-  tsemporium = '640769094966',
+  tsemporium = '610232022673',
   name = 'Kaempferia Galanga Powder', alias = '\u6c99\u59dc\u7c89',
   serving_oz = 16, usd = 10.99
 )

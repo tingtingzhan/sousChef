@@ -48,9 +48,11 @@ setMethod(f = initialize, signature = 'spice', definition = \(.Object, ...) {
 
 #' @export
 format.spice <- \(x, ...) {
+  
   alias <- x@alias |>
     style_hyperlink(url = x@url) |>
     col_blue()
+  
   name <- x@call |>
     as.character() |>
     col_br_magenta()

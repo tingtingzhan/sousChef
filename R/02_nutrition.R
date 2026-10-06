@@ -156,17 +156,16 @@
 #' @export
 setClass(Class = 'nutrition', slots = c(
   
-  brand = 'character',
-  
-  alias = 'character',
   call = 'language',
-  name = 'character',
-  
-  suggestion = 'list',
-  
-  fdc = 'integer',
   
   rep_names('character', nm = c(
+    'brand',
+    'alias',
+    'name',
+    'review',
+    'superior',
+    'contain',
+    'piece_fmt',
     'url',
     'pubchem',
     
@@ -203,15 +202,14 @@ setClass(Class = 'nutrition', slots = c(
     'yaomazi', 'yogi', 'youjia'
   )),
   
+  suggestion = 'list',
+  
+  fdc = 'integer',
+  
   machine = 'function', # should be deprecated
   
   tool = 'list',
   
-  review = 'character',
-  superior = 'character',
-  contain = 'character',
-  
-  piece_fmt = 'character',
   date = 'Date',
   cost_ = 'character',
   

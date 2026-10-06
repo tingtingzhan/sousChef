@@ -51,7 +51,7 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 
 \item{\code{egg,egg_pc}}{\link[base]{numeric} \link[base]{vector}s, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)}
 
-\item{\code{tea,tea_pc}}{\link[base]{numeric} \link[base]{vector}s, weight of loose tea in grams and number of tea bags, respectively}
+\item{\code{tea,tea_pc}}{\link[base]{numeric} \link[base]{vector}s, weight of loose tea (in grams) and number of tea bags.}
 
 \item{\code{flour,flour_tsp,flour_Tbsp,flour_cup}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) and volume of King Arthur all purpose flour}
 
@@ -73,7 +73,7 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 
 \item{\code{NaHCO3,NaHCO3_tsp,NaHCO3_Tbsp,NaHCO3_cup}}{\link[base]{numeric} scalars, weight (in grams) and volume of Arm and Hammer baking soda}
 
-\item{\code{Na2CO3,Na2CO3_tsp,Na2CO3_Tbsp,Na2CO3_cup}}{\link[base]{numeric} scalars, weight (in grams) and volume of Na2CO3, respectively.  Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
+\item{\code{Na2CO3,Na2CO3_tsp,Na2CO3_Tbsp,Na2CO3_cup}}{\link[base]{numeric} scalars, weight (in grams) and volume of Na2CO3.  Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
 
 \item{\code{bakingPowder,bakingPowder_tsp,bakingPowder_Tbsp,bakingPowder_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of baking powder}
 
@@ -102,8 +102,6 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 \item{\code{vegetable}}{\link[base]{numeric} vector, weight of one or more vegetables (in grams)}
 
 \item{\code{water,water_tsp,water_Tbsp,water_cup}}{\link[base]{numeric} scalar, weight (in grams) and volume of water}
-
-\item{\code{carbonatedWater}}{\link[base]{numeric} scalar, weight of carbonated water (in grams)}
 
 \item{\code{sauce,sauce_tsp,sauce_Tbsp,sauce_cup}}{\link[base]{numeric} vector, weight (in grams) and volume of one or more sauces}
 

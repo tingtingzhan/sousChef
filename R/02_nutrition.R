@@ -445,7 +445,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   }
   
   vol <- c(length(x@servingCup), length(x@servingTbsp), length(x@servingTsp), length(x@serving_floz), length(x@serving_ml))
-  if (sum(vol) > 1L) stop('cannot have more than one of `@servingCup`, `@servingTbsp` and `@servingTsp`')
+  if (sum(vol) > 1L) stop('cannot have more than one of `@servingCup`, `@servingTbsp`, `@servingTsp`, `@serving_floz`, and `@serving_ml`')
   if (vol[1L]) {
     x@servingTsp <- 48 * x@servingCup
     x@servingCup <- numeric()
@@ -456,7 +456,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     x@servingTsp <- 6 * x@serving_floz
     x@serving_floz <- numeric()
   } else if (vol[5L]) {
-    x@servingTsp <- x@serving_ml / 4.929
+    x@servingTsp <- x@serving_ml / 4.92892
     x@serving_ml <- numeric()
   }
   

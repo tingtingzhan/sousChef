@@ -1,17 +1,4 @@
 
-
-# According to 
-# https://www.kingarthurbaking.com/pro/formulas
-# Baker's percentage of water is
-# added-water : flour
-# water in flour is *not* included!!!
-
-
-
-
-#setClass(Class = 'tmp', slots = rep_names('numeric', nm = letters))
-
-
 #' @title Raw Ingredients and Recipe
 #' 
 #' @description 
@@ -32,7 +19,7 @@
 #' 
 #' @slot egg,egg_pc \link[base]{numeric} \link[base]{vector}s, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)
 #' 
-#' @slot tea,tea_pc \link[base]{numeric} \link[base]{vector}s, weight of loose tea in grams and number of tea bags, respectively
+#' @slot tea,tea_pc \link[base]{numeric} \link[base]{vector}s, weight of loose tea (in grams) and number of tea bags.
 #' 
 #' @slot flour,flour_tsp,flour_Tbsp,flour_cup \link[base]{numeric} \link[base]{vector}, weight (in grams) and volume of King Arthur all purpose flour
 #' @slot beverage,beverage_tsp,beverage_Tbsp,beverage_cup \link[base]{numeric} \link[base]{vector}
@@ -53,7 +40,7 @@
 #' 
 #' @slot NaHCO3,NaHCO3_tsp,NaHCO3_Tbsp,NaHCO3_cup \link[base]{numeric} scalars, weight (in grams) and volume of Arm and Hammer baking soda
 #' 
-#' @slot Na2CO3,Na2CO3_tsp,Na2CO3_Tbsp,Na2CO3_cup \link[base]{numeric} scalars, weight (in grams) and volume of Na2CO3, respectively.  Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes
+#' @slot Na2CO3,Na2CO3_tsp,Na2CO3_Tbsp,Na2CO3_cup \link[base]{numeric} scalars, weight (in grams) and volume of Na2CO3.  Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes
 #' 
 #' @slot bakingPowder,bakingPowder_tsp,bakingPowder_Tbsp,bakingPowder_cup \link[base]{numeric} scalar, weight (in grams) and volume of baking powder
 #' @slot salt,salt_tsp,salt_Tbsp,salt_cup \link[base]{numeric} scalar, weight (in grams) and volume of salt
@@ -74,9 +61,6 @@
 #' @slot vegetable \link[base]{numeric} vector, weight of one or more vegetables (in grams)
 #' 
 #' @slot water,water_tsp,water_Tbsp,water_cup \link[base]{numeric} scalar, weight (in grams) and volume of water
-# @slot water_ext \link[base]{numeric} scalar, weight of extra water (in grams) to hydrate powders in a dough
-#' @slot carbonatedWater \link[base]{numeric} scalar, weight of carbonated water (in grams)
-#' 
 #' @slot sauce,sauce_tsp,sauce_Tbsp,sauce_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more sauces
 #' @slot liqueur,liqueur_tsp,liqueur_Tbsp,liqueur_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more liqueurs
 #' 
@@ -119,8 +103,6 @@ setClass(
     'meat', 'poultry', 'seafood',
     'vegetable',
     'water', 'water_tsp', 'water_Tbsp', 'water_cup',
-    # 'water_ext',
-    'carbonatedWater',
     'sauce', 'sauce_tsp', 'sauce_Tbsp', 'sauce_cup',
     'liqueur', 'liqueur_tsp', 'liqueur_Tbsp', 'liqueur_cup',
     'gelatin', 'gelatin_pc'
@@ -155,32 +137,26 @@ print.raw. <- \(x, ...) {
     cat('\n\n')
 
   prt_vol(x@homemade)
-  
   prt_vol(x@meat)
   prt_vol(x@poultry)
   prt_vol(x@seafood)
-  
+  prt_vol(x@egg)
   prt_vol(x@flour)
   prt_vol(x@starch)
   prt_vol(x@sugar)
-  
   prt_vol(x@beverage)
   prt_vol(x@puree)
   prt_vol(x@fruit)
-  
   prt_vol(x@sauce)
   prt_vol(x@oil)
   prt_vol(x@liqueur)
-   
   prt_vol(x@nut)
   prt_vol(x@seed)
   prt_vol(x@grain)
   prt_vol(x@bean)
-  
   prt_vol(x@fat)
   prt_vol(x@dairy)
   prt_vol(x@vegetable)
-  
   prt_vol(x@spice)
   prt_vol(x@matcha)
   prt_vol(x@coffee)
@@ -193,25 +169,11 @@ print.raw. <- \(x, ...) {
   prt_vol(x@NaHCO3)
   prt_vol(x@Na2CO3)
   prt_vol(x@bakingPowder)
-  
-  prt_vol(x@egg)
   prt_vol(x@gelatin)
   prt_vol(x@tea)
-  
   prt_vol(x@misc)
   
   prt_vol_H2O(x@water)
-  
-  #  water <- sum_by_name(x@water, x@water_ext)
-  #  sprintf(fmt = '%s Water %.0f=%.0f%s grams %s\n', col_orchid4('\u5e38\u6e29\u6c34'), water, x@water, sprintf('+%.0f', x@water_ext) |> col_br_red(), fmt_vol(water)) |> 
-  #    format_inline() |>
-  #    cat()
-  
-  if (length(x@carbonatedWater)) {
-    sprintf(fmt = '%s Carbonated Water %.0f grams %s\n', col_orchid4('\u6c14\u6ce1\u6c34'), x@carbonatedWater, fmt_vol(x@carbonatedWater)) |> 
-      format_inline() |>
-      cat()
-  }
 
   cat('\n')
   
@@ -234,8 +196,6 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     mergePc(which = 'tea') |>
     mergeVol(which = 'flour') |>
     mergeVol_H2O() |>
-    addname1(which = 'carbonatedWater', nm = 'Wegmans_water') |>
-    #addname1(which = 'water_ext', nm = 'Wegmans_water') |> # think more...
     mergeVol(which = 'misc') |>
     mergeVol(which = 'fat') |>
     mergeVol(which = 'spice') |>
@@ -255,8 +215,6 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     x <- x |>
       .slot_rm_zero(name = i)
   }
-  
-
   
   return(x)
   

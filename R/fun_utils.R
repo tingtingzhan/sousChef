@@ -1,5 +1,15 @@
 
 
+# According to 
+# https://www.kingarthurbaking.com/pro/formulas
+# Baker's percentage of water is
+# added-water : flour
+# water in flour is *not* included!!!
+
+
+
+
+
 #' @title Row-Bind Unbalanced Vectors
 #' 
 #' @param ... two or more \link[base]{vector}s of the same \link[base]{storage.mode}

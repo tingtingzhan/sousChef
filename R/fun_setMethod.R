@@ -5,16 +5,16 @@ setGeneric(name = '%in%',
 
 
 
-
-
-#' @title `S4` Arithmetic
+#' @title `S4` Methods
 #' 
 #' @description
-#' `S4` arithmetic.
+#' `S4` methods.
 #' 
 #' @param e1,e2 see **Usage**
 #' 
-#' @name S4arith
+#' @param x,i,table see **Usage**
+#' 
+#' @name S4methods
 #' @aliases *,raw.,numeric-method
 #' @export
 setMethod(f = '*', signature = signature(e1 = 'raw.', e2 = 'numeric'), definition = \(e1, e2) {
@@ -27,27 +27,27 @@ setMethod(f = '*', signature = signature(e1 = 'raw.', e2 = 'numeric'), definitio
   return(e1)
 })
 
-#' @rdname S4arith
+#' @rdname S4methods
 #' @aliases *,numeric,raw.-method
 #' @export
 setMethod(f = '*', signature = signature(e1 = 'numeric', e2 = 'raw.'), definition = \(e1, e2) e2 * e1)
 
-#' @rdname S4arith
+#' @rdname S4methods
 #' @aliases /,raw.,numeric-method
 #' @export
 setMethod(f = '/', signature = signature(e1 = 'raw.', e2 = 'numeric'), definition = \(e1, e2) e1 * (1/e2))
 
 
 
-
-
-#' @rdname S4arith
+#' @rdname S4methods
 #' @aliases +,raw.,raw.-method
 #' @export
 setMethod(f = '+', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition = \(e1, e2) {
   
-  e1 <- as(e1, Class = 'raw.', strict = TRUE)
-  e2 <- as(e2, Class = 'raw.', strict = TRUE)
+  e1 <- e1 |> 
+    as(Class = 'raw.', strict = TRUE)
+  e2 <- e2 |> 
+    as(Class = 'raw.', strict = TRUE)
   
   ret0 <- names(getSlots(x = 'raw.')) |>
     setNames(nm = _) |>
@@ -60,42 +60,15 @@ setMethod(f = '+', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition =
   
 })
 
-#' @rdname S4arith
+
+#' @rdname S4methods
 #' @aliases -,raw.,raw.-method
 #' @export
 setMethod(f = '-', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition = \(e1, e2) e1 + (-1) * e2)
 
 
 
-
-
-
-#' @rdname S4arith
-#' @aliases *,nutrition,numeric-method
-#' @export
-setMethod(f = '*', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = \(e1, e2) {
-  if (length(e2) != 1L || anyNA(e2) || (e2 <= 0)) stop('illegal `e2`')
-  for (i in setdiff(names(which(getSlots('nutrition') == 'numeric')), c('AbV', 'pieceGram'))) {
-    slot(e1, name = i) <- slot(e1, name = i) * e2
-  }
-  return(e1)
-})
-
-
-#' @rdname S4arith
-#' @aliases /,nutrition,numeric-method
-#' @export
-setMethod(f = '/', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = \(e1, e2) e1 * (1/e2))
-
-
-
-
-
-
-#' @title `S4` `%in%`
-#' 
-#' @param x,table see **Usage**
-#' 
+#' @rdname S4methods
 #' @aliases %in%,spice,raw.-method
 #' @export
 setMethod(f = '%in%', signature = c(x = 'spice', table = 'raw.'), definition = \(x, table) {
@@ -108,13 +81,30 @@ setMethod(f = '%in%', signature = c(x = 'spice', table = 'raw.'), definition = \
   
 })
 
+#' @rdname S4methods
+#' @aliases %in%,character,raw.-method
+#' @export
+setMethod(f = '%in%', signature = c(x = 'character', table = 'raw.'), definition = \(x, table) {
+  
+  any(grepl(pattern = x, x = names(table@spice))) ||
+    any(grepl(pattern = x, x = names(table@oil))) ||
+    any(grepl(pattern = x, x = names(table@puree))) ||
+    any(grepl(pattern = x, x = names(table@dairy))) ||
+    any(grepl(pattern = x, x = names(table@grain))) ||
+    any(grepl(pattern = x, x = names(table@bean))) ||
+    any(grepl(pattern = x, x = names(table@nut))) ||
+    any(grepl(pattern = x, x = names(table@seed))) ||
+    any(grepl(pattern = x, x = names(table@flour))) ||
+    any(grepl(pattern = x, x = names(table@egg))) ||
+    any(grepl(pattern = x, x = names(table@fat))) ||
+    any(grepl(pattern = x, x = names(table@meat))) ||
+    any(grepl(pattern = x, x = names(table@misc)))
+  
+})
 
 
-#' @title `S4` subset
-#' 
-#' @param x,i see **Usage**
-#' 
-#' @name S4subset
+
+#' @rdname S4methods
 #' @aliases [,raw.,nutrition-method
 #' @export
 setMethod(f = '[', signature = c(x = 'raw.', i = 'nutrition'), definition = \(x, i) {
@@ -129,7 +119,7 @@ setMethod(f = '[', signature = c(x = 'raw.', i = 'nutrition'), definition = \(x,
 })
 
 
-#' @rdname S4subset
+#' @rdname S4methods
 #' @aliases [,raw.,character-method
 #' @export
 setMethod(f = '[', signature = c(x = 'raw.', i = 'character'), definition = \(x, i) {

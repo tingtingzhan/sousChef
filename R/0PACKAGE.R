@@ -234,7 +234,7 @@ if (FALSE) {
     } else if (length(x@homemade) && grep('pineapple', names(x@homemade))) {
       .145
     } else .18, # 3:1 mixed cheese
-    lava = if ('_blackSesame$' %in% x) .17 else if (length(x['_coconutFlr$'])) .08 else NA_real_,
+    lava = if ('_blackSesame$' %in% x) .17 else if ('_coconutFlr$' %in% x) .08 else NA_real_,
     cookie = if ('_blackSesame$' %in% x) {
       .28
     } else .25, 
@@ -486,7 +486,7 @@ if (FALSE) {
       .42
     } else .34, # from other puree such as `pineapple`
     whippedCream = .50,
-    lava = if ('_blackSesame$' %in% x) .50 else if (length(x['_coconutFlr$'])) .67 else NA_real_,
+    lava = if ('_blackSesame$' %in% x) .50 else if ('_coconutFlr$' %in% x) .67 else NA_real_,
     porkfill = .55,
     sundae = if (length(x@matcha)) {
       .6

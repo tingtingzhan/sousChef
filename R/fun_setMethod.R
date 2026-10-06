@@ -2,7 +2,9 @@
 setGeneric(name = '%in%', 
            where = asNamespace('cooking'),
            useAsDefault = base::`%in%`)
-
+setGeneric(name = '%notin%', 
+           where = asNamespace('cooking'),
+           useAsDefault = base::`%notin%`)
 
 
 #' @title `S4` Methods
@@ -94,20 +96,11 @@ setMethod(f = '%in%', signature = c(x = 'character', table = 'raw.'), definition
 })
 
 
-
 #' @rdname S4methods
-#' @aliases [,raw.,nutrition-method
+#' @aliases %notin%,character,raw.-method
 #' @export
-setMethod(f = '[', signature = c(x = 'raw.', i = 'nutrition'), definition = \(x, i) {
+setMethod(f = '%notin%', signature = c(x = 'character', table = 'raw.'), definition = \(x, table) !(x %in% table))
   
-  .Defunct(msg = 'great, but not used currently')
-  inm <- i@call |>
-    as.character()
-  if (inm %in% names(x@spice)) {
-    return(x@spice[inm])
-  } else stop('next?')
-  
-})
 
 
 #' @rdname S4methods
@@ -115,21 +108,21 @@ setMethod(f = '[', signature = c(x = 'raw.', i = 'nutrition'), definition = \(x,
 #' @export
 setMethod(f = '[', signature = c(x = 'raw.', i = 'character'), definition = \(x, i) {
   
-  if (any(id <- grepl(pattern = i, x = names(x@spice)))) return(sum(x@spice[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@oil)))) return(sum(x@oil[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@puree)))) return(sum(x@puree[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@beverage)))) return(sum(x@beverage[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@sauce)))) return(sum(x@sauce[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@dairy)))) return(sum(x@dairy[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@grain)))) return(sum(x@grain[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@bean)))) return(sum(x@bean[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@nut)))) return(sum(x@nut[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@seed)))) return(sum(x@seed[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@flour)))) return(sum(x@flour[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@egg)))) return(sum(x@egg[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@fat)))) return(sum(x@fat[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@meat)))) return(sum(x@meat[id]))
-  if (any(id <- grepl(pattern = i, x = names(x@misc)))) return(sum(x@misc[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@spice)))) return(x@spice[id])
+  if (any(id <- grepl(pattern = i, x = names(x@oil)))) return(x@oil[id])
+  if (any(id <- grepl(pattern = i, x = names(x@puree)))) return(x@puree[id])
+  if (any(id <- grepl(pattern = i, x = names(x@beverage)))) return(x@beverage[id])
+  if (any(id <- grepl(pattern = i, x = names(x@sauce)))) return(x@sauce[id])
+  if (any(id <- grepl(pattern = i, x = names(x@dairy)))) return(x@dairy[id])
+  if (any(id <- grepl(pattern = i, x = names(x@grain)))) return(x@grain[id])
+  if (any(id <- grepl(pattern = i, x = names(x@bean)))) return(x@bean[id])
+  if (any(id <- grepl(pattern = i, x = names(x@nut)))) return(x@nut[id])
+  if (any(id <- grepl(pattern = i, x = names(x@seed)))) return(x@seed[id])
+  if (any(id <- grepl(pattern = i, x = names(x@flour)))) return(x@flour[id])
+  if (any(id <- grepl(pattern = i, x = names(x@egg)))) return(x@egg[id])
+  if (any(id <- grepl(pattern = i, x = names(x@fat)))) return(x@fat[id])
+  if (any(id <- grepl(pattern = i, x = names(x@meat)))) return(x@meat[id])
+  if (any(id <- grepl(pattern = i, x = names(x@misc)))) return(x@misc[id])
   
   # look in more places
 

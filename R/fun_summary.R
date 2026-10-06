@@ -42,12 +42,13 @@ summary.raw. <- \(object, ...) {
       as(Class = 'raw.') |>
       as.double.raw.(detail = FALSE, rel = FALSE)
   )
+  z <- z[abs(z) > .Machine$double.eps]
   
   mixWheatFlr <- c(
-    sum(x['_allPurposeFlr$']), 
-    sum(x['_pastryFlr$']), 
-    sum(x['_breadFlr$']), 
-    sum(x['_wheatFlr$'])
+    x['_allPurposeFlr$'] |> sum(), 
+    x['_pastryFlr$'] |> sum(), 
+    x['_breadFlr$'] |> sum(), 
+    x['_wheatFlr$'] |> sum()
   )
   
   devrecipe <- getOption('devrecipe')
@@ -163,7 +164,7 @@ summary.raw. <- \(object, ...) {
     
   }
   
-  ret$perGlutenFreeFlr <- if (!sum(x['_breadFlr$']) & !sum(x['_pastryFlr$']) & !sum(x['_allPurposeFlr$'])) new(
+  ret$perGlutenFreeFlr <- if (('_breadFlr$' %notin% x) && ('_pastryFlr$' %notin% x) && ('_allPurposeFlr$' %notin% x)) new(
     Class = 'per', 
     per = 'Gluten-Free Flour', 
     equiv = new(Class = 'equiv', current = z / sum(x['_gluten0Flr$']), target = c(

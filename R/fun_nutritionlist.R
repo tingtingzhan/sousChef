@@ -135,6 +135,7 @@ nutri_short <- \(x) {
   x[x == 'eggYolk'] <- '\U0001f95ayolk'
   x[x == 'eggWhite'] <- '\U0001f95awhite'
   x[x == 'cornmeal'] <- '\U1f33d'
+  x[x == 'onion'] <- '\U1f9c5'
   return(x)
 }
 

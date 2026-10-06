@@ -7,9 +7,8 @@
 \alias{/,raw.,numeric-method}
 \alias{+,raw.,raw.-method}
 \alias{-,raw.,raw.-method}
-\alias{\%in\%,spice,raw.-method}
 \alias{\%in\%,character,raw.-method}
-\alias{[,raw.,nutrition-method}
+\alias{\%notin\%,character,raw.-method}
 \alias{[,raw.,character-method}
 \title{\code{S4} Methods}
 \usage{
@@ -23,11 +22,9 @@
 
 \S4method{-}{raw.,raw.}(e1, e2)
 
-\S4method{\%in\%}{spice,raw.}(x, table)
-
 \S4method{\%in\%}{character,raw.}(x, table)
 
-\S4method{[}{raw.,nutrition}(x, i)
+\S4method{\%notin\%}{character,raw.}(x, table)
 
 \S4method{[}{raw.,character}(x, i)
 }

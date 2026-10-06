@@ -370,7 +370,7 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
     print.nutrition(print_label = FALSE)
   
   x@tool |>
-    print.toollist()
+    lapply(FUN = show)
   
   if (length(x@review)) {
     x@review |> 

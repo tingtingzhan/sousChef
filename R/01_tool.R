@@ -3,8 +3,6 @@
 # stopifnot(identical(' ', '\u0020'))
 
 
-
-
 #' @title Kitchen \linkS4class{tool}s
 #' 
 #' @description ..
@@ -33,6 +31,9 @@
 #' 
 #' @slot alias \link[base]{character} scalar
 #' @slot kitchenaid \link[base]{character} scalar
+#' @slot instantpot \link[base]{character} scalar
+#' @slot nutribullet \link[base]{character} scalar
+#' @slot stanley1913 \link[base]{character} scalar
 #' @slot staub \link[base]{character} scalar
 #' 
 #' @export
@@ -50,35 +51,29 @@ setClass(Class = 'tool', slots = c(
   note = 'character',
   waterLost = 'numeric',
   
-  kitchenaid = 'character',
-  staub = 'character'
+  rep_names('character', nm = c(
+    'kitchenaid',
+    'instantpot',
+    'nutribullet',
+    'stanley1913',
+    'staub'
+  ))
 ))
+
+
 
 
 
 
 setMethod(f = initialize, signature = 'tool', definition = \(.Object, ...) {
   
-  x <- callNextMethod(.Object, ...)
-  
-  if (length(x@kitchenaid)) {
-    x@name <- x@kitchenaid |>
-      sprintf(fmt = 'https://www.kitchenaid.com/p.%s.html') |>
-      style_hyperlink(text = paste('Kitchen Aid', x@name), url = _) |> 
-      c()
-    x@kitchenaid <- character()
-  }
-  
-  if (length(x@staub)) {
-    x@name <- x@staub |>
-      sprintf(fmt = 'https://www.zwilling.com/us/%s.html') |>
-      style_hyperlink(text = paste('Staub', x@name), url = _) |> 
-      c()
-    x@staub <- character()
-  }
-  
-  return(x)
-  
+  callNextMethod(.Object, ...) |>
+    add_tool_url(name = 'kitchenaid', fmt = 'https://www.kitchenaid.com/p.%s.html', brand = 'Kitchen Aid') |>
+    add_tool_url(name = 'instantpot', fmt = 'https://instantpot.com/products/%s', brand = 'Instant Pot') |>
+    add_tool_url(name = 'nutribullet', fmt = 'https://www.nutribullet.com/shop/%s', brand = 'Nutribullet') |>
+    add_tool_url(name = 'staub', fmt = 'https://www.zwilling.com/us/%s.html', brand = 'Staub') |>
+    add_tool_url(name = 'stanley1913', fmt = 'https://www.stanley1913.com/products/%s', brand = 'Stanley')
+
 })
 
 
@@ -177,14 +172,6 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
 })
 
 
-
-
-#' @export
-print.toollist <- \(x, ...) {
-  if (!all(vapply(x, FUN = inherits, what = 'tool', FUN.VALUE = NA))) stop()
-  x |>
-    lapply(FUN = show)
-}
 
 
 

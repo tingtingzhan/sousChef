@@ -43,6 +43,12 @@
 
 \item{\code{kitchenaid}}{\link[base]{character} scalar}
 
+\item{\code{instantpot}}{\link[base]{character} scalar}
+
+\item{\code{nutribullet}}{\link[base]{character} scalar}
+
+\item{\code{stanley1913}}{\link[base]{character} scalar}
+
 \item{\code{staub}}{\link[base]{character} scalar}
 }}
 

@@ -26,7 +26,8 @@ CuisinartICE70 <- \(...) new(
 
 InstantPot <- \(...) new(
   Class = 'tool', 
-  name = style_hyperlink(text = 'Instant Pot Pro, 8 Quart', url = 'https://instantpot.com/products/instant-pot-pro-8-quart-multi-use-pressure-cooker') |> c(), 
+  name = 'Pro, 8 Quart', 
+  instantpot = 'instant-pot-pro-8-quart-multi-use-pressure-cooker', 
   alias = '\u7535\u9ad8\u538b\u9505',
   ...)
 
@@ -148,32 +149,38 @@ JoyoungCJA9U_filling <- \(
 
 nutribullet20 <- \(...) new(
   Class = 'tool',
-  name = style_hyperlink(text = 'Nutribullet Ultra 20 fl. oz. Blending Cup', url = 'https://www.nutribullet.com/shop/accessories/nutribullet-tritan-renew-20oz-cup/') |> c(),
+  name = 'Ultra 20 fl. oz. Blending Cup', 
+  nutribullet = 'accessories/nutribullet-tritan-renew-20oz-cup/',
   ...) 
 
 nutribullet24 <- \(...) new(
   Class = 'tool',
-  name = style_hyperlink(text = 'Nutribullet Ultra 24 fl. oz. Blending Cup', url = 'https://www.nutribullet.com/shop/accessories/nutribullet-tritan-renew-24-oz-cup-with-to-go-lid/') |> c(),
+  name = 'Ultra 24 fl. oz. Blending Cup', 
+  nutribullet = 'accessories/nutribullet-tritan-renew-24-oz-cup-with-to-go-lid/',
   ...) 
 
 Stanley20 <- \(...) new(
   Class = 'tool',
-  name = style_hyperlink(text = 'Stanley 20oz Quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-20-oz') |> c(),
+  stanley1913 = 'adventure-quencher-travel-tumbler-20-oz',
+  name = 'Quencher 20oz',
   ...)
 
 Stanley14 <- \(...) new(
   Class = 'tool',
-  name = style_hyperlink(text = 'Stanley 14oz Quencher', url = 'https://www.stanley1913.com/products/adventure-quencher-travel-tumbler-14-oz') |> c(),
+  stanley1913 = 'adventure-quencher-travel-tumbler-14-oz',
+  name = 'Quencher 14oz',
   ...)
 
 Stanley40 <- \(...) new(
   Class = 'tool',
-  name = style_hyperlink(text = 'Stanley 40oz Quencher', url = 'https://www.stanley1913.com/products/quencher-protour-flipstraw-tumbler') |> c(),
+  stanley1913 = 'quencher-protour-flipstraw-tumbler',
+  name = 'Quencher 40oz',
   ...)
 
 StanleyJar36 <- \(...) new(
   Class = 'tool',
-  name = style_hyperlink(text = 'Stanley 36oz Food Jar', url = 'https://www.stanley1913.com/products/adventure-to-go-food-jar-spork-36-oz') |> c(),
+  stanley1913 = 'adventure-to-go-food-jar-spork-36-oz',
+  name = 'Food Jar 36oz', 
   ...)
 
 

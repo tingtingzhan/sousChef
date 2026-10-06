@@ -15,6 +15,7 @@
 #' @slot allrecipes \link[base]{character} scalar
 #' @slot daatgo \link[base]{character} scalar
 #' @slot dad1966 \link[base]{character} scalar
+#' @slot giallozafferano \link[base]{character} scalar
 #' @slot guga \link[base]{character} scalar
 #' @slot happytears \link[base]{character} scalar
 #' @slot ippodotea,ippodoteajpn \link[base]{character} scalar
@@ -59,7 +60,7 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
 
   rep_names(x = 'character', nm = c(
     'allrecipes',
-    'daatgo', 'dad1966', 'guga', 'happytears',
+    'daatgo', 'dad1966', 'giallozafferano', 'guga', 'happytears',
     'ippodotea', 'ippodoteajpn',
     'joshuaweissman',
     'julieseatsandtreats', 'just1cookbook',
@@ -115,13 +116,24 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   
   if (length(x@author)) {
     if (length(x@allrecipes)) {
-      x@author <- style_hyperlink(url = sprintf(fmt = 'https://www.allrecipes.com/recipe/%s', x@allrecipes), text = x@author) |> c()
+      #stop('where?')
+      x@author <- x@allrecipes |>
+        sprintf(fmt = 'https://www.allrecipes.com/recipe/%s') |>
+        style_hyperlink(url = _, text = x@author) |> 
+        c()
       x@allrecipes <- character()
     } else if (length(x@youtube)) {
-      x@author <- style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@youtube[1L]), text = x@author) |> c()
+      #stop('where?')
+      x@author <- x@youtube[1L] |>
+        sprintf(fmt = 'https://youtu.be/%s') |>
+        style_hyperlink(url = _, text = x@author) |> 
+        c()
       x@youtube <- x@youtube[-1L]
     } else if (length(x@url)) {
-      x@author <- style_hyperlink(url = x@url[1L], text = x@author) |> c()
+      #stop('where?')
+      x@author <- x@url[1L] |>
+        style_hyperlink(url = _, text = x@author) |> 
+        c()
       x@url <- x@url[-1L]
     }
   } # before `if (!length(x@author))` !!!
@@ -130,6 +142,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   x <- x |>
     add_youtube(name = 'daatgo', text = '\u8fbe\u54e5\u53a8\u623f') |>
     add_youtube(name = 'dad1966', text = '\u8001\u7238\u7684\u98df\u5149') |>
+    add_youtube(name = 'giallozafferano', text = 'Giallozafferano Italian Recipes') |>
     add_youtube(name = 'guga', text = 'Guga') |>
     add_youtube(name = 'happytears', text = '\u5e78\u798f\u7684\u773c\u6cea') |>
     add_youtube(name = 'laofangu', text = '\u8001\u996d\u9aa8') |>

@@ -107,7 +107,9 @@ pumpkin_gateau <- \() new(
 #' @rdname gateau-class
 #' @export
 AddaPinch_chocolate_cake <- \() new(
-  Class = 'recipe', author = 'Add-A-Pinch', flavor = 'Chocolate Cake',
+  Class = 'recipe', 
+  author = 'Add-A-Pinch', 
+  flavor = 'Chocolate Cake',
   url = 'https://addapinch.com/the-best-chocolate-cake-recipe-ever/',
   flour = c(KingArthur_allPurposeFlr = 240), sugar = 396,
   cocoa = c(KingArthur_Bensdorp = 63), 

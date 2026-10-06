@@ -362,7 +362,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     add_brand_url(name = 'paromi', fmt = 'https://paromi.com/products/%s', text = 'Paromi\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'quakeroats', fmt = 'https://www.quakeroats.com/products/%s', text = 'Quaker\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'raos', fmt = 'https://www.raos.com/products/%s', text = 'Rao\'s\U1f1fa\U1f1f8') |>
-    
     add_brand_url(name = 'sanford', fmt = 'https://www.sanford.co.nz/our-seafood/our-products/%s', text = 'Sanford\U1f1f3\U1f1ff') |> 
     add_brand_url(name = 'siggis', fmt = 'https://siggis.com/product/%s', text = 'Siggi\'s\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'simplyorganic', fmt = 'https://www.simplyorganic.com/products/simply-organic-%s', text = 'Simply Organic\U1f1fa\U1f1f8') |> 

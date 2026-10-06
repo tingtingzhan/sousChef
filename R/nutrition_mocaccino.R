@@ -27,7 +27,7 @@
 #'  cooking:::SwissMiss_milkCocoa(),
 #'  cooking:::Starbucks_cocoa(),
 #'  cooking:::StarbucksKcup_cocoa(),
-#'  cooking:::Starbucks_mochaMix()
+#'  cooking:::Starbucks_crema_chocolate()
 #' ) # compare commercial powders
 #' 
 #' nutritionlist(
@@ -114,16 +114,53 @@ Ghirardelli_mochaFrappe <- \() new(
 
 
 
-Starbucks_mochaMix <- \() new(
-  Class = 'nutrition',  amazon = 'B004WYLFG8', # discontinued
-  brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Mocha Mix',
-  # bottle 396g
-  servingGram = 10, servingTbsp = 1,
-  calorie = 40,
-  fat = .5, carbohydrate = 8, sugar = 6, protein = 1)
+Starbucks_crema_chocolate <- \() new(
+  Class = 'nutrition',
+  starbucks = 'Starbucks-Crema-Collection-Premium-Instant-Molten-Chocolate-Flavored',
+  name = 'Molten Chocolate',
+  walmart = '5742782029',
+  # bottle 202g 7.12oz
+  servingGram = 18, servingTbsp = 2,
+  calorie = 70, 
+  # fat = 0, 
+  sodium = .095,
+  carbohydrate = 16, sugar = 13, addedSugar = 9, protein = 1)
 
+Starbucks_crema_Madagascar_vanilla <- \() new(
+  Class = 'nutrition',
+  starbucks = 'Starbucks-Crema-Collection-Premium-Instant-Madagascar-Vanilla-Flavored',
+  name = 'Madagascar\U0001f1f2\U0001f1ec Vanilla',
+  walmart = '9666971961',
+  # bottle 202g 7.12oz
+  servingGram = 18, servingTbsp = 2,
+  calorie = 70, 
+  # fat = 0, 
+  sodium = .055,
+  carbohydrate = 16, fiber = 1, sugar = 13, addedSugar = 9, protein = 1)
 
+Starbucks_crema_salted_caramel <- \() new(
+  Class = 'nutrition',
+  starbucks = 'Starbucks-Crema-Collection-Premium-Instant-Salted-Caramel-Flavored',
+  name = 'Salted Caramel',
+  walmart = '9697318600',
+  # bottle 202g 7.12oz
+  servingGram = 18, servingTbsp = 2,
+  calorie = 70, 
+  # fat = 0, 
+  sodium = .110,
+  carbohydrate = 16, fiber = 2, sugar = 11, addedSugar = 9, protein = 1)
 
+Starbucks_crema_pumpkinSpice <- \() new(
+  Class = 'nutrition',
+  starbucks = 'starbucks-crema-collection-premium-instant-pumpkin-spice-flavored-coffee',
+  name = 'Pumpkin\U1f383 Spice',
+  walmart = '17795600806',
+  # bottle 202g 7.12oz
+  servingGram = 18, servingTbsp = 2,
+  calorie = 70, 
+  # fat = 0, 
+  sodium = .035,
+  carbohydrate = 16, sugar = 13, addedSugar = 9, protein = 1)
 
 
 
@@ -158,8 +195,9 @@ bargainmums_mocha <- \() new(
   cocoa = c(KingArthur_Bensdorp = 50), 
   sugar = 100, 
   dairy = c(Carnation_drymilk = 110), 
-  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
-  url = 'https://bargainmums.com.au/homemade-mocha-mix')
+  vanilla_tsp = c(NielsenMassey_Madagascar = 1)#,
+  #url = 'https://bargainmums.com.au/homemade-mocha-mix' # website down
+  )
 
 
 

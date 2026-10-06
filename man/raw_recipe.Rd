@@ -131,6 +131,8 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 
 \item{\code{dad1966}}{\link[base]{character} scalar}
 
+\item{\code{giallozafferano}}{\link[base]{character} scalar}
+
 \item{\code{guga}}{\link[base]{character} scalar}
 
 \item{\code{happytears}}{\link[base]{character} scalar}

@@ -349,6 +349,7 @@ add_youtube <- \(x, name, text) {
   nv <- length(v)
   if (!nv) return(x)
   if (nv > 1L) stop('only allow len-1 ', sQuote(name))
+  if (length(x@author)) return(x)
   x@author <- v |>
     sprintf(fmt = 'https://youtu.be/%s') |>
     style_hyperlink(url = _, text = text) |> 

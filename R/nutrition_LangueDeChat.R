@@ -77,7 +77,9 @@ Jadore_LangueDeChat <- \() new(
 #' @rdname LangueDeChat-class
 #' @export
 Giallozafferano_LangueDeChat <- \() new(
-  Class = 'recipe', author = 'Giallozafferano', flavor = 'Langue De Chat', youtube = 'CiVLx3zQBSw',
+  Class = 'recipe', #author = 'Giallozafferano', 
+  flavor = 'Langue De Chat', 
+  youtube = c(giallozafferano = 'CiVLx3zQBSw'),
   dairy = c(Kerrygold_butter = 50),
   sugar = 60,
   egg = c(eggWhite = 50),

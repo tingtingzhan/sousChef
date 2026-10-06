@@ -12,7 +12,6 @@
 #' @export
 setClass(Class = 'per', slots = c(
   per = 'character',
-  # equiv = 'list' # was
   equiv = 'equiv'
 ))
 
@@ -33,8 +32,6 @@ setMethod(f = show, signature = 'per', definition = \(object) {
     bg_br_yellow() |> style_bold() |>
     cat()
   
-  #object@equiv |>
-  #  show()
   colnames(fmt) <- colnames(fmt) |>
     nutri_short()
   fmt |>

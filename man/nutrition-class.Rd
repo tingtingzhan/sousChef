@@ -447,7 +447,7 @@ nutritionlist(
  cooking:::SwissMiss_simplyCocoaMilk(),
  cooking:::SwissMiss_milkCocoa(),
  cooking:::Starbucks_cocoa(),
- cooking:::StarbucksKcup_cocoa(),
+ cooking:::Starbucks_cocoa_Kcup(),
  cooking:::Starbucks_crema_chocolate()
 ) # compare commercial powders
 

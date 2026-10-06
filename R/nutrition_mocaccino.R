@@ -26,7 +26,7 @@
 #'  cooking:::SwissMiss_simplyCocoaMilk(),
 #'  cooking:::SwissMiss_milkCocoa(),
 #'  cooking:::Starbucks_cocoa(),
-#'  cooking:::StarbucksKcup_cocoa(),
+#'  cooking:::Starbucks_cocoa_Kcup(),
 #'  cooking:::Starbucks_crema_chocolate()
 #' ) # compare commercial powders
 #' 
@@ -205,8 +205,8 @@ bargainmums_mocha <- \() new(
 
 Starbucks_cocoa <- \() new(
   Class = 'nutrition',  
-  sams = 'P03020738', usd = 8.48/567*28,
-  costco = '100071096',
+  # sams = 'P03020738', usd = 8.48/567*28, # no longer in store
+  costco = '100071096', usd = 44.99/2/850*28,
   brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Hot Cocoa, Tin',
   servingGram = 28, servingTbsp = 2.5, 
   calorie = 100,
@@ -358,8 +358,9 @@ AmandaRettke_cocoa <- \() new(
 
 
 
-StarbucksKcup_cocoa <- \() new(
-  Class = 'nutrition',  starbucks = 'classic-hot-cocoa',
+Starbucks_cocoa_Kcup <- \() new(
+  Class = 'nutrition',  
+  starbucks = 'classic-hot-cocoa',
   name = 'Hot Cocoa, K-cup',
   servingGram = 21, 
   calorie = 90,

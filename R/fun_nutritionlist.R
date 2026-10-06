@@ -91,36 +91,27 @@ as.matrix.nutritionlist <- \(x, ...) {
 
 
 #' @importFrom charwidth row_fmt_matrix
-# @importFrom cli cli_verbatim
-# @method print nutritionMatrix
 #' @export
 print.nutritionMatrix <- \(x, ...) {
   
-  ret0 <- x
-  #attributes(ret0)[setdiff(names(attributes(x)), y = c('dim', 'dimnames'))] <- NULL
-  
-  #ret0 <- ret0[, colnames(ret0) %notin% c(
-  #  'calorie', 'usd'
-  #)]
-  
-  ret <- ret0[, colMeans(ret0 == 0) != 1] |>
+  x[, colMeans(x == 0) != 1] |>
     apply(MARGIN = 2L, FUN = max_binlabel, accuracy = .1, simplify = FALSE) |>
-    do.call(what = cbind) # to make sure not getting a 'vector'
-  
-  colnames(ret) <- colnames(ret) |>
-    nutri_short()
-  
-  ret |> 
+    do.call(what = cbind) |> # to make sure not getting a 'vector'
+    .repl_colnames() |> 
     row_fmt_matrix() |>
     cat(sep = '\n')
-    # cli_verbatim() # sep by '\n' by default
+  
   cat('\n')
-  return(invisible(ret))
+  
+  return(invisible())
   
 }
 
 
-nutri_short <- \(x) {
+# nomenclature
+# dplyr::recode_values
+# dplyr::replace_values
+.repl <- \(x) {
   x[x == 'addedSugar'] <- '+sugar'
   x[x == 'starch'] <- '+starch'
   x[x == 'carbohydrate'] <- 'carb' 
@@ -140,6 +131,11 @@ nutri_short <- \(x) {
 }
 
 
+.repl_colnames <- \(x) {
+  colnames(x) <- colnames(x) |>
+    .repl()
+  return(x)
+}
 
 
 

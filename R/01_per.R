@@ -32,9 +32,8 @@ setMethod(f = show, signature = 'per', definition = \(object) {
     bg_br_yellow() |> style_bold() |>
     cat()
   
-  colnames(fmt) <- colnames(fmt) |>
-    nutri_short()
   fmt |>
+    .repl_colnames() |>
     row_fmt_matrix() |>
     cat(sep = '\n')
   
@@ -57,7 +56,6 @@ setMethod(f = length, signature = 'per', definition = \(x) {
 # @param x a \link[base]{list} of \linkS4class{per} objects
 #' @importFrom charwidth row_fmt_matrix
 #' @importFrom stats median.default
-# @importFrom cli cli_verbatim
 #' @export
 print.perlist <- \(x, ...) {
   
@@ -80,17 +78,14 @@ print.perlist <- \(x, ...) {
     apply(MARGIN = 2L, FUN = median_binlabel, accuracy = .1, simplify = FALSE) |>
     do.call(what = cbind) # to make sure not getting a 'vector'
   
-  colnames(y) <- colnames(y) |>
-    nutri_short()
-  
   x[[1L]]@per |> 
     sprintf(fmt = '\u214c %s\n') |> 
     style_bold() |> bg_br_yellow() |> 
     cat()
-  y |> 
+  y |>
+    .repl_colnames() |> 
     row_fmt_matrix() |>
     cat(sep = '\n')
-  # cli_verbatim() # sep by '\n' by default
   cat('\n')
   return(invisible(y))
 }

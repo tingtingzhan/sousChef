@@ -77,22 +77,16 @@ setMethod(f = '-', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition =
 #' @export
 setMethod(f = '%in%', signature = c(x = 'character', table = 'raw.'), definition = \(x, table) {
   
-  any(grepl(pattern = x, x = names(table@spice))) ||
-    any(grepl(pattern = x, x = names(table@oil))) ||
-    any(grepl(pattern = x, x = names(table@puree))) ||
-    any(grepl(pattern = x, x = names(table@beverage))) ||
-    any(grepl(pattern = x, x = names(table@sauce))) ||
-    any(grepl(pattern = x, x = names(table@dairy))) ||
-    any(grepl(pattern = x, x = names(table@grain))) ||
-    any(grepl(pattern = x, x = names(table@bean))) ||
-    any(grepl(pattern = x, x = names(table@nut))) ||
-    any(grepl(pattern = x, x = names(table@seed))) ||
-    any(grepl(pattern = x, x = names(table@flour))) ||
-    any(grepl(pattern = x, x = names(table@egg))) ||
-    any(grepl(pattern = x, x = names(table@fat))) ||
-    any(grepl(pattern = x, x = names(table@meat))) ||
-    any(grepl(pattern = x, x = names(table@misc)))
-  
+  slotNames('raw.') |>
+    grepv(pattern = '_tsp$|_Tbsp$|_cup$|_brick$|_pc$', invert = TRUE) |>
+    setdiff(y = c('water')) |> 
+    lapply(FUN = slot, object = table) |>
+    unname() |>
+    unlist(use.names = TRUE) |>
+    names() |>
+    grepl(pattern = x, x = _) |>
+    any()
+
 })
 
 
@@ -108,24 +102,18 @@ setMethod(f = '%notin%', signature = c(x = 'character', table = 'raw.'), definit
 #' @export
 setMethod(f = '[', signature = c(x = 'raw.', i = 'character'), definition = \(x, i) {
   
-  if (any(id <- grepl(pattern = i, x = names(x@spice)))) return(x@spice[id])
-  if (any(id <- grepl(pattern = i, x = names(x@oil)))) return(x@oil[id])
-  if (any(id <- grepl(pattern = i, x = names(x@puree)))) return(x@puree[id])
-  if (any(id <- grepl(pattern = i, x = names(x@beverage)))) return(x@beverage[id])
-  if (any(id <- grepl(pattern = i, x = names(x@sauce)))) return(x@sauce[id])
-  if (any(id <- grepl(pattern = i, x = names(x@dairy)))) return(x@dairy[id])
-  if (any(id <- grepl(pattern = i, x = names(x@grain)))) return(x@grain[id])
-  if (any(id <- grepl(pattern = i, x = names(x@bean)))) return(x@bean[id])
-  if (any(id <- grepl(pattern = i, x = names(x@nut)))) return(x@nut[id])
-  if (any(id <- grepl(pattern = i, x = names(x@seed)))) return(x@seed[id])
-  if (any(id <- grepl(pattern = i, x = names(x@flour)))) return(x@flour[id])
-  if (any(id <- grepl(pattern = i, x = names(x@egg)))) return(x@egg[id])
-  if (any(id <- grepl(pattern = i, x = names(x@fat)))) return(x@fat[id])
-  if (any(id <- grepl(pattern = i, x = names(x@meat)))) return(x@meat[id])
-  if (any(id <- grepl(pattern = i, x = names(x@misc)))) return(x@misc[id])
+  z <- slotNames('raw.') |>
+    grepv(pattern = '_tsp$|_Tbsp$|_cup$|_brick$|_pc$', invert = TRUE) |>
+    setdiff(y = c('water')) |> 
+    lapply(FUN = slot, object = x) |>
+    unname() |>
+    unlist(use.names = TRUE)
+    
+  id <- z |>
+    names() |>
+    grepl(pattern = i, x = _)
   
-  # look in more places
-
+  if (any(id)) return(z[id])
   return(numeric())
 
 })

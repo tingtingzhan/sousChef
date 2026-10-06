@@ -223,81 +223,81 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       if (length(x@liqueur)) {
         'Tiramisu\u0300'
       } else if (length(x@cocoa)) {
-        if (length(x['_blackcocoa$'])) warning('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
-        if (length(x@tea) && length(x['_coconutBar'])) {
+        if ('_blackcocoa$' %in% x) {
+          warning('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
+        }
+        if (length(x@tea) && ('_coconutBar$' %in% x)) {
           '\u751f\u6930\u9e33\u9e2f'
-        } else if (length(x['_coconutBar'])) {
+        } else if ('_coconutBar$' %in% x) {
           '\u751f\u6930'
         } else if (x@cocoa / x@coffee < 1) {
           'Caff\u00e8' 
         } else 'Caff\u00e8 Mocha'
       } else if (length(x@syrup)) {
-        #if (names(x@syrup) |> grepl(pattern = 'ryeWhisky') |> any()) {
-        if (length(x['_ryeWhisky$'])) {
+        if ('_ryeWhisky$' %in% x) {
           'Rye Whiskey\u67ab\u7cd6 Tiramisu\u0300'
         } else stop('more syrup?')
       } else 'Caff\u00e8'
      
-    } else if (length(x['_acai_pulv$'])) {
-      '\u5df4\u897f\u8393'
-    } else if (length(x['_adzukibean$'])) {
+    } else if ('_adzukibean$' %in% x) {
       '\u7ea2\u8c46'
-    } else if (length(x['_applesauce$'])) {
+    } else if ('_mungbean$' %in% x) {
+      '\u7eff\u8c46'
+    } else if ('_redkidneybean$' %in% x) {
+      '\u7ea2\u82b8\u8c46'
+    } else if ('_applesauce$' %in% x) {
       '\u82f9\u679c\U1f34e'
-    } else if (length(x['_beet_pulv$'])) {
+    } else if ('_acai_pulv$' %in% x) {
+      '\u5df4\u897f\u8393'
+    } else if ('_beet_pulv$' %in% x) {
       '\u751c\u83dc'
-    } else if (length(x['_blackRice$'])) {
+    } else if ('_blackRice$' %in% x) {
       '\u9ed1\u7c73'
-    } else if (length(x['_blackSesame$'])) {
+    } else if ('_blackSesame$' %in% x) {
       '\u9ed1\u829d\u9ebb'
-    } else if (length(x['_brownRice$'])) {
+    } else if ('_brownRice$' %in% x) {
       '\u7cd9\u7c73'
-    } else if (length(x['_cashew$'])) {
+    } else if ('_cashew$' %in% x) {
       '\u8170\u679c'
-    } else if (length(x['_chickpea$'])) {
+    } else if ('_chickpea$' %in% x) {
       '\u9e70\u5634\u8c46'
     } else if (length(x@cocoa)) { # `cocoa` has higher priority than `coffee`
       '\u5de7\u514b\u529b\U1f36b' # '\u53ef\u53ef\U1f36b'
-    } else if (length(x['_coconutFlr$'])) {
+    } else if ('_coconutFlr$' %in% x) {
       '\u6930\u84c9\U1f965'
-    } else if (length(x['_darkCherry$'])) {
+    } else if ('_darkCherry$' %in% x) {
       '\u751c\u6a31\u6843\U1f352'
-    } else if (length(x['_mandarine$'])) {
+    } else if ('_mandarine$' %in% x) {
       '\u6a58\u5b50\U1f34a'
-    } else if (length(x['_mango$'])) {
+    } else if ('_mango$' %in% x) {
       '\u8292\u679c\U1f96d'
     } else if (length(x@matcha)) {
       '\u62b9\u8336\U1f375'
-    } else if (length(x['_mungbean$'])) {
-      '\u7eff\u8c46'
-    } else if (length(x['_pear$'])) {
+    } else if ('_pear$' %in% x) {
       '\u68a8\U1f350'
-    } else if (length(x['_pineapple$'])) {
+    } else if ('_pineapple$' %in% x) {
       # '\u83e0\u841d\U1f34d'
       'Pineapple\U1f34d'
-    } else if (length(x['_pumpkin$']) || length(x['_pumpkinPieMix$'])) {
-      # '\u5357\u74dc\U1f383'
+    } else if ('_pumpkin$|_pumpkinPieMix$' %in% x) {
       'Pumpkin\U1f383'
-    } else if (length(x['_redkidneybean$'])) {
-      '\u7ea2\u82b8\u8c46'
-    } else if (length(x['_strawberry$'])) {
+    } else if ('_strawberry$' %in% x) {
       '\u8349\u8393\U1f353'
-    } else if (length(x['_tomato$'])) {
+    } else if ('_tomato$' %in% x) {
       '\u897f\u7ea2\u67ff\U1f345'
-    } else if (length(x['_yellowCorn$'])) {
+    } else if ('_yellowCorn$' %in% x) {
       '\u7389\u7c73\U1f33d'
-    } else if (length(x['shrimp'])) {
+    } else if ('shrimp' %in% x) {
       '\u867e\U1f990'
-    } else if (length(x['^beef_'])) {
+    } else if ('^beef_' %in% x) {
       '\u725b\u8089'
-    } else if (length(x['^pork_'])) {
+    } else if ('^pork_' %in% x) {
       '\u732a\u8089'
-    } else if (ginger() %in% x) {
+    } else if ('_ginger$' %in% x) {
       '\u59dc\u9999\U1fada'
     } else if (length(x@liqueur)) {
       x@liqueur |> names() |> get_flavor_()
     } else if (length(x@sauce)) {
-      if (grepl(pattern = 'tomyum', x = names(x@sauce)) |> any()) {
+      if ('_tomyum$' %in% x) {
         '\u51ac\u9634'
       } else character()
     } else if (length(x@syrup)) {
@@ -322,7 +322,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
         })
       },
       shortDough =, waterDough = {
-        if (length(x['_lard$'])) {
+        if ('_lard$' %in% x) {
           '\u732a\u6cb9'
         }
       }, character())

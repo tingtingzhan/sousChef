@@ -68,18 +68,7 @@ setMethod(f = '-', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition =
 
 
 
-#' @rdname S4methods
-#' @aliases %in%,spice,raw.-method
-#' @export
-setMethod(f = '%in%', signature = c(x = 'spice', table = 'raw.'), definition = \(x, table) {
-  
-  ptn <- x@call |> 
-    as.character() |>
-    sprintf(fmt = '_%s$')
-  
-  length(table@spice) && any(grepl(pattern = ptn, x = names(table@spice)))
-  
-})
+
 
 #' @rdname S4methods
 #' @aliases %in%,character,raw.-method
@@ -89,6 +78,8 @@ setMethod(f = '%in%', signature = c(x = 'character', table = 'raw.'), definition
   any(grepl(pattern = x, x = names(table@spice))) ||
     any(grepl(pattern = x, x = names(table@oil))) ||
     any(grepl(pattern = x, x = names(table@puree))) ||
+    any(grepl(pattern = x, x = names(table@beverage))) ||
+    any(grepl(pattern = x, x = names(table@sauce))) ||
     any(grepl(pattern = x, x = names(table@dairy))) ||
     any(grepl(pattern = x, x = names(table@grain))) ||
     any(grepl(pattern = x, x = names(table@bean))) ||
@@ -127,6 +118,8 @@ setMethod(f = '[', signature = c(x = 'raw.', i = 'character'), definition = \(x,
   if (any(id <- grepl(pattern = i, x = names(x@spice)))) return(sum(x@spice[id]))
   if (any(id <- grepl(pattern = i, x = names(x@oil)))) return(sum(x@oil[id]))
   if (any(id <- grepl(pattern = i, x = names(x@puree)))) return(sum(x@puree[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@beverage)))) return(sum(x@beverage[id]))
+  if (any(id <- grepl(pattern = i, x = names(x@sauce)))) return(sum(x@sauce[id]))
   if (any(id <- grepl(pattern = i, x = names(x@dairy)))) return(sum(x@dairy[id]))
   if (any(id <- grepl(pattern = i, x = names(x@grain)))) return(sum(x@grain[id]))
   if (any(id <- grepl(pattern = i, x = names(x@bean)))) return(sum(x@bean[id]))

@@ -209,7 +209,10 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     mergeVol(which = 'dairy') |> 
     mergeVol(which = 'grain') |> 
     mergeVol(which = 'nut') |>
-    mergeVol(which = 'seed')
+    mergeVol(which = 'seed') |>
+    mergeVol(which = 'coffee') |>
+    mergeVol(which = 'cocoa') |>
+    mergeVol(which = 'matcha')
   
   for (i in names(getSlots(x = 'raw.'))) {
     x <- x |>

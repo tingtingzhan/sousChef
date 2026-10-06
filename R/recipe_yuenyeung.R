@@ -14,7 +14,6 @@ setClass(Class = 'yuenyeungCoconut', contains = 'recipe', prototype = prototype(
 #' @export
 yuenyeungCoconut <- \() new(
   Class = 'yuenyeungCoconut', 
-  #flavor = 'FreeNow',
   beverage = c(Freenow_coconutBar = 180),
   water = c(c100 = 255),
   dairy = c(Carnation_drymilk = 10),

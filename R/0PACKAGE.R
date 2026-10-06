@@ -39,14 +39,14 @@ if (FALSE) {
     spam = .006,
     shrimpfill_garlicHerb = .009,
     meatmash =, meatball =, shrimpfillCantonese = .008,
-    crumbcrust = if (length(x['_blackSesame$'])) .11 else .01, 
+    crumbcrust = if ('_blackSesame$' %in% x) .11 else .01, 
     ricepaste = .015,
     oatmeal = .018,
     soytea = if (length(x@matcha)) .07 else .022, # matcha sweetness needs to be decreased!!!
-    bao =, wheatBao = if (length(x@matcha) || length(x['_beet_pulv$']) || length(x@cocoa)) {
+    bao =, wheatBao = if (length(x@matcha) || ('_beet_pulv$' %in% x) || length(x@cocoa)) {
       .04 
     } else .03, # any lower, not delicious!
-    snowSkin = if (length(x['_beet_pulv$'])) .03 else .023,
+    snowSkin = if ('_beet_pulv$' %in% x) .03 else .023,
     porkfill = .023,
     stickyTortilla =, crepeCake =, pancake =, thinCrust = .03, 
     yuenyeungCoconut = .035,
@@ -56,7 +56,7 @@ if (FALSE) {
       .095
     } else if (length(x@liqueur)) {
       .14 
-    } else if (length(x['_beet_pulv$'])) {
+    } else if ('_beet_pulv$' %in% x) {
       .08
     } else .035, 
     marinade = .04,
@@ -70,9 +70,9 @@ if (FALSE) {
     stickyRice =, riceCake =, riceMousse = .05, 
     #tortillaLard = .06,
     cocoa_ = .055,
-    muffin = if (length(x['_cornmeal$'])) {
+    muffin = if ('_cornmeal$' %in% x) {
       .055 # tastes better than .05
-    } else if (length(x['_pumpkin$'])) {
+    } else if ('_pumpkin$' %in% x) {
       .08
     } else NA_real_,
     pumpkinSpiceLatte_ = .06,
@@ -81,7 +81,7 @@ if (FALSE) {
       .095
     } else if (length(x@coffee)) {
       .07
-    } else if (length(x['_pumpkin$'])) {
+    } else if ('_pumpkin$' %in% x) {
       .09
     } else if (length(x@cocoa)) {
       NA_real_
@@ -92,9 +92,9 @@ if (FALSE) {
       .075 
     } else if (length(x@cocoa)) {
       .09
-    } else if (length(x['_pineapple$'])) {
+    } else if ('_pineapple$' %in% x) {
       .08
-    } else if (length(x['_pumpkin$'])) {
+    } else if ('_pumpkin$' %in% x) {
       .07 # was .065, a little bland
     } else NA_real_,
     kefir =, goatKefir = .075,
@@ -113,18 +113,18 @@ if (FALSE) {
     bread = if (length(x@matcha) || length(x@cocoa)) {
       .075 # great on @matcha 
     } else .045,
-    cheesecake = if (length(x['_pumpkin$'])) .12 else .1,
+    cheesecake = if ('_pumpkin$' %in% x) .12 else .1,
     # froyo = NA_real_, # Greek yogurt flavor too strong to cover
-    custardFilling = if (length(x['_pumpkin$'])) {
+    custardFilling = if ('_pumpkin$' %in% x) {
       .12
-    } else if (length(x['_applesauce$'])) {
+    } else if ('_applesauce$' %in% x) {
       .155
-    } else if (length(x['_pineapple$'])) {
+    } else if ('_pineapple$' %in% x) {
       .165 
     } else .13,
-    cookie = if (length(x['_blackSesame$'])) {
+    cookie = if ('_blackSesame$' %in% x) {
       .145
-    } else if (length(x@matcha) || (ginger() %in% x)) {
+    } else if (length(x@matcha) || ('_ginger$' %in% x)) {
       .22 
     } else .2,
     tomyumStew = .16,
@@ -171,7 +171,7 @@ if (FALSE) {
     cocoa_ =, 
     pumpkinSpiceLatte_ = .065,
     tiramisu_ = .065,
-    cookie = if (length(x['_blackSesame$'])) {
+    cookie = if ('_blackSesame$' %in% x) {
       .08
     } else .15,
     stickyRice =, riceCake = .1, # need to re-think!!
@@ -184,7 +184,7 @@ if (FALSE) {
   
   creamcheese <- \(x) switch(
     class(x),
-    cheesecake = if (length(x['_pumpkin$'])) {
+    cheesecake = if ('_pumpkin$' %in% x) {
       .5 
     } else if (length(x@homemade) && grepl('pineapple', names(x@homemade))) {
       .55
@@ -195,7 +195,7 @@ if (FALSE) {
   # # !!!! replace with `fiber`!
   #  class(x),
   #  soymilk = .007,
-  #  beanPaste = if (length(x['_redkidneybean$'])) .125 else .15,
+  #  beanPaste = if ('_redkidneybean$' %in% x) .125 else .15,
   #  NA_real_)
   
   fat <- \(x) switch(
@@ -229,23 +229,23 @@ if (FALSE) {
     shrimpfillCantonese = .14, 
     shrimpfill_garlicHerb = .15, 
     mousse = .15,
-    cheesecake = if (length(x['_pumpkin$'])) {
+    cheesecake = if ('_pumpkin$' %in% x) {
       .14 
     } else if (length(x@homemade) && grep('pineapple', names(x@homemade))) {
       .145
     } else .18, # 3:1 mixed cheese
-    lava = if (length(x['_blackSesame$'])) .17 else if (length(x['_coconutFlr$'])) .08 else NA_real_,
-    cookie = if (length(x['_blackSesame$'])) {
+    lava = if ('_blackSesame$' %in% x) .17 else if (length(x['_coconutFlr$'])) .08 else NA_real_,
+    cookie = if ('_blackSesame$' %in% x) {
       .28
     } else .25, 
     # cheesecake = .24, # 100% Nancy's full fat, low sodium cream cheese
     porkfill = .25,
-    crumbcrust = if (length(x['_blackSesame$'])) .23 else .28,
+    crumbcrust = if ('_blackSesame$' %in% x) .23 else .28,
     mascarponeGanache = if (length(x@liqueur)) {
       .36
     } else if (length(x@water)) {
       .3
-    } else if (length(x['_pumpkin$'])) {
+    } else if ('_pumpkin$' %in% x) {
       .195
     } else .25,
     whippedCream = .295,
@@ -470,7 +470,7 @@ if (FALSE) {
     meatball = .03,
     cheesecake = .035, 
     beeffillLeeKumKee = .04, 
-    custardFilling = if (length(x['_pumpkin$'])) .05 else NA_real_,
+    custardFilling = if ('_pumpkin$' %in% x) .05 else NA_real_,
     starchjelly = .1, 
     stickyTortilla = .1,
     NA_real_)
@@ -482,16 +482,16 @@ if (FALSE) {
       .19 # liqueur flavor will also have `x@water`, so this `if` must be ahead of `@water`
     } else if (length(x@water)) {
       .29
-    } else if (length(x['_pumpkin$'])) {
+    } else if ('_pumpkin$' %in% x) {
       .42
     } else .34, # from other puree such as `pineapple`
     whippedCream = .50,
-    lava = if (length(x['_blackSesame$'])) .50 else if (length(x['_coconutFlr$'])) .67 else NA_real_,
+    lava = if ('_blackSesame$' %in% x) .50 else if (length(x['_coconutFlr$'])) .67 else NA_real_,
     porkfill = .55,
     sundae = if (length(x@matcha)) {
       .6
     } else NA_real_,
-    beanPaste = if (length(x['_redkidneybean$'])) .66 else .6,
+    beanPaste = if ('_redkidneybean$' %in% x) .66 else .6,
     shrimpfillCantonese =, shrimpfill_garlicHerb = .6, 
     beeffillLeeKumKee = .6,
     meatmash = if (length(x['shrimp'])) .7 else NA_real_,
@@ -511,8 +511,8 @@ if (FALSE) {
   
   water2flour <- \(x) switch(
     class(x), 
-    cookie = if (length(x['_blackSesame$'])) .17 else .22, 
-    crumbcrust = if (length(x['_blackSesame$'])) .28 else .23, # try first with \linkS4class{cookie} info
+    cookie = if ('_blackSesame$' %in% x) .17 else .22, 
+    crumbcrust = if ('_blackSesame$' %in% x) .28 else .23, # try first with \linkS4class{cookie} info
     #pancake =, snowSkin = .35, 
     #tortillaLard =, tortillaOlive = .6,
     NA_real_)
@@ -546,7 +546,7 @@ if (FALSE) {
   
   water2creamcheese <- \(x) switch(
     class(x),
-    cheesecake = if (length(x['_pumpkin$'])) {
+    cheesecake = if ('_pumpkin$' %in% x) {
       .6 
     } else if (length(x@homemade) && grepl('pineapple', names(x@homemade))) {
       .5
@@ -623,7 +623,7 @@ if (FALSE) {
   
   eggYolk2flour <- \(x) switch(
     class(x),
-    cookie = if (length(x['_blackSesame$'])) .43 else .52,
+    cookie = if ('_blackSesame$' %in% x) .43 else .52,
     NA_real_)
   
   eggYolk2pastryFlr <- \(x) switch(

@@ -31,12 +31,12 @@
 #' ) # compare commercial powders
 #' 
 #' nutritionlist(
-#'  hotdrink(mocaccino),
+#'  hotdrink(mocaccino()),
 #'  cooking:::Starbucks_mocha()
 #' ) # compare hot drink
 #' 
 #' nutritionlist(
-#'  frappe(mocaccino),
+#'  frappe(mocaccino()),
 #'  cooking:::Starbucks_mochaFrappuccino(),
 #'  cooking:::Starbucks_mochaFrappuccino_bottle()
 #' ) # compare frappe

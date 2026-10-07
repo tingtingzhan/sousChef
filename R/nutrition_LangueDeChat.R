@@ -7,11 +7,11 @@
 #' 
 #' @examples
 #' nutritionlist(
-#'  subtract(Giallozafferano_LangueDeChat, sugar = 45),
-#'  subtract(Ying_LangueDeChat, sugar = 7.5),
-#'  subtract(Jadore_LangueDeChat, sugar = 22),
-#'  subtract(cookingTree_LangueDeChat, sugar = 55),
-#'  subtract(cookingTree_cocoa_LangueDeChat, sugar = 28)
+#'  subtract(Giallozafferano_LangueDeChat(), sugar = 45),
+#'  subtract(Ying_LangueDeChat(), sugar = 7.5),
+#'  subtract(Jadore_LangueDeChat(), sugar = 22),
+#'  subtract(cookingTree_LangueDeChat(), sugar = 55),
+#'  subtract(cookingTree_cocoa_LangueDeChat(), sugar = 28)
 #' )
 #' 
 #' 

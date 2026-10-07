@@ -21,7 +21,7 @@ frozen yogurt.
 Non-fat Greek yogurt have a very strong flavor; do not use.
 }
 \examples{
-subtract(cooking:::emma_froyo, sugar = 90)
+subtract(cooking:::emma_froyo(), sugar = 90)
 
 
 }

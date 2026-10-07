@@ -60,10 +60,6 @@ setClass(Class = 'milktea_', contains = 'drink')
 #' @export
 hotdrink <- \(x, ...) UseMethod(generic = 'hotdrink') 
 
-#' @rdname drink
-#' @export
-hotdrink.function <- \(x, ...) hotdrink(x = x(), ...)
-# `x()` may evaluate to \linkS4class{recipe} or \linkS4class{nutrition}
 
 
 #' @rdname drink
@@ -120,10 +116,6 @@ hotdrink.nutrition <- \(x, water80 = stop('Find suggested hot water on packaging
 #' @export
 frappe <- \(x, ...) UseMethod(generic = 'frappe')
 
-#' @rdname drink
-#' @export
-frappe.function <- \(x, ...) frappe(x = x(), ...)
-# `x()` may evaluate to \linkS4class{recipe} or \linkS4class{nutrition}
 
 #' @rdname drink
 #' @export

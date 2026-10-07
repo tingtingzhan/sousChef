@@ -426,29 +426,23 @@ get_flavor_ <- \(x) {
 
 
 
-#' @importFrom stats setNames
+
 gram_per_tsp <- \(x) {
   
   if (!length(x)) return(double())
   
-  x1 <- if (is.character(x)) {
-    if (anyNA(x) || !all(nzchar(x))) stop('input degenerated')
-    x |> 
-      setNames(nm = _) |>
-      lapply(FUN = \(i) {
-        call(name = i) |>
-          eval() |>
-          as(Class = 'nutrition')
-      })
-  } else x
-  
-  if (!is.recursive(x1) || !all(vapply(x1, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) 
-    stop('input cannot be converted to `nutrition`')
-  
-  x1 |> 
+  if (!is.character(x) || anyNA(x) || !all(nzchar(x))) stop('input degenerated')
+    
+  x |> 
     vapply(FUN = \(i) {
-      if (!length(i@servingTsp)) return(NA_real_)
-      i@servingGram / i@servingTsp
+      v <- call(name = i) |>
+        eval() |>
+        as(Class = 'nutrition')
+      if (!inherits(v, what = 'nutrition')) {
+        stop(sQuote(i), ' cannot be converted to `nutrition`')
+      }
+      if (!length(v@servingTsp)) return(NA_real_)
+      v@servingGram / v@servingTsp
     }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
   
 }

@@ -11,8 +11,8 @@
 #' 
 #' nutritionlist(
 #'  eggnog(),
-#'  subtract(JeanPierre_eggnog, sugar = 25),
-#'  subtract(PreppyKitchen_eggnog, sugar = 130)
+#'  subtract(JeanPierre_eggnog(), sugar = 25),
+#'  subtract(PreppyKitchen_eggnog(), sugar = 130)
 #' )
 #' 
 #' @export

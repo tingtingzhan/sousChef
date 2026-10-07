@@ -410,7 +410,7 @@ nutritionlist(
 ) # compare dry powder
 
 nutritionlist(
- hotdrink(matchaLatte),
+ hotdrink(matchaLatte()),
  cooking:::Ippodo_sayakaLatte(),
  cooking:::Starbucks_matchaLatte(),
  cooking:::Starbucks_matchaLatteMix() |> as('recipe'),
@@ -419,7 +419,7 @@ nutritionlist(
 ) # compare hot drink
 
 nutritionlist(
- frappe(matchaLatte),
+ frappe(matchaLatte()),
  cooking:::Starbucks_matchaFrappuccino()
 ) # compare frappe
 
@@ -452,17 +452,17 @@ nutritionlist(
 ) # compare commercial powders
 
 nutritionlist(
- hotdrink(mocaccino),
+ hotdrink(mocaccino()),
  cooking:::Starbucks_mocha()
 ) # compare hot drink
 
 nutritionlist(
- frappe(mocaccino),
+ frappe(mocaccino()),
  cooking:::Starbucks_mochaFrappuccino(),
  cooking:::Starbucks_mochaFrappuccino_bottle()
 ) # compare frappe
 nutritionlist(
- subtract(cooking:::xiaogaojie_icecream, sugar = 57),
- subtract(cooking:::happytears_icecream, sugar = 80)
+ subtract(cooking:::xiaogaojie_icecream(), sugar = 57),
+ subtract(cooking:::happytears_icecream(), sugar = 80)
 )
 }

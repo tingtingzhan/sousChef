@@ -121,10 +121,10 @@ Bourbon_cheesecake_Crown() # this brand lacks Bourbon flavor
 
 nutritionlist(
  pumpkin_cheesecake(),
- subtract(cooking:::Junior_pumpkin_cheesecake, sugar = 170),
- subtract(cooking:::Natasha_pumpkin_cheesecake, sugar = 230),
- subtract(cooking:::PreppyKitchen_pumpkin_cheesecake, sugar = c(140, 0)),
- subtract(cooking:::CheesecakeFactory_pumpkin, sugar = 12)
+ subtract(cooking:::Junior_pumpkin_cheesecake(), sugar = 170),
+ subtract(cooking:::Natasha_pumpkin_cheesecake(), sugar = 230),
+ subtract(cooking:::PreppyKitchen_pumpkin_cheesecake(), sugar = c(140, 0)),
+ subtract(cooking:::CheesecakeFactory_pumpkin(), sugar = 12)
 )
 }
 \references{

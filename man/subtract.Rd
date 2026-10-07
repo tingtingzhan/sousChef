@@ -2,15 +2,12 @@
 % Please edit documentation in R/fun_subtract.R, R/recipe_other_muffin.R
 \name{subtract}
 \alias{subtract}
-\alias{subtract.function}
 \alias{subtract.raw.}
 \alias{subtract.nutrition}
 \alias{muffin_tmp}
 \title{Subtract Ingredients from \linkS4class{raw.} or \linkS4class{nutrition} Objects}
 \usage{
 subtract(x, ...)
-
-\method{subtract}{`function`}(x, ...)
 
 \method{subtract}{raw.}(x, ...)
 
@@ -27,15 +24,15 @@ muffin_tmp()
 ..
 }
 \examples{
-subtract(cooking:::Keebler_grahamCrust, sugar = 3)
-subtract(cooking:::Keebler_grahamCrust, sugar = 5.5)
+subtract(cooking:::Keebler_grahamCrust(), sugar = 3)
+subtract(cooking:::Keebler_grahamCrust(), sugar = 5.5)
 
 #muffin()
 nutritionlist(
- subtract(cooking:::Brody_muffin, sugar = 237),
- subtract(cooking:::Introvert_muffin, sugar = 50),
- subtract(cooking:::CulinaryHill_muffin, sugar = 155),
- subtract(cooking:::Lori_muffin, sugar = 110))
+ subtract(cooking:::Brody_muffin(), sugar = 237),
+ subtract(cooking:::Introvert_muffin(), sugar = 50),
+ subtract(cooking:::CulinaryHill_muffin(), sugar = 155),
+ subtract(cooking:::Lori_muffin(), sugar = 110))
 
 
 }

@@ -50,13 +50,13 @@ nutritionlist(
  cooking:::SweetDumpling_matcha_icecream() |>
   as('nutrition') |>
   subtract(sugar = 63),
- subtract(cooking:::xiaogaojie_icecream, sugar = 57),
- subtract(cooking:::cuisinart_icecream, sugar = 95),
- subtract(cooking:::emma_froyo, sugar = 84),
- subtract(cooking:::HaagenDazs_matcha, sugar = 15),
- subtract(cooking:::Bassetts_matcha, sugar = 11.7),
- subtract(cooking:::maeda_matcha_icecream, sugar = 9.55),
- subtract(cooking:::Yumna_icecream, sugar = 58),
+ subtract(cooking:::xiaogaojie_icecream(), sugar = 57),
+ subtract(cooking:::cuisinart_icecream(), sugar = 95),
+ subtract(cooking:::emma_froyo(), sugar = 84),
+ subtract(cooking:::HaagenDazs_matcha(), sugar = 15),
+ subtract(cooking:::Bassetts_matcha(), sugar = 11.7),
+ subtract(cooking:::maeda_matcha_icecream(), sugar = 9.55),
+ subtract(cooking:::Yumna_icecream(), sugar = 58),
  matcha_sundae(),
  
  new(Class = 'recipe', class2 = 'Mascarpone\u51b0\u6dc7\uf9f5\U1f368',
@@ -67,13 +67,13 @@ nutritionlist(
 )
 
 nutritionlist(
- subtract(cooking:::Bassetts_coffee, sugar = 12.7),
- subtract(cooking:::HaagenDazs_coffee, sugar = 16),
+ subtract(cooking:::Bassetts_coffee(), sugar = 12.7),
+ subtract(cooking:::HaagenDazs_coffee(), sugar = 16),
  coffee_sundae()
 )
 
 nutritionlist(
- subtract(cooking:::Bassetts_pumpkin, sugar = 11),
+ subtract(cooking:::Bassetts_pumpkin(), sugar = 11),
  pumpkin_sundae()
 )
 

@@ -15,7 +15,7 @@ caffeLatte()
 caffeLatte()
 
 nutritionlist(
- hotdrink(caffeLatte),
+ hotdrink(caffeLatte()),
  cooking:::Starbucks_caffeLatte(),
  cooking:::Starbucks_coffeeFrappuccino_bottle()
 ) # compare hot/frappe drink

@@ -4,10 +4,10 @@
 #' @examples
 #' nutritionlist(
 #'  cheesecake(),
-#'  subtract(cooking:::PreppyKitchen_cheesecake, sugar = 125),
-#'  subtract(cooking:::Junior_original, sugar = 12),
-#'  subtract(cooking:::Junior_cookbook, sugar = 230),
-#'  subtract(cooking:::CheesecakeFactory_original, sugar = 18)
+#'  subtract(cooking:::PreppyKitchen_cheesecake(), sugar = 125),
+#'  subtract(cooking:::Junior_original(), sugar = 12),
+#'  subtract(cooking:::Junior_cookbook(), sugar = 230),
+#'  subtract(cooking:::CheesecakeFactory_original(), sugar = 18)
 #' )
 #' 
 

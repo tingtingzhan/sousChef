@@ -5,8 +5,8 @@
 #' 
 #' @examples
 #' nutritionlist(
-#'  subtract(cooking:::pumpkin_creamCheeseDip_bakethat, sugar = 135),
-#'  subtract(cooking:::pumpkin_creamCheeseDip_Julie, sugar = 180)
+#'  subtract(cooking:::pumpkin_creamCheeseDip_bakethat(), sugar = 135),
+#'  subtract(cooking:::pumpkin_creamCheeseDip_Julie(), sugar = 180)
 #' )
 
 

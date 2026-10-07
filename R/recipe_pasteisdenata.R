@@ -59,10 +59,10 @@ if (FALSE) {
   
   
   nutritionlist(
-    subtract(xiaogaojie_pasteisdenata1, sugar = 130),
+    subtract(xiaogaojie_pasteisdenata1(), sugar = 130),
     xiaogaojie_pasteisdenata2(),
-    subtract(Leites_pasteisdenata, sugar = 200),
-    subtract(TastingTable_pasteisdenata, sugar = 120)
+    subtract(Leites_pasteisdenata(), sugar = 200),
+    subtract(TastingTable_pasteisdenata(), sugar = 120)
   )
 }
 

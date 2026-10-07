@@ -5,10 +5,10 @@
 #' @examples
 #' #muffin()
 #' nutritionlist(
-#'  subtract(cooking:::Brody_muffin, sugar = 237),
-#'  subtract(cooking:::Introvert_muffin, sugar = 50),
-#'  subtract(cooking:::CulinaryHill_muffin, sugar = 155),
-#'  subtract(cooking:::Lori_muffin, sugar = 110))
+#'  subtract(cooking:::Brody_muffin(), sugar = 237),
+#'  subtract(cooking:::Introvert_muffin(), sugar = 50),
+#'  subtract(cooking:::CulinaryHill_muffin(), sugar = 155),
+#'  subtract(cooking:::Lori_muffin(), sugar = 110))
 #' 
 #' 
 

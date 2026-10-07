@@ -13,26 +13,26 @@
 #' 
 #' nutritionlist(
 #'  cornbreadMix(),
-#'  subtract(cooking:::TraderJoes_cornbreadMix, sugar = 10.2),
-#'  subtract(cooking:::WholeFoods365_cornbreadMix, sugar = 4),
-#'  subtract(cooking:::Krusteaz_southern_cornbreadMix, sugar = .5),
+#'  subtract(cooking:::TraderJoes_cornbreadMix(), sugar = 10.2),
+#'  subtract(cooking:::WholeFoods365_cornbreadMix(), sugar = 4),
+#'  subtract(cooking:::Krusteaz_southern_cornbreadMix(), sugar = .5),
 #'  cooking:::BobsRedMill_cornbreadMix(),
-#'  subtract(cooking:::Stonewall_cornbreadMix, sugar = 8.1),
-#'  subtract(cooking:::Jiffy_cornMuffinMix, sugar = 5.5),
-#'  subtract(cooking:::Fleischmanns_cornbreadMix, sugar = 5.1)
+#'  subtract(cooking:::Stonewall_cornbreadMix(), sugar = 8.1),
+#'  subtract(cooking:::Jiffy_cornMuffinMix(), sugar = 5.5),
+#'  subtract(cooking:::Fleischmanns_cornbreadMix(), sugar = 5.1)
 #' )
 #' 
 #' nutritionlist(
 #'  cornbread(),
-#'  subtract(cooking:::PreppyKitchen_cornbread, sugar = 17),
-#'  subtract(cooking:::BethanyWeathersby_cornbread, sugar = 105),
-#'  subtract(cooking:::bluegirl_cornbread, sugar = 108),
-#'  subtract(cooking:::JoshuaWeissman_cornbread, sugar = c(23, 64)),
+#'  subtract(cooking:::PreppyKitchen_cornbread(), sugar = 17),
+#'  subtract(cooking:::BethanyWeathersby_cornbread(), sugar = 105),
+#'  subtract(cooking:::bluegirl_cornbread(), sugar = 108),
+#'  subtract(cooking:::JoshuaWeissman_cornbread(), sugar = c(23, 64)),
 #'  cooking:::Jiffy_cornMuffin() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 32),
-#'  subtract(cooking:::Wegmans_cornbread_recipe, sugar = 88),
-#'  subtract(cooking:::Wegmans_cornbread, sugar = 10.5),
+#'  subtract(cooking:::Wegmans_cornbread_recipe(), sugar = 88),
+#'  subtract(cooking:::Wegmans_cornbread(), sugar = 10.5),
 #'  cooking:::WholeFoods365_cornbread() |>
 #'   as('nutrition') |>
 #'   subtract(sugar = 64),

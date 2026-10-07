@@ -6,18 +6,14 @@
 \alias{drinkmix-class}
 \alias{drink-class}
 \alias{hotdrink}
-\alias{hotdrink.function}
 \alias{hotdrink.drinkmix}
 \alias{hotdrink.nutrition}
 \alias{frappe}
-\alias{frappe.function}
 \alias{frappe.drinkmix}
 \alias{show,drinkmix-method}
 \title{\linkS4class{drinkmix} Recipes}
 \usage{
 hotdrink(x, ...)
-
-\method{hotdrink}{`function`}(x, ...)
 
 \method{hotdrink}{drinkmix}(
   x,
@@ -28,8 +24,6 @@ hotdrink(x, ...)
 \method{hotdrink}{nutrition}(x, water80 = stop("Find suggested hot water on packaging"), ...)
 
 frappe(x, ...)
-
-\method{frappe}{`function`}(x, ...)
 
 \method{frappe}{drinkmix}(
   x,

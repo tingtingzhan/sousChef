@@ -16,18 +16,18 @@
 #' 
 #' nutritionlist(
 #'  cocoa_gateau(),
-#'  subtract(AddaPinch_chocolate_cake, sugar = 300),
-#'  subtract(PreppyKitchen_chocolate_cake, sugar = 300)
+#'  subtract(AddaPinch_chocolate_cake(), sugar = 300),
+#'  subtract(PreppyKitchen_chocolate_cake(), sugar = 300)
 #' )
 #' 
 #' nutritionlist(
 #'  matcha_gateau(),
-#'  subtract(DessertFor2_matcha_cake, sugar = 150)
+#'  subtract(DessertFor2_matcha_cake(), sugar = 150)
 #' )
 #' 
 #' nutritionlist(
 #'  pumpkin_gateau(),
-#'  subtract(cooking:::Sallys_pumpkin_cake, sugar = c(90, 100))
+#'  subtract(cooking:::Sallys_pumpkin_cake(), sugar = c(90, 100))
 #' )
 #' 
 #' 

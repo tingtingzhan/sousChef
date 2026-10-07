@@ -532,7 +532,13 @@ print.nutrition <- \(x, print_label = TRUE, ...) {
     fmt = 'Serving Size %s %s %s\nWater Equivalency %s\n\n', 
     x@servingGram |> sprintf(fmt = '%.4g grams') |> make_ansi_style('purple')() |> style_bold(), 
     (x@servingGram/28.3495) |> sprintf(fmt = '%.1f oz') |> make_ansi_style('seagreen')() |> style_bold(),
-    fmt_vol(x = x@servingGram, nm = list(x)),
+    if (x@call == 'asMethod') {
+      # from as(., Class = 'nutrition)
+      # do not have volume info
+      ''
+    } else {
+      fmt_vol(x = x@servingGram, nm = as.character(x@call))
+    },
     x@servingGram |>
       cmod(e2 = consec::floz, n = 2L, tol = 1e-6) |>
       make_ansi_style('seagreen')() |> 

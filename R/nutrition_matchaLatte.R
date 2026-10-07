@@ -10,7 +10,7 @@
 #' ) # compare dry powder
 #' 
 #' nutritionlist(
-#'  hotdrink(matchaLatte),
+#'  hotdrink(matchaLatte()),
 #'  cooking:::Ippodo_sayakaLatte(),
 #'  cooking:::Starbucks_matchaLatte(),
 #'  cooking:::Starbucks_matchaLatteMix() |> as('recipe'),
@@ -19,7 +19,7 @@
 #' ) # compare hot drink
 #' 
 #' nutritionlist(
-#'  frappe(matchaLatte),
+#'  frappe(matchaLatte()),
 #'  cooking:::Starbucks_matchaFrappuccino()
 #' ) # compare frappe
 #' 

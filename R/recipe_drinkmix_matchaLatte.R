@@ -57,8 +57,8 @@ ikuyoLatte <- \() new(
 #' ) # compare dry powder
 #' 
 #' nutritionlist(
-#'  hotdrink(matchaLatte),
-#'  hotdrink(matchaGoatLatte)
+#'  hotdrink(matchaLatte()),
+#'  hotdrink(matchaGoatLatte())
 #' ) # compare hot drink
 #' 
 #' @export

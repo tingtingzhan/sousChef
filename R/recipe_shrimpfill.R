@@ -28,7 +28,7 @@ setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
 #'  shrimpfillCantonese(),
 #'  whiteSwan_shrimpfill(),
 #'  Daat_shrimpfill(),
-#'  subtract(Daat_shrimpfill, vegetable = c(bambooShoot = 90))
+#'  subtract(Daat_shrimpfill(), vegetable = c(bambooShoot = 90))
 #' )
 #' 
 #' @export

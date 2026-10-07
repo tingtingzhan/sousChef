@@ -181,15 +181,15 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 \examples{
 nutritionlist(
  cheesecake(),
- subtract(cooking:::PreppyKitchen_cheesecake, sugar = 125),
- subtract(cooking:::Junior_original, sugar = 12),
- subtract(cooking:::Junior_cookbook, sugar = 230),
- subtract(cooking:::CheesecakeFactory_original, sugar = 18)
+ subtract(cooking:::PreppyKitchen_cheesecake(), sugar = 125),
+ subtract(cooking:::Junior_original(), sugar = 12),
+ subtract(cooking:::Junior_cookbook(), sugar = 230),
+ subtract(cooking:::CheesecakeFactory_original(), sugar = 18)
 )
 
 nutritionlist(
- subtract(cooking:::pumpkin_creamCheeseDip_bakethat, sugar = 135),
- subtract(cooking:::pumpkin_creamCheeseDip_Julie, sugar = 180)
+ subtract(cooking:::pumpkin_creamCheeseDip_bakethat(), sugar = 135),
+ subtract(cooking:::pumpkin_creamCheeseDip_Julie(), sugar = 180)
 )
 nutritionlist(
  pumpkin_creamCheeseSpread(),

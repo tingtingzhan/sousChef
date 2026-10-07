@@ -67,8 +67,8 @@ Wegmans_darkBrown <- \() new(
 Domino_darkBrown <- \() new(
   Class = 'nutrition',  domino = 'dark-brown-sugar',
   name = 'Dark Brown Sugar', alias = '\u7ea2\u7cd6',
-  walmart = '10291798', usd = 3.12/(2*454)*8,
-  # wegmans = 26106291L,
+  #walmart = '10291798', usd = 3.12/(2*454)*8,
+  wegmans = '962361', usd = 3.69/(2*454)*8, date = as.Date('2026-10-07'),
   servingGram = 8, servingTsp = 2, 
   calorie = 30,
   carbohydrate = 8, addedSugar = 8)

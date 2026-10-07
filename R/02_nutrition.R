@@ -528,21 +528,34 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
   #cat('Nutrition Facts\n\n')
   
   sprintf(
-    fmt = 'Serving Size %s %s %s\nWater Equivalency %s\n\n', 
-    x@servingGram |> sprintf(fmt = '%.4g grams') |> make_ansi_style('purple')() |> style_bold(), 
-    (x@servingGram/28.3495) |> sprintf(fmt = '%.1f oz') |> make_ansi_style('seagreen')() |> style_bold(),
+    fmt = 'Serving Size %s %s %s\n', 
+    x@servingGram |> 
+      sprintf(fmt = '%.4g grams') |> 
+      make_ansi_style('purple')() |> 
+      style_bold(), 
+    (x@servingGram/28.3495) |> 
+      sprintf(fmt = '%.1f oz') |> 
+      make_ansi_style('seagreen')() |> 
+      style_bold(),
     if (x@call == 'asMethod') {
       # from as(., Class = 'nutrition)
       # do not have volume info
       ''
     } else {
       fmt_vol(x = x@servingGram, nm = as.character(x@call))
-    },
+    }
+  ) |> cat()
+  
+  if (length(x@water) && length(x@servingGram) && (x@water / x@servingGram > .9)) {
     x@servingGram |>
       cmod(e2 = consec::floz, n = 2L, tol = 1e-6) |>
       make_ansi_style('seagreen')() |> 
-      style_bold()
-  ) |> cat()
+      style_bold() |>
+      sprintf(fmt = 'Water Equivalency %s\n') |> 
+      cat()
+  }
+  
+  cat('\n')
   
   if (length(x@cost_)) {
     if (is.na(x@date)) {

@@ -26,12 +26,12 @@ Wegmans_corn_starch <- \() new(
 
 Argo_corn_starch <- \() new(
   Class = 'nutrition', 
-  brand = style_hyperlink(text = 'Argo\U1f1fa\U1f1f8', url = 'https://www.argostarch.com/products.html') |> c(),
+  brand = style_hyperlink(text = 'Argo\U1f1fa\U1f1f8', url = 'https://argostarch.com/products/#corn-starch') |> c(),
   name = 'Corn\U1f33d Starch', alias = '\u7389\u7c73\u6dc0\u7c89',
-  # wegmans = 34585L, usd = 2.49/454*8,
+  wegmans = '783259', usd = 2.79/454*8, date = as.Date('2026-10-07'),
   servingGram = 8, 
-  # servingTbsp = 1 # packaging
-  servingTbsp = 8/10, # expected experiment 1tbsp = 10g (based on Wegmans corn starch)
+  servingTbsp = 1, # packaging
+  #servingTbsp = 8/10, # expected experiment 1tbsp = 10g (based on Wegmans corn starch)
   calorie = 30,
   carbohydrate = 7)
 

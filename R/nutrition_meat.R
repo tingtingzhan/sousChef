@@ -3,7 +3,7 @@
 eggYolk <- \() new(
   Class = 'nutrition',  
   name = 'Egg\U1f95a Yolk, Large', alias = '\u9e21\u86cb\u9ec4',
-  wegmans = '46155', usd = 2.19/18/17.3*100,
+  wegmans = '46155', usd = 2.19/18/17.3*100, date = as.Date('2026-10-07'),
   pieceGram = 17.3, piece_fmt = '%.1f\U1f95a',
   fdc = 172184L, servingGram = 100,
   calorie = 322,
@@ -14,7 +14,8 @@ eggYolk <- \() new(
 eggWhite <- \() new(
   Class = 'nutrition',  
   name = 'Egg\U1f95a White, Large', alias = '\u9e21\u86cb\u6e05',
-  wegmans = '46155', usd = 2.19/18/17.3*100,
+  wegmans = '46155', usd = 2.19/18/34.7*100, date = as.Date('2026-10-07'),
+  # usd = 8.39/24/34.7*100, # costco warehouse; more expensive?
   pieceGram = 34.7, piece_fmt = '%.1f\U1f95a',
   fdc = 172183L, servingGram = 100,
   calorie = 52,

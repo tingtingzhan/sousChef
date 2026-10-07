@@ -171,9 +171,11 @@ mergePc <- \(x, which, ...) {
 # combine water at different temperature
 mergeH2O <- \(x) {
   # `x` is \linkS4class{raw.}
-  x@water <- x@water |>
-    sum() |>
-    setNames(nm = 'Wegmans_water')
+  if (length(x@water)) {
+    x@water <- x@water |>
+      sum() |>
+      setNames(nm = 'Wegmans_water')
+  } # else do nothing
   return(x)
 }
 

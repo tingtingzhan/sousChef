@@ -366,8 +366,8 @@ Libbys_pumpkin <- \() new(
     style_hyperlink(text = 'Libby\'s\U1f1fa\U1f1f8', url = ) |>
     c(),
   name = 'Pumpkin\U1f383 Puree', alias = '\u5357\u74dc\u6ce5',
-  #usd = 8.98/(3*822)*122, sams = '162878', # 2023 early Fall, regular price
-  usd = 3.91/(3*822)*122, sams = '162878', # 2023-12-24, clearance?
+  usd = 7.58/(3*822)*122, sams = '162878', date = as.Date('2026-10-07'), # early Fall, regular price
+  # usd = 3.91/(3*822)*122, sams = '162878', # 2023-12-24, clearance?
   # BJ's no longer have this at Christmas # 2023-12-24
   # Groupon's Sam's Club member is super cheap ($15) at Christmas! # 2023-12-24
   # usd = 10.49/(3*822)*122, bjs = 'libbys-100-pure-pumpkin-3-pk29-oz/3000000000000146833', # 2023 Fall

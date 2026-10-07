@@ -6,8 +6,8 @@ Kerrygold_butter <- \() new(
   kerrygoldusa = 'unsalted-butter',
   name = 'Irish Butter\U1f9c8', alias = '\u9ec4\u6cb9',
   serving_oz = 8/16, servingTbsp = 1, 
+  costco = '100439445', usd = 14.99/4/16, date = as.Date('2026-10-07'),
   costcoBiz = '100362700',
-  usd = 11.99/4/16, # in 2022 at least
   calorie = 100,
   fat = 226.796/16*.82, # package 12g, 
   cholesterol = .03,

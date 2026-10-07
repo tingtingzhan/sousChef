@@ -1,15 +1,23 @@
 
-
+#' @importFrom stats setNames
 setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   
   grams <- from |> 
     as.double.raw.(detail = TRUE, rel = FALSE)
   
-  info <- grams |>
+  z <- grams |>
     names() |> 
+    setNames(nm = _) |>
     lapply(FUN = \(i) {
       eval(call(name = i))
-    }) |>
+    })
+  
+  date <- z |> 
+    lapply(FUN = slot, name = 'date') |>
+    do.call(what = c, args = _) |>
+    min(na.rm = FALSE)
+  
+  info <- z |>
     do.call(what = nutritionlist, args = _) |>
     as.matrix.nutritionlist(incl_usd = TRUE, incl_calorie = TRUE, rel = TRUE)
   
@@ -18,6 +26,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   new(
     Class = 'nutrition',  
     name = character(),
+    date = date,
     servingGram = sum(grams),
     usd = z['usd'] |> unname(),
     calorie = z['calorie'] |> unname(),

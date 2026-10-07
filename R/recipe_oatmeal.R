@@ -20,6 +20,7 @@ setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
     treatment = c('Soak in fridge overnight'),
     program = 'Microwave (with chilled mug)',
     minute = 2,
+    cooling = 'Let stand until all liquid is absorbed',
     note = '(optional) serve with an ice cube'
   ))
 ))
@@ -43,15 +44,11 @@ coconut_oatmeal <- \() new(
 #' @export
 soymilk_oatmeal <- \() new(
   Class = 'oatmeal',
-  #grain = c(Quaker_oat = 40), # make it 50g
-  #homemade = c(soymilk_DJ13U = 140),
-  #syrup = c(Runamok_ryeWhisky = 5),
-  
-  homemade = c(soymilk_DJ13U = 175),
-  syrup = c(Runamok_rum = 5),
-  
+  #homemade = c(soymilk_DJ13U = 175), # too wet
+  homemade = c(soymilk_DJ13U = 160), # test next time
+  syrup = c(Runamok_rum = 5), # with reduced soymilk
   date = as.Date('2026-10-07'),
-  review = 'nice!  Note on Sep 2026: probably need to reduce sugar'
+  review = 'nice!'
 )
 
 

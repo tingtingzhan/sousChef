@@ -433,7 +433,6 @@ gram_per_tsp <- \(x) {
   
   x1 <- if (is.character(x)) {
     if (anyNA(x) || !all(nzchar(x))) stop('input degenerated')
-    #names(x) <- x
     x |> 
       setNames(nm = _) |>
       lapply(FUN = \(i) {

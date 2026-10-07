@@ -175,7 +175,7 @@ Dole_pineapple <- \() new(
   # fdc = 167767L, # water = 83.5%, not accurate!!
   amazon = 'B00GFROV7A', usd = 22.46/12/567*122, 
   wegmans = '561977',
-  servingGram = 122, servingCup = 1/2, pieceGram = 567, piece_fmt = '%.1g\U1f96b',
+  servingGram = 122, servingCup = 1/2, pieceGram = 567, piece_fmt = '%.1f\U1f96b',
   calorie = 80,
   water = 122-18-1, # 122 * (240/270) #, # confirmed with bao()
   carbohydrate = 18, fiber = 1, sugar = 15, protein = 1)
@@ -298,7 +298,7 @@ parsleyFresh <- \() new(
 FlavorFarmer_whitePeach <- \() new(
   Class = 'nutrition',  fdc = 1102677L,
   brand = 'Flavor Farmer', name = 'White Peach, Fresh',
-  servingGram = 100, pieceGram = 130, piece_fmt = '%.1g\U1f351',
+  servingGram = 100, pieceGram = 130, piece_fmt = '%.1f\U1f351',
   water = 88.3, protein = .91, fat = .27, sodium = .013, sugar = 8.39,
   review = 'Fresh white peach sold at Costco in summer',
   machine = \(x) switch(x, bread = 'Wait until fully ripened, then store in fridge. Remove skin and pit, then blend.'))
@@ -313,7 +313,7 @@ avocado <- \() new(
   Class = 'nutrition',  fdc = 171705L,
   alias = '\u725b\u6cb9\u679c', name = 'Avocado\U1f951',
   servingGram = 100, 
-  pieceGram = 150, piece_fmt = '%.1g\U1f951', # pulp only
+  pieceGram = 150, piece_fmt = '%.1f\U1f951', # pulp only
   # actual weight:
   # with skin and kernel: 220g
   calorie = 160,
@@ -341,7 +341,7 @@ lemon <- \() new( # lemon juice
 lime <- \() new( # lime juice
   Class = 'nutrition',  fdc = 2344679L,
   alias = '\u9752\u67e0\u6c41', name = 'Lime\U1f34b\u200d\U1f7e9 Juice',
-  servingGram = 100, pieceGram = 44, piece_fmt = '%.1g\U1f34b\u200d\U1f7e9',
+  servingGram = 100, pieceGram = 44, piece_fmt = '%.1f\U1f34b\u200d\U1f7e9',
   calorie = 25,
   water = 90.8, protein = 0.42, fat = 0.07, sugar = 1.69, sodium = .002)
 
@@ -372,7 +372,7 @@ Libbys_pumpkin <- \() new(
   # Groupon's Sam's Club member is super cheap ($15) at Christmas! # 2023-12-24
   # usd = 10.49/(3*822)*122, bjs = 'libbys-100-pure-pumpkin-3-pk29-oz/3000000000000146833', # 2023 Fall
   servingGram = 122, servingCup = 1/2, 
-  piece_fmt = '%.1g\U1f96b', pieceGram = 850, # label says 822 
+  piece_fmt = '%.1f\U1f96b', pieceGram = 850, # label says 822 
   calorie = 45,
   fat = .5, sodium = .005, carbohydrate = 10, fiber = 5, sugar = 5, protein = 1, 
   fdc = 168450L,
@@ -403,7 +403,7 @@ WegmansOrganic_tomato <- \() new(
   Class = 'nutrition',  
   name = 'Tomato\U1f345 Puree', alias = '\u897f\u7ea2\u67ff\u6ce5',
   wegmans = '45416', usd = 2.89/822*63,
-  servingGram = 63, servingCup = 1/4, pieceGram = 822, piece_fmt = '%.1g\U1f96b', 
+  servingGram = 63, servingCup = 1/4, pieceGram = 822, piece_fmt = '%.1f\U1f96b', 
   calorie = 25,
   sodium = .02, carbohydrate = 6, sugar = 3, protein = 1, 
   water = 63 * 300/400)
@@ -417,7 +417,7 @@ Motts_applesauce <- \() new(
   wegmans = '534880', #usd = 2.99/680*123,
   costco = '100449967', usd = 7.99/(1300*3)*123, date = as.Date('2026-10-01'),
   # nutrition facts on bottle label (sold at Costco, Wegmans, etc), not from merchandise website
-  servingGram = 123, servingCup = 1/2, pieceGram = 1300, piece_fmt = '%.1g\U1f96b', 
+  servingGram = 123, servingCup = 1/2, pieceGram = 1300, piece_fmt = '%.1f\U1f96b', 
   calorie = 50,
   water = 123-14-1, # 123*.8822#, # matches
   carbohydrate = 14, sugar = 12)

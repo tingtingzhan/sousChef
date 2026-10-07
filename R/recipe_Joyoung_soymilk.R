@@ -17,7 +17,7 @@ setClass(Class = 'soymilk', contains = 'recipe', prototype = prototype(
 soymilk <- \() new(
   Class = 'soymilk',
   bean = c(Laura_soybean = 22), # 1/2 Joyoung small cup
-  flour = c(Erawan_glutinousRiceFlr = 5),
+  flour = c(Erawan_glutRiceFlr = 5),
   water = 590 - 22 - 5, # confirmed!!
   tool = list(JoyoungDJ06M_soymilk()), 
   pros = 'perfect thickness!',

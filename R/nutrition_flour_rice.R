@@ -11,7 +11,7 @@ Erawan_riceFlr <- \() new(
 
 
 
-Erawan_glutinousRiceFlr <- \() new(
+Erawan_glutRiceFlr <- \() new(
   Class = 'nutrition', 
   brand = style_hyperlink(text = 'Erawan\u4e09\u8c61\U1f1f9\U1f1ed', url = 'https://www.erawanbrand.com/flours') |>
     c(),

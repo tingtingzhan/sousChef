@@ -16,7 +16,7 @@
 #' @export
 setClass(Class = 'niangaoNingbo', contains = 'recipe', prototype = prototype(
   class2 = '\u5b81\u6ce2\u5e74\u7cd5',
-  flour = c(Erawan_glutinousRiceFlr = 100,
+  flour = c(Erawan_glutRiceFlr = 100,
             Erawan_riceFlr = 200),
   water = 210,
   oil_Tbsp = c(Wegmans_vegetable_oil = 1)
@@ -31,7 +31,7 @@ niangaoNingbo <- \() new(Class = 'niangaoNingbo')
 Jenny_niangaoNingbo <- \() new(
   Class = 'recipe', author = 'Jenny', flavor = '\u5b81\u6ce2\u5e74\u7cd5',
   youtube = 'kVsbsJrwLQs',
-  flour = c(Erawan_glutinousRiceFlr = 100,
+  flour = c(Erawan_glutRiceFlr = 100,
             Erawan_riceFlr = 200),
   water = 200,
   oil_Tbsp = c(Wegmans_vegetable_oil = 1),
@@ -42,7 +42,7 @@ Jenny_niangaoNingbo <- \() new(
 SoupedUp_niangaoNingbo <- \() new(
   Class = 'recipe', author = 'Souped Up', flavor = '\u5b81\u6ce2\u5e74\u7cd5',
   youtube = 'lHR1QohweaA',
-  flour = c(Erawan_glutinousRiceFlr = 100,
+  flour = c(Erawan_glutRiceFlr = 100,
             Erawan_riceFlr = 300),
   water = 300)
 
@@ -51,7 +51,7 @@ SoupedUp_niangaoNingbo <- \() new(
 LuLu_niangaoNingbo <- \() new(
   Class = 'recipe', author = 'LuLu', flavor = '\u5b81\u6ce2\u5e74\u7cd5',
   youtube = 'KPyIG7Tn64I',
-  flour = c(Erawan_glutinousRiceFlr = 200,
+  flour = c(Erawan_glutRiceFlr = 200,
             Erawan_riceFlr = 200),
   water = 280,
   salt = 2,

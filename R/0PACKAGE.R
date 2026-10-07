@@ -314,9 +314,9 @@ if (FALSE) {
   
   matcha2gluten0Flr <- fn.
   
-  matcha2wheatflourmix <- fn.
+  matcha2wheatFlrMix <- fn.
   
-  matcha2riceflour <- \(x) switch(
+  matcha2riceFlr <- \(x) switch(
     class(x),
     snowSkin = .075,
     NA_real_)
@@ -343,9 +343,9 @@ if (FALSE) {
   
   beet2gluten0Flr <- fn.
   
-  beet2wheatflourmix <- fn.
+  beet2wheatFlrMix <- fn.
   
-  beet2riceflour <- \(x) switch(
+  beet2riceFlr <- \(x) switch(
     class(x),
     snowSkin = .075,
     NA_real_)
@@ -456,11 +456,11 @@ if (FALSE) {
     class(x),
     NA_real_)
   
-  acai2riceflour <- \(x) switch(
+  acai2riceFlr <- \(x) switch(
     class(x),
     NA_real_)
   
-  acai2flour <- acai2gluten0Flr <- acai2wheatflourmix <- fn.
+  acai2flour <- acai2gluten0Flr <- acai2wheatFlrMix <- fn.
   
   starch <- \(x) switch(
     class(x), 
@@ -533,12 +533,12 @@ if (FALSE) {
   
   water2gluten0Flr <- fn.
   
-  water2wheatflourmix <- \(x) switch(
+  water2wheatFlrMix <- \(x) switch(
     class(x),
     wheatBao = .5,
     NA_real_)
   
-  water2riceflour <- \(x) switch(
+  water2riceFlr <- \(x) switch(
     class(x),
     stickyTortilla = 1.6,
     snowSkin = 1.86,
@@ -574,37 +574,37 @@ if (FALSE) {
   
   fat2gluten0Flr <- fn.
   
-  fat2wheatflourmix <- \(x) switch(
+  fat2wheatFlrMix <- \(x) switch(
     class(x),
     wheatBao = .045,
     NA_real_)
   
-  fat2riceflour <- \(x) switch(
+  fat2riceFlr <- \(x) switch(
     class(x),
     stickyTortilla = .035,
     snowSkin = .05,
     NA_real_)
   
-  flour2cornmeal <- pastryFlr2cornmeal <- breadFlr2cornmeal <- gluten0Flr2cornmeal <- wheatflourmix2cornmeal <- riceflour2cornmeal <- fn.
+  flour2cornmeal <- pastryFlr2cornmeal <- breadFlr2cornmeal <- gluten0Flr2cornmeal <- wheatFlrMix2cornmeal <- riceFlr2cornmeal <- fn.
   
-  starch2flour <- starch2pastryFlr <- starch2breadFlr <- starch2gluten0Flr <- starch2wheatflourmix <- fn.
+  starch2flour <- starch2pastryFlr <- starch2breadFlr <- starch2gluten0Flr <- starch2wheatFlrMix <- fn.
   
-  starch2riceflour <- \(x) switch(
+  starch2riceFlr <- \(x) switch(
     class(x),
     stickyTortilla = .16,
     snowSkin = .25,
     NA_real_)
   
-  rice2flour <- rice2pastryFlr <- rice2breadFlr <- rice2gluten0Flr <- rice2wheatflourmix <- fn.
+  rice2flour <- rice2pastryFlr <- rice2breadFlr <- rice2gluten0Flr <- rice2wheatFlrMix <- fn.
   
-  rice2riceflour <- \(x) switch(
+  rice2riceFlr <- \(x) switch(
     class(x),
     snowSkin = .5,
     NA_real_)
   
-  glutinousRice2flour <- glutinousRice2pastryFlr <- glutinousRice2breadFlr <- glutinousRice2gluten0Flr <- glutinousRice2wheatflourmix <- fn.
+  glutRice2flour <- glutRice2pastryFlr <- glutRice2breadFlr <- glutRice2gluten0Flr <- glutRice2wheatFlrMix <- fn.
   
-  glutinousRice2riceflour <- \(x) switch(
+  glutRice2riceFlr <- \(x) switch(
     class(x),
     snowSkin = .5,
     NA_real_)
@@ -619,7 +619,7 @@ if (FALSE) {
     bread =, noodlelinda =, wrapperlinda = .003,
     NA_real_)
   
-  salt2pastryFlr <- salt2wheatflourmix <- salt2gluten0Flr <- salt2riceflour <- fn.
+  salt2pastryFlr <- salt2wheatFlrMix <- salt2gluten0Flr <- salt2riceFlr <- fn.
   
   eggYolk2flour <- \(x) switch(
     class(x),
@@ -636,7 +636,7 @@ if (FALSE) {
     bread = .035,
     NA_real_)
   
-  eggYolk2gluten0Flr <- eggYolk2wheatflourmix <- eggYolk2riceflour <- fn.
+  eggYolk2gluten0Flr <- eggYolk2wheatFlrMix <- eggYolk2riceFlr <- fn.
   
   blackSesame2flour <- \(x) switch(
     class(x),
@@ -648,9 +648,9 @@ if (FALSE) {
   
   blackSesame2breadFlr <- fn.
   
-  blackSesame2gluten0Flr <- blackSesame2wheatflourmix <- fn.
+  blackSesame2gluten0Flr <- blackSesame2wheatFlrMix <- fn.
   
-  blackSesame2riceflour <- fn.
+  blackSesame2riceFlr <- fn.
   
   Na2CO3_2flour <- fn.
   
@@ -661,9 +661,9 @@ if (FALSE) {
     noodlelinda =, wrapperlinda = .0015,
     NA_real_)
   
-  Na2CO3_2gluten0Flr <- Na2CO3_2wheatflourmix <- fn.
+  Na2CO3_2gluten0Flr <- Na2CO3_2wheatFlrMix <- fn.
   
-  Na2CO3_2riceflour <- fn.
+  Na2CO3_2riceFlr <- fn.
   
   bakingPowder <- \(x) switch(
     class(x),
@@ -687,12 +687,12 @@ if (FALSE) {
   
   bakingPowder2gluten0Flr <- fn.
   
-  bakingPowder2wheatflourmix <- \(x) switch(
+  bakingPowder2wheatFlrMix <- \(x) switch(
     class(x), 
     wheatBao = .0095,
     NA_real_)
   
-  bakingPowder2riceflour <- fn.
+  bakingPowder2riceFlr <- fn.
   
   yeast2flour <- fn.
   
@@ -709,12 +709,12 @@ if (FALSE) {
   
   yeast2gluten0Flr <- fn.
   
-  yeast2wheatflourmix <- \(x) switch(
+  yeast2wheatFlrMix <- \(x) switch(
     class(x), 
     wheatBao = .0095,
     NA_real_)
   
-  yeast2riceflour <- fn.
+  yeast2riceFlr <- fn.
   
   gelatin2water <- \(x) switch(
     class(x), 
@@ -767,14 +767,14 @@ if (FALSE) {
                   'matcha', 'beet', 'acai', 'blackSesame', 
                   'starch', 
                   'water',
-                  'glutinousRice', # 'rice', 
+                  'glutRice', # 'rice', 
                   'yeast', 'bakingPowder', 'Na2CO3_'), 
-            Y = c('flour', 'pastryFlr', 'breadFlr', 'gluten0Flr', 'wheatflourmix', 'riceflour'), 
+            Y = c('flour', 'pastryFlr', 'breadFlr', 'gluten0Flr', 'wheatFlrMix', 'riceFlr'), 
             FUN = paste, sep = '2')),
     
     'water2creamcheese',
     
-    paste0(c('flour', 'pastryFlr', 'breadFlr', 'gluten0Flr', 'wheatflourmix', 'riceflour'), '2cornmeal'),
+    paste0(c('flour', 'pastryFlr', 'breadFlr', 'gluten0Flr', 'wheatFlrMix', 'riceFlr'), '2cornmeal'),
     
     'gelatin2water',
     NULL

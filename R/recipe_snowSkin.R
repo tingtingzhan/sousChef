@@ -24,7 +24,7 @@
 #' @export
 setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
   class2 = '\u51b0\u76ae', 
-  flour = c(Erawan_glutinousRiceFlr = 50, 
+  flour = c(Erawan_glutRiceFlr = 50, 
             Erawan_riceFlr = 50), 
   starch = c(ManSang_wheat_starch = 25),
   water = 185,

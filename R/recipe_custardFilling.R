@@ -114,11 +114,11 @@ pumpkin_custardFilling <- \() new(
       program = 'Level 4',
       attachment = 'Paddle',
       operation = 'Mix well the ingredients except for sugar and butter',
-      capacity = 2
+      capacity = 3
     ),
     JoyoungCJA9U_filling(
-      minute = c('1x' = 20, '2x, too much' = 30+5+3),
-      waterLost = 340, # 2x reduces to 1840g. super accurate!!!
+      minute = c('1x' = 20, '1.5x\U1f389' = 29, '2x, too much' = 38),
+      waterLost = 340, # validated on 1x and 2x; super accurate!!!
       capacity = 1.5
     )
   ),

@@ -31,7 +31,7 @@
 setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
   class2 = '\u6d41\u5fc3\u9985',
   water = c(c22 = 80, c80 = 640),
-  flour = c(Erawan_glutinousRiceFlr = 32),
+  flour = c(Erawan_glutRiceFlr = 32),
   gelatin_pc = c(Champion_gold_gelatin = 12)#,
   #instruction (legacy) = c(
   #  'Make a slurry of glutinous rice flour and room-temperature water',
@@ -85,7 +85,7 @@ Daat_sesamelava <- \() new(
   sugar = 180,
   nut = c(peanut = 20), #花生酱  Peanut Butter               20g
   fat = c(Epic_lard = 20),
-  flour = c(Erawan_glutinousRiceFlr = 20),
+  flour = c(Erawan_glutRiceFlr = 20),
   dairy = c(Carnation_evapMilk = 50),
   gelatin = c(Champion_gold_gelatin = 15),
   portion = c(bao = 28))

@@ -129,7 +129,7 @@ labels.raw. <- \(object, ...) character()
 
 #' @method print raw.
 #' @export
-print.raw. <- \(x, ...) {
+print.raw. <- \(x, prt_total = TRUE, ...) {
   
   x |> 
     labels() |> # [labels.raw.] or [labels.recipe]
@@ -137,6 +137,15 @@ print.raw. <- \(x, ...) {
     style_bold() |> 
     cat('\n\n')
 
+  if (prt_total) {
+    names(getSlots(x = 'raw.')) |>
+      lapply(FUN = slot, object = x) |>
+      unlist() |>
+      sum() |>
+      sprintf(fmt = 'Total: %.1f grams\n\n') |>
+      cat()
+  }
+  
   prt_vol(x@homemade)
   prt_vol(x@meat)
   prt_vol(x@poultry)
@@ -286,7 +295,7 @@ as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
       breadFlr = x['_breadFlr$'] |> sum(),
       pastryFlr = x['_pastryFlr$'] |> sum(),
       cornmeal = x['_cornmeal$'] |> sum(),
-      glutRice = x['_glutinousRiceFlr$'] |> sum(),
+      glutRice = x['_glutRice$|_glutRiceFlr$'] |> sum(),
       eggYolk = x['^eggYolk$'] |> sum()
       # 'eggWhite' = x['^eggWhite$'] |> sum()#, # waterLost after cooking!!
     )

@@ -106,10 +106,10 @@ summary.raw. <- \(object, ...) {
       Class = 'per', 
       per = 'Mixed Wheat Flour', 
       equiv = new(Class = 'equiv', current = z / sum(mixWheatFlr), target = c(
-        water = devrecipe$water2wheatflourmix(x),
-        fat = devrecipe$fat2wheatflourmix(x),
-        bakingPowder = devrecipe$bakingPowder2wheatflourmix(x),
-        yeast = devrecipe$yeast2wheatflourmix(x)
+        water = devrecipe$water2wheatFlrMix(x),
+        fat = devrecipe$fat2wheatFlrMix(x),
+        bakingPowder = devrecipe$bakingPowder2wheatFlrMix(x),
+        yeast = devrecipe$yeast2wheatFlrMix(x)
       )))
     
   } else {
@@ -181,12 +181,12 @@ summary.raw. <- \(object, ...) {
   ret$perRiceFlr <- new(
     Class = 'per', 
     per = 'Glutinous+Rice\U1f33e Flour', 
-    equiv = new(Class = 'equiv', current = z / sum(x['_riceFlr$|_glutinousRiceFlr$']), target = c(
-      water = devrecipe$water2riceflour(x),
-      glutRice = devrecipe$glutinousRice2riceflour(x),
-      fat = devrecipe$fat2riceflour(x),
-      starch = devrecipe$starch2riceflour(x),
-      matcha = devrecipe$matcha2riceflour(x)
+    equiv = new(Class = 'equiv', current = z / sum(x['_riceFlr$|_glutRiceFlr$']), target = c(
+      water = devrecipe$water2riceFlr(x),
+      glutRice = devrecipe$glutRice2riceFlr(x),
+      fat = devrecipe$fat2riceFlr(x),
+      starch = devrecipe$starch2riceFlr(x),
+      matcha = devrecipe$matcha2riceFlr(x)
     )))
   
   ret$perCocoa <- if (!inherits(x, what = c('tiramisuMix', 'tiramisu_'))) new(

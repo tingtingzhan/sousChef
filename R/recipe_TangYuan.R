@@ -18,7 +18,7 @@
 #' @export
 setClass(Class = 'TangYuan', contains = 'recipe', prototype = prototype(
   class2 = '\u6c64\u5706\u76ae',
-  flour = c(Erawan_glutinousRiceFlr = 100), 
+  flour = c(Erawan_glutRiceFlr = 100), 
   dairy = c(Kerrygold_butter = 3),
   portion = 5#,
   # instruction (legacy) = 'Boil 7% of the dough (1min after floats up)',

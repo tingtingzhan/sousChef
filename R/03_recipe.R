@@ -393,13 +393,13 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
     gsub(pattern = '^ *|(?<= ) | *$', replacement = '', perl = TRUE) |>
     col_green() |> style_bold() |> cat()
   
-  print.raw.(x)
+  print.raw.(x, prt_total = FALSE)
   
   y <- x |>
     as(Class = 'nutrition')
   
   y |>
-    print.nutrition(print_label = FALSE)
+    print.nutrition(prt_label = FALSE)
   
   x@tool |>
     lapply(FUN = show)

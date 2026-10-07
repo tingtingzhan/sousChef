@@ -43,6 +43,32 @@ Dynasty_brownRice <- \() new(
   calorie = 160,
   carbohydrate = 37, protein = 2)
 
+Koda_glutRice <- \() new(
+  Class = 'nutrition',
+  brand = 'https://kodafarmsrice.com/products/sho-chiku-bai\u00ae-sweet-rice' |>
+    style_hyperlink(text = 'Koda Farms\u677e\u7af9\u6885') |>
+    c(),
+  name = 'Glutinous Rice\U1f33e', alias = '\u7cef\u7c73',
+  amazon = 'B0062EXR1C', usd = 22.99/50,
+  servingGram = 45, servingCup = 1/4, # packaging
+  calorie = 170,
+  carbohydrate = 37, fiber = 1, protein = 3
+)
+
+Hakubai_glutRice <- \() new(
+  Class = 'nutrition',
+  brand = 'Hakubai\u767d\u6885',
+  name = 'Glutinous Rice\U1f33e', alias = '\u7cef\u7c73',
+  jfc = '25190', amazon = 'B008CO9A6Q', usd = 17.99/54,
+  servingGram = 42, servingCup = 1/4, # packaging
+  calorie = 150,
+  carbohydrate = 33, fiber = 1, protein = 3
+)
+
+
+
+
+
 Botan_rice <- \() new(
   Class = 'nutrition', 
   brand = 'Botan\u5bcc\u8d35\u82b1',

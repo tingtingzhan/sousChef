@@ -233,7 +233,7 @@ setClass(Class = 'nutrition', slots = c(
     'portion'
   ))
 ), prototype = prototype(
-  piece_fmt = '%.1gpcs',
+  piece_fmt = '%.1fpcs',
   machine = \(x) NULL,
   calorie = 0,
   date = as.Date(NA_character_)
@@ -517,10 +517,10 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) print.nutrit
 
 
 #' @export
-print.nutrition <- \(x, print_label = TRUE, ...) {
+print.nutrition <- \(x, prt_label = TRUE, ...) {
   
   cat('\n')
-  if (print_label) x |>
+  if (prt_label) x |>
     labels.nutrition() |>
     style_bold() |> 
     cat('\n\n')

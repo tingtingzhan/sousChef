@@ -113,7 +113,7 @@ sum_by_name <- \(...) {
 
 
 # add name to len-1 vector
-.addname1 <- \(x, nm = stop('no default!'), ...) {
+addname1 <- \(x, nm = stop('no default!'), ...) {
   
   nx <- length(x)
   if (!nx) return(x) # exception
@@ -131,11 +131,7 @@ sum_by_name <- \(...) {
 
 
 
-addname1 <- \(x, which, ...) {
-  slot(x, name = which) <- slot(x, name = which) |>
-    .addname1(...)
-  return(x)
-}
+
 
 
 .slot_rm_zero <- \(x, name) {
@@ -194,7 +190,7 @@ mergeVol_H2O <- \(x) {
   
   x@water <- sum_by_name(
     x@water |> 
-      .addname1(nm = 'c22'),
+      addname1(nm = 'c22'),
     4.92892 * x_tsp # tsp -> ml
   )
   
@@ -219,14 +215,14 @@ mergeVol <- \(x, which, ...) {
   has_brick <- brick %in% slt
   
   x_tsp <- sum_by_name(
-    if (has_tsp) .addname1(slot(x, name = tsp), ...),
-    if (has_Tbsp) 3 * .addname1(slot(x, name = Tbsp), ...),
-    if (has_cup) 48 * .addname1(slot(x, name = cup), ...), 
-    if (has_brick) 3 * 16 * .addname1(slot(x, name = brick), ...)
+    if (has_tsp) addname1(slot(x, name = tsp), ...),
+    if (has_Tbsp) 3 * addname1(slot(x, name = Tbsp), ...),
+    if (has_cup) 48 * addname1(slot(x, name = cup), ...), 
+    if (has_brick) 3 * 16 * addname1(slot(x, name = brick), ...)
   )
   
   z <- sum_by_name(
-    .addname1(slot(x, name = which), ...), # weight in gram 
+    addname1(slot(x, name = which), ...), # weight in gram 
     gram_per_tsp(names(x_tsp)) * x_tsp
   )
 

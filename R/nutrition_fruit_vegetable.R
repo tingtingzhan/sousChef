@@ -171,7 +171,7 @@ Libbys_pineapple <- \() new(
 Dole_pineapple <- \() new(
   Class = 'nutrition',  
   dolesunshine = 'canned-crushed-pineapple-in-100-pineapple-juice-20oz',
-  name = 'Pineapple\U1f34d in 100% Juice', alias = '\u83e0\u841d\u7f50\u5934',
+  name = 'Pineapple\U1f34d in \U1f4afJuice', alias = '\u83e0\u841d\u7f50\u5934',
   # fdc = 167767L, # water = 83.5%, not accurate!!
   amazon = 'B00GFROV7A', usd = 22.46/12/567*122, 
   wegmans = '561977',

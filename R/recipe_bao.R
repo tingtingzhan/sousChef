@@ -73,24 +73,28 @@ setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
   
   portion = c(mantou_portion(), savoryBao_portion(), sweetBao_portion()), 
 
-  #instruction (legacy)  = c(
-  #  paste0('Manually whisk all powders together ', col_red('to protect baking powder/soda and yeast from direct contact with water')),
-  #  paste(col_green('optional'), 'blend canned or frozen fruit ', col_br_blue('e.g., pineapple, etc.')),
-  #  'Add water or puree. Manually whisk until mini-doughs form', 
-  #  'And lard. Knead at Level 2',
-  #  'Wrap and rest on countertop for 15min. Must rest overnight if whole wheat flour and/or puree is used, then restore to room temperature',
-  #  'Knead at Level 2 until smooth (~5min)',
-  #  'Divide, rest and roll using Pastalinda', 
-  #  'Manually roll with a pin to thin the edges'
-  #),
-  tool = list(RobamCT763(
-    treatment = 'Add boiling water in basin. Ferment ~40min',
-    program = 'Steam', fahrenheit = 210, minute = 15,
-    note = c(
-      'Do NOT steam at Tier 3 if wheat flour is used.  Bao surface may have tiny cracks',
-      'Steam Bake, 300\u00b0F/15min, if dough is accidentally too wet'
+  tool = list(
+    KSM8990(
+      operation = c(
+        paste0('Manually whisk all powders together ', col_red('to protect baking powder/soda and yeast from direct contact with water')),
+        paste(col_green('(optional)'), 'blend canned or frozen fruit ', col_br_blue('e.g., pineapple, etc.')),
+        'Add water or puree. Manually whisk until mini-doughs form', 
+        'And solid fat. Knead at Level 2',
+        'Wrap and rest on countertop for 15min. Must rest overnight if whole wheat flour and/or puree is used, then restore to room temperature',
+        'Knead at Level 2 until smooth (~5min)',
+        'Divide, rest and roll using Pastalinda', 
+        'Manually roll with a pin to thin the edges'
+      )
+    ),
+    RobamCT763(
+      treatment = 'Add boiling water in basin. Ferment ~40min',
+      program = 'Steam', fahrenheit = 210, minute = 15,
+      note = c(
+        'Do NOT steam at Tier 3 if wheat flour is used.  Bao surface may have tiny cracks',
+        'Steam Bake, 300\u00b0F/15min, if dough is accidentally too wet'
+      )
     )
-  ))
+  )
 ))
 
 
@@ -189,8 +193,13 @@ cocoa_bao <- \() new(
 pineapple_bao <- \() new(
   Class = 'bao', 
   #puree = c(Dole_pineapple = 270), 
-  puree = c(Dole_pineapple = 250), # retry
-  review = 're-experiment!  pineapple = 270g too wet')
+  #puree = c(Dole_pineapple = 250), # retry
+  #review = 're-experiment!  pineapple = 270g (pastryFlr 500g) too wet'
+  flour = c(Wegmans_pastryFlr = 1134),
+  puree_pc = c(Dole_pineapple = 1),
+  dairy = c(Kerrygold_butter = 34), fat = numeric(),
+  review = 'try'
+  )
 
 
 #' @rdname bao-class

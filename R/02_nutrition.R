@@ -522,8 +522,7 @@ print.nutrition <- \(x, print_label = TRUE, ...) {
   cat('\n')
   if (print_label) x |>
     labels.nutrition() |>
-    format_inline() |>
-    col_grey() |> style_bold() |> 
+    style_bold() |> 
     cat('\n\n')
   
   #cat('Nutrition Facts\n\n')
@@ -668,7 +667,8 @@ print.nutrition <- \(x, print_label = TRUE, ...) {
 #' @export
 labels.nutrition <- \(object, ...) {
   c(object@alias, object@name, object@brand) |> # len-0 compatible!!
-    paste(collapse = ' ')
+    paste(collapse = ' ') |>
+    format_inline()
 }
 
 

@@ -553,7 +553,9 @@ prt_vol <- \(x) {
   z[!id] <- fmt_vol(x[!id])
   
   label <- ingredient |>
-    vapply(FUN = labels, FUN.VALUE = '') # [labels.nutrition] or [labels.recipe] (when dealing with `@homemade`)
+    vapply(FUN = labels, FUN.VALUE = '') 
+  # [labels.nutrition]; or 
+  # [labels.recipe] (when dealing with `@homemade`)
     
   sprintf(fmt = '%s %.0f grams %s\n', label, x, z) |>
     format_inline() |>

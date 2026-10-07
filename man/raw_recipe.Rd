@@ -109,6 +109,8 @@ GoodLifeEats_pumpkin_creamCheeseSpread()
 
 \item{\code{gelatin,gelatin_pc}}{\link[base]{numeric} \link[base]{vector}s}
 
+\item{\code{call}}{\link[base]{language}, the function name to create this \linkS4class{recipe}}
+
 \item{\code{alias}}{\link[base]{character} scalar with Unicode symbols}
 
 \item{\code{class2}}{\link[base]{character} scalar with Unicode symbols, alias of class}

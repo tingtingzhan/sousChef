@@ -15,7 +15,7 @@
 #' @export
 setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
   class2 = 'Oatmeal',
-  grain = c(Quaker_oat = 40),
+  grain_cup = c(Quaker_oat = 1/2),
   tool = list(SamsungME21R706BAT(
     treatment = c('Soak in fridge overnight'),
     program = 'Microwave (with chilled mug)',
@@ -30,8 +30,8 @@ setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
 #' @export
 coconut_oatmeal <- \() new(
   Class = 'oatmeal',
-  beverage = c(Freenow_coconutBar = 40),
-  water = 100,
+  beverage = c(Freenow_coconutBar = 50),
+  water = 125,
   date = as.Date('2026-09-27'),
   review = 'perfect sweetness!!')
 
@@ -43,9 +43,14 @@ coconut_oatmeal <- \() new(
 #' @export
 soymilk_oatmeal <- \() new(
   Class = 'oatmeal',
-  homemade = c(soymilk_DJ13U = 140),
-  syrup = c(Runamok_ryeWhisky = 5),
-  date = as.Date('2025-07-06'),
+  #grain = c(Quaker_oat = 40), # make it 50g
+  #homemade = c(soymilk_DJ13U = 140),
+  #syrup = c(Runamok_ryeWhisky = 5),
+  
+  homemade = c(soymilk_DJ13U = 175),
+  syrup = c(Runamok_rum = 5),
+  
+  date = as.Date('2026-10-07'),
   review = 'nice!  Note on Sep 2026: probably need to reduce sugar'
 )
 

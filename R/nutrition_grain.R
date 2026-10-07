@@ -4,7 +4,8 @@ Quaker_oat <- \() new(
   quakeroats = 'hot-cereals/old-fashioned-oats',
   name = 'Old Fashioned Oats', alias = '\u719f\u538b\u71d5\u9ea6',
   costco = '100381521', usd = 11.99/(10*453.6)*40,
-  servingGram = 40, servingCup = 1/2, 
+  #servingGram = 40, servingCup = 1/2, # packaging
+  servingGram = 40, servingCup = (1/2)/50*40, # actual experiment: 1/2 cup is 50g
   calorie = 150,
   fat = 3, carbohydrate = 27, sugar = 1, protein = 5)
 

@@ -3,6 +3,7 @@
 
 #' @rdname raw_recipe
 #' 
+#' @slot call \link[base]{language}, the function name to create this \linkS4class{recipe}
 #' @slot alias \link[base]{character} scalar with Unicode symbols
 #' @slot class2 \link[base]{character} scalar with Unicode symbols, alias of class
 #' @slot flavor \link[base]{character} scalar with Unicode symbols
@@ -51,6 +52,7 @@
 #' @export
 setClass(Class = 'recipe', contains = 'raw.', slots = c(
   
+  call = 'language',
   alias = 'character',
   class2 = 'character', 
   flavor = 'character',
@@ -95,6 +97,32 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
 setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
+  
+  if (identical(x@call, quote(`<UNDEFINED>`))) {
+    # more complicated than \linkS4class{spice} and \linkS4class{nutrition}
+    
+    # user may define: x <- new('recipe', ...)
+    #tmp <- match.call(
+    #  definition = sys.function(-2), 
+    #  call = sys.call(-2)
+    #)[[1L]]; print(tmp) # always quote(new)
+    
+    tmp <- tryCatch(expr = {
+      match.call(
+        definition = sys.function(-3), 
+        call = sys.call(-3)
+      )
+    }, error = identity)
+    x@call <- if (inherits(tmp, 'error')) {
+      quote(`user-defined`)
+    } else tmp[[1L]]
+  }
+  
+  if (is.symbol(x@call)) {
+    # do nothing
+  } else if (as.character(x@call[[1L]]) %in% c('::', ':::')) {
+    x@call <- x@call[[3L]]
+  } else stop(x@call)
   
   # is this the correct way of doing things?????
   x <- getMethod(f = 'initialize', signature = 'raw.')(x)
@@ -342,8 +370,12 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
 
 
 #' @export
-labels.recipe <- \(object, ...) object@alias
-
+labels.recipe <- \(object, ...) {
+  object@alias |>
+    sprintf(fmt = '{.run [%s](cooking::%s())}', . = _, as.character(object@call)) |> 
+    make_ansi_style('steelblue4')() |>
+    format_inline()
+}
 
 
 

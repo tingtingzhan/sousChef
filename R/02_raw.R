@@ -133,7 +133,8 @@ print.raw. <- \(x, ...) {
   
   x |> 
     labels() |> # [labels.raw.] or [labels.recipe]
-    col_grey() |> style_bold() |> 
+    #col_grey() |> 
+    style_bold() |> 
     cat('\n\n')
 
   prt_vol(x@homemade)

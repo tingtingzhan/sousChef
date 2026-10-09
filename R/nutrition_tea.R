@@ -28,7 +28,7 @@ Harney_Assam <- \() new(
   name = 'Organic Assam',
   servingGram = 454, usd = 27, date = as.Date('2023-11-09'),
   pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
-  machine = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
+  #machine (legacy) = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Good base black tea.')
 
 Harney_PuErh <- \() new(
@@ -36,7 +36,7 @@ Harney_PuErh <- \() new(
   name = 'Pu-Erh',
   servingGram = 454, usd = 26, # 2023-11-09
   pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
-  machine = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
+  #machine (legacy) = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Very distinct and delightful aroma when raw.')
 
 Harney_decafCeylon <- \() new(
@@ -63,8 +63,8 @@ Harney_LapSangSouChong <- \() new(
   alias = '\u7acb\u5c71\u5c0f\u79cd', name = 'Lap Sang Sou Chong',
   servingGram = 454, usd = 28, # 2023-11-09
   pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
-  machine = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
-  review = 'Quite an acquired taste.')
+  #machine (legacy) = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
+  review = 'Quite an acquired taste')
 
 
 # Twinings

@@ -81,10 +81,11 @@ Kirkland_yellowCorn <- \() new(
 Kirkland_peach <- \() new(
   Class = 'nutrition',  costcoBiz = '100237862',
   name = 'Sliced Peaches',
-  servingGram = 120, sodium = .01, sugar = 14,
-  machine = \(x) { # `x` is class(recipe)
-    switch(x, c('Drain Kirkland Sliced Peaches and discard syrup (contains added sugar)'))
-  })
+  servingGram = 120, sodium = .01, sugar = 14#,
+  #machine (legacy) = \(x) { # `x` is class(recipe)
+  #  switch(x, c('Drain Kirkland Sliced Peaches and discard syrup (contains added sugar)'))
+  #}
+  )
 
 
 UltraOrganics_mango <- \() new( 
@@ -301,8 +302,9 @@ FlavorFarmer_whitePeach <- \() new(
   brand = 'Flavor Farmer', name = 'White Peach, Fresh',
   servingGram = 100, pieceGram = 130, piece_fmt = '%.1f\U1f351',
   water = 88.3, protein = .91, fat = .27, sodium = .013, sugar = 8.39,
-  review = 'Fresh white peach sold at Costco in summer',
-  machine = \(x) switch(x, bread = 'Wait until fully ripened, then store in fridge. Remove skin and pit, then blend.'))
+  review = 'Fresh white peach sold at Costco in summer'#,
+  #machine (legacy) = \(x) switch(x, bread = 'Wait until fully ripened, then store in fridge. Remove skin and pit, then blend.')
+  )
 
 
 kabochaSquash <- \() new(
@@ -471,7 +473,7 @@ HaiTai_mungbean <- \() new(
   usd = 5.99/910*38, yamibuy = '25775187',
   servingGram = 38, servingCup = 1/4, sodium = .006, carbohydrate = 24, sugar = 3, protein = 8, # package
   #servingGram = 100 - 9.05, protein = 23.9, fat = 1.15, sugar = 6.6, sodium = .015, # fdc
-  #machine = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9')),
+  #machine (legacy) = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9')),
   review = 'Must use peeled mung bean for dessert!')
 
 HaiTai_adzukibean <- \() new(
@@ -481,7 +483,7 @@ HaiTai_adzukibean <- \() new(
   # servingGram = 100, fat = 1.54, protein = 6.92, sugar = 1.54, sodium = .262, # fdc
   usd = 8.99/907*45, yamibuy = '25775203',
   servingGram = 45, servingCup = 1/4, sodium = .008, carbohydrate = 27, sugar = 1, protein = 8
-  #machine = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9'))
+  #machine (legacy) = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9'))
 )
 
 Iberia_redkidneybean <- \() new(

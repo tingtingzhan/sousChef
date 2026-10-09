@@ -116,19 +116,14 @@
 #' @slot youjia \link[base]{character} scalar
 #' 
 #' 
-#' @slot machine \link[base]{function}
+# @slot machine (legacy) \link[base]{function}
 #' 
 #' @slot review \link[base]{character} scalar or \link[base]{vector}, additional note to chef
 #' @slot superior \link[base]{character} scalar
 #' @slot contain \link[base]{character} scalar or vector, names of additives
 #' 
-#' @slot servingGram \link[base]{numeric} scalar, serving size in grams
-#' @slot serving_oz \link[base]{numeric} scalar, serving size in ounces
-#' @slot serving_lb \link[base]{numeric} scalar, serving size in pounds
-#' @slot servingCup,servingTbsp,servingTsp \link[base]{numeric} scalar, serving size in cups, tablespoons, teaspoons
-# @slot servingBag \link[base]{numeric} scalar, serving size in (tea) bags
-#' @slot serving_floz \link[base]{numeric} scalar, serving size in fluid ounce
-#' @slot serving_ml \link[base]{numeric} scalar, serving size in milli litre
+#' @slot servingGram,serving_oz,serving_lb \link[base]{numeric} scalars, serving size in grams, ounces and pounds
+#' @slot servingCup,servingTbsp,servingTsp,serving_floz,serving_ml \link[base]{numeric} scalars, serving volume in cups, tablespoons, teaspoons, fluid ounce and milli litre
 #' 
 #' @slot pieceGram \link[base]{numeric} scalar, weight in grams per piece
 #' @slot piece_fmt \link[base]{character} scalar
@@ -206,7 +201,7 @@ setClass(Class = 'nutrition', slots = c(
   
   fdc = 'integer',
   
-  machine = 'function', # should be deprecated
+  # machine = 'function', # legacy
   
   tool = 'list',
   
@@ -216,7 +211,6 @@ setClass(Class = 'nutrition', slots = c(
   rep_names('numeric', nm = c(
     'servingGram', 'serving_oz', 'serving_lb',
     'servingCup', 'servingTbsp', 'servingTsp',
-    # 'servingBag',
     'serving_floz', 'serving_ml',
     'pieceGram', 
     
@@ -232,7 +226,7 @@ setClass(Class = 'nutrition', slots = c(
   ))
 ), prototype = prototype(
   piece_fmt = '%.1fpcs',
-  machine = \(x) NULL,
+  # machine = \(x) NULL, # legacy
   calorie = 0,
   date = as.Date(NA_character_)
 ))

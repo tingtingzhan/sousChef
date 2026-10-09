@@ -253,25 +253,15 @@ Nutrition information.
 
 \item{\code{youjia}}{\link[base]{character} scalar}
 
-\item{\code{machine}}{\link[base]{function}}
-
 \item{\code{review}}{\link[base]{character} scalar or \link[base]{vector}, additional note to chef}
 
 \item{\code{superior}}{\link[base]{character} scalar}
 
 \item{\code{contain}}{\link[base]{character} scalar or vector, names of additives}
 
-\item{\code{servingGram}}{\link[base]{numeric} scalar, serving size in grams}
+\item{\code{servingGram,serving_oz,serving_lb}}{\link[base]{numeric} scalars, serving size in grams, ounces and pounds}
 
-\item{\code{serving_oz}}{\link[base]{numeric} scalar, serving size in ounces}
-
-\item{\code{serving_lb}}{\link[base]{numeric} scalar, serving size in pounds}
-
-\item{\code{servingCup,servingTbsp,servingTsp}}{\link[base]{numeric} scalar, serving size in cups, tablespoons, teaspoons}
-
-\item{\code{serving_floz}}{\link[base]{numeric} scalar, serving size in fluid ounce}
-
-\item{\code{serving_ml}}{\link[base]{numeric} scalar, serving size in milli litre}
+\item{\code{servingCup,servingTbsp,servingTsp,serving_floz,serving_ml}}{\link[base]{numeric} scalars, serving volume in cups, tablespoons, teaspoons, fluid ounce and milli litre}
 
 \item{\code{pieceGram}}{\link[base]{numeric} scalar, weight in grams per piece}
 

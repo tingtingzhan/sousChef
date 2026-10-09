@@ -65,7 +65,6 @@ format.spice <- \(x, ...) {
 
 #' @rdname spice-class
 #' @param object see **Usage**
-#' @importFrom cli col_blue col_br_magenta style_hyperlink
 #' @export
 setMethod(f = show, signature = 'spice', definition = \(object) object |> format.spice() |> cat())  
 

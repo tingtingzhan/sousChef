@@ -501,6 +501,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
 
 #' @rdname nutrition-class
 #' @param object see **Usage**
+#' @importFrom consec cmod
 #' @export
 setMethod(f = show, signature = 'nutrition', definition = \(object) print.nutrition(object))
 

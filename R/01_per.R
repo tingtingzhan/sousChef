@@ -20,6 +20,7 @@ setClass(Class = 'per', slots = c(
 
 #' @rdname per-class
 #' @param object,x see **Usage**
+#' @importFrom charwidth row_fmt_matrix
 #' @export
 setMethod(f = show, signature = 'per', definition = \(object) {
   
@@ -55,7 +56,6 @@ setMethod(f = length, signature = 'per', definition = \(x) {
 
 # @param x a \link[base]{list} of \linkS4class{per} objects
 #' @importFrom charwidth row_fmt_matrix
-#' @importFrom stats median.default
 #' @export
 print.perlist <- \(x, ...) {
   

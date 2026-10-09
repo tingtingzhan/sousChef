@@ -281,12 +281,11 @@ mergeVol <- \(x, which, ...) {
 
 
 
-
-#' @importFrom stats median
+#' @importFrom stats median.default
 #' @importFrom equiv4 binlabel
 median_binlabel <- \(x, ...) {
   x |>
-    binlabel(median(x, na.rm = TRUE), ...)()
+    binlabel(median.default(x, na.rm = TRUE), ...)()
 }
 
 #' @importFrom equiv4 binlabel

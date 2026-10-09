@@ -438,15 +438,9 @@ import(cli)
 import(methods)
 importClassesFrom(equiv4,equiv)
 importFrom(charwidth,row_fmt_matrix)
-importFrom(cli,
-  col_blue,
-  col_br_magenta,
-  style_hyperlink
-)
 importFrom(consec,cmod)
 importFrom(equiv4,binlabel)
 importFrom(stats,
-  median,
   median.default,
   na.omit,
   setNames

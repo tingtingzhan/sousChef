@@ -173,9 +173,10 @@ Dole_pineapple <- \() new(
   dolesunshine = 'canned-crushed-pineapple-in-100-pineapple-juice-20oz',
   name = 'Pineapple\U1f34d in \U1f4afJuice', alias = '\u83e0\u841d\u7f50\u5934',
   # fdc = 167767L, # water = 83.5%, not accurate!!
-  amazon = 'B00GFROV7A', usd = 22.46/12/567*122, 
+  amazon = 'B00GFROV7A', usd = 22.46/12/575*122, 
   wegmans = '561977',
-  servingGram = 122, servingCup = 1/2, pieceGram = 567, piece_fmt = '%.1f\U1f96b',
+  pieceGram = 575, piece_fmt = '%.1f\U1f96b',
+  servingGram = 122, servingCup = 1/2, 
   calorie = 80,
   water = 122-18-1, # 122 * (240/270) #, # confirmed with bao()
   carbohydrate = 18, fiber = 1, sugar = 15, protein = 1)

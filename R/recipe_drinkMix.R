@@ -75,8 +75,8 @@ hotdrink.drinkmix <- \(
     'add room-temperature water',
     paste('add powders,', col_red('sweep cup bottom with a square scoop,'), 'whisk until smooth'),
     'add hot water, whisk until froth',
-    paste(col_green('optional'), 'add liqueur', col_red('which curdles dry milk')),
-    paste(col_green('optional'), 'add tea bags, soak (covered) for 1hr+')
+    paste('\U1f4a1 add liqueur', col_red('which curdles dry milk')),
+    paste('\U1f4a1 add tea bags, soak (covered) for 1hr+')
   )))
   cls <- class(x) # ?devtools::check warns on `if (class(x) == '.')`
   new(Class = if (cls == 'drinkmix') {

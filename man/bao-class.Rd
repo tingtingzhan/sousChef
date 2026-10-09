@@ -3,12 +3,12 @@
 \docType{class}
 \name{bao-class}
 \alias{bao-class}
+\alias{pineapple_bao}
 \alias{bao}
 \alias{pumpkin_bao}
 \alias{matcha_bao}
 \alias{beet_bao}
 \alias{cocoa_bao}
-\alias{pineapple_bao}
 \alias{pear_bao}
 \alias{peach_bao_DelMonte}
 \alias{mandarine_bao}
@@ -16,6 +16,8 @@
 \alias{tomato_bao}
 \title{\linkS4class{bao} Recipes}
 \usage{
+pineapple_bao()
+
 bao()
 
 pumpkin_bao()
@@ -25,8 +27,6 @@ matcha_bao()
 beet_bao()
 
 cocoa_bao()
-
-pineapple_bao()
 
 pear_bao()
 

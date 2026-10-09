@@ -27,8 +27,6 @@
 
 \item{\code{operation}}{\link[base]{character} scalar or \link[base]{vector}, operation(s) on multiple days}
 
-\item{\code{attachment}}{\link[base]{character} scalar}
-
 \item{\code{fahrenheit}}{\link[base]{numeric} scalar}
 
 \item{\code{minute}}{\link[base]{numeric} scalar}

@@ -74,7 +74,7 @@ setClass(Class = 'muffin', contains = 'recipe', prototype = prototype(
       # 'Staub Skillet (preheated; experimenting)' = 25, # try next time with more baking powder
       'Cupcake\U1f389' = 20 # crust perfect, inside too wet.  reduce water next time!
     )#,
-    #cooling = paste(col_green('optional'), 'flip cast iron skillet to release. Cool on a rack')
+    #cooling = paste('\U1f4a1 flip cast iron skillet to release. Cool on a rack')
   ))
 ))
 
@@ -109,7 +109,7 @@ cornbread <- \() new(
   #instruction (legacy) = c(
   #  'mix cornmeal and hot water. Let dough sit for 5min',
   #  'mix in other ingredients'#,
-  #  # paste(col_green('optional'), 'transfer to sizzling hot skillet (with cooking spray)')
+  #  # paste('\U1f4a1 transfer to sizzling hot skillet (with cooking spray)')
   #),
   date = as.Date('2024-12-01'),
   pros = c(

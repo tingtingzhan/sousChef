@@ -21,7 +21,7 @@ setClass(Class = 'oatmeal', contains = 'recipe', prototype = prototype(
     program = 'Microwave (with chilled mug)',
     minute = 2,
     cooling = 'Let stand until all liquid is absorbed',
-    note = '(optional) serve with an ice cube'
+    note = '\U1f4a1 serve with an ice cube'
   ))
 ))
 

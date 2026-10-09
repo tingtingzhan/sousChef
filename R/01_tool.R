@@ -17,8 +17,6 @@
 #' 
 #' @slot operation \link[base]{character} scalar or \link[base]{vector}, operation(s) on multiple days
 #' 
-#' @slot attachment \link[base]{character} scalar
-#' 
 #' @slot fahrenheit \link[base]{numeric} scalar 
 #' 
 #' @slot minute \link[base]{numeric} scalar
@@ -38,20 +36,19 @@
 #' 
 #' @export
 setClass(Class = 'tool', slots = c(
-  name = 'character', alias = 'character',
-  name2 = 'character',
   capacity = 'numeric',
-  treatment = 'character',
-  program = 'character',
-  operation = 'character',
-  attachment = 'character',
   fahrenheit = 'numeric',
   minute = 'numeric',
-  cooling = 'character',
-  note = 'character',
   waterLost = 'numeric',
   
   rep_names('character', nm = c(
+    'name', 'alias', 'name2',
+    'treatment',
+    'program',
+    'operation',
+    'cooling',
+    'note',
+    
     'kitchenaid',
     'instantpot',
     'nutribullet',
@@ -116,10 +113,6 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     x@program,
     (names(x@program) %||% '') |> bg_br_yellow()
   ) |> 
-    cat(sep = '')
-  
-  x@attachment |> 
-    sprintf(fmt = ' \U1f6e0 %s\n') |> 
     cat(sep = '')
   
   temperature <- sprintf(
@@ -225,6 +218,40 @@ KSM8990 <- \(...) new(
   name = 'Stand Mixer KSM8990, 8 Quart', kitchenaid = 'ksmc895ob',
   ...)
 
+KSM7BL3PSS_doughhook <- \(...) new(
+  Class = 'tool',
+  name = 'Dough Hook, Stainless Steel',
+  kitchenaid = 'KSM7BL3PSS',
+  ...)
+
+
+KSM7BL3PSS_flatbeater <- \(...) new(
+  Class = 'tool',
+  name = 'Flat Beater, Stainless Steel',
+  kitchenaid = 'KSM7BL3PSS',
+  ...)
+
+KSM7BL3PSS_wirewhip <- \(...) new(
+  Class = 'tool',
+  name = 'Wire Whip, Stainless Steel',
+  kitchenaid = 'KSM7BL3PSS',
+  ...)
+
+KSM8990_dough <- \(...) KSM8990(
+  ...,
+  name2 = KSM7BL3PSS_doughhook()@name,
+  operation = c(
+    paste('\U1f4a1 blend canned or frozen fruit ', col_br_blue('e.g., pineapple, etc.')),
+    'Add 1\ufe0f\u20e3 water/puree; 2\ufe0f\u20e3 flour; 3\ufe0f\u20e3 baking powder/soda & yeast', # ; 4\ufe0f\u20e3 solid fat
+    'Knead at Level 2; stop\U1f6d1 once no dry flour is visible',
+    paste0('Press everything tight using ', 'Pastalinda' |> col_red() |> style_bold()),
+    'Knead at Level-Stir; manually stop and reposition frequently',
+    'Add solid fat after gluten developes; knead until fat is obsorbed'
+  )
+)
+
+
+
 KSM3316X <- \(...) new(
   Class = 'tool', 
   name = 'Stand Mixer KSM3316X, 3.5 Quart', kitchenaid = 'ksm3316xer',
@@ -314,7 +341,7 @@ JoyoungCJA9U_filling <- \(
     'Sprinkle (chilled) butter chunks on bottom of stir-frying pan; otherwise batter sticks and burns!',
     'Pour mixture into stir-frying pan, on top of sprinkled butter'
   ),
-  operation = '(optional) manually stir frequently for high sugar-content ingredient!',
+  operation = '\U1f4a1 manually stir frequently for high sugar-content ingredient!',
   cooling = c(
     'fold added sugar into hot, cooked paste',
     'disassemble machine as early as possible; sugar syrup may stick'

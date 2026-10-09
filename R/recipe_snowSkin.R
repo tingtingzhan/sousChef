@@ -34,7 +34,7 @@ setClass(Class = 'snowSkin', contains = 'recipe', prototype = prototype(
   #instruction (legacy) = c(
   #  'Transfer steamed dough to *plastic* bowl, e.g., OXO Good Grips batter bowl',
   #  'Wear plastic gloves. Knead in (chilled) butter while still hot',
-  #  paste(col_green('optional'), 'knead in dry flavoring. Exceptions are ginger, etc.')
+  #  paste('\U1f4a1 knead in dry flavoring. Exceptions are ginger, etc.')
   #),
   #note (legacy) = c(
   #  'Must knead in plastic bowl; sticks to glass or ceramic bowl'

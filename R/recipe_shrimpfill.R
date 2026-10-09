@@ -5,9 +5,9 @@ setClass(Class = 'shrimpfill', contains = 'recipe', prototype = prototype(
   class2 = '\u867e\U1f990\u8089\u9985',
   seafood = c(Kirkland_shrimp_c31 = 850), # drained from 2lb package
   tool = list(KSM8990(
+    name2 = KSM7BL3PSS_flatbeater()@name,
     treatment = 'Meat chopper, not grinder',
     program = 'Level 4',
-    attachment = 'Paddle',
     minute = 3
   ))  
 ))

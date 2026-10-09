@@ -19,9 +19,9 @@ setClass(Class = 'meatmash', contains = 'recipe', prototype = prototype(
   class2 = '\u6ed1',
   # 1000g meat, 780g super lean, 220g pork belly
   tool = list(KSM8990(
+    name2 = KSM7BL3PSS_flatbeater()@name,
     treatment = 'Meat chopper, not grinder',
     program = 'Level 4',
-    attachment = 'Paddle',
     minute = 3
   )),
   #note (legacy) = c(

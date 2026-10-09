@@ -40,8 +40,8 @@ summary.raw. <- \(object, ...) {
     x |>
       as(Class = 'raw.') |>
       as.double.raw.(detail = FALSE, rel = FALSE)
-  )
-  z <- z[abs(z) > .Machine$double.eps]
+  ) |>
+    zero.omit()
   
   mixWheatFlr <- c(
     x['_allPurposeFlr$'] |> sum(), 

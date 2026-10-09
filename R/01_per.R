@@ -66,6 +66,7 @@ print.perlist <- \(x, ...) {
   if (!length(y3)) return(invisible())
   if (all(is.na(y3))) return(invisible())
   if (all(abs(y3) < .Machine$double.eps, na.rm = TRUE)) return(invisible())
+  
   y <- y3 |>
     apply(MARGIN = 2L, FUN = median_binlabel, accuracy = .1, simplify = FALSE) |>
     do.call(what = cbind) # to make sure not getting a 'vector'

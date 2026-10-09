@@ -70,11 +70,8 @@ subtract.raw. <- \(x, ...) {
       stop()
     }
     
-    z <- old - ival # `names(old)` preserved
-    if (any(id <- (abs(z) < .Machine$double.eps))) {
-      z <- z[!id]
-    }
-    slot(x, name = inm) <- z
+    slot(x, name = inm) <- (old - ival) |> # `names(old)` preserved
+      zero.omit()
     
   }
 

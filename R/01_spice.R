@@ -22,9 +22,7 @@ setClass(Class = 'spice', slots = c(
 
 setMethod(f = initialize, signature = 'spice', definition = \(.Object, ...) {
   
-  x <- callNextMethod(.Object, ...)
-  
-  x <- x |> 
+  x <- callNextMethod(.Object, ...) |> 
     .findCall()
   
   if (!length(x@wiki)) {

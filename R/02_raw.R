@@ -196,9 +196,7 @@ print.raw. <- \(x, prt_total = TRUE, ...) {
 
 setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
   
-  x <- callNextMethod(.Object, ...)
-  
-  x <- x |> 
+  x <- callNextMethod(.Object, ...) |> 
     mergePc(which = 'gelatin') |>
     mergePc(which = 'egg') |>
     mergePc(which = 'fruit') |>
@@ -227,8 +225,8 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     mergeVol(which = 'bakingPowder')
   
   for (i in names(getSlots(x = 'raw.'))) {
-    x <- x |>
-      .slot_rm_zero(name = i)
+    slot(x, name = i) <- slot(x, name = i) |>
+      zero.omit()
   }
   
   return(x)
@@ -248,7 +246,8 @@ as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
   # detailed ingredients
   ingredient <- attributes(x)[names(getSlots(x = 'raw.'))] |>
     unname() |>
-    unlist(use.names = TRUE) # no need to remove len-0 element
+    unlist(use.names = TRUE) |> # no need to remove len-0 element
+    zero.omit()
   
   z <- if (detail) {
     ingredient

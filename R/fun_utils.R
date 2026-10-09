@@ -131,16 +131,13 @@ addname1 <- \(x, nm = stop('no default!'), ...) {
 
 
 
-
-
-
-.slot_rm_zero <- \(x, name) {
-  v <- slot(x, name = name)
-  # generic method '+' will create 0's
-  if (anyNA(v)) stop(name)
-  slot(x, name = name) <- v[abs(v) > .Machine$double.eps] # len0 compatible
-  return(x)
+# nomenclature
+# stats::na.omit
+zero.omit <- \(x) {
+  if (anyNA(x)) stop('input cannot contain missingness')
+  x[abs(x) > .Machine$double.eps] # len0 compatible
 }
+
 
 
 # name clash
@@ -572,6 +569,9 @@ prt_vol_H2O <- \(x) {
 
 
 prt_vol <- \(x) {
+  
+  x <- x |>
+    zero.omit()
   
   nx <- length(x)
   if (!nx) return(invisible())

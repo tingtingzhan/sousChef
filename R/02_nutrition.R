@@ -238,9 +238,7 @@ setClass(Class = 'nutrition', slots = c(
 # @importFrom quantmod getQuote
 setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) {
   
-  x <- callNextMethod(.Object, ...)
-  
-  x <- x |>
+  x <- callNextMethod(.Object, ...) |>
     .findCall()
   
   if (length(x@AbV)) {
@@ -440,8 +438,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   }
   
   for (i in names(which(getSlots('nutrition') == 'numeric'))) {
-    x <- x |>
-      .slot_rm_zero(name = i)
+    slot(x, name = i) <- slot(x, name = i) |>
+      zero.omit()
   }
   
   if (!length(x@sugar) && length(x@addedSugar)) {

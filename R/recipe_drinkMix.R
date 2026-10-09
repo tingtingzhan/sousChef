@@ -163,9 +163,9 @@ setMethod(f = show, signature = 'drinkmix', definition = \(object) {
   nutri_ <- hot |> 
     as(Class = 'nutrition')
   z <- summary.recipe(hot)$perServing
-  z@per <- sprintf(
+  z@name <- sprintf(
     fmt = '%s + %.0fg Water, US\U1f4b5 %.2f', 
-    z@per, 
+    z@name, 
     sum(hot@water),
     nutri_@usd)
   print(z)

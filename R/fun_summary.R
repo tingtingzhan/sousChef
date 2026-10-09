@@ -11,8 +11,7 @@ summary.nutrition <- \(object, ...) {
       incl_carbohydrate = FALSE, 
       rel = TRUE
     ) |>
-    new(Class = 'equiv', current = _) |>
-    new(Class = 'per', per = 'Serving', equiv = _)
+    new(Class = 'per', name = 'Serving', current = _)
   return(list(perServing = z))
 }
 
@@ -58,13 +57,12 @@ summary.raw. <- \(object, ...) {
   ret$perRaw <- x |>
     as(Class = 'raw.') |>
     as.double.raw.(detail = FALSE, rel = TRUE) |>
-    new(Class = 'equiv', current = _) |>
-    new(Class = 'per', per = 'Raw Ingredients', equiv = _)
+    new(Class = 'per', name = 'Raw Ingredients', current = _)
   
   ret$perServing <- new(
     Class = 'per', 
-    per = 'Serving', 
-    equiv = new(Class = 'equiv', current = z / nutri@servingGram, target = c(
+    name = 'Serving', 
+    current = z / nutri@servingGram, target = c(
       water = devrecipe$water(x), # um, this is wrong; raw-water / cooked-total
       #carbohydrate = devrecipe$carbohydrate(x),
       fat = devrecipe$fat(x), 
@@ -89,35 +87,35 @@ summary.raw. <- \(object, ...) {
       cocoa = devrecipe$cocoa(x),
       coffee = devrecipe$coffee(x),
       acai = devrecipe$acai(x)
-    )))
+    ))#)
   
   ret$perCornmeal <- new(
     Class = 'per', 
-    per = 'Cornmeal\U1f33d', 
-    equiv = new(Class = 'equiv', current = z / sum(x['_cornmeal$']), target = c(
+    name = 'Cornmeal\U1f33d', 
+    current = z / sum(x['_cornmeal$']), target = c(
       flour = devrecipe$flour2cornmeal(x),
       breadFlr = devrecipe$breadFlr2cornmeal(x),
       pastryFlr = devrecipe$pastryFlr2cornmeal(x)
-    ))) 
+    ))#) 
   
   if (sum(mixWheatFlr > 0) > 1L) {
     
     ret$perMixFlr <- new(
       Class = 'per', 
-      per = 'Mixed Wheat Flour', 
-      equiv = new(Class = 'equiv', current = z / sum(mixWheatFlr), target = c(
+      name = 'Mixed Wheat Flour', 
+      current = z / sum(mixWheatFlr), target = c(
         water = devrecipe$water2wheatFlrMix(x),
         fat = devrecipe$fat2wheatFlrMix(x),
         bakingPowder = devrecipe$bakingPowder2wheatFlrMix(x),
         yeast = devrecipe$yeast2wheatFlrMix(x)
-      )))
+      ))
     
   } else {
     
     ret$perAllPurposeFlr <- if (!is(x, 'cheesecake')) new(
       Class = 'per', 
-      per = 'All-Purpose\U1f370\U1f35e Flour', 
-      equiv = new(Class = 'equiv', current = z / sum(x['_allPurposeFlr$']), target = c(
+      name = 'All-Purpose\U1f370\U1f35e Flour', 
+      current = z / sum(x['_allPurposeFlr$']), target = c(
         water = devrecipe$water2flour(x),
         fat = devrecipe$fat2flour(x),
         sesame = devrecipe$blackSesame2flour(x),
@@ -126,13 +124,13 @@ summary.raw. <- \(object, ...) {
         bakingPowder = devrecipe$bakingPowder2flour(x),
         salt = devrecipe$salt2flour(x),
         yeast = devrecipe$yeast2flour(x)
-      )))
+      ))
     
     
     ret$perPastryFlr <- new(
       Class = 'per', 
-      per = 'Pastry\U1f370 Flour', 
-      equiv = new(Class = 'equiv', current = z / sum(x['_pastryFlr$']), target = c(
+      name = 'Pastry\U1f370 Flour', 
+      current = z / sum(x['_pastryFlr$']), target = c(
         water = devrecipe$water2pastryFlr(x),
         fat = devrecipe$fat2pastryFlr(x),
         sesame = devrecipe$blackSesame2pastryFlr(x),
@@ -144,13 +142,13 @@ summary.raw. <- \(object, ...) {
         matcha = devrecipe$matcha2pastryFlr(x),
         beet = devrecipe$beet2pastryFlr(x),
         acai = devrecipe$acai2pastryFlr(x)
-      )))
+      ))
     
     
     ret$perBreadFlr <- new(
       Class = 'per', 
-      per = 'Bread\U1f35e Flour', 
-      equiv = new(Class = 'equiv', current = z / sum(x['_breadFlr$']), target = c(
+      name = 'Bread\U1f35e Flour', 
+      current = z / sum(x['_breadFlr$']), target = c(
         fat = devrecipe$fat2breadFlr(x),
         sesame = devrecipe$blackSesame2breadFlr(x),
         eggYolk = devrecipe$eggYolk2breadFlr(x),
@@ -160,14 +158,14 @@ summary.raw. <- \(object, ...) {
         yeast = devrecipe$yeast2breadFlr(x),
         matcha = devrecipe$matcha2breadFlr(x),
         beet = devrecipe$beet2breadFlr(x)
-      )))
+      ))
     
   }
   
   ret$perGlutenFreeFlr <- if (('_breadFlr$' %notin% x) && ('_pastryFlr$' %notin% x) && ('_allPurposeFlr$' %notin% x)) new(
     Class = 'per', 
-    per = 'Gluten-Free Flour', 
-    equiv = new(Class = 'equiv', current = z / sum(x['_gluten0Flr$']), target = c(
+    name = 'Gluten-Free Flour', 
+    current = z / sum(x['_gluten0Flr$']), target = c(
       water = devrecipe$water2gluten0Flr(x),
       fat = devrecipe$fat2gluten0Flr(x),
       sesame = devrecipe$blackSesame2gluten0Flr(x),
@@ -176,39 +174,39 @@ summary.raw. <- \(object, ...) {
       bakingPowder = devrecipe$bakingPowder2gluten0Flr(x),
       salt = devrecipe$salt2gluten0Flr(x),
       yeast = devrecipe$yeast2gluten0Flr(x)
-    )))
+    ))
   
   ret$perRiceFlr <- new(
     Class = 'per', 
-    per = 'Glutinous+Rice\U1f33e Flour', 
-    equiv = new(Class = 'equiv', current = z / sum(x['_riceFlr$|_glutRiceFlr$']), target = c(
+    name = 'Glutinous+Rice\U1f33e Flour', 
+    current = z / sum(x['_riceFlr$|_glutRiceFlr$']), target = c(
       water = devrecipe$water2riceFlr(x),
       glutRice = devrecipe$glutRice2riceFlr(x),
       fat = devrecipe$fat2riceFlr(x),
       starch = devrecipe$starch2riceFlr(x),
       matcha = devrecipe$matcha2riceFlr(x)
-    )))
+    ))
   
   ret$perCocoa <- if (!inherits(x, what = c('tiramisuMix', 'tiramisu_'))) new(
     Class = 'per', 
-    per = 'Alkalized Cocoa', 
-    equiv = new(Class = 'equiv', current = z / x@cocoa, target = c(
+    name = 'Alkalized Cocoa', 
+    current = z / x@cocoa, target = c(
       alcohol = devrecipe$alcohol2cocoa(x),
       drymilk = devrecipe$drymilk2cocoa(x),
       addedSugar = devrecipe$addedSugar2cocoa(x),
       coffee = devrecipe$coffee2cocoa(x)
-    )))
+    ))
   
   
   ret$perTea <- new(
     Class = 'per', 
-    per = 'Tea\U1f343', 
-    equiv = new(Class = 'equiv', current = z / x@tea))
+    name = 'Tea\U1f343', 
+    current = z / x@tea)
   
   ret$perCreamCheese <- new(
     Class = 'per', 
-    per = 'Cream Cheese', 
-    equiv = new(Class = 'equiv', current = z / sum(x['_creamCheese$'])))
+    name = 'Cream Cheese', 
+    current = z / sum(x['_creamCheese$']))
   
   #class(ret) <- c('perlist', 'listof', 'list', class(ret)) |>
   #  unique.default()

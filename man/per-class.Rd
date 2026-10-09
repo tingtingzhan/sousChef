@@ -4,24 +4,19 @@
 \name{per-class}
 \alias{per-class}
 \alias{show,per-method}
-\alias{length,per-method}
 \title{\linkS4class{per}}
 \usage{
 \S4method{show}{per}(object)
-
-\S4method{length}{per}(x)
 }
 \arguments{
-\item{object, x}{see \strong{Usage}}
+\item{object}{see \strong{Usage}}
 }
 \description{
-..
+\linkS4class{per}: an \code{S4} class that inherits from \link[equiv4]{equiv-class}.
 }
 \section{Slots}{
 
 \describe{
-\item{\code{per}}{\link[base]{character} scalar}
-
-\item{\code{equiv}}{\link[equiv4]{equiv-class} object}
+\item{\code{name}}{\link[base]{character} scalar}
 }}
 

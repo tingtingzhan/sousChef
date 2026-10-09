@@ -414,9 +414,9 @@ get_flavor_ <- \(x) {
   x |>
     lapply(FUN = \(i) eval(call(name = i))) |>
     vapply(FUN = \(i) {
-      if (inherits(i, 'nutrition')) {
+      if (is(i, 'nutrition')) {
         i@name
-      } else if (inherits(i, what = 'recipe')) {
+      } else if (is(i, 'recipe')) {
         #i@flavor
         i@alias |> 
           gsub(pattern = 'Evaporated', replacement = '') |> 
@@ -440,7 +440,7 @@ gram_per_tsp <- \(x) {
       v <- call(name = i) |>
         eval() |>
         as(Class = 'nutrition')
-      if (!inherits(v, what = 'nutrition')) {
+      if (!is(v, 'nutrition')) {
         stop(sQuote(i), ' cannot be converted to `nutrition`')
       }
       if (!length(v@servingTsp)) return(NA_real_)
@@ -546,7 +546,7 @@ prt_vol <- \(x) {
     
   id <- ingredient |>
     vapply(FUN = \(i) {
-      if (!inherits(i, what = 'nutrition')) return(FALSE) # could be @homemade \linkS4class{recipe}
+      if (!is(i, 'nutrition')) return(FALSE) # could be @homemade \linkS4class{recipe}
       length(i@pieceGram) > 0L
     }, FUN.VALUE = NA)
   

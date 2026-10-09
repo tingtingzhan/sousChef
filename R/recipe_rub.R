@@ -27,7 +27,7 @@ setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
   
   tool = list(
     InstantPot(
-      name2 = Staub_deepSkillet()@name,
+      name2 = Staub_deepSkillet(),
       program = '\u4f4e\u6e29\u6c34\u6d74\u7a0b\u5e8f Sous Vide program',
       fahrenheit = c(140),
       minute = c('New York strip steak\U1f969, 1-1.5inch' = 60),

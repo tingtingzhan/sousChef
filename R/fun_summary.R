@@ -114,7 +114,7 @@ summary.raw. <- \(object, ...) {
     
   } else {
     
-    ret$perAllPurposeFlr <- if (!inherits(x, what = 'cheesecake')) new(
+    ret$perAllPurposeFlr <- if (!is(x, 'cheesecake')) new(
       Class = 'per', 
       per = 'All-Purpose\U1f370\U1f35e Flour', 
       equiv = new(Class = 'equiv', current = z / sum(x['_allPurposeFlr$']), target = c(

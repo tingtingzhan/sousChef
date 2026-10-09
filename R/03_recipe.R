@@ -128,7 +128,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   x <- getMethod(f = 'initialize', signature = 'raw.')(x)
   
   if (length(x@yeast) && !length(x@sugarLost)) {
-    x@sugarLost <- if (inherits(x, what = 'bao')) {
+    x@sugarLost <- if (is(x, 'bao')) {
       # After one hour brew time, ~0.35 grams of sugar per gram of yeast have been consumed, 
       # leaving ~0.65 grams of unfermented sugar per gram of yeast.
       # https://www.lallemand.com/BakerYeastNA/eng/PDFs/LBU%20PDF%20FILES/1_19WATR.PDF

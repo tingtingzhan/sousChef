@@ -7,7 +7,9 @@
 #' 
 #' @description ..
 #' 
-#' @slot name,name2 \link[base]{character} scalars, brand and name of kitchen tool, and its auxiliary tool
+#' @slot name \link[base]{character} scalar, brand and name of kitchen tool
+#' 
+#' @slot name2 any R object, currently supports \link[base]{character} or \linkS4class{tool}, brand and name of the auxiliary tool
 #' 
 #' @slot capacity \link[base]{numeric} scalar, maximum capacity, in times of recipe
 #' 
@@ -36,13 +38,14 @@
 #' 
 #' @export
 setClass(Class = 'tool', slots = c(
+  name2 = 'ANY',
   capacity = 'numeric',
   fahrenheit = 'numeric',
   minute = 'numeric',
   waterLost = 'numeric',
   
   rep_names('character', nm = c(
-    'name', 'alias', 'name2',
+    'name', 'alias',
     'treatment',
     'program',
     'operation',
@@ -91,7 +94,14 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     make_ansi_style('royalblue')() |> 
     cat()
   
-  x@name2 |> 
+  nm2 <- if (is.character(x@name2)) {
+    x@name2
+  } else if (is(x@name2, 'tool')) {
+    x@name2@name
+  } else if (!length(x@name2)) {
+    character()
+  } else stop('unsupported `@name2`')
+  nm2 |> 
     sprintf(fmt = '\u2756 %s \u2756\n') |> 
     make_ansi_style('royalblue')() |> 
     cat()
@@ -239,7 +249,7 @@ KSM7BL3PSS_wirewhip <- \(...) new(
 
 KSM8990_dough <- \(...) KSM8990(
   ...,
-  name2 = KSM7BL3PSS_doughhook()@name,
+  name2 = KSM7BL3PSS_doughhook(),
   operation = c(
     paste('\U1f4a1 blend canned or frozen fruit ', col_br_blue('e.g., pineapple, etc.')),
     'Add 1\ufe0f\u20e3 water/puree; 2\ufe0f\u20e3 flour; 3\ufe0f\u20e3 baking powder/soda & yeast', # ; 4\ufe0f\u20e3 solid fat
@@ -399,7 +409,7 @@ StanleyJar36 <- \(...) new(
 Staub_vertRoaster <- \(...) new(
   Class = 'tool',
   name = 'Vertical Chicken Roaster', staub = '1200023', alias = '\u94f8\u94c1\u70e4\u9e21\u67b6',
-  name2 = KSEG950ESS()@name,
+  name2 = KSEG950ESS(),
   ...)
 
 Staub_deepSkillet <- \(...) new(

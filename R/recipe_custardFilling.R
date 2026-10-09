@@ -112,7 +112,7 @@ pumpkin_custardFilling <- \() new(
   tool = list(
     KSM8990(
       program = 'Level 4',
-      name2 = KSM7BL3PSS_flatbeater()@name,
+      name2 = KSM7BL3PSS_flatbeater(),
       operation = 'Mix well the ingredients except for sugar and butter',
       capacity = 3
     ),

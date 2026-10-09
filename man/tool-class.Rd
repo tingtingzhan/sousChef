@@ -17,7 +17,9 @@
 \section{Slots}{
 
 \describe{
-\item{\code{name,name2}}{\link[base]{character} scalars, brand and name of kitchen tool, and its auxiliary tool}
+\item{\code{name}}{\link[base]{character} scalar, brand and name of kitchen tool}
+
+\item{\code{name2}}{any R object, currently supports \link[base]{character} or \linkS4class{tool}, brand and name of the auxiliary tool}
 
 \item{\code{capacity}}{\link[base]{numeric} scalar, maximum capacity, in times of recipe}
 

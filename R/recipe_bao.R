@@ -78,8 +78,9 @@ setClass(Class = 'bao', contains = 'recipe', prototype = prototype(
   #  'Manually roll with a pin to thin the edges'
   #),
   tool = list(
-    KSM8990_dough(capacity = 1),
+    KSM8990_dough(capacity = 1), # 1x pineapple_bao() !!
     RobamCT763(
+      #capacity = 1,
       treatment = 'Add boiling water in basin. Ferment ~40min',
       program = 'Steam', fahrenheit = 210, minute = 15,
       note = c(

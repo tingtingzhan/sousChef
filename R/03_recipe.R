@@ -379,6 +379,28 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   y |>
     print.nutrition(prt_label = FALSE)
   
+  if (length(x@portion)) {
+    r <- y@servingGram / x@portion
+    sprintf(
+      fmt = '\u058d %.1f \u00d7 %.0f grams %s %s %s', # '\u058e'
+      r,
+      x@portion, 
+      (y@usd / r) |> 
+        sprintf(fmt = '\U1f4b5%.2f') |> 
+        col_green() |> style_bold(),
+      if (length(y@calorie)) {
+        (y@calorie / r) |> 
+        sprintf(fmt = '\U1f525%.0f') |>
+        col_br_red() |> style_bold() 
+      } else '',
+      x@portion |> 
+        names() |> 
+        col_magenta() |> style_bold()
+    ) |> 
+      cat(sep = '\n')
+    cat('\n')
+  } # else NULL
+  
   x@tool |>
     lapply(FUN = show)
   

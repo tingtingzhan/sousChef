@@ -58,8 +58,6 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     as(Class = 'raw.') |>
     as(Class = 'nutrition')
   
-  nutri@portion <- x@portion # default or not
-  
   waterLost <- x@tool |>
     lapply(FUN = \(i) i@waterLost) |> 
     unlist(use.names = FALSE) |>

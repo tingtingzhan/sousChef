@@ -165,9 +165,11 @@ pumpkin_bao <- \() new(
 #' @rdname bao-class
 #' @export
 matcha_bao <- \() new(
-  Class = 'bao', bao(), 
-  matcha_Tbsp = c(Sencha_everyday_matcha = 3), sugar_Tbsp = 5,
-  #water_ext = 25, # retry
+  Class = 'bao',
+  matcha_Tbsp = c(Sencha_everyday_matcha = 3), 
+  sugar = bao()@sugar,
+  sugar_Tbsp = 2, # extra
+  water = bao()@water + 20, # retry
   portion = c(mantou_portion(), sweetBao_portion()),
   # before fermentation: ???g (with plastic wrap)
   pros = character(),
@@ -176,11 +178,10 @@ matcha_bao <- \() new(
 #' @rdname bao-class
 #' @export
 beet_bao <- \() new(
-  Class = 'bao', bao(), 
+  Class = 'bao',
   misc_tsp = c(Wegmans_beet_pulv = 11), 
-  #water_ext = 5, # to confirm!!!
-  #sugar_Tbsp = 4, # previous data
-  sugar_Tbsp = 1, # try next time
+  water = bao()@water + 5, # to confirm!!!
+  sugar = bao()@sugar,
   portion = c(mantou_portion(), savoryBao_portion()), 
   review = 're-experiment!  bao() is drier than I remembered!!')
 
@@ -190,8 +191,11 @@ beet_bao <- \() new(
 #' @rdname bao-class
 #' @export
 cocoa_bao <- \() new(
-  Class = 'bao', bao(), cocoa_Tbsp = c(KingArthur_Bensdorp = 6), sugar_Tbsp = 5,
-  #water_ext = 5, # to confirm
+  Class = 'bao',
+  cocoa_Tbsp = c(KingArthur_Bensdorp = 6), 
+  sugar = bao()@sugar,
+  sugar_Tbsp = 2, # extra
+  water = bao()@water + 5, # retry
   portion = c(mantou_portion(), sweetBao_portion()),
   review = 'retry with Dutch cocoa')
 
@@ -227,10 +231,10 @@ mandarine_bao <- \() new(
 #' @rdname bao-class
 #' @export
 acai_bao <- \() new(
-  Class = 'bao', bao(), 
+  Class = 'bao', 
   misc_Tbsp = c(Wegmans_acai_pulv = 8.5), 
-  sugar_Tbsp = 2,
-  #water_ext = 5,
+  sugar = bao()@sugar,
+  water = bao()@water + 5, # retry
   portion = c(mantou_portion(), savoryBao_portion()), 
   review = 're-experiment!  bao() is drier than I remembered!!')
 

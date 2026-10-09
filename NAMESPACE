@@ -439,7 +439,6 @@ import(methods)
 importClassesFrom(equiv4,equiv)
 importFrom(charwidth,row_fmt_matrix)
 importFrom(cli,
-  ansi_string,
   col_blue,
   col_br_magenta,
   style_hyperlink

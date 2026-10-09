@@ -143,6 +143,45 @@ addname1 <- \(x, nm = stop('no default!'), ...) {
 }
 
 
+# name clash
+# ?stats::getCall
+.findCall <- \(x, which = -4) {
+  
+  # default `-4` frame is determined by 
+  # [.findCall]
+  # ?methods::new
+  # ?methods::initialize (dont ask me why..)
+  
+  # BUT!!!
+  # user may define: x <- new('recipe', ...)
+  
+  if (identical(x@call, quote(`<UNDEFINED>`))) {
+    
+    tmp <- tryCatch(expr = {
+      match.call(
+        definition = sys.function(which = which), 
+        call = sys.call(which = which)
+      )
+    }, error = identity)
+    
+    z <- if (inherits(tmp, what = 'error')) {
+      quote(`user-defined`)
+    } else tmp[[1L]]
+    
+  } else z <- x@call # not the best practice, just to comform to R grammar 
+  
+  if (is.symbol(z)) {
+    x@call <- z # checks S4 slot class
+  } else if (as.character(z[[1L]]) %in% c('::', ':::')) {
+    x@call <- z[[3L]]
+  } else stop('unsupported @call: ', sQuote(z))
+  
+  return(x)
+  
+}
+
+
+
 
 
 mergePc <- \(x, which, ...) {

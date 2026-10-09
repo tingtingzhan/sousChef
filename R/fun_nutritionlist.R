@@ -94,7 +94,7 @@ as.matrix.nutritionlist <- \(x, ...) {
 #' @export
 print.nutritionMatrix <- \(x, ...) {
   
-  x[, colMeans(x == 0) != 1] |>
+  x[, colMeans(x == 0) != 1, drop = FALSE] |>
     apply(MARGIN = 2L, FUN = max_binlabel, accuracy = .1, simplify = FALSE) |>
     do.call(what = cbind) |> # to make sure not getting a 'vector'
     .repl_colnames() |> 

@@ -2,48 +2,48 @@
 
 #' @title \linkS4class{spice}
 #' 
-#' @slot call \link[base]{language}, the function name to create this \linkS4class{spice}
+#' @slot call \link[base]{name}, the function name to create this \linkS4class{spice}, which serves as the English name of the spice
 #' 
-#' @slot alias \link[base]{character} scalar
+#' @slot alias \link[base]{character} scalar, the name of spice in an alternative language
+#' 
+#' @slot wiki \link[base]{character} scalar, Wikipedia handle
 #' 
 #' @slot url \link[base]{character} scalar
 #' 
 #' @export
 setClass(Class = 'spice', slots = c(
-  call = 'language',
+  call = 'name',
   alias = 'character',
+  wiki = 'character',
   url = 'character'
 ))
 
 
 
-#' @importFrom cli ansi_string
-# @importFrom quantmod getQuote
 setMethod(f = initialize, signature = 'spice', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
   
-  # `-3` frame is determined by ?methods::new and ?methods::initialize (dont ask me why..)
-  x@call <- match.call(
-    definition = sys.function(-3), 
-    call = sys.call(-3)
-  )[[1L]]
+  x <- x |> 
+    .findCall()
   
-  if (is.symbol(x@call)) {
-    # do nothing
-  } else if (as.character(x@call[[1L]]) %in% c('::', ':::')) {
-    x@call <- x@call[[3L]]
-  } else stop(x@call)
+  if (!length(x@wiki)) {
+    x@wiki <- x@call |> 
+      as.character()
+  }
   
   if (!length(x@url)) {
-    x@url <- x@call |>
-      as.character() |>
+    x@url <- x@wiki |>
       sprintf(fmt = 'https://en.wikipedia.org/wiki/%s')
   }
   
   return(x)
   
 })
+
+
+
+
 
 
 #' @export
@@ -94,7 +94,7 @@ basil <- \() new(
 `bay leaf` <- \() new(
   Class = 'spice',
   alias = '\u6708\u6842\u53f6', 
-  url = 'https://en.wikipedia.org/wiki/Bay_leaf')
+  wiki = 'Bay_leaf')
 
 caraway <- \() new(
   Class = 'spice',
@@ -115,7 +115,7 @@ cinnamon <- \() new(
 `citric acid` <- \() new(
   Class = 'spice',
   alias = '\u67e0\u6aac\u9178', 
-  url = 'https://en.wikipedia.org/wiki/Citric_acid')
+  wiki = 'Citric_acid')
 
 clove <- \() new(
   Class = 'spice',
@@ -154,7 +154,7 @@ ginger <- \() new(
 `lavender flowers` <- \() new(
   Class = 'spice',
   alias = '\u85b0\u8863\u8349',
-  url = 'https://en.wikipedia.org/wiki/Lavandula')
+  wiki = 'Lavandula')
 
 `lemon zest` <- \() new(
   Class = 'spice',
@@ -175,7 +175,7 @@ onion <- \() new(
 `orange zest` <- \() new(
   Class = 'spice',
   alias = '\u9648\U1f34a\u76ae',
-  url = 'https://en.wikipedia.org/wiki/Zest_(ingredient)')
+  wiki = 'Zest_(ingredient)')
 
 oregano <- \() new(
   Class = 'spice',
@@ -192,17 +192,17 @@ parsley <- \() new(
 `white pepper` <- \() new(
   Class = 'spice',
   alias = '\u767d\u80e1\u6912', 
-  url = 'https://en.wikipedia.org/wiki/Black_pepper#White_pepper')
+  wiki = 'Black_pepper#White_pepper')
 
 `black pepper` <- \() new(
   Class = 'spice',
   alias = '\u9ed1\u80e1\u6912',
-  url = 'https://en.wikipedia.org/wiki/Black_pepper')
+  wiki = 'Black_pepper')
 
 `red bell pepper` <- \() new(
   Class = 'spice',
   alias = '\u7ea2\u751c\u6912',
-  url = 'https://en.wikipedia.org/wiki/Bell_pepper')
+  wiki = 'Bell_pepper')
 
 rosemary <- \() new(
   Class = 'spice',
@@ -215,12 +215,12 @@ sage <- \() new(
 `star anise` <- \() new(
   Class = 'spice',
   alias = '\u516b\u89d2',
-  url = 'https://en.wikipedia.org/wiki/Illicium_verum')
+  wiki = 'Illicium_verum')
 
 `sunflower oil` <- \() new(
   Class = 'spice',
   alias = '\u8475\u82b1\u7c7d\U1f33b\u6cb9',
-  url = 'https://en.wikipedia.org/wiki/Sunflower_oil')
+  wiki = 'Sunflower_oil')
 
 thyme <- \() new(
   Class = 'spice',
@@ -239,4 +239,4 @@ turmeric <- \() new(
 `yellow mustard` <- \() new(
   Class = 'spice',
   alias = '\u7f8e\u5f0f\u9ec4\u82a5\u672b', 
-  url = 'https://en.wikipedia.org/wiki/Mustard_(condiment)#american')
+  wiki = 'Mustard_(condiment)#american')

@@ -17,9 +17,11 @@
 \section{Slots}{
 
 \describe{
-\item{\code{call}}{\link[base]{language}, the function name to create this \linkS4class{spice}}
+\item{\code{call}}{\link[base]{name}, the function name to create this \linkS4class{spice}, which serves as the English name of the spice}
 
-\item{\code{alias}}{\link[base]{character} scalar}
+\item{\code{alias}}{\link[base]{character} scalar, the name of spice in an alternative language}
+
+\item{\code{wiki}}{\link[base]{character} scalar, Wikipedia handle}
 
 \item{\code{url}}{\link[base]{character} scalar}
 }}

@@ -9,7 +9,7 @@
 #' 
 #' @slot name \link[base]{character} scalar, product name
 #' @slot alias \link[base]{character} scalar with Unicode symbols, product alias
-#' @slot call \link[base]{language}, the function name to create this \linkS4class{nutrition}
+#' @slot call \link[base]{name}, the function name to create this \linkS4class{nutrition}
 #' 
 #' @slot suggestion \link[base]{list}
 #' 
@@ -156,7 +156,7 @@
 #' @export
 setClass(Class = 'nutrition', slots = c(
   
-  call = 'language',
+  call = 'name',
   
   rep_names('character', nm = c(
     'brand',
@@ -243,28 +243,18 @@ setClass(Class = 'nutrition', slots = c(
 
 
 
-#' @importFrom cli ansi_string
 # @importFrom quantmod getQuote
 setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
   
-  if (identical(x@call, quote(`<UNDEFINED>`))) {
-    # `-3` frame is determined by ?methods::new and ?methods::initialize (dont ask me why..)
-    x@call <- match.call(
-      definition = sys.function(-3), 
-      call = sys.call(-3)
-    )[[1L]]
-  }
-  
-  if (is.symbol(x@call)) {
-    # do nothing
-  } else if (as.character(x@call[[1L]]) %in% c('::', ':::')) {
-    x@call <- x@call[[3L]]
-  } else stop(x@call)
+  x <- x |>
+    .findCall()
   
   if (length(x@AbV)) {
-    if (!length(x@alcohol)) x@alcohol <- x@servingGram * x@AbV * .78927 # google abv to alcohol by weight
+    if (!length(x@alcohol)) {
+      x@alcohol <- x@servingGram * x@AbV * .78927 # google abv to alcohol by weight
+    }
     x@name <- sprintf(fmt = '%s %.3g%%\U1f943', x@name, 1e2*x@AbV)
     x@AbV <- numeric()
   }
@@ -276,7 +266,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
       col_orchid4() |>
       c()
   }
-  
   
   # serving weight
   if (length(x@serving_oz)) {

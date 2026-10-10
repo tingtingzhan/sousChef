@@ -1,7 +1,7 @@
 
 
-FrontierCoop_harissa <- \() new(
-  Class = 'nutrition',  frontiercoop = 'harissa-seasoning-organic-1-90-oz',
+FrontierCoop_harissa <- \() nutrition(
+  frontiercoop = 'harissa-seasoning-organic-1-90-oz',
   name = 'Harissa Seasoning',
   contain = c(
     'paprika', 'caraway', 'red chili pepper', 'cayenne', 'coriander', 'cumin', 'garlic', 'peppermint'
@@ -12,8 +12,8 @@ FrontierCoop_harissa <- \() new(
   calorie = 15,
   fat = .5, sodium = .03, carbohydrate = 2, protein = 1)
 
-FrontierCoop_5spice <- \() new(
-  Class = 'nutrition',  frontiercoop = 'frontier-co-op-five-spice-powder-1-92-oz',
+FrontierCoop_5spice <- \() nutrition(
+  frontiercoop = 'frontier-co-op-five-spice-powder-1-92-oz',
   name = 'Five Spice Powder', alias = '\u4e94\u9999\u7c89',
   contain = c(
     'cinnamon', 'fennel seed', 'clove', 'star anise', 'white pepper'
@@ -22,8 +22,8 @@ FrontierCoop_5spice <- \() new(
   servingGram = 54)
 
 
-FrontierCoop_vindaloo <- \() new(
-  Class = 'nutrition',  frontiercoop = 'vindaloo-curry-seasoning-organic-1-lb',
+FrontierCoop_vindaloo <- \() nutrition(
+  frontiercoop = 'vindaloo-curry-seasoning-organic-1-lb',
   name = 'Vindaloo Curry Seasoning', # \u5496\u55b1\u7c89 
   contain = c(
     'tomato concentrate', 'guar gum', 'cumin', 'chili pepper', 'cayenne', 'turmeric', 'coriander', 'cinnamon', 'yellow mustard', 'fenugreek', 'garlic', 'ginger', 'black pepper', 'cardamom', 'clove'

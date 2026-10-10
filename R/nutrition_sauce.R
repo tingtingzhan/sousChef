@@ -1,7 +1,6 @@
 
 
-Kikkoman_soyLite <- \() new(
-  Class = 'nutrition',  
+Kikkoman_soyLite <- \() nutrition(
   kikkomanusa = 'less-sodium-soy-sauce',
   name = 'Soy Sauce, Less Sodium', alias = '\u6e1b\u5869\u91a4\u6cb9',
   fdc = 174277L,
@@ -11,8 +10,7 @@ Kikkoman_soyLite <- \() new(
   sodium = .59, carbohydrate = 1, protein = 1)
 
 
-Kikkoman_soy <- \() new(
-  Class = 'nutrition', 
+Kikkoman_soy <- \() nutrition(
   kikkomanusa = 'soy-sauce',
   alias = '\u9171\u6cb9', name = 'Soy Sauce',
   fdc = 174277L,
@@ -22,8 +20,7 @@ Kikkoman_soy <- \() new(
   sodium = .96, protein = 2)
 
 
-mizkan_brownRiceVinegar <- \() new(
-  Class = 'nutrition',  
+mizkan_brownRiceVinegar <- \() nutrition(
   mizkanjpn = '01007',
   name = 'Brown Rice Vinegar',
   alias = '\u7d14\u7384\u7c73\u9ed2\u9162',
@@ -33,8 +30,7 @@ mizkan_brownRiceVinegar <- \() new(
 
 
 
-LeaPerrins_Worcestershire <- \() new(
-  Class = 'nutrition',  
+LeaPerrins_Worcestershire <- \() nutrition(
   leaperrins = '00051600000044',
   # kraftheinzawayfromhome = '10051600003011',
   name = 'Worcestershire Sauce', alias = '\u55bc\u6c41',
@@ -42,8 +38,7 @@ LeaPerrins_Worcestershire <- \() new(
   calorie = 5,
   carbohydrate = 1, sodium = .065, sugar = 1)
 
-LeaPerrins_WorcestershireLite <- \() new(
-  Class = 'nutrition',  
+LeaPerrins_WorcestershireLite <- \() nutrition(
   leaperrins = '00051600002505',
   name = 'Worcestershire Sauce, Less Sodium', alias = '\u51cf\u76d0\u55bc\u6c41',
   servingTsp = 1, servingGram = 5, 
@@ -51,8 +46,7 @@ LeaPerrins_WorcestershireLite <- \() new(
   carbohydrate = 1, sodium = .045, sugar = 1)
 
 
-Bachans_original <- \() new(
-  Class = 'nutrition',  
+Bachans_original <- \() nutrition(  
   bachans = 'the-original-japanese-barbecue-sauce',
   name = 'Original Japanese Barbecue Sauce',
   costco = '100778116',
@@ -61,35 +55,31 @@ Bachans_original <- \() new(
 
 
 
-GreyPoupon_Dijon <- \() new(
-  Class = 'nutrition',  costco = '100381596',
+GreyPoupon_Dijon <- \() nutrition(
+  costco = '100381596',
   greypoupon = '00054400000245',
   name = 'Dijon Mustard',
   servingTsp = 1, servingGram = 5, sodium = .12)
 
 
-Heinz_whiteVinegar <- \() new(
-  Class = 'nutrition',  
+Heinz_whiteVinegar <- \() nutrition(
   heinz = '00013000008525',
   name = 'White Vinegar, 5% Acidity', alias = '\u767d\u918b',
   servingTbsp = 1, servingGram = 14.4) 
 
 
 
-Hellmanns_mayonnaise <- \() new(
-  Class = 'nutrition',  
+Hellmanns_mayonnaise <- \() nutrition(
   hellmanns = 'real-mayonnaise.html/00048001213487',
   name = 'Mayonnaise',
   servingTbsp = 1, servingGram = 13, fat = 10, sodium = .09)
 
-Hellmanns_mayonnaise_organic <- \() new(
-  Class = 'nutrition',  
+Hellmanns_mayonnaise_organic <- \() nutrition(
   hellmanns = 'organic-mayonnaise.html/00048001572713',
   name = 'Organic Mayonnaise',
   servingTbsp = 1, servingGram = 14, fat = 11, sodium = .09)
 
-Hellmanns_mayonnaise_lite <- \() new(
-  Class = 'nutrition',  
+Hellmanns_mayonnaise_lite <- \() nutrition(
   hellmanns = 'light-mayonnaise.html/00048001213586',
   name = 'Light Mayonnaise',
   servingTbsp = 1, servingGram = 15, fat = 3.5, sodium = .11)
@@ -99,13 +89,12 @@ Hellmanns_mayonnaise_lite <- \() new(
 
 
 
-Dukes_mayonnaise <- \() new(
-  Class = 'nutrition',  
+Dukes_mayonnaise <- \() nutrition(
   url = 'https://dukesmayo.com/products/real-mayonnaise',
   servingTbsp = 1, servingGram = 14, fat = 12, sodium = .07)
 
-DukesLight_mayonnaise <- \() new(
-  Class = 'nutrition',  url = 'https://dukesmayo.com/products/light-mayonnaise',
+DukesLight_mayonnaise <- \() nutrition(
+  url = 'https://dukesmayo.com/products/light-mayonnaise',
   servingTbsp = 1, servingGram = 15, fat = 5, sodium = .1)
 
 
@@ -113,8 +102,7 @@ DukesLight_mayonnaise <- \() new(
 
 
 
-ThaiKitchen_greenCurry <- \() new(
-  Class = 'nutrition',  
+ThaiKitchen_greenCurry <- \() nutrition(
   thaikitchen = 'thai-kitchen-r-gluten-free-green-curry-paste-4-oz',
   name = 'Green Curry Paste',
   usd = 6.49/19, date = as.Date('2026-09-25'),
@@ -122,8 +110,7 @@ ThaiKitchen_greenCurry <- \() new(
   calorie = 5,
   carbohydrate = 1, sodium = .14, review = 'Love!')
 
-ThaiKitchen_redCurry <- \() new(
-  Class = 'nutrition',  
+ThaiKitchen_redCurry <- \() nutrition(
   thaikitchen = 'thai-kitchen-r-gluten-free-red-curry-paste-4-oz',
   name = 'Red Curry Paste',
   usd = 6.49/5, date = as.Date('2026-09-25'),
@@ -135,8 +122,7 @@ ThaiKitchen_redCurry <- \() new(
 
 
 
-Squid_fishSauce <- \() new(
-  Class = 'nutrition',  
+Squid_fishSauce <- \() nutrition(
   brand = style_hyperlink(text = 'Squid\U1f1f9\U1f1ed', url = 'https://squidbrand.com/en/product-category/export-en/') |> c(),
   name = 'Fish\U1f41f Sauce', alias = '\u9c7c\u9732',
   weee = '27743',
@@ -145,8 +131,7 @@ Squid_fishSauce <- \() new(
 )
 
 
-TraderJoes_BalsamicVinaigrette <- \() new(
-  Class = 'nutrition',  
+TraderJoes_BalsamicVinaigrette <- \() nutrition(
   name = 'Balsamic Vinaigrette',
   traderjoes = '072499', 
   usd = 2.99/12,
@@ -159,8 +144,7 @@ TraderJoes_BalsamicVinaigrette <- \() new(
 )
 
 
-TraderJoes_jalapenoSauce <- \() new(
-  Class = 'nutrition',  
+TraderJoes_jalapenoSauce <- \() nutrition(
   name = 'Jalapeno\U0001f336\ufe0f Sauce',
   traderjoes = '060216',
   usd = 3.49/10, date = as.Date('2026-09-03'),
@@ -172,8 +156,7 @@ TraderJoes_jalapenoSauce <- \() new(
   review = 'I do not like this chili profile'
 )
 
-TraderJoes_srirachaBBQ <- \() new(
-  Class = 'nutrition',  
+TraderJoes_srirachaBBQ <- \() nutrition(
   name = 'Sriracha & Roasted Garlic BBQ Sauce',
   traderjoes = '053799',
   usd = 3.49/16, date = as.Date('2026-09-02'),
@@ -183,8 +166,7 @@ TraderJoes_srirachaBBQ <- \() new(
   carbohydrate = 14, sugar = 12, addedSugar = 11
 )
 
-TraderJoes_ThaiGinger <- \() new(
-  Class = 'nutrition',  
+TraderJoes_ThaiGinger <- \() nutrition(
   name = 'Thai Sweet Ginger\U1fada Sauce',
   traderjoes = '068663',
   usd = 2.49/10,

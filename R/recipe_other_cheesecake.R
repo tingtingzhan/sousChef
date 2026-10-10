@@ -56,8 +56,7 @@ Junior_cookbook <- \() new(
 )
 
 
-CheesecakeFactory_original <- \() new(
-  Class = 'nutrition',  
+CheesecakeFactory_original <- \() nutrition(
   name = 'Original',
   cheesecakefactoryfreezer = 'original-cheesecake', cheesecakefactorybakery = 'original-dome',
   target = 'A-15382641', usd = 18.39/964*120,

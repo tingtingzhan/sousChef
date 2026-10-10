@@ -1,6 +1,5 @@
 
-Galil_roastedChestnut <- \() new(
-  Class = 'nutrition',  
+Galil_roastedChestnut <- \() nutrition(
   brand = style_hyperlink(text = 'Galil', url = 'https://shopgalil.com/products/galil-organic-roasted-chestnuts-shelled-3-5oz-pack-of-24') |> c(),
   name = 'Roasted Chestnut', 
   usd = 2.99/100*50,
@@ -11,16 +10,15 @@ Galil_roastedChestnut <- \() new(
 
 
 
-SavannaOrchards_cashewAlmondPecanPistachio <- \() new(
-  Class = 'nutrition',  costco = '100312639',
+SavannaOrchards_cashewAlmondPecanPistachio <- \() nutrition(
+  costco = '100312639',
   brand = 'Savanna Orchards',
   name = 'Honey Roasted Cashew, Almond, Pecan & Pistachio',
   servingGram = 30, fat = 14, sodium = .09, sugar = 4, protein = 5)
 
 
 
-Greenmax_blackSesame <- \() new(
-  Class = 'nutrition',  
+Greenmax_blackSesame <- \() nutrition(
   brand = style_hyperlink(text = 'Greenmax\u99ac\u7389\u5c71\U1f1f9\U1f1fc', url = 'https://www.greenmax.com.tw/product_view.php?id=62772') |> c(),
   alias = '\u9ed1\u829d\u9ebb\u7c89', name = 'Black Sesame Powder',
   usd = 5.99/400*40,
@@ -29,42 +27,41 @@ Greenmax_blackSesame <- \() new(
   fat = 20.5, sodium = .005, carbohydrate = 7, protein = 9)
 
 
-Jbasket_whiteSesame <- \() new(
-  Class = 'nutrition',  
+Jbasket_whiteSesame <- \() nutrition(
   wegmans = '155989', usd = 7.99/323, date = as.Date('2026-09-17'),
   jfc = '40444',
   brand = 'J-Basket', name = 'Roasted White Sesame Seed', alias = '\u719f\u767d\u829d\u9ebb',
   servingGram = .7, servingTsp = 1/4 # packaging
 )
 
-peanut <- \() new(
-  Class = 'nutrition',  fdc = 172430L,
+peanut <- \() nutrition(
+  fdc = 172430L,
   alias = '\u82b1\u751f', name = 'Peanut\U1f95c',
   calorie = 567,
   servingGram = 100, water = 6, protein = 25.8, fat = 49.2, sugar = 4.72, sodium = .018)
 
-pecan <- \() new(
-  Class = 'nutrition',  fdc = 170182L,
+pecan <- \() nutrition(
+  fdc = 170182L,
   alias = '\u80e1\u6843', name = 'Pecan',
   servingGram = 100, water = 3.52, protein = 9.17, fat = 72, sugar = 3.97)
 
 
-Kirkland_cashew <- \() new(
-  Class = 'nutrition',  costco = '4000043019',
+Kirkland_cashew <- \() nutrition(
+  costco = '4000043019',
   alias = '\u8170\u679c', name = 'Cashews', # unsalted
   usd = 14.99/(2.5*454)*28,
   servingGram = 28, fat = 14, sugar = 2, protein = 5)
 
-Kirkland_organic_cashew <- \() new(
-  Class = 'nutrition',  costco = '4000064056',
+Kirkland_organic_cashew <- \() nutrition(
+  costco = '4000064056',
   alias = '\u8170\u679c', name = 'Organic Cashews', # unsalted unroasted
   usd = 14.99/(2.5*454)*28,
   servingGram = 28, 
   calorie = 150,
   fat = 12, sugar = 2, protein = 5)
 
-Kirkland_Brazilnut <- \() new(
-  Class = 'nutrition',  costcoBiz = '100392410',
+Kirkland_Brazilnut <- \() nutrition(
+  costcoBiz = '100392410',
   name = 'Organic Brazil Nuts',
   usd = 9.79/680*30,
   servingGram = 30,

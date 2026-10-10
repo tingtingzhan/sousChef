@@ -178,6 +178,46 @@ zero.omit <- \(x) {
 }
 
 
+.findCall_NEW <- \(x, which = -2) {
+  
+  # default `-2` frame is determined by 
+  # [.findCall_NEW]
+  # helper function, e.g. [nutrition()]
+  
+  
+  # BUT!!!
+  # user may define: x <- new('recipe', ...)
+  
+  #if (identical(x$call, quote(`<UNDEFINED>`))) {
+  if (!length(x$call)) {
+    
+    tmp <- tryCatch(expr = {
+      match.call(
+        definition = sys.function(which = which), 
+        call = sys.call(which = which)
+      )
+    }, error = identity)
+    
+    z <- if (inherits(tmp, what = 'error')) {
+      quote(`user-defined`)
+    } else tmp[[1L]]
+    
+  } else z <- x$call # not the best practice, just to comform to R grammar 
+  
+  #print(z)
+  
+  if (is.symbol(z)) {
+    # do nothing
+  } else if (as.character(z[[1L]]) %in% c('::', ':::')) {
+    z <- z[[3L]]
+  } else stop('unsupported @call: ', sQuote(z))
+  
+  # for ?methods::new to work!!!
+  x$call <- call(name = 'quote', z) 
+  
+  return(x)
+  
+}
 
 
 
@@ -410,39 +450,40 @@ add_tool_url <- \(x, name, fmt, brand) {
 
 
 add_store_url <- \(x, name, fmt, store_brand, store_name = store_brand) {
-  v <- slot(x, name = name)
+  v <- x[[name]]
   if (!length(v)) return(x)
   store_url <- sprintf(fmt = fmt, v)
-  if (!length(x@brand)) {
+  if (!length(x[['brand']])) {
     if (is.na(store_brand)) stop('must have `store_brand`')
-    x@brand <- style_hyperlink(url = store_url, text = store_brand) |> c()
-  } else x@url <- c(x@url, style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name)))
-  slot(x, name = name) <- vector(mode = typeof(v), length = 0L)
+    x$brand <- style_hyperlink(url = store_url, text = store_brand) |> c()
+  } else {
+    x$url <- c(x[['url']], style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name)))
+  }
+  x[[name]] <- NULL
   return(x)
 }
-
 
 
 add_brand_url <- \(x, name, fmt, text) {
-  v <- slot(x, name = name)
+  v <- x[[name]]
   if (!length(v)) return(x)
-  if (length(x@brand)) {
-    print(x@brand)
-    print(v)
-    stop('`@brand` already exists!')
+  if (length(x[['brand']])) {
+    stop('`brand` already exists!')
   }
-  x@brand <- v |> 
+  x$brand <- v |> 
     sprintf(fmt = fmt) |>
     style_hyperlink(text = text) |> 
     c() # i.e., [brand_url]
-  slot(x, name = name) <- vector(mode = typeof(v), length = 0L)
+  x[[name]] <- NULL
   return(x)
 }
 
 
+
+
 brand_url <- \(x, name, fmt, text) {
-  x |>
-    slot(name = name) |> 
+  x[[name]] |>
+    #slot(name = name) |> 
     sprintf(fmt = fmt) |>
     style_hyperlink(text = text) |> 
     c()

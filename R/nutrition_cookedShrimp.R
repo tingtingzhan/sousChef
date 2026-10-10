@@ -1,8 +1,7 @@
 
 
 
-Wegmans_grilledShrimp <- \() new(
-  Class = 'nutrition',
+Wegmans_grilledShrimp <- \() nutrition(
   name = 'Grilled Shrimp w. Basting Oil',
   wegmans = '836827',
   # (Shrimp [Shrimp, Water, Salt, Sugar], Basting Oil [Safflower Oil, Sunflower Oil, Natural Flavor], Garlic [Garlic, Water, Citric Acid]).
@@ -13,8 +12,7 @@ Wegmans_grilledShrimp <- \() new(
 
 
 
-Wegmans_oldBayShrimp <- \() new(
-  Class = 'nutrition',
+Wegmans_oldBayShrimp <- \() nutrition(
   name = 'Old Bay Garlic & Herb Shrimp',
   wegmans = '479528',
   # Fresh Cooked Shrimp (Shrimp, Water, Salt, Sugar), Basting Oil (Soybean Oil, Dried Thyme, Dried Parsley, Natural Garlic Flavor), Chopped Garlic (Garlic, Extra Virgin Olive Oil, Water, Citric Acid), Old Bay Seasoning (Celery Salt [Salt, Celery Seed], Spices [including Red Pepper and Black Pepper], and Paprika), Rosemary.
@@ -25,8 +23,7 @@ Wegmans_oldBayShrimp <- \() new(
 
 
 
-Wegmans_garlicShrimp <- \() new(
-  Class = 'nutrition',  
+Wegmans_garlicShrimp <- \() nutrition(
   name = 'Garlic Herb Shrimp',
   wegmans = '682738',
   # Ingredients: Fresh Cooked Shrimp (Shrimp, Water, Salt, Sugar), Basting Oil (Soybean Oil, Dried Thyme, Dried Parsley, Natural Garlic Flavor), Chopped Garlic (Garlic, Extra Virgin Olive Oil, Water, Citric Acid), Parsley, Kosher Salt, Ground Black Pepper, Crystallized Lemon (Citric Acid, Lemon Oil, Lemon Juice).

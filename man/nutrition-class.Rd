@@ -6,18 +6,21 @@
 \docType{class}
 \name{nutrition-class}
 \alias{nutrition-class}
+\alias{nutrition}
 \alias{show,nutrition-method}
 \alias{Guittard_31milk}
 \alias{Navitas_cacao}
 \alias{Edward_lite_coconutShrd}
 \alias{ThaiKitchen_coconutmilkLite}
-\alias{coffeeLiqueur-class}
+\alias{Kahlua_coffee}
 \alias{FageTotal0_yogurtGreek}
 \alias{TraderJoes_matchaLatte}
 \alias{WilliamsSonoma_mocha}
 \alias{xiaogaojie_icecream}
 \title{\linkS4class{nutrition}}
 \usage{
+nutrition(...)
+
 \S4method{show}{nutrition}(object)
 
 Guittard_31milk()
@@ -28,6 +31,8 @@ Edward_lite_coconutShrd()
 
 ThaiKitchen_coconutmilkLite()
 
+Kahlua_coffee()
+
 FageTotal0_yogurtGreek()
 
 TraderJoes_matchaLatte()
@@ -37,6 +42,8 @@ WilliamsSonoma_mocha()
 xiaogaojie_icecream()
 }
 \arguments{
+\item{...}{..}
+
 \item{object}{see \strong{Usage}}
 }
 \description{
@@ -61,207 +68,15 @@ Nutrition information.
 
 \item{\code{pubchem}}{\link[base]{character} scalar}
 
-\item{\code{acme}}{\link[base]{character} scalar, Acme ID (also all Albertsons supermarkets, e.g., Safeway, etc.)}
-
-\item{\code{amazon}}{\link[base]{character} scalar, amazon ID}
-
-\item{\code{bjs}}{\link[base]{character} scalar, BJ's ID}
-
-\item{\code{costco,costcoBiz}}{\link[base]{character} scalar. Costco product ID may be too long for \link[base]{integer}}
-
-\item{\code{giantfood}}{\link[base]{character} scalar}
-
-\item{\code{lucerne}}{\link[base]{character} scalar}
-
-\item{\code{sams}}{\link[base]{character} scalar, Sam's Club ID}
-
-\item{\code{target}}{\link[base]{character} scalar, Target ID}
-
-\item{\code{totalwine}}{\link[base]{character} scalar}
-
-\item{\code{traderjoes}}{\link[base]{character} scalar, Trader Joe's ID}
-
-\item{\code{walmart}}{\link[base]{character} scalar, Walmart ID}
-
-\item{\code{wawa}}{\link[base]{character} scalar}
-
-\item{\code{webstaurant}}{\link[base]{character} scalar}
-
-\item{\code{weee}}{\link[base]{character} scalar}
-
-\item{\code{wegmans}}{\link[base]{character} scalar, Wegmans Food Markets ID}
-
-\item{\code{wholefoods}}{\link[base]{character} scalar, Wholel Foods ID}
-
-\item{\code{yamibuy}}{\link[base]{character} scalar}
-
-\item{\code{bachans}}{\link[base]{character} scalar}
-
-\item{\code{baileys}}{\link[base]{character} scalar}
-
-\item{\code{bassetts}}{\link[base]{character} scalar}
-
-\item{\code{belgioioso}}{\link[base]{character} scalar}
-
-\item{\code{bobsredmill}}{\link[base]{character} scalar}
-
-\item{\code{bouchard}}{\link[base]{character} scalar}
-
-\item{\code{cheesecakefactorybakery,cheesecakefactoryfreezer}}{\link[base]{character} scalars}
-
-\item{\code{clearwater}}{\link[base]{character} scalar}
-
-\item{\code{countrytime}}{\link[base]{character} scalar}
-
-\item{\code{daisybrand}}{\link[base]{character} scalar}
-
-\item{\code{delmonte}}{\link[base]{character} scalar}
-
-\item{\code{dolesunshine}}{\link[base]{character} scalar}
-
-\item{\code{domino}}{\link[base]{character} scalar}
-
-\item{\code{edwardandsons}}{\link[base]{character} scalar}
-
-\item{\code{epicprovisions}}{\link[base]{character} scalar}
-
-\item{\code{fleischmannsyeast}}{\link[base]{character} scalar}
-
-\item{\code{fourC}}{\link[base]{character} scalar}
-
-\item{\code{frontiercoop}}{\link[base]{character} scalar}
-
-\item{\code{ghirardelli}}{\link[base]{character} scalar}
-
-\item{\code{greypoupon}}{\link[base]{character} scalar}
-
-\item{\code{godiva}}{\link[base]{character} scalar}
-
-\item{\code{haagendazs}}{\link[base]{character} scalar}
-
-\item{\code{haitaiusa}}{\link[base]{character} scalar}
-
-\item{\code{harney}}{\link[base]{character} scalar}
-
-\item{\code{heinz}}{\link[base]{character} scalar}
-
-\item{\code{hellmanns}}{\link[base]{character} scalar}
-
-\item{\code{horizon}}{\link[base]{character} scalar}
-
-\item{\code{ippodoglobal,ippodojpn,ippodousa}}{\link[base]{character} scalars}
-
-\item{\code{itoen}}{\link[base]{character} scalar}
-
-\item{\code{jayone}}{\link[base]{character} scalar}
-
-\item{\code{jfc}}{\link[base]{character} scalar}
-
-\item{\code{juniorscheesecake}}{\link[base]{character} scalar}
-
-\item{\code{justtea}}{\link[base]{character} scalar}
-
-\item{\code{kahlua}}{\link[base]{character} scalar}
-
-\item{\code{kerrygold,kerrygoldusa}}{\link[base]{character} scalar}
-
-\item{\code{kikkomanusa}}{\link[base]{character} scalar}
-
-\item{\code{kingarthur,kingarthurpro}}{\link[base]{character} scalars}
-
-\item{\code{kraftheinzawayfromhome,philadelphia}}{\link[base]{character} scalars}
-
-\item{\code{krusteaz}}{\link[base]{character} scalar}
-
-\item{\code{landolakes}}{\link[base]{character} scalar}
-
-\item{\code{leaperrins}}{\link[base]{character} scalar}
-
-\item{\code{lkkhk,lkkusa}}{\link[base]{character} scalars}
-
-\item{\code{nanak}}{\link[base]{character} scalar}
-
-\item{\code{maeda}}{\link[base]{character} scalar}
-
-\item{\code{marukyu}}{\link[base]{character} scalar}
-
-\item{\code{mccormick,mccormickculinary,oldbay,grillmates}}{\link[base]{character} scalars}
-
-\item{\code{meyenberg}}{\link[base]{character} scalar}
-
-\item{\code{mizkanjpn,mizkanusa}}{\link[base]{character} scalars}
-
-\item{\code{mortonsalt}}{\link[base]{character} scalar}
-
-\item{\code{nancysyogurt}}{\link[base]{character} scalar}
-
-\item{\code{navitas}}{\link[base]{character} scalar}
-
-\item{\code{nescafeGold,nestle,nido,carnationbaking}}{\link[base]{character} scalars}
-
-\item{\code{nielsenmassey}}{\link[base]{character} scalar}
-
-\item{\code{nishiki}}{\link[base]{character} scalar}
-
-\item{\code{oreo}}{\link[base]{character} scalar}
-
-\item{\code{organicvalley}}{\link[base]{character} scalar}
-
-\item{\code{paromi}}{\link[base]{character} scalar}
-
-\item{\code{quakeroats}}{\link[base]{character} scalar}
-
-\item{\code{raos}}{\link[base]{character} scalar}
-
-\item{\code{runamok}}{\link[base]{character} scalar}
-
-\item{\code{sanford}}{\link[base]{character} scalar}
-
-\item{\code{siggis}}{\link[base]{character} scalar}
-
-\item{\code{simplyorganic}}{\link[base]{character} scalar}
-
-\item{\code{sodastream}}{\link[base]{character} scalar}
-
-\item{\code{starbucks}}{\link[base]{character} scalar}
-
-\item{\code{starbucks_hot,starbucks_iced}}{\link[base]{character} scalars}
-
-\item{\code{stassentea}}{\link[base]{character} scalar}
-
-\item{\code{stonewall}}{\link[base]{character} scalar}
-
-\item{\code{stonyfield}}{\link[base]{character} scalar}
-
-\item{\code{swiftmeats}}{\link[base]{character} scalar}
-
-\item{\code{swissmiss}}{\link[base]{character} scalar}
-
-\item{\code{tsemporium}}{\link[base]{character} scalar}
-
-\item{\code{thaikitchen}}{\link[base]{character} scalar}
-
-\item{\code{twinings}}{\link[base]{character} scalar}
-
-\item{\code{wesson}}{\link[base]{character} scalar}
-
-\item{\code{whistlepigwhiskey}}{\link[base]{character} scalar}
-
-\item{\code{yaomazi}}{\link[base]{character} scalar}
-
-\item{\code{yogi}}{\link[base]{character} scalar}
-
-\item{\code{youjia}}{\link[base]{character} scalar}
-
 \item{\code{review}}{\link[base]{character} scalar or \link[base]{vector}, additional note to chef}
 
 \item{\code{superior}}{\link[base]{character} scalar}
 
 \item{\code{contain}}{\link[base]{character} scalar or vector, names of additives}
 
-\item{\code{servingGram,serving_oz,serving_lb}}{\link[base]{numeric} scalars, serving size in grams, ounces and pounds}
+\item{\code{servingGram}}{\link[base]{numeric} scalars, serving size in grams}
 
-\item{\code{servingCup,servingTbsp,servingTsp,serving_floz,serving_ml}}{\link[base]{numeric} scalars, serving volume in cups, tablespoons, teaspoons, fluid ounce and milli litre}
+\item{\code{servingTsp}}{\link[base]{numeric} scalars, serving volume in teaspoons}
 
 \item{\code{pieceGram}}{\link[base]{numeric} scalar, weight in grams per piece}
 
@@ -294,8 +109,6 @@ Nutrition information.
 \item{\code{sodium}}{\link[base]{numeric} scalar, sodium (in grams) per serving}
 
 \item{\code{protein}}{\link[base]{numeric} scalar, protein (in grams) per serving}
-
-\item{\code{AbV}}{\link[base]{numeric} scalar between 0 and 1, alcohol by volume}
 
 \item{\code{alcohol}}{\link[base]{numeric} scalar, alcohol (in grams) per serving}
 

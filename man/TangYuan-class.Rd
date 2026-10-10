@@ -24,7 +24,7 @@ date_TangYuan()
 6g dough + 5g filling
 }
 \examples{
-# TangYuan() # why error???
+TangYuan() # why error???
 date_TangYuan()
 pumpkin_TangYuan()
 mango_TangYuan()

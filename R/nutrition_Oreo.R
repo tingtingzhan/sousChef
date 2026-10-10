@@ -14,8 +14,7 @@ if (FALSE) {
   )
 }
 
-Nabisco_waferOreo <- \() new(
-  Class = 'nutrition',  
+Nabisco_waferOreo <- \() nutrition(
   amazon = 'B07H9V7Q8S', webstaurant = '565297100',
   brand = 'Nabisco', name = 'Oreo Wafers',
   servingGram = 31, 
@@ -25,16 +24,14 @@ Nabisco_waferOreo <- \() new(
 # Nabisco_crumbOreo, amazon = 'B07HBSRYTN'
   
 
-Oreo <- \() new(
-  Class = 'nutrition',  
+Oreo <- \() nutrition(
   oreo = 'oreo-cookie', name = 'Oreo',
   wegmans = '902920', usd = 4.49/15, date = as.Date('2026-09-17'),
   servingGram = 34, 
   calorie = 160,
   fat = 7, sodium = .13, carbohydrate = 25, fiber = 1, sugar = 14, addedSugar = 13, protein = 1)
 
-Oreo_thins <- \() new(
-  Class = 'nutrition',  
+Oreo_thins <- \() nutrition(
   oreo = 'oreo-thins-original-cookies',
   name = 'Oreo Thins',
   wegmans = '927296', usd = 4.99/12, date = as.Date('2026-09-17'),
@@ -42,8 +39,7 @@ Oreo_thins <- \() new(
   calorie = 140,
   fat = 6, sodium = .095, carbohydrate = 21, fiber = 1, sugar = 12, addedSugar = 12, protein = 1)
 
-Oreo_thins_tiramisu <- \() new(
-  Class = 'nutrition',  
+Oreo_thins_tiramisu <- \() nutrition(
   oreo = 'tiramisu',
   name = 'Oreo Thins, Tiramisu',
   # not on Wegmans website right now
@@ -53,8 +49,7 @@ Oreo_thins_tiramisu <- \() new(
   fat = 6, sodium = .095, carbohydrate = 21, fiber = 1, sugar = 11, addedSugar = 11, protein = 1,
   review = 'I love!!')
 
-Oreo_thins_lemon <- \() new(
-  Class = 'nutrition',  
+Oreo_thins_lemon <- \() nutrition(
   oreo = 'oreo-thins-lemon-cookies',
   name = 'Oreo Thins, Lemon\U1f34b',
   wegmans = '927299', usd = 4.99/13, date = as.Date('2026-09-17'),
@@ -64,8 +59,7 @@ Oreo_thins_lemon <- \() new(
   review = 'not bad')
 
 
-Oreo_thins_mint <- \() new(
-  Class = 'nutrition',  
+Oreo_thins_mint <- \() nutrition(
   oreo = 'oreo-thins-mint-cookies',
   name = 'Oreo Thins, Mint',
   wegmans = '927292', usd = 4.99/12, date = as.Date('2026-09-17'),
@@ -78,14 +72,12 @@ Oreo_thins_mint <- \() new(
 # https://youtu.be/1h7RCGoZKG8?t=322
 
 
-Nabisco_graham <- \() new(
-  Class = 'nutrition',  
+Nabisco_graham <- \() nutrition(
   brand = 'Nabisco', name = 'Grahams, Original',
   walmart = '10292704', usd = 4.68/408*31,
   servingGram = 31, fat = 3.5, sodium = .17, addedSugar = 8, protein = 2)
 
-HoneyMaid_graham <- \() new(
-  Class = 'nutrition',  
+HoneyMaid_graham <- \() nutrition(
   brand = c(style_hyperlink(text = 'Nabisco Honey Maid', url = 'https://www.snackworks.com/product/00044000004637/')),
   name = 'Honey Graham',
   walmart = '10292699', usd = 4.68/408*30,

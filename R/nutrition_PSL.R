@@ -1,8 +1,8 @@
 
 
 
-Starbucks_pumpkinSpiceLatte <- \() new(
-  Class = 'nutrition', starbucks_hot = '418',
+Starbucks_pumpkinSpiceLatte <- \() nutrition(
+  starbucks_hot = '418',
   name = 'Pumpkin Spice Latte',
   servingGram = 470, serving_floz = 16,
   #caffeine 150 mg*
@@ -10,8 +10,8 @@ Starbucks_pumpkinSpiceLatte <- \() new(
   fat = 14, cholesterol = .05, sodium = .23, carbohydrate = 52, sugar = 50, protein = 14)
 
 
-Starbucks_pumpkinSpiceFrappuccino <- \() new(
-  Class = 'nutrition', starbucks_iced = '427',
+Starbucks_pumpkinSpiceFrappuccino <- \() nutrition(
+  starbucks_iced = '427',
   name = 'Pumpkin Spice Frappuccino',
   servingGram = 470, serving_floz = 16,
   #caffeine 100 mg*

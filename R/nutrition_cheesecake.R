@@ -1,8 +1,7 @@
 
 
 
-Wegmans_pumpkin_cheesecake <- \() new(
-  Class = 'nutrition',  
+Wegmans_pumpkin_cheesecake <- \() nutrition(
   wegmans = '26402', usd = 1.31/28.3495 * 130, # 1.31/oz
   name = 'Pumpkin\U1f383 Cheesecake',
   servingGram = 132,
@@ -13,8 +12,7 @@ Wegmans_pumpkin_cheesecake <- \() new(
 
 
 
-CheesecakeFactory_pumpkin <- \() new(
-  Class = 'nutrition',  
+CheesecakeFactory_pumpkin <- \() nutrition(
   name = 'Pumpkin\U1f383',
   cheesecakefactoryfreezer = 'pumpkin-cheesecake',
   bjs = 'the-cheesecake-factory-at-home-6-pumpkin-cheesecake/3000000000003370251', 
@@ -25,8 +23,7 @@ CheesecakeFactory_pumpkin <- \() new(
 
 
 
-Junior_original <- \() new(
-  Class = 'nutrition',  
+Junior_original <- \() nutrition(
   wegmans = '656229', usd = 14.29/5,
   juniorscheesecake = 'original-ny-plain-cheesecake',
   # watch this carefully!!! https://www.youtube.com/watch?v=hktm2mvQKc0
@@ -37,8 +34,7 @@ Junior_original <- \() new(
 
 
 
-Junior_strawberrySwirl <- \() new(
-  Class = 'nutrition',  
+Junior_strawberrySwirl <- \() nutrition(
   wegmans = '900269', usd = 14.29/5,
   brand = 'Junior\'s', name = 'Strawberry Swirl New York Cheesecake',
   servingGram = 136, fat = 28, cholesterol = .11, sodium = .33, sugar = 29, protein = 6)

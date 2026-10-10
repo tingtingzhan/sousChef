@@ -1,6 +1,5 @@
 
-YokuMoku_cigare <- \() new(
-  Class = 'nutrition', 
+YokuMoku_cigare <- \() nutrition(
   brand = style_hyperlink(text = 'Yoku Moku\U1f1ef\U1f1f5', url = 'https://yokumoku.com/product/') |> c(),
   name = 'Cigare',
   servingGram = 31,

@@ -32,8 +32,7 @@ strawberry_frappe0 <- \() new(
 
 
 
-Starbucks_strawberryFrappuccino <- \() new(
-  Class = 'nutrition',  
+Starbucks_strawberryFrappuccino <- \() nutrition(
   starbucks_iced = '2122724',
   name = 'Strawberry Frappuccino',
   servingGram = 470, serving_floz = 16,

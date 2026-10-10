@@ -1,7 +1,6 @@
 
 
-Siam_tomyum <- \() new(
-  Class = 'nutrition',  
+Siam_tomyum <- \() nutrition(
   weee = '61645', usd = 4.99/454*15, 
   brand = #c(style_hyperlink(text = 
     'Siam Select\U1f1f9\U1f1ed', 

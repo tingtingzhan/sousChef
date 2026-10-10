@@ -1,7 +1,6 @@
 
 
-Wegmans_Marsala <- \() new(
-  Class = 'nutrition', 
+Wegmans_Marsala <- \() nutrition(
   wegmans = '59666', usd = 3.29/375*30,
   name = 'Marsala Cooking Wine', alias = '\u6599\u9152',
   serving_ml = 30, servingGram = 30, # my guess
@@ -12,8 +11,7 @@ Wegmans_Marsala <- \() new(
   AbV = .14)
 
 
-Wegmans_Sherry <- \() new(
-  Class = 'nutrition', 
+Wegmans_Sherry <- \() nutrition(
   wegmans = '59668', usd = 3.29/375*30,
   name = 'Sherry Cooking Wine', alias = '\u6599\u9152',
   serving_ml = 30, servingGram = 30, # my guess
@@ -23,8 +21,7 @@ Wegmans_Sherry <- \() new(
   sugar = 1,
   AbV = .17)
 
-Wegmans_redCookingWine <- \() new(
-  Class = 'nutrition', 
+Wegmans_redCookingWine <- \() nutrition(
   wegmans = '59669', usd = 3.29/375*30,
   name = 'Red Cooking Wine', alias = '\u6599\u9152',
   serving_ml = 30, servingGram = 30, # my guess
@@ -32,8 +29,7 @@ Wegmans_redCookingWine <- \() new(
   sodium = .18,
   AbV = .12)
 
-Wegmans_whiteCookingWine <- \() new(
-  Class = 'nutrition', 
+Wegmans_whiteCookingWine <- \() nutrition(
   wegmans = '59665', usd = 3.29/375*30,
   name = 'White Cooking Wine', alias = '\u6599\u9152',
   serving_ml = 30, servingGram = 30, # my guess

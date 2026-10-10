@@ -1,7 +1,6 @@
 
 
-Erawan_riceFlr <- \() new(
-  Class = 'nutrition', 
+Erawan_riceFlr <- \() nutrition(
   brand = c(style_hyperlink(text = 'Erawan\u4e09\u8c61\U1f1f9\U1f1ed', url = 'https://www.erawanbrand.com/flours')),
   name = 'Rice\U1f33e Flour', alias = '\u6c34\u78e8\u7c98\u7c73\u7c89',
   servingGram = 30, 
@@ -11,8 +10,7 @@ Erawan_riceFlr <- \() new(
 
 
 
-Erawan_glutRiceFlr <- \() new(
-  Class = 'nutrition', 
+Erawan_glutRiceFlr <- \() nutrition(
   brand = style_hyperlink(text = 'Erawan\u4e09\u8c61\U1f1f9\U1f1ed', url = 'https://www.erawanbrand.com/flours') |>
     c(),
   name = 'Glutinous Rice\U1f33e Flour', alias = '\u6c34\u78e8\u7cef\u7c73\u7c89',
@@ -22,8 +20,7 @@ Erawan_glutRiceFlr <- \() new(
   carbohydrate = 24, protein = 2)
 
 
-KingArthur_gluten0Flr <- \() new(
-  Class = 'nutrition',  
+KingArthur_gluten0Flr <- \() nutrition(
   kingarthur = '200725',
   alias = '\u6742\u7cae\u7c89', name = 'No-Gluten Measure4Measure', # 
   usd = 10.95/(3*454) * 31,

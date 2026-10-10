@@ -27,14 +27,14 @@
 
 
 
-TraderJoes_matchaLatte <- \() new(
-  Class = 'nutrition',  traderjoes = '052512',
+TraderJoes_matchaLatte <- \() nutrition(
+  traderjoes = '052512',
   name = 'Matcha\U1f375 Latte Mix',
   servingGram = 45, servingTbsp = 5, fat = 9, sodium = .07, sugar = 17, addedSugar = 16, protein = 2)
 
 
-Starbucks_matchaLatte <- \() new(
-  Class = 'nutrition', starbucks_hot = '468',
+Starbucks_matchaLatte <- \() nutrition(
+  starbucks_hot = '468',
   name = 'Matcha\U1f375 Latte',
   servingGram = 450, serving_floz = 16,
   usd = 4.95, # Spring 2024
@@ -42,8 +42,8 @@ Starbucks_matchaLatte <- \() new(
   fat = 7, cholesterol = .025, sodium = .16, sugar = 32, protein = 12)
 
 
-Starbucks_matchaFrappuccino <- \() new(
-  Class = 'nutrition', starbucks_iced = '439',
+Starbucks_matchaFrappuccino <- \() nutrition(
+  starbucks_iced = '439',
   name = 'Matcha\U1f375 Frappuccino',
   servingGram = 450, serving_floz = 16,
   usd = 5.45, # Spring 2024
@@ -51,8 +51,7 @@ Starbucks_matchaFrappuccino <- \() new(
   fat = 16, cholesterol = .050, sodium = .240, carbohydrate = 62, sugar = 61, protein = 6)
 
 
-Starbucks_matchaLatteMix <- \() new(
-  Class = 'nutrition',  
+Starbucks_matchaLatteMix <- \() nutrition(
   brand = 'Starbucks\U1f1fa\U1f1f8', 
   name = 'Matcha\U1f375 Latte Mix',
   usd = 10.99/4, yamibuy = '25775250',
@@ -73,8 +72,7 @@ Ippodo_sayakaLatte <- \() new(
 
 
 
-Ippodo_uji_shimizu <- \() new(
-  Class = 'nutrition', 
+Ippodo_uji_shimizu <- \() nutrition(
   ippodousa = 'uji-shimizu-sticks', ippodoglobal = 'matcha642402',
   name = 'Uji Shimizu\U1f375', alias = '\u5b87\u6cbb\u6e05\u6c34',
   usd = 18/12, jpy = 700/400*15,
@@ -84,8 +82,7 @@ Ippodo_uji_shimizu <- \() new(
   suggestion = list(water = c(c80 = 150)))
 
 
-ItoEn_sweet_matcha <- \() new(
-  Class = 'nutrition', 
+ItoEn_sweet_matcha <- \() nutrition(
   itoen = 'ito-en-matcha-green-tea-sweet-powder-sticks', jfc = '45783',
   name = 'Sweet Matcha',
   servingGram = 12, sugar = 11,

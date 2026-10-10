@@ -1,7 +1,6 @@
 
 
-TraderJoes_cornbreadMix <- \() new(
-  Class = 'nutrition', 
+TraderJoes_cornbreadMix <- \() nutrition(
   traderjoes = '032809', usd = 2.99/9,
   name = 'Cornbread Mix',
   # nutrition info & recipe: https://www.nicegourmet.shop/product/trader-joe-s-cornbread-mix-pack-of-2-15-oz-boxes
@@ -17,8 +16,8 @@ TraderJoes_cornbreadMix <- \() new(
 
 
 
-WholeFoods365_cornbreadMix <- \() new(
-  Class = 'nutrition',  wholefoods = 'b07d7bdyh6',
+WholeFoods365_cornbreadMix <- \() nutrition(
+  wholefoods = 'b07d7bdyh6',
   name = 'Cornbread Mix', 
   usd = 3.59/12,
   servingGram = 35, servingTbsp = 3, 
@@ -31,8 +30,8 @@ WholeFoods365_cornbreadMix <- \() new(
 
 
 
-Krusteaz_southern_cornbreadMix <- \() new(
-  Class = 'nutrition',  krusteaz = 'baking-mixes/southern-cornbread-muffin',
+Krusteaz_southern_cornbreadMix <- \() nutrition(
+  krusteaz = 'baking-mixes/southern-cornbread-muffin',
   name = 'Southern Cornbread Mix', usd = 19.68/4/12,
   servingGram = 27,
   fat = .5, sodium = .4, carbohydrate = 21, sugar = 4, protein = 2,
@@ -40,8 +39,8 @@ Krusteaz_southern_cornbreadMix <- \() new(
   
 
 
-BobsRedMill_cornbreadMix <- \() new(
-  Class = 'nutrition',  bobsredmill = 'cornbread-muffin-mix',
+BobsRedMill_cornbreadMix <- \() nutrition(
+  bobsredmill = 'cornbread-muffin-mix',
   name = 'Cornbread Mix',
   servingGram = 55, servingCup = 1/3, 
   calorie = 200,
@@ -50,8 +49,7 @@ BobsRedMill_cornbreadMix <- \() new(
 
 
 
-Stonewall_cornbreadMix <- \() new(
-  Class = 'nutrition',  
+Stonewall_cornbreadMix <- \() nutrition(
   stonewall = '552594', usd = 7.95/12,
   name = 'Cornbread Mix',
   servingGram = 38,
@@ -64,8 +62,7 @@ Stonewall_cornbreadMix <- \() new(
 
 
 
-Jiffy_cornMuffinMix <- \() new(
-  Class = 'nutrition', 
+Jiffy_cornMuffinMix <- \() nutrition(
   brand = c(style_hyperlink(text = 'Jiffy\U1f1fa\U1f1f8', url = 'https://www.jiffymix.com/products/corn-muffin-mix/')),
   name = 'Corn Muffin Mix',
   servingGram = 78, servingCup = 1/2,
@@ -79,8 +76,7 @@ Jiffy_cornMuffinMix <- \() new(
 
 
 
-Fleischmanns_cornbreadMix <- \() new(
-  Class = 'nutrition', 
+Fleischmanns_cornbreadMix <- \() nutrition(
   brand = c(style_hyperlink(text = 'Fleischmann\'s\U1f1fa\U1f1f8', url = 'https://www.simplyhomemade.com/products')),
   name = 'Cornbread Mix',
   walmart = '38065267', usd = 1.93/425*27,

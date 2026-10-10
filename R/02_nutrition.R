@@ -17,104 +17,6 @@
 #' @slot fdc \link[base]{integer} scalar, USDA FoodData Central (FDC) ID
 #' @slot pubchem \link[base]{character} scalar
 #' 
-#' @slot acme \link[base]{character} scalar, Acme ID (also all Albertsons supermarkets, e.g., Safeway, etc.)
-#' @slot amazon \link[base]{character} scalar, amazon ID
-#' @slot bjs \link[base]{character} scalar, BJ's ID
-#' @slot costco,costcoBiz \link[base]{character} scalar. Costco product ID may be too long for \link[base]{integer}
-#' @slot giantfood \link[base]{character} scalar
-#' @slot lucerne \link[base]{character} scalar
-#' @slot sams \link[base]{character} scalar, Sam's Club ID
-#' @slot target \link[base]{character} scalar, Target ID
-#' @slot totalwine \link[base]{character} scalar
-#' @slot traderjoes \link[base]{character} scalar, Trader Joe's ID
-#' @slot walmart \link[base]{character} scalar, Walmart ID
-#' @slot wawa \link[base]{character} scalar
-#' @slot webstaurant \link[base]{character} scalar
-#' @slot weee \link[base]{character} scalar
-#' @slot wegmans \link[base]{character} scalar, Wegmans Food Markets ID
-#' @slot wholefoods \link[base]{character} scalar, Wholel Foods ID
-#' @slot yamibuy \link[base]{character} scalar
-#' 
-#' @slot bachans \link[base]{character} scalar
-#' @slot baileys \link[base]{character} scalar
-#' @slot bassetts \link[base]{character} scalar
-#' @slot belgioioso \link[base]{character} scalar
-#' @slot bobsredmill \link[base]{character} scalar
-#' @slot bouchard \link[base]{character} scalar
-#' @slot cheesecakefactorybakery,cheesecakefactoryfreezer \link[base]{character} scalars
-#' @slot clearwater \link[base]{character} scalar
-#' @slot countrytime \link[base]{character} scalar
-#' @slot daisybrand \link[base]{character} scalar
-#' @slot delmonte \link[base]{character} scalar
-#' @slot dolesunshine \link[base]{character} scalar
-#' @slot domino \link[base]{character} scalar
-#' @slot edwardandsons \link[base]{character} scalar
-#' @slot epicprovisions \link[base]{character} scalar
-#' @slot fleischmannsyeast \link[base]{character} scalar
-#' @slot fourC \link[base]{character} scalar
-#' @slot frontiercoop \link[base]{character} scalar
-#' @slot ghirardelli \link[base]{character} scalar
-#' @slot greypoupon \link[base]{character} scalar
-#' @slot godiva \link[base]{character} scalar
-#' @slot haagendazs \link[base]{character} scalar
-#' @slot haitaiusa \link[base]{character} scalar
-#' @slot harney \link[base]{character} scalar
-#' @slot heinz \link[base]{character} scalar
-#' @slot hellmanns \link[base]{character} scalar
-#' @slot horizon \link[base]{character} scalar
-#' @slot ippodoglobal,ippodojpn,ippodousa \link[base]{character} scalars
-#' @slot itoen \link[base]{character} scalar
-#' @slot jayone \link[base]{character} scalar
-#' @slot jfc \link[base]{character} scalar
-#' @slot juniorscheesecake \link[base]{character} scalar
-#' @slot justtea \link[base]{character} scalar
-#' @slot kahlua \link[base]{character} scalar
-#' @slot kerrygold,kerrygoldusa \link[base]{character} scalar
-#' @slot kikkomanusa \link[base]{character} scalar
-#' @slot kingarthur,kingarthurpro \link[base]{character} scalars
-#' @slot kraftheinzawayfromhome,philadelphia \link[base]{character} scalars
-#' @slot krusteaz \link[base]{character} scalar
-#' @slot landolakes \link[base]{character} scalar
-#' @slot leaperrins \link[base]{character} scalar
-#' @slot lkkhk,lkkusa \link[base]{character} scalars
-#' @slot nanak \link[base]{character} scalar
-#' @slot maeda \link[base]{character} scalar
-#' @slot marukyu \link[base]{character} scalar
-#' @slot mccormick,mccormickculinary,oldbay,grillmates \link[base]{character} scalars
-#' @slot meyenberg \link[base]{character} scalar
-#' @slot mizkanjpn,mizkanusa \link[base]{character} scalars
-#' @slot mortonsalt \link[base]{character} scalar
-#' @slot nancysyogurt \link[base]{character} scalar
-#' @slot navitas \link[base]{character} scalar
-#' @slot nescafeGold,nestle,nido,carnationbaking \link[base]{character} scalars
-#' @slot nielsenmassey \link[base]{character} scalar
-#' @slot nishiki \link[base]{character} scalar
-#' @slot oreo \link[base]{character} scalar
-#' @slot organicvalley \link[base]{character} scalar
-#' @slot paromi \link[base]{character} scalar
-#' @slot quakeroats \link[base]{character} scalar
-#' @slot raos \link[base]{character} scalar
-#' @slot runamok \link[base]{character} scalar
-#' @slot sanford \link[base]{character} scalar
-#' @slot siggis \link[base]{character} scalar
-#' @slot simplyorganic \link[base]{character} scalar
-#' @slot sodastream \link[base]{character} scalar
-#' @slot starbucks \link[base]{character} scalar
-#' @slot starbucks_hot,starbucks_iced \link[base]{character} scalars
-#' @slot stassentea \link[base]{character} scalar
-#' @slot stonewall \link[base]{character} scalar
-#' @slot stonyfield \link[base]{character} scalar
-#' @slot swiftmeats \link[base]{character} scalar
-#' @slot swissmiss \link[base]{character} scalar
-#' @slot tsemporium \link[base]{character} scalar
-#' @slot thaikitchen \link[base]{character} scalar
-#' @slot twinings \link[base]{character} scalar
-#' @slot wesson \link[base]{character} scalar
-#' @slot whistlepigwhiskey \link[base]{character} scalar
-#' @slot yaomazi \link[base]{character} scalar
-#' @slot yogi \link[base]{character} scalar
-#' @slot youjia \link[base]{character} scalar
-#' 
 #' 
 # @slot machine (legacy) \link[base]{function}
 #' 
@@ -122,8 +24,8 @@
 #' @slot superior \link[base]{character} scalar
 #' @slot contain \link[base]{character} scalar or vector, names of additives
 #' 
-#' @slot servingGram,serving_oz,serving_lb \link[base]{numeric} scalars, serving size in grams, ounces and pounds
-#' @slot servingCup,servingTbsp,servingTsp,serving_floz,serving_ml \link[base]{numeric} scalars, serving volume in cups, tablespoons, teaspoons, fluid ounce and milli litre
+#' @slot servingGram \link[base]{numeric} scalars, serving size in grams
+#' @slot servingTsp \link[base]{numeric} scalars, serving volume in teaspoons
 #' 
 #' @slot pieceGram \link[base]{numeric} scalar, weight in grams per piece
 #' @slot piece_fmt \link[base]{character} scalar
@@ -142,7 +44,6 @@
 #' @slot cholesterol \link[base]{numeric} scalar, cholesterol (in grams) per serving
 #' @slot sodium \link[base]{numeric} scalar, sodium (in grams) per serving
 #' @slot protein \link[base]{numeric} scalar, protein (in grams) per serving
-#' @slot AbV \link[base]{numeric} scalar between 0 and 1, alcohol by volume
 #' @slot alcohol \link[base]{numeric} scalar, alcohol (in grams) per serving
 # @slot portion see \linkS4class{recipe}
 #' 
@@ -162,39 +63,7 @@ setClass(Class = 'nutrition', slots = c(
     'contain',
     'piece_fmt',
     'url',
-    'pubchem',
-    
-    'acme', 'amazon',
-    'bjs',
-    'costco', 'costcoBiz',
-    'giantfood',
-    'kraftheinzawayfromhome', 
-    'sams',
-    'target', 'totalwine', 'traderjoes',
-    'walmart', 'wawa', 'webstaurant', 'weee', 'wegmans', 'wholefoods',
-    'yamibuy',
-    
-    'bachans', 'baileys', 'bassetts', 'belgioioso', 'bobsredmill', 'bouchard',
-    'carnationbaking', 'cheesecakefactorybakery', 'cheesecakefactoryfreezer', 'clearwater', 'countrytime',
-    'daisybrand', 'delmonte', 'dolesunshine', 'domino',
-    'edwardandsons', 'epicprovisions',
-    'fleischmannsyeast', 'fourC', 'frontiercoop',
-    'ghirardelli', 'greypoupon', 'godiva', 'grillmates',
-    'haagendazs', 'haitaiusa', 'harney', 'heinz', 'hellmanns', 'horizon',
-    'ippodoglobal', 'ippodojpn', 'ippodousa', 'itoen',
-    'jayone', 'jfc', 'juniorscheesecake', 'justtea',
-    'kahlua', 'kerrygold', 'kerrygoldusa', 'kikkomanusa', 'kingarthur', 'kingarthurpro', 'krusteaz',
-    'landolakes', 'leaperrins', 'lkkhk', 'lkkusa', 'lucerne',
-    'maeda', 'marukyu', 'mccormick', 'mccormickculinary', 'meyenberg', 'mizkanjpn', 'mizkanusa', 'mortonsalt',
-    'nanak', 'nancysyogurt', 'navitas', 'nescafeGold', 'nestle', 'nido', 'nielsenmassey', 'nishiki',
-    'oldbay', 'oreo', 'organicvalley',
-    'paromi', 'philadelphia',
-    'quakeroats',
-    'raos', 'runamok',
-    'sanford', 'siggis', 'simplyorganic', 'sodastream', 'starbucks', 'starbucks_hot', 'starbucks_iced', 'stassentea', 'stonewall', 'stonyfield', 'swiftmeats', 'swissmiss',
-    'thaikitchen', 'tsemporium', 'twinings',
-    'wesson', 'whistlepigwhiskey',
-    'yaomazi', 'yogi', 'youjia'
+    'pubchem'
   )),
   
   suggestion = 'list',
@@ -209,9 +78,7 @@ setClass(Class = 'nutrition', slots = c(
   cost_ = 'character',
   
   rep_names('numeric', nm = c(
-    'servingGram', 'serving_oz', 'serving_lb',
-    'servingCup', 'servingTbsp', 'servingTsp',
-    'serving_floz', 'serving_ml',
+    'servingGram', 'servingTsp',
     'pieceGram', 
     
     'usd', 'jpy',
@@ -222,7 +89,7 @@ setClass(Class = 'nutrition', slots = c(
     'cholesterol',
     'sodium',
     'protein',
-    'alcohol', 'AbV'
+    'alcohol'
   ))
 ), prototype = prototype(
   piece_fmt = '%.1fpcs',
@@ -233,48 +100,15 @@ setClass(Class = 'nutrition', slots = c(
 
 
 
+#' @rdname nutrition-class
+#' @param ... ..
+#' @export
+nutrition <- \(...) {
+  
+  x <- list(...) |>
+    .findCall_NEW() # must stop the pipeline :)))
+  
 
-
-# @importFrom quantmod getQuote
-setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) {
-  
-  x <- callNextMethod(.Object, ...) |>
-    .findCall()
-  
-  if (length(x@AbV)) {
-    if (!length(x@alcohol)) {
-      x@alcohol <- x@servingGram * x@AbV * .78927 # google abv to alcohol by weight
-    }
-    x@name <- sprintf(fmt = '%s %.3g%%\U1f943', x@name, 1e2*x@AbV)
-    x@AbV <- numeric()
-  }
-  
-  # alias
-  if (length(x@alias)) {
-    x@alias <- x@alias |>
-      sprintf(fmt = '{.run [%s](cooking::%s())}', . = _, as.character(x@call)) |> 
-      col_orchid4() |>
-      c()
-  }
-  
-  # serving weight
-  if (length(x@serving_oz)) {
-    if (length(x@servingGram)) warning('@servingGram over written by @serving_oz')
-    x@servingGram <- x@serving_oz * 28.3495
-  } else if (length(x@serving_lb)) {
-    if (length(x@servingGram)) warning('@servingGram over written by @serving_lb')
-    x@servingGram <- x@serving_lb * 453.6
-  }
-  if (!length(x@servingGram)) stop('must have `servingGram` for nutrition object')
-  
-  # process user-input `@url` first
-  if (length(x@url)) {
-    x@url <- style_hyperlink(
-      url = x@url, 
-      text = gsub('^https://|^http://', replacement = '', x = x@url)
-    ) |> c()
-  }
-  
   x <- x |>
     add_brand_url(name = 'bachans', fmt = 'https://bachans.com/products/%s', text = 'Bachan\'s\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'baileys', fmt = 'https://www.baileys.com/en/products/baileys-%s', text = 'Baileys\U1f1ee\U1f1ea') |>
@@ -358,40 +192,56 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     add_brand_url(name = 'wesson', fmt = 'https://www.purewesson.com/products/%s', text = 'Wesson\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'yaomazi', fmt = 'https://www.yaomazi.com/%s', text = '\u5e7a\u9ebb\u5b50\U1f1e8\U1f1f3') |> 
     add_brand_url(name = 'yogi', fmt = 'https://www.yogi-life.com/en-US/product/%s', text = 'Yogi\U1f1fa\U1f1f8') |> 
-    add_brand_url(name = 'youjia', fmt = 'https://youjiaflavors.com/products/%s', text = '\u53cb\u52a0\U1f1e8\U1f1f3')
+    add_brand_url(name = 'youjia', fmt = 'https://youjiaflavors.com/products/%s', text = '\u53cb\u52a0\U1f1e8\U1f1f3') 
   
   
-  if (!length(x@brand)) { # non-standard brands
-    x@brand <- if (length(x@cheesecakefactoryfreezer)) {
-      if (!length(x@cheesecakefactorybakery)) x@cheesecakefactorybakery <- x@cheesecakefactoryfreezer
-      paste(
+  if (!length(x[['brand']])) { # non-standard brands
+    if (length(x[['cheesecakefactoryfreezer']])) {
+      if (!length(x[['cheesecakefactorybakery']])) {
+        x$cheesecakefactorybakery <- x$cheesecakefactoryfreezer
+      }
+      x$brand <- paste(
         brand_url(x, name = 'cheesecakefactoryfreezer', fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/%s', text = 'Cheesecake'),
         brand_url(x, name = 'cheesecakefactorybakery', fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/%s', text = 'Factory\U1f1fa\U1f1f8')
       )
-    } else if (length(x@ippodoglobal) & length(x@ippodousa)) {
-      x@url <- c(x@url, brand_url(x, name = 'ippodousa', fmt = 'https://ippodotea.com/products/%s', text = '\U1f6d2 US Shop'))
+      x$cheesecakefactorybakery <- x$cheesecakefactoryfreezer <- NULL
+    } else if (length(x[['ippodoglobal']]) & length(x[['ippodousa']])) {
+      x$url <- c(x[['url']], brand_url(x, name = 'ippodousa', fmt = 'https://ippodotea.com/products/%s', text = '\U1f6d2 US Shop'))
       jpn_ <- brand_url(x, name = 'ippodojpn', fmt = 'https://www.ippodo-tea.co.jp/products/%s', text = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5')
       global_ <- brand_url(x, name = 'ippodoglobal', fmt = 'https://global.ippodo-tea.co.jp/products/%s', text = 'Ippodo\U1f375')
-      paste(global_, jpn_)
-    } else if (length(x@kerrygold)) {
+      x$brand <- paste(global_, jpn_)
+      x$ippodoglobal <- x$ippodousa <- x$ippodojpn <- NULL
+    } else if (length(x[['kerrygold']])) {
       kg_ <- brand_url(x, name = 'kerrygold', fmt = 'https://kerrygold.com/products/%s', text = 'Kerrygold\U1f1ee\U1f1ea')
-      if (length(x@kerrygoldusa)) {
+      x$brand <- if (length(x[['kerrygoldusa']])) {
         paste0(kg_, brand_url(x, name = 'kerrygoldusa', fmt = 'https://www.kerrygoldusa.com/products/%s', text = '\U1f1fa\U1f1f8'))
       } else kg_
-    } else if (length(x@marukyu)) {
-      x@url <- c(x@url, style_hyperlink(url = 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf', text = '2024 Catalog'))
-      paste(
+      x$kerrygold <- x$kerrygoldusa <- NULL
+    } else if (length(x[['marukyu']])) {
+      x$url <- c(x[['url']], style_hyperlink(url = 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf', text = '2024 Catalog'))
+      x$brand <- paste(
         brand_url(x, name = 'marukyu', fmt = 'https://www.marukyu-koyamaen.co.jp/english/shop/products/%s', text = 'Marukyu Koyamaen\U1f375'),
         brand_url(x, name = 'marukyu', fmt = 'https://www.marukyu-koyamaen.co.jp/motoan-shop/products/%s', text = '\u4e38\u4e45\u5c0f\u5c71\u5712\U1f1ef\U1f1f5')
       )
-    } else if (length(x@runamok)) {
+      x$marukyu <- NULL
+    } else if (length(x[['runamok']])) {
       runamok_ <- brand_url(x, name = 'runamok', fmt = 'https://runamokmaple.com/shop/product/%s', text = 'Runamok\U1f1fa\U1f1f8')
-      if (length(x@whistlepigwhiskey)) {
+      x$brand <- if (length(x[['whistlepigwhiskey']])) {
         brand_url(x, name = 'whistlepigwhiskey', fmt = 'https://shop.whistlepigwhiskey.com/products/%s', text = 'Whistlepig\U1f1fa\U1f1f8') |>
           paste(runamok_, . = _, sep = '-')
       } else runamok_
-    } else character()
-  } # non-standard brands
+      x$runamok <- x$whistlepigwhiskey <- NULL
+    } #else do nothing
+  } 
+  # non-standard brands, end of
+  
+  # process user-input `@url` first
+  if (length(x[['url']])) {
+    x$url <- x$url |>
+      gsub('^https://|^http://', replacement = '', x = _) |> 
+      style_hyperlink(url = x$url, text = _) |> 
+      c()
+  }
   
   x <- x |>
     add_store_url(name = 'acme', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Albertsons\U1f1fa\U1f1f8', store_name = 'Acme Market') |>
@@ -414,6 +264,67 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
     add_store_url(name = 'wholefoods', fmt = 'https://www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8', store_name = 'Whole Foods\U1f1fa\U1f1f8') |>
     add_store_url(name = 'yamibuy', fmt = 'https://u.yamibuy.com/%s', store_brand = 'Yami\u4e9a\u7c73\U1f1fa\U1f1f8')
   
+  
+  
+  # serving weight
+  if (length(x[['serving_oz']])) {
+    if (length(x[['servingGram']])) warning('`@servingGram` over written by `serving_oz`')
+    x$servingGram <- x[['serving_oz']] * 28.3495
+    x$serving_oz <- NULL
+  } else if (length(x[['serving_lb']])) {
+    if (length(x[['servingGram']])) warning('`@servingGram` over written by `serving_lb`')
+    x$servingGram <- x[['serving_lb']] * 453.6
+    x$serving_lb <- NULL
+  }
+  if (!length(x[['servingGram']])) stop('must have `@servingGram` for nutrition object')
+  
+  # serving volumn
+  vol <- c(length(x[['servingCup']]), length(x[['servingTbsp']]), length(x[['servingTsp']]), length(x[['serving_floz']]), length(x[['serving_ml']]))
+  if (sum(vol) > 1L) stop('cannot have more than one of `servingCup`, `servingTbsp`, `@servingTsp`, `serving_floz`, and `serving_ml`')
+  if (vol[1L]) {
+    x$servingTsp <- 48 * x[['servingCup']]
+    x$servingCup <- NULL
+  } else if (vol[2L]) {
+    x$servingTsp <- 3 * x[['servingTbsp']]
+    x$servingTbsp <- NULL
+  } else if (vol[4L]) {
+    x$servingTsp <- 6 * x[['serving_floz']]
+    x$serving_floz <- NULL
+  } else if (vol[5L]) {
+    x$servingTsp <- x[['serving_ml']] / 4.92892
+    x$serving_ml <- NULL
+  }
+  
+  # process AbV (needs `@servingGram`)
+  if (length(x[['AbV']])) {
+    if (!length(x[['alcohol']])) {
+      x$alcohol <- x[['servingGram']] * x[['AbV']] * .78927 # google abv to alcohol by weight
+    }
+    x$name <- sprintf(fmt = '%s %.3g%%\U1f943', x[['name']], 1e2*x[['AbV']])
+    x$AbV <- NULL
+  }
+  
+  
+  c(list(Class = 'nutrition'), x) |> 
+    do.call(what = 'new', args = _)
+
+}
+
+
+# @importFrom quantmod getQuote
+setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) {
+  
+  x <- callNextMethod(.Object, ...)
+  
+  # alias
+  if (length(x@alias)) {
+    x@alias <- x@alias |>
+      sprintf(fmt = '{.run [%s](cooking::%s())}', . = _, as.character(x@call)) |> 
+      col_orchid4() |>
+      c()
+  }
+  
+
   if (length(x@brand)) {
     x@brand <- x@brand |> 
       make_ansi_style('sienna')() |> 
@@ -421,21 +332,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
       c()
   }
   
-  vol <- c(length(x@servingCup), length(x@servingTbsp), length(x@servingTsp), length(x@serving_floz), length(x@serving_ml))
-  if (sum(vol) > 1L) stop('cannot have more than one of `@servingCup`, `@servingTbsp`, `@servingTsp`, `@serving_floz`, and `@serving_ml`')
-  if (vol[1L]) {
-    x@servingTsp <- 48 * x@servingCup
-    x@servingCup <- numeric()
-  } else if (vol[2L]) {
-    x@servingTsp <- 3 * x@servingTbsp
-    x@servingTbsp <- numeric()
-  } else if (vol[4L]) {
-    x@servingTsp <- 6 * x@serving_floz
-    x@serving_floz <- numeric()
-  } else if (vol[5L]) {
-    x@servingTsp <- x@serving_ml / 4.92892
-    x@serving_ml <- numeric()
-  }
   
   for (i in names(which(getSlots('nutrition') == 'numeric'))) {
     slot(x, name = i) <- slot(x, name = i) |>
@@ -517,7 +413,7 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
       sprintf(fmt = '%.1f oz') |> 
       make_ansi_style('seagreen')() |> 
       style_bold(),
-    if (x@call == 'asMethod') {
+    if (as.character(x@call) %in% c('asMethod', '<UNDEFINED>')) {
       # from as(., Class = 'nutrition)
       # do not have volume info
       ''

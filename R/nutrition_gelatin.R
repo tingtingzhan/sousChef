@@ -15,8 +15,7 @@
 
 
 
-Champion_gold_gelatin <- \() new(
-  Class = 'nutrition', 
+Champion_gold_gelatin <- \() nutrition(
   name = 'Gold Leaf Gelatin', alias = '\u5409\u5229\u4e01\u7247',
   brand = style_hyperlink(url = 'https://www.championproteins.com/store/p5/GelatinSheetsGoldLeaf.html', text = 'Champion Proteins\U1f1fa\U1f1f8') |>
     c(), 

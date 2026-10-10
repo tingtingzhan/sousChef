@@ -28,8 +28,7 @@
 
 
 
-FageTotal0_yogurtGreek <- \() new(
-  Class = 'nutrition',  
+FageTotal0_yogurtGreek <- \() nutrition(
   brand = style_hyperlink(text = 'Fage Total 0%', url = 'https://usa.fage/products/yogurt/fage-total-0') |> 
     c(),
   name = 'Nonfat Greek\U0001f1ec\U0001f1f7 Yogurt', alias = '\u8131\u8102\u5e0c\u814a\u9178\u5976',
@@ -43,8 +42,7 @@ FageTotal0_yogurtGreek <- \() new(
 
 
 
-MembersMark_yogurtGreek <- \() new(
-  Class = 'nutrition',  
+MembersMark_yogurtGreek <- \() nutrition(
   sams = 'prod23131577', usd = 4.87/1130*170, date = as.Date('2026-09-17'), # sold at Sams, 2.5lb
   name = 'Nonfat Greek\U0001f1ec\U0001f1f7 Yogurt', alias = '\u8131\u8102\u5e0c\u814a\u9178\u5976',
   servingGram = 170, 
@@ -56,8 +54,7 @@ MembersMark_yogurtGreek <- \() new(
 
 
 
-SimpleTruth_yogurt <- \() new(
-  Class = 'nutrition',  
+SimpleTruth_yogurt <- \() nutrition(
   url = 'https://www.kroger.com/p/simple-truth-organic-plain-lowfat-yogurt/0001111045530',
   brand = 'Simple Truth Organic', # Kroger is the parent company 
   name = 'Low-Fat Yogurt', alias = '\u4f4e\u8102\u9178\u5976',
@@ -70,8 +67,7 @@ SimpleTruth_yogurt <- \() new(
 
 
 
-Stonyfield_yogurt <- \() new(
-  Class = 'nutrition',  
+Stonyfield_yogurt <- \() nutrition(
   stonyfield = 'nonfat-yogurt-plain-32-oz',
   name = 'Nonfat Yogurt', alias = '\u8131\u8102\u9178\u5976',
   wegmans = '112660', 
@@ -84,8 +80,7 @@ Stonyfield_yogurt <- \() new(
 
 
 
-Nancys_yogurt <- \() new(
-  Class = 'nutrition', 
+Nancys_yogurt <- \() nutrition(
   nancysyogurt = 'organic-100-grass-fed-yogurt',
   name = 'Organic 100% Grass-Fed Yogurt', alias = '\u9178\u5976',
   wegmans = '838502', usd = 5.99/680*170,
@@ -98,8 +93,7 @@ Nancys_yogurt <- \() new(
 
 
 
-UpstateFarms_buttermilk <- \() new(
-  Class = 'nutrition',
+UpstateFarms_buttermilk <- \() nutrition(
   wegmans = '94864',
   brand = 'Upstate Farms', name = 'Buttermilk, Lowfat', alias = '\u916a\u6d46',
   # https://www.upstatefarms.com/products # no whole version!!
@@ -112,8 +106,7 @@ UpstateFarms_buttermilk <- \() new(
 
 
 
-NaturalByNature_buttermilk <- \() new(
-  Class = 'nutrition', 
+NaturalByNature_buttermilk <- \() nutrition(
   brand = c(style_hyperlink(url = 'https://naturalbynaturedairy.com/products/dairy/', text = 'Natural By Nature')), 
   name = 'Low-Fat Buttermilk', alias = '\u4f4e\u8102\u916a\u6d46',
   servingGram = 240, servingCup = 1,
@@ -124,8 +117,7 @@ NaturalByNature_buttermilk <- \() new(
 
 
 
-OakFarms_buttermilk <- \() new(
-  Class = 'nutrition', 
+OakFarms_buttermilk <- \() nutrition(
   brand = c(style_hyperlink(text = 'Oak Farms\U1f1fa\U1f1f8', url = 'https://oakfarmsdairy.com/products/bulgarian-buttermilk-plastic-half-gallon/')),
   name = 'Bulgarian\U1f1e7\U1f1ec Buttermilk', alias = '\u916a\u6d46',
   servingGram = 240, servingCup = 1,
@@ -138,8 +130,8 @@ OakFarms_buttermilk <- \() new(
 
 
 
-Carnation_evapMilk <- \() new(
-  Class = 'nutrition', nestle = '11002753',
+Carnation_evapMilk <- \() nutrition(
+  nestle = '11002753',
   # also 'https://www.verybestbaking.com/carnation/products/nestle-carnation-evaporated-milk/'
   name = 'Carnation Evaporated Milk', alias = '\u6de1\u5976',
   walmart = '10291864', usd = 1.72/12,
@@ -152,8 +144,8 @@ Carnation_evapMilk <- \() new(
 
 
 
-CarnationFatFree_evapMilk <- \() new(
-  Class = 'nutrition', carnationbaking = 'fat-free-evapored-milk',
+CarnationFatFree_evapMilk <- \() nutrition(
+  carnationbaking = 'fat-free-evapored-milk',
   name = 'Fat Free Evaporated Milk', alias = '\u8131\u8102\u6de1\u5976',
   walmart = '1363902922', usd = 6.88/4/12, # 2023-11-11
   # fullweight = 431, emptyweight = 46,
@@ -165,8 +157,8 @@ CarnationFatFree_evapMilk <- \() new(
 
 
 
-Carnation_condensMilk <- \() new(
-  Class = 'nutrition', carnationbaking = 'sweetened-condensed-milk',
+Carnation_condensMilk <- \() nutrition(
+  carnationbaking = 'sweetened-condensed-milk',
   name = 'Sweetened Condensed Milk',
   servingGram = 397/10, servingTbsp = 2,
   usd = 2.99/10,
@@ -186,8 +178,7 @@ Carnation_condensMilk <- \() new(
 
 
 
-Philadelphia_creamCheese <- \() new(
-  Class = 'nutrition', 
+Philadelphia_creamCheese <- \() nutrition(
   kraftheinzawayfromhome = '10021000616005',
   philadelphia = '00021000612239',
   name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
@@ -198,8 +189,7 @@ Philadelphia_creamCheese <- \() new(
 
 
 
-Philadelphia_creamCheeseSpread <- \() new(
-  Class = 'nutrition', 
+Philadelphia_creamCheeseSpread <- \() nutrition(
   philadelphia = '00021000000142',
   kraftheinzawayfromhome = '10021000614063',
   alias = '\u5976\u6cb9\u5976\u916a\u62b9\u6599', name = 'Cream Cheese Spread',
@@ -211,8 +201,7 @@ Philadelphia_creamCheeseSpread <- \() new(
 
 
 
-PhiladelphiaNeufchatel_creamCheese <- \() new(
-  Class = 'nutrition',  
+PhiladelphiaNeufchatel_creamCheese <- \() nutrition(
   kraftheinzawayfromhome = '10021000616401',
   philadelphia = '00021000612475',
   name = 'Neufcha\u0302tel Cream Cheese', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a',
@@ -224,8 +213,7 @@ PhiladelphiaNeufchatel_creamCheese <- \() new(
 
 
 
-PhiladelphiaNeufchatel_creamCheeseSpread <- \() new(
-  Class = 'nutrition',  
+PhiladelphiaNeufchatel_creamCheeseSpread <- \() nutrition(
   philadelphia = '00021000000289',
   kraftheinzawayfromhome = '10021000726704',
   alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a\u62b9\u6599', name = 'Neufcha\u0302tel Cream Cheese Spread',
@@ -238,16 +226,15 @@ PhiladelphiaNeufchatel_creamCheeseSpread <- \() new(
 
 
 
-LucerneNeufchatel_creamCheese <- \() new(
-  Class = 'nutrition',  acme = '137100657',
+LucerneNeufchatel_creamCheese <- \() nutrition(
+  acme = '137100657',
   brand = 'Lucerne', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Neufcha\u0302tel Cheese',
   serving_oz = 1, fat = 6, sodium = .105, sugar = 2, protein = 2)
 
 
 
 
-GreatValueNeufchatel_creamCheese <- \() new(
-  Class = 'nutrition',  
+GreatValueNeufchatel_creamCheese <- \() nutrition(
   walmart = '10452358', usd = 1.48/8,
   alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Neufcha\u0302tel Cheese',
   serving_oz = 1, fat = 6, sodium = .105, sugar = 2, protein = 2)
@@ -256,8 +243,7 @@ GreatValueNeufchatel_creamCheese <- \() new(
 
 
 
-Tillamook_creamCheese <- \() new(
-  Class = 'nutrition',  
+Tillamook_creamCheese <- \() nutrition(
   brand = c(style_hyperlink(text = 'Tillamook', url = 'https://www.tillamook.com/products/cream-cheese/brick-cream-cheese')),
   name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
   servingTbsp = 2, serving_oz = 1,
@@ -266,8 +252,7 @@ Tillamook_creamCheese <- \() new(
 
 
 
-OrganicValleyNeufchatel_creamCheese <- \() new(
-  Class = 'nutrition',  
+OrganicValleyNeufchatel_creamCheese <- \() nutrition(
   organicvalley = 'cream-cheese/neufchatel/neufchatel-8-oz-bar',
   alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Neufcha\u0302tel Cheese',
   # wegmans = ???, usd = 4.59/8, # no longer at Wegmans
@@ -278,8 +263,7 @@ OrganicValleyNeufchatel_creamCheese <- \() new(
 
 
 
-OrganicValley_creamCheese <- \() new(
-  Class = 'nutrition',  
+OrganicValley_creamCheese <- \() nutrition(
   organicvalley = 'cream-cheese/cream-cheese/cream-cheese-8-oz-bar/',
   name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
   wegmans = '888993', usd = .62, 
@@ -292,8 +276,7 @@ OrganicValley_creamCheese <- \() new(
 
 
 
-TraderJoes_creamCheese <- \() new(
-  Class = 'nutrition', 
+TraderJoes_creamCheese <- \() nutrition(
   traderjoes = '012491',
   name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
@@ -305,8 +288,7 @@ TraderJoes_creamCheese <- \() new(
 
 
 
-TraderJoesLight_creamCheese <- \() new(
-  Class = 'nutrition', 
+TraderJoesLight_creamCheese <- \() nutrition(
   brand = 'Trader Joe\'s', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Light Cream Cheese',
   contain = c('whey proteins', 'xanthan gum', 'locust bean gum', 'guar gum', 'microbial rennet'),
   serving_oz = 1, 
@@ -316,8 +298,8 @@ TraderJoesLight_creamCheese <- \() new(
 
 
 
-WholeFoods365_creamCheese <- \() new(
-  Class = 'nutrition',  wholefoods = 'b074h6qz3j',
+WholeFoods365_creamCheese <- \() nutrition(
+  wholefoods = 'b074h6qz3j',
   name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
   contain = 'locust bean gum',
   serving_oz = 1, servingTbsp = 2, 
@@ -328,8 +310,7 @@ WholeFoods365_creamCheese <- \() new(
 
 
 
-Nancys_creamCheese <- \() new(
-  Class = 'nutrition',  
+Nancys_creamCheese <- \() nutrition(
   nancysyogurt = 'organic-natural-cream-cheese',
   wegmans = '879678', usd = .62, date = as.Date('2026-09-17'),
   name = 'Organic Cultured Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
@@ -340,17 +321,15 @@ Nancys_creamCheese <- \() new(
 
 
 
-Daisy_sourCream <- \() new( # no filler
-  Class = 'nutrition',  
-  daisybrand = 'sour-cream',
+Daisy_sourCream <- \() nutrition(
+  daisybrand = 'sour-cream', # no filler
   name = 'Sour Cream', alias = '\u9178\u5976\u6cb9',
   servingGram = 30, servingTbsp = 2,
   calorie = 60,
   fdc = 171257L, water = 30*.731,
   fat = 5, cholesterol = .02, sodium = .015, sugar = 1, protein = 1)
 
-DaisyLight_sourCream <- \() new( # no filler
-  Class = 'nutrition',  
+DaisyLight_sourCream <- \() nutrition(
   daisybrand = 'sour-cream',
   name = 'Light Sour Cream',
   servingGram = 30, servingTbsp = 2,
@@ -359,8 +338,7 @@ DaisyLight_sourCream <- \() new( # no filler
   fat = 2.5, cholesterol = .01, sodium = .015, sugar = 1, protein = 2,
   review = 'Do not buy. This is a mixture of cultured cream and skim milk')
 
-#WegmansOrganic_sourCream <- \() new(
-#  Class = 'nutrition',
+#WegmansOrganic_sourCream <- \() nutrition(
 #  wegmans = '63577',
 #  name = 'Sour Cream'#,
 #  # no nutrition info!!!
@@ -370,8 +348,7 @@ DaisyLight_sourCream <- \() new( # no filler
 
 
 
-Daisy_cottageCheese <- \() new(
-  Class = 'nutrition',
+Daisy_cottageCheese <- \() nutrition(
   name = 'Cottage Cheese, 4% Milkfat',
   daisybrand = 'cottage-cheese',
   walmart = '15716748', usd = 4.97/680*113,
@@ -383,8 +360,7 @@ Daisy_cottageCheese <- \() new(
 
 
 
-DaisyLite_cottageCheese <- \() new(
-  Class = 'nutrition',
+DaisyLite_cottageCheese <- \() nutrition(
   name = 'Cottage Cheese, 2% Milkfat',
   daisybrand = 'cottage-cheese',
   walmart = '15716747', usd = 4.97/680*113,
@@ -396,8 +372,7 @@ DaisyLite_cottageCheese <- \() new(
 
 
 
-Lucerne_cottageCheese <- \() new(
-  Class = 'nutrition',  
+Lucerne_cottageCheese <- \() nutrition(
   brand = 'Lucerne', name = 'Cottage Cheese',
   acme = '960109551', usd = 4.29/680*113, date = as.Date('2026-09-11'),
   serving_oz = 4, servingCup = 1/2,
@@ -408,8 +383,7 @@ Lucerne_cottageCheese <- \() new(
 
 
 
-TraderJoesLight_sourCream <- \() new( # no filler
-  Class = 'nutrition', 
+TraderJoesLight_sourCream <- \() nutrition(
   brand = 'Trader Joe\'s', name = 'Light Sour Cream',
   servingGram = 30, servingTbsp = 2,
   fat = 2.5, sodium = .03, sugar = 2, protein = 2)
@@ -421,8 +395,8 @@ TraderJoesLight_sourCream <- \() new( # no filler
 
 
 
-Wegmans_whole_milk <- \() new(
-  Class = 'nutrition',  fdc = 171265L,
+Wegmans_whole_milk <- \() nutrition(
+  fdc = 171265L,
   wegmans = '94427', usd = 4.09/16, # 1 gal
   name = 'Vitamin D, Whole Milk', alias = '\u5168\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
@@ -432,8 +406,8 @@ Wegmans_whole_milk <- \() new(
 
 
 
-WegmansOrganic_2perc_milk <- \() new(
-  Class = 'nutrition',  fdc = 2483143L,
+WegmansOrganic_2perc_milk <- \() nutrition(
+  fdc = 2483143L,
   wegmans = '33312', usd = 6.99/16, # 1 gal
   name = '2% Reduced Fat Milk', alias = '\u534a\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
@@ -446,8 +420,8 @@ WegmansOrganic_2perc_milk <- \() new(
 
 
 
-WegmansOrganic_whole_milk <- \() new(
-  Class = 'nutrition',  fdc = 171265L, 
+WegmansOrganic_whole_milk <- \() nutrition(
+  fdc = 171265L, 
   wegmans = '33261', usd = 6.99/16, # 1 gal
   name = 'Vitamin D, Whole Milk', alias = '\u5168\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
@@ -457,8 +431,7 @@ WegmansOrganic_whole_milk <- \() new(
 
 
 
-Horizon_wholeDHA_milk <- \() new(
-  Class = 'nutrition', 
+Horizon_wholeDHA_milk <- \() nutrition(
   name = 'Organic Whole Milk with DHA Omega-3', alias = '\u5168\u8102\u725b\u5976',
   horizon = 'organic-milk/organic-whole-dha-omega-3-milk',
   servingGram = 250, servingCup = 1,
@@ -468,8 +441,8 @@ Horizon_wholeDHA_milk <- \() new(
 
 
 
-Wawa_2perc_milk <- \() new(
-  Class = 'nutrition',  wawa = '4ff1fb27-adc2-4cfc-95be-08f519fd8f32',
+Wawa_2perc_milk <- \() nutrition(
+  wawa = '4ff1fb27-adc2-4cfc-95be-08f519fd8f32',
   name = '2% Reduced Fat Milk',
   servingGram = 240, servingCup = 1,
   usd = 2.75/8,
@@ -480,8 +453,7 @@ Wawa_2perc_milk <- \() new(
 # Water content of heavy cream is 57.7%, 
 # fdc = 170859L
 
-Byrne_heavyCream <- \() new(
-  Class = 'nutrition',  
+Byrne_heavyCream <- \() nutrition(
   brand = 'https://www.byrnedairy.com/creams-near-ny-state/' |> 
     style_hyperlink(text = 'Byrne\U1f1fa\U1f1f8', url = _) |> 
     c(),
@@ -494,8 +466,7 @@ Byrne_heavyCream <- \() new(
 
 
 
-Wegmans_heavyCream <- \() new(
-  Class = 'nutrition',  
+Wegmans_heavyCream <- \() nutrition(
   fdc = 170859L,
   name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
   servingGram = 15, 
@@ -507,8 +478,8 @@ Wegmans_heavyCream <- \() new(
 
 
 
-WholeFoods365_heavyCream <- \() new( # no filler
-  Class = 'nutrition',  wholefoods = 'b07qf6f984',
+WholeFoods365_heavyCream <- \() nutrition(
+  wholefoods = 'b07qf6f984',
   name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
   servingGram = 15, servingTbsp = 1,
   calorie = 50,
@@ -516,8 +487,7 @@ WholeFoods365_heavyCream <- \() new( # no filler
 
 
 
-TraderJoes_heavyCream <- \() new( # 
-  Class = 'nutrition', 
+TraderJoes_heavyCream <- \() nutrition(
   brand = 'Trader Joe\'s', name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
   # the version labelled as 'organic' contains gellan gum
   # the version without 'organic' contains no filler
@@ -527,8 +497,7 @@ TraderJoes_heavyCream <- \() new( #
 
 
 
-NaturalByNature_heavyCream <- \() new( # no filler, sold at Giant
-  Class = 'nutrition',  
+NaturalByNature_heavyCream <- \() nutrition(
   brand = c(style_hyperlink(url = 'https://naturalbynaturedairy.com/products/dairy/', text = 'Natural By Nature')), 
   name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
   servingGram = 15, servingTbsp = 1,
@@ -538,8 +507,7 @@ NaturalByNature_heavyCream <- \() new( # no filler, sold at Giant
 
 
 
-LandOLakes_whippedHeavyCream <- \() new(
-  Class = 'nutrition', 
+LandOLakes_whippedHeavyCream <- \() nutrition(
   landolakes = 'whipping-cream-and-half-half/aerosol-whipped-cream',
   name = 'Whipped Heavy Cream', alias = '\u6253\u53d1\u91cd\u5976\u6cb9',
   costcoBiz = '100284038',
@@ -559,8 +527,7 @@ LandOLakes_whippedHeavyCream <- \() new(
 
 
 
-Lucerne_lightCream <- \() new(
-  Class = 'nutrition',  
+Lucerne_lightCream <- \() nutrition(
   name = 'Light Cream',
   lucerne = '960044744', usd = 3.19/32,
   servingGram = 15, servingTbsp = 1,
@@ -571,8 +538,7 @@ Lucerne_lightCream <- \() new(
 
 
 
-Lucerne_heavyCream <- \() new(
-  Class = 'nutrition',  
+Lucerne_heavyCream <- \() nutrition(
   name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
   fdc = 170859L,
   lucerne = '136150034', usd = 3.19/32, # disappeared?
@@ -586,8 +552,7 @@ Lucerne_heavyCream <- \() new(
 
 
 
-TraderJoes_goat_kefir <- \() new(
-  Class = 'nutrition', 
+TraderJoes_goat_kefir <- \() nutrition(
   brand = 'Trader Joe\'s', 
   name = 'Goat\U1f410 Milk Kefir', alias = '\u7f8a\u5976\u9152',
   usd = 5.69/32*8,
@@ -597,8 +562,8 @@ TraderJoes_goat_kefir <- \() new(
 
 
 
-Meyenberg_goat_kefir <- \() new(
-  Class = 'nutrition',  meyenberg = 'goat-kefir/goat-kefir-plain',
+Meyenberg_goat_kefir <- \() nutrition(
+  meyenberg = 'goat-kefir/goat-kefir-plain',
   name = 'Goat\U1f410 Kefir', alias = '\u7f8a\u5976\u9152',
   wegmans = '948523', usd = 8.99/32*8, 
   servingGram = (1060-60)/4, servingCup = 1,
@@ -611,8 +576,7 @@ Meyenberg_goat_kefir <- \() new(
 
 
 
-GreenValley_kefir <- \() new(
-  Class = 'nutrition', 
+GreenValley_kefir <- \() nutrition(
   brand = c(style_hyperlink(text = 'Green Valley\U1f1fa\U1f1f8', url = 'https://greenvalleylactosefree.com/product/lactose-free-lowfat-kefir')),
   name = 'Lowfat Kefir', alias = '\u4f4e\u8102\u725b\u5976\u9152',
   wegmans = '979978', usd = 6.99/32*8,
@@ -624,8 +588,7 @@ GreenValley_kefir <- \() new(
 
 
 
-Siggis_filmjolk <- \() new(
-  Class = 'nutrition', 
+Siggis_filmjolk <- \() nutrition(
   siggis = 'plain-nonfat',
   name = 'Swedish\U1f1f8\U1f1ea Filmj\u00f6lk',
   wegmans = '575914', usd = 4.99/32*6,
@@ -638,8 +601,7 @@ Siggis_filmjolk <- \() new(
   review = 'too sour')
 
 
-Nanak_mango_rasmalai <- \() new(
-  Class = 'nutrition',
+Nanak_mango_rasmalai <- \() nutrition(
   name = 'Mango\U0001f96d Rasmalai', alias = '\u8292\u679c \u5976\u8c46\u8150',
   nanak = 'mango-rasmalai',
   servingGram = 70, #servingTbsp = 1, 
@@ -649,8 +611,7 @@ Nanak_mango_rasmalai <- \() new(
 
 
 
-Nanak_mango_lassi <- \() new(
-  Class = 'nutrition',
+Nanak_mango_lassi <- \() nutrition(
   name = 'Mango\U0001f96d Lassi', alias = '\u8292\u679c \u5370\u5ea6\u9178\u5976',
   nanak = 'mango-lassi',
   servingGram = 250, servingCup = 1, # weight guessed

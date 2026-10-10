@@ -1,6 +1,5 @@
 
-Quaker_oat <- \() new(
-  Class = 'nutrition',  
+Quaker_oat <- \() nutrition(
   quakeroats = 'hot-cereals/old-fashioned-oats',
   name = 'Old Fashioned Oats', alias = '\u719f\u538b\u71d5\u9ea6',
   costco = '100381521', usd = 11.99/(10*453.6)*40,
@@ -12,8 +11,7 @@ Quaker_oat <- \() new(
 
 
 
-HaiTai_blackRice <- \() new(
-  Class = 'nutrition', 
+HaiTai_blackRice <- \() nutrition(
   haitaiusa = 'black-rice-\ud751\ubbf8-2lbs', 
   alias = '\u9ed1\u7c73', name = 'Black Rice',
   servingGram = 45, servingCup = 1/4, 
@@ -21,8 +19,7 @@ HaiTai_blackRice <- \() new(
   fat = 2, carbohydrate = 33, sugar = 1, protein = 3)
 
 
-Nishiki_brownRice <- \() new(
-  Class = 'nutrition',  
+Nishiki_brownRice <- \() nutrition(
   nishiki = '69969', alias = '\u7384\u7c73', name = 'Premium Brown Rice',
   # wegmans = 10902L, 
   amazon = 'B006SFAS6C',
@@ -32,8 +29,7 @@ Nishiki_brownRice <- \() new(
   fat = 1, carbohydrate = 34, protein = 3)
 
 
-Dynasty_brownRice <- \() new(
-  Class = 'nutrition', 
+Dynasty_brownRice <- \() nutrition(
   brand = 'Dynasty\U1f1fa\U1f1f8', 
   alias = '\u6cf0\u570b\u9999\u7cd9\u7c73', name = 'Brown Rice, Jasmine',
   jfc = '15682',
@@ -43,8 +39,7 @@ Dynasty_brownRice <- \() new(
   calorie = 160,
   carbohydrate = 37, protein = 2)
 
-Koda_glutRice <- \() new(
-  Class = 'nutrition',
+Koda_glutRice <- \() nutrition(
   brand = 'https://kodafarmsrice.com/products/sho-chiku-bai\u00ae-sweet-rice' |>
     style_hyperlink(text = 'Koda Farms\u677e\u7af9\u6885') |>
     c(),
@@ -55,8 +50,7 @@ Koda_glutRice <- \() new(
   carbohydrate = 37, fiber = 1, protein = 3
 )
 
-Hakubai_glutRice <- \() new(
-  Class = 'nutrition',
+Hakubai_glutRice <- \() nutrition(
   brand = 'Hakubai\u767d\u6885',
   name = 'Glutinous Rice\U1f33e', alias = '\u7cef\u7c73',
   jfc = '25190', amazon = 'B008CO9A6Q', usd = 17.99/54,
@@ -69,8 +63,7 @@ Hakubai_glutRice <- \() new(
 
 
 
-Botan_rice <- \() new(
-  Class = 'nutrition', 
+Botan_rice <- \() nutrition(
   brand = 'Botan\u5bcc\u8d35\u82b1',
   alias = '\u52a0\u5dde\u4e2d\u7c92\u7c73', name = 'Calrose Rice',
   jfc = '01714',

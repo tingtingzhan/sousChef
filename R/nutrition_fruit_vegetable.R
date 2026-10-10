@@ -1,55 +1,47 @@
 
 
-Kirkland_honey <- \() new(
-  Class = 'nutrition',  
+Kirkland_honey <- \() nutrition(
   costco = '100516925',
   name = 'Wild Flower Honey\U1f36f', alias = '\u8702\u871c',
   servingGram = 21, servingTbsp = 1, 
   calorie = 60, carbohydrate = 17, sugar = 17, addedSugar = 17)
 
-Kirkland_rawHoney <- \() new(
-  Class = 'nutrition',  
+Kirkland_rawHoney <- \() nutrition(
   costco = '100334136',
   name = 'Organic Raw Honey\U1f36f', alias = '\u8702\u871c',
   servingGram = 21, servingTbsp = 1, 
   calorie = 60, carbohydrate = 17, sugar = 16)
 
 # dried fruits
-OceanSpray_cranberry <- \() new(
-  Class = 'nutrition',  
+OceanSpray_cranberry <- \() nutrition(
   brand = c(style_hyperlink(url = 'https://www.oceanspray.com/products/craisins-original-dried-cranberries-6-oz', text = 'Ocean Spray')), 
   name = 'Dried Cranberries',
   costco = '100400518',
   servingGram = 40, sugar = 29)
 
-SunnyFruit_fig <- \() new(
-  Class = 'nutrition',  
+SunnyFruit_fig <- \() nutrition(
   brand = c(style_hyperlink(url = 'https://sunnyfruit.com/products/organic-dried-figs', text = 'Sunny Fruit')), 
                   name = 'Dried Figs',
   costcoBiz = '100362726',
   servingGram = 40, sugar = 21)
 
-SunnyFruit_date <- \() new(
-  Class = 'nutrition',  
+SunnyFruit_date <- \() nutrition(
   brand = c(style_hyperlink(url = 'https://sunnyfruit.com/products/organic-pitted-dates', text = 'Sunny Fruit')), 
   name = 'Pitted Dates',
   servingGram = 40, sugar = 30)
 
-Kirkland_plum <- \() new(
-  Class = 'nutrition',  
+Kirkland_plum <- \() nutrition(
   costco = '100334316',
   name = 'Dried Plums',
   servingGram = 40, sugar = 14)
 
 
-Kirkland_mixedVeggies <- \() new(
-  Class = 'nutrition', 
+Kirkland_mixedVeggies <- \() nutrition(
   alias = '\u51b7\u51bb\u6742\u852c', name = 'Mixed Vegetables\U1f955\U1fadb\U1f33d',
   costcoBiz = '100351236',
   servingGram = 90, fat = .5, sodium = .02, sugar = 4, protein = 2)
 
-Kirkland_blueberry <- \() new(
-  Class = 'nutrition',  
+Kirkland_blueberry <- \() nutrition(
   costcoBiz = '100206942',
   name = 'Frozen Blueberry\U1fad0',
   servingGram = 140, 
@@ -57,8 +49,7 @@ Kirkland_blueberry <- \() new(
   sugar = 12, protein = 1,
   water = 140*.866, fdc = 173950L)
 
-Kirkland_strawberry <- \() new(
-  Class = 'nutrition',  
+Kirkland_strawberry <- \() nutrition(
   costcoBiz = c(
     '100273803' # frequently seen in store
     # '11273181' # rarely seen in store
@@ -68,8 +59,8 @@ Kirkland_strawberry <- \() new(
   calorie = 50, 
   carbohydrate = 13, sugar = 6)
 
-Kirkland_yellowCorn <- \() new(
-  Class = 'nutrition',  url = 'https://costcofdb.com/product/kirkland-signature-organic-yellow-sweet-corn-5-lbs',
+Kirkland_yellowCorn <- \() nutrition(
+  url = 'https://costcofdb.com/product/kirkland-signature-organic-yellow-sweet-corn-5-lbs',
   brand = 'Kirkland\U1f1fa\U1f1f8', alias = '\u51b7\u51bb\u751c\u7389\u7c73', name = 'Frozen Yellow Corn\U1f33d',
   servingGram = 90, 
   #servingCup = 2/3, # packaging
@@ -78,8 +69,8 @@ Kirkland_yellowCorn <- \() new(
 # haven't seen [Kirkland_yellowCorn] at Costco for a while
 
 
-Kirkland_peach <- \() new(
-  Class = 'nutrition',  costcoBiz = '100237862',
+Kirkland_peach <- \() nutrition(
+  costcoBiz = '100237862',
   name = 'Sliced Peaches',
   servingGram = 120, sodium = .01, sugar = 14#,
   #machine (legacy) = \(x) { # `x` is class(recipe)
@@ -88,8 +79,7 @@ Kirkland_peach <- \() new(
   )
 
 
-UltraOrganics_mango <- \() new( 
-  Class = 'nutrition',  
+UltraOrganics_mango <- \() nutrition(
   fdc = 169910L, # water 83.5%
   brand = 'Ultra Organics', alias = '\u8292\u679c', name = 'Mango\U1f96d',
   costcoBiz = '100370260',
@@ -103,16 +93,15 @@ UltraOrganics_mango <- \() new(
 
 
 
-HappyVillage_strawberry <- \() new( # frozen; sold at Costco
-  Class = 'nutrition',  
+HappyVillage_strawberry <- \() nutrition(
   brand = 'Happy Village', 
   alias = '\u8349\u8393', name = 'Strawberry\U1f353',
   url = 'www.instacart.com/products/25833270-happy-village-frozen-organic-strawberries-4-lb',
   servingGram = 140, servingCup = 1, 
   calorie = 50, sugar = 6, protein = 1)
 
-HappyVillage_darkCherry <- \() new(
-  Class = 'nutrition',  costcoBiz = '100313436',
+HappyVillage_darkCherry <- \() nutrition(
+  costcoBiz = '100313436',
   brand = 'Happy Village', alias = '\u751c\u6a31\u6843', name = 'Dark Cherry\U1f352',
   servingGram = 140, servingCup = 1,
   calorie = 90,
@@ -120,8 +109,7 @@ HappyVillage_darkCherry <- \() new(
   carbohydrate = 21, sugar = 16, protein = 1)
 
 # fresh fruit
-LuckyTaro_durian <- \() new(
-  Class = 'nutrition',  
+LuckyTaro_durian <- \() nutrition(
   costcoBiz = '2001112853',
   brand = 'Lucky Taro', name = 'Durian',
   # servingGram = mean.default(c(955)) - 642, # subtract seed
@@ -133,8 +121,7 @@ LuckyTaro_durian <- \() new(
   review = 'I have severe bad reaction to real durian')
 
 
-NobleHarvest_durian <- \() new(
-  Class = 'nutrition',  
+NobleHarvest_durian <- \() nutrition(
   costcoBiz = '4201011357',
   brand = 'Noble Harvest', name = 'Durian',
   # nutrition, per container
@@ -150,8 +137,7 @@ NobleHarvest_durian <- \() new(
 
 
 
-Wegmans_pineapple <- \() new(
-  Class = 'nutrition',
+Wegmans_pineapple <- \() nutrition(
   name = 'Crushed Pineapple\U1f34d', alias = '\u83e0\u841d\u7f50\u5934',
   wegmans = '34266',
   servingGram = 122, servingCup = 1/2, 
@@ -159,8 +145,7 @@ Wegmans_pineapple <- \() new(
   carbohydrate = 16, sugar = 13, 
   superior = 'Dole_pineapple')
 
-Libbys_pineapple <- \() new(
-  Class = 'nutrition',  
+Libbys_pineapple <- \() nutrition(
   wegmans = '186434',
   brand = 'Libby\'s\U1f1fa\U1f1f8', 
   name = 'Crushed Pineapple\U1f34d', alias = '\u83e0\u841d\u7f50\u5934',
@@ -169,8 +154,7 @@ Libbys_pineapple <- \() new(
   superior = 'Dole_pineapple')
 
 
-Dole_pineapple <- \() new(
-  Class = 'nutrition',  
+Dole_pineapple <- \() nutrition(
   dolesunshine = 'canned-crushed-pineapple-in-100-pineapple-juice-20oz',
   name = 'Pineapple\U1f34d in \U1f4afJuice', alias = '\u83e0\u841d\u7f50\u5934',
   # fdc = 167767L, # water = 83.5%, not accurate!!
@@ -182,8 +166,7 @@ Dole_pineapple <- \() new(
   water = 122-18-1, # 122 * (240/270) #, # confirmed with bao()
   carbohydrate = 18, fiber = 1, sugar = 15, protein = 1)
 
-Dole_sweetened_pineapple <- \() new(
-  Class = 'nutrition',  
+Dole_sweetened_pineapple <- \() nutrition(
   dolesunshine = 'canned-crushed-pineapple-in-heavy-syrup-20oz/',
   name = 'Pineapple\U1f34d in Heavy Syrup', alias = '\u52a0\u7cd6\u83e0\u841d\u7f50\u5934',
   servingGram = 123, servingCup = 1/2,
@@ -195,8 +178,7 @@ Dole_sweetened_pineapple <- \() new(
   superior = 'Dole_pineapple')
 
 
-DelMonte_pear <- \() new(
-  Class = 'nutrition',  
+DelMonte_pear <- \() nutrition(
   delmonte = 'fruits/pears/sliced-pears-no-sugar-added',
   name = 'Sliced Pears\U1f350', alias = '\u68a8\u7f50\u5934',
   servingGram = 121, servingCup = 1/2,
@@ -206,8 +188,7 @@ DelMonte_pear <- \() new(
   carbohydrate = 10, sugar = 7) 
 
 
-DelMonte_mandarine <- \() new(
-  Class = 'nutrition',  
+DelMonte_mandarine <- \() nutrition(
   delmonte = 'fruits/mandarin-oranges/mandarin-oranges-no-sugar-added',
   name = 'Mandarin Oranges\U1f34a', alias = '\u6a58\u5b50\u7f50\u5934',
   servingGram = 123, servingCup = 1/2,
@@ -218,8 +199,7 @@ DelMonte_mandarine <- \() new(
   protein = 1) 
 
 
-DelMonte_peach <- \() new(
-  Class = 'nutrition',  
+DelMonte_peach <- \() nutrition(
   delmonte = 'fruits/peaches/sliced-yellow-cling-peaches-no-sugar-added',
   name = 'Yellow Cling Peaches\U1f351', alias = '\u9ec4\u6843\u7f50\u5934',
   servingGram = 121, servingCup = 1/2,
@@ -228,16 +208,14 @@ DelMonte_peach <- \() new(
   sodium = .005,
   carbohydrate = 8, sugar = 7)
 
-Bruces_yam <- \() new(
-  Class = 'nutrition',  
+Bruces_yam <- \() nutrition(
   brand = c(style_hyperlink(text = 'Bruce\'s', url = 'brucesyams.com/products/bruces-yams-cut-sweet-potatoes-in-syrup/')),
   name = 'Yam',
   review = 'may need Vitamix immersion blender - dont know how to use, dont buy for now',
   servingGram = 166, sodium = .07, sugar = 9, protein = 2)
 
 
-Wegmans_peanutButter <- \() new(
-  Class = 'nutrition',
+Wegmans_peanutButter <- \() nutrition(
   name = 'Peanut\U1f95c Butter, Creamy',
   wegmans = '32450',
   servingTbsp = 2, servingGram = 32, 
@@ -246,8 +224,7 @@ Wegmans_peanutButter <- \() new(
   carbohydrate = 8, sugar = 4, addedSugar = 2, protein = 7)
 
 
-Wegmans_beet_pulv <- \() new(
-  Class = 'nutrition',  
+Wegmans_beet_pulv <- \() nutrition(
   alias = '\u751c\u83dc\u7c89', name = 'Beet Root Powder',
   wegmans = '60476', usd = 10.99/227*9.6,
   servingGram = 9.6, 
@@ -256,8 +233,7 @@ Wegmans_beet_pulv <- \() new(
   sodium = .06, sugar = 2, protein = 1)
 
 
-Wegmans_acai_pulv <- \() new(
-  Class = 'nutrition',  
+Wegmans_acai_pulv <- \() nutrition(
   alias = '\u5df4\u897f\u8393\u7c89', name = 'A\u00e7a\u00ed Powder',
   wegmans = '60465', usd = 16.99/113*3,
   servingGram = 3, 
@@ -265,8 +241,7 @@ Wegmans_acai_pulv <- \() new(
 ) 
 
 
-Navitas_acai_pulv <- \() new(
-  Class = 'nutrition', 
+Navitas_acai_pulv <- \() nutrition(
   navitas = 'acai-powder',
   alias = '\u5df4\u897f\u8393\u7c89', name = 'A\u00e7a\u00ed Powder',
   usd = 39.99*(1-.2)/227*3, # subscribe discount
@@ -277,28 +252,28 @@ Navitas_acai_pulv <- \() new(
 
 
 # fresh vegetables
-bambooShoot <- \() new(
-  Class = 'nutrition',  fdc = 169210L,
+bambooShoot <- \() nutrition(
+  fdc = 169210L,
   name = 'Bamboo Shoots', alias = '\u7af9\u7b0b', # \U1f38d
   servingGram = 100, water = 91, protein = 2.6, fat = .3, sugar = 3, sodium = .004)
 
-garlic <- \() new(
-  Class = 'nutrition',  fdc = 2597546L,
+garlic <- \() nutrition(
+  fdc = 2597546L,
   name = 'Garlic\U1f9c4, Fresh', alias = '\u849c\u84c9',
   servingGram = 100, carbohydrate = 20)
 
-celeriac <- \() new(
-  Class = 'nutrition',  fdc = 170400L,
+celeriac <- \() nutrition(
+  fdc = 170400L,
   name = 'Celery',
   servingGram = 100, water = 88, protein = 1.5, fat = .3, sodium = .1)
 
-parsleyFresh <- \() new(
-  Class = 'nutrition',  fdc = 170416L, 
+parsleyFresh <- \() nutrition(
+  fdc = 170416L, 
   name = 'Parsley, Fresh',
   servingGram = 100, water = 87.7, protein = 2.97, fat = .79, sodium = .056)
 
-FlavorFarmer_whitePeach <- \() new(
-  Class = 'nutrition',  fdc = 1102677L,
+FlavorFarmer_whitePeach <- \() nutrition(
+  fdc = 1102677L,
   brand = 'Flavor Farmer', name = 'White Peach, Fresh',
   servingGram = 100, pieceGram = 130, piece_fmt = '%.1f\U1f351',
   water = 88.3, protein = .91, fat = .27, sodium = .013, sugar = 8.39,
@@ -307,13 +282,13 @@ FlavorFarmer_whitePeach <- \() new(
   )
 
 
-kabochaSquash <- \() new(
-  Class = 'nutrition',  fdc = 1685816L,
+kabochaSquash <- \() nutrition(
+  fdc = 1685816L,
   name = 'Kabocha Squash',
   servingGram = 100, protein = 1.18, sugar = 3.53)
 
-avocado <- \() new(
-  Class = 'nutrition',  fdc = 171705L,
+avocado <- \() nutrition(
+  fdc = 171705L,
   alias = '\u725b\u6cb9\u679c', name = 'Avocado\U1f951',
   servingGram = 100, 
   pieceGram = 150, piece_fmt = '%.1f\U1f951', # pulp only
@@ -322,49 +297,48 @@ avocado <- \() new(
   calorie = 160,
   water = 73.2, protein = 2, fat = 14.7, sugar = .66, sodium = .007)
 
-# lemon <- \() new( # whole lemon
-#  Class = 'nutrition', fdc = 1102594L,
+# lemon <- \() nutrition( # whole
+#. fdc = 1102594L,
 #  alias = '\u67e0\u6aac', name = 'Lemon\U1f34b',
 #  servingGram = 100, water = 88.98, protein = 1.1, # fat = .3, sugar = 2.5, sodium = .002)
 
-lemon <- \() new( # lemon juice
-  Class = 'nutrition', fdc = 167747L,
+lemon <- \() nutrition( # juice
+  fdc = 167747L,
   alias = '\u67e0\u6aac\u6c41', name = 'Lemon\U1f34b Juice',
   servingGram = 100, pieceGram = 48,
   water = 92.3, protein = 0.35, fat = 0.24, sugar = 2.52, sodium = .001)
 
 
-# lime <- \() new( # whole lime
-#  Class = 'nutrition', fdc = 168155L,
+# lime <- \() nutrition( # whole
+#  fdc = 168155L,
 #  alias = '\u9752\u67e0', name = 'Lime\U1f34b\u200d\U1f7e9',
 #  servingGram = 100, 
 #  calorie = 30,
 #  water = 88.3, protein = .7, fat = .2, sugar = 1.69, sodium = .002)
 
-lime <- \() new( # lime juice
-  Class = 'nutrition',  fdc = 2344679L,
+lime <- \() nutrition( # juice
+  fdc = 2344679L,
   alias = '\u9752\u67e0\u6c41', name = 'Lime\U1f34b\u200d\U1f7e9 Juice',
   servingGram = 100, pieceGram = 44, piece_fmt = '%.1f\U1f34b\u200d\U1f7e9',
   calorie = 25,
   water = 90.8, protein = 0.42, fat = 0.07, sugar = 1.69, sodium = .002)
 
 
-lemonZest <- \() new(
-  Class = 'nutrition',  fdc = 167749L,
+lemonZest <- \() nutrition(
+  fdc = 167749L,
   name = 'Lemon\U1f34b Peel',
   servingGram = 100, water = 81.6, protein = 1.5, fat = .3, sugar = 4.17, sodium = .006)
 
 
-watermelon <- \() new(
-  Class = 'nutrition',  fdc = 167765L,
+watermelon <- \() nutrition(
+  fdc = 167765L,
   name = 'Watermelon\U1f349',
   servingGram = 100, water = 91.4, protein = .61, fat = .15, sugar = 6.2, sodium = .001)
 
 
 
 
-Libbys_pumpkin <- \() new(
-  Class = 'nutrition',  
+Libbys_pumpkin <- \() nutrition(
   brand = 'https://www.nestleprofessional.us/libbys/libbys-100-pure-pumpkin-6-x-106-oz-cans' |> 
     style_hyperlink(text = 'Libby\'s\U1f1fa\U1f1f8', url = ) |>
     c(),
@@ -381,8 +355,7 @@ Libbys_pumpkin <- \() new(
   fdc = 168450L,
   water = 122-10-1-1) #122 * 240/300) # bao, I trust best
 
-Libbys_pumpkinPieMix <- \() new(
-  Class = 'nutrition', 
+Libbys_pumpkinPieMix <- \() nutrition(
   brand = 'Libby\'s\U1f1fa\U1f1f8', 
   name = 'Pumpkin\U1f383 Pie Mix', alias = '\u8c03\u5473\u5357\u74dc\u6ce5',
   target = 'A-14886100', usd = 4.49/850*87,
@@ -393,8 +366,7 @@ Libbys_pumpkinPieMix <- \() new(
 
 
 
-Wegmans_tomato <- \() new(
-  Class = 'nutrition',  
+Wegmans_tomato <- \() nutrition(
   name = 'Tomato\U1f345 Puree', alias = '\u897f\u7ea2\u67ff\u6ce5',
   wegmans = '45406',
   servingGram = 63, servingCup = 1/4,
@@ -402,8 +374,7 @@ Wegmans_tomato <- \() new(
   superior = 'WegmansOrganic_tomato')
 
 
-WegmansOrganic_tomato <- \() new(
-  Class = 'nutrition',  
+WegmansOrganic_tomato <- \() nutrition(
   name = 'Tomato\U1f345 Puree', alias = '\u897f\u7ea2\u67ff\u6ce5',
   wegmans = '45416', usd = 2.89/822*63,
   servingGram = 63, servingCup = 1/4, pieceGram = 822, piece_fmt = '%.1f\U1f96b', 
@@ -412,8 +383,7 @@ WegmansOrganic_tomato <- \() new(
   water = 63 * 300/400)
 
 
-Motts_applesauce <- \() new(
-  Class = 'nutrition',  
+Motts_applesauce <- \() nutrition(
   brand = style_hyperlink(text = 'Motts', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce') |> c(),
   name = 'Applesauce\U1f34e', alias = '\u82f9\u679c\u6ce5',
   fdc = 1102646L, # water 88.22% 
@@ -426,16 +396,16 @@ Motts_applesauce <- \() new(
   carbohydrate = 14, sugar = 12)
 
 
-#ThriveMarket_apple <- \() new(
+#ThriveMarket_apple <- \() nutrition(
 #  # ThriveMarket.com now force you to join a paid membership
-#  Class = 'nutrition',  url = 'https://thrivemarket.com/p/thrive-market-organic-apple-sauce',
+#  url = 'https://thrivemarket.com/p/thrive-market-organic-apple-sauce',
 #  brand = 'Thrive Market', name = 'Applesauce\U1f34e',
 #  servingGram = 140, sodium = .025, sugar = 15) # to try. Ingredient apple only
 
 
 
-Laura_soybean <- \() new(
-  Class = 'nutrition',  fdc = 174270L,
+Laura_soybean <- \() nutrition(
+  fdc = 174270L,
   name = 'Soy Bean', alias = '\u9ec4\u8c46',
   brand = c(style_hyperlink(text = 'Laura\U1f1fa\U1f1f8', url = 'https://laurasoybeans.com/product-category/laura-soybeans/')),
   amazon = 'B00C3FWXIC', 
@@ -445,8 +415,7 @@ Laura_soybean <- \() new(
   calorie = 446,
   protein = 36.5, fat = 19.9, sugar = 7.33, sodium = .002)
 
-Soymerica_soybean <- \() new(
-  Class = 'nutrition', 
+Soymerica_soybean <- \() nutrition(
   alias = '\u9ec4\u8c46', name = 'Soy Bean', 
   brand = 'Soymerica\U1f1fa\U1f1f8', amazon = 'B0763GC8SB', usd = 24.99/(7*453.6)*(100-8.54),
   fdc = 174270L,
@@ -458,16 +427,16 @@ Soymerica_soybean <- \() new(
 )
 
 
-Palouse_chickpea <- \() new(
-  Class = 'nutrition',  fdc = 173756L,
+Palouse_chickpea <- \() nutrition(
+  fdc = 173756L,
   alias = '\u9e70\u5634\u8c46', name = 'Chickpea', brand = 'Palouse\U1f1fa\U1f1f8',
   url = 'www.palousebrand.com/products/garbanzo-beans-5-lb?variant=40131929407541',
   amazon = 'B001PEWJWC', usd = 18.95/(5*453.6)*(100-7.68),
   servingGram = 100 - 7.68, 
   protein = 20.5, fat = 6.04, carbohydrate = 30, sugar = 10.7, sodium = .024)
 
-HaiTai_mungbean <- \() new(
-  Class = 'nutrition',  fdc = 174256L,
+HaiTai_mungbean <- \() nutrition(
+  fdc = 174256L,
   name = 'Mung Bean', alias = '(\u5e26\u76ae)\u7eff\u8c46',
   haitaiusa = 'mung-bean-\ub179\ub450',
   usd = 5.99/910*38, yamibuy = '25775187',
@@ -476,8 +445,8 @@ HaiTai_mungbean <- \() new(
   #machine (legacy) = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9')),
   review = 'Must use peeled mung bean for dessert!')
 
-HaiTai_adzukibean <- \() new(
-  Class = 'nutrition',  fdc = 543753L,
+HaiTai_adzukibean <- \() nutrition(
+  fdc = 543753L,
   name = 'Adzuki Bean', alias = '\u7ea2\u8c46', 
   haitaiusa = 'red-bean-\ud325-4-lb',
   # servingGram = 100, fat = 1.54, protein = 6.92, sugar = 1.54, sodium = .262, # fdc
@@ -486,8 +455,8 @@ HaiTai_adzukibean <- \() new(
   #machine (legacy) = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9'))
 )
 
-Iberia_redkidneybean <- \() new(
-  Class = 'nutrition',  fdc = 173744L,
+Iberia_redkidneybean <- \() nutrition(
+  fdc = 173744L,
   alias = '\u7ea2\u82b8\u8c46', name = 'Red Kidney Bean\U1fad8', 
   brand = style_hyperlink(text = 'Iberia\U1f1fa\U1f1f8', url = 'https://iberiafoods.com/product/iberia-red-kidney-beans-4-lbs/') |>
     c(),
@@ -495,19 +464,18 @@ Iberia_redkidneybean <- \() new(
   #servingGram = 100 - 11.8, protein = 22.5, fat = 1.06, sugar = 2.1, sodium = .012 # fdc
   servingGram = 42, servingCup = 1/4, sodium = .005, carbohydrate = 26, sugar = 1, protein = 9)
 
-pistachio <- \() new(
-  Class = 'nutrition',  fdc = 170184L,
+pistachio <- \() nutrition(
+  fdc = 170184L,
   name = 'Pistachio, raw',
   servingGram = 100, protein = 20.2, fat = 45.3, sugar = 7.66, sodium = .001)
 
 
-OsmanthusFragrans <- \() new(
-  Class = 'nutrition',  
+OsmanthusFragrans <- \() nutrition(
   name = 'OsmanthusFragrans')
 
 
-banana <- \() new(
-  Class = 'nutrition',  fdc = 1102653L,
+banana <- \() nutrition(
+  fdc = 1102653L,
   alias = '\u9999\u8549', name = 'Banana\U1f34c', 
   wegmans = '92685',
   servingGram = 100,
@@ -515,16 +483,16 @@ banana <- \() new(
   water = 74.91, protein = 1.09, fat = .33, carbohydrate = 22.84, sugar = 12.23, sodium = .001)
   
 
-carrot <- \() new(
-  Class = 'nutrition',  fdc = 170393L,
+carrot <- \() nutrition(
+  fdc = 170393L,
   alias = '\u751f\u80e1\u841d\u535c', name = 'Carrot\U1f955',
   servingGram = 100, 
   calorie = 41,
   water = 88.3, protein = .93, fat = .24, carbohydrate = 9.58, sugar = 4.74, sodium = .069)
 
 
-walnut <- \() new(
-  Class = 'nutrition',  fdc = 2346394L,
+walnut <- \() nutrition(
+  fdc = 2346394L,
   alias = '\u751f\u6838\u6843', name = 'Walnut',
   servingGram = 100,
   calorie = 730,
@@ -532,8 +500,7 @@ walnut <- \() new(
 
 
 
-Bossen_pineapple <- \() new(
-  Class = 'nutrition', 
+Bossen_pineapple <- \() nutrition(
   name = 'Pineapple\U1f34d Concentrated Syrup', alias = '\u83e0\u841d\u7cd6\u6d46',
   brand = style_hyperlink(text = '', url = 'https://www.bossenstore.com/products/pineapple-syrup-new') |> c(),
   webstaurant = '535SYPPINAPL',

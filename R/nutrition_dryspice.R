@@ -1,35 +1,35 @@
 
 
 
-McCormick_creamTartar <- \() new(
-  Class = 'nutrition',  url = 'https://www.mccormick.com/spices-and-flavors/herbs-and-spices/spices/cream-of-tartar',
-  brand = 'McCormick\U1f1fa\U1f1f8', name = 'Cream of Tartar',
+McCormick_creamTartar <- \() nutrition(
+  mccormick = 'spices-and-flavors/herbs-and-spices/spices/cream-of-tartar',
+  name = 'Cream of Tartar',
   servingGram = 3, servingTsp = 1)
 
 
-McCormick_chive <- \() new(
-  Class = 'nutrition',  mccormickculinary = 'chives-freeze-dried',
+McCormick_chive <- \() nutrition(
+  mccormickculinary = 'chives-freeze-dried',
   alias = '\u51bb\u5e72\u97ed\u83dc', name = 'Chives, Freeze Dried',
   servingGram = 4.5, # .16 oz
   servingTbsp = 3 # my guess
 )
 
-McCormick_blackPepper <- \() new(
-  Class = 'nutrition',  mccormickculinary = 'black-pepper-pure-ground',
+McCormick_blackPepper <- \() nutrition(
+  mccormickculinary = 'black-pepper-pure-ground',
   alias = '\u9ed1\u80e1\u6912\u7c89', name = 'Black Pepper, Ground',
   servingGram = 4.5, # .16 oz
   servingTbsp = 3 # my guess
 )
 
-McCormick_turmeric <- \() new(
-  Class = 'nutrition',  mccormickculinary = 'turmeric',
+McCormick_turmeric <- \() nutrition(
+  mccormickculinary = 'turmeric',
   alias = '\u59dc\u9ec4\u7c89', name = 'Turmeric, Ground',
   servingGram = 4.5, # .16 oz
   servingTbsp = 3 # my guess
 )
 
-McCormick_parsley <- \() new(
-  Class = 'nutrition',  mccormickculinary = 'parsley-flakes',
+McCormick_parsley <- \() nutrition(
+  mccormickculinary = 'parsley-flakes',
   name = 'Parsley Flakes',
   amazon = 'B0000EYJ1M', usd = 6.29/56*4.5,
   servingGram = 4.5, # ???
@@ -37,24 +37,24 @@ McCormick_parsley <- \() new(
 )
   
   
-McCormick_garlic <- \() new(
-  Class = 'nutrition',  mccormickculinary = 'garlic-powder',
+McCormick_garlic <- \() nutrition(
+  mccormickculinary = 'garlic-powder',
   alias = '\u849c\u7c89', name = 'Garlic\U1f9c4 Powder', 
   amazon = 'B008OGCEHO', usd = 11.87/595*4.5, # 21oz = 595g
   servingGram = 9, # no nutrition info available
   servingTbsp = 1 # actual experiment 3tbsp = 28g
 )
 
-McCormick_onion <- \() new(
-  Class = 'nutrition',  mccormickculinary = 'onion-powder',
+McCormick_onion <- \() nutrition(
+  mccormickculinary = 'onion-powder',
   alias = '\u6d0b\u8471\u7c89', name = 'Onion\U1f9c5 Powder',
   amazon = 'B008OGCPSM', usd = 17.90/566*4.5, # 1.25lb = 566g
   servingGram = 4.5, # ???
   servingTbsp = 3 # ???
 )
 
-McCormick_cilantro <- \() new(
-  Class = 'nutrition',  mccormickculinary = 'cilantro-freeze-dried',
+McCormick_cilantro <- \() nutrition(
+  mccormickculinary = 'cilantro-freeze-dried',
   alias = '\u51bb\u5e72\u82ab\u837d', name = 'Cilantro, Freeze Dried',
   amazon = 'B00B0424FE', usd = 13.89/35,
   servingGram = 1,
@@ -62,22 +62,22 @@ McCormick_cilantro <- \() new(
 )
 
 
-McCormick_cumin <- \() new(
-  Class = 'nutrition',  mccormickculinary = 'cumin-ground',
+McCormick_cumin <- \() nutrition(
+  mccormickculinary = 'cumin-ground',
   alias = '\u5b5c\u7136\u7c89', name = 'Cumin, Ground',
   amazon = 'B008OGCCLC', usd = 12.75/396*1,
   servingGram = 1,
   servingTbsp = 1 #??
 )
 
-McCormick_oldBay <- \() new(
-  Class = 'nutrition',  oldbay = 'old-bay-seasoning',
+McCormick_oldBay <- \() nutrition(
+  oldbay = 'old-bay-seasoning',
   alias = '\u9a6c\u91cc\u5170\u6d77\u9c9c\u814c\u6599', name = 'Old Bay',
   servingGram = .6, servingTsp = 1/4, sodium = .14,
   contain = c('salt', 'celery seed', 'red pepper', 'black pepper', 'paprika'))
 
-McCormick_5spice <- \() new(
-  Class = 'nutrition',  mccormickculinary = 'chinese-five-spice',
+McCormick_5spice <- \() nutrition(
+  mccormickculinary = 'chinese-five-spice',
   name = 'Chinese Five Spice', alias = '\u4e94\u9999\u7c89',
   amazon = 'B005D8T86G', usd = 23.99/453,
   contain = c('anise', 'cinnamon', 'star anise', 'clove', 'ginger', 'sulfiting agents'),
@@ -86,22 +86,22 @@ McCormick_5spice <- \() new(
 
 
 
-McCormick_ginger <- \() new(
-  Class = 'nutrition',  mccormickculinary = 'ginger-ground',
+McCormick_ginger <- \() nutrition(
+  mccormickculinary = 'ginger-ground',
   alias = '\u59dc\u7c89', name = 'Ginger\U1fada, Ground',
   servingGram = 1,
   servingTbsp = 1 #??
 )
 
-McCormick_oldBay_lowSodium <- \() new(
-  Class = 'nutrition',  mccormick = 'old-bay/products/seasonings-and-sauces/old-bay-less-sodium-seasoning',
+McCormick_oldBay_lowSodium <- \() nutrition(
+  mccormick = 'old-bay/products/seasonings-and-sauces/old-bay-less-sodium-seasoning',
   name = 'Old Bay, Less Sodium', alias = '\u9a6c\u91cc\u5170\u6d77\u9c9c\u814c\u6599(\u4f4e\u76d0)',
   servingGram = .6, servingTsp = 1/4, sodium = .095)
 
 
 
-McCormick_MontrealSteak <- \() new(
-  Class = 'nutrition',  grillmates = 'montreal-steak',
+McCormick_MontrealSteak <- \() nutrition(
+  grillmates = 'montreal-steak',
   name = 'Montreal Steak Seasoning',
   costco = '100381527', usd = 9.49/822*.8,
   contain = c(
@@ -115,8 +115,7 @@ McCormick_MontrealSteak <- \() new(
 
 
 
-McCormick_whitePepper <- \() new(
-  Class = 'nutrition',  
+McCormick_whitePepper <- \() nutrition(
   mccormickculinary = 'white-pepper-ground',
   #brand = 'McCormick Gourmet\U1f1fa\U1f1f8', url = 'https://www.mccormick.com/gourmet/spices-and-flavors/organic/organic-white-pepper-ground', name = 'Organic White Pepper', 
   name = 'White Pepper, Ground', 
@@ -127,8 +126,7 @@ McCormick_whitePepper <- \() new(
 
 
 
-McCormick_rum <- \() new(
-  Class = 'nutrition',  
+McCormick_rum <- \() nutrition(
   # 'Imitation' contains chemicals (i.e., not natural)
   # mccormickculinary = 'imitation-rum-extract',
   # name = 'Imitation Rum Extract',
@@ -147,8 +145,7 @@ McCormick_rum <- \() new(
 )
 
 
-SpiceIslands_cumin <- \() new(
-  Class = 'nutrition', 
+SpiceIslands_cumin <- \() nutrition(
   brand = 'Spice Islands\U1f1fa\U1f1f8', alias = '\u5b5c\u7136\u7c89', name = 'Cumin Seed',
   url = 'https://spiceislands.com/product/ground-cumin-seed/',
   # sold at Costco, 425g
@@ -156,8 +153,7 @@ SpiceIslands_cumin <- \() new(
   servingGram = 8, servingTbsp = 1 # actual experiment
 )
 
-Kirkland_noSaltSeasoning <- \() new(
-  Class = 'nutrition', 
+Kirkland_noSaltSeasoning <- \() nutrition(
   name = 'Organic No-Salt Seasoning',
   costco = '100334965',
   usd = 9.99/411*9,
@@ -171,15 +167,13 @@ Kirkland_noSaltSeasoning <- \() new(
 # @examples
 # fourC_panko() + fourC_panko_seasoned() / 3
 
-fourC_panko_seasoned <- \() new(
-  Class = 'nutrition',  
+fourC_panko_seasoned <- \() nutrition(
   fourC = 'seasoned-panko-bread-crumbs',
   name = 'Seasoned Panko Bread Crumbs', alias = '\u8c03\u5473\u9762\u5305\u7ce0',
   servingCup = 1/2, servingGram = 28, fat = 1, sodium = .47, sugar = 1, protein = 3,
   superior = 'fourC_panko')
 
-fourC_panko <- \() new(
-  Class = 'nutrition',  
+fourC_panko <- \() nutrition(
   fourC = 'plain-panko-bread-crumbs',
   name = 'Plain Panko Bread Crumbs', alias = '\u9762\u5305\u7ce0',
   servingCup = 1/2, servingGram = 28, sodium = .045, sugar = 2, protein = 3)
@@ -198,16 +192,14 @@ fourC_panko <- \() new(
 # glass jar + water filled to neck: 292g
 # volume: (292-143) / 14.7868 approx 10Tbsp
 
-SimplyOrganic_Italian <- \() new(
-  Class = 'nutrition',  
+SimplyOrganic_Italian <- \() nutrition(
   simplyorganic = 'italian-seasoning-0-95-oz',
   name = 'Italian Seasoning',
   servingGram = 27, usd = 6.29, # 2023-11-09
   servingTbsp = 10,
   contain = c('oregano', 'marjoram', 'thyme', 'basil', 'rosemary', 'sage'))
 
-SimplyOrganic_Provence <- \() new(
-  Class = 'nutrition',
+SimplyOrganic_Provence <- \() nutrition(
   simplyorganic = 'simply-organic-herbes-de-provence-1-oz',
   name = 'Herbes de Provence',
   servingGram = 28, usd = 6.29, # Dec 2024
@@ -215,25 +207,22 @@ SimplyOrganic_Provence <- \() new(
   contain = c('thyme', 'rosemary', 'basil', 'parsley', 'oregano', 'marjoram', 'lavender flowers'))
 
 
-SimplyOrganic_Southwest <- \() new(
-  Class = 'nutrition',  # discontinued
-  brand = 'Simply Organic\U1f1fa\U1f1f8', name = 'Southwest Seasoning',
+SimplyOrganic_Southwest <- \() nutrition(
+  brand = 'Simply Organic\U1f1fa\U1f1f8', name = 'Southwest Seasoning', # discontinued
   servingGram = .6, 
   #servingTsp = 1/4 # packaging
   servingTsp = .6/113*10*3,
   sodium = .03)
 
 
-SimplyOrganic_parsley <- \() new(
-  Class = 'nutrition',
+SimplyOrganic_parsley <- \() nutrition(
   simplyorganic = 'parsley-0-26-oz',
   name = 'Parsley',
   servingGram = 7, usd = 5.39, # Feb 2024
   servingTbsp = 10)
 
 
-SimplyOrganic_pumpkinSpice <- \() new(
-  Class = 'nutrition',
+SimplyOrganic_pumpkinSpice <- \() nutrition(
   simplyorganic = 'pumpkin-spice-1-94-oz',
   name = 'Pumpkin\U1f383 Spice', alias = '\u5357\u74dc\u8089\u6842\u9999\u6599',
   servingGram = 55, usd = 6.79, # 2023-12-06
@@ -241,8 +230,7 @@ SimplyOrganic_pumpkinSpice <- \() new(
   contain = c('cinnamon', 'ginger', 'nutmeg', 'clove'))
 
 
-SimplyOrganic_5spice <- \() new(
-  Class = 'nutrition', 
+SimplyOrganic_5spice <- \() nutrition(
   simplyorganic = 'five-spice-powder-2-01-oz',
   name = 'Five Spice Powder', alias = '\u4e94\u9999\u7c89',
   # wegmans = '202649', usd = 8.49, date = as.Date('2026-09-14'), # no longer available?
@@ -251,8 +239,7 @@ SimplyOrganic_5spice <- \() new(
   contain = c('cinnamon', 'fennel', 'clove', 'star anise', 'white pepper'))
 
 
-SimplyOrganic_ginger <- \() new(
-  Class = 'nutrition', 
+SimplyOrganic_ginger <- \() nutrition(
   simplyorganic = 'ginger-root-ground-1-64-oz',
   name = 'Ginger\U1fada Root, Ground', alias = '\u59dc\u7c89',
   wegmans = '791544',
@@ -260,8 +247,7 @@ SimplyOrganic_ginger <- \() new(
   servingTbsp = 10)
 
 
-SimplyOrganic_dill <- \() new(
-  Class = 'nutrition',
+SimplyOrganic_dill <- \() nutrition(
   simplyorganic = 'dill-weed-0-81-oz',
   name = 'Dill Weed', alias = '\u83b3\u841d\u8349',
   # not at Wegmans?
@@ -269,8 +255,7 @@ SimplyOrganic_dill <- \() new(
   servingTbsp = 10)
 
 
-SimplyOrganic_clove <- \() new(
-  Class = 'nutrition',
+SimplyOrganic_clove <- \() nutrition(
   simplyorganic = 'cloves-ground-2-82-oz',
   name = 'Cloves', alias = '\u4e01\u9999',
   wegmans = '791605',
@@ -278,8 +263,7 @@ SimplyOrganic_clove <- \() new(
   servingTbsp = 10)
 
 
-SimplyOrganic_cinnamonCeylon <- \() new(
-  Class = 'nutrition',
+SimplyOrganic_cinnamonCeylon <- \() nutrition(
   simplyorganic = 'ceylon-cinnamon-ground-2-08-oz',
   name = 'Ceylon Cinnamon', alias = '\u8089\u6842\u7c89',
   wegmans = '791633',
@@ -287,16 +271,14 @@ SimplyOrganic_cinnamonCeylon <- \() new(
   servingTbsp = 10)
 
 
-SimplyOrganic_cumin <- \() new(
-  Class = 'nutrition',
+SimplyOrganic_cumin <- \() nutrition(
   simplyorganic = 'cumin-seed-ground-2-31-oz',
   name = 'Cumin Seed, Ground', alias = '\u5b5c\u7136\u7c89',
   wegmans = '791542',
   servingGram = 65, usd = 7.29, date = as.Date('2026-09-17'),
   servingTbsp = 10)
 
-SimplyOrganic_coriander <- \() new(
-  Class = 'nutrition',
+SimplyOrganic_coriander <- \() nutrition(
   simplyorganic = 'coriander-seed-ground-2-29-oz',
   name = 'Coriander Seed', alias = '\u82ab\u837d\u7c7d\u7c89',
   wegmans = '791590',
@@ -304,8 +286,7 @@ SimplyOrganic_coriander <- \() new(
   servingTbsp = 10)
 
 
-SimplyOrganic_garlic <- \() new(
-  Class = 'nutrition',
+SimplyOrganic_garlic <- \() nutrition(
   simplyorganic = 'garlic-powder-3-64-oz',
   name = 'Garlic\U1f9c4', alias = '\u849c\u7c89',
   wegmans = '791543',
@@ -317,8 +298,7 @@ SimplyOrganic_garlic <- \() new(
 
 
 
-Chinata_paprika <- \() new(
-  Class = 'nutrition', 
+Chinata_paprika <- \() nutrition(
   brand = style_hyperlink(text = 'La Chinata\U1f1ea\U1f1f8', url = 'https://lachinatausa.com/la-chinata-smoked-paprika-powder-70g-tin') |> 
     c(),
   alias = '\u7ea2\u751c\u6912\u7c89', name = 'Sweet Smoked Paprika\U1f336', 
@@ -328,16 +308,14 @@ Chinata_paprika <- \() new(
   ) 
 
 
-TakShing_starAnise <- \() new(
-  Class = 'nutrition', 
+TakShing_starAnise <- \() nutrition(
   tsemporium = '640769115159',
   name = 'Dried Star Anise Powder', alias = '\u516b\u89d2\u7c89',
   serving_oz = 16, usd = 9.99
 )
 
 
-TakShing_KGalanga <- \() new(
-  Class = 'nutrition', 
+TakShing_KGalanga <- \() nutrition(
   tsemporium = '610232022673',
   name = 'Kaempferia Galanga Powder', alias = '\u6c99\u59dc\u7c89',
   serving_oz = 16, usd = 10.99

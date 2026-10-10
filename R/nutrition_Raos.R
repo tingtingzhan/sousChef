@@ -1,28 +1,28 @@
 
-Raos_marinara <- \() new(
-  Class = 'nutrition',  raos = 'marinara-sauce',
+Raos_marinara <- \() nutrition(
+  raos = 'marinara-sauce',
   name = 'Marinara Sauce\U1f96b',
   servingGram = 125, servingCup = 1/2, 
   calorie = 100,
   fat = 7, sodium = .42, sugar = 4, protein = 2)
 
-Raos_tomatoBasil <- \() new(
-  Class = 'nutrition',  raos = 'tomato-basil-sauce',
+Raos_tomatoBasil <- \() nutrition(
+  raos = 'tomato-basil-sauce',
   name = 'Tomato Basil Sauce\U1f96b',
   servingGram = 125, servingCup = 1/2, 
   calorie = 80,
   fat = 5, sodium = .42, sugar = 4, protein = 2)
 
 
-Raos_arrabbiata <- \() new(
-  Class = 'nutrition',  raos = 'arrabbiata-sauce',
+Raos_arrabbiata <- \() nutrition(
+  raos = 'arrabbiata-sauce',
   name = 'Spicy Arrabbiata Sauce\U1f96b',
   servingGram = 125, servingCup = 1/2, 
   calorie = 100,
   fat = 7, sodium = .42, sugar = 4, protein = 2)
 
-Raos_sensitive <- \() new(
-  Class = 'nutrition',  raos = 'sensitive-marinara-sauce',
+Raos_sensitive <- \() nutrition(
+  raos = 'sensitive-marinara-sauce',
   name = 'Sensitive Marinara Sauce\U1f96b',
   # No onions or garlic
   servingGram = 125, servingCup = 1/2, 
@@ -30,16 +30,16 @@ Raos_sensitive <- \() new(
   fat = 11, sodium = .33, sugar = 4, protein = 2)
 
 
-Raos_pizza <- \() new(
-  Class = 'nutrition',  raos = 'pizza-sauce',
+Raos_pizza <- \() nutrition(
+  raos = 'pizza-sauce',
   name = 'Pizza Sauce\U1f96b',
   servingGram = 60, servingCup = 1/4, 
   calorie = 40,
   fat = 3, sodium = .18, sugar = 2, protein = 1)
 
 
-Raos_margherita <- \() new(
-  Class = 'nutrition',  raos = 'margherita-pizza-sauce',
+Raos_margherita <- \() nutrition(
+  raos = 'margherita-pizza-sauce',
   name = 'Margherita Pizza Sauce\U1f96b',
   servingGram = 60, servingCup = 1/4, 
   calorie = 40,

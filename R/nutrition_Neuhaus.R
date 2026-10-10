@@ -1,6 +1,5 @@
 
-Neuhaus_Carre10 <- \() new(
-  Class = 'nutrition', 
+Neuhaus_Carre10 <- \() nutrition(
   brand = c(style_hyperlink(text = 'Neuhaus\U1f1e7\U1f1ea', url = 'https://www.neuhauschocolates.com/en_US/shop/carre-10-flavors/5024340.html')),
   name = 'Carr\u00e9 10 Flavors',
   servingGram = 30,

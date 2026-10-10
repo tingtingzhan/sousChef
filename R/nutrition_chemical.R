@@ -1,14 +1,12 @@
 
 
-MgCl2 <- \() new(
-  Class = 'nutrition', 
+MgCl2 <- \() nutrition(
   name = 'Magnesium Chloride MgCl\u2082', alias = '\u76d0\u5364',
   pubchem = 'Magnesium-chloride-_MgCl2',
   servingGram = 1)
   
 
-Ohsawa_nigari <- \() new(
-  Class = 'nutrition', 
+Ohsawa_nigari <- \() nutrition(
   brand = style_hyperlink(url = 'https://www.goldminenaturalfoods.com/collections/ohsawa/products/3004-1001', text = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U1f1ef\U1f1f5') |> c(), 
   name = 'Nigari', alias = '\u82e6\u6c41/\u6ef7\u6c41',
   amazon = 'B0019L8KUG',
@@ -18,16 +16,14 @@ Ohsawa_nigari <- \() new(
   sodium = 1.966)
 
 
-Morton_salt <- \() new(
-  Class = 'nutrition',  
+Morton_salt <- \() nutrition(
   mortonsalt = 'table-salt/morton-iodized-table-salt-26-oz/',
   name = 'Salt\U1f9c2', alias = '\u76d0',
   #servingTsp = 1/4, servingGram = 1.5, sodium = 23/(23+35.5) * 1.5 # packaging!
   servingTbsp = 1, servingGram = 21, sodium = 23/(23+35.5) * 21 # actual experiment (1tbsp = 21g)
 )
 
-Morton_kosher_salt <- \() new(
-  Class = 'nutrition',  
+Morton_kosher_salt <- \() nutrition(
   mortonsalt = 'kosher-salt/morton-coarse-kosher-salt/',
   name = 'Kosher Salt\U1f9c2', alias = '\u7c97\u76d0',
   servingTsp = 1/4, servingGram = 1.2, sodium = 23/(23+35.5) * 1.2 # packaging!
@@ -35,8 +31,7 @@ Morton_kosher_salt <- \() new(
 
 
 
-Ajinomoto_msg <- \() new(
-  Class = 'nutrition',  
+Ajinomoto_msg <- \() nutrition(
   brand = c(style_hyperlink(url = 'https://www.ajinomoto.com/msg', text = 'Ajinomoto\u5473\u306e\u7d20\U1f1ef\U1f1f5')), 
   name = 'Monosodium Glutamate', alias = '\u5473\u7cbe',
   usd = 3.99/454, yamibuy = '25775165',
@@ -48,8 +43,7 @@ Ajinomoto_msg <- \() new(
   sodium = .125)
 
 
-ArmHammer_NaHCO3 <- \() new(
-  Class = 'nutrition',  
+ArmHammer_NaHCO3 <- \() nutrition(
   brand = style_hyperlink(url = 'https://www.armandhammer.com/en/baking-soda/baking-soda-products/pure-baking-soda/baking-soda-box-8-oz', text = 'Arm & Hammer\U1f1fa\U1f1f8') |> c(),
   name = 'Baking Soda, NaHCO\u2083', alias = '\u5c0f\u82cf\u6253',
   pubchem = '516892',
@@ -57,8 +51,8 @@ ArmHammer_NaHCO3 <- \() new(
   servingTsp = 1/8, # packaging
   sodium = 23/(23+1+12+16*3) * .6)
 
-Na2CO3 <- \() new(
-  Class = 'nutrition',  # presume no volumn change when baking
+Na2CO3 <- \() nutrition(
+  # presume no volumn change when baking
   name = 'Soda Ash Na\u2082CO\u2083', alias = '\u78b1\u9762',
   pubchem = '10340',
   # 2 NaHCO3 = Na2CO3 + H2O + CO2
@@ -70,16 +64,15 @@ Na2CO3 <- \() new(
   review = 'Made from baking Arm and Hammer baking soda, 200\u00b0F/30min')
 
 
-Wegmans_bakingPowder <- \() new(
-  Class = 'nutrition',  
+Wegmans_bakingPowder <- \() nutrition(
   name = 'Baking Powder, 2x Acting', alias = '\u6ce1\u6253\u7c89',
   wegmans = '45049', usd = 2.49/383,
   contain = c('NaHCO\u2083', 'Ca(H\u2082PO\u2084)\u2082', 'corn starch'),
   servingTsp = 1/8, servingGram = 230/383, sodium = .05)
 
 
-TraderJoes_bakingPowder <- \() new(
-  Class = 'nutrition',  fdc = 172804L,
+TraderJoes_bakingPowder <- \() nutrition(
+  fdc = 172804L,
   brand = 'Trader Joe\'s\U1f1fa\U1f1f8', 
   name = 'Baking Powder, 2x Acting', alias = '\u6ce1\u6253\u7c89',
   contain = c('NaHCO\u2083', 'Ca(H\u2082PO\u2084)\u2082', 'corn starch'),
@@ -89,8 +82,7 @@ TraderJoes_bakingPowder <- \() new(
   sodium = .055)
 
 
-Wegmans_water <- \() new(
-  Class = 'nutrition',  
+Wegmans_water <- \() nutrition(
   name = 'Purified Water',
   wegmans = '54080', usd = 1.49, date = as.Date('2026-09-17'),
   servingGram = 3785.41, servingCup = 16, # one gallon 

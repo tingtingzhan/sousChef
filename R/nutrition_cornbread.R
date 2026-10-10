@@ -1,8 +1,7 @@
 
 
 
-Wegmans_cornbread <- \() new(
-  Class = 'nutrition',  
+Wegmans_cornbread <- \() nutrition(
   name = 'Cornbread', 
   wegmans = '55708', usd = 9.00/9,
   servingGram = 57, calorie = 240,

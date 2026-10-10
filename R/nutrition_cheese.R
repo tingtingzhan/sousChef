@@ -4,8 +4,7 @@
 # Brie & Other Cave Ripened Soft Cheeses
 
 
-Wegmans_CambozolaBlueTorte <- \() new(
-  Class = 'nutrition', 
+Wegmans_CambozolaBlueTorte <- \() nutrition(
   # wegmans = ??, # not on website right now
   name = 'Cambozola Blue Caramel Torte Cheese',
   serving_oz = 1, fat = 11, sodium = .125, sugar = 2, protein = 3,
@@ -13,8 +12,7 @@ Wegmans_CambozolaBlueTorte <- \() new(
 
 
 
-Wegmans_Cambozola <- \() new(
-  Class = 'nutrition', 
+Wegmans_Cambozola <- \() nutrition(
   # wegmans = ??, # not on website right now
   name = 'Cambozola Blue Triple Cr\u00e8me Cheese',
   serving_oz = 1, fat = 12, sodium = .19, protein = 4)
@@ -22,8 +20,7 @@ Wegmans_Cambozola <- \() new(
 
 
 
-Wegmans_mildBrie <- \() new(
-  Class = 'nutrition',  
+Wegmans_mildBrie <- \() nutrition(
   name = 'Cave-Ripened Mild Brie Cheese, Milky',
   wegmans = '201731', usd = 21.99/16, date = as.Date('2026-09-17'),
   serving_oz = 1, 
@@ -35,8 +32,7 @@ Wegmans_mildBrie <- \() new(
 
 
 
-Wegmans_mildTripleCreme <- \() new(
-  Class = 'nutrition',  
+Wegmans_mildTripleCreme <- \() nutrition(
   name = 'Cave-Ripened Mild Triple Cr\u00e8me Cheese',
   wegmans = '108112', usd = 26.99/16, date = as.Date('2026-09-17'),
   serving_oz = 1, 
@@ -45,8 +41,7 @@ Wegmans_mildTripleCreme <- \() new(
   review = 'too salty!!')
 
 
-Wegmans_mildBonVivant <- \() new( # try again?
-  Class = 'nutrition',
+Wegmans_mildBonVivant <- \() nutrition(
   name = 'Mild Bon Vivant',
   wegmans = '840554', usd = 23.99/16, date = as.Date('2026-09-17'),
   serving_oz = 1, 
@@ -56,8 +51,7 @@ Wegmans_mildBonVivant <- \() new( # try again?
 
 
 
-Wegmans_mildCremeuxDeBourgogne <- \() new( # try again?
-  Class = 'nutrition',  
+Wegmans_mildCremeuxDeBourgogne <- \() nutrition(
   name = 'Mild Cremeux de Bourgogne Soft Ripened Cheese',
   wegmans = '51985', usd = 2.00, date = as.Date('2026-09-17'),
   serving_oz = 1, 
@@ -67,8 +61,7 @@ Wegmans_mildCremeuxDeBourgogne <- \() new( # try again?
 
 
 
-Wegmans_LangaLaTur <- \() new(
-  Class = 'nutrition',
+Wegmans_LangaLaTur <- \() nutrition(
   name = 'Caseificio dell\'Alta Langa La Tur Cheese',
   wegmans = '416528', usd = 28.99/16, date = as.Date('2026-09-17'),
   serving_oz = 1, 
@@ -79,8 +72,7 @@ Wegmans_LangaLaTur <- \() new(
 
 
 
-Wegmans_mildGoatBrie <- \() new(
-  Class = 'nutrition',  
+Wegmans_mildGoatBrie <- \() nutrition(
   name = 'Mild Goat\U1f410 Brie Cheese',
   wegmans = '50306', usd = 1.43, date = as.Date('2026-09-17'),
   servingGram = 30, 
@@ -89,8 +81,7 @@ Wegmans_mildGoatBrie <- \() new(
   review = 'Stinks!! Dont buy!!!!')
 
 
-BelGioioso_mascarpone <- \() new(
-  Class = 'nutrition',  
+BelGioioso_mascarpone <- \() nutrition(
   belgioioso = 'mascarpone', name = 'Mascarpone',
   wegmans = '870051', usd = 0.56, date = as.Date('2026-09-17'),
   fdc = 1726641L, # this brand!!
@@ -99,8 +90,7 @@ BelGioioso_mascarpone <- \() new(
   calorie = 120,
   fat = 13, cholesterol = .035, sodium = .015, carbohydrate = 1, sugar = 1, protein = 2)
 
-BelGioioso_ricotta <- \() new(
-  Class = 'nutrition',  
+BelGioioso_ricotta <- \() nutrition(
   wegmans = '894048', usd = 9.49/907*55, date = as.Date('2026-09-17'),
   belgioioso = 'ricotta-con-latte', name = 'Ricotta con Latte',
   fdc = 2288192L, # this brand!!
@@ -112,24 +102,21 @@ BelGioioso_ricotta <- \() new(
 
 
 
-Friendship_farmer <- \() new(
-  Class = 'nutrition',
+Friendship_farmer <- \() nutrition(
   brand = 'Friendship Dairies', name = 'Farmer Cheese, No Salt Added',
   wegmans = '23257', usd = .53, date = as.Date('2026-09-17'),
   # https://www.friendshipdairies.com/en/products/farmer-cheese # has salt!!
   servingGram = 30, fat = 2.5, sodium = .01, protein = 4)
 
 
-Wegmans_Castelbelo <- \() new( 
-  Class = 'nutrition',
+Wegmans_Castelbelo <- \() nutrition(
   # wegmans = ???, # not on website right now
   name = 'Caseificio dell\'Alta Langa Castelbelo Cheese',
   serving_oz = 1, fat = 8, sodium = .14, protein = 5,
   review = 'Much much less salty than Wegmans_mildBrie(), otherwise very similar.  Like it!')
 
 
-Wegmans_goat_cheese <- \() new(
-  Class = 'nutrition', 
+Wegmans_goat_cheese <- \() nutrition(
   wegmans = '45825', usd = .75, date = as.Date('2026-09-17'),
   name = 'Goat\U1f410 Cheese, Mild', alias = '\u7f8a\u5976\u916a',
   serving_oz = 1,
@@ -139,8 +126,7 @@ Wegmans_goat_cheese <- \() new(
 
 
 
-Wegmans_cranberryGoat <- \() new(
-  Class = 'nutrition',
+Wegmans_cranberryGoat <- \() nutrition(
   # wegmans = ???, # not on website right now
   name = 'Goat\U1f410 Cheese with Cranberries',
   serving_oz = 1, fat = 5, 
@@ -149,14 +135,12 @@ Wegmans_cranberryGoat <- \() new(
   review = 'Nice!')
 
 
-NaturalKosher_mozzarella <- \() new(
-  Class = 'nutrition',  
+NaturalKosher_mozzarella <- \() nutrition(
   brand = style_hyperlink(text = 'Natural & Kosher', url = 'https://naturalandkosher.com/products/') |> c(),
   name = 'Shredded Mozzarella',
   serving_oz = 1, fat = 6, sodium = .135, protein = 6)
 
-Wegmans_mozzarella_skim <- \() new(
-  Class = 'nutrition',  
+Wegmans_mozzarella_skim <- \() nutrition(
   wegmans = '33447',
   name = 'Shredded Mozzarella, Part-Skim',
   servingGram = 28, 
@@ -177,8 +161,7 @@ if (FALSE) {
   )
 }
 
-Wegmans_mozzarella_whole <- \() new(
-  Class = 'nutrition',  
+Wegmans_mozzarella_whole <- \() nutrition(
   wegmans = '33429', usd = .25, date = as.Date('2026-09-17'),
   name = 'Shredded Mozzarella, Whole Milk',
   servingGram = 28, 
@@ -188,8 +171,7 @@ Wegmans_mozzarella_whole <- \() new(
   carbohydrate = 1, protein = 6)
 
 
-KraftNatural_mozzarella_fatFree <- \() new(
-  Class = 'nutrition',
+KraftNatural_mozzarella_fatFree <- \() nutrition(
   brand = 'https://kraftnaturalcheese.com/product/shredded-cheese/mozzarella-fat-free/' |>
     style_hyperlink(url = _, text = 'Kraft Natural Cheese') |>
     c(),

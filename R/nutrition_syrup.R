@@ -1,7 +1,6 @@
 
 
-TraderJoes_date_syrup <- \() new(
-  Class = 'nutrition',  
+TraderJoes_date_syrup <- \() nutrition(
   brand = 'Trader Joe\'s', name = 'Date Syrup', alias = '\u7ea2\u67a3\u7cd6\u6d46',
   servingGram = 35, # to be confirmed
   servingTbsp = 2,
@@ -10,7 +9,6 @@ TraderJoes_date_syrup <- \() new(
   carbohydrate = 28, sugar = 26)
 
 
-TraderJoes_blueAgave_syrup <- \() new(
-  Class = 'nutrition',  
+TraderJoes_blueAgave_syrup <- \() nutrition(
   servingGram = 44.4, sugar = 30)
 

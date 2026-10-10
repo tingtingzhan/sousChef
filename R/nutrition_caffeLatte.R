@@ -1,6 +1,6 @@
 
-Starbucks_caffeLatte <- \() new(
-  Class = 'nutrition', starbucks_hot = '407',
+Starbucks_caffeLatte <- \() nutrition(
+  starbucks_hot = '407',
   name = 'Caff\u00e8 Latte',
   servingGram = 470, serving_floz = 16,
   #caffeine 150 mg*
@@ -8,8 +8,7 @@ Starbucks_caffeLatte <- \() new(
   fat = 7, cholesterol = .030, sodium = .170, carbohydrate = 19, sugar = 18, protein = 13)
 
 
-Starbucks_coffeeFrappuccino_bottle <- \() new(
-  Class = 'nutrition', 
+Starbucks_coffeeFrappuccino_bottle <- \() nutrition(
   name = 'Coffee Frappuccino',
   brand = 'Starbucks (Bottled)',
   walmart = '14532479', target = 'A-12959301',

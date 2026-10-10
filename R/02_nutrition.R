@@ -98,7 +98,6 @@ nutrition <- \(...) {
   x <- list(...) |>
     .findCall_NEW() # must stop the pipeline :)))
   
-
   x <- x |>
     add_brand_url(name = 'bachans', fmt = 'https://bachans.com/products/%s', text = 'Bachan\'s\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'baileys', fmt = 'https://www.baileys.com/en/products/baileys-%s', text = 'Baileys\U1f1ee\U1f1ea') |>
@@ -184,16 +183,13 @@ nutrition <- \(...) {
     add_brand_url(name = 'yogi', fmt = 'https://www.yogi-life.com/en-US/product/%s', text = 'Yogi\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'youjia', fmt = 'https://youjiaflavors.com/products/%s', text = '\u53cb\u52a0\U1f1e8\U1f1f3') 
   
-  
-  if (!length(x[['brand']])) { # non-standard brands
+  # non-standard brands
+  if (!length(x[['brand']])) {
     if (length(x[['cheesecakefactoryfreezer']])) {
-      if (!length(x[['cheesecakefactorybakery']])) {
-        x$cheesecakefactorybakery <- x$cheesecakefactoryfreezer
-      }
       x$brand <- paste(
         x$cheesecakefactoryfreezer |>
           fmtURL(fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/%s', text = 'Cheesecake'),
-        x$cheesecakefactorybakery |>
+        (x$cheesecakefactorybakery %||% x$cheesecakefactoryfreezer) |>
           fmtURL(fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/%s', text = 'Factory\U1f1fa\U1f1f8')
       )
       x$cheesecakefactorybakery <- x$cheesecakefactoryfreezer <- NULL
@@ -271,8 +267,6 @@ nutrition <- \(...) {
     add_store_url(name = 'wholefoods', fmt = 'https://www.wholefoodsmarket.com/product/%s', store_brand = '365 by Whole Foods\U1f1fa\U1f1f8', store_name = 'Whole Foods\U1f1fa\U1f1f8') |>
     add_store_url(name = 'yamibuy', fmt = 'https://u.yamibuy.com/%s', store_brand = 'Yami\u4e9a\u7c73\U1f1fa\U1f1f8')
   
-  
-  
   # serving weight
   if (length(x[['serving_oz']])) {
     if (length(x[['servingGram']])) warning('`@servingGram` over written by `serving_oz`')
@@ -311,7 +305,6 @@ nutrition <- \(...) {
     x$AbV <- NULL
   }
   
-  
   if (length(x[['fdc']])) {
     x$url <- c(x$url, style_hyperlink(
       url = x$fdc |>
@@ -327,8 +320,6 @@ nutrition <- \(...) {
       text = '\U1f4dd PubChem'))
     x$pubchem <- NULL
   }
-  
-  
   
   c(list(Class = 'nutrition'), x) |> 
     do.call(what = 'new', args = _)

@@ -1,5 +1,5 @@
 
-#setOldClass(Classes = 'perlist') # `'perlist'` is S3
+
 
 #' @export
 summary.nutrition <- \(object, ...) {
@@ -11,7 +11,7 @@ summary.nutrition <- \(object, ...) {
       incl_carbohydrate = FALSE, 
       rel = TRUE
     ) |>
-    new(Class = 'per', name = 'Serving', current = _)
+    new(Class = 'equiv', caption = 'Serving', current = _)
   return(list(perServing = z))
 }
 
@@ -57,11 +57,10 @@ summary.raw. <- \(object, ...) {
   ret$perRaw <- x |>
     as(Class = 'raw.') |>
     as.double.raw.(detail = FALSE, rel = TRUE) |>
-    new(Class = 'per', name = 'Raw Ingredients', current = _)
+    new(Class = 'equiv', caption = 'Raw Ingredients', current = _)
   
   ret$perServing <- new(
-    Class = 'per', 
-    name = 'Serving', 
+    Class = 'equiv', caption = 'Serving', 
     current = z / nutri@servingGram, target = c(
       water = devrecipe$water(x), # um, this is wrong; raw-water / cooked-total
       #carbohydrate = devrecipe$carbohydrate(x),
@@ -90,8 +89,7 @@ summary.raw. <- \(object, ...) {
     ))#)
   
   ret$perCornmeal <- new(
-    Class = 'per', 
-    name = 'Cornmeal\U1f33d', 
+    Class = 'equiv', caption = 'Cornmeal\U1f33d', 
     current = z / sum(x['_cornmeal$']), target = c(
       flour = devrecipe$flour2cornmeal(x),
       breadFlr = devrecipe$breadFlr2cornmeal(x),
@@ -101,8 +99,7 @@ summary.raw. <- \(object, ...) {
   if (sum(mixWheatFlr > 0) > 1L) {
     
     ret$perMixFlr <- new(
-      Class = 'per', 
-      name = 'Mixed Wheat Flour', 
+      Class = 'equiv', caption = 'Mixed Wheat Flour', 
       current = z / sum(mixWheatFlr), target = c(
         water = devrecipe$water2wheatFlrMix(x),
         fat = devrecipe$fat2wheatFlrMix(x),
@@ -113,8 +110,7 @@ summary.raw. <- \(object, ...) {
   } else {
     
     ret$perAllPurposeFlr <- if (!is(x, 'cheesecake')) new(
-      Class = 'per', 
-      name = 'All-Purpose\U1f370\U1f35e Flour', 
+      Class = 'equiv', caption = 'All-Purpose\U1f370\U1f35e Flour', 
       current = z / sum(x['_allPurposeFlr$']), target = c(
         water = devrecipe$water2flour(x),
         fat = devrecipe$fat2flour(x),
@@ -128,8 +124,7 @@ summary.raw. <- \(object, ...) {
     
     
     ret$perPastryFlr <- new(
-      Class = 'per', 
-      name = 'Pastry\U1f370 Flour', 
+      Class = 'equiv', caption = 'Pastry\U1f370 Flour', 
       current = z / sum(x['_pastryFlr$']), target = c(
         water = devrecipe$water2pastryFlr(x),
         fat = devrecipe$fat2pastryFlr(x),
@@ -146,8 +141,7 @@ summary.raw. <- \(object, ...) {
     
     
     ret$perBreadFlr <- new(
-      Class = 'per', 
-      name = 'Bread\U1f35e Flour', 
+      Class = 'equiv', caption = 'Bread\U1f35e Flour', 
       current = z / sum(x['_breadFlr$']), target = c(
         fat = devrecipe$fat2breadFlr(x),
         sesame = devrecipe$blackSesame2breadFlr(x),
@@ -163,8 +157,7 @@ summary.raw. <- \(object, ...) {
   }
   
   ret$perGlutenFreeFlr <- if (('_breadFlr$' %notin% x) && ('_pastryFlr$' %notin% x) && ('_allPurposeFlr$' %notin% x)) new(
-    Class = 'per', 
-    name = 'Gluten-Free Flour', 
+    Class = 'equiv', caption = 'Gluten-Free Flour', 
     current = z / sum(x['_gluten0Flr$']), target = c(
       water = devrecipe$water2gluten0Flr(x),
       fat = devrecipe$fat2gluten0Flr(x),
@@ -177,8 +170,7 @@ summary.raw. <- \(object, ...) {
     ))
   
   ret$perRiceFlr <- new(
-    Class = 'per', 
-    name = 'Glutinous+Rice\U1f33e Flour', 
+    Class = 'equiv', caption = 'Glutinous+Rice\U1f33e Flour', 
     current = z / sum(x['_riceFlr$|_glutRiceFlr$']), target = c(
       water = devrecipe$water2riceFlr(x),
       glutRice = devrecipe$glutRice2riceFlr(x),
@@ -188,8 +180,7 @@ summary.raw. <- \(object, ...) {
     ))
   
   ret$perCocoa <- if (!inherits(x, what = c('tiramisuMix', 'tiramisu_'))) new(
-    Class = 'per', 
-    name = 'Alkalized Cocoa', 
+    Class = 'equiv', caption = 'Alkalized Cocoa', 
     current = z / x@cocoa, target = c(
       alcohol = devrecipe$alcohol2cocoa(x),
       drymilk = devrecipe$drymilk2cocoa(x),
@@ -199,20 +190,15 @@ summary.raw. <- \(object, ...) {
   
   
   ret$perTea <- new(
-    Class = 'per', 
-    name = 'Tea\U1f343', 
+    Class = 'equiv', caption = 'Tea\U1f343', 
     current = z / x@tea)
   
   ret$perCreamCheese <- new(
-    Class = 'per', 
-    name = 'Cream Cheese', 
+    Class = 'equiv', caption = 'Cream Cheese', 
     current = z / sum(x['_creamCheese$']))
   
-  #class(ret) <- c('perlist', 'listof', 'list', class(ret)) |>
-  #  unique.default()
   class(ret) <- c('summary.raw.', class(ret)) |>
     unique.default()
-  # **not** 'perlist'!!!
   return(ret)
     
 }
@@ -235,7 +221,12 @@ print.summary.raw. <- \(x, ...) {
   id <- (lengths(x) > 0L)
   if (!any(id)) return(invisible())
   x[id] |>
-    lapply(FUN = print) # do not want to print list names
+    lapply(FUN = \(i) { # do not want to print list names
+      names(i) <- names(i) |> 
+        .repl()
+      print(i, fmt_caption = '\u214c %s\n') # ?equiv4:::print.equiv
+      cat('\n')
+    })
   return(invisible())
 }
 

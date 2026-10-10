@@ -64,10 +64,6 @@ Nutrition information.
 
 \item{\code{url}}{\link[base]{character} scalar, link to manufacturer webpage}
 
-\item{\code{fdc}}{\link[base]{integer} scalar, USDA FoodData Central (FDC) ID}
-
-\item{\code{pubchem}}{\link[base]{character} scalar}
-
 \item{\code{review}}{\link[base]{character} scalar or \link[base]{vector}, additional note to chef}
 
 \item{\code{superior}}{\link[base]{character} scalar}

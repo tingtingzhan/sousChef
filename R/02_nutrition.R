@@ -14,9 +14,6 @@
 #' @slot suggestion \link[base]{list}
 #' 
 #' @slot url \link[base]{character} scalar, link to manufacturer webpage
-#' @slot fdc \link[base]{integer} scalar, USDA FoodData Central (FDC) ID
-#' @slot pubchem \link[base]{character} scalar
-#' 
 #' 
 # @slot machine (legacy) \link[base]{function}
 #' 
@@ -62,13 +59,10 @@ setClass(Class = 'nutrition', slots = c(
     'superior',
     'contain',
     'piece_fmt',
-    'url',
-    'pubchem'
+    'url'
   )),
   
   suggestion = 'list',
-  
-  fdc = 'integer',
   
   # machine = 'function', # legacy
   
@@ -79,17 +73,13 @@ setClass(Class = 'nutrition', slots = c(
   
   rep_names('numeric', nm = c(
     'servingGram', 'servingTsp',
-    'pieceGram', 
-    
+    'pieceGram',
     'usd', 'jpy',
     'calorie',
     'water',
+    'fat', 'cholesterol', 'sodium',
     'carbohydrate', 'fiber', 'sugar', 'addedSugar',
-    'fat',
-    'cholesterol',
-    'sodium',
-    'protein',
-    'alcohol'
+    'protein', 'alcohol'
   ))
 ), prototype = prototype(
   piece_fmt = '%.1fpcs',
@@ -305,6 +295,24 @@ nutrition <- \(...) {
   }
   
   
+  if (length(x[['fdc']])) {
+    x$url <- c(x$url, style_hyperlink(
+      url = x$fdc |>
+        sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients'), 
+      text = '\U1f4dd FoodData Central'))
+    x$fdc <- NULL
+  }
+  
+  if (length(x[['pubchem']])) {
+    x$url <- c(x$url, style_hyperlink(
+      url = x$pubchem |> 
+        sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s'), 
+      text = '\U1f4dd PubChem'))
+    x$pubchem <- NULL
+  }
+  
+  
+  
   c(list(Class = 'nutrition'), x) |> 
     do.call(what = 'new', args = _)
 
@@ -515,15 +523,6 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
       cat()
   }
   
-  if (length(x@fdc)) {
-    paste('\U1f4dd', style_hyperlink(url = sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', x@fdc), text = 'FoodData Central')) |> 
-      cat(sep = '\n')
-  }
-  
-  if (length(x@pubchem)) {
-    paste('\U1f4dd', style_hyperlink(url = sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', x@pubchem), text = 'PubChem')) |> 
-      cat(sep = '\n')
-  }
   
   if (length(x@url)) cat(x@url, sep = '\n')
   

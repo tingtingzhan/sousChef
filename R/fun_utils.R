@@ -434,13 +434,20 @@ fmt_perc <- \(x, name) {
 
 
 
-add_tool_url <- \(x, name, fmt, brand) {
+fmtURL <- \(x, fmt, text, ...) {
+  x |>    
+    sprintf(fmt = fmt) |>
+    style_hyperlink(text = text, url = _) |> 
+    c()
+}
+
+
+
+add_tool_url <- \(x, name, brand, ...) {
   v <- slot(x, name = name)
   if (!length(v)) return(x)
   x@name <- v |>
-    sprintf(fmt = fmt) |>
-    style_hyperlink(text = paste(brand, x@name), url = _) |> 
-    c()
+    fmtURL(text = paste(brand, x@name), ...)
   slot(x, name = name) <- vector(mode = typeof(v), length = 0L) # yes!!!
   return(x)
 }
@@ -464,16 +471,18 @@ add_store_url <- \(x, name, fmt, store_brand, store_name = store_brand) {
 }
 
 
-add_brand_url <- \(x, name, fmt, text) {
+
+
+
+
+add_brand_url <- \(x, name, ...) {
   v <- x[[name]]
   if (!length(v)) return(x)
   if (length(x[['brand']])) {
     stop('`brand` already exists!')
   }
   x$brand <- v |> 
-    sprintf(fmt = fmt) |>
-    style_hyperlink(text = text) |> 
-    c() # i.e., [brand_url]
+    fmtURL(...)
   x[[name]] <- NULL
   return(x)
 }
@@ -481,32 +490,21 @@ add_brand_url <- \(x, name, fmt, text) {
 
 
 
-brand_url <- \(x, name, fmt, text) {
-  x[[name]] |>
-    #slot(name = name) |> 
-    sprintf(fmt = fmt) |>
-    style_hyperlink(text = text) |> 
-    c()
-}
-
-
-add_youtube <- \(x, name, text) {
+add_youtube <- \(x, name, ...) { # text
   v <- slot(x, name = name)
   nv <- length(v)
   if (!nv) return(x)
   if (nv > 1L) stop('only allow len-1 ', sQuote(name))
   if (length(x@author)) return(x)
   x@author <- v |>
-    sprintf(fmt = 'https://youtu.be/%s') |>
-    style_hyperlink(url = _, text = text) |> 
-    c()
+    fmtURL(fmt = 'https://youtu.be/%s', ...)
   slot(x, name = name) <- character()
   return(x)
 }
 
 
 
-add_youtube_recipe <- \(x, name, fmt, text1, text2) {
+add_youtube_recipe <- \(x, name, text1, text2, ...) {
   v <- slot(x, name = name)
   nv <- length(v)
   if (!nv) return(x)
@@ -519,11 +517,9 @@ add_youtube_recipe <- \(x, name, fmt, text1, text2) {
   x@author <- paste(
     v |>
       names() |> # len0-name compatible!!
-      sprintf(fmt = 'https://youtu.be/%s') |>
-      style_hyperlink(url = _, text = text1),
+      fmtURL(fmt = 'https://youtu.be/%s', text = text1),
     v |>
-      sprintf(fmt = fmt) |>
-      style_hyperlink(url = _, text = text2)
+      fmtURL(text = text2, ...)
   )
   slot(x, name = name) <- character()
   return(x)

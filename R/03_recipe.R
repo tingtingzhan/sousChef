@@ -124,16 +124,12 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
     if (length(x@allrecipes)) {
       #stop('where?')
       x@author <- x@allrecipes |>
-        sprintf(fmt = 'https://www.allrecipes.com/recipe/%s') |>
-        style_hyperlink(url = _, text = x@author) |> 
-        c()
+        fmtURL(fmt = 'https://www.allrecipes.com/recipe/%s', text = x@author)
       x@allrecipes <- character()
     } else if (length(x@youtube)) {
       #stop('where?')
       x@author <- x@youtube[1L] |>
-        sprintf(fmt = 'https://youtu.be/%s') |>
-        style_hyperlink(url = _, text = x@author) |> 
-        c()
+        fmtURL(fmt = 'https://youtu.be/%s', text = x@author)
       x@youtube <- x@youtube[-1L]
     } else if (length(x@url)) {
       #stop('where?')
@@ -159,15 +155,14 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   if (length(x@ippodotea)) {
     if (length(x@ippodotea) > 1L) stop('only allow len-1 @ippodotea')
     x@author <- x@ippodotea |>
-      sprintf(fmt = 'https://ippodotea.com/products/%s') |>
-      style_hyperlink(url = _, text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5') |> 
-      c()
+      fmtURL(fmt = 'https://ippodotea.com/products/%s', text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5')
     x@ippodotea <- character()
   }
   
   if (length(x@ippodoteajpn)) {
     if (length(x@ippodoteajpn) > 1L) stop('only allow len-1 @ippodoteajpn')
-    x@author <- style_hyperlink(url = sprintf(fmt = 'https://www.ippodo-tea.co.jp/products/%s', x@ippodoteajpn), text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5') |> c()
+    x@author <- x@ippodoteajpn |> 
+      fmtURL(fmt = 'https://www.ippodo-tea.co.jp/products/%s', text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5')
     x@ippodoteajpn <- character()
   }
   
@@ -188,30 +183,32 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
     if (length(x@kingarthur) > 1L) stop('only allow len-1 @kingarthur')
     if (!length(x@author)) stop('King Arthur employee name?')
     x@author <- paste(
-      c(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/recipes/%s', x@kingarthur), text = 'King Arthur')),
-      c(style_hyperlink(url = sprintf(fmt = 'https://www.kingarthurbaking.com/author/%s', x@author), text = 'Recipe'))
+      x@kingarthur |>
+        fmtURL(fmt = 'https://www.kingarthurbaking.com/recipes/%s', text = 'King Arthur'),
+      x@author |> 
+        fmtURL(fmt = 'https://www.kingarthurbaking.com/author/%s', text = 'Recipe')
     )
     x@kingarthur <- character()
   }
   
   if (length(x@nytimes)) {
     if (length(x@nytimes) > 1L) stop('only allow len-1 @nytimes')
-    x@author <- style_hyperlink(url = sprintf(fmt = 'https://cooking.nytimes.com/recipes/%s', x@nytimes), text = 'New York Times Cooking') |> c()
+    x@author <- x@nytimes |>
+      fmtURL(fmt = 'https://cooking.nytimes.com/recipes/%s', text = 'New York Times Cooking')
     x@nytimes <- character()
   }
   
   if (length(x@quakeroats)) {
     if (length(x@quakeroats) > 1L) stop('only allow len-1 @quakeroats')
-    x@author <- style_hyperlink(url = sprintf(fmt = 'https://www.quakeroats.com/cooking-and-recipes/%s', x@quakeroats), text = 'Quaker\U1f1fa\U1f1f8') |> c()
+    x@author <- x@quakeroats |> 
+      fmtURL(fmt = 'https://www.quakeroats.com/cooking-and-recipes/%s', text = 'Quaker\U1f1fa\U1f1f8')
     x@quakeroats <- character()
   }
   
   if (length(x@wegmans)) {
     if (length(x@wegmans) > 1L) stop('only allow len-1 @wegmans')
     x@author <- x@wegmans |>
-      sprintf(fmt = 'https://shop.wegmans.com/recipes/%s') |> 
-      style_hyperlink(url = _, text = 'Wegmans\U1f1fa\U1f1f8') |> 
-      c()
+      fmtURL(fmt = 'https://shop.wegmans.com/recipes/%s', text = 'Wegmans\U1f1fa\U1f1f8')
     x@wegmans <- character()
   }
   
@@ -431,7 +428,10 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
     if (length(x@url)) cat('', x@url, sep = '\n') # len0 compatible
     if (n_ytb <- length(x@youtube)) {
       if (n_ytb != 1L) stop('only allow scalar @youtube')
-      cat(' \U1f4f9', style_hyperlink(url = sprintf(fmt = 'https://youtu.be/%s', x@youtube), text = x@youtube), '\n')
+      cat(' \U1f4f9', 
+          x@youtube |> 
+            fmtURL(fmt = 'https://youtu.be/%s', text = x@youtube), 
+          '\n')
     }
     #if (length(x@doi)) cat(styleURL(url_ = sprintf(fmt = 'https://doi.org/%s', x@doi), text_ = names(x@doi)), sep = '\n')
     cat('\n')

@@ -191,33 +191,50 @@ nutrition <- \(...) {
         x$cheesecakefactorybakery <- x$cheesecakefactoryfreezer
       }
       x$brand <- paste(
-        brand_url(x, name = 'cheesecakefactoryfreezer', fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/%s', text = 'Cheesecake'),
-        brand_url(x, name = 'cheesecakefactorybakery', fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/%s', text = 'Factory\U1f1fa\U1f1f8')
+        x$cheesecakefactoryfreezer |>
+          fmtURL(fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/%s', text = 'Cheesecake'),
+        x$cheesecakefactorybakery |>
+          fmtURL(fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/%s', text = 'Factory\U1f1fa\U1f1f8')
       )
       x$cheesecakefactorybakery <- x$cheesecakefactoryfreezer <- NULL
     } else if (length(x[['ippodoglobal']]) & length(x[['ippodousa']])) {
-      x$url <- c(x[['url']], brand_url(x, name = 'ippodousa', fmt = 'https://ippodotea.com/products/%s', text = '\U1f6d2 US Shop'))
-      jpn_ <- brand_url(x, name = 'ippodojpn', fmt = 'https://www.ippodo-tea.co.jp/products/%s', text = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5')
-      global_ <- brand_url(x, name = 'ippodoglobal', fmt = 'https://global.ippodo-tea.co.jp/products/%s', text = 'Ippodo\U1f375')
+      x$url <- c(
+        x[['url']], 
+        x$ippodousa |>
+          fmtURL(fmt = 'https://ippodotea.com/products/%s', text = '\U1f6d2 US Shop')
+      )
+      jpn_ <- x$ippodojpn |>
+        fmtURL(fmt = 'https://www.ippodo-tea.co.jp/products/%s', text = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5')
+      global_ <- x$ippodoglobal |>
+        fmtURL(fmt = 'https://global.ippodo-tea.co.jp/products/%s', text = 'Ippodo\U1f375')
       x$brand <- paste(global_, jpn_)
       x$ippodoglobal <- x$ippodousa <- x$ippodojpn <- NULL
     } else if (length(x[['kerrygold']])) {
-      kg_ <- brand_url(x, name = 'kerrygold', fmt = 'https://kerrygold.com/products/%s', text = 'Kerrygold\U1f1ee\U1f1ea')
+      kg_ <- x$kerrygold |>
+        fmtURL(fmt = 'https://kerrygold.com/products/%s', text = 'Kerrygold\U1f1ee\U1f1ea')
       x$brand <- if (length(x[['kerrygoldusa']])) {
-        paste0(kg_, brand_url(x, name = 'kerrygoldusa', fmt = 'https://www.kerrygoldusa.com/products/%s', text = '\U1f1fa\U1f1f8'))
+        paste0(
+          kg_, 
+          x$kerrygoldusa |> 
+            fmtURL(fmt = 'https://www.kerrygoldusa.com/products/%s', text = '\U1f1fa\U1f1f8')
+        )
       } else kg_
       x$kerrygold <- x$kerrygoldusa <- NULL
     } else if (length(x[['marukyu']])) {
       x$url <- c(x[['url']], style_hyperlink(url = 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf', text = '2024 Catalog'))
       x$brand <- paste(
-        brand_url(x, name = 'marukyu', fmt = 'https://www.marukyu-koyamaen.co.jp/english/shop/products/%s', text = 'Marukyu Koyamaen\U1f375'),
-        brand_url(x, name = 'marukyu', fmt = 'https://www.marukyu-koyamaen.co.jp/motoan-shop/products/%s', text = '\u4e38\u4e45\u5c0f\u5c71\u5712\U1f1ef\U1f1f5')
+        x$marukyu |>
+          fmtURL(fmt = 'https://www.marukyu-koyamaen.co.jp/english/shop/products/%s', text = 'Marukyu Koyamaen\U1f375'),
+        x$marukyu |>
+          fmtURL(fmt = 'https://www.marukyu-koyamaen.co.jp/motoan-shop/products/%s', text = '\u4e38\u4e45\u5c0f\u5c71\u5712\U1f1ef\U1f1f5')
       )
       x$marukyu <- NULL
     } else if (length(x[['runamok']])) {
-      runamok_ <- brand_url(x, name = 'runamok', fmt = 'https://runamokmaple.com/shop/product/%s', text = 'Runamok\U1f1fa\U1f1f8')
+      runamok_ <- x$runamok |>
+        fmtURL(fmt = 'https://runamokmaple.com/shop/product/%s', text = 'Runamok\U1f1fa\U1f1f8')
       x$brand <- if (length(x[['whistlepigwhiskey']])) {
-        brand_url(x, name = 'whistlepigwhiskey', fmt = 'https://shop.whistlepigwhiskey.com/products/%s', text = 'Whistlepig\U1f1fa\U1f1f8') |>
+        x$whistlepigwhiskey |>
+          fmtURL(fmt = 'https://shop.whistlepigwhiskey.com/products/%s', text = 'Whistlepig\U1f1fa\U1f1f8') |>
           paste(runamok_, . = _, sep = '-')
       } else runamok_
       x$runamok <- x$whistlepigwhiskey <- NULL
@@ -324,7 +341,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   
   x <- callNextMethod(.Object, ...)
   
-  # alias
   if (length(x@alias)) {
     x@alias <- x@alias |>
       sprintf(fmt = '{.run [%s](cooking::%s())}', . = _, as.character(x@call)) |> 
@@ -332,14 +348,12 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
       c()
   }
   
-
   if (length(x@brand)) {
     x@brand <- x@brand |> 
       make_ansi_style('sienna')() |> 
       style_bold() |> 
       c()
   }
-  
   
   for (i in names(which(getSlots('nutrition') == 'numeric'))) {
     slot(x, name = i) <- slot(x, name = i) |>

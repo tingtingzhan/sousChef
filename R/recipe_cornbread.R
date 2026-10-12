@@ -7,7 +7,7 @@ Wegmans_cornbread_recipe <- \() recipe(
   #Wegmans Avocado Oil Cooking Spray
   grain_cup = c(IndianHead_yellow_cornmeal = 3),
   bakingPowder_Tbsp = c(Wegmans_bakingPowder = 2),
-  Na2CO3_Tbsp = c(Na2CO3 = 1/2),
+  Na2CO3_Tbsp = 1/2,
   salt_Tbsp = 1/2,
   sugar_cup = c(Domino_granulated = 2/3),
   misc = c(Wegmans_creamCorn = 418*2), #2 cans (14.75 oz each)

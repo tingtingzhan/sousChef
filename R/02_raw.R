@@ -214,7 +214,7 @@ print.raw. <- \(x, prt_total = TRUE, ...) {
     # merge??(which = 'meat') |> # has no vol
     mergeVol(which = 'misc') |>
     mergeVol(which = 'msg') |>
-    mergeVol(which = 'Na2CO3') |>
+    mergeVol(which = 'Na2CO3', nm = 'Na2CO3') |>
     mergeVol(which = 'NaHCO3') |>
     mergeVol(which = 'nut') |>
     mergeVol(which = 'oil') |>

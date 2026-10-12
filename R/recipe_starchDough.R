@@ -9,7 +9,7 @@ sweetPotato_Noodle_step1 <- \() recipe(
 
 sweetPotato_Noodle_step2 <- \() recipe(
   youtube = 'enleTlAvjCY',
-  Na2CO3_tsp = c(Na2CO3 = .125), 
+  Na2CO3_tsp = 1/8, 
   starch = c(sweetPotato_starch = 100), water = 40
 )
 

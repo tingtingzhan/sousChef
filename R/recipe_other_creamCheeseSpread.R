@@ -1,17 +1,6 @@
 
-#' @rdname raw_recipe
-#' 
-#' @examples
-#' nutritionlist(
-#'  pumpkin_creamCheeseSpread(),
-#'  cooking:::GoodLifeEats_pumpkin_creamCheeseSpread(),
-#'  cooking:::Lynn_pumpkin_creamCheeseSpread()
-#' )
 
-
-
-GoodLifeEats_pumpkin_creamCheeseSpread <- \() new(
-  Class = 'recipe',
+GoodLifeEats_pumpkin_creamCheeseSpread <- \() recipe(
   class2 = 'Spread\U1f96f', # 'Cream Cheese Spread',
   author = 'Good Life Eats',
   dairy_brick = c(Philadelphia_creamCheese = 1),
@@ -22,8 +11,7 @@ GoodLifeEats_pumpkin_creamCheeseSpread <- \() new(
 )
 
 
-Lynn_pumpkin_creamCheeseSpread <- \() new(
-  Class = 'recipe',
+Lynn_pumpkin_creamCheeseSpread <- \() recipe(
   class2 = 'Spread\U1f96f', # 'Cream Cheese Spread',
   author = 'Lynn',
   dairy_brick = c(Philadelphia_creamCheese = 1),

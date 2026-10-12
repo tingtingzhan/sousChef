@@ -17,9 +17,28 @@ meatfill_note <- \() c(
   'Extra can be made into meatmash()'
 )
 
-#setClass(Class = 'meatfill', contains = 'recipe', prototype = prototype(
-#  class2 = '\u9985'
-#))
+
+
+
+
+
+juntun_filling <- \() recipe(
+  alias = '\u519b\u5c6f\u9505\u76d4\u9985',
+  #meat = c(pork_belly = 550), # too fat!!
+  meat = c(pork_belly = 250, pork_tenderloin = 300),
+  spice_tsp = c(
+    McCormick_whitePepper = .5,
+    SimplyOrganic_ginger = .5,
+    SimplyOrganic_coriander = 1/4
+  ),
+  oil_Tbsp = c(YaoMaZi_rattanPepper_oil = 1), # perfect numbness!!
+  salt_tsp = .5,
+  #instruction (legacy) = c(
+  #  'Use KitchenAid meat grinder, not meat chopper!'
+  #),
+  review = 'try again!!',
+  youtube = 'cohQ56AqXkg'
+)
 
 
 
@@ -29,17 +48,7 @@ meatfill_note <- \() c(
 
 
 
-
-
-
-
-
-setClass(Class = 'porkfill', contains = 'recipe', prototype = prototype(
-  
-))
-
-porkfill <- \() new(
-  Class = 'porkfill',
+porkfill <- \() recipe(
   meat = c(pork_tenderloin = 500, pork_belly = 500), # tiny too fat
   oil_tsp = c(YaoMaZi_rattanPepper_oil = 1), 
   oil_Tbsp = c(Kadoya_sesame_oil = 1),
@@ -64,8 +73,8 @@ porkfill <- \() new(
 
 
 
-Jenny_chickenfill <- \() new(
-  Class = 'recipe', author = 'Jenny', flavor = '\u9e21\u817f\u8089\u9985',
+Jenny_chickenfill <- \() recipe(
+  author = 'Jenny', flavor = '\u9e21\u817f\u8089\u9985',
   poultry = c(chicken_thigh = 500),
   seafood = c(Kirkland_shrimp_c31 = 300),
   #Rice wine 2Tbsp  / Vin de riz 2Tbsp
@@ -86,19 +95,10 @@ Jenny_chickenfill <- \() new(
 
 
 
-#' @title \linkS4class{lambfill}
-#' 
-#' @export
-setClass(Class = 'lambfill', contains = 'recipe', prototype = prototype(
-  
-))
 
 
-
-#' @rdname lambfill-class
-#' @export
-xiaogaojie_lambfill <- \() new(
-  Class = 'recipe', flavor = '\u867e\u7f8a\u8089\u9985', 
+xiaogaojie_lambfill <- \() recipe(
+  flavor = '\u867e\u7f8a\u8089\u9985', 
   xiaogaojie = 'M6DD504lDac',
   portion = c(Baozi = 30),
   meat = c(lamb_leg = 250),
@@ -120,8 +120,7 @@ xiaogaojie_lambfill <- \() new(
 
 # below: no-so-successful experiments
 
-salmonfill <- \() new(
-  Class = 'recipe',
+salmonfill <- \() recipe(
   seafood = c(salmonAtlantic = 1000),
   starch_Tbsp = c(Wegmans_corn_starch = 2),
   sauce = c(

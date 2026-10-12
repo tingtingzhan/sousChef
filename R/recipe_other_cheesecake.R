@@ -1,21 +1,8 @@
 
-#' @rdname raw_recipe
-#' 
-#' @examples
-#' nutritionlist(
-#'  cheesecake(),
-#'  subtract(cooking:::PreppyKitchen_cheesecake(), sugar = 125),
-#'  subtract(cooking:::Junior_original(), sugar = 12),
-#'  subtract(cooking:::Junior_cookbook(), sugar = 230),
-#'  subtract(cooking:::CheesecakeFactory_original(), sugar = 18)
-#' )
-#' 
 
 
 
-
-Junior_cappuccino_cheesecake <- \() new(
-  Class = 'recipe', 
+Junior_cappuccino_cheesecake <- \() recipe(
   flavor = 'Cappuccino Cheesecake',
   dairy_brick = c(Philadelphia_creamCheese = 4),
   coffee_Tbsp = c(NescafeGold_blonde = 1),
@@ -29,8 +16,8 @@ Junior_cappuccino_cheesecake <- \() new(
   juniorscheesecakecookbook = 42L)
 
 
-PreppyKitchen_cheesecake <- \() new(
-  Class = 'recipe', flavor = 'Cheesecake',
+PreppyKitchen_cheesecake <- \() recipe(
+  flavor = 'Cheesecake',
   dairy_brick = c(Philadelphia_creamCheese = 3),
   sugar = 200,
   salt_tsp = 1/4,
@@ -42,8 +29,7 @@ PreppyKitchen_cheesecake <- \() new(
 
 
 
-Junior_cookbook <- \() new(
-  Class = 'recipe', 
+Junior_cookbook <- \() recipe(
   juniorscheesecakecookbook = 34L,
   flavor = 'Original',
   dairy_brick = c(Philadelphia_creamCheese = 4),
@@ -67,8 +53,8 @@ CheesecakeFactory_original <- \() nutrition(
 
 
 
-PreppyKitchen_chocolate_cheesecake <- \() new(
-  Class = 'recipe', flavor = 'Cheesecake',
+PreppyKitchen_chocolate_cheesecake <- \() recipe(
+  flavor = 'Cheesecake',
   # 1/4 cup coffee hot ???
   # 1 cup bittersweet chocolate ???
   # 3/4 cup semisweet chocolate ???

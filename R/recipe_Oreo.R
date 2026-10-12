@@ -3,8 +3,8 @@
 # https://youtu.be/FXX0vkbDon4
 
 
-fauxReo <- \() new(
-  Class = 'recipe', alias = '\u5c71\u5be8\u5965\u5229\u5965 Faux-Reos',
+fauxReo <- \() recipe(
+  alias = '\u5c71\u5be8\u5965\u5229\u5965 Faux-Reos',
   portion = c(cookie = 26),
   sugar = 50,
   oil = c(Wegmans_corn_oil = 50),
@@ -14,8 +14,8 @@ fauxReo <- \() new(
   cocoa = c(KingArthur_blackCocoa = 64))
 
 
-KingArthur_fauxReo <- \() new(
-  Class = 'recipe', flavor = 'Faux-Reos',
+KingArthur_fauxReo <- \() recipe(
+  flavor = 'Faux-Reos',
   portion = c(cookie = 26),
   sugar = 223,
   dairy = c(Kerrygold_butter = 170),
@@ -31,8 +31,8 @@ KingArthur_fauxReo <- \() new(
 
 if (FALSE) {
   nutritionlist(
-    fauxReo(),
-    KingArthur_fauxReo(),
-    Nabisco_waferOreo()
+    sousChef:::fauxReo(),
+    sousChef:::KingArthur_fauxReo(),
+    sousChef:::Nabisco_waferOreo()
   )
 }

@@ -1,18 +1,9 @@
 
 
 
-#' @rdname raw_recipe
-#' 
-#' @examples
-#' nutritionlist(
-#'  subtract(cooking:::pumpkin_creamCheeseDip_bakethat(), sugar = 135),
-#'  subtract(cooking:::pumpkin_creamCheeseDip_Julie(), sugar = 180)
-#' )
 
 
-
-pumpkin_creamCheeseDip_bakethat <- \() new(
-  Class = 'recipe',
+pumpkin_creamCheeseDip_bakethat <- \() recipe(
   author = 'Bake That!',
   dairy_brick = c(Philadelphia_creamCheese = 1),
   sugar_cup = c(Domino_10x = 1.5),
@@ -24,8 +15,7 @@ pumpkin_creamCheeseDip_bakethat <- \() new(
 )
 
 
-pumpkin_creamCheeseDip_Julie <- \() new(
-  Class = 'recipe',
+pumpkin_creamCheeseDip_Julie <- \() recipe(
   julieseatsandtreats = c('ktyuI7JHQ_Q' = 'sweet-pumpkin-dip'),
   dairy_brick = c(Philadelphia_creamCheese = 2),
   puree = c(Libbys_pumpkin = 425), # 15 oz

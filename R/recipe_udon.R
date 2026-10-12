@@ -2,35 +2,21 @@
 
 # too much sodium
 
-#' @title \linkS4class{udon} Recipes
-#' 
-#' @description ..
-#' 
-#' @examples
-#' nutritionlist(
-#'  Leo_udon(),
-#'  JustOne_udon(),
-#'  amanda_udon())
-#' @export
-setClass(Class = 'udon', contains = 'recipe', prototype = prototype(
-  class2 = '\u9942\u98e9\u3046\u3069\u3093'#,
-  #note (legacy) = 'Melt salt in water.  Knead the dough by stepping on it'
-))
+# udon = '\u9942\u98e9\u3046\u3069\u3093'
+  
 
 
-#' @rdname udon-class
-#' @export
-amanda_udon <- \() new(
-  Class = 'recipe', author = '\u66fc\u98df\u6162\u8bed', flavor = 'Udon', 
+amanda_udon <- \() recipe(
+  author = '\u66fc\u98df\u6162\u8bed', 
+  flavor = 'Udon', 
   youtube = 'q0gNH9vxiYY',
   flour = c(KingArthur_allPurposeFlr = 300),
   water = c(c22 = 130), salt = 15)
 
 
-#' @rdname udon-class
-#' @export
-JustOne_udon <- \() new(
-  Class = 'recipe', flavor = 'Udon', 
+
+JustOne_udon <- \() recipe(
+  flavor = 'Udon', 
   just1cookbook = c('luljUScGJm4' = 'udon-noodles'),
   flour = c(KingArthur_allPurposeFlr = 200), # 7 oz
   water = c(c22 = 90), # 6tbsp, 89g
@@ -39,10 +25,9 @@ JustOne_udon <- \() new(
 
 
 
-#' @rdname udon-class
-#' @export
-Leo_udon <- \() new(
-  Class = 'recipe', author = 'Leo', flavor = 'Udon', 
+
+Leo_udon <- \() recipe(
+  author = 'Leo', flavor = 'Udon', 
   youtube = 'wgj51q9Hlq8',
   flour = c(KingArthur_allPurposeFlr = 500), # 17.6 oz
   salt = 23, # 0.8 oz

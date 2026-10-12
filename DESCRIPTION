@@ -1,6 +1,6 @@
-Package: cooking
+Package: sousChef
 Type: Package
-Title: cooking
+Title: sousChef
 Version: 0.1.0
 Date: 2026-10-09
 Description: Need to think more..
@@ -12,3 +12,6 @@ Depends: R (>= 4.6)
 Imports: methods, cli (== 3.6.6), charwidth, consec, equiv4
 Config/roxygen2/version: 8.1.1
 Config/roxygen2/markdown: TRUE
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

@@ -17,7 +17,7 @@ if (FALSE) {
   # https://cli.r-lib.org/reference/links.html
   
   #?cli::cli_text # does not have a returned value
-  cli::cli_text('Tingting\'s {.run [soymilk](cooking::soymilk())}')
+  cli::cli_text('Tingting\'s {.run [soymilk](sousChef::soymilk())}')
   
   cli::cli_text('{.run [rnorm(10L)](stats::rnorm(10L))}') # no!
   cli::cli_text('{.run [load_all](devtools::load_all())}') # yes
@@ -43,7 +43,7 @@ if (FALSE) {
     ricepaste = .015,
     oatmeal = .018,
     soytea = if (length(x@matcha)) .07 else .022, # matcha sweetness needs to be decreased!!!
-    bao =, wheatBao = if (length(x@matcha) || ('_beet_pulv$' %in% x) || length(x@cocoa)) {
+    bao = if (length(x@matcha) || ('_beet_pulv$' %in% x) || length(x@cocoa)) {
       .04 
     } else .03, # any lower, not delicious!
     snowSkin = if ('_beet_pulv$' %in% x) .03 else .023,
@@ -209,7 +209,6 @@ if (FALSE) {
     bao =, pancake = .02, 
     flan = .025, #tortillaOlive = .025, 
     caffeCoconut =, yuenyeungCoconut = .016,
-    wheatBao = .028,
     matchaLatteMix = .04, 
     bread = if (length(x@cocoa)) .038 else .04, 
     #tortilla = .04,
@@ -535,7 +534,6 @@ if (FALSE) {
   
   water2wheatFlrMix <- \(x) switch(
     class(x),
-    wheatBao = .5,
     NA_real_)
   
   water2riceFlr <- \(x) switch(
@@ -576,7 +574,6 @@ if (FALSE) {
   
   fat2wheatFlrMix <- \(x) switch(
     class(x),
-    wheatBao = .045,
     NA_real_)
   
   fat2riceFlr <- \(x) switch(
@@ -669,7 +666,7 @@ if (FALSE) {
     class(x),
     gateau = .004,
     muffin = .005,
-    bao =, wheatBao = .006,
+    bao = .006,
     NA_real_)
   
   bakingPowder2flour <- fn.
@@ -689,7 +686,6 @@ if (FALSE) {
   
   bakingPowder2wheatFlrMix <- \(x) switch(
     class(x), 
-    wheatBao = .0095,
     NA_real_)
   
   bakingPowder2riceFlr <- fn.
@@ -711,7 +707,6 @@ if (FALSE) {
   
   yeast2wheatFlrMix <- \(x) switch(
     class(x), 
-    wheatBao = .0095,
     NA_real_)
   
   yeast2riceFlr <- fn.

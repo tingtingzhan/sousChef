@@ -3,7 +3,7 @@
 #' @title \linkS4class{nutrition}
 #' 
 #' @description 
-#' Nutrition information.
+#' An `S4` object to store the nutrition information.
 #' 
 #' @slot brand \link[base]{character} scalar, manufacture brand
 #' 
@@ -11,7 +11,8 @@
 #' @slot alias \link[base]{character} scalar with Unicode symbols, product alias
 #' @slot call \link[base]{name}, the function name to create this \linkS4class{nutrition}
 #' 
-#' @slot suggestion \link[base]{list}
+#' @slot suggest \link[base]{list}
+#' @slot suggest_fmt \link[base]{character} scalar
 #' 
 #' @slot url \link[base]{character} scalar, link to manufacturer webpage
 #' 
@@ -62,7 +63,8 @@ setClass(Class = 'nutrition', slots = c(
     'url'
   )),
   
-  suggestion = 'list',
+  suggest = 'list',
+  suggest_fmt = 'character',
   
   # machine = 'function', # legacy
   
@@ -83,6 +85,7 @@ setClass(Class = 'nutrition', slots = c(
   ))
 ), prototype = prototype(
   piece_fmt = '%.1fpcs',
+  suggest_fmt = 'Suggested %s',
   # machine = \(x) NULL, # legacy
   calorie = 0,
   date = as.Date(NA_character_)
@@ -91,12 +94,17 @@ setClass(Class = 'nutrition', slots = c(
 
 
 #' @rdname nutrition-class
-#' @param ... ..
+#' 
+#' @param ... raw user input
+#' 
+#' @details
+#' The helper function [nutrition()] converts raw user input into the slots of \linkS4class{nutrition}-class.
+#' 
 #' @export
 nutrition <- \(...) {
   
   x <- list(...) |>
-    .findCall_NEW() # must stop the pipeline :)))
+    .findCall_NEW(which = -2) # must stop the pipeline :)))
   
   x <- x |>
     add_brand_url(name = 'bachans', fmt = 'https://bachans.com/products/%s', text = 'Bachan\'s\U1f1fa\U1f1f8') |>
@@ -184,8 +192,8 @@ nutrition <- \(...) {
     add_brand_url(name = 'youjia', fmt = 'https://youjiaflavors.com/products/%s', text = '\u53cb\u52a0\U1f1e8\U1f1f3') 
   
   # non-standard brands
-  if (!length(x[['brand']])) {
-    if (length(x[['cheesecakefactoryfreezer']])) {
+  if (!length(x$brand)) {
+    if (length(x$cheesecakefactoryfreezer)) {
       x$brand <- paste(
         x$cheesecakefactoryfreezer |>
           fmtURL(fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-freezer/%s', text = 'Cheesecake'),
@@ -193,9 +201,9 @@ nutrition <- \(...) {
           fmtURL(fmt = 'https://www.thecheesecakefactoryathome.com/whole-cheesecakes-bakery/%s', text = 'Factory\U1f1fa\U1f1f8')
       )
       x$cheesecakefactorybakery <- x$cheesecakefactoryfreezer <- NULL
-    } else if (length(x[['ippodoglobal']]) & length(x[['ippodousa']])) {
+    } else if (length(x$ippodoglobal) & length(x$ippodousa)) {
       x$url <- c(
-        x[['url']], 
+        x$url, 
         x$ippodousa |>
           fmtURL(fmt = 'https://ippodotea.com/products/%s', text = '\U1f6d2 US Shop')
       )
@@ -205,10 +213,10 @@ nutrition <- \(...) {
         fmtURL(fmt = 'https://global.ippodo-tea.co.jp/products/%s', text = 'Ippodo\U1f375')
       x$brand <- paste(global_, jpn_)
       x$ippodoglobal <- x$ippodousa <- x$ippodojpn <- NULL
-    } else if (length(x[['kerrygold']])) {
+    } else if (length(x$kerrygold)) {
       kg_ <- x$kerrygold |>
         fmtURL(fmt = 'https://kerrygold.com/products/%s', text = 'Kerrygold\U1f1ee\U1f1ea')
-      x$brand <- if (length(x[['kerrygoldusa']])) {
+      x$brand <- if (length(x$kerrygoldusa)) {
         paste0(
           kg_, 
           x$kerrygoldusa |> 
@@ -216,8 +224,8 @@ nutrition <- \(...) {
         )
       } else kg_
       x$kerrygold <- x$kerrygoldusa <- NULL
-    } else if (length(x[['marukyu']])) {
-      x$url <- c(x[['url']], style_hyperlink(url = 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf', text = '2024 Catalog'))
+    } else if (length(x$marukyu)) {
+      x$url <- c(x$url, style_hyperlink(url = 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf', text = '2024 Catalog'))
       x$brand <- paste(
         x$marukyu |>
           fmtURL(fmt = 'https://www.marukyu-koyamaen.co.jp/english/shop/products/%s', text = 'Marukyu Koyamaen\U1f375'),
@@ -225,10 +233,10 @@ nutrition <- \(...) {
           fmtURL(fmt = 'https://www.marukyu-koyamaen.co.jp/motoan-shop/products/%s', text = '\u4e38\u4e45\u5c0f\u5c71\u5712\U1f1ef\U1f1f5')
       )
       x$marukyu <- NULL
-    } else if (length(x[['runamok']])) {
+    } else if (length(x$runamok)) {
       runamok_ <- x$runamok |>
         fmtURL(fmt = 'https://runamokmaple.com/shop/product/%s', text = 'Runamok\U1f1fa\U1f1f8')
-      x$brand <- if (length(x[['whistlepigwhiskey']])) {
+      x$brand <- if (length(x$whistlepigwhiskey)) {
         x$whistlepigwhiskey |>
           fmtURL(fmt = 'https://shop.whistlepigwhiskey.com/products/%s', text = 'Whistlepig\U1f1fa\U1f1f8') |>
           paste(runamok_, . = _, sep = '-')
@@ -239,7 +247,7 @@ nutrition <- \(...) {
   # non-standard brands, end of
   
   # process user-input `@url` first
-  if (length(x[['url']])) {
+  if (length(x$url)) {
     x$url <- x$url |>
       gsub('^https://|^http://', replacement = '', x = _) |> 
       style_hyperlink(url = x$url, text = _) |> 
@@ -268,44 +276,44 @@ nutrition <- \(...) {
     add_store_url(name = 'yamibuy', fmt = 'https://u.yamibuy.com/%s', store_brand = 'Yami\u4e9a\u7c73\U1f1fa\U1f1f8')
   
   # serving weight
-  if (length(x[['serving_oz']])) {
-    if (length(x[['servingGram']])) warning('`@servingGram` over written by `serving_oz`')
-    x$servingGram <- x[['serving_oz']] * 28.3495
+  if (length(x$serving_oz)) {
+    if (length(x$servingGram)) warning('`@servingGram` over written by `serving_oz`')
+    x$servingGram <- x$serving_oz * 28.3495
     x$serving_oz <- NULL
-  } else if (length(x[['serving_lb']])) {
-    if (length(x[['servingGram']])) warning('`@servingGram` over written by `serving_lb`')
-    x$servingGram <- x[['serving_lb']] * 453.6
+  } else if (length(x$serving_lb)) {
+    if (length(x$servingGram)) warning('`@servingGram` over written by `serving_lb`')
+    x$servingGram <- x$serving_lb * 453.6
     x$serving_lb <- NULL
   }
-  if (!length(x[['servingGram']])) stop('must have `@servingGram` for nutrition object')
+  if (!length(x$servingGram)) stop('must have `@servingGram` for nutrition object')
   
   # serving volumn
-  vol <- c(length(x[['servingCup']]), length(x[['servingTbsp']]), length(x[['servingTsp']]), length(x[['serving_floz']]), length(x[['serving_ml']]))
+  vol <- c(length(x$servingCup), length(x$servingTbsp), length(x$servingTsp), length(x$serving_floz), length(x$serving_ml))
   if (sum(vol) > 1L) stop('cannot have more than one of `servingCup`, `servingTbsp`, `@servingTsp`, `serving_floz`, and `serving_ml`')
   if (vol[1L]) {
-    x$servingTsp <- 48 * x[['servingCup']]
+    x$servingTsp <- 48 * x$servingCup
     x$servingCup <- NULL
   } else if (vol[2L]) {
-    x$servingTsp <- 3 * x[['servingTbsp']]
+    x$servingTsp <- 3 * x$servingTbsp
     x$servingTbsp <- NULL
   } else if (vol[4L]) {
-    x$servingTsp <- 6 * x[['serving_floz']]
+    x$servingTsp <- 6 * x$serving_floz
     x$serving_floz <- NULL
   } else if (vol[5L]) {
-    x$servingTsp <- x[['serving_ml']] / 4.92892
+    x$servingTsp <- x$serving_ml / 4.92892
     x$serving_ml <- NULL
   }
   
   # process AbV (needs `@servingGram`)
-  if (length(x[['AbV']])) {
-    if (!length(x[['alcohol']])) {
-      x$alcohol <- x[['servingGram']] * x[['AbV']] * .78927 # google abv to alcohol by weight
+  if (length(x$AbV)) {
+    if (!length(x$alcohol)) {
+      x$alcohol <- x$servingGram * x$AbV * .78927 # google abv to alcohol by weight
     }
-    x$name <- sprintf(fmt = '%s %.3g%%\U1f943', x[['name']], 1e2*x[['AbV']])
+    x$name <- sprintf(fmt = '%s %.3g%%\U1f943', x$name, 1e2*x$AbV)
     x$AbV <- NULL
   }
   
-  if (length(x[['fdc']])) {
+  if (length(x$fdc)) {
     x$url <- c(x$url, style_hyperlink(
       url = x$fdc |>
         sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients'), 
@@ -313,7 +321,7 @@ nutrition <- \(...) {
     x$fdc <- NULL
   }
   
-  if (length(x[['pubchem']])) {
+  if (length(x$pubchem)) {
     x$url <- c(x$url, style_hyperlink(
       url = x$pubchem |> 
         sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s'), 
@@ -334,7 +342,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   
   if (length(x@alias)) {
     x@alias <- x@alias |>
-      sprintf(fmt = '{.run [%s](cooking::%s())}', . = _, as.character(x@call)) |> 
+      sprintf(fmt = '{.run [%s](sousChef::%s())}', . = _, as.character(x@call)) |> 
       col_orchid4() |>
       c()
   }
@@ -399,7 +407,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
 
 
 #' @rdname nutrition-class
-#' @param object see **Usage**
+#' @param object a \linkS4class{nutrition} object
 #' @importFrom consec cmod
 #' @export
 setMethod(f = show, signature = 'nutrition', definition = \(object) print.nutrition(object))
@@ -408,12 +416,13 @@ setMethod(f = show, signature = 'nutrition', definition = \(object) print.nutrit
 #' @export
 print.nutrition <- \(x, prt_label = TRUE, ...) {
   
-  cat('\n')
-  if (prt_label) x |>
-    labels.nutrition() |>
-    style_bold() |> 
-    cat('\n\n')
-  
+  if (prt_label) {
+    cat('\n')
+    x |>
+      labels.nutrition() |>
+      style_bold() |> 
+      cat('\n\n')
+  }
   #cat('Nutrition Facts\n\n')
   
   sprintf(
@@ -501,7 +510,7 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
   
   if (length(x@superior)) {
     c('\u274c I prefer ', sprintf(
-      fmt = '{.run [%s](cooking::%s())}', 
+      fmt = '{.run [%s](sousChef::%s())}', 
       x@superior |> make_ansi_style('sienna')() |> style_bold(),
       x@superior
     ) |> paste(collapse = ', ')) |>

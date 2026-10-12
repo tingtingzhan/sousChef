@@ -4,19 +4,21 @@ setAs(from = 'nutrition', to = 'recipe', def = \(from) {
   
   x <- from; from <- NULL
   
-  if (!length(x@suggestion)) return(invisible())
+  if (!length(x@suggest)) return(invisible())
   
-  do.call(what = new, args = c(list(
-    Class = 'recipe', 
-    alias = x@call |>
-      as.character() |> 
-      make_ansi_style('sienna')() |> 
-      style_bold() |> 
-      sprintf(fmt = 'Suggested %s') |> 
-      bg_br_white() |> 
+  list(
+    #call = quote(x@call), # to pass through ?base::do.call (?)
+    call = quote(quote(`<UNDEFINED>`)),
+    alias = x |>
+      labels.nutrition() |>
+      sprintf(fmt = x@suggest_fmt) |> 
       c(),
     misc = setNames(x@servingGram, nm = as.character(x@call))
-  ), x@suggestion))
+  ) |> 
+    c(x@suggest) |>
+    do.call(what = recipe, args = _)
+  
+  # how to use such recipe in `@homemade` ??
   
 })
 

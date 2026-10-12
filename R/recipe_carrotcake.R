@@ -1,7 +1,6 @@
 
 
-AmishHeritage_carrotcake <- \() new(
-  Class = 'recipe',
+AmishHeritage_carrotcake <- \() recipe(
   author = 'Amish Heritage', flavor = 'Carrot Cake',
   url = 'https://amish-heritage.org/carrot-cake-with-pineapple-and-pecans-amish-recipe/',
   sugar_cup = c(

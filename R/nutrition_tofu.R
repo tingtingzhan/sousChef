@@ -1,6 +1,5 @@
 
-tofu <- \() new(
-  Class = 'recipe',
+tofu <- \() recipe(
   bean = c(Laura_soybean = 135), # small cup (45g) x3
   water = 1200, # 1300ml waterline
   sauce_tsp = c(

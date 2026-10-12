@@ -5,5 +5,9 @@ JayOne_sweetPotato <- \() nutrition(
   usd = 9.99/1000*56, yamibuy = '25775014',
   serving_oz = 2,
   calorie = 200,
-  sodium = .01, carbohydrate = 49
+  sodium = .01, carbohydrate = 49,
+  suggest = list(water = c(c100 = 56.7/300*(1060-300))),
+  # actual experiment:
+  # 300g dry noodle, (1060 - 300) water absorbed
+  suggest_fmt = '\u6ce1\u53d1Soaked %s'
 )

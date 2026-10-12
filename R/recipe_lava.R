@@ -2,82 +2,8 @@
 
 
 
-#' @title \linkS4class{lava} Recipes
-#' 
-#' @description ..
-#' 
-#' @examples 
-#' sesame_lava()
-#' coconut_lava()
-#' 
-#' nutritionlist(
-#'   sesame_lava(),
-#'   Daat_sesamelava(),
-#'   xiaogaojie_sesamelava(),
-#'   FancyNotes_sesamelava(),
-#'   xiaomin_sesamelava()
-#' )
-#' 
-#' nutritionlist(
-#'   sesame_lava(),
-#'   subtract(Daat_sesamelava(), sugar = 107),
-#'   subtract(xiaogaojie_sesamelava(), sugar = 60),
-#'   # subtract(FancyNotes_sesamelava(), sugar = 40, invertSugar = 7), 
-#'   # don't know how to subtract `@@homemade` yet!!
-#'   subtract(xiaomin_sesamelava(), sugar = 20)
-#' )
-#' 
-#' @export
-setClass(Class = 'lava', contains = 'recipe', prototype = prototype(
-  class2 = '\u6d41\u5fc3\u9985',
-  water = c(c22 = 80, c80 = 640),
-  flour = c(Erawan_glutRiceFlr = 32),
-  gelatin_pc = c(Champion_gold_gelatin = 12)#,
-  #instruction (legacy) = c(
-  #  'Make a slurry of glutinous rice flour and room-temperature water',
-  #  'Add hot water, gelatin leaves, sugar',
-  #  'Cook to 80\u00b0C/180\u00b0F. Stir gently to dissolve gelatin leaves',
-  #  'Remove from heat. Whisk in dry flavor',
-  #  'Chill overnight'
-  #)
-))
-
-#' @rdname lava-class
-#' @export
-sesame_lava <- \() new(
-  Class = 'lava',
-  seed = c(Greenmax_blackSesame = 400),
-  #misc = c('subtract(Kirkland_mixedNutButter, fat = 32/5)' = 100), # nice! (no longer support this use)
-  misc = c(Kirkland_mixedNutButter = 100), # nice!
-  #sugar = 140, # sugar 9.8%
-  sugar = 130, # sugar 9.2
-  #note (legacy) = c(
-  #  'A full jar of black sesame powder',
-  #  'Use 3qt sauce pan'
-  #),
-  pros = c(
-    'bao filling',
-    'eat directly, hot or chilled'
-  )
-)
-
-#' @rdname lava-class
-#' @export
-coconut_lava <- \() new(
-  Class = 'lava',
-  misc = c(WegmansOrganic_coconutFlr = 150),
-  sugar = 70,
-  review = c(
-    'retry',
-    'Coconut has tremendous water obsorbancy'
-  ))
-
-
-
-#' @rdname lava-class
-#' @export
-Daat_sesamelava <- \() new(
-  Class = 'recipe', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
+Daat_sesamelava <- \() recipe(
+  flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   daatgo = 'FvS_W_qnlxc',
   seed = c(Greenmax_blackSesame = 160+20),
   # 黑芝麻酱  Black sesame paste 20g ???
@@ -90,10 +16,9 @@ Daat_sesamelava <- \() new(
   gelatin = c(Champion_gold_gelatin = 15),
   portion = c(bao = 28))
 
-#' @rdname lava-class
-#' @export
-xiaomin_sesamelava <- \() new(
-  Class = 'recipe', author = '\u5c0f\u654f', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
+
+xiaomin_sesamelava <- \() recipe(
+  author = '\u5c0f\u654f', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   youtube = 'uCbXXVp4h40',
   seed = c(Greenmax_blackSesame = 120),
   sugar = 40,
@@ -101,20 +26,18 @@ xiaomin_sesamelava <- \() new(
   fat = c(Epic_lard = 40),
   water = 20)
 
-#' @rdname lava-class
-#' @export
-FancyNotes_sesamelava <- \() new(
-  Class = 'recipe', author = '\u4e54\u4e54\u5988', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
+
+FancyNotes_sesamelava <- \() recipe(
+  author = '\u4e54\u4e54\u5988', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   seed = c(Greenmax_blackSesame = 150),
   sugar = 40, 
-  homemade = c(invertSugar = 50), 
+  homemade = c(xiaogaojie_invertSugar = 50), 
   dairy = c(Kerrygold_butter = 80),
   youtube = 'PC3YOs77lgE') 
 
-#' @rdname lava-class
-#' @export
-xiaogaojie_sesamelava <- \() new(
-  Class = 'recipe', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
+
+xiaogaojie_sesamelava <- \() recipe(
+  flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   xiaogaojie = 't-pop_dGsgc',
   seed = c(Greenmax_blackSesame = 80),
   nut = c(pecan = 30),
@@ -124,8 +47,8 @@ xiaogaojie_sesamelava <- \() new(
 
 
 
-daat_yolklava <- \() new(
-  Class = 'recipe', flavor = '\u54b8\u86cb\u9ec4\u6d41\u5fc3\u9985',
+daat_yolklava <- \() recipe(
+  flavor = '\u54b8\u86cb\u9ec4\u6d41\u5fc3\u9985',
   egg_pc = c(eggYolk = 12), # salted duck egg yolk 12pc, 144g
   dairy = c(Kerrygold_butter = 180),
   sugar = 220,
@@ -137,8 +60,7 @@ daat_yolklava <- \() new(
 
 
 # not a good idea
-pineapple_lava <- \() new(
-  Class = 'recipe', 
+pineapple_lava <- \() recipe(
   puree = c(Dole_pineapple = 585), 
   gelatin_pc = c(Champion_gold_gelatin = 4),
   # machine (legacy) = list(Nutribullet = 'One (1) recipe calls for a full can'),

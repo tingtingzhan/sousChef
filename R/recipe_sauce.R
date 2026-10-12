@@ -1,16 +1,6 @@
 
 
-
-#' @title Meat Tenderizer
-#' 
-#' @description ..
-#' 
-#' @examples  
-#' meatTenderizer()
-#' 
-#' @export
-meatTenderizer <- \() new(
-  Class = 'recipe', 
+xiaogaojie_meatTenderizer <- \() recipe(
   alias = '\u5ae9\u8089/\u6d17\u8840\u6c34',
   NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1/4), 
   water = 300,

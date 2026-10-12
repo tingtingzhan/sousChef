@@ -1,9 +1,9 @@
 
 setGeneric(name = '%in%', 
-           where = asNamespace('cooking'),
+           where = asNamespace('sousChef'),
            useAsDefault = base::`%in%`)
 setGeneric(name = '%notin%', 
-           where = asNamespace('cooking'),
+           where = asNamespace('sousChef'),
            useAsDefault = base::`%notin%`)
 
 

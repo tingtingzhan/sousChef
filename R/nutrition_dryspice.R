@@ -64,7 +64,7 @@ McCormick_cilantro <- \() nutrition(
 
 McCormick_cumin <- \() nutrition(
   mccormickculinary = 'cumin-ground',
-  alias = '\u5b5c\u7136\u7c89', name = 'Cumin, Ground',
+  alias = cumin()@alias, name = 'Cumin, Ground',
   amazon = 'B008OGCCLC', usd = 12.75/396*1,
   servingGram = 1,
   servingTbsp = 1 #??
@@ -273,10 +273,17 @@ SimplyOrganic_cinnamonCeylon <- \() nutrition(
 
 SimplyOrganic_cumin <- \() nutrition(
   simplyorganic = 'cumin-seed-ground-2-31-oz',
-  name = 'Cumin Seed, Ground', alias = '\u5b5c\u7136\u7c89',
+  name = 'Cumin Seed, Ground', alias = cumin()@alias,
   wegmans = '791542',
   servingGram = 65, usd = 7.29, date = as.Date('2026-09-17'),
   servingTbsp = 10)
+
+SimplyOrganic_nutmeg <- \() nutrition(
+  simplyorganic = 'simply-organic-nutmeg-ground-2-30-oz',
+  name = 'Nutmeg, Ground', alias = nutmeg()@alias,
+  servingGram = 65, usd = 9.99, date = as.Date('2026-10-10'),
+  servingTbsp = 10)
+
 
 SimplyOrganic_coriander <- \() nutrition(
   simplyorganic = 'coriander-seed-ground-2-29-oz',

@@ -1,8 +1,7 @@
 
 
 
-Bundt_OLD2 <- \() new(
-  Class = 'recipe',
+Bundt_OLD2 <- \() recipe(
   class2 = 'Bundt',
   flour = c(Wegmans_pastryFlr = 400),
   sugar = 20,
@@ -28,8 +27,8 @@ Bundt_OLD2 <- \() new(
   #)
 )
 
-Bundt_OLD1 <- \() new(
-  Class = 'recipe', class2 = 'Bundt', flavor = 'OLD',
+Bundt_OLD1 <- \() recipe(
+  class2 = 'Bundt', flavor = 'OLD',
   flour = c(Wegmans_pastryFlr = 210),
   #water = 160, # a little too wet
   water = 150,
@@ -59,8 +58,8 @@ Bundt_OLD1 <- \() new(
 
 
 
-PreppyKitchen_chocolate_Bundt <- \() new(
-  Class = 'recipe', flavor = 'Chocolate Bundt',
+PreppyKitchen_chocolate_Bundt <- \() recipe(
+  flavor = 'Chocolate Bundt',
   water = c(c40 = 360),
   cocoa_cup = c(Ghirardelli_cocoa = 1.25),
   flour = c(KingArthur_allPurposeFlr = 420),
@@ -76,8 +75,8 @@ PreppyKitchen_chocolate_Bundt <- \() new(
 
 
 
-PreppyKitchen_Bundt <- \() new(
-  Class = 'recipe', flavor = 'Bundt',
+PreppyKitchen_Bundt <- \() recipe(
+  flavor = 'Bundt',
   flour = c(KingArthur_allPurposeFlr = 360),
   bakingPowder_tsp = c(TraderJoes_bakingPowder = 1),
   NaHCO3_tsp = c(ArmHammer_NaHCO3 = .5),

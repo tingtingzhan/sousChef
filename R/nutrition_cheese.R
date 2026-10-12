@@ -153,11 +153,11 @@ Wegmans_mozzarella_skim <- \() nutrition(
 
 if (FALSE) {
   nutritionlist(
-    cooking:::Philadelphia_creamCheeseSpread(),
-    cooking:::PhiladelphiaNeufchatel_creamCheeseSpread(),
-    cooking:::Wegmans_mozzarella_whole(),
-    cooking:::Wegmans_mozzarella_skim(),
-    cooking:::KraftNatural_mozzarella_fatFree()
+    sousChef:::Philadelphia_creamCheeseSpread(),
+    sousChef:::PhiladelphiaNeufchatel_creamCheeseSpread(),
+    sousChef:::Wegmans_mozzarella_whole(),
+    sousChef:::Wegmans_mozzarella_skim(),
+    sousChef:::KraftNatural_mozzarella_fatFree()
   )
 }
 

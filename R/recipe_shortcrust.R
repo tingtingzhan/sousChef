@@ -1,27 +1,19 @@
 
+# preppykitchen = c('3_a4o30fTbA' = 'classic-pastry-crust')
 
-#' @title \linkS4class{shortcrust} Recipes
-#' 
-#' @description ..
-#' 
-#' @examples
-#' new(Class = 'shortcrust')
-#' 
-#' 
-#' @export
-setClass(Class = 'shortcrust', contains = 'recipe', prototype = prototype(
-  class2 = 'Shortcrust',
-  # flour = c(Wegmans_pastryFlr = 360), # original
-  flour = c(Wegmans_pastryFlr = 370), # to have 50% fat:flour
-  dairy_brick = c(Kerrygold_butter = 1),
-  sugar = 7.5,
+
+#  class2 = 'Shortcrust',
+#  # flour = c(Wegmans_pastryFlr = 360), # original
+#  flour = c(Wegmans_pastryFlr = 370), # to have 50% fat:flour
+#  dairy_brick = c(Kerrygold_butter = 1),
+#  sugar = 7.5,
   # salt_tsp = 1/4,
-  water = c(c0 = 50), # 60g-90g,
+#  water = c(c0 = 50), # 60g-90g,
   #instruction (legacy) = c(
   #  'food processor',
   #  'Philips pasta maker'
   #),
-  portion = c(
+#  portion = c(
     # do NOT need pie weight!!
     
     # Emile Henry 9in pie dish: 1113; experimented with blackSesame_shortcrust()
@@ -31,7 +23,7 @@ setClass(Class = 'shortcrust', contains = 'recipe', prototype = prototype(
     # raw dough 400 (=1513-1113); baked 380 (=1493-1113); loose water 20/400 = 5%
     # Full edge, edge will crack after baking
     
-    'Emile Henry 9in, half-edge' = 257, # confirmed! 
+#    'Emile Henry 9in, half-edge' = 257, # confirmed! 
     # crust is buried under filling!
     # Robam: Air Fry 350F, 7min # Nice!!!
     # Half edge: raw dough 267 (=1380-1113); baked 257 (=1370-1113); loose water 10/267 = 3.75%
@@ -41,10 +33,9 @@ setClass(Class = 'shortcrust', contains = 'recipe', prototype = prototype(
     
     'Emile Henry 5in, half-edge' = 70 # ?
     # Half edge: raw dough 84 (=404-320); baked x2 (=x20-320); loose water (x1-x2)/x1 = 5%
-  ),
-  url = 'https://en.wikipedia.org/wiki/Shortcrust_pastry' # 'twice as much flour as fat by weight'
+#  ),
+#  url = 'https://en.wikipedia.org/wiki/Shortcrust_pastry' # 'twice as much flour as fat by weight'
   
-))
 
-# preppykitchen = c('3_a4o30fTbA' = 'classic-pastry-crust')
+
 

@@ -1,31 +1,4 @@
 
-#' @rdname nutrition-class
-#' 
-#' @examples
-#' nutritionlist(
-#'  cooking:::Nancys_creamCheese(),
-#'  cooking:::Philadelphia_creamCheese(),
-#'  cooking:::OrganicValley_creamCheese(),
-#'  cooking:::TraderJoes_creamCheese(),
-#'  cooking:::Tillamook_creamCheese())
-#' 
-#' nutritionlist(
-#'  cooking:::Philadelphia_creamCheese(), 
-#'  cooking:::Philadelphia_creamCheeseSpread(), 
-#'  cooking:::PhiladelphiaNeufchatel_creamCheese(), 
-#'  cooking:::PhiladelphiaNeufchatel_creamCheeseSpread())
-#' 
-#' nutritionlist(
-#'  cooking:::LandOLakes_whippedHeavyCream(),
-#'  cooking:::Lucerne_heavyCream(),
-#'  cooking:::Wegmans_heavyCream())
-#'  
-#' nutritionlist(
-#'  cooking:::TraderJoes_goat_kefir(), 
-#'  cooking:::Meyenberg_goat_kefir())
-#' 
-
-
 
 
 FageTotal0_yogurtGreek <- \() nutrition(

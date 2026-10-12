@@ -1,25 +1,5 @@
 
 
-#' @rdname nutrition-class
-#' 
-# @note
-# only 'case' page!!  ingredients more accurate!
-#' 
-#' @examples
-#' nutritionlist(
-#'  cooking:::Guittard_bittersweet63(),
-#'  cooking:::Guittard_eclipse50(),
-#'  cooking:::Guittard_solitaire54(),
-#'  cooking:::Guittard_vanilla54(),
-#'  cooking:::Guittard_solitaire52(),
-#'  cooking:::Guittard_heritage39(),
-#'  cooking:::Guittard_Dutch34milk(),
-#'  cooking:::Guittard_31milk(),
-#'  cooking:::Guittard_heritage32milk(),
-#'  cooking:::Guittard_highSierra28white()
-#' )
-#' 
-
 
 
 Guittard_31milk <- \() nutrition(

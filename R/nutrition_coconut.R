@@ -1,17 +1,4 @@
 
-#' @rdname nutrition-class
-#' 
-#' @examples
-#' nutritionlist(
-#'  cooking:::Edward_coconutShrd(),
-#'  cooking:::Edward_lite_coconutShrd(),
-#'  cooking:::Edward_coconutFlr(),
-#'  cooking:::WegmansOrganic_coconutFlr(),
-#'  cooking:::AnthonysGoods_coconutFlr(),
-#'  cooking:::BobsRedMill_coconutFlr()
-#' )
-#' 
-
 
 Edward_lite_coconutShrd <- \() nutrition(
   edwardandsons = 'lets-do-organic/products/lets-do-organic-reduced-fat-shredded-coconut',
@@ -75,27 +62,6 @@ WegmansOrganic_coconutFlr <- \() nutrition(
   fat = 2, sodium = .01, carbohydrate = 8, sugar = 1, protein = 2)
 
 
-#' @rdname nutrition-class
-#' 
-#' @examples
-#' nutritionlist(
-#'  cooking:::Kara_coconutcream(),
-#'  cooking:::ThaiKitchen_coconutcream(),
-#'  cooking:::ThaiKitchen_coconutmilk(),
-#'  cooking:::ThaiKitchen_coconutmilkLite(),
-#'  cooking:::Freenow_coconutBar(),
-#'  cooking:::Freenow_0sugar_coconutBar(),
-#'  cooking:::Luckin_coconutmilk(),
-#'  cooking:::CalifiaFarms_coconutmilk(),
-#'  cooking:::PacificFoods_coconutBar(),
-#'  cooking:::CalifiaFarms_coconutBar(),
-#'  cooking:::Dream_coconutBar(),
-#'  cooking:::CoconutPalm_coconutmilk(),
-#'  cooking:::Silk_coconutmilk(),
-#'  cooking:::SoDelicious_coconutmilk(),
-#'  cooking:::CalifiaFarms_coconutmilkwater()
-#' )
-#' 
 
 
 ThaiKitchen_coconutmilkLite <- \() nutrition(

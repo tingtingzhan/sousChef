@@ -1,7 +1,6 @@
 
 
-sashimi1 <- \() new(
-  Class = 'recipe',
+sashimi1 <- \() recipe(
   # oil = c(Kadoya_sesame_oil = 13), # maybe a little too overwhelming
   oil = c(
     Kadoya_sesame_oil = 10, # try next time

@@ -1,30 +1,4 @@
 
-#' @rdname nutrition-class
-#' 
-#' @examples
-#' nutritionlist(
-#'  matchaLatte(),
-#'  cooking:::Ippodo_uji_shimizu(),
-#'  cooking:::Starbucks_matchaLatteMix(),
-#'  cooking:::TraderJoes_matchaLatte()
-#' ) # compare dry powder
-#' 
-#' nutritionlist(
-#'  hotdrink(matchaLatte()),
-#'  cooking:::Ippodo_sayakaLatte(),
-#'  cooking:::Starbucks_matchaLatte(),
-#'  cooking:::Starbucks_matchaLatteMix() |> as('recipe'),
-#'  cooking:::Ippodo_uji_shimizu() |> as('recipe'),
-#'  cooking:::ItoEn_sweet_matcha() |> as('recipe')
-#' ) # compare hot drink
-#' 
-#' nutritionlist(
-#'  frappe(matchaLatte()),
-#'  cooking:::Starbucks_matchaFrappuccino()
-#' ) # compare frappe
-#' 
-
-
 
 
 TraderJoes_matchaLatte <- \() nutrition(
@@ -33,37 +7,9 @@ TraderJoes_matchaLatte <- \() nutrition(
   servingGram = 45, servingTbsp = 5, fat = 9, sodium = .07, sugar = 17, addedSugar = 16, protein = 2)
 
 
-Starbucks_matchaLatte <- \() nutrition(
-  starbucks_hot = '468',
-  name = 'Matcha\U1f375 Latte',
-  servingGram = 450, serving_floz = 16,
-  usd = 4.95, # Spring 2024
-  calorie = 240,
-  fat = 7, cholesterol = .025, sodium = .16, sugar = 32, protein = 12)
 
 
-Starbucks_matchaFrappuccino <- \() nutrition(
-  starbucks_iced = '439',
-  name = 'Matcha\U1f375 Frappuccino',
-  servingGram = 450, serving_floz = 16,
-  usd = 5.45, # Spring 2024
-  calorie = 420,
-  fat = 16, cholesterol = .050, sodium = .240, carbohydrate = 62, sugar = 61, protein = 6)
-
-
-Starbucks_matchaLatteMix <- \() nutrition(
-  brand = 'Starbucks\U1f1fa\U1f1f8', 
-  name = 'Matcha\U1f375 Latte Mix',
-  usd = 10.99/4, yamibuy = '25775250',
-  servingGram = 24, 
-  calorie = 103,
-  protein = 3.4, fat = 2.8, carbohydrate = 16, sugar = 16, sodium = .13,
-  suggestion = list(water = c(c80 = 180)))
-
-
-
-Ippodo_sayakaLatte <- \() new(
-  Class = 'recipe',
+Ippodo_sayakaLatte <- \() recipe(
   flavor = 'Sayaka Latte', 
   ippodotea = 'sayaka-100g',
   matcha = c(Ippodo_sayaka = 3), # matcha 1.5%
@@ -79,14 +25,14 @@ Ippodo_uji_shimizu <- \() nutrition(
   servingGram = 15, servingTbsp = 1.5,
   calorie = 60,
   carbohydrate = 15, addedSugar = 14, 
-  suggestion = list(water = c(c80 = 150)))
+  suggest = list(water = c(c80 = 150)))
 
 
 ItoEn_sweet_matcha <- \() nutrition(
   itoen = 'ito-en-matcha-green-tea-sweet-powder-sticks', jfc = '45783',
   name = 'Sweet Matcha',
   servingGram = 12, sugar = 11,
-  suggestion = list(water = c(c80 = 120)))
+  suggest = list(water = c(c80 = 120)))
 
 
 

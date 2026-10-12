@@ -5,8 +5,8 @@
 # the custard
 
 
-xiaogaojie_pasteisdenata1 <- \() new(
-  Class = 'recipe', flavor = 'pasteisdenata1',
+xiaogaojie_pasteisdenata1 <- \() recipe(
+  flavor = 'pasteisdenata1',
   water = 185,
   sugar = 200,
   #cinnamon stick 1
@@ -17,8 +17,8 @@ xiaogaojie_pasteisdenata1 <- \() new(
   egg_pc = c(eggYolk = 5),
   xiaogaojie = '-83188U6O8w')
 
-xiaogaojie_pasteisdenata2 <- \() new(
-  Class = 'recipe', flavor = 'pasteisdenata2',
+xiaogaojie_pasteisdenata2 <- \() recipe(
+  flavor = 'pasteisdenata2',
   dairy = c(
     Wegmans_heavyCream = 200,
     WegmansOrganic_whole_milk = 180
@@ -27,8 +27,7 @@ xiaogaojie_pasteisdenata2 <- \() new(
   egg_pc = c(eggYolk = 4, eggWhite = 1),
   xiaogaojie = '-83188U6O8w')
 
-Leites_pasteisdenata <- \() new(
-  Class = 'recipe',
+Leites_pasteisdenata <- \() recipe(
   alias = 'leites',
   flour_Tbsp = c(KingArthur_allPurposeFlr = 3),
   dairy_cup = c(Wegmans_whole_milk = 1.25),
@@ -40,8 +39,7 @@ Leites_pasteisdenata <- \() new(
   url = 'https://leitesculinaria.com/7759/recipes-pasteis-de-nata.html')
 
 
-TastingTable_pasteisdenata <- \() new(
-  Class = 'recipe',
+TastingTable_pasteisdenata <- \() recipe(
   alias = 'TastingTable',
   sugar_cup = c(Domino_granulated = 1),
   water_cup = 2/3,

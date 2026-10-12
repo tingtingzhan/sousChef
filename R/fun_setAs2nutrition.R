@@ -66,7 +66,7 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
   nutri@name <- x@alias
   # `numeric() - 3` returns `numeric()` 
   nutri@servingGram <- nutri@servingGram - waterLost - sum(x@sugarLost)
-  nutri@sugar <- nutri@sugar - sum(x@sugarLost)
+  nutri@sugar <- max(0, nutri@sugar - sum(x@sugarLost))
   nutri@addedSugar <- if (length(nutri@addedSugar)) {
     max(0, nutri@addedSugar - sum(x@sugarLost))
   } else numeric()

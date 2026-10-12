@@ -24,15 +24,15 @@ muffin_tmp()
 ..
 }
 \examples{
-subtract(cooking:::Keebler_grahamCrust(), sugar = 3)
-subtract(cooking:::Keebler_grahamCrust(), sugar = 5.5)
+subtract(sousChef:::Keebler_grahamCrust(), sugar = 3)
+subtract(sousChef:::Keebler_grahamCrust(), sugar = 5.5)
 
 #muffin()
 nutritionlist(
- subtract(cooking:::Brody_muffin(), sugar = 237),
- subtract(cooking:::Introvert_muffin(), sugar = 50),
- subtract(cooking:::CulinaryHill_muffin(), sugar = 155),
- subtract(cooking:::Lori_muffin(), sugar = 110))
+ subtract(sousChef:::Brody_muffin(), sugar = 237),
+ subtract(sousChef:::Introvert_muffin(), sugar = 50),
+ subtract(sousChef:::CulinaryHill_muffin(), sugar = 155),
+ subtract(sousChef:::Lori_muffin(), sugar = 110))
 
 
 }

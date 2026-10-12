@@ -2,20 +2,9 @@
 # not sure if I really want to do deep fry
 
 
-#' @title \linkS4class{sacima} Recipes
-#' 
-#' @description
-#' Non-deep-fry \linkS4class{sacima} recipe.
-#' 
-#' @examples
-#' nutritionlist(
-#'  xiaogaojie_sacima(),
-#'  Dad_sacima(),
-#'  shangshi_sacima())
-#' 
-#' @export
-setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
-  class2 = '\u8428\u5176\u9a6c'
+
+
+  sacima = '\u8428\u5176\u9a6c'
   #instruction (legacy) = c(
   #  'Manually knead pastry flour, egg and yeast',
   #  # 'Pastalinda; Thickness 7, 3 cm long, 2.5 mm cut',
@@ -26,64 +15,30 @@ setClass(Class = 'sacima', contains = 'recipe', prototype = prototype(
   #  'Ferment for 30min',
   #  'Choose Bread program (90min)'
   #)
-))
+
 
 # air fryer does not work for this dough ..
 # rice cooker not perfect but much better, however my dough is too glutinous, probably too much kneading
 
 
-#' @rdname sacima-class
-#' @export
-maple_sacima <- \() new(
-  Class = 'sacima', flavor = '\u84dd\u8393\u7cd6\u6d46',
-  # syrup = c(Stonewall_maple_syrup = 77*306/164), # sugar 25%, not bad!
-  syrup = c(Stonewall_maple_syrup = 100),
-  review = 'try again')
-
-
-
-
-#' @rdname sacima-class
-#' @export
-sacima <- \() new(
-  Class = 'sacima',
-  #bakingPowder_tsp = c(TraderJoes_bakingPowder = 1/8),
-  #homemade = c(invertSugar = 50),
-  dairy = c(Carnation_condensMilk = 80),
-  tool = list(PhilipsHD9867(fahrenheit = 350, minute = 6)),
-  review = 'try'
-  #url = c(
-  #  'www.hongbeibang.com/recipe/13806412'
-  #),
-  #youtube = c(
-  #  'YVeODUtzD7Q',
-    #Eggs 3(60 grams each) 0:24,
-    #All-purpose flour 270 grams 0:38,
-    #Baking powder 2 grams 0:44,
-)
-
-
-#' @rdname sacima-class
-#' @export
-shangshi_sacima <- \() new(
-  Class = 'recipe', flavor = 'sacima', shangshikitchen = 'dV6phomugvA',
+shangshi_sacima <- \() recipe(
+  flavor = 'sacima', 
+  shangshikitchen = 'dV6phomugvA',
   flour = c(KingArthur_allPurposeFlr = 240),
   egg_pc = c(eggYolk = 3, eggWhite = 3))
 
-#' @rdname sacima-class
-#' @export
-xiaogaojie_sacima <- \() new(
-  Class = 'recipe', flavor = 'sacima', 
+
+xiaogaojie_sacima <- \() recipe(
+  flavor = 'sacima', 
   xiaogaojie = 'VkgWeCxZfi4',
   flour = c(KingArthur_allPurposeFlr = 200),
   NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1/8),
   water = 15,
   egg_pc = c(eggYolk = 2, eggWhite = 2))
 
-#' @rdname sacima-class
-#' @export
-Dad_sacima <- \() new(
-  Class = 'recipe', flavor = 'sacima', 
+
+Dad_sacima <- \() recipe(
+  flavor = 'sacima', 
   dad1966 = 'ZK4ZoCewr0E',
   flour = c(KingArthur_allPurposeFlr = 270),
   egg_pc = c(eggYolk = 3, eggWhite = 3),

@@ -1,8 +1,8 @@
 
 
 if (FALSE) {
-  new(Class = 'recipe', 
-      flour = c(Erawan_riceFlr = 10,
+  recipe(
+    flour = c(Erawan_riceFlr = 10,
                 Wegmans_pastryFlr = 20),
       starch = c(Wegmans_corn_starch = 20, sweetPotato_starch = 20),
       NaHCO3 = c(ArmHammer_NaHCO3 = 1),
@@ -11,7 +11,7 @@ if (FALSE) {
       )
   
   
-  new(Class = 'recipe',
+  recipe(
       # flour = c(Wegmans_pastryFlr = 150),
       #starch = c(Wegmans_corn_starch = 75),
       flour = c(Wegmans_pastryFlr = 75),
@@ -26,7 +26,7 @@ if (FALSE) {
       )
   
   
-  new(Class = 'recipe', 
+  recipe(
       egg = c(eggWhite = 3.5),
       flour = c(Wegmans_pastryFlr = 10),
       starch = c(Wegmans_corn_starch = 20, sweetPotato_starch = 20),

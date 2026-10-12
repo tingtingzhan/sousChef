@@ -1,45 +1,5 @@
 
-#' @rdname nutrition-class
-#' 
-#' @examples
-#' nutritionlist(
-#'  mocaccino(),
-#'  cooking:::Rebecca_mocha(),
-#'  cooking:::Pillsbury_mocha(),
-#'  cooking:::EarlaTaylor_cocoa(),
-#'  cooking:::Mels_cocoa(),
-#'  cooking:::AmandaRettke_cocoa(),
-#'  cooking:::bargainmums_mocha()
-#' ) # compare powder recipes
-#' 
-#' nutritionlist(
-#'  mocaccino(),
-#'  cooking:::Maxwell_mochaSuisse(),
-#'  cooking:::WilliamsSonoma_mocha(),
-#'  cooking:::Ghirardelli_mochaFrappe(),
-#'  cooking:::Godiva_milkCocoa(),
-#'  cooking:::Godiva_cocoa(),
-#'  cooking:::KingArthur_milkChocolate(),
-#'  cooking:::Nestle_skimCocoa(),
-#'  cooking:::Nestle_richChocolate(),
-#'  cooking:::Nestle_cocoSupreme(),
-#'  cooking:::SwissMiss_simplyCocoaMilk(),
-#'  cooking:::SwissMiss_milkCocoa(),
-#'  cooking:::Starbucks_cocoa(),
-#'  cooking:::Starbucks_cocoa_Kcup(),
-#'  cooking:::Starbucks_crema_chocolate()
-#' ) # compare commercial powders
-#' 
-#' nutritionlist(
-#'  hotdrink(mocaccino()),
-#'  cooking:::Starbucks_mocha()
-#' ) # compare hot drink
-#' 
-#' nutritionlist(
-#'  frappe(mocaccino()),
-#'  cooking:::Starbucks_mochaFrappuccino(),
-#'  cooking:::Starbucks_mochaFrappuccino_bottle()
-#' ) # compare frappe
+
 
 
 
@@ -51,36 +11,6 @@ WilliamsSonoma_mocha <- \() nutrition(
   calorie = 220,
   fat = 14, cholesterol = .005, carbohydrate = 24, addedSugar = 20, protein = 2)
 
-
-
-Starbucks_mocha <- \() nutrition(
-  starbucks_hot = '408',
-  name = 'Caff\u00e8 Mocha',
-  servingGram = 470, serving_floz = 16,
-  #caffeine 175 mg*
-  calorie = 370, 
-  fat = 15, cholesterol = .045, sodium = .150, carbohydrate = 43, sugar = 35, protein = 14)
-
-
-
-
-Starbucks_mochaFrappuccino <- \() nutrition(
-  starbucks_iced = '426',
-  name = 'Mocha Frappuccino',
-  servingGram = 470, serving_floz = 16,
-  calorie = 370,
-  # Caffeine 100 mg*
-  fat = 15, cholesterol = .045, sodium = .220, carbohydrate = 54, sugar = 51, protein = 5)
-
-
-
-Starbucks_mochaFrappuccino_bottle <- \() nutrition(
-  name = 'Mocha Frappuccino',
-  brand = 'Starbucks (Bottled)',
-  walmart = '14532482', costcoBiz = '100228968', target = 'A-81793567',
-  serving_floz = 13.7, servingGram = 405, # use water density
-  calorie = 260,
-  fat = 4.5, cholesterol = .02, sodium = .14, carbohydrate = 47, sugar = 45, protein = 9)
 
 
 
@@ -109,54 +39,9 @@ Ghirardelli_mochaFrappe <- \() nutrition(
 
 
 
-Starbucks_crema_chocolate <- \() nutrition(
-  starbucks = 'Starbucks-Crema-Collection-Premium-Instant-Molten-Chocolate-Flavored',
-  name = 'Molten Chocolate',
-  walmart = '5742782029',
-  # bottle 202g 7.12oz
-  servingGram = 18, servingTbsp = 2,
-  calorie = 70, 
-  # fat = 0, 
-  sodium = .095,
-  carbohydrate = 16, sugar = 13, addedSugar = 9, protein = 1)
 
-Starbucks_crema_Madagascar_vanilla <- \() nutrition(
-  starbucks = 'Starbucks-Crema-Collection-Premium-Instant-Madagascar-Vanilla-Flavored',
-  name = 'Madagascar\U0001f1f2\U0001f1ec Vanilla',
-  walmart = '9666971961',
-  # bottle 202g 7.12oz
-  servingGram = 18, servingTbsp = 2,
-  calorie = 70, 
-  # fat = 0, 
-  sodium = .055,
-  carbohydrate = 16, fiber = 1, sugar = 13, addedSugar = 9, protein = 1)
-
-Starbucks_crema_salted_caramel <- \() nutrition(
-  starbucks = 'Starbucks-Crema-Collection-Premium-Instant-Salted-Caramel-Flavored',
-  name = 'Salted Caramel',
-  walmart = '9697318600',
-  # bottle 202g 7.12oz
-  servingGram = 18, servingTbsp = 2,
-  calorie = 70, 
-  # fat = 0, 
-  sodium = .110,
-  carbohydrate = 16, fiber = 2, sugar = 11, addedSugar = 9, protein = 1)
-
-Starbucks_crema_pumpkinSpice <- \() nutrition(
-  starbucks = 'starbucks-crema-collection-premium-instant-pumpkin-spice-flavored-coffee',
-  name = 'Pumpkin\U1f383 Spice',
-  walmart = '17795600806',
-  # bottle 202g 7.12oz
-  servingGram = 18, servingTbsp = 2,
-  calorie = 70, 
-  # fat = 0, 
-  sodium = .035,
-  carbohydrate = 16, sugar = 13, addedSugar = 9, protein = 1)
-
-
-
-Pillsbury_mocha <- \() new(
-  Class = 'recipe', author = 'Pillsbury', flavor = 'Mocha Mix',
+Pillsbury_mocha <- \() recipe(
+  author = 'Pillsbury', flavor = 'Mocha Mix',
   url = 'https://www.pillsbury.com/recipes/mocha-mix/c93163dd-c5da-44ff-b3e6-9698e855fd5f',
   misc_cup = c(Nestle_coffeeMate = 2.25),
   sugar_cup = 1.5, # didnt say confectioners or granulated
@@ -167,8 +52,8 @@ Pillsbury_mocha <- \() new(
 
 
 
-Rebecca_mocha <- \() new(
-  Class = 'recipe', author = 'Rebecca', flavor = 'Mocha Mix',
+Rebecca_mocha <- \() recipe(
+  author = 'Rebecca', flavor = 'Mocha Mix',
   allrecipes = '23828/hot-mocha-drink-mix/',
   sugar_cup = c(Domino_granulated = 1),
   dairy_cup = c(Carnation_drymilk = 1),
@@ -180,8 +65,8 @@ Rebecca_mocha <- \() new(
 
 
 
-bargainmums_mocha <- \() new(
-  Class = 'recipe', author = 'Bargain Mums', flavor = 'Mocha Mix',
+bargainmums_mocha <- \() recipe(
+  author = 'Bargain Mums', flavor = 'Mocha Mix',
   coffee = c(NescafeGold_blonde = 30), 
   cocoa = c(KingArthur_Bensdorp = 50), 
   sugar = 100, 
@@ -193,14 +78,6 @@ bargainmums_mocha <- \() new(
 
 
 
-
-Starbucks_cocoa <- \() nutrition(
-  # sams = 'P03020738', usd = 8.48/567*28, # no longer in store
-  costco = '100071096', usd = 44.99/2/850*28,
-  brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Hot Cocoa, Tin',
-  servingGram = 28, servingTbsp = 2.5, 
-  calorie = 100,
-  fat = 2.5, carbohydrate = 22, sugar = 17, addedSugar = 16, protein = 2)
 
 
 
@@ -219,7 +96,7 @@ Godiva_milkCocoa <- \() nutrition(
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
   fat = 2.5, sodium = .005, carbohydrate = 28, sugar = 24, addedSugar = 23, protein = 2,
-  suggestion = list(dairy_cup = c(Wegmans_whole_milk = 1)))
+  suggest = list(dairy_cup = c(Wegmans_whole_milk = 1)))
 
 
 
@@ -228,7 +105,7 @@ Godiva_cocoa <- \() nutrition(
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
   fat = 3.5, carbohydrate = 26, addedSugar = 20, protein = 3,
-  suggestion = list(dairy_cup = c(Wegmans_whole_milk = 1)))
+  suggest = list(dairy_cup = c(Wegmans_whole_milk = 1)))
 
 
 
@@ -241,7 +118,7 @@ SwissMiss_simplyCocoaMilk <- \() nutrition(
   servingGram = 24, 
   calorie = 100,
   sodium = .15, carbohydrate = 22, addedSugar = 20, protein = 1,
-  suggestion = list(
+  suggest = list(
     dairy_cup = c(WegmansOrganic_2perc_milk = 1)
   ))
 
@@ -255,7 +132,7 @@ Nestle_richChocolate <- \() nutrition(
   servingGram = 20, 
   calorie = 80,
   fat = 2, sodium = .19, carbohydrate = 16, sugar = 12, addedSugar = 10,
-  suggestion = list(
+  suggest = list(
     #6 fl. oz. hot water or milk
     water_cup = c(c80 = 6/8)
   ))
@@ -268,7 +145,7 @@ Nestle_skimCocoa <- \() nutrition(
   servingGram = 8, 
   calorie = 25,
   sodium = .135, carbohydrate = 5, sugar = 4, protein = 1,
-  suggestion = list(
+  suggest = list(
     # 6 fl. oz. hot water or milk
     water_cup = c(c80 = 6/8)
   ))
@@ -294,19 +171,10 @@ Nestle_cocoSupreme <- \() nutrition(
 
 
 
-Starbucks_mochaSauce <- \() nutrition(
-  walmart = '903031815', usd = 8.43/12, # out of stock
-  brand = 'Starbucks', name = 'Mocha Sauce',
-  servingGram = 30, serving_floz = 1, # servingTbsp = 2, # 12floz
-  calorie = 100,
-  fat = .5, carbohydrate = 23, sugar = 19, protein = 1)
 
 
-
-
-
-EarlaTaylor_cocoa <- \() new(
-  Class = 'recipe', author = 'Earla Taylor', flavor = 'Cocoa Mix',
+EarlaTaylor_cocoa <- \() recipe(
+  author = 'Earla Taylor', flavor = 'Cocoa Mix',
   allrecipes = '9335/hot-cocoa-mix/',
   dairy_cup = c(Carnation_drymilk = 10),
   sugar_cup = c(Domino_10x = 4.75),
@@ -316,8 +184,8 @@ EarlaTaylor_cocoa <- \() new(
 
 
 
-Mels_cocoa <- \() new(
-  Class = 'recipe', author = 'Mel\'s', flavor = 'Cocoa Mix',
+Mels_cocoa <- \() recipe(
+  author = 'Mel\'s', flavor = 'Cocoa Mix',
   url = 'https://www.melskitchencafe.com/homemade-hot-chocolate-mix-another-simple-gift-idea/',
   dairy = c(Carnation_drymilk = 405),
   sugar = 228,
@@ -328,8 +196,8 @@ Mels_cocoa <- \() new(
 
 
 
-AmandaRettke_cocoa <- \() new(
-  Class = 'recipe', author = 'Amanda Rettke', flavor = 'Cocoa Mix',
+AmandaRettke_cocoa <- \() recipe(
+  author = 'Amanda Rettke', flavor = 'Cocoa Mix',
   url = 'https://iambaker.net/hot-cocoa-mix-recipe/',
   sugar = 250,
   cocoa = c(KingArthur_Bensdorp = 118),
@@ -342,12 +210,6 @@ AmandaRettke_cocoa <- \() new(
 
 
 
-Starbucks_cocoa_Kcup <- \() nutrition(
-  starbucks = 'classic-hot-cocoa',
-  name = 'Hot Cocoa, K-cup',
-  servingGram = 21, 
-  calorie = 90,
-  fat = 3, sodium = .19, carbohydrate = 13, addedSugar = 13, protein = 2)
 
 # https://www.ghirardelli.com/chocolate-mocha-premium-hot-cocoa-61701cs
 # https://www.ghirardelli.com/double-chocolate-hot-cocoa-mix-6-bags-61699cs

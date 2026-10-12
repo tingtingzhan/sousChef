@@ -1,21 +1,6 @@
 
-
-#' @title \linkS4class{crabCake} Recipe
-#' 
-#' @description ..
-#' 
-#' @examples 
-#' crabCake()
-#' 
-#' @export
-setClass(Class = 'crabCake', contains = 'recipe', prototype = prototype(
-  class2 = 'Crab Cake'
-))
-
-#' @rdname crabCake-class
-#' @export
-crabCake <- \() new(
-  Class = 'crabCake',
+OnceUponAChef_crabCake <- \() recipe(
+  flavor = 'Crab Cake',
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   sauce_tsp = c(
     Hellmanns_mayonnaise = 2.5,

@@ -7,17 +7,7 @@
 
 # 1.44 / 28.35 * 45 = 2.29
 
-#' @title Invert Sugar Syrup Recipes
-#' 
-#' @description ..
-#' 
-#' @examples 
-#' invertSugar()
-#' 
-#' @name invertSugar
-#' @export
-invertSugar <- \() new(
-  Class = 'recipe', 
+xiaogaojie_invertSugar <- \() recipe(
   flavor = '\u8f6c\u5316\u7cd6\u6d46 Invert Sugar Syrup',
   sugar = 600, 
   water = c(c22 = 60, c100 = 300), 

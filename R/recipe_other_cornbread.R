@@ -1,8 +1,8 @@
 
 
 
-Wegmans_cornbread_recipe <- \() new(
-  Class = 'recipe', wegmans = '3044',
+Wegmans_cornbread_recipe <- \() recipe(
+  wegmans = '3044',
   flavor = 'Cornbread',
   #Wegmans Avocado Oil Cooking Spray
   grain_cup = c(IndianHead_yellow_cornmeal = 3),
@@ -19,8 +19,8 @@ Wegmans_cornbread_recipe <- \() new(
 
 
 
-BethanyWeathersby_cornbread <- \() new(
-  Class = 'recipe', flavor = 'Cornbread', author = 'Bethany Weathersby',
+BethanyWeathersby_cornbread <- \() recipe(
+  flavor = 'Cornbread', author = 'Bethany Weathersby',
   sugar_cup = c(Domino_granulated = 2/3),
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   dairy_cup = c(Kerrygold_butter = 1/2,
@@ -33,8 +33,8 @@ BethanyWeathersby_cornbread <- \() new(
 
 
 
-bluegirl_cornbread <- \() new(
-  Class = 'recipe', flavor = 'Cornbread', author = 'bluegirl',
+bluegirl_cornbread <- \() recipe(
+  flavor = 'Cornbread', author = 'bluegirl',
   flour_cup = c(KingArthur_allPurposeFlr = 1),
   grain_cup = c(Albertsons_yellow_cornmeal = 1),
   sugar_cup = c(Domino_granulated = 2/3),
@@ -46,8 +46,8 @@ bluegirl_cornbread <- \() new(
   allrecipes = '17891/golden-sweet-cornbread/')
 
 
-PreppyKitchen_cornbread <- \() new(
-  Class = 'recipe', flavor = 'Cornbread',
+PreppyKitchen_cornbread <- \() recipe(
+  flavor = 'Cornbread',
   grain = c(Quaker_yellow_cornmeal = 255), # 1.5 cup is not 255g
   flour_cup = c(KingArthur_allPurposeFlr = 3/4),
   sugar_cup = c(Domino_granulated = 1/4), # this is not 30g
@@ -63,8 +63,8 @@ PreppyKitchen_cornbread <- \() new(
     'vQM-SFKSqcg' = 'cornbread-recipe' # youtube = '16YfyByvLZg' same recipe!
   ))
 
-Quaker_cornbread <- \() new(
-  Class = 'recipe', flavor = 'Cornbread',
+Quaker_cornbread <- \() recipe(
+  flavor = 'Cornbread',
   quakeroats = 'golden-cornbread',
   oil_Tbsp = c(Wegmans_vegetable_oil = 2),
   grain_cup = c(Quaker_yellow_cornmeal = 1.5),
@@ -75,8 +75,8 @@ Quaker_cornbread <- \() new(
   egg_pc = c(eggYolk = 1, eggWhite = 1))
 
 
-JoshuaWeissman_cornbread <- \() new(
-  Class = 'recipe', flavor = 'Cornbread', 
+JoshuaWeissman_cornbread <- \() recipe(
+  flavor = 'Cornbread', 
   # 1/2 bunch fresh sage 
   # 1/2 bunch fresh thyme 
   flour_cup = c(KingArthur_allPurposeFlr = 1.25), # this is not 185g though..
@@ -93,8 +93,7 @@ JoshuaWeissman_cornbread <- \() new(
 
 
 
-Jiffy_cornMuffin <- \() new(
-  Class = 'recipe',
+Jiffy_cornMuffin <- \() recipe(
   flavor = 'Corn Muffin', 
   author = 'Jiffy', 
   url = 'https://www.jiffymix.com/recipe/air-fryer-corn-muffins/',
@@ -104,8 +103,7 @@ Jiffy_cornMuffin <- \() new(
 
 
 
-WholeFoods365_cornbread <- \() new(
-  Class = 'recipe',
+WholeFoods365_cornbread <- \() recipe(
   flavor = 'Cornbread',
   author = WholeFoods365_cornbreadMix()@brand,
   misc = c(WholeFoods365_cornbreadMix = 425),
@@ -116,8 +114,7 @@ WholeFoods365_cornbread <- \() new(
 
 
 
-Stonewall_cornbread <- \() new(
-  Class = 'recipe',
+Stonewall_cornbread <- \() recipe(
   flavor = 'Cornbread',
   author = Stonewall_cornbreadMix()@brand, 
   misc = c(Stonewall_cornbreadMix = 453.6),
@@ -127,8 +124,7 @@ Stonewall_cornbread <- \() new(
 
 
 
-TraderJoes_cornbread <- \() new(
-  Class = 'recipe',
+TraderJoes_cornbread <- \() recipe(
   flavor = 'Cornbread',
   #author = 'Trader Joes', # recipe on packaging
   author = TraderJoes_cornbreadMix()@brand, 
@@ -139,8 +135,7 @@ TraderJoes_cornbread <- \() new(
 
 
 
-Krusteaz_southern_cornbread <- \() new(
-  Class = 'recipe',
+Krusteaz_southern_cornbread <- \() recipe(
   flavor = 'Cornbread',
   author = Krusteaz_southern_cornbreadMix()@brand,
   misc = c(Krusteaz_southern_cornbreadMix = 326), # 11.5 oz
@@ -153,8 +148,7 @@ Krusteaz_southern_cornbread <- \() new(
 
 
 
-BobsRedMill_cornbread <- \() new(
-  Class = 'recipe',
+BobsRedMill_cornbread <- \() recipe(
   flavor = 'Cornbread',
   author = BobsRedMill_cornbreadMix()@brand,
   misc = c(BobsRedMill_cornbreadMix = 680),
@@ -163,8 +157,7 @@ BobsRedMill_cornbread <- \() new(
   oil_cup = c(Wegmans_vegetable_oil = 1/2))
 
 
-Fleischmanns_cornbread <- \() new(
-  Class = 'recipe',
+Fleischmanns_cornbread <- \() recipe(
   flavor = 'Cornbread',
   author = Fleischmanns_cornbreadMix()@brand,
   misc = c(Fleischmanns_cornbreadMix = 425),

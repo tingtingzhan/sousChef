@@ -4,98 +4,50 @@
 
 
 
-#' @title \linkS4class{waterDough}, \linkS4class{shortDough} and \linkS4class{largeYouSu} Recipes
-#' 
-#' @description ..
+#' @title Chinese Flaky Pastry
 #' 
 #' @examples 
 #' nutritionlist(
-#'  Dad_yolkPastry_waterDough(),
-#'  Dad_oxTongue1_waterDough(), 
-#'  Dad_oxTongue2_waterDough(),
-#'  Dad_blackSesamePastry_waterDough(), 
-#'  Dad_pepperPastry_waterDough(),
-#'  laofangu_durianSu_waterDough(),
-#'  Dad_flowerPastry_waterDough(), 
-#'  shangshi_oxTongue_waterDough(),
-#'  laofangu_magnolia_waterDough(),
-#'  PinNuo_oxTongue_waterDough(),
-#'  Dad_sweetPastry_waterDough()
+#'  sousChef:::Dad_yolkPastry_waterDough(),
+#'  sousChef:::Dad_oxTongue1_waterDough(), 
+#'  sousChef:::Dad_oxTongue2_waterDough(),
+#'  sousChef:::Dad_blackSesamePastry_waterDough(), 
+#'  sousChef:::Dad_pepperPastry_waterDough(),
+#'  sousChef:::laofangu_durianSu_waterDough(),
+#'  sousChef:::Dad_flowerPastry_waterDough(), 
+#'  sousChef:::shangshi_oxTongue_waterDough(),
+#'  sousChef:::laofangu_magnolia_waterDough(),
+#'  sousChef:::PinNuo_oxTongue_waterDough(),
+#'  sousChef:::Dad_sweetPastry_waterDough()
 #' )
 #' 
 #' nutritionlist(
-#'  shangshi_oxTongue_shortDough(),
-#'  Dad_flowerPastry_shortDough(),
-#'  Dad_oxTongue1_shortDough(),
-#'  Dad_yolkPastry_shortDough(),
-#'  laofangu_magnolia_shortDough(),
-#'  Dad_sweetPastry_shortDough(),
-#'  Dad_pepperPastry_shortDough(),
-#'  laofangu_durianSu_shortDough()
+#'  sousChef:::shangshi_oxTongue_shortDough(),
+#'  sousChef:::Dad_flowerPastry_shortDough(),
+#'  sousChef:::Dad_oxTongue1_shortDough(),
+#'  sousChef:::Dad_yolkPastry_shortDough(),
+#'  sousChef:::laofangu_magnolia_shortDough(),
+#'  sousChef:::Dad_sweetPastry_shortDough(),
+#'  sousChef:::Dad_pepperPastry_shortDough(),
+#'  sousChef:::laofangu_durianSu_shortDough()
 #' )
 #' 
 #' nutritionlist(
-#'  Dad_blackSesamePastry_largeYouSu(),
-#'  PinNuo_largeYouSu()
+#'  sousChef:::Dad_blackSesamePastry_largeYouSu(),
+#'  sousChef:::PinNuo_largeYouSu()
 #' )
 #' 
-#' @references
-#' \url{https://en.wikipedia.org/wiki/Chinese_flaky_pastry}
-#' 
-#' \url{https://cookclimbcode.substack.com/p/chinese-flaky-pastry}
-#' 
-#' 
-#' 
-#' 
-#' @name flakyPastry
-#' @aliases waterDough-class
-#' @export
-setClass(Class = 'waterDough', contains = 'recipe', prototype = prototype(
-  class2 = '\u6dee\u626c\u6c34\u6cb9\u9762\u76ae'
-))
-
-waterDough <- \() new(
-  Class = 'waterDough',
-  flour = c(Wegmans_pastryFlr = 400), 
-  fat = c(Epic_lard = 50), 
-  water = 150,
-  review = 'try'
-)
+#' @name Chinese_flaky_pastry
+NULL
 
 
-#' @rdname flakyPastry
-#' 
-#' @details
-#' \linkS4class{shortDough}, or shortened dough, is solid.
-#' 
-#' @aliases shortDough-class
-#' @export
-setClass(Class = 'shortDough', contains = 'recipe', prototype = prototype(
-  class2 = '\u5c0f\u5305\u9165'
-))
+# @references
+# \url{https://en.wikipedia.org/wiki/Chinese_flaky_pastry}
+# \url{https://cookclimbcode.substack.com/p/chinese-flaky-pastry}
 
-#' @rdname flakyPastry
-#' @aliases shortDough-class
-#' @export
-shortDough_lard <- \() new(
-  Class = 'shortDough', 
-  flour = c(Wegmans_pastryFlr = 200), 
-  fat = c(Epic_lard = 80),
-  review = 'try'
-)
-
-
-
-#' @rdname flakyPastry
-#' 
-#' @details
-#' \linkS4class{largeYouSu} is a paste.
-#' 
-#' @aliases largeYouSu-class
-#' @export
-setClass(Class = 'largeYouSu', contains = 'recipe', prototype = prototype(
-  class2 = '\u5927\u5305\u9165'
-))
+# waterDough = '\u6dee\u626c\u6c34\u6cb9\u9762\u76ae'
+# shortDough = '\u5c0f\u5305\u9165'
+# largeYouSu = '\u5927\u5305\u9165'
 
 
 
@@ -112,30 +64,28 @@ setClass(Class = 'largeYouSu', contains = 'recipe', prototype = prototype(
 
 
 
-#' @rdname flakyPastry
-#' @export
-Dad_flowerPastry_waterDough <- \() new(
-  Class = 'recipe', flavor = '\u9c9c\u82b1\u997c(\u6c34)', 
+
+
+Dad_flowerPastry_waterDough <- \() recipe(
+  flavor = '\u9c9c\u82b1\u997c(\u6c34)', 
   dad1966 = 'DNnpZDUWJYk',
   flour = c(KingArthur_allPurposeFlr = 150), 
   oil = c(Wegmans_vegetable_oil = 40), sugar = 10, water = 85,
   portion = c('4x\u9c9c\u82b1\u997c(\u5927\u5305\u9165)' = 71))
 
 
-#' @rdname flakyPastry
-#' @export
-Dad_flowerPastry_shortDough <- \() new(
-  Class = 'recipe', flavor = '\u9c9c\u82b1\u997c water', 
+
+Dad_flowerPastry_shortDough <- \() recipe(
+  flavor = '\u9c9c\u82b1\u997c water', 
   dad1966 = 'DNnpZDUWJYk',
   flour = c(KingArthur_allPurposeFlr = 150), 
   oil = c(Wegmans_vegetable_oil = 75),
   portion = c('4x\u9c9c\u82b1\u997c(\u5927\u5305\u9165)' = 56))
 
 
-#' @rdname flakyPastry
-#' @export
-Dad_oxTongue1_waterDough <- \() new(
-  Class = 'recipe', flavor = '\u725b\u820c\u997c1(\u6c34)',
+
+Dad_oxTongue1_waterDough <- \() recipe(
+  flavor = '\u725b\u820c\u997c1(\u6c34)',
   flour = c(KingArthur_allPurposeFlr = 120), 
   oil = c(Wegmans_vegetable_oil = 30), sugar = 10, water = 60,
   portion = c(
@@ -143,10 +93,10 @@ Dad_oxTongue1_waterDough <- \() new(
   ),
   dad1966 = 'v4fPRmuu5dA')
 
-#' @rdname flakyPastry
-#' @export
-Dad_oxTongue1_shortDough <- \() new(
-  Class = 'recipe', flavor = '\u725b\u820c\u997c1',
+
+
+Dad_oxTongue1_shortDough <- \() recipe(
+  flavor = '\u725b\u820c\u997c1',
   flour = c(KingArthur_allPurposeFlr = 120),
   oil = c(Wegmans_vegetable_oil = 60),
   portion = c(
@@ -157,19 +107,18 @@ Dad_oxTongue1_shortDough <- \() new(
   #  'Jan 2024' = 'XLj7W76UFbs'
   #)
 
-#' @rdname flakyPastry
-#' @export
-shangshi_oxTongue_shortDough <- \() new(
-  Class = 'recipe', flavor = '\u725b\u820c\u997c', 
+
+
+shangshi_oxTongue_shortDough <- \() recipe(
+  flavor = '\u725b\u820c\u997c', 
   shangshikitchen = '2maemGhLN8c',
   flour = c(KingArthur_allPurposeFlr = 140), 
   dairy = c(Kerrygold_butter = 70),
   portion = c('\u5c0f\u5305\u9165' = 13))
 
-#' @rdname flakyPastry
-#' @export
-shangshi_oxTongue_waterDough <- \() new(
-  Class = 'recipe', flavor = '\u725b\u820c\u997c(\u6c34)',
+
+shangshi_oxTongue_waterDough <- \() recipe(
+  flavor = '\u725b\u820c\u997c(\u6c34)',
   flour = c(KingArthur_allPurposeFlr = 200),
   portion = c('\u5c0f\u5305\u9165' = 24),
   dairy = c(Kerrygold_butter = 43), 
@@ -178,10 +127,9 @@ shangshi_oxTongue_waterDough <- \() new(
 
 
 
-#' @rdname flakyPastry
-#' @export
-Dad_blackSesamePastry_waterDough <- \() new(
-  Class = 'recipe', flavor = '\u9ed1\u829d\u9ebb\u9165\u997c(\u6c34)', 
+
+Dad_blackSesamePastry_waterDough <- \() recipe(
+  flavor = '\u9ed1\u829d\u9ebb\u9165\u997c(\u6c34)', 
   dad1966 = 'n_J9ly98Tvw',
   flour = c(KingArthur_allPurposeFlr = 300), 
   sugar = 30, water = 160, 
@@ -189,10 +137,9 @@ Dad_blackSesamePastry_waterDough <- \() new(
   portion = c('\u5927\u5305\u9165' = 36))
 
 
-#' @rdname flakyPastry
-#' @export
-Dad_blackSesamePastry_largeYouSu <- \() new(
-  Class = 'recipe', flavor = '\u9ed1\u829d\u9ebb\u9165\u997c', 
+
+Dad_blackSesamePastry_largeYouSu <- \() recipe(
+  flavor = '\u9ed1\u829d\u9ebb\u9165\u997c', 
   dad1966 = 'n_J9ly98Tvw',
   flour = c(KingArthur_allPurposeFlr = 100), 
   oil = c(Mazola_corn_oil = 100),
@@ -200,95 +147,74 @@ Dad_blackSesamePastry_largeYouSu <- \() new(
 
 
 
-#' @rdname flakyPastry
-#' @export
-Dad_yolkPastry_waterDough <- \() new(
-  Class = 'recipe', flavor = '\u54b8\u86cb\u9ec4\u9165(\u6c34)',
+
+Dad_yolkPastry_waterDough <- \() recipe(
+  flavor = '\u54b8\u86cb\u9ec4\u9165(\u6c34)',
   flour = c(KingArthur_allPurposeFlr = 240),
   dairy = c(WegmansOrganic_ghee = 80), 
   sugar = 10, water = 120,
   dad1966 = 'j-Y4KeE69DY')
 
-#' @rdname flakyPastry
-#' @export
-Dad_yolkPastry_shortDough <- \() new(
-  Class = 'recipe', flavor = '\u54b8\u86cb\u9ec4\u9165',
+
+Dad_yolkPastry_shortDough <- \() recipe(
+  flavor = '\u54b8\u86cb\u9ec4\u9165',
   flour = c(KingArthur_allPurposeFlr = 240),
   dairy = c(WegmansOrganic_ghee = 120),
   dad1966 = 'j-Y4KeE69DY')
 
-# @rdname flakyPastry
-# @export
-cocoa_Dad_yolkPastry_largeYouSu <- \() new(
-  Class = 'recipe', 
-  Dad_yolkPastry_shortDough(), 
-  cocoa = c(KingArthur_Bensdorp = 12))
-
-# @rdname flakyPastry
-# @export
-matcha_Dad_yolkPastry_largeYouSu <- \() new(
-  Class = 'recipe', 
-  Dad_yolkPastry_shortDough(), 
-  matcha = c(Sencha_everyday_matcha = 12))
 
 
-#' @rdname flakyPastry
-#' @export
-PinNuo_oxTongue_waterDough <- \() new(
-  Class = 'recipe', flavor = '\u725b\u820c\u997c(\u6c34)',
+
+
+PinNuo_oxTongue_waterDough <- \() recipe(
+  flavor = '\u725b\u820c\u997c(\u6c34)',
   flour = c(KingArthur_allPurposeFlr = 500),
   yeast = c(Fleischmanns_instant = 4), 
   Na2CO3 = c(Na2CO3 = 1), water = 320, 
   pino = 'fC2zXSK9PxM') # this video has no largeYouSu recipe!
 
-#' @rdname flakyPastry
-#' @export
-PinNuo_largeYouSu <- \() new(
-  Class = 'recipe', flavor = 'large you-su',
+
+PinNuo_largeYouSu <- \() recipe(
+  flavor = 'large you-su',
   flour = c(KingArthur_allPurposeFlr = 100),
   spice = c(SimplyOrganic_5spice = 3),
   salt = 10, oil = c(Wegmans_vegetable_oil = 120),
   pino = 'SbeWX67yd14')
 
 
-#' @rdname flakyPastry
-#' @export
-laofangu_magnolia_waterDough <- \() new(
-  Class = 'recipe', flavor = '\u7389\u5170\u82b1(\u6c34)', 
+
+laofangu_magnolia_waterDough <- \() recipe(
+  flavor = '\u7389\u5170\u82b1(\u6c34)', 
   laofangu = 'h39opPVlGKo',
   flour = c(KingArthur_allPurposeFlr = 125), 
   fat = c(Epic_lard = 30), water = 80)
 
-#' @rdname flakyPastry
-#' @export
-laofangu_magnolia_shortDough <- \() new(
-  Class = 'recipe', flavor = '\u7389\u5170\u82b1', 
+
+laofangu_magnolia_shortDough <- \() recipe(
+  flavor = '\u7389\u5170\u82b1', 
   laofangu = 'h39opPVlGKo',
   flour = c(Wegmans_pastryFlr = 125), 
   fat = c(Epic_lard = 65))
 
-#' @rdname flakyPastry
-#' @export
-Dad_pepperPastry_waterDough <- \() new(
-  Class = 'recipe', flavor = '\u6912\u76d0\u9165(\u6c34)', 
+
+Dad_pepperPastry_waterDough <- \() recipe(
+  flavor = '\u6912\u76d0\u9165(\u6c34)', 
   dad1966 = 'D5bRV_pcywY',
   flour = c(KingArthur_allPurposeFlr = 400), water = 210, 
   dairy = c(Kerrygold_butter = 60))
 
-#' @rdname flakyPastry
-#' @export
-Dad_pepperPastry_shortDough <- \() new(
-  Class = 'recipe', flavor = '\u6912\u76d0\u9165', 
+
+Dad_pepperPastry_shortDough <- \() recipe(
+  flavor = '\u6912\u76d0\u9165', 
   dad1966 = 'D5bRV_pcywY',
   starch = c(Wegmans_corn_starch = 150), # will be more flaky!
   dairy = c(Kerrygold_butter = 150))
 
 
 
-#' @rdname flakyPastry
-#' @export
-laofangu_durianSu_waterDough <- \() new(
-  Class = 'recipe', flavor = '\u69b4\u83b2\u9165(\u6c34)', 
+
+laofangu_durianSu_waterDough <- \() recipe(
+  flavor = '\u69b4\u83b2\u9165(\u6c34)', 
   laofangu = 'p7CExuQQWiA',
   flour = c(Wegmans_pastryFlr = 250), 
   sugar = 25, 
@@ -296,34 +222,27 @@ laofangu_durianSu_waterDough <- \() new(
   egg_pc = c(eggYolk = 1, eggWhite = 1), water = 100)
 
 
-#' @rdname flakyPastry
-#' @export
-laofangu_durianSu_shortDough <- \() new(
-  Class = 'recipe', flavor = '\u69b4\u83b2\u9165', 
+laofangu_durianSu_shortDough <- \() recipe(
+  flavor = '\u69b4\u83b2\u9165', 
   laofangu = 'p7CExuQQWiA',
   flour = c(Wegmans_pastryFlr = 250), 
   dairy = c(Kerrygold_butter = 450))
 
-#' @rdname flakyPastry
-#' @export
-Dad_sweetPastry_waterDough <- \() new(
-  Class = 'recipe', flavor = '\u7cd6\u9165\u997c(\u6c34)', 
+
+Dad_sweetPastry_waterDough <- \() recipe(
+  flavor = '\u7cd6\u9165\u997c(\u6c34)', 
   dad1966 = 'CEHbZrNHNG4',
   flour = c(KingArthur_allPurposeFlr = 500), 
   yeast = c(Fleischmanns_instant = 4), water = 320)
 
-#' @rdname flakyPastry
-#' @export
-Dad_sweetPastry_shortDough <- \() new(
-  Class = 'recipe', flavor = '\u7cd6\u9165\u997c', 
+Dad_sweetPastry_shortDough <- \() recipe(
+  flavor = '\u7cd6\u9165\u997c', 
   dad1966 = 'CEHbZrNHNG4',
   flour = c(KingArthur_allPurposeFlr = 300), 
   oil = c(Wegmans_vegetable_oil = 160))
 
-#' @rdname flakyPastry
-#' @export
-Dad_oxTongue2_waterDough <- \() new(
-  Class = 'recipe', flavor = '\u725b\u820c\u997c2(\u6c34)',
+Dad_oxTongue2_waterDough <- \() recipe(
+  flavor = '\u725b\u820c\u997c2(\u6c34)',
   flour = c(KingArthur_allPurposeFlr = 200), 
   water = 100, 
   fat = c(Epic_lard = 60),

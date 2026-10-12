@@ -1,29 +1,7 @@
 
 
-#' @rdname nutrition-class
-#' 
-#' @examples
-#' nutritionlist(
-#'   cooking:::Baileys_tiramisu(),
-#'   cooking:::Baileys_espresso(),
-#'   cooking:::Kahlua_coffee(),
-#'   cooking:::Kahlua_especial(),
-#'   cooking:::CafeGranita_coffee(),
-#'   cooking:::FratelliVincenzi_espresso(),
-#'   cooking:::Kikisi_coffee(),
-#'   cooking:::CaffeBorghetti(),
-#'   cooking:::Grind_espresso(),
-#'   cooking:::Sabroso_coffee(),
-#'   cooking:::Patron_XO(),
-#'   cooking:::Padrino_coffee(),
-#'   cooking:::Amigos3_mocha()
-#' )
 
 
-
-#setClass(Class = 'coffeeLiqueur', contains = 'nutrition', prototype = #prototype(
-#  alias = '\u5496\u5561\u9152'
-#))
 
 
 Kahlua_coffee <- \() nutrition(

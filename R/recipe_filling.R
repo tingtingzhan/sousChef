@@ -12,24 +12,24 @@ if (FALSE) {
 
 
 
-Dad_blackSesame_filling1 <- \() new(
-  Class = 'recipe', flavor = '\u9ed1\u829d\u9ebb\u9985', 
+Dad_blackSesame_filling1 <- \() recipe(
+  flavor = '\u9ed1\u829d\u9ebb\u9985', 
   dad1966 = 'oVhV6A9-xHY',
   seed = c(Greenmax_blackSesame = 150 + 150),
   flour = c(Erawan_glutRiceFlr = 200),
   sugar = 80, # original 150g
   fat = c(Epic_lard = 100))
 
-Dad_blackSesame_filling2 <- \() new(
-  Class = 'recipe', flavor = '\u9ed1\u829d\u9ebb\u9985',
+Dad_blackSesame_filling2 <- \() recipe(
+  flavor = '\u9ed1\u829d\u9ebb\u9985',
   seed = c(Greenmax_blackSesame = 250 + 50),
   flour = c(Erawan_glutRiceFlr = 150),
   sugar = 65, # original 100
   fat = c(Epic_lard = 30),
   dad1966 = 'jD71nZQ74p4')
 
-Dad_blackSesame_filling3 <- \() new(
-  Class = 'recipe', flavor = '\u9ed1\u829d\u9ebb\u9985',
+Dad_blackSesame_filling3 <- \() recipe(
+  flavor = '\u9ed1\u829d\u9ebb\u9985',
   seed = c(Greenmax_blackSesame = 200 + 50),
   flour = c(Erawan_glutRiceFlr = 100),
   sugar = 50, # original 80

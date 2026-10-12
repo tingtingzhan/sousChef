@@ -4,6 +4,7 @@
 #' @rdname raw_recipe
 #' 
 #' @slot call \link[base]{name}, the function name to create this \linkS4class{recipe}
+#' @slot key \link[base]{character} scalar
 #' @slot alias \link[base]{character} scalar with Unicode symbols
 #' @slot class2 \link[base]{character} scalar with Unicode symbols, name of class in an alternative language
 #' @slot flavor \link[base]{character} scalar with Unicode symbols
@@ -13,27 +14,6 @@
 #' @slot date \link[base]{Date} scalar
 #' 
 #' @slot url \link[base]{character} scalar or \link[base]{vector}, URL of original recipe
-#' @slot allrecipes \link[base]{character} scalar
-#' @slot daatgo \link[base]{character} scalar
-#' @slot dad1966 \link[base]{character} scalar
-#' @slot giallozafferano \link[base]{character} scalar
-#' @slot guga \link[base]{character} scalar
-#' @slot happytears \link[base]{character} scalar
-#' @slot ippodotea,ippodoteajpn \link[base]{character} scalar
-#' @slot joshuaweissman \link[base]{character} scalar
-#' @slot julieseatsandtreats \link[base]{character} scalar
-#' @slot juniorscheesecakecookbook \link[base]{integer} scalar
-#' @slot just1cookbook \link[base]{character} scalar
-#' @slot kingarthur \link[base]{character} scalar or \link[base]{vector}, link from \url{https://www.kingarthurbaking.com} of original recipe
-#' @slot laofangu \link[base]{character} scalar
-#' @slot natashaskitchen \link[base]{character} scalar
-#' @slot nytimes \link[base]{character} scalar
-#' @slot pino \link[base]{character} scalar
-#' @slot preppykitchen \link[base]{character} scalar, link from \url{preppykitchen.com} of original recipe
-#' @slot quakeroats \link[base]{character} scalar
-#' @slot shangshikitchen \link[base]{character} scalar
-#' @slot wegmans \link[base]{character} scalar
-#' @slot xiaogaojie \link[base]{character} scalar
 #' @slot youtube \link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe
 # @slot doi \link[base]{character} scalar or \link[base]{vector}
 #' 
@@ -53,6 +33,7 @@
 setClass(Class = 'recipe', contains = 'raw.', slots = c(
   
   call = 'name',
+  key = 'character',
   alias = 'character',
   class2 = 'character', 
   flavor = 'character',
@@ -60,20 +41,8 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
   tool = 'list',
   date = 'Date',
 
-  rep_names(x = 'character', nm = c(
-    'allrecipes',
-    'daatgo', 'dad1966', 'giallozafferano', 'guga', 'happytears',
-    'ippodotea', 'ippodoteajpn',
-    'joshuaweissman',
-    'julieseatsandtreats', 'just1cookbook',
-    'kingarthur', 'laofangu', 'natashaskitchen',
-    'nytimes', 'pino', 'preppykitchen',
-    'quakeroats', 'shangshikitchen',
-    'wegmans', 'xiaogaojie',
-    'youtube', 'url'
-  )),
-  
-  juniorscheesecakecookbook = 'integer',
+  youtube = 'character',
+  url = 'character',
   
   #doi = 'character',
   
@@ -89,54 +58,35 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
 
 
 
-
-
-
-
-
-setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
+recipe <- \(...) {
   
-  x <- callNextMethod(.Object, ...)
+  x <- list(...) |>
+    .findCall_NEW(which = -2) # defined in \pkg{cooking}
   
   x <- x |>
-    .findCall()
+    .cleanSlots_raw.()
   
-  # is this the correct way of doing things?????
-  x <- x |>
-    getMethod(f = 'initialize', signature = 'raw.')()
   
-  if (length(x@yeast) && !length(x@sugarLost)) {
-    x@sugarLost <- if (is(x, 'bao')) {
-      # After one hour brew time, ~0.35 grams of sugar per gram of yeast have been consumed, 
-      # leaving ~0.65 grams of unfermented sugar per gram of yeast.
-      # https://www.lallemand.com/BakerYeastNA/eng/PDFs/LBU%20PDF%20FILES/1_19WATR.PDF
-      sum(x@yeast) * .35
-    } else {
-      # I ferment overnight in fridge, lost 1.15 yeast
-      # then ferment in room temperature, lost .35 yeast
-      sum(x@yeast) * 1.5
-    }
-  }
   
   # processing 'character'
   
-  if (length(x@author)) {
-    if (length(x@allrecipes)) {
+  if (length(x$author)) {
+    if (length(x$allrecipes)) {
       #stop('where?')
-      x@author <- x@allrecipes |>
-        fmtURL(fmt = 'https://www.allrecipes.com/recipe/%s', text = x@author)
-      x@allrecipes <- character()
-    } else if (length(x@youtube)) {
+      x$author <- x$allrecipes |>
+        fmtURL(fmt = 'https://www.allrecipes.com/recipe/%s', text = x$author)
+      x$allrecipes <- NULL
+    } else if (length(x$youtube)) {
       #stop('where?')
-      x@author <- x@youtube[1L] |>
-        fmtURL(fmt = 'https://youtu.be/%s', text = x@author)
-      x@youtube <- x@youtube[-1L]
-    } else if (length(x@url)) {
+      x$author <- x$youtube[1L] |>
+        fmtURL(fmt = 'https://youtu.be/%s', text = x$author)
+      x$youtube <- x$youtube[-1L]
+    } else if (length(x$url)) {
       #stop('where?')
-      x@author <- x@url[1L] |>
-        style_hyperlink(url = _, text = x@author) |> 
+      x$author <- x$url[1L] |>
+        style_hyperlink(url = _, text = x$author) |> 
         c()
-      x@url <- x@url[-1L]
+      x$url <- x$url[-1L]
     }
   } # before `if (!length(x@author))` !!!
   
@@ -150,66 +100,102 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
     add_youtube(name = 'laofangu', text = '\u8001\u996d\u9aa8') |>
     add_youtube(name = 'pino', text = '\u54c1\u8bfa') |> # http://www.pinochina.com # temporarily down
     add_youtube(name = 'shangshikitchen', text = '\u5c1a\u98df\u53a8\u623f') |>
+    add_youtube(name = 'viewsontheroad', text = 'Views on the road') |>
     add_youtube(name = 'xiaogaojie', text = '\u5c0f\u9ad8\u59d0')
   
-  if (length(x@ippodotea)) {
-    if (length(x@ippodotea) > 1L) stop('only allow len-1 @ippodotea')
-    x@author <- x@ippodotea |>
+  if (length(x$ippodotea)) {
+    if (length(x$ippodotea) > 1L) stop('only allow len-1 `ippodotea`')
+    x$author <- x$ippodotea |>
       fmtURL(fmt = 'https://ippodotea.com/products/%s', text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5')
-    x@ippodotea <- character()
+    x$ippodotea <- NULL
   }
   
-  if (length(x@ippodoteajpn)) {
-    if (length(x@ippodoteajpn) > 1L) stop('only allow len-1 @ippodoteajpn')
-    x@author <- x@ippodoteajpn |> 
+  if (length(x$ippodoteajpn)) {
+    if (length(x$ippodoteajpn) > 1L) stop('only allow len-1 `ippodoteajpn`')
+    x$author <- x$ippodoteajpn |> 
       fmtURL(fmt = 'https://www.ippodo-tea.co.jp/products/%s', text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5')
-    x@ippodoteajpn <- character()
+    x$ippodoteajpn <- NULL
   }
   
   x <- x |>
+    add_youtube_recipe(name = 'chefjeanpierre', fmt = 'https://chefjeanpierre.com/recipes/%s', text1 = 'Chef', text2 = 'Jean-Pierre') |>
     add_youtube_recipe(name = 'joshuaweissman', fmt = 'https://www.joshuaweissman.com/post/%s', text1 = 'Joshua', text2 = 'Weissman') |>
     add_youtube_recipe(name = 'julieseatsandtreats', fmt = 'https://www.julieseatsandtreats.com/%s', text1 = 'Julie\'s', text2 = 'Eats & Treats') |>
     add_youtube_recipe(name = 'just1cookbook', fmt = 'https://www.justonecookbook.com/%s', text1 = 'Just One', text2 = 'Cookbook') |>
+    add_youtube_recipe(name = 'kitchenaiduk2003', fmt = 'https://www.kitchenaid.co.uk/recipes/%s', text1 = 'KitchenAid', text2 = 'UK') |>
     add_youtube_recipe(name = 'natashaskitchen', fmt = 'https://natashaskitchen.com/%s/', text1 = 'Natasha\'s', text2 = 'Kitchen') |>
     add_youtube_recipe(name = 'preppykitchen', fmt = 'https://preppykitchen.com/%s/', text1 = 'Preppy', text2 = 'Kitchen')# |>
   
-  if (length(x@juniorscheesecakecookbook)) {
-    if (length(x@juniorscheesecakecookbook) > 1L) stop('only allow len-1 @juniorscheesecakecookbook')
-    x@author <- style_hyperlink(url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook p.%d', x@juniorscheesecakecookbook)) |> c()
-    x@juniorscheesecakecookbook <- integer()
+  if (length(x$juniorscheesecakecookbook)) {
+    if (length(x$juniorscheesecakecookbook) > 1L) stop('only allow len-1 `juniorscheesecakecookbook`')
+    x$author <- style_hyperlink(url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook p.%d', x$juniorscheesecakecookbook)) |> c()
+    x$juniorscheesecakecookbook <- NULL
   }
   
-  if (length(x@kingarthur)) {
-    if (length(x@kingarthur) > 1L) stop('only allow len-1 @kingarthur')
-    if (!length(x@author)) stop('King Arthur employee name?')
-    x@author <- paste(
-      x@kingarthur |>
+  if (length(x$kingarthur)) {
+    if (length(x$kingarthur) > 1L) stop('only allow len-1 `kingarthur`')
+    if (!length(x$author)) stop('King Arthur employee name?')
+    x$author <- paste(
+      x$kingarthur |>
         fmtURL(fmt = 'https://www.kingarthurbaking.com/recipes/%s', text = 'King Arthur'),
-      x@author |> 
+      x$author |> 
         fmtURL(fmt = 'https://www.kingarthurbaking.com/author/%s', text = 'Recipe')
     )
-    x@kingarthur <- character()
+    x$kingarthur <- NULL
   }
   
-  if (length(x@nytimes)) {
-    if (length(x@nytimes) > 1L) stop('only allow len-1 @nytimes')
-    x@author <- x@nytimes |>
+  if (length(x$nytimes)) {
+    if (length(x$nytimes) > 1L) stop('only allow len-1 `nytimes`')
+    x$author <- x$nytimes |>
       fmtURL(fmt = 'https://cooking.nytimes.com/recipes/%s', text = 'New York Times Cooking')
-    x@nytimes <- character()
+    x$nytimes <- NULL
   }
   
-  if (length(x@quakeroats)) {
-    if (length(x@quakeroats) > 1L) stop('only allow len-1 @quakeroats')
-    x@author <- x@quakeroats |> 
+  if (length(x$quakeroats)) {
+    if (length(x$quakeroats) > 1L) stop('only allow len-1 `quakeroats`')
+    x$author <- x$quakeroats |> 
       fmtURL(fmt = 'https://www.quakeroats.com/cooking-and-recipes/%s', text = 'Quaker\U1f1fa\U1f1f8')
-    x@quakeroats <- character()
+    x$quakeroats <- NULL
   }
   
-  if (length(x@wegmans)) {
-    if (length(x@wegmans) > 1L) stop('only allow len-1 @wegmans')
-    x@author <- x@wegmans |>
+  if (length(x$wegmans)) {
+    if (length(x$wegmans) > 1L) stop('only allow len-1 `wegmans`')
+    x$author <- x$wegmans |>
       fmtURL(fmt = 'https://shop.wegmans.com/recipes/%s', text = 'Wegmans\U1f1fa\U1f1f8')
-    x@wegmans <- character()
+    x$wegmans <- NULL
+  }
+  
+
+  c(list(Class = 'recipe'), x) |> 
+    do.call(what = 'new', args = _)
+  
+}
+
+
+
+
+setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
+  
+  x <- callNextMethod(.Object, ...)
+  
+  #x <- x |>
+  #  .findCall()
+  
+  # is this the correct way of doing things?????
+  #x <- x |>
+  #  getMethod(f = 'initialize', signature = 'raw.')()
+  
+  if (length(x@yeast) && !length(x@sugarLost)) {
+    x@sugarLost <- if (is(x, 'bao')) {
+      # After one hour brew time, ~0.35 grams of sugar per gram of yeast have been consumed, 
+      # leaving ~0.65 grams of unfermented sugar per gram of yeast.
+      # https://www.lallemand.com/BakerYeastNA/eng/PDFs/LBU%20PDF%20FILES/1_19WATR.PDF
+      sum(x@yeast) * .35
+    } else {
+      # I ferment overnight in fridge, lost 1.15 yeast
+      # then ferment in room temperature, lost .35 yeast
+      sum(x@yeast) * 1.5
+    }
   }
   
   author <- if (length(x@author)) x@author |> col_green() |> c() # else NULL
@@ -346,10 +332,20 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
 
 #' @export
 labels.recipe <- \(object, ...) {
-  object@alias |>
-    sprintf(fmt = '{.run [%s](cooking::%s())}', . = _, as.character(object@call)) |> 
-    make_ansi_style('steelblue4')() |>
-    format_inline()
+  
+  x <- object; object <- NULL
+  
+  if (identical(x@call, quote(`<UNDEFINED>`))) { 
+    # e.g., from setAs(from = 'nutrition', to = 'recipe')
+    x@alias |>
+      make_ansi_style('steelblue4')()
+  } else {
+    x@alias |>
+      sprintf(fmt = '{.run [%s](sousChef::%s())}', . = _, as.character(x@call)) |> 
+      make_ansi_style('steelblue4')() |>
+      format_inline()
+  }
+  
 }
 
 

@@ -1,79 +1,45 @@
 
+# @examples
+# 
+# nutritionlist(
+#  subtract(sousChef:::JeanPierre_eggnog(), sugar = 25),
+#  subtract(sousChef:::PreppyKitchen_eggnog(), sugar = 130)
+# )
 
-#' @title \linkS4class{eggnog} Recipes
-#' 
-#' @description
-#' ..
-#' 
-#' @examples
-#' 
-#' eggnog()
-#' 
-#' nutritionlist(
-#'  eggnog(),
-#'  subtract(JeanPierre_eggnog(), sugar = 25),
-#'  subtract(PreppyKitchen_eggnog(), sugar = 130)
-#' )
-#' 
-#' @export
-setClass(Class = 'eggnog', contains = 'recipe', prototype = prototype(
-  class2 = '\u86cb\u5976\u9152'
-))
 
-#' @rdname eggnog-class
-#' @export
-eggnog <- \() new(
-  Class = 'eggnog', 
-  water = 110, 
-  dairy = c(
-    Wegmans_heavyCream = 80,
-    Carnation_drymilk = 15 # milk = 160,
+
+
+JeanPierre_eggnog <- \() recipe(
+  flavor = 'Eggnog',
+  dairy_cup = c(
+    Wegmans_heavyCream = 1,
+    Wegmans_whole_milk = 2
   ),
-  egg_pc = c(eggYolk = 2, eggWhite = 2),
-  sugar = 25,
-  # cinnamon_tsp = 1/4/3,
-  # nutmeg_tsp = 1/4/3, # not written yet
-  # salt_tsp = 1/8/3,
-  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
-  liqueur_tsp = c(Kahlua_coffee = 8),
-  # 2 ounces Bourbon
-  # 2 ounces Rum
-  review = 'try'
-)
-
-
-
-#' @rdname eggnog-class
-#' @export
-JeanPierre_eggnog <- \() new(
-  Class = 'recipe',
-  author = 'Chef Jean-Pierre', flavor = 'Eggnog',
-  dairy_cup = c(Wegmans_heavyCream = 1,
-                Wegmans_whole_milk = 2),
   egg_pc = c(eggYolk = 6, eggWhite = 6),
   sugar_cup = c(Domino_granulated = 2/3),
   spice_tsp = c(
-    SimplyOrganic_cinnamonCeylon = 1/4
+    SimplyOrganic_cinnamonCeylon = 1/4,
+    SimplyOrganic_nutmeg = 1/4
   ),
-  # nutmeg_tsp = 1/4, # not written yet
   salt_tsp = 1/8, # 1 pinch of Salt
   vanilla_Tbsp = c(NielsenMassey_Tahitian = 1),
   liqueur_Tbsp = c(Kahlua_coffee = 8),
   # 2 ounces Bourbon
   # 2 ounces Rum
-  youtube = 'N_2vR1bBUdE',
-  url = 'https://chefjeanpierre.com/recipes/eggnog/')
+  chefjeanpierre = c('eggnog' = 'N_2vR1bBUdE'))
 
 
-#' @rdname eggnog-class
-#' @export
-PreppyKitchen_eggnog <- \() new(
-  Class = 'recipe', flavor = 'Eggnog',
+PreppyKitchen_eggnog <- \() recipe(
+  flavor = 'Eggnog',
   egg_pc = c(eggYolk = 6, eggWhite = 6),
   sugar = 200, # 1 cup granulated sugar (200g)
-  dairy_cup = c(Wegmans_heavyCream = 1,
-                Wegmans_whole_milk = 1.5), # 1 to 2 cups whole milk (240-480ml)
-  # nutmeg_tsp = 1/4, # not written yet
+  dairy_cup = c(
+    Wegmans_heavyCream = 1,
+    Wegmans_whole_milk = 1.5 # 1 to 2 cups whole milk
+  ),
+  spice_tsp = c(
+    SimplyOrganic_nutmeg = 1/4
+  ),
   vanilla_Tbsp = c(NielsenMassey_Madagascar = 1), 
   liqueur_cup = c(Kahlua_coffee = 1), # 1 cup bourbon (brandy and rum work as well) (240ml)
   #▢ Cinnamon for serving

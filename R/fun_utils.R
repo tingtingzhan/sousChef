@@ -222,21 +222,27 @@ zero.omit <- \(x) {
 
 
 mergePc <- \(x, which, ...) {
-  pc <- paste0(which, '_pc')
-  v_pc <- slot(x, name = pc)
-  if (!length(v_pc)) return(x)
   
-  pieceGram <- names(v_pc) |>
+  pc <- paste0(which, '_pc')
+  #v <- slot(x, name = pc)
+  v <- x[[pc]]
+  if (!length(v)) return(x)
+  
+  pieceGram <- names(v) |>
     vapply(FUN = \(i) {
       eval(call(name = i))@pieceGram
     }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
   
-  slot(x, name = which) <- sum_by_name(
-    slot(x, name = which), 
-    v_pc * pieceGram
+  #slot(x, name = which) <- sum_by_name(
+  z <- sum_by_name(
+    x[[which]], #slot(x, name = which), 
+    v * pieceGram
   )
   
-  slot(x, name = pc) <- numeric()
+  if (length(z)) x[[which]] <- z
+  
+  #slot(x, name = pc) <- numeric()
+  x[[pc]] <- NULL
   
   return(x)
 }
@@ -261,18 +267,20 @@ mergeH2O <- \(x) {
 mergeVol_H2O <- \(x) {
 
   x_tsp <- sum_by_name(
-    x@water_tsp,
-    3 * x@water_Tbsp,
-    48 * x@water_cup
+    x$water_tsp,
+    3 * x$water_Tbsp,
+    48 * x$water_cup
   )
   
-  x@water <- sum_by_name(
-    x@water |> 
+  z <- sum_by_name(
+    x$water |> 
       addname1(nm = 'c22'),
     4.92892 * x_tsp # tsp -> ml
   )
   
-  x@water_tsp <- x@water_Tbsp <- x@water_cup <- numeric()
+  if (length(z)) x$water <- z
+  
+  x$water_tsp <- x$water_Tbsp <- x$water_cup <- NULL
   
   return(x)
   
@@ -281,35 +289,42 @@ mergeVol_H2O <- \(x) {
 
 mergeVol <- \(x, which, ...) {
   
-  slt <- names(getSlots(x = 'raw.'))
+  #slt <- names(getSlots(x = 'raw.'))
   
   tsp <- paste0(which, '_tsp')
-  has_tsp <- tsp %in% slt
+  #has_tsp <- tsp %in% slt
   Tbsp <- paste0(which, '_Tbsp')
-  has_Tbsp <- Tbsp %in% slt
+  #has_Tbsp <- Tbsp %in% slt
   cup <- paste0(which, '_cup')
-  has_cup <- cup %in% slt
+  #has_cup <- cup %in% slt
   brick <- paste0(which, '_brick')
-  has_brick <- brick %in% slt
+  #has_brick <- brick %in% slt
   
   x_tsp <- sum_by_name(
-    if (has_tsp) addname1(slot(x, name = tsp), ...),
-    if (has_Tbsp) 3 * addname1(slot(x, name = Tbsp), ...),
-    if (has_cup) 48 * addname1(slot(x, name = cup), ...), 
-    if (has_brick) 3 * 16 * addname1(slot(x, name = brick), ...)
+    #if (has_tsp) addname1(slot(x, name = tsp), ...),
+    addname1(x[[tsp]], ...),
+    #if (has_Tbsp) 3 * addname1(slot(x, name = Tbsp), ...),
+    3 * addname1(x[[Tbsp]], ...),
+    #if (has_cup) 48 * addname1(slot(x, name = cup), ...),
+    48 * addname1(x[[cup]], ...),
+    #if (has_brick) 3 * 16 * addname1(slot(x, name = brick), ...)
+    3 * 16 * addname1(x[[brick]], ...)
   )
   
   z <- sum_by_name(
-    addname1(slot(x, name = which), ...), # weight in gram 
+    #addname1(slot(x, name = which), ...), # weight in gram 
+    addname1(x[[which]], ...), # weight in gram 
     gram_per_tsp(names(x_tsp)) * x_tsp
   )
 
-  slot(x, name = which) <- z
+  #slot(x, name = which) <- z
+  if (length(z)) x[[which]] <- z
   
-  if (has_tsp) slot(x, name = tsp) <- numeric()
-  if (has_Tbsp) slot(x, name = Tbsp) <- numeric() 
-  if (has_cup) slot(x, name = cup) <- numeric() 
-  if (has_brick) slot(x, name = brick) <- numeric()
+  #if (has_tsp) slot(x, name = tsp) <- numeric()
+  #if (has_Tbsp) slot(x, name = Tbsp) <- numeric() 
+  #if (has_cup) slot(x, name = cup) <- numeric() 
+  #if (has_brick) slot(x, name = brick) <- numeric()
+  x[[tsp]] <- x[[Tbsp]] <- x[[cup]] <- x[[brick]] <- NULL
   return(x)
   
 }
@@ -460,11 +475,11 @@ add_store_url <- \(x, name, fmt, store_brand, store_name = store_brand) {
   v <- x[[name]]
   if (!length(v)) return(x)
   store_url <- sprintf(fmt = fmt, v)
-  if (!length(x[['brand']])) {
+  if (!length(x$brand)) {
     if (is.na(store_brand)) stop('must have `store_brand`')
     x$brand <- style_hyperlink(url = store_url, text = store_brand) |> c()
   } else {
-    x$url <- c(x[['url']], style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name)))
+    x$url <- c(x$url, style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name)))
   }
   x[[name]] <- NULL
   return(x)
@@ -478,7 +493,7 @@ add_store_url <- \(x, name, fmt, store_brand, store_name = store_brand) {
 add_brand_url <- \(x, name, ...) {
   v <- x[[name]]
   if (!length(v)) return(x)
-  if (length(x[['brand']])) {
+  if (length(x$brand)) {
     stop('`brand` already exists!')
   }
   x$brand <- v |> 
@@ -491,37 +506,41 @@ add_brand_url <- \(x, name, ...) {
 
 
 add_youtube <- \(x, name, ...) { # text
-  v <- slot(x, name = name)
+  #v <- slot(x, name = name)
+  v <- x[[name]]
   nv <- length(v)
   if (!nv) return(x)
   if (nv > 1L) stop('only allow len-1 ', sQuote(name))
-  if (length(x@author)) return(x)
-  x@author <- v |>
+  if (length(x$author)) return(x)
+  x$author <- v |>
     fmtURL(fmt = 'https://youtu.be/%s', ...)
-  slot(x, name = name) <- character()
+  #slot(x, name = name) <- character()
+  x[[name]] <- NULL
   return(x)
 }
 
 
 
 add_youtube_recipe <- \(x, name, text1, text2, ...) {
-  v <- slot(x, name = name)
+  #v <- slot(x, name = name)
+  v <- x[[name]]
   nv <- length(v)
   if (!nv) return(x)
   if (nv > 1L) stop('only allow len-1 ', sQuote(name))
-  if (length(x@author)) {
-    print(x@author)
+  if (length(x$author)) {
+    print(x$author)
     print(v)
     stop('`@author` already exists!')
   }
-  x@author <- paste(
+  x$author <- paste(
     v |>
       names() |> # len0-name compatible!!
       fmtURL(fmt = 'https://youtu.be/%s', text = text1),
     v |>
       fmtURL(text = text2, ...)
   )
-  slot(x, name = name) <- character()
+  #slot(x, name = name) <- character()
+  x[[name]] <- NULL
   return(x)
 }
 
@@ -582,7 +601,7 @@ fmt_pc <- \(x) {
   if (!length(x)) return(invisible())
     
   id_pc <- names(x) |>
-    vapply(FUN = exists, where = asNamespace('cooking'), inherits = FALSE, FUN.VALUE = NA)
+    vapply(FUN = exists, where = asNamespace('sousChef'), inherits = FALSE, FUN.VALUE = NA)
   
   v_pc <- names(x)[id_pc] |>
     lapply(FUN = \(i) {

@@ -9,105 +9,12 @@
 # #33593 New York strip (choice); $8.99/lb; Mar 30, 24
 
 
-#' @title \linkS4class{rub} Recipes
-#' 
-#' @description ..
-#' 
-#' @examples
-#' cuminMontreal_rub()
-#' 
-#' @export
-setClass(Class = 'rub', contains = 'recipe', prototype = prototype(
-  class2 = '\u814c\u6599', # \u7a7a\u6c14\u70b8\u9505
-  
-  portion = c(
-    'whole duck\U1f986, 3-3.5lb, inside rub' = 18,
-    'New York strip steak\U1f969' = 10 # to confirm!!!
-  ),
-  
-  tool = list(
-    InstantPot(
-      name2 = Staub_deepSkillet(),
-      program = '\u4f4e\u6e29\u6c34\u6d74\u7a0b\u5e8f Sous Vide program',
-      fahrenheit = c(140),
-      minute = c('New York strip steak\U1f969, 1-1.5inch' = 60),
-      cooling = c(
-        'let stand 10min in bag', 
-        'pat dry',
-        'pan-sear fat cap'
-      )
-    ),
-    
-    Staub_vertRoaster(
-      treatment = c(
-        'scald trussed poultry skin using boiling water',
-        'pat dry; season inside',
-        'stand on vertical roaster, brush coating on skin'
-      ),
-      fahrenheit = 350,
-      minute = c('whole duck\U1f986, 3-3.5lb' = 90),
-      cooling = 'let stand 30min+ before carving'
-    ),
-    
-    PhilipsHD9867(
-      fahrenheit = 350,
-      minute = c('half duck\U1f986, 3-3.5lb, skin face up' = 35)
-    )
-  )
-
-))
-
-
-
-
-
-#' @rdname rub-class
-#' @export
-cuminMontreal_rub <- \() new(
-  Class = 'rub',
-  flavor = 'Cumin+Montreal',
-  spice_tsp = c(
-    SimplyOrganic_cumin = 1,
-    McCormick_MontrealSteak = 1.5,
-    #Kirkland_noSaltSeasoning = 2 # for previous 'sousvide'
-    Kirkland_noSaltSeasoning = .5
-  ),
-  # sodium with [McCormick_MontrealSteak] needs to be a little lower
-  review = 'retry'
-  #pros = c(
-  #  'Lamb\U1f411 loin chop'
-  #)
-)
-
-
-
-
-#' @rdname rub-class
-#' @export
-Montreal_rub <- \() new( # inspired by Guga
-  Class = 'rub',
-  sugar_tsp = c(Domino_darkBrown = .5),
-  spice_tsp = c(
-    SimplyOrganic_cinnamonCeylon = 1/8,
-    McCormick_MontrealSteak = 2,
-    #Kirkland_noSaltSeasoning = 3 # for previous 'sousvide'
-    Kirkland_noSaltSeasoning = .5
-  ),
-  review = 'retry'
-  #pros = c(
-  #  'New York strip, Prime'
-  #)
-)
-
-
-
 
 
 
 if (FALSE) {
   
-  duckPaste <- \() new(
-    Class = 'recipe',
+  duckPaste <- \() recipe(
     alias = 'Duck Paste',
     msg = c(Ajinomoto_msg = 6*50),
     sugar = c(Domino_granulated = 500+2*50),
@@ -124,8 +31,7 @@ if (FALSE) {
     # 麦芽粉 1两???
   )
   
-  duckSalt <- \() new(
-    Class = 'recipe',
+  duckSalt <- \() recipe(
     alias = 'Duck Salt',
     sugar = c(Domino_granulated = 10*500),
     salt = 5*500,
@@ -141,74 +47,12 @@ if (FALSE) {
 }
 
 
-#' @rdname rub-class
-#' @export
-duck_rub <- \() new(
-  Class = 'rub',
-  alias = 'Duck Salt',
-  spice_tsp = c(
-    SimplyOrganic_5spice = 1.5 #my experiment using a Chinese brand
-  ),
-  salt_tsp = 1.5,
-  sugar_tsp = c(Domino_10x = 1.5),
-  date = as.Date('2025-02-15')
-)
-
-if (FALSE) {
-  new(Class = 'recipe', 
-      spice_tsp = c(
-        SimplyOrganic_5spice = 1.5 #my experiment using a Chinese brand
-      ))
-
-}
 
 
 
 
-#' @rdname rub-class
-#' @export
-Southwest_rub <- \() new(
-  Class = 'rub', 
-  salt_tsp = 2.75,
-  spice_Tbsp = c(Kirkland_noSaltSeasoning = 1),
-  spice_tsp = c(SimplyOrganic_Southwest = 2), # try
-  pros = 'try')
-
-#' @rdname rub-class
-#' @export
-harissa_rub <- \() new(
-  Class = 'rub',
-  #salt_tsp = .75, # for previuos 'sousvide', I wrote `pros = 'not bad!'`
-  salt_tsp = 2.75, # 
-  spice_Tbsp = c(
-    FrontierCoop_harissa = 1,
-    Kirkland_noSaltSeasoning = 1
-  ),
-  review = 'try!')
-
-
-
-
-
-#' @rdname rub-class
-#' @export
-vindaloo_rub <- \() new(
-  Class = 'rub',
-  salt_tsp = 2.75,
-  spice_Tbsp = c(
-    FrontierCoop_vindaloo = 1,
-    Kirkland_noSaltSeasoning = 1
-  ),
-  date = as.Date('2024-12-20'),
-  pros = 'perfect sodium level!'
-)
-
-
-
-
-
-Guga_rub <- \() new(
-  Class = 'recipe', guga = 'omXFw_JnP4E',
+Guga_rub <- \() recipe(
+  guga = 'omXFw_JnP4E',
   salt_cup = 1/4,
   sugar_cup = c(Domino_darkBrown = 1/4),
   spice_cup = c(Chinata_paprika = 1/4),
@@ -223,13 +67,3 @@ Guga_rub <- \() new(
 
 # Guga has more: https://www.youtube.com/watch?v=lF2uz5Nz02E
 
-kalbi_rub <- \() new( # confirm next time!
-  Class = 'recipe',
-  flavor = '\u97e9\u5f0f\u725b\u4ed4\u9aa8',
-  sauce_Tbsp = c(
-    LeeKumKee_blackPepper = 3*2,
-    #LeeKumKee_coconutCurry = 1
-    LeeKumKee_satay = 1
-  ),
-  portion = c('Costco Korean BBQ style short ribs (2000g)' = 120)
-)

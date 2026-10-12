@@ -21,8 +21,6 @@
 
 \item{\code{alias}}{\link[base]{character} scalar, the name of spice in an alternative language}
 
-\item{\code{wiki}}{\link[base]{character} scalar, Wikipedia handle}
-
 \item{\code{url}}{\link[base]{character} scalar}
 }}
 

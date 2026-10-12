@@ -1,8 +1,7 @@
 
 
 
-Natasha_pumpkin_cheesecake <- \() new(
-  Class = 'recipe', 
+Natasha_pumpkin_cheesecake <- \() recipe(
   natashaskitchen = 'pumpkin-cheesecake-recipe',
   class2 = 'Cheesecake',
   dairy_brick = c(Philadelphia_creamCheese = 3),
@@ -19,8 +18,7 @@ Natasha_pumpkin_cheesecake <- \() new(
 
 
 
-Junior_pumpkin_cheesecake <- \() new(
-  Class = 'recipe', 
+Junior_pumpkin_cheesecake <- \() recipe(
   dairy_brick = c(Philadelphia_creamCheese = 4),
   sugar_cup = c(Domino_granulated = 1+2/3),
   starch_cup = c(Wegmans_corn_starch = 1/4),
@@ -35,8 +33,7 @@ Junior_pumpkin_cheesecake <- \() new(
 
 
 
-PreppyKitchen_pumpkin_cheesecake <- \() new(
-  Class = 'recipe', 
+PreppyKitchen_pumpkin_cheesecake <- \() recipe(
   class2 = 'Cheesecake',
   dairy_brick = c(Philadelphia_creamCheese = 3),
   sugar = c(US_10x = 150, Domino_darkBrown = 115),
@@ -55,8 +52,7 @@ PreppyKitchen_pumpkin_cheesecake <- \() new(
 
 
 
-BrianLagerstrom_burntBasque <- \() new(
-  Class = 'recipe',
+BrianLagerstrom_burntBasque <- \() recipe(
   flavor = 'Burnt Basque Cheesecake',
   author = 'Brian Lagerstrom', youtube = 'eW-nF1xEFSA',
   dairy = c(

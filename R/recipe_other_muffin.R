@@ -5,15 +5,14 @@
 #' @examples
 #' #muffin()
 #' nutritionlist(
-#'  subtract(cooking:::Brody_muffin(), sugar = 237),
-#'  subtract(cooking:::Introvert_muffin(), sugar = 50),
-#'  subtract(cooking:::CulinaryHill_muffin(), sugar = 155),
-#'  subtract(cooking:::Lori_muffin(), sugar = 110))
+#'  subtract(sousChef:::Brody_muffin(), sugar = 237),
+#'  subtract(sousChef:::Introvert_muffin(), sugar = 50),
+#'  subtract(sousChef:::CulinaryHill_muffin(), sugar = 155),
+#'  subtract(sousChef:::Lori_muffin(), sugar = 110))
 #' 
 #' 
 
-muffin_tmp <- \() new(
-  Class = 'recipe', 
+muffin_tmp <- \() recipe(
   alias = 'Muffin',
   portion = c('Trudeau 12-cup muffin' = 80),
   flour = c(Wegmans_pastryFlr = 270),
@@ -28,8 +27,8 @@ muffin_tmp <- \() new(
 
 
 
-Brody_muffin <- \() new(
-  Class = 'recipe', author = 'Brody', flavor = 'Muffin', 
+Brody_muffin <- \() recipe(
+  author = 'Brody', flavor = 'Muffin', 
   sugar = 300,
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 224), # 1 cup, original
@@ -43,8 +42,8 @@ Brody_muffin <- \() new(
   salt_tsp = .5)
 
 
-Introvert_muffin <- \() new(
-  Class = 'recipe', author = 'Introvert', flavor = 'Muffin', 
+Introvert_muffin <- \() recipe(
+  author = 'Introvert', flavor = 'Muffin', 
   url = 'https://www.bakedbyanintrovert.com/basic-muffin-recipe/',
   flour_cup = c(KingArthur_allPurposeFlr = 2),
   sugar = 100,
@@ -55,8 +54,8 @@ Introvert_muffin <- \() new(
   egg_pc = c(eggYolk = 2, eggWhite = 2))
 
 
-CulinaryHill_muffin <- \() new(
-  Class = 'recipe', author = 'Culinary Hill', flavor = 'Muffin', 
+CulinaryHill_muffin <- \() recipe(
+  author = 'Culinary Hill', flavor = 'Muffin', 
   url = 'https://www.culinaryhill.com/blueberry-muffins/',
   flour = c(KingArthur_allPurposeFlr = 240),
   sugar = 200,
@@ -68,8 +67,10 @@ CulinaryHill_muffin <- \() new(
   vanilla_tsp = c(NielsenMassey_Madagascar = 1))
 
 
-Lori_muffin <- \() new(
-  Class = 'recipe', author = 'Lori', flavor = 'Muffin', allrecipes = '6874/best-ever-muffins/',
+Lori_muffin <- \() recipe(
+  author = 'Lori', 
+  flavor = 'Muffin', 
+  allrecipes = '6874/best-ever-muffins/',
   flour = c(KingArthur_allPurposeFlr = 240), 
   bakingPowder_Tbsp = c(TraderJoes_bakingPowder = 1),
   salt_tsp = 1/2,
@@ -80,8 +81,8 @@ Lori_muffin <- \() new(
 
 
 
-Sallys_pumpkin_muffin <- \() new(
-  Class = 'recipe', author = 'Sally\'s', flavor = 'Pumpkin Muffin',
+Sallys_pumpkin_muffin <- \() recipe(
+  author = 'Sally\'s', flavor = 'Pumpkin Muffin',
   url = 'https://sallysbakingaddiction.com/pumpkin-muffins-recipe/',
   flour_cup = c(KingArthur_allPurposeFlr = 1.75),
   NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1),
@@ -100,7 +101,7 @@ Sallys_pumpkin_muffin <- \() new(
 
 if (FALSE) {
   nutritionlist(
-    cooking:::Sallys_pumpkin_muffin(), 
-    cooking:::Sallys_pumpkin_cake())
+    sousChef:::Sallys_pumpkin_muffin(), 
+    sousChef:::Sallys_pumpkin_cake())
 }
 

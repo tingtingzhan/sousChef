@@ -5,28 +5,27 @@
 #' \linkS4class{raw.} allows negative ingredients.
 #' 
 #' @slot homemade \link[base]{numeric} vector
-#' @slot misc,misc_tsp,misc_Tbsp,misc_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more miscellaneous ingredients
+#' @slot misc \link[base]{numeric} vector, weight (in grams) of one or more miscellaneous ingredients
 #' 
-#' @slot puree,puree_tsp,puree_Tbsp,puree_cup,puree_pc \link[base]{numeric} vector, weight (in grams) and volume of one or more puree
+#' @slot puree \link[base]{numeric} vector, weight (in grams) of one or more puree
 #' 
 #' @slot fruit \link[base]{numeric} vector, weight of fresh fruit pulp or juice (in grams)
-#' @slot fruit_pc \link[base]{numeric} vector, number of fresh fruit pulp or juice
 #' 
-#' @slot dairy,dairy_tsp,dairy_Tbsp,dairy_cup,dairy_brick \link[base]{numeric} scalar, weight (in grams) and volume of dairy products
+#' @slot dairy \link[base]{numeric} scalar, weight (in grams) of dairy products
 #' 
-#' @slot oil,oil_tsp,oil_Tbsp,oil_cup \link[base]{numeric} scalar, weight (in grams) and volume of liquid oil
-#' @slot fat,fat_tsp,fat_Tbsp,fat_cup \link[base]{numeric} scalar, weight (in grams) and volume of solid fat
+#' @slot oil \link[base]{numeric} scalar, weight (in grams) of liquid oil
+#' @slot fat \link[base]{numeric} scalar, weight (in grams) of solid fat
 #' 
-#' @slot egg,egg_pc \link[base]{numeric} \link[base]{vector}s, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)
+#' @slot egg \link[base]{numeric} \link[base]{vector}s, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)
 #' 
-#' @slot tea,tea_pc \link[base]{numeric} \link[base]{vector}s, weight of loose tea (in grams) and number of tea bags.
+#' @slot tea \link[base]{numeric} \link[base]{vector}s, weight of loose tea (in grams) and number of tea bags.
 #' 
-#' @slot flour,flour_tsp,flour_Tbsp,flour_cup \link[base]{numeric} \link[base]{vector}, weight (in grams) and volume of King Arthur all purpose flour
-#' @slot beverage,beverage_tsp,beverage_Tbsp,beverage_cup \link[base]{numeric} \link[base]{vector}
+#' @slot flour \link[base]{numeric} \link[base]{vector}, weight (in grams) of King Arthur all purpose flour
+#' @slot beverage \link[base]{numeric} \link[base]{vector}
 #' 
-#' @slot starch,starch_tsp,starch_Tbsp,starch_cup \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various starch
+#' @slot starch \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) of various starch
 #' 
-#' @slot grain,grain_tsp,grain_Tbsp,grain_cup \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various grains
+#' @slot grain \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) of various grains
 #' 
 #' @slot bean \link[base]{numeric} \link[base]{vector}, weight of dry beans (in grams)
 #' 
@@ -34,25 +33,25 @@
 #' @slot seed \link[base]{numeric} scalar, weight of dry seed (in grams)
 #' 
 #' 
-#' @slot sugar,sugar_tsp,sugar_Tbsp,sugar_cup \link[base]{numeric} scalar, weight (in grams) and volume of sugar 
+#' @slot sugar \link[base]{numeric} scalar, weight (in grams) of sugar 
 #' 
-#' @slot syrup,syrup_tsp,syrup_Tbsp,syrup_cup \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) and volume of various syrup
+#' @slot syrup \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) of various syrup
 #' 
-#' @slot NaHCO3,NaHCO3_tsp,NaHCO3_Tbsp,NaHCO3_cup \link[base]{numeric} scalars, weight (in grams) and volume of Arm and Hammer baking soda
+#' @slot NaHCO3 \link[base]{numeric} scalars, weight (in grams) of Arm and Hammer baking soda
 #' 
-#' @slot Na2CO3,Na2CO3_tsp,Na2CO3_Tbsp,Na2CO3_cup \link[base]{numeric} scalars, weight (in grams) and volume of Na2CO3.  Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes
+#' @slot Na2CO3 \link[base]{numeric} scalars, weight (in grams) of Na2CO3.  Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes
 #' 
-#' @slot bakingPowder,bakingPowder_tsp,bakingPowder_Tbsp,bakingPowder_cup \link[base]{numeric} scalar, weight (in grams) and volume of baking powder
-#' @slot salt,salt_tsp,salt_Tbsp,salt_cup \link[base]{numeric} scalar, weight (in grams) and volume of salt
-#' @slot msg,msg_tsp,msg_Tbsp,msg_cup \link[base]{numeric} scalar, weight (in grams) and volume of monosodium glutamate (MSG)
-#' @slot vanilla,vanilla_tsp,vanilla_Tbsp,vanilla_cup \link[base]{numeric} scalar, weight (in grams) and volume of vanilla extract
-#' @slot yeast,yeast_tsp,yeast_Tbsp,yeast_cup \link[base]{numeric} scalar, weight (in grams) and volume of yeast
+#' @slot bakingPowder \link[base]{numeric} scalar, weight (in grams) of baking powder
+#' @slot salt \link[base]{numeric} scalar, weight (in grams) of salt
+#' @slot msg \link[base]{numeric} scalar, weight (in grams) of monosodium glutamate (MSG)
+#' @slot vanilla \link[base]{numeric} scalar, weight (in grams) of vanilla extract
+#' @slot yeast \link[base]{numeric} scalar, weight (in grams) of yeast
 #' 
-#' @slot cocoa,cocoa_tsp,cocoa_Tbsp,cocoa_cup \link[base]{numeric} scalar, weight (in grams) and volume of Dutch-processed cocoa powder
-#' @slot matcha,matcha_tsp,matcha_Tbsp,matcha_cup \link[base]{numeric} scalar, weight (in grams) and volume of culinary matcha powder 
-#' @slot spice,spice_tsp,spice_Tbsp,spice_cup named \link[base]{numeric} \link[base]{vector}, weight (in grams) and volume of compound spices
+#' @slot cocoa \link[base]{numeric} scalar, weight (in grams) of Dutch-processed cocoa powder
+#' @slot matcha \link[base]{numeric} scalar, weight (in grams) of culinary matcha powder 
+#' @slot spice named \link[base]{numeric} \link[base]{vector}, weight (in grams) of compound spices
 #' 
-#' @slot coffee,coffee_tsp,coffee_Tbsp,coffee_cup \link[base]{numeric} scalar, weight (in grams) and volume of instant coffee
+#' @slot coffee \link[base]{numeric} scalar, weight (in grams) of instant coffee
 #' 
 #' @slot meat \link[base]{numeric} vector, weight of one or more cuts of meat (in grams)
 #' @slot poultry \link[base]{numeric} vector, weight of one or more cuts of poultry (in grams)
@@ -60,11 +59,11 @@
 #' 
 #' @slot vegetable \link[base]{numeric} vector, weight of one or more vegetables (in grams)
 #' 
-#' @slot water,water_tsp,water_Tbsp,water_cup \link[base]{numeric} scalar, weight (in grams) and volume of water
-#' @slot sauce,sauce_tsp,sauce_Tbsp,sauce_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more sauces
-#' @slot liqueur,liqueur_tsp,liqueur_Tbsp,liqueur_cup \link[base]{numeric} vector, weight (in grams) and volume of one or more liqueurs
+#' @slot water \link[base]{numeric} scalar, weight (in grams) of water
+#' @slot sauce \link[base]{numeric} vector, weight (in grams) of one or more sauces
+#' @slot liqueur \link[base]{numeric} vector, weight (in grams) of one or more liqueurs
 #' 
-#' @slot gelatin,gelatin_pc \link[base]{numeric} \link[base]{vector}s
+#' @slot gelatin \link[base]{numeric} \link[base]{vector}s
 #' 
 #' @name raw_recipe
 #' @aliases raw.-class
@@ -74,38 +73,37 @@ setClass(
   # dQuote('raw') has a sealed class definition and cannot be redefined
   slots = rep_names('numeric', nm = c(
     'homemade',
-    'misc', 'misc_tsp', 'misc_Tbsp', 'misc_cup',
-    'puree', 'puree_tsp', 'puree_Tbsp', 'puree_cup', 'puree_pc',
-    'fruit', 'fruit_pc',
-    'oil', 'oil_tsp', 'oil_Tbsp', 'oil_cup', 
-    'fat', 'fat_tsp', 'fat_Tbsp', 'fat_cup',
-    'egg', 'egg_pc', 
-    'tea', 'tea_pc', 
-    'dairy', 'dairy_tsp', 'dairy_Tbsp', 'dairy_cup', 'dairy_brick',
-    'yeast', 'yeast_tsp', 'yeast_Tbsp', 'yeast_cup',
-    'sugar', 'sugar_tsp', 'sugar_Tbsp', 'sugar_cup',
-    'syrup', 'syrup_tsp', 'syrup_Tbsp', 'syrup_cup',
-    'salt', 'salt_tsp', 'salt_Tbsp', 'salt_cup',
-    'msg', 'msg_tsp', 'msg_Tbsp', 'msg_cup',
-    'NaHCO3', 'NaHCO3_tsp', 'NaHCO3_Tbsp', 'NaHCO3_cup',
-    'Na2CO3', 'Na2CO3_tsp', 'Na2CO3_Tbsp', 'Na2CO3_cup',
-    'bakingPowder', 'bakingPowder_tsp', 'bakingPowder_Tbsp', 'bakingPowder_cup',
-    'flour', 'flour_tsp', 'flour_Tbsp', 'flour_cup',
-    'starch', 'starch_tsp', 'starch_Tbsp', 'starch_cup',
-    'beverage', 'beverage_tsp', 'beverage_Tbsp', 'beverage_cup', 
-    'grain', 'grain_tsp', 'grain_Tbsp', 'grain_cup',
-    'bean', 'nut', 'seed',
-    'vanilla', 'vanilla_tsp', 'vanilla_Tbsp', 'vanilla_cup',
-    'cocoa', 'cocoa_tsp', 'cocoa_Tbsp', 'cocoa_cup',
-    'coffee', 'coffee_tsp', 'coffee_Tbsp', 'coffee_cup',
-    'matcha', 'matcha_tsp', 'matcha_Tbsp', 'matcha_cup', 
-    'spice', 'spice_tsp', 'spice_Tbsp', 'spice_cup',
+    'misc',
+    'puree',
+    'fruit',
+    'oil',
+    'fat',
+    'egg',
+    'tea',
+    'dairy',
+    'yeast',
+    'sugar',
+    'syrup',
+    'salt',
+    'msg',
+    'NaHCO3',
+    'Na2CO3',
+    'bakingPowder',
+    'flour',
+    'starch',
+    'beverage', 
+    'grain', 'bean', 'nut', 'seed',
+    'vanilla',
+    'cocoa',
+    'coffee',
+    'matcha',
+    'spice',
     'meat', 'poultry', 'seafood',
     'vegetable',
-    'water', 'water_tsp', 'water_Tbsp', 'water_cup',
-    'sauce', 'sauce_tsp', 'sauce_Tbsp', 'sauce_cup',
-    'liqueur', 'liqueur_tsp', 'liqueur_Tbsp', 'liqueur_cup',
-    'gelatin', 'gelatin_pc'
+    'water',
+    'sauce',
+    'liqueur',
+    'gelatin'
 )))
 
 
@@ -194,13 +192,14 @@ print.raw. <- \(x, prt_total = TRUE, ...) {
 
 
 
-setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
+#setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
+.cleanSlots_raw. <- \(x) {
   
-  x <- callNextMethod(.Object, ...) |> 
+  x <- x |> 
     mergePc(which = 'gelatin') |>
     mergePc(which = 'egg') |>
     mergePc(which = 'fruit') |>
-    mergePc(which = 'puree') |>
+    mergePc(which = 'puree') |> mergeVol(which = 'puree') |>
     mergePc(which = 'tea') |>
     mergeVol(which = 'flour') |>
     mergeVol_H2O() |>
@@ -208,6 +207,7 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     mergeVol(which = 'fat') |>
     mergeVol(which = 'spice') |>
     mergeVol(which = 'syrup') |>
+    mergeVol(which = 'vanilla') |>
     mergeVol(which = 'sugar', nm = 'US_10x') |>
     mergeVol(which = 'salt', nm = 'Morton_salt') |>
     mergeVol(which = 'starch') |>
@@ -222,16 +222,20 @@ setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
     mergeVol(which = 'cocoa') |>
     mergeVol(which = 'matcha') |>
     mergeVol(which = 'yeast') |>
-    mergeVol(which = 'bakingPowder')
+    mergeVol(which = 'bakingPowder') |>
+    mergeVol(which = 'NaHCO3') |>
+    mergeVol(which = 'Na2CO3')
   
   for (i in names(getSlots(x = 'raw.'))) {
-    slot(x, name = i) <- slot(x, name = i) |>
-      zero.omit()
+    if (length(x[[i]])) {
+      x[[i]] <- x[[i]] |>
+        zero.omit()
+    }
   }
   
   return(x)
   
-})
+}
 
 
 

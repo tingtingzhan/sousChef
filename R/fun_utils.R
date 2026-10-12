@@ -273,7 +273,7 @@ mergeVol_H2O <- \(x) {
   )
   
   z <- sum_by_name(
-    x$water |> 
+    x[['water']] |> # must be exact match!!
       addname1(nm = 'c22'),
     4.92892 * x_tsp # tsp -> ml
   )

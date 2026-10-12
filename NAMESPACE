@@ -41,7 +41,10 @@ import(cli)
 import(methods)
 importFrom(charwidth,row_fmt_matrix)
 importFrom(consec,cmod)
-importFrom(equiv4,binlabel)
+importFrom(equiv4,
+  binlabel,
+  equiv
+)
 importFrom(stats,
   median.default,
   na.omit,

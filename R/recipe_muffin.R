@@ -1,30 +1,5 @@
 
 
-#' @rdname subtract
-#' 
-#' @examples
-#' #muffin()
-#' nutritionlist(
-#'  subtract(sousChef:::Brody_muffin(), sugar = 237),
-#'  subtract(sousChef:::Introvert_muffin(), sugar = 50),
-#'  subtract(sousChef:::CulinaryHill_muffin(), sugar = 155),
-#'  subtract(sousChef:::Lori_muffin(), sugar = 110))
-#' 
-#' 
-
-muffin_tmp <- \() recipe(
-  alias = 'Muffin',
-  portion = c('Trudeau 12-cup muffin' = 80),
-  flour = c(Wegmans_pastryFlr = 270),
-  sugar = 62,
-  dairy_cup = c(MembersMark_yogurtGreek = 1),
-  egg_pc = c(eggYolk = 2, eggWhite = 2),
-  oil = c(Wegmans_vegetable_oil = 90),
-  water = 100, # 140g, from Brody's milk
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2.25), # try next
-  # note (legacy) = 'Steam Bake, 300F/25min', # next time
-  vanilla_tsp = c(NielsenMassey_Madagascar = 1))
-
 
 
 Brody_muffin <- \() recipe(

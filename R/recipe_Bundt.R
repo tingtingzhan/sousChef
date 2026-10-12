@@ -1,17 +1,5 @@
 
 
-
-Bundt_OLD2 <- \() recipe(
-  class2 = 'Bundt',
-  flour = c(Wegmans_pastryFlr = 400),
-  sugar = 20,
-  dairy = c(
-    Carnation_drymilk = 50,
-    Wegmans_heavyCream = 160
-  ),
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = .75),
-  water = 100, 
-  egg_pc = c(eggYolk = 2, eggWhite = 2)
   #instruction (legacy) = c(
   #  'Grease a Bundt pan with vegetable oil', # Dust with flavored powder (if applicable) or flour
   #  'KitchenAid stand mixer: whisk together all liquid',
@@ -25,34 +13,6 @@ Bundt_OLD2 <- \() recipe(
   #note (legacy) = c(
   #  'One (1) recipe good for 6-cup Nordic Ware Bundt pan'
   #)
-)
-
-Bundt_OLD1 <- \() recipe(
-  class2 = 'Bundt', flavor = 'OLD',
-  flour = c(Wegmans_pastryFlr = 210),
-  #water = 160, # a little too wet
-  water = 150,
-  sugar = 15,
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 1),
-  dairy = c(Carnation_drymilk = 80), # tried 50g
-  oil = c(Wegmans_vegetable_oil = 100), # a little wet inside
-  dairy = c(Daisy_sourCream = 110),
-  egg_pc = c(eggYolk = 2, eggWhite = 2),
-  #instruction (legacy) = c(
-  #  'Grease a Bundt pan with vegetable oil', # Dust with flavored powder (if applicable) or flour
-  #  'KitchenAid stand mixer: whisk together all liquid',
-  #  'Manually whisk together dry ingredients',
-  #  'Manually combine liquid and dry mixture. Rest for 30min', 
-  #  'Pour into Bundt pan (slightly dry wide ribbon)', 
-  #  # 'Robam CT763: bake (foil cover) at 350\u00b0F for 55min', # coloring too dark
-  #  'Robam CT763: Steam Bake (foil cover) at 320\u00b0F for 55min',
-  #  'Let cool in the pan for 20min. Invert onto a wire rack and cool completely'
-  #),
-  #note (legacy) = c(
-  #  'One (1) recipe good for 6-cup Nordic Ware Bundt pan'
-  #),
-  review = 'try')
-
 
 
 

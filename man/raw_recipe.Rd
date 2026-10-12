@@ -22,79 +22,79 @@
 \section{Slots}{
 
 \describe{
-\item{\code{homemade}}{\link[base]{numeric} vector}
+\item{\code{homemade}}{\link[base]{numeric} \link[base]{vector}}
 
-\item{\code{misc}}{\link[base]{numeric} vector, weight (in grams) of one or more miscellaneous ingredients}
+\item{\code{misc}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of one or more miscellaneous ingredients}
 
-\item{\code{puree}}{\link[base]{numeric} vector, weight (in grams) of one or more puree}
+\item{\code{puree}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of one or more puree}
 
-\item{\code{fruit}}{\link[base]{numeric} vector, weight of fresh fruit pulp or juice (in grams)}
+\item{\code{fruit}}{\link[base]{numeric} \link[base]{vector}, weight of fresh fruit pulp or juice (in grams)}
 
-\item{\code{dairy}}{\link[base]{numeric} scalar, weight (in grams) of dairy products}
+\item{\code{dairy}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of dairy products}
 
-\item{\code{oil}}{\link[base]{numeric} scalar, weight (in grams) of liquid oil}
+\item{\code{oil}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of liquid oil}
 
-\item{\code{fat}}{\link[base]{numeric} scalar, weight (in grams) of solid fat}
+\item{\code{fat}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of solid fat}
 
-\item{\code{egg}}{\link[base]{numeric} \link[base]{vector}s, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)}
+\item{\code{egg}}{\link[base]{numeric} \link[base]{vector}, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)}
 
-\item{\code{tea}}{\link[base]{numeric} \link[base]{vector}s, weight of loose tea (in grams) and number of tea bags.}
+\item{\code{tea}}{\link[base]{numeric} \link[base]{vector}, weight of loose tea (in grams) and number of tea bags.}
 
 \item{\code{flour}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of King Arthur all purpose flour}
 
 \item{\code{beverage}}{\link[base]{numeric} \link[base]{vector}}
 
-\item{\code{starch}}{\link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) of various starch}
+\item{\code{starch}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of various starch}
 
-\item{\code{grain}}{\link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) of various grains}
+\item{\code{grain}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of various grains}
 
 \item{\code{bean}}{\link[base]{numeric} \link[base]{vector}, weight of dry beans (in grams)}
 
-\item{\code{nut}}{\link[base]{numeric} scalar, weight of dry nuts (in grams)}
+\item{\code{nut}}{\link[base]{numeric} \link[base]{vector}, weight of dry nuts (in grams)}
 
-\item{\code{seed}}{\link[base]{numeric} scalar, weight of dry seed (in grams)}
+\item{\code{seed}}{\link[base]{numeric} \link[base]{vector}, weight of dry seed (in grams)}
 
-\item{\code{sugar}}{\link[base]{numeric} scalar, weight (in grams) of sugar}
+\item{\code{sugar}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of sugar}
 
-\item{\code{syrup}}{\link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) of various syrup}
+\item{\code{syrup}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of various syrup}
 
-\item{\code{NaHCO3}}{\link[base]{numeric} scalars, weight (in grams) of Arm and Hammer baking soda}
+\item{\code{NaHCO3}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of baking soda}
 
-\item{\code{Na2CO3}}{\link[base]{numeric} scalars, weight (in grams) of Na2CO3.  Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes}
+\item{\code{Na2CO3}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of Na2CO3.  Na2CO3 is made from baking the baking soda, 200F for 30 minutes}
 
-\item{\code{bakingPowder}}{\link[base]{numeric} scalar, weight (in grams) of baking powder}
+\item{\code{bakingPowder}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of baking powder}
 
-\item{\code{salt}}{\link[base]{numeric} scalar, weight (in grams) of salt}
+\item{\code{salt}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of salt}
 
-\item{\code{msg}}{\link[base]{numeric} scalar, weight (in grams) of monosodium glutamate (MSG)}
+\item{\code{msg}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of monosodium glutamate (MSG)}
 
-\item{\code{vanilla}}{\link[base]{numeric} scalar, weight (in grams) of vanilla extract}
+\item{\code{vanilla}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of vanilla extract}
 
-\item{\code{yeast}}{\link[base]{numeric} scalar, weight (in grams) of yeast}
+\item{\code{yeast}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of yeast}
 
-\item{\code{cocoa}}{\link[base]{numeric} scalar, weight (in grams) of Dutch-processed cocoa powder}
+\item{\code{cocoa}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of Dutch-processed cocoa powder}
 
-\item{\code{matcha}}{\link[base]{numeric} scalar, weight (in grams) of culinary matcha powder}
+\item{\code{matcha}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of culinary matcha powder}
 
 \item{\code{spice}}{named \link[base]{numeric} \link[base]{vector}, weight (in grams) of compound spices}
 
-\item{\code{coffee}}{\link[base]{numeric} scalar, weight (in grams) of instant coffee}
+\item{\code{coffee}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of instant coffee}
 
-\item{\code{meat}}{\link[base]{numeric} vector, weight of one or more cuts of meat (in grams)}
+\item{\code{meat}}{\link[base]{numeric} \link[base]{vector}, weight of one or more cuts of meat (in grams)}
 
-\item{\code{poultry}}{\link[base]{numeric} vector, weight of one or more cuts of poultry (in grams)}
+\item{\code{poultry}}{\link[base]{numeric} \link[base]{vector}, weight of one or more cuts of poultry (in grams)}
 
-\item{\code{seafood}}{\link[base]{numeric} vector, weight of one or more other sea food (in grams)}
+\item{\code{seafood}}{\link[base]{numeric} \link[base]{vector}, weight of one or more other sea food (in grams)}
 
-\item{\code{vegetable}}{\link[base]{numeric} vector, weight of one or more vegetables (in grams)}
+\item{\code{vegetable}}{\link[base]{numeric} \link[base]{vector}, weight of one or more vegetables (in grams)}
 
-\item{\code{water}}{\link[base]{numeric} scalar, weight (in grams) of water}
+\item{\code{water}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of water}
 
-\item{\code{sauce}}{\link[base]{numeric} vector, weight (in grams) of one or more sauces}
+\item{\code{sauce}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of one or more sauces}
 
-\item{\code{liqueur}}{\link[base]{numeric} vector, weight (in grams) of one or more liqueurs}
+\item{\code{liqueur}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of one or more liqueurs}
 
-\item{\code{gelatin}}{\link[base]{numeric} \link[base]{vector}s}
+\item{\code{gelatin}}{\link[base]{numeric} \link[base]{vector}}
 
 \item{\code{call}}{\link[base]{name}, the function name to create this \linkS4class{recipe}}
 

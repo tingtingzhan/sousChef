@@ -29,10 +29,3 @@ KingArthur_fauxReo <- \() recipe(
   author = 'pj-hamel', kingarthur = 'faux-reos-recipe')
 
 
-if (FALSE) {
-  nutritionlist(
-    sousChef:::fauxReo(),
-    sousChef:::KingArthur_fauxReo(),
-    sousChef:::Nabisco_waferOreo()
-  )
-}

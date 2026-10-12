@@ -9,3 +9,11 @@ expect_no_error(
 )
 
 
+
+expect_no_error(
+  object = nutritionlist(
+    sousChef:::Sallys_pumpkin_muffin(), 
+    sousChef:::Sallys_pumpkin_cake()
+  ) |> print()
+)
+

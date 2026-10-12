@@ -2,8 +2,8 @@ Package: sousChef
 Type: Package
 Title: sousChef
 Version: 0.1.0
-Date: 2026-10-09
-Description: Need to think more..
+Date: 2026-10-12
+Description: The S4 objects 'tool', 'nutrition', 'spice', 'raw.' and 'recipe'. 
 Authors@R: c(person(given = "Tingting", family = "Zhan", role = c("aut", "cre"), email = "tingtingzhan@gmail.com"))
 Language: en-US
 Encoding: UTF-8

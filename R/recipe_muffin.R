@@ -74,9 +74,3 @@ Sallys_pumpkin_muffin <- \() recipe(
   dairy_cup = c(Wegmans_whole_milk = 1/4)
 )
 
-if (FALSE) {
-  nutritionlist(
-    sousChef:::Sallys_pumpkin_muffin(), 
-    sousChef:::Sallys_pumpkin_cake())
-}
-

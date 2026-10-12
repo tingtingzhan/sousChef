@@ -6,7 +6,7 @@
 \alias{sousChef-package}
 \title{sousChef: sousChef}
 \description{
-Need to think more..
+The S4 objects 'tool', 'nutrition', 'spice', 'raw.' and 'recipe'.
 }
 \author{
 \strong{Maintainer}: Tingting Zhan \email{tingtingzhan@gmail.com}

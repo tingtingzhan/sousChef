@@ -3,16 +3,6 @@
 # Oreo manufacturing!!!
 # https://www.youtube.com/watch?v=b_hDOHmF9nE
 
-if (FALSE) {
-  nutritionlist(
-    Nabisco_waferOreo(),
-    Oreo(),
-    Oreo_thins(),
-    Oreo_thins_tiramisu(),
-    Oreo_thins_lemon(),
-    Oreo_thins_mint()
-  )
-}
 
 Nabisco_waferOreo <- \() nutrition(
   amazon = 'B07H9V7Q8S', webstaurant = '565297100',

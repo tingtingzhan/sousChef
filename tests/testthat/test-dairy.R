@@ -34,3 +34,13 @@ expect_no_error(
   ) |> print()
 )
 
+
+expect_no_error(
+  object = nutritionlist(
+    sousChef:::Philadelphia_creamCheeseSpread(),
+    sousChef:::PhiladelphiaNeufchatel_creamCheeseSpread(),
+    sousChef:::Wegmans_mozzarella_whole(),
+    sousChef:::Wegmans_mozzarella_skim(),
+    sousChef:::KraftNatural_mozzarella_fatFree()
+  ) |> print()
+)

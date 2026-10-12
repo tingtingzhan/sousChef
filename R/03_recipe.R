@@ -65,9 +65,7 @@ recipe <- \(...) {
   
   x <- x |>
     .cleanSlots_raw.()
-  
-  
-  
+
   # processing 'character'
   
   if (length(x$author)) {

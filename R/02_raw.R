@@ -4,66 +4,66 @@
 #' @description 
 #' \linkS4class{raw.} allows negative ingredients.
 #' 
-#' @slot homemade \link[base]{numeric} vector
-#' @slot misc \link[base]{numeric} vector, weight (in grams) of one or more miscellaneous ingredients
+#' @slot homemade \link[base]{numeric} \link[base]{vector}
+#' @slot misc \link[base]{numeric} \link[base]{vector}, weight (in grams) of one or more miscellaneous ingredients
 #' 
-#' @slot puree \link[base]{numeric} vector, weight (in grams) of one or more puree
+#' @slot puree \link[base]{numeric} \link[base]{vector}, weight (in grams) of one or more puree
 #' 
-#' @slot fruit \link[base]{numeric} vector, weight of fresh fruit pulp or juice (in grams)
+#' @slot fruit \link[base]{numeric} \link[base]{vector}, weight of fresh fruit pulp or juice (in grams)
 #' 
-#' @slot dairy \link[base]{numeric} scalar, weight (in grams) of dairy products
+#' @slot dairy \link[base]{numeric} \link[base]{vector}, weight (in grams) of dairy products
 #' 
-#' @slot oil \link[base]{numeric} scalar, weight (in grams) of liquid oil
-#' @slot fat \link[base]{numeric} scalar, weight (in grams) of solid fat
+#' @slot oil \link[base]{numeric} \link[base]{vector}, weight (in grams) of liquid oil
+#' @slot fat \link[base]{numeric} \link[base]{vector}, weight (in grams) of solid fat
 #' 
-#' @slot egg \link[base]{numeric} \link[base]{vector}s, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)
+#' @slot egg \link[base]{numeric} \link[base]{vector}, numbers of large egg (52 grams each), egg yolks (17.3 grams each) and whites (34.7 grams each)
 #' 
-#' @slot tea \link[base]{numeric} \link[base]{vector}s, weight of loose tea (in grams) and number of tea bags.
+#' @slot tea \link[base]{numeric} \link[base]{vector}, weight of loose tea (in grams) and number of tea bags.
 #' 
 #' @slot flour \link[base]{numeric} \link[base]{vector}, weight (in grams) of King Arthur all purpose flour
 #' @slot beverage \link[base]{numeric} \link[base]{vector}
 #' 
-#' @slot starch \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) of various starch
+#' @slot starch \link[base]{numeric} \link[base]{vector}, weight (in grams) of various starch
 #' 
-#' @slot grain \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) of various grains
+#' @slot grain \link[base]{numeric} \link[base]{vector}, weight (in grams) of various grains
 #' 
 #' @slot bean \link[base]{numeric} \link[base]{vector}, weight of dry beans (in grams)
 #' 
-#' @slot nut \link[base]{numeric} scalar, weight of dry nuts (in grams)
-#' @slot seed \link[base]{numeric} scalar, weight of dry seed (in grams)
+#' @slot nut \link[base]{numeric} \link[base]{vector}, weight of dry nuts (in grams)
+#' @slot seed \link[base]{numeric} \link[base]{vector}, weight of dry seed (in grams)
 #' 
 #' 
-#' @slot sugar \link[base]{numeric} scalar, weight (in grams) of sugar 
+#' @slot sugar \link[base]{numeric} \link[base]{vector}, weight (in grams) of sugar 
 #' 
-#' @slot syrup \link[base]{numeric} scalar or \link[base]{vector}, weight (in grams) of various syrup
+#' @slot syrup \link[base]{numeric} \link[base]{vector}, weight (in grams) of various syrup
 #' 
-#' @slot NaHCO3 \link[base]{numeric} scalars, weight (in grams) of Arm and Hammer baking soda
+#' @slot NaHCO3 \link[base]{numeric} \link[base]{vector}, weight (in grams) of baking soda
 #' 
-#' @slot Na2CO3 \link[base]{numeric} scalars, weight (in grams) of Na2CO3.  Na2CO3 is made from baking Arm and Hammer baking soda, 200F for 30 minutes
+#' @slot Na2CO3 \link[base]{numeric} \link[base]{vector}, weight (in grams) of Na2CO3.  Na2CO3 is made from baking the baking soda, 200F for 30 minutes
 #' 
-#' @slot bakingPowder \link[base]{numeric} scalar, weight (in grams) of baking powder
-#' @slot salt \link[base]{numeric} scalar, weight (in grams) of salt
-#' @slot msg \link[base]{numeric} scalar, weight (in grams) of monosodium glutamate (MSG)
-#' @slot vanilla \link[base]{numeric} scalar, weight (in grams) of vanilla extract
-#' @slot yeast \link[base]{numeric} scalar, weight (in grams) of yeast
+#' @slot bakingPowder \link[base]{numeric} \link[base]{vector}, weight (in grams) of baking powder
+#' @slot salt \link[base]{numeric} \link[base]{vector}, weight (in grams) of salt
+#' @slot msg \link[base]{numeric} \link[base]{vector}, weight (in grams) of monosodium glutamate (MSG)
+#' @slot vanilla \link[base]{numeric} \link[base]{vector}, weight (in grams) of vanilla extract
+#' @slot yeast \link[base]{numeric} \link[base]{vector}, weight (in grams) of yeast
 #' 
-#' @slot cocoa \link[base]{numeric} scalar, weight (in grams) of Dutch-processed cocoa powder
-#' @slot matcha \link[base]{numeric} scalar, weight (in grams) of culinary matcha powder 
+#' @slot cocoa \link[base]{numeric} \link[base]{vector}, weight (in grams) of Dutch-processed cocoa powder
+#' @slot matcha \link[base]{numeric} \link[base]{vector}, weight (in grams) of culinary matcha powder 
 #' @slot spice named \link[base]{numeric} \link[base]{vector}, weight (in grams) of compound spices
 #' 
-#' @slot coffee \link[base]{numeric} scalar, weight (in grams) of instant coffee
+#' @slot coffee \link[base]{numeric} \link[base]{vector}, weight (in grams) of instant coffee
 #' 
-#' @slot meat \link[base]{numeric} vector, weight of one or more cuts of meat (in grams)
-#' @slot poultry \link[base]{numeric} vector, weight of one or more cuts of poultry (in grams)
-#' @slot seafood \link[base]{numeric} vector, weight of one or more other sea food (in grams)
+#' @slot meat \link[base]{numeric} \link[base]{vector}, weight of one or more cuts of meat (in grams)
+#' @slot poultry \link[base]{numeric} \link[base]{vector}, weight of one or more cuts of poultry (in grams)
+#' @slot seafood \link[base]{numeric} \link[base]{vector}, weight of one or more other sea food (in grams)
 #' 
-#' @slot vegetable \link[base]{numeric} vector, weight of one or more vegetables (in grams)
+#' @slot vegetable \link[base]{numeric} \link[base]{vector}, weight of one or more vegetables (in grams)
 #' 
-#' @slot water \link[base]{numeric} scalar, weight (in grams) of water
-#' @slot sauce \link[base]{numeric} vector, weight (in grams) of one or more sauces
-#' @slot liqueur \link[base]{numeric} vector, weight (in grams) of one or more liqueurs
+#' @slot water \link[base]{numeric} \link[base]{vector}, weight (in grams) of water
+#' @slot sauce \link[base]{numeric} \link[base]{vector}, weight (in grams) of one or more sauces
+#' @slot liqueur \link[base]{numeric} \link[base]{vector}, weight (in grams) of one or more liqueurs
 #' 
-#' @slot gelatin \link[base]{numeric} \link[base]{vector}s
+#' @slot gelatin \link[base]{numeric} \link[base]{vector}
 #' 
 #' @name raw_recipe
 #' @aliases raw.-class
@@ -195,37 +195,45 @@ print.raw. <- \(x, prt_total = TRUE, ...) {
 #setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
 .cleanSlots_raw. <- \(x) {
   
-  x <- x |> 
-    mergePc(which = 'gelatin') |>
-    mergePc(which = 'egg') |>
-    mergePc(which = 'fruit') |>
-    mergePc(which = 'puree') |> mergeVol(which = 'puree') |>
-    mergePc(which = 'tea') |>
-    mergeVol(which = 'flour') |>
-    mergeVol_H2O() |>
-    mergeVol(which = 'misc') |>
-    mergeVol(which = 'fat') |>
-    mergeVol(which = 'spice') |>
-    mergeVol(which = 'syrup') |>
-    mergeVol(which = 'vanilla') |>
-    mergeVol(which = 'sugar', nm = 'US_10x') |>
-    mergeVol(which = 'salt', nm = 'Morton_salt') |>
-    mergeVol(which = 'starch') |>
-    mergeVol(which = 'oil') |>
-    mergeVol(which = 'sauce') |>
-    mergeVol(which = 'liqueur') |>
-    mergeVol(which = 'dairy') |> 
-    mergeVol(which = 'grain') |> 
-    mergeVol(which = 'nut') |>
-    mergeVol(which = 'seed') |>
-    mergeVol(which = 'coffee') |>
-    mergeVol(which = 'cocoa') |>
-    mergeVol(which = 'matcha') |>
-    mergeVol(which = 'yeast') |>
+  x <- x |> # alphabetically
     mergeVol(which = 'bakingPowder') |>
+    mergeVol(which = 'bean') |> 
+    mergeVol(which = 'beverage') |> 
+    mergeVol(which = 'cocoa') |>
+    mergeVol(which = 'coffee') |>
+    mergeVol(which = 'dairy') |> 
+    mergePc(which = 'egg') |>
+    mergeVol(which = 'fat') |>
+    mergeVol(which = 'flour') |>
+    mergePc(which = 'fruit') |>
+    mergePc(which = 'gelatin') |>
+    mergeVol(which = 'grain') |> 
+    # merge??(which = 'homemade') |> # has no vol
+    mergeVol(which = 'liqueur') |>
+    mergeVol(which = 'matcha') |>
+    # merge??(which = 'meat') |> # has no vol
+    mergeVol(which = 'misc') |>
+    mergeVol(which = 'msg') |>
+    mergeVol(which = 'Na2CO3') |>
     mergeVol(which = 'NaHCO3') |>
-    mergeVol(which = 'Na2CO3')
-  
+    mergeVol(which = 'nut') |>
+    mergeVol(which = 'oil') |>
+    # merge??(which = 'poultry') |> # has no vol
+    mergePc(which = 'puree') |> mergeVol(which = 'puree') |>
+    mergeVol(which = 'salt', nm = 'Morton_salt') |>
+    mergeVol(which = 'sauce') |>
+    # merge??(which = 'seafood') |> # has no vol
+    mergeVol(which = 'seed') |>
+    mergeVol(which = 'spice') |>
+    mergeVol(which = 'starch') |>
+    mergeVol(which = 'sugar', nm = 'US_10x') |>
+    mergeVol(which = 'syrup') |>
+    mergePc(which = 'tea') |>
+    mergeVol(which = 'vanilla') |>
+    # merge??(which = 'vegetable') |> # has no vol
+    mergeVol_H2O() |>
+    mergeVol(which = 'yeast')
+    
   for (i in names(getSlots(x = 'raw.'))) {
     if (length(x[[i]])) {
       x[[i]] <- x[[i]] |>

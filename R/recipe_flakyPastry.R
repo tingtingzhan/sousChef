@@ -1,66 +1,4 @@
 
-# read carefully
-#https://www.sohu.com/a/147900654_177351
-
-
-
-#' @title Chinese Flaky Pastry
-#' 
-#' @examples 
-#' nutritionlist(
-#'  sousChef:::Dad_yolkPastry_waterDough(),
-#'  sousChef:::Dad_oxTongue1_waterDough(), 
-#'  sousChef:::Dad_oxTongue2_waterDough(),
-#'  sousChef:::Dad_blackSesamePastry_waterDough(), 
-#'  sousChef:::Dad_pepperPastry_waterDough(),
-#'  sousChef:::laofangu_durianSu_waterDough(),
-#'  sousChef:::Dad_flowerPastry_waterDough(), 
-#'  sousChef:::shangshi_oxTongue_waterDough(),
-#'  sousChef:::laofangu_magnolia_waterDough(),
-#'  sousChef:::PinNuo_oxTongue_waterDough(),
-#'  sousChef:::Dad_sweetPastry_waterDough()
-#' )
-#' 
-#' nutritionlist(
-#'  sousChef:::shangshi_oxTongue_shortDough(),
-#'  sousChef:::Dad_flowerPastry_shortDough(),
-#'  sousChef:::Dad_oxTongue1_shortDough(),
-#'  sousChef:::Dad_yolkPastry_shortDough(),
-#'  sousChef:::laofangu_magnolia_shortDough(),
-#'  sousChef:::Dad_sweetPastry_shortDough(),
-#'  sousChef:::Dad_pepperPastry_shortDough(),
-#'  sousChef:::laofangu_durianSu_shortDough()
-#' )
-#' 
-#' nutritionlist(
-#'  sousChef:::Dad_blackSesamePastry_largeYouSu(),
-#'  sousChef:::PinNuo_largeYouSu()
-#' )
-#' 
-#' @name Chinese_flaky_pastry
-NULL
-
-
-# @references
-# \url{https://en.wikipedia.org/wiki/Chinese_flaky_pastry}
-# \url{https://cookclimbcode.substack.com/p/chinese-flaky-pastry}
-
-# waterDough = '\u6dee\u626c\u6c34\u6cb9\u9762\u76ae'
-# shortDough = '\u5c0f\u5305\u9165'
-# largeYouSu = '\u5927\u5305\u9165'
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -103,9 +41,9 @@ Dad_oxTongue1_shortDough <- \() recipe(
     '2x\u725b\u820c\u997c(\u5c0f\u5305\u9165)' = 30
   ),
   dad1966 = 'v4fPRmuu5dA') #c(
-  #  'Dec 2020' = 'v4fPRmuu5dA',
-  #  'Jan 2024' = 'XLj7W76UFbs'
-  #)
+#  'Dec 2020' = 'v4fPRmuu5dA',
+#  'Jan 2024' = 'XLj7W76UFbs'
+#)
 
 
 
@@ -247,4 +185,3 @@ Dad_oxTongue2_waterDough <- \() recipe(
   water = 100, 
   fat = c(Epic_lard = 60),
   dad1966 = 'XLj7W76UFbs')
-

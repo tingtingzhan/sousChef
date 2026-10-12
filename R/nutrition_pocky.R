@@ -18,9 +18,5 @@ Pocky_double_matcha <- \() nutrition(
 
 # https://pocky.glico.com/global/products/ja/matcha.html
 
-if (FALSE) {
-  nutritionlist(
-    Pocky_matcha(),
-    Pocky_double_matcha()
-  )
-}
+
+

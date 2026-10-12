@@ -151,15 +151,7 @@ Wegmans_mozzarella_skim <- \() nutrition(
   carbohydrate = 2, sugar = 1, protein = 6,
   review = 'Not that great. Do not buy again')
 
-if (FALSE) {
-  nutritionlist(
-    sousChef:::Philadelphia_creamCheeseSpread(),
-    sousChef:::PhiladelphiaNeufchatel_creamCheeseSpread(),
-    sousChef:::Wegmans_mozzarella_whole(),
-    sousChef:::Wegmans_mozzarella_skim(),
-    sousChef:::KraftNatural_mozzarella_fatFree()
-  )
-}
+
 
 Wegmans_mozzarella_whole <- \() nutrition(
   wegmans = '33429', usd = .25, date = as.Date('2026-09-17'),

@@ -1,20 +1,6 @@
 
 
 
-
-if (FALSE) {
-  nutritionlist(
-    Daat_soupBao(),
-    xiaogaojie_soupBao(),
-    PinNuo_soupBao(),
-    shangshi_soupBao(),
-    amanda_soupBao()
-    # whiteSwan_soupBao(), # not correct??
-  )
-  
-}
-
-
 Daat_soupBao <- \() recipe(
   flavor = '\u704c\u6c64\u5305',
   daatgo = 'duldrFRGipM',
@@ -33,9 +19,8 @@ PinNuo_soupBao <- \() recipe(
   flavor = '\u704c\u6c64\u5305',
   pino = 'EyG2mTF23Vc',
   flour = c(KingArthur_allPurposeFlr = 500),
-  water = c(c100 = 100),
-  salt = 3,
-  water = 150)
+  water = c(c100 = 100, c22 = 150),
+  salt = 3)
 
 shangshi_soupBao <- \() recipe(
   flavor = '\u704c\u6c64\u5305',

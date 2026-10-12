@@ -1,8 +1,5 @@
 
 
-
-
-
 WilliamsSonoma_mocha <- \() nutrition(
   brand = style_hyperlink(text = 'Williams Sonoma\U1f1fa\U1f1f8', url = 'https://www.williams-sonoma.com/products/williams-sonoma-mocha-hot-chocolate/') |> c(),
   name = 'Mocha Hot Chocolate',
@@ -205,9 +202,6 @@ AmandaRettke_cocoa <- \() recipe(
   starch_tsp = c(Wegmans_corn_starch = 2),
   salt_tsp = c(Morton_kosher_salt = 1)
 )
-
-
-
 
 
 

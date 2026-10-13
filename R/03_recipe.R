@@ -96,6 +96,7 @@ recipe <- \(...) {
     add_youtube(name = 'guga', text = 'Guga') |>
     add_youtube(name = 'happytears', text = '\u5e78\u798f\u7684\u773c\u6cea') |>
     add_youtube(name = 'laofangu', text = '\u8001\u996d\u9aa8') |>
+    add_youtube(name = 'mrhongkitchen', text = '\u963f\u9e3f\u53a8\u623f') |>
     add_youtube(name = 'pino', text = '\u54c1\u8bfa') |> # http://www.pinochina.com # temporarily down
     add_youtube(name = 'shangshikitchen', text = '\u5c1a\u98df\u53a8\u623f') |>
     add_youtube(name = 'viewsontheroad', text = 'Views on the road') |>

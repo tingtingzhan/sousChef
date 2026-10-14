@@ -261,6 +261,8 @@ as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
     unlist(use.names = TRUE) |> # no need to remove len-0 element
     zero.omit()
   
+  if (anyDuplicated.default(names(ingredient))) stop('do not allow!!!')
+  
   z <- if (detail) {
     ingredient
   } else {

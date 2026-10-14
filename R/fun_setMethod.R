@@ -118,3 +118,35 @@ setMethod(f = '[', signature = c(x = 'raw.', i = 'character'), definition = \(x,
 
 })
 
+
+#' @rdname S4methods
+#' @aliases -,raw.,character-method
+#' @export
+setMethod(f = '-', signature = c(e1 = 'raw.', e2 = 'character'), definition = \(e1, e2) {
+  
+  if (e2 %in% names(getSlots('raw.'))) {
+    slot(e1, name = e2) <- numeric()
+    return(e1)
+  }
+  
+  nm1 <- e1 |>
+    as.double.raw.(detail = TRUE, rel = FALSE) |>
+    names()
+  id <- (nm1 == e2)
+  if (!sum(id)) {
+    warning(sQuote(e2), ' does not exist in `e1`')
+    return(e1)
+  }
+  if (sum(id) > 1L) stop('already prevented by as.double.raw.()')
+  
+  for (nm in names(getSlots('raw.'))) {
+    v <- slot(e1, name = nm)
+    vnm <- names(v)
+    id <- (vnm == e2)
+    if (!any(id)) next;
+    slot(e1, name = nm) <- v[!id]
+    return(e1)
+  }
+  
+})
+

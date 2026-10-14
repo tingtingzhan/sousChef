@@ -10,6 +10,7 @@
 \alias{\%in\%,character,raw.-method}
 \alias{\%notin\%,character,raw.-method}
 \alias{[,raw.,character-method}
+\alias{-,raw.,character-method}
 \title{\code{S4} Methods}
 \usage{
 \S4method{*}{raw.,numeric}(e1, e2)
@@ -27,6 +28,8 @@
 \S4method{\%notin\%}{character,raw.}(x, table)
 
 \S4method{[}{raw.,character}(x, i)
+
+\S4method{-}{raw.,character}(e1, e2)
 }
 \arguments{
 \item{e1, e2}{see \strong{Usage}}

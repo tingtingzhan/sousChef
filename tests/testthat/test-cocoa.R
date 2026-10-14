@@ -8,6 +8,5 @@ expect_no_error(
     sousChef:::Ghirardelli_sunrise(),
     sousChef:::Ghirardelli_majestic(),
     sousChef:::Navitas_cacao()
-  ) |> 
-    print()
+  ) |> print()
 )

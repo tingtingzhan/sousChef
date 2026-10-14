@@ -6,7 +6,6 @@ expect_no_error(
     subtract(sousChef:::Junior_original(), sugar = 12),
     subtract(sousChef:::Junior_cookbook(), sugar = 230),
     subtract(sousChef:::CheesecakeFactory_original(), sugar = 18)
-  ) |> 
-    print()
+  ) |> print()
 )
 

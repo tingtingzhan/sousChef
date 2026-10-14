@@ -150,3 +150,11 @@ setMethod(f = '-', signature = c(e1 = 'raw.', e2 = 'character'), definition = \(
   
 })
 
+
+
+#' @rdname S4methods
+#' @aliases -,raw.,nutrition-method
+#' @export
+setMethod(f = '-', signature = c(e1 = 'raw.', e2 = 'nutrition'), definition = \(e1, e2) {
+  e1 - as.character(e2@call)
+})

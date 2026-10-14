@@ -7,7 +7,7 @@ BobsRedMill_tapioca_starch <- \() nutrition(
 
 BobsRedMill_potato_starch <- \() nutrition(
   bobsredmill = 'potato-starch', # very coarse!  I don't like!!
-  name = 'Potato\U1f954 Starch',
+  name = 'Potato\U1f954 Starch', alias = '\u571f\u8c46\u6dc0\u7c89',
   # wegmans = 7551L, usd = 5.19/623*12, # 2023-11-13
   servingGram = 12, servingTbsp = 12)
 

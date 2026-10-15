@@ -20,7 +20,7 @@ setClass(Class = 'spice', slots = c(
 spice <- \(...) {
   
   x <- list(...) |>
-    .findCall_NEW(which = -2)
+    .findCall(which = -2)
   
   if (!length(x$wiki)) {
     x$wiki <- x$call[[2L]] |> # `x$call` is `quote(anise)` !!

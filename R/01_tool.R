@@ -9,6 +9,8 @@
 #' 
 #' @slot name \link[base]{character} scalar, brand and name of kitchen tool
 #' 
+#' @slot alias \link[base]{character} scalar
+#' 
 #' @slot name2 any R object, currently supports \link[base]{character} or \linkS4class{tool}, brand and name of the auxiliary tool
 #' 
 #' @slot capacity \link[base]{numeric} scalar, maximum capacity, in times of recipe
@@ -29,13 +31,6 @@
 #' 
 #' @slot waterLost \link[base]{numeric} scalar, water evaporated in cooking (in grams) 
 #' 
-#' @slot alias \link[base]{character} scalar
-#' @slot kitchenaid \link[base]{character} scalar
-#' @slot instantpot \link[base]{character} scalar
-#' @slot nutribullet \link[base]{character} scalar
-#' @slot stanley1913 \link[base]{character} scalar
-#' @slot staub \link[base]{character} scalar
-#' 
 #' @export
 setClass(Class = 'tool', slots = c(
   name2 = 'ANY',
@@ -50,31 +45,27 @@ setClass(Class = 'tool', slots = c(
     'program',
     'operation',
     'cooling',
-    'note',
-    
-    'kitchenaid',
-    'instantpot',
-    'nutribullet',
-    'stanley1913',
-    'staub'
+    'note'
   ))
 ))
 
 
 
 
-
-
-setMethod(f = initialize, signature = 'tool', definition = \(.Object, ...) {
+tool <- \(...) {
   
-  callNextMethod(.Object, ...) |>
+  x <- list(...) |>
     add_tool_url(name = 'kitchenaid', fmt = 'https://www.kitchenaid.com/p.%s.html', brand = 'Kitchen Aid') |>
     add_tool_url(name = 'instantpot', fmt = 'https://instantpot.com/products/%s', brand = 'Instant Pot') |>
     add_tool_url(name = 'nutribullet', fmt = 'https://www.nutribullet.com/shop/%s', brand = 'Nutribullet') |>
+    add_tool_url(name = 'sodastream', fmt = 'https://sodastream.com/products/%s', brand = 'SodaStream') |>
     add_tool_url(name = 'staub', fmt = 'https://www.zwilling.com/us/%s.html', brand = 'Staub') |>
     add_tool_url(name = 'stanley1913', fmt = 'https://www.stanley1913.com/products/%s', brand = 'Stanley')
 
-})
+  c(list(Class = 'tool'), x) |> 
+    do.call(what = 'new', args = _)
+  
+}
 
 
 
@@ -186,8 +177,7 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
 
 
 
-Pastalinda260 <- \(...) new(
-  Class = 'tool',
+Pastalinda260 <- \(...) tool(
   name = 'https://www.pastalindausa.com/collections/pasta-maker-classic-260' |>
     style_hyperlink(text = 'Pasta Maker Classic 260', url = _) |>
     c(),
@@ -195,54 +185,45 @@ Pastalinda260 <- \(...) new(
 )
 
 
-SamsungME21R706BAT <- \(...) new(
-  Class = 'tool',
+SamsungME21R706BAT <- \(...) tool(
   name = style_hyperlink(text = 'Samsung ME21R706BAT/AA 2.1 Ft\u00b3 Over-The-Range Microwave', url = 'https://samsungparts.com/products/me21r706bat-aa') |> c(),
   ...)
 
 
-thermometer <- \(...) new(
-  Class = 'tool', 
+thermometer <- \(...) tool(
   name = style_hyperlink(text = 'Etekcity Lasergrip 1260', url = 'https://etekcity.com/products/lasergrip-1260-infrared-thermometer') |> c(), 
   ...)
 
-CuisinartICE70 <- \(...) new(
-  Class = 'tool', 
+CuisinartICE70 <- \(...) tool(
   name = style_hyperlink(text = 'Cuisinart Ice Cream Maker ICE-70', url = 'https://www.cuisinart.com/ICE-70P1.html') |> c(),
   ...)
 
-InstantPot <- \(...) new(
-  Class = 'tool', 
+InstantPot <- \(...) tool(
   name = 'Pro, 8 Quart', 
   instantpot = 'instant-pot-pro-8-quart-multi-use-pressure-cooker', 
   alias = '\u7535\u9ad8\u538b\u9505',
   ...)
 
-KSMICM <- \(...) new(
-  Class = 'tool', 
+KSMICM <- \(...) tool(
   name = 'Ice Cream Attachment KSMICM', kitchenaid = 'ksmicm',
   ...)
 
-KSM8990 <- \(...) new(
-  Class = 'tool', 
+KSM8990 <- \(...) tool(
   name = 'Stand Mixer KSM8990, 8 Quart', kitchenaid = 'ksmc895ob',
   ...)
 
-KSM7BL3PSS_doughhook <- \(...) new(
-  Class = 'tool',
+KSM7BL3PSS_doughhook <- \(...) tool(
   name = 'Dough Hook, Stainless Steel',
   kitchenaid = 'KSM7BL3PSS',
   ...)
 
 
-KSM7BL3PSS_flatbeater <- \(...) new(
-  Class = 'tool',
+KSM7BL3PSS_flatbeater <- \(...) tool(
   name = 'Flat Beater, Stainless Steel',
   kitchenaid = 'KSM7BL3PSS',
   ...)
 
-KSM7BL3PSS_wirewhip <- \(...) new(
-  Class = 'tool',
+KSM7BL3PSS_wirewhip <- \(...) tool(
   name = 'Wire Whip, Stainless Steel',
   kitchenaid = 'KSM7BL3PSS',
   ...)
@@ -262,42 +243,35 @@ KSM8990_dough <- \(...) KSM8990(
 
 
 
-KSM3316X <- \(...) new(
-  Class = 'tool', 
+KSM3316X <- \(...) tool(
   name = 'Stand Mixer KSM3316X, 3.5 Quart', kitchenaid = 'ksm3316xer',
   ...)
 
-KSEG950ESS <- \(...) new(
-  Class = 'tool',
+KSEG950ESS <- \(...) tool(
   name = 'Downdraft Range KSEG950ESS', kitchenaid = 'kseg950ess', alias = '\u70e4\u7bb1',
   ...)
 
-RobamCT763 <- \(...) new(
-  Class = 'tool', 
+RobamCT763 <- \(...) tool(
   name = style_hyperlink(text = 'Robam R-Box CT763 Combi Steam Oven', url = 'https://robamliving.com/products/robam-ct763') |> c(),
   ...)
 
-PhilipsHD9867 <- \(...) new(
-  Class = 'tool', 
+PhilipsHD9867 <- \(...) tool(
   name = style_hyperlink(text = 'Philips Airfryer XXL HD9867', url = 'https://www.usa.philips.com/c-p/HD9867_16') |> c(), 
   alias = '\u7a7a\u6c14\u70b8\u9505',
   ...)
 
-SanyoECJS35S <- \(...) new(
-  Class = 'tool', 
+SanyoECJS35S <- \(...) tool(
   name = style_hyperlink(text = 'Sanyo Rice Cooker ECJ-S35S', url = 'https://kitchen.manualsonline.com/manuals/mfg/sanyo/ecjs35s.html') |> c(), 
   alias = '\u7535\u996d\u7172', 
   ...)
 
-JoyoungDJ13U <- \(...) new(
-  Class = 'tool', 
+JoyoungDJ13U <- \(...) tool(
   name = style_hyperlink(text = 'Joyoung Soymilk Maker DJ13U-P10', url = 'https://en.huarenstore.com/joyoung-soy-milk-maker-dj13u-p10.html') |> c(), 
   alias = '\u8c46\u6d46\u673a', 
   ...)
 
 
-JoyoungDJ06M <- \(...) new(
-  Class = 'tool', 
+JoyoungDJ06M <- \(...) tool(
   name = style_hyperlink(text = 'Joyoung Mini Soymilk Maker DJ06M', url = 'https://en.huarenstore.com/joyoung-soymilk-maker-dj06m.html') |> c(), 
   alias = '\u8ff7\u4f60\u8c46\u6d46\u673a', 
   ...)
@@ -368,57 +342,59 @@ JoyoungCJA9U_filling <- \(
 
 
 
-nutribullet20 <- \(...) new(
-  Class = 'tool',
+nutribullet20 <- \(...) tool(
   name = 'Ultra 20 fl. oz. Blending Cup', 
   nutribullet = 'accessories/nutribullet-tritan-renew-20oz-cup/',
   ...) 
 
-nutribullet24 <- \(...) new(
-  Class = 'tool',
+nutribullet24 <- \(...) tool(
   name = 'Ultra 24 fl. oz. Blending Cup', 
   nutribullet = 'accessories/nutribullet-tritan-renew-24-oz-cup-with-to-go-lid/',
   ...) 
 
-Stanley20 <- \(...) new(
-  Class = 'tool',
+Stanley20 <- \(...) tool(
   stanley1913 = 'adventure-quencher-travel-tumbler-20-oz',
   name = 'Quencher 20oz',
   ...)
 
-Stanley14 <- \(...) new(
-  Class = 'tool',
+Stanley14 <- \(...) tool(
   stanley1913 = 'adventure-quencher-travel-tumbler-14-oz',
   name = 'Quencher 14oz',
   ...)
 
-Stanley40 <- \(...) new(
-  Class = 'tool',
+Stanley40 <- \(...) tool(
   stanley1913 = 'quencher-protour-flipstraw-tumbler',
   name = 'Quencher 40oz',
   ...)
 
-StanleyJar36 <- \(...) new(
-  Class = 'tool',
+StanleyJar36 <- \(...) tool(
   stanley1913 = 'adventure-to-go-food-jar-spork-36-oz',
   name = 'Food Jar 36oz', 
   ...)
 
 
 
-Staub_vertRoaster <- \(...) new(
-  Class = 'tool',
+Staub_vertRoaster <- \(...) tool(
   name = 'Vertical Chicken Roaster', staub = '1200023', alias = '\u94f8\u94c1\u70e4\u9e21\u67b6',
   name2 = KSEG950ESS(),
   ...)
 
-Staub_deepSkillet <- \(...) new(
-  Class = 'tool',
+Staub_deepSkillet <- \(...) tool(
   name = 'Deep Skillet, 8.5 inch', staub = '1029479', alias = '\u94f8\u94c1\u5e73\u5e95\u9505',
   ...
 )
 
 
+SodaStream_Art <- \(...) tool(
+  name = 'ART',
+  sodastream = 'art',
+  ...
+)
 
+SodaStream_bottle1L <- \(...) tool(
+  name = 'Slim Sparkling Water Bottle 33.8 oz',
+  sodastream = 'sodastream-1l-slim-dishwasher-safe-bottles-twin-pack-black',
+  ...
+)
 
 

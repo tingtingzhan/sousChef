@@ -190,9 +190,6 @@ print.raw. <- \(x, prt_total = TRUE, ...) {
 
 
 
-
-
-#setMethod(f = initialize, signature = 'raw.', definition = \(.Object, ...) {
 .cleanSlots_raw. <- \(x) {
   
   x <- x |> # alphabetically

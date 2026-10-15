@@ -27,7 +27,6 @@ if (FALSE) {
 
 
 
-
 .onLoad <- \(libname, pkgname) {
   
   # `x` is \linkS4class{recipe}

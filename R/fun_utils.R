@@ -142,46 +142,10 @@ zero.omit <- \(x) {
 
 # name clash
 # ?stats::getCall
-.findCall <- \(x, which = -4) {
-  
-  # default `-4` frame is determined by 
-  # [.findCall]
-  # ?methods::new
-  # ?methods::initialize (dont ask me why..)
-  
-  # BUT!!!
-  # user may define: x <- new('recipe', ...)
-  
-  if (identical(x@call, quote(`<UNDEFINED>`))) {
-    
-    tmp <- tryCatch(expr = {
-      match.call(
-        definition = sys.function(which = which), 
-        call = sys.call(which = which)
-      )
-    }, error = identity)
-    
-    z <- if (inherits(tmp, what = 'error')) {
-      quote(`user-defined`)
-    } else tmp[[1L]]
-    
-  } else z <- x@call # not the best practice, just to comform to R grammar 
-  
-  if (is.symbol(z)) {
-    x@call <- z # checks S4 slot class
-  } else if (as.character(z[[1L]]) %in% c('::', ':::')) {
-    x@call <- z[[3L]]
-  } else stop('unsupported @call: ', sQuote(z))
-  
-  return(x)
-  
-}
-
-
-.findCall_NEW <- \(x, which = -2) {
+.findCall <- \(x, which = -2) {
   
   # default `-2` frame is determined by 
-  # [.findCall_NEW]
+  # [.findCall]
   # helper function, e.g. [nutrition()]
   
   
@@ -224,7 +188,6 @@ zero.omit <- \(x) {
 mergePc <- \(x, which, ...) {
   
   pc <- paste0(which, '_pc')
-  #v <- slot(x, name = pc)
   v <- x[[pc]]
   if (!length(v)) return(x)
   
@@ -233,15 +196,13 @@ mergePc <- \(x, which, ...) {
       eval(call(name = i))@pieceGram
     }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
   
-  #slot(x, name = which) <- sum_by_name(
   z <- sum_by_name(
-    x[[which]], #slot(x, name = which), 
+    x[[which]],
     v * pieceGram
   )
   
   if (length(z)) x[[which]] <- z
   
-  #slot(x, name = pc) <- numeric()
   x[[pc]] <- NULL
   
   return(x)
@@ -289,41 +250,25 @@ mergeVol_H2O <- \(x) {
 
 mergeVol <- \(x, which, ...) {
   
-  #slt <- names(getSlots(x = 'raw.'))
-  
   tsp <- paste0(which, '_tsp')
-  #has_tsp <- tsp %in% slt
   Tbsp <- paste0(which, '_Tbsp')
-  #has_Tbsp <- Tbsp %in% slt
   cup <- paste0(which, '_cup')
-  #has_cup <- cup %in% slt
   brick <- paste0(which, '_brick')
-  #has_brick <- brick %in% slt
-  
+
   x_tsp <- sum_by_name(
-    #if (has_tsp) addname1(slot(x, name = tsp), ...),
     addname1(x[[tsp]], ...),
-    #if (has_Tbsp) 3 * addname1(slot(x, name = Tbsp), ...),
     3 * addname1(x[[Tbsp]], ...),
-    #if (has_cup) 48 * addname1(slot(x, name = cup), ...),
     48 * addname1(x[[cup]], ...),
-    #if (has_brick) 3 * 16 * addname1(slot(x, name = brick), ...)
     3 * 16 * addname1(x[[brick]], ...)
   )
   
   z <- sum_by_name(
-    #addname1(slot(x, name = which), ...), # weight in gram 
     addname1(x[[which]], ...), # weight in gram 
     gram_per_tsp(names(x_tsp)) * x_tsp
   )
 
-  #slot(x, name = which) <- z
   if (length(z)) x[[which]] <- z
   
-  #if (has_tsp) slot(x, name = tsp) <- numeric()
-  #if (has_Tbsp) slot(x, name = Tbsp) <- numeric() 
-  #if (has_cup) slot(x, name = cup) <- numeric() 
-  #if (has_brick) slot(x, name = brick) <- numeric()
   x[[tsp]] <- x[[Tbsp]] <- x[[cup]] <- x[[brick]] <- NULL
   return(x)
   
@@ -459,11 +404,11 @@ fmtURL <- \(x, fmt, text, ...) {
 
 
 add_tool_url <- \(x, name, brand, ...) {
-  v <- slot(x, name = name)
+  v <- x[[name]]
   if (!length(v)) return(x)
-  x@name <- v |>
-    fmtURL(text = paste(brand, x@name), ...)
-  slot(x, name = name) <- vector(mode = typeof(v), length = 0L) # yes!!!
+  x[['name']] <- v |>
+    fmtURL(text = paste(brand, x[['name']]), ...)
+  x[[name]] <- NULL
   return(x)
 }
 
@@ -506,7 +451,6 @@ add_brand_url <- \(x, name, ...) {
 
 
 add_youtube <- \(x, name, ...) { # text
-  #v <- slot(x, name = name)
   v <- x[[name]]
   nv <- length(v)
   if (!nv) return(x)
@@ -514,7 +458,6 @@ add_youtube <- \(x, name, ...) { # text
   if (length(x$author)) return(x)
   x$author <- v |>
     fmtURL(fmt = 'https://youtu.be/%s', ...)
-  #slot(x, name = name) <- character()
   x[[name]] <- NULL
   return(x)
 }
@@ -522,7 +465,6 @@ add_youtube <- \(x, name, ...) { # text
 
 
 add_youtube_recipe <- \(x, name, text1, text2, ...) {
-  #v <- slot(x, name = name)
   v <- x[[name]]
   nv <- length(v)
   if (!nv) return(x)
@@ -539,7 +481,6 @@ add_youtube_recipe <- \(x, name, text1, text2, ...) {
     v |>
       fmtURL(text = text2, ...)
   )
-  #slot(x, name = name) <- character()
   x[[name]] <- NULL
   return(x)
 }

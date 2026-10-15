@@ -61,7 +61,7 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
 recipe <- \(...) {
   
   x <- list(...) |>
-    .findCall_NEW(which = -2) # defined in \pkg{cooking}
+    .findCall(which = -2)
   
   x <- x |>
     .cleanSlots_raw.()
@@ -177,13 +177,6 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
   
-  #x <- x |>
-  #  .findCall()
-  
-  # is this the correct way of doing things?????
-  #x <- x |>
-  #  getMethod(f = 'initialize', signature = 'raw.')()
-  
   if (length(x@yeast) && !length(x@sugarLost)) {
     x@sugarLost <- if (is(x, 'bao')) {
       # After one hour brew time, ~0.35 grams of sugar per gram of yeast have been consumed, 
@@ -253,6 +246,8 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       '\u5de7\u514b\u529b\U1f36b' # '\u53ef\u53ef\U1f36b'
     } else if ('_coconutFlr$' %in% x) {
       '\u6930\u84c9\U1f965'
+    } else if ('_coconutBar$' %in% x) {
+      '\u6930\u5976\U1f965'
     } else if ('_darkCherry$' %in% x) {
       '\u751c\u6a31\u6843\U1f352'
     } else if ('_mandarine$' %in% x) {

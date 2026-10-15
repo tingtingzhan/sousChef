@@ -104,7 +104,7 @@ setClass(Class = 'nutrition', slots = c(
 nutrition <- \(...) {
   
   x <- list(...) |>
-    .findCall_NEW(which = -2) # must stop the pipeline :)))
+    .findCall(which = -2) # must stop the pipeline :)))
   
   x <- x |>
     add_brand_url(name = 'bachans', fmt = 'https://bachans.com/products/%s', text = 'Bachan\'s\U1f1fa\U1f1f8') |>

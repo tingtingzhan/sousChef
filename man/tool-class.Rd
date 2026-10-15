@@ -19,6 +19,8 @@
 \describe{
 \item{\code{name}}{\link[base]{character} scalar, brand and name of kitchen tool}
 
+\item{\code{alias}}{\link[base]{character} scalar}
+
 \item{\code{name2}}{any R object, currently supports \link[base]{character} or \linkS4class{tool}, brand and name of the auxiliary tool}
 
 \item{\code{capacity}}{\link[base]{numeric} scalar, maximum capacity, in times of recipe}
@@ -38,17 +40,5 @@
 \item{\code{note}}{\link[base]{character} scalar or \link[base]{vector}, other notes}
 
 \item{\code{waterLost}}{\link[base]{numeric} scalar, water evaporated in cooking (in grams)}
-
-\item{\code{alias}}{\link[base]{character} scalar}
-
-\item{\code{kitchenaid}}{\link[base]{character} scalar}
-
-\item{\code{instantpot}}{\link[base]{character} scalar}
-
-\item{\code{nutribullet}}{\link[base]{character} scalar}
-
-\item{\code{stanley1913}}{\link[base]{character} scalar}
-
-\item{\code{staub}}{\link[base]{character} scalar}
 }}
 

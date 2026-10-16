@@ -34,7 +34,7 @@ if (FALSE) {
   fn. <- \(x) NA_real_
   
   sugar <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     spam = .006,
     shrimpfill_garlicHerb = .009,
     meatmash =, meatball =, shrimpfillCantonese = .008,
@@ -136,17 +136,17 @@ if (FALSE) {
     NA_real_)
   
   addedSugar <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     milktea_ = .013,
     NA_real_)
   
   addedSugar2cocoa <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     mocaccino =, mocaccino_ = .30,
     NA_real_) 
   
   drymilk <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     caffeCoconut = .015, 
     yuenyeungCoconut = .02, 
     ricepaste = .025,
@@ -178,11 +178,11 @@ if (FALSE) {
     NA_real_)
   
   drymilk2cocoa <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     NA_real_)
   
   creamcheese <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     cheesecake = if ('_pumpkin$' %in% x) {
       .5 
     } else if (length(x@homemade) && grepl('pineapple', names(x@homemade))) {
@@ -192,13 +192,13 @@ if (FALSE) {
   
   #carbohydrate <- \(x) switch(
   # # !!!! replace with `fiber`!
-  #  x@key,
+  #  attr(x, which = 'key') %||% '', #x@key,
   #  soymilk = .007,
   #  beanPaste = if ('_redkidneybean$' %in% x) .125 else .15,
   #  NA_real_)
   
   fat <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     matchaLatte_ = .004, 
     tiramisu_ = .008,
     stickyTortilla =, TangYuan = .01, 
@@ -251,7 +251,7 @@ if (FALSE) {
     NA_real_)
   
   sodium <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     #tortilla = .0006,
     # cheesecake = .001, # 100% Nancy's full fat, low sodium cream cheese
     spam = .001, 
@@ -281,7 +281,7 @@ if (FALSE) {
     NA_real_)
   
   matcha <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     snowSkin =, stickyTortilla =, wrapperlinda =, noodlelinda = .022, 
     matchaLatte_ = .025, 
     matchaGoatLatte_ = .025, # retry with tenju
@@ -299,13 +299,13 @@ if (FALSE) {
   matcha2flour <- fn.
   
   matcha2pastryFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     bao = .045,
     millecrepe = .1,
     NA_real_)
   
   matcha2breadFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     wrapperlinda = .035,
     bread = .07,
     NA_real_)
@@ -315,12 +315,12 @@ if (FALSE) {
   matcha2wheatFlrMix <- fn.
   
   matcha2riceFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     snowSkin = .075,
     NA_real_)
   
   beet <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     snowSkin = .01, 
     millecrepe = .035,
     bao =, bread = .04,
@@ -329,13 +329,13 @@ if (FALSE) {
   beet2flour <- fn.
   
   beet2pastryFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     bao = .068,
     millecrepe = .12,
     NA_real_)
   
   beet2breadFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     bread = .075,
     NA_real_)
   
@@ -344,12 +344,12 @@ if (FALSE) {
   beet2wheatFlrMix <- fn.
   
   beet2riceFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     snowSkin = .075,
     NA_real_)
   
   cocoa <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     caffeCoconut =, yuenyeungCoconut = .0018,
     tiramisu_ = .004,
     snowSkin = .009, 
@@ -369,7 +369,7 @@ if (FALSE) {
     NA_real_)
   
   coffee <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     caffeCoconut =, yuenyeungCoconut = .0065,
     mocaccino_ = .006, 
     tiramisu_ = .008,
@@ -390,14 +390,14 @@ if (FALSE) {
     NA_real_)
   
   coffee2cocoa <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     mocaccino =, mocaccino_ = .17, # well tested
     cheesecake = .21, # hypothetical
     caffeLatte =, caffeLatte_ = 1.3,
     NA_real_)
   
   ginger. <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     meatmash =, meatball = .0004, 
     shrimpfillCantonese = .0007,
     snowSkin = .001, # to try
@@ -407,12 +407,12 @@ if (FALSE) {
     NA_real_)
   
   garlic <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     shrimpfill_garlicHerb = .008,
     NA_real_)
   
   whitePepper <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     shrimpfill_garlicHerb = .00055,
     beeffillLeeKumKee = .0009, # tested!
     meatmash =, meatball =, shrimpfillCantonese = .0016,
@@ -420,25 +420,25 @@ if (FALSE) {
     NA_real_)
   
   pumpkinSpice <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     pumpkinSpiceLatteMix = NA_real_,
     pumpkinSpiceLatte_ = .00075, # confirmed!!
     .002) # all other desserts
   
   coriander <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     porkfill = .0006,
     NA_real_)
   
   blackSesame <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     crumbcrust = .13,
     cookie = .135,
     lava = .3,
     NA_real_)
   
   acai <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     snowSkin = .01,
     bao = .05, # tested
     bread = .06, 
@@ -446,22 +446,22 @@ if (FALSE) {
     NA_real_)
   
   acai2pastryFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     bao = .075,
     NA_real_)
   
   acai2breadFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     NA_real_)
   
   acai2riceFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     NA_real_)
   
   acai2flour <- acai2gluten0Flr <- acai2wheatFlrMix <- fn.
   
   starch <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     geng = .007, 
     shrimpfillCantonese =, shrimpfill_garlicHerb =, porkfill = .02,
     meatmash = .02,
@@ -474,7 +474,7 @@ if (FALSE) {
     NA_real_)
   
   water <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     mascarponeFrosting = .21,
     mascarponeGanache = if (length(x@liqueur)) {
       .19 # liqueur flavor will also have `x@water`, so this `if` must be ahead of `@water`
@@ -496,7 +496,7 @@ if (FALSE) {
     NA_real_)
   
   alcohol <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     #cheesecake =, mascarponeGanache = .015, # need to re-try
     cheesecake = .006, # trying. this is low-temp cooking, probably okay
     tiramisu_ = .0065, # any more, I will feel dizzy (for drink)
@@ -504,11 +504,11 @@ if (FALSE) {
     NA_real_)
   
   alcohol2cocoa <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     NA_real_)
   
   water2flour <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     cookie = if ('_blackSesame$' %in% x) .17 else .22, 
     crumbcrust = if ('_blackSesame$' %in% x) .28 else .23, # try first with \linkS4class{cookie} info
     #pancake =, snowSkin = .35, 
@@ -516,14 +516,14 @@ if (FALSE) {
     NA_real_)
   
   water2pastryFlr <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     bao = .48,
     juntun = .56, # ?? do I really need this?
     millecrepe = 3.7,
     NA_real_)
   
   water2breadFlr <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     wrapperlinda = .57,
     noodlelinda = if (length(x['^KingArthur_breadFlr$'])) .45 else .6,
     bread = .63,
@@ -532,17 +532,17 @@ if (FALSE) {
   water2gluten0Flr <- fn.
   
   water2wheatFlrMix <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     NA_real_)
   
   water2riceFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     stickyTortilla = 1.6,
     snowSkin = 1.86,
     NA_real_)
   
   water2creamcheese <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     cheesecake = if ('_pumpkin$' %in% x) {
       .6 
     } else if (length(x@homemade) && grepl('pineapple', names(x@homemade))) {
@@ -551,20 +551,20 @@ if (FALSE) {
     NA_real_)
   
   fat2flour <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     #tortillaOlive = .05,
     crumbcrust = .5, 
     cookie = .77,
     NA_real_)
   
   fat2pastryFlr <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     bao = .03,
     millecrepe = .375,
     NA_real_)
   
   fat2breadFlr <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     bao = .03,
     bread = if (length(x@cocoa)) .08 else .075,
     NA_real_)
@@ -572,11 +572,11 @@ if (FALSE) {
   fat2gluten0Flr <- fn.
   
   fat2wheatFlrMix <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     NA_real_)
   
   fat2riceFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     stickyTortilla = .035,
     snowSkin = .05,
     NA_real_)
@@ -586,7 +586,7 @@ if (FALSE) {
   starch2flour <- starch2pastryFlr <- starch2breadFlr <- starch2gluten0Flr <- starch2wheatFlrMix <- fn.
   
   starch2riceFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     stickyTortilla = .16,
     snowSkin = .25,
     NA_real_)
@@ -594,48 +594,48 @@ if (FALSE) {
   rice2flour <- rice2pastryFlr <- rice2breadFlr <- rice2gluten0Flr <- rice2wheatFlrMix <- fn.
   
   rice2riceFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     snowSkin = .5,
     NA_real_)
   
   glutRice2flour <- glutRice2pastryFlr <- glutRice2breadFlr <- glutRice2gluten0Flr <- glutRice2wheatFlrMix <- fn.
   
   glutRice2riceFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     snowSkin = .5,
     NA_real_)
   
   salt2flour <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     #tortillaOlive = .005,
     NA_real_)
   
   salt2breadFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     bread =, noodlelinda =, wrapperlinda = .003,
     NA_real_)
   
   salt2pastryFlr <- salt2wheatFlrMix <- salt2gluten0Flr <- salt2riceFlr <- fn.
   
   eggYolk2flour <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     cookie = if ('_blackSesame$' %in% x) .43 else .52,
     NA_real_)
   
   eggYolk2pastryFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     millecrepe = .345,
     NA_real_)
   
   eggYolk2breadFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     bread = .035,
     NA_real_)
   
   eggYolk2gluten0Flr <- eggYolk2wheatFlrMix <- eggYolk2riceFlr <- fn.
   
   blackSesame2flour <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     crumbcrust = .28,
     cookie = .375,
     NA_real_) 
@@ -653,7 +653,7 @@ if (FALSE) {
   Na2CO3_2pastryFlr <- fn.
   
   Na2CO3_2breadFlr <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     noodlelinda =, wrapperlinda = .0015,
     NA_real_)
   
@@ -662,7 +662,7 @@ if (FALSE) {
   Na2CO3_2riceFlr <- fn.
   
   bakingPowder <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     gateau = .004,
     muffin = .005,
     bao = .006,
@@ -671,12 +671,12 @@ if (FALSE) {
   bakingPowder2flour <- fn.
   
   bakingPowder2pastryFlr <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     bao = .0095,
     NA_real_)
   
   bakingPowder2breadFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     bao = .0095,
     gateau = .02,
     NA_real_)
@@ -684,7 +684,7 @@ if (FALSE) {
   bakingPowder2gluten0Flr <- fn.
   
   bakingPowder2wheatFlrMix <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     NA_real_)
   
   bakingPowder2riceFlr <- fn.
@@ -692,12 +692,12 @@ if (FALSE) {
   yeast2flour <- fn.
   
   yeast2pastryFlr <- \(x) switch(
-    x@key,
+    attr(x, which = 'key') %||% '', #x@key,
     bao = .0095, 
     NA_real_)
   
   yeast2breadFlr <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     bao = .0095, 
     bread = .02,
     NA_real_)
@@ -705,13 +705,13 @@ if (FALSE) {
   yeast2gluten0Flr <- fn.
   
   yeast2wheatFlrMix <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     NA_real_)
   
   yeast2riceFlr <- fn.
   
   gelatin2water <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     #riceMousse = {
     #if (length(x['_coconutmilk$'])) .01 else .02
     #},
@@ -719,12 +719,12 @@ if (FALSE) {
     NA_real_)
   
   sesameOil <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     meatmash =, shrimpfillCantonese =, beeffillLeeKumKee =, porkfill =, meatball = .013,
     NA_real_)
   
   rattanPepperOil <- \(x) switch(
-    x@key, 
+    attr(x, which = 'key') %||% '', #x@key, 
     beeffillLeeKumKee = .0015, # tested!
     porkfill = .004,
     #marinade = .011,

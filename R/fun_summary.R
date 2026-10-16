@@ -12,7 +12,12 @@ summary.nutrition <- \(object, ...) {
       rel = TRUE
     ) |>
     equiv(caption = 'Serving', current = _)
-  return(list(perServing = z))
+  
+  ret <- list(perServing = z)
+  class(ret) <- c('equivs', class(ret)) |>
+    unique.default()
+  return(ret)
+
 }
 
 
@@ -197,7 +202,9 @@ summary.raw. <- \(object, ...) {
     caption = 'Cream Cheese', 
     current = z / sum(x['_creamCheese$']))
   
-  class(ret) <- c('summary.raw.', class(ret)) |>
+  #class(ret) <- c('summary.raw.', class(ret)) |>
+  #  unique.default()
+  class(ret) <- c('equivs', class(ret)) |>
     unique.default()
   return(ret)
     
@@ -206,21 +213,26 @@ summary.raw. <- \(object, ...) {
 
 #' @export
 summary.recipe <- \(object, ...) {
-  z <- object |>
+  object |>
     summary.raw.(...)
-  class(z) <- c('summary.recipe', setdiff(class(z), 'summary.raw.')) |>
-    unique.default()
-  return(z)
 }
 
 
 
-#' @method print summary.raw.
+# [print.equivs] vs. [print.equivlist]
 #' @export
-print.summary.raw. <- \(x, ...) {
+print.equivs <- \(x, ...) {
+  
   id <- (lengths(x) > 0L)
   if (!any(id)) return(invisible())
-  x[id] |>
+  x <- x[id]
+  
+  xcap <- x |>
+    vapply(FUN = \(i) i@caption, FUN.VALUE = '') |>
+    duplicated.default()
+  if (any(xcap)) stop('all `equiv` elements must have unique `@caption`')
+  
+  x |>
     lapply(FUN = \(i) { # do not want to print list names
       names(i) <- names(i) |> 
         .repl()
@@ -230,7 +242,4 @@ print.summary.raw. <- \(x, ...) {
   return(invisible())
 }
 
-#' @method print summary.recipe
-#' @export
-print.summary.recipe <- print.summary.raw.
-  
+

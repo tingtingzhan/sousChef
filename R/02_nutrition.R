@@ -85,7 +85,7 @@ setClass(Class = 'nutrition', slots = c(
   ))
 ), prototype = prototype(
   piece_fmt = '%.1fpcs',
-  suggest_fmt = 'Suggested %s',
+  suggest_fmt = '\U1f381 %s',
   # machine = \(x) NULL, # legacy
   calorie = 0,
   date = as.Date(NA_character_)
@@ -191,6 +191,15 @@ nutrition <- \(...) {
     add_brand_url(name = 'yogi', fmt = 'https://www.yogi-life.com/en-US/product/%s', text = 'Yogi\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'youjia', fmt = 'https://youjiaflavors.com/products/%s', text = '\u53cb\u52a0\U1f1e8\U1f1f3') 
   
+  # process user-input `@url` first
+  # `$ippodousa` writes to `$url` !!
+  if (length(x$url)) {
+    x$url <- x$url |>
+      gsub('^https://|^http://', replacement = '', x = _) |> 
+      style_hyperlink(url = x$url, text = _) |> 
+      c()
+  }
+  
   # non-standard brands
   if (!length(x$brand)) {
     if (length(x$cheesecakefactoryfreezer)) {
@@ -245,14 +254,6 @@ nutrition <- \(...) {
     } #else do nothing
   } 
   # non-standard brands, end of
-  
-  # process user-input `@url` first
-  if (length(x$url)) {
-    x$url <- x$url |>
-      gsub('^https://|^http://', replacement = '', x = _) |> 
-      style_hyperlink(url = x$url, text = _) |> 
-      c()
-  }
   
   x <- x |>
     add_store_url(name = 'acme', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Albertsons\U1f1fa\U1f1f8', store_name = 'Acme Market') |>
@@ -541,7 +542,7 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
   if (length(x@url)) cat(x@url, sep = '\n')
   
   suggested_ <- x |> 
-    as(Class = 'recipe')
+    as(Class = 'raw.')
   if (length(suggested_)) show(suggested_) # I have not defined a NULL \linkS4class{recipe}
   
   cat('\n')

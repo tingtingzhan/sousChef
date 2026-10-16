@@ -189,6 +189,18 @@ print.raw. <- \(x, prt_total = TRUE, ...) {
 
 
 
+raw. <- \(...) {
+  
+  #x <- list(...) |>
+  #  .findCall(which = -2)
+  
+  list(...) |>
+    .cleanSlots_raw.() |>
+    c(list(Class = 'raw.')) |> 
+    do.call(what = 'new', args = _)
+  
+}
+
 
 .cleanSlots_raw. <- \(x) {
   

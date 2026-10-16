@@ -12,9 +12,9 @@ expect_no_error(
     sousChef:::Ippodo_sayakaLatte(),
     sousChef:::Starbucks_matchaLatte(),
     sousChef:::Starbucks_matchaFrappuccino(),
-    sousChef:::Starbucks_matchaLatteMix() |> as('recipe'),
-    sousChef:::Ippodo_uji_shimizu() |> as('recipe'),
-    sousChef:::ItoEn_sweet_matcha() |> as('recipe')
+    sousChef:::Starbucks_matchaLatteMix() |> as('raw.'),
+    sousChef:::Ippodo_uji_shimizu() |> as('raw.'),
+    sousChef:::ItoEn_sweet_matcha() |> as('raw.')
   ) |> print()
 ) # compare drink
 

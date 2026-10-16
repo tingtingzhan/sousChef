@@ -297,13 +297,19 @@ max_binlabel <- \(x, ...) {
 
 
 
-# @param x a \link[base]{list} of \linkS4class{per} objects
+
+# [print.equivs] vs. [print.equivlist]
 #' @importFrom charwidth row_fmt_matrix
 #' @export
 print.equivlist <- \(x, ...) {
   
   x <- x[lengths(x) > 0L]
   if (!length(x)) return(invisible())
+  
+  xcap <- x |> 
+    vapply(FUN = \(i) i@caption, FUN.VALUE = '') |>
+    duplicated.default()
+  if (!all(xcap[-1L])) stop('all `equiv` elements must have the same `@caption`')
   
   y1 <- x |>
     lapply(FUN = \(i) i@current) |>

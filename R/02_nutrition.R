@@ -344,7 +344,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   if (length(x@alias)) {
     x@alias <- x@alias |>
       sprintf(fmt = '{.run [%s](sousChef::%s())}', . = _, as.character(x@call)) |> 
-      col_orchid4() |>
+      make_ansi_style('orchid4')() |>
       c()
   }
   

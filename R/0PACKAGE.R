@@ -6,7 +6,7 @@
 
 
 
-col_orchid4 <- make_ansi_style('orchid4')
+
 
 
 

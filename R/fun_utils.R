@@ -579,6 +579,8 @@ prt_vol_H2O <- \(x) {
   z <- x |>
     fmt_vol_H2O()
   
+  col_orchid4 <- make_ansi_style('orchid4')
+  
   label <- names(x)
   label[label == 'ice'] <- '\u51b0\u5757' |>
     col_orchid4() |>

@@ -4,12 +4,135 @@
 \name{tool-class}
 \alias{tool-class}
 \alias{show,tool-method}
+\alias{Pastalinda260}
+\alias{SamsungME21R706BAT}
+\alias{thermometer}
+\alias{CuisinartICE70}
+\alias{InstantPot}
+\alias{KSMICM}
+\alias{KSM8990}
+\alias{KSM7BL3PSS_doughhook}
+\alias{KSM7BL3PSS_flatbeater}
+\alias{KSM7BL3PSS_wirewhip}
+\alias{KSM8990_dough}
+\alias{KSM3316X}
+\alias{KSEG950ESS}
+\alias{RobamCT763}
+\alias{PhilipsHD9867}
+\alias{SanyoECJS35S}
+\alias{JoyoungDJ13U}
+\alias{JoyoungDJ06M}
+\alias{JoyoungDJ13U_soymilk}
+\alias{JoyoungDJ06M_soymilk}
+\alias{JoyoungDJ13U_cornjuice}
+\alias{JoyoungCJA9U}
+\alias{JoyoungCJA9U_filling}
+\alias{nutribullet20}
+\alias{nutribullet24}
+\alias{Stanley20}
+\alias{Stanley14}
+\alias{Stanley40}
+\alias{StanleyJar36}
+\alias{Staub_vertRoaster}
+\alias{Staub_deepSkillet}
+\alias{SodaStream_Art}
+\alias{SodaStream_bottle1L}
 \title{Kitchen \linkS4class{tool}s}
 \usage{
 \S4method{show}{tool}(object)
+
+Pastalinda260(...)
+
+SamsungME21R706BAT(...)
+
+thermometer(...)
+
+CuisinartICE70(...)
+
+InstantPot(...)
+
+KSMICM(...)
+
+KSM8990(...)
+
+KSM7BL3PSS_doughhook(...)
+
+KSM7BL3PSS_flatbeater(...)
+
+KSM7BL3PSS_wirewhip(...)
+
+KSM8990_dough(...)
+
+KSM3316X(...)
+
+KSEG950ESS(...)
+
+RobamCT763(...)
+
+PhilipsHD9867(...)
+
+SanyoECJS35S(...)
+
+JoyoungDJ13U(...)
+
+JoyoungDJ06M(...)
+
+JoyoungDJ13U_soymilk(
+  treatment = c(paste("Soak dry beans",
+    col_br_blue("e.g., soybean, chickpea, mung bean, etc."), "overnight in fridge")),
+  program = "老豆浆程序 Classic Soymilk program, 1300ml water line",
+  waterLost = 45,
+  ...
+)
+
+JoyoungDJ06M_soymilk(
+  treatment = c(paste0("Soak dry beans ",
+    col_br_blue("e.g., soybean, chickpea, mung bean, etc."), " overnight in fridge")),
+  program = "豆浆程序 Soymilk program, 600ml water line",
+  waterLost = 5,
+  ...
+)
+
+JoyoungDJ13U_cornjuice(
+  program = "玉米汁程序 Corn🌽 Juice program, 900ml water line",
+  operation = c("Do not use 1300ml water line, cannot push down blades",
+    "Machine gives error if pre-blended"),
+  ...
+)
+
+JoyoungCJA9U(program = "爆炒程序 Stir Fry program", ...)
+
+JoyoungCJA9U_filling(
+  operation = "💡 manually stir frequently for high-sugar ingredient!",
+  cooling = c("fold added sugar into hot, cooked paste",
+    "disassemble machine as early as possible; sugar syrup may stick"),
+  ...
+)
+
+nutribullet20(...)
+
+nutribullet24(...)
+
+Stanley20(...)
+
+Stanley14(...)
+
+Stanley40(...)
+
+StanleyJar36(...)
+
+Staub_vertRoaster(...)
+
+Staub_deepSkillet(...)
+
+SodaStream_Art(...)
+
+SodaStream_bottle1L(...)
 }
 \arguments{
 \item{object}{see \strong{Usage}}
+
+\item{treatment, program, waterLost, operation, cooling, ...}{see \strong{Slots}}
 }
 \description{
 ..

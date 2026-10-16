@@ -17,7 +17,7 @@
 #' @slot youtube \link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe
 # @slot doi \link[base]{character} scalar or \link[base]{vector}
 #' 
-# @slot machine (legacy) \link[base]{list} of \link[base]{character} scalar or \link[base]{vector}, machine(s) used.  To be superceeded by slot `tool`
+# @slot machine (legacy) \link[base]{list} of \link[base]{character} scalar or \link[base]{vector}, machine(s) used.  To be superceeded by slot `@tool`
 #' 
 #' @slot review \link[base]{character} scalar or \link[base]{vector}, people's comments
 #' @slot pros \link[base]{character} scalar or \link[base]{vector}, pros
@@ -45,7 +45,6 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
   url = 'character',
   
   #doi = 'character',
-  
   review = 'character',
   pros = 'character', cons = 'character',
   portion = 'numeric',
@@ -53,6 +52,7 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
   sugarLost = 'numeric'
   
 ), prototype = prototype(
+  key = 'null', # backward compatibility
   date = as.Date.numeric(numeric()) # must!!
 ))
 

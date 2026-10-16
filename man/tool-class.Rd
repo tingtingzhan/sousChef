@@ -37,7 +37,7 @@
 
 \item{\code{cooling}}{\link[base]{character} scalar or \link[base]{vector}, instructions of cooling down}
 
-\item{\code{note}}{\link[base]{character} scalar or \link[base]{vector}, other notes}
+\item{\code{dont}}{\link[base]{character} scalar or \link[base]{vector}}
 
 \item{\code{waterLost}}{\link[base]{numeric} scalar, water evaporated in cooking (in grams)}
 }}

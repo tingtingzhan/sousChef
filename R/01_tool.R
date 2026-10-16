@@ -27,7 +27,7 @@
 #' 
 #' @slot cooling \link[base]{character} scalar or \link[base]{vector}, instructions of cooling down
 #' 
-#' @slot note \link[base]{character} scalar or \link[base]{vector}, other notes
+#' @slot dont \link[base]{character} scalar or \link[base]{vector}
 #' 
 #' @slot waterLost \link[base]{numeric} scalar, water evaporated in cooking (in grams) 
 #' 
@@ -45,7 +45,8 @@ setClass(Class = 'tool', slots = c(
     'program',
     'operation',
     'cooling',
-    'note'
+    'dont'#,
+    # 'note'
   ))
 ))
 
@@ -157,8 +158,8 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     sprintf(fmt = ' \u2668 water evaporated: %.0f grams\n') |> 
     cat(sep = '')
   
-  x@note |> 
-    sprintf(fmt = ' \u2756 %s\n') |> 
+  x@dont |>
+    sprintf(fmt = ' \u274C %s\n') |> 
     cat(sep = '')
   
   cat('\n')
@@ -186,7 +187,7 @@ Pastalinda260 <- \(...) tool(
 
 
 SamsungME21R706BAT <- \(...) tool(
-  name = style_hyperlink(text = 'Samsung ME21R706BAT/AA 2.1 Ft\u00b3 Over-The-Range Microwave', url = 'https://samsungparts.com/products/me21r706bat-aa') |> c(),
+  name = style_hyperlink(text = 'Samsung ME21R706BAT/AA 2.1ft\u00b3 Over-The-Range Microwave', url = 'https://samsungparts.com/products/me21r706bat-aa') |> c(),
   ...)
 
 

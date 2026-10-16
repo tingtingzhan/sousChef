@@ -6,18 +6,26 @@
 \alias{raw.-class}
 \alias{show,raw.-method}
 \alias{recipe-class}
+\alias{recipe}
 \alias{show,recipe-method}
 \title{Raw Ingredients and Recipe}
 \usage{
 \S4method{show}{raw.}(object)
 
+recipe(...)
+
 \S4method{show}{recipe}(object)
 }
 \arguments{
 \item{object}{see \strong{Usage}}
+
+\item{...}{raw user input}
 }
 \description{
 \linkS4class{raw.} allows negative ingredients.
+}
+\details{
+The helper function \code{\link[=recipe]{recipe()}} converts raw user input into the (slots of) \linkS4class{recipe}-class.
 }
 \section{Slots}{
 

@@ -58,6 +58,14 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
 
 
 
+#' @rdname raw_recipe
+#' 
+#' @param ... raw user input
+#' 
+#' @details
+#' The helper function [recipe()] converts raw user input into the (slots of) \linkS4class{recipe}-class.
+#' 
+#' @export
 recipe <- \(...) {
   
   x <- list(...) |>

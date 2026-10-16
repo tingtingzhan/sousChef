@@ -20,7 +20,7 @@ nutrition(...)
 An \code{S4} object to store the nutrition information.
 }
 \details{
-The helper function \code{\link[=nutrition]{nutrition()}} converts raw user input into the slots of \linkS4class{nutrition}-class.
+The helper function \code{\link[=nutrition]{nutrition()}} converts raw user input into the (slots of) \linkS4class{nutrition}-class.
 }
 \section{Slots}{
 

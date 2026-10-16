@@ -98,7 +98,7 @@ setClass(Class = 'nutrition', slots = c(
 #' @param ... raw user input
 #' 
 #' @details
-#' The helper function [nutrition()] converts raw user input into the slots of \linkS4class{nutrition}-class.
+#' The helper function [nutrition()] converts raw user input into the (slots of) \linkS4class{nutrition}-class.
 #' 
 #' @export
 nutrition <- \(...) {

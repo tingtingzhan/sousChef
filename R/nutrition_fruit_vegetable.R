@@ -305,7 +305,7 @@ avocado <- \() nutrition(
 lemon <- \() nutrition( # juice
   fdc = 167747L,
   alias = '\u67e0\u6aac\u6c41', name = 'Lemon\U1f34b Juice',
-  servingGram = 100, pieceGram = 48,
+  servingGram = 100, pieceGram = 48, piece_fmt = '%.1f\U1f34b',
   water = 92.3, protein = 0.35, fat = 0.24, sugar = 2.52, sodium = .001)
 
 

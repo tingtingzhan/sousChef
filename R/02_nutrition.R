@@ -259,8 +259,8 @@ nutrition <- \(...) {
     add_store_url(name = 'acme', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Albertsons\U1f1fa\U1f1f8', store_name = 'Acme Market') |>
     add_store_url(name = 'amazon', fmt = 'https://www.amazon.com/gp/product/%s', store_brand = 'Amazon Basic', store_name = 'Amazon') |>
     add_store_url(name = 'bjs', fmt = 'https://www.bjs.com/product/%s', store_brand = 'BJ\'s', store_name = 'BJ\'s') |> # Wellsley Farms and Berkley Jensen
-    add_store_url(name = 'costco', fmt = 'https://www.costco.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco') |>
-    add_store_url(name = 'costcoBiz', fmt = 'https://www.costcobusinessdelivery.com/.product.%s.html', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco Business Delivery') |>
+    add_store_url(name = 'costco', fmt = 'https://www.costco.com/p/-/%s', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco') |>
+    add_store_url(name = 'costcoBiz', fmt = 'https://www.costcobusinessdelivery.com/p/-/%s', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco Business Delivery') |>
     # add_store_url(name = 'giantfood', fmt = '???', store_brand = 'Giant Food\U1f1fa\U1f1f8') |>
     add_store_url(name = 'jfc', fmt = 'https://www.jfc.com/product/item/%s', store_brand = NA_character_, store_name = 'JFC International Inc.') |>
     add_store_url(name = 'kraftheinzawayfromhome', fmt = 'https://www.kraftheinzawayfromhome.com/products/%s', store_brand = NA_character_, store_name = 'Kraft Heinz Away From Home\U1f1fa\U1f1f8') |>

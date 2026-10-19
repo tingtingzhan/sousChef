@@ -87,7 +87,9 @@ cardamom <- \() spice(alias = '\u5c0f\u8c46\u853b')
 
 carrot <- \() spice(alias = '\u80e1\u841d\u535c\U1f955')
 
-cinnamon <- \() spice(alias = '\u6842\u76ae')
+cilantro <- \() spice(alias = '\u82ab\u837d', wiki = 'Coriander#Leaves')
+  
+cinnamon <- \() spice(alias = '\u8089\u6842')
 
 `citric acid` <- \() spice(
   alias = '\u67e0\u6aac\u9178', 
@@ -106,6 +108,8 @@ fennel <- \() spice(alias = '\u5c0f\u8334\u9999')
 `fennel seed` <- fennel
 
 fenugreek <- \() spice(alias = '\u80e1\u82a6\u5df4')
+
+`Kaempferia galanga` <- \() spice(alias = '\u6c99\u59dc', wiki = 'Kaempferia_galanga')
 
 garlic <- \() spice(alias = '\u849c\U1f9c4')
 

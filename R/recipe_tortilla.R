@@ -29,7 +29,6 @@ ViewRoad_tortilla <- \() recipe(
 
 
 ViewRoad_pumpkin_tortilla <- \() recipe(
-  #author = 'View on the Road', 
   flavor = 'Pumpkin Tortilla',
   viewsontheroad = 'hPMc1a19CsU', 
   flour_cup = c(KingArthur_allPurposeFlr = 1.25),

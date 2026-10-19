@@ -366,13 +366,11 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
     gsub(pattern = '^ *|(?<= ) | *$', replacement = '', perl = TRUE) |>
     col_green() |> style_bold() |> cat()
   
-  print.raw.(x, prt_total = FALSE)
+  x |> 
+    print.raw.()
   
   y <- x |>
     as(Class = 'nutrition')
-  
-  y |>
-    print.nutrition(prt_label = FALSE)
   
   if (length(x@portion)) {
     r <- y@servingGram / x@portion

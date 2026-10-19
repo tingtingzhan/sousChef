@@ -25,7 +25,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   
   new(
     Class = 'nutrition',  
-    name = attr(from, which = 'name', exact = TRUE) %||% character(), # see setAs(from = 'nutrition', to = 'raw.')
+    name = labels.raw.(from),
     date = date,
     servingGram = sum(grams),
     usd = z['usd'] |> unname(),

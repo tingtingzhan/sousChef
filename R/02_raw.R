@@ -122,12 +122,15 @@ setMethod(f = show, signature = 'raw.', definition = \(object) print.raw.(object
 
 #' @method labels raw.
 #' @export
-labels.raw. <- \(object, ...) character()
+labels.raw. <- \(object, ...) {
+  attr(object, which = 'name', exact = TRUE) %||% 
+    character() # see setAs(from = 'nutrition', to = 'raw.')
+}
 
 
 #' @method print raw.
 #' @export
-print.raw. <- \(x, prt_total = TRUE, ...) {
+print.raw. <- \(x, ...) {
   
   x |> 
     labels() |> # [labels.raw.] or [labels.recipe]
@@ -135,15 +138,6 @@ print.raw. <- \(x, prt_total = TRUE, ...) {
     style_bold() |> 
     cat('\n\n')
 
-  if (prt_total) {
-    names(getSlots(x = 'raw.')) |>
-      lapply(FUN = slot, object = x) |>
-      unlist() |>
-      sum() |>
-      sprintf(fmt = 'Total: %.1f grams\n\n') |>
-      cat()
-  }
-  
   prt_vol(x@homemade)
   prt_vol(x@meat)
   prt_vol(x@poultry)
@@ -184,6 +178,10 @@ print.raw. <- \(x, prt_total = TRUE, ...) {
   prt_vol_H2O(x@water)
 
   cat('\n')
+  
+  x |>
+    as(Class = 'nutrition') |>
+    print.nutrition(prt_label = FALSE)
   
 }
 

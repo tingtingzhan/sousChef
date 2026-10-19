@@ -147,6 +147,7 @@ nutrition <- \(...) {
     add_brand_url(name = 'krusteaz', fmt = 'https://www.krusteaz.com/products/%s', text = 'Krusteaz\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'landolakes', fmt = 'https://www.landolakes.com/products/%s', text = 'Land O Lakes\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'leaperrins', fmt = 'https://www.kraftheinz.com/lea-perrins/products/%s', text = 'Lea & Perrins\U1f1ec\U1f1e7') |> 
+    add_brand_url(name = 'likolehua', fmt = 'https://likolehua.com/products/%s', text = 'Liko Lehua\U1f33a') |> 
     add_brand_url(name = 'lkkhk', fmt = 'https://hk.lkk.com/zh-hk/foodservices/products/%s', text = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0') |> 
     add_brand_url(name = 'lkkusa', fmt = 'https://usa.lkk.com/zh-hk/products/%s', text = 'LeeKumKee\u674e\u9326\u8a18\U1f1ed\U1f1f0') |> 
     add_brand_url(name = 'nanak', fmt = 'https://nanakfoods.com/products/%s', text = 'Nanak\U1f1fa\U1f1f8') |> 

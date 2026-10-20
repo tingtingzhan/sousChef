@@ -1,5 +1,16 @@
 
 
+rotisserie_chickenBreast <- \() nutrition(
+  name = 'Rotisserie Chicken Breast',
+  alias = '\u70e4\u9e21\u80f8\u8089',
+  costcoBiz = '11975863',
+  serving_oz = 3,
+  calorie = 110,
+  fat = 2.5, cholesterol = .065, sodium = .4, 
+  protein = 20
+)
+
+
 chicken_thigh <- \() nutrition(
   fdc = 172385L,
   name = '(\u53bb\u76ae)\u9e21\u817f\u8089 Chicken Thigh',

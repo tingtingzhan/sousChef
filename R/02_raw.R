@@ -243,7 +243,7 @@ raw. <- \(...) {
     mergeVol_H2O() |>
     mergeVol(which = 'yeast')
     
-  for (i in names(getSlots(x = 'raw.'))) {
+  for (i in slotNames(x = 'raw.')) {
     if (length(x[[i]])) {
       x[[i]] <- x[[i]] |>
         zero.omit()
@@ -265,7 +265,7 @@ as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
     mergeH2O()
   
   # detailed ingredients
-  ingredient <- attributes(x)[names(getSlots(x = 'raw.'))] |>
+  ingredient <- attributes(x)[slotNames(x = 'raw.')] |>
     unname() |>
     unlist(use.names = TRUE) |> # no need to remove len-0 element
     zero.omit()

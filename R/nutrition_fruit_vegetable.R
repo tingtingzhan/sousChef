@@ -445,6 +445,18 @@ HaiTai_mungbean <- \() nutrition(
   #machine (legacy) = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9')),
   review = 'Must use peeled mung bean for dessert!')
 
+Khazana_mungDal <- \() nutrition(
+  khazanathetreasure = 'khazana-organic-mung-dal-yellow',
+  name = 'Mung Dal, Yellow',
+  alias = '(\u53bb\u76ae)\u7eff\u8c46',
+  costcoBiz = '100312679',
+  usd = 15.99/3180*100, date = as.Date('2026-10-20'), # in store price
+  servingGram = 100, servingCup = 1/2,
+  calorie = 340,
+  carbohydrate = 63, fiber = 11, protein = 22 # really?
+)
+
+
 HaiTai_adzukibean <- \() nutrition(
   fdc = 543753L,
   name = 'Adzuki Bean', alias = '\u7ea2\u8c46', 

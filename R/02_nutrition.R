@@ -139,6 +139,7 @@ nutrition <- \(...) {
     add_brand_url(name = 'juniorscheesecake', fmt = 'https://www.juniorscheesecake.com/all-items/%s', text = 'Junior\'s\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'justtea', fmt = 'https://shop.wegmans.com/product/%s', text = 'Just Tea\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'kahlua', fmt = 'https://www.kahlua.com/en-us/products/%s', text = 'Kahlu\u0301a\U1f1f2\U1f1fd') |> 
+    add_brand_url(name = 'khazanathetreasure', fmt = 'https://khazanathetreasure.com/products/%s', text = 'Khazana\U1f1ee\U1f1f3') |> 
     add_brand_url(name = 'kikkomanusa', fmt = 'https://kikkomanusa.com/foodservice/products/%s', text = 'Kikkoman\u4e80\u7532\u842c\U1f1ef\U1f1f5') |> 
     add_brand_url(name = 'kingarthur', fmt = 'https://www.kingarthurbaking.com/search?query=%s', text = 'King Arthur\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'kingarthurpro', fmt = 'https://www.kingarthurbaking.com/pro/products/%s', text = 'King Arthur\U1f1fa\U1f1f8') |> 

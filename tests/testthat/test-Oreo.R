@@ -6,8 +6,7 @@ expect_no_error(
     sousChef:::Oreo_thins_tiramisu(),
     sousChef:::Oreo_thins_lemon(),
     sousChef:::Oreo_thins_mint()
-  ) |>
-    print()
+  ) |> print()
 )
 
 

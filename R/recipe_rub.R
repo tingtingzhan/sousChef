@@ -62,7 +62,7 @@ Guga_rub <- \() recipe(
     McCormick_onion = 1,
     McCormick_turmeric = 1
   ),
-  spice_tsp = c(SimplyOrganic_cinnamonCeylon = 1))
+  spice_tsp = c(SimplyOrganic_Ceylon_cinnamon = 1))
 
 
 # Guga has more: https://www.youtube.com/watch?v=lF2uz5Nz02E

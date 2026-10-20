@@ -12,7 +12,7 @@ JeanPierre_eggnog <- \() recipe(
   egg_pc = c(eggYolk = 6, eggWhite = 6),
   sugar_cup = c(Domino_granulated = 2/3),
   spice_tsp = c(
-    SimplyOrganic_cinnamonCeylon = 1/4,
+    SimplyOrganic_Ceylon_cinnamon = 1/4,
     SimplyOrganic_nutmeg = 1/4
   ),
   salt_tsp = 1/8, # 1 pinch of Salt

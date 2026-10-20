@@ -68,7 +68,7 @@ Sallys_pumpkin_cake <- \() recipe(
   NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1),
   salt_tsp = 1, 
   spice_tsp = c(
-    SimplyOrganic_cinnamonCeylon = 1.5,
+    SimplyOrganic_Ceylon_cinnamon = 1.5,
     SimplyOrganic_pumpkinSpice = 2
   ),
   oil = c(Wegmans_vegetable_oil = 240), # 1 cup (240ml) canola or vegetable oil*

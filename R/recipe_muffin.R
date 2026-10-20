@@ -63,7 +63,7 @@ Sallys_pumpkin_muffin <- \() recipe(
   NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1),
   spice_tsp = c(
     SimplyOrganic_ginger = 1/4,
-    SimplyOrganic_cinnamonCeylon = 1.5,
+    SimplyOrganic_Ceylon_cinnamon = 1.5,
     SimplyOrganic_pumpkinSpice = 1.5
   ),
   salt_tsp = 1/2,

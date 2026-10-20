@@ -24,14 +24,14 @@ McCormick_blackPepper <- \() nutrition(
 
 McCormick_turmeric <- \() nutrition(
   mccormickculinary = 'turmeric',
-  alias = turmeric()@alias, name = 'Turmeric, Ground',
+  name = 'Turmeric, Ground',
   servingGram = 4.5, # .16 oz
   servingTbsp = 3 # my guess
 )
 
 McCormick_parsley <- \() nutrition(
   mccormickculinary = 'parsley-flakes',
-  name = 'Parsley Flakes', alias = parsley()@alias,
+  name = 'Parsley Flakes', 
   amazon = 'B0000EYJ1M', usd = 6.29/56*4.5,
   servingGram = 4.5, # ???
   servingTbsp = 3 # ???
@@ -56,7 +56,7 @@ McCormick_onion <- \() nutrition(
 
 McCormick_cilantro <- \() nutrition(
   mccormickculinary = 'cilantro-freeze-dried',
-  alias = cilantro()@alias, name = 'Cilantro, Freeze Dried',
+  name = 'Cilantro, Freeze Dried',
   amazon = 'B00B0424FE', usd = 13.89/35,
   servingGram = 1,
   servingTbsp = 1 #??
@@ -65,7 +65,7 @@ McCormick_cilantro <- \() nutrition(
 
 McCormick_cumin <- \() nutrition(
   mccormickculinary = 'cumin-ground',
-  alias = cumin()@alias, name = 'Cumin, Ground',
+  name = 'Cumin, Ground',
   amazon = 'B008OGCCLC', usd = 12.75/396*1,
   servingGram = 1,
   servingTbsp = 1 #??
@@ -147,8 +147,8 @@ McCormick_rum <- \() nutrition(
 
 
 SpiceIslands_cumin <- \() nutrition(
-  brand = 'Spice Islands\U1f1fa\U1f1f8', alias = cumin()@alias, name = 'Cumin Seed',
-  url = 'https://spiceislands.com/product/ground-cumin-seed/',
+  spiceislands = 'ground-cumin-seed',
+  name = 'Cumin Seed',
   # sold at Costco, 425g
   #servingGram = .7, servingTsp = 1, # label
   servingGram = 8, servingTbsp = 1 # actual experiment
@@ -258,15 +258,15 @@ SimplyOrganic_dill <- \() nutrition(
 
 SimplyOrganic_clove <- \() nutrition(
   simplyorganic = 'cloves-ground-2-82-oz',
-  name = 'Cloves', alias = clove()@alias,
+  name = 'Cloves',
   wegmans = '791605',
   servingGram = 80, usd = 6.49, date = as.Date('2026-09-17'),
   servingTbsp = 10)
 
 
-SimplyOrganic_cinnamonCeylon <- \() nutrition(
+SimplyOrganic_Ceylon_cinnamon <- \() nutrition(
   simplyorganic = 'ceylon-cinnamon-ground-2-08-oz',
-  name = 'Ceylon Cinnamon', alias = cinnamon()@alias,
+  name = 'Ceylon Cinnamon',
   wegmans = '791633',
   servingGram = 59, usd = 7.29, date = as.Date('2026-09-17'),
   servingTbsp = 10)
@@ -274,21 +274,21 @@ SimplyOrganic_cinnamonCeylon <- \() nutrition(
 
 SimplyOrganic_cumin <- \() nutrition(
   simplyorganic = 'cumin-seed-ground-2-31-oz',
-  name = 'Cumin Seed, Ground', alias = cumin()@alias,
+  name = 'Cumin Seed, Ground',
   wegmans = '791542',
   servingGram = 65, usd = 7.29, date = as.Date('2026-09-17'),
   servingTbsp = 10)
 
 SimplyOrganic_nutmeg <- \() nutrition(
   simplyorganic = 'simply-organic-nutmeg-ground-2-30-oz',
-  name = 'Nutmeg, Ground', alias = nutmeg()@alias,
+  name = 'Nutmeg, Ground',
   servingGram = 65, usd = 9.99, date = as.Date('2026-10-10'),
   servingTbsp = 10)
 
 
 SimplyOrganic_coriander <- \() nutrition(
   simplyorganic = 'coriander-seed-ground-2-29-oz',
-  name = 'Coriander Seed', alias = coriander()@alias,
+  name = 'Coriander Seed',
   wegmans = '791590',
   servingGram = 65, usd = 6.29,  # 2023-11-09
   servingTbsp = 10)
@@ -309,7 +309,7 @@ SimplyOrganic_garlic <- \() nutrition(
 Chinata_paprika <- \() nutrition(
   brand = style_hyperlink(text = 'La Chinata\U1f1ea\U1f1f8', url = 'https://lachinatausa.com/la-chinata-smoked-paprika-powder-70g-tin') |> 
     c(),
-  alias = paprika()@alias, name = 'Sweet Smoked Paprika\U1f336', 
+  name = 'Sweet Smoked Paprika\U1f336', 
   servingGram = 15, servingTbsp = 2
   # https://www.aqua-calc.com/calculate/food-volume-to-weight
   # https://www.traditionaloven.com/foods/exchange/tbsp/g-gram/spice-paprika.html

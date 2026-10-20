@@ -10,7 +10,7 @@ pumpkin_creamCheeseDip_bakethat <- \() recipe(
   puree = c(Libbys_pumpkin = 425), # 15 oz
   vanilla_tsp = c(NielsenMassey_Madagascar = 1),
   spice_Tbsp = c(SimplyOrganic_pumpkinSpice = 1/2),
-  spice_tsp = c(SimplyOrganic_cinnamonCeylon = 1/2),
+  spice_tsp = c(SimplyOrganic_Ceylon_cinnamon = 1/2),
   youtube = 'G87HfZjdDwI'
 )
 
@@ -22,6 +22,6 @@ pumpkin_creamCheeseDip_Julie <- \() recipe(
   sugar_cup = c(Domino_10x = 2),
   spice_tsp = c(
     SimplyOrganic_ginger = 1,
-    SimplyOrganic_cinnamonCeylon = 2
+    SimplyOrganic_Ceylon_cinnamon = 2
   )
 )

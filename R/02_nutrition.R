@@ -174,6 +174,7 @@ nutrition <- \(...) {
     add_brand_url(name = 'sanford', fmt = 'https://www.sanford.co.nz/our-seafood/our-products/%s', text = 'Sanford\U1f1f3\U1f1ff') |> 
     add_brand_url(name = 'siggis', fmt = 'https://siggis.com/product/%s', text = 'Siggi\'s\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'simplyorganic', fmt = 'https://www.simplyorganic.com/products/simply-organic-%s', text = 'Simply Organic\U1f1fa\U1f1f8') |> 
+    add_brand_url(name = 'spiceislands', fmt = 'https://spiceislands.com/product/%s', text = 'Spice Islands\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'sodastream', fmt = 'https://sodastream.com/products/%s', text = 'SodaStream\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'starbucks', fmt = 'https://athome.starbucks.com/products/%s', text = 'Starbucks\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'starbucks_hot', fmt = 'https://www.starbucks.com/menu/product/%s/hot/nutrition', text = 'Starbucks\U1f1fa\U1f1f8') |> 
@@ -341,6 +342,22 @@ nutrition <- \(...) {
 setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
+  
+  if (!length(x@alias)) {
+    cl <- x@call |>
+      as.character() |>
+      strsplit(split = '_')
+    .n <- length(cl[[1L]])
+    if (.n > 1L) { # to prevent infinite recursion
+      .cl_last <- cl[[1L]][.n]
+      if (exists(.cl_last, where = asNamespace('sousChef'))) {
+        z <- eval(call(name = .cl_last))
+        if (is(z, 'spice')) {
+          x@alias <- z@alias
+        } # else do nothing
+      } # else do nothing
+    } # else do nothing
+  }
   
   if (length(x@alias)) {
     x@alias <- x@alias |>

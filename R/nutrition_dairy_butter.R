@@ -20,15 +20,25 @@ Kerrygold_butter <- \() nutrition(
 Kerrygold_salted_butter <- \() nutrition(
   kerrygoldusa = 'salted-butter',
   kerrygold = 'kerrygold-pure-irish-salted-butter',
+  costcoBiz = '100339833',
   name = 'Irish Salted Butter\U1f9c8', alias = '\u9ec4\u6cb9',
   serving_oz = 8/16, servingTbsp = 1, 
-  costcoBiz = '100339833',
   calorie = 100,
   fat = 11, sodium = .1,
   water = 226.796/16*(1- .82 - .02)
   # water amount: 
   # https://blogs.extension.iastate.edu/answerline/2016/09/01/which-butter-for-baking/
   # https://tastecooking.com/all-about-butter/
+)
+
+
+Kirkland_butter <- \() nutrition(
+  costcoBiz = '11938074',
+  name = 'Butter\U1f9c8, Sweet Cream',
+  alias = '\u9ec4\u6cb9',
+  serving_oz = 8/16, servingTbsp = 1,
+  usd = 8.99/8/8, date = as.Date('2026-10-20'), # in-store price
+  calorie = 100, fat = 11, cholesterol = .03
 )
 
 
@@ -94,7 +104,7 @@ LandOLakes_butter <- \() nutrition(
 
 
 WegmansOrganic_ghee <- \() nutrition(
-  name = 'Ghee', alias = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
+  name = 'Ghee',
   wegmans = '61329', usd = 8.99/213*15,
   servingGram = 15, servingTbsp = 1, 
   calorie = 130, fat = 15)
@@ -102,7 +112,7 @@ WegmansOrganic_ghee <- \() nutrition(
 
 Nanak_ghee <- \() nutrition(
   costco = '100444109',
-  name = 'Ghee', alias = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
+  name = 'Ghee',
   nanak = 'ghee',
   usd = 24.99/1587.57*14,
   servingGram = 14, servingTbsp = 1, 

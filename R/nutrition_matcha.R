@@ -32,7 +32,7 @@ Sencha_matcha <- \() nutrition(
 Sencha_everyday_matcha <- \() nutrition(
   #brand = style_hyperlink(url = 'https://senchanaturals.com/collections/pure-matcha-powders/products/organic-matcha-powder', text = 'Sencha Naturals\U1f1fa\U1f1f8') |> c(), 
   brand = 'Sencha Naturals\U1f1fa\U1f1f8', # no longer on official website, Sep 2026
-  alias = '\u62b9\u8336\u7c89', name = 'Matcha\U1f375 Powder',
+  name = 'Matcha\U1f375 Powder',
   usd = 54.99/(3*340)*1.5, costco = '100705701', date = as.Date('2026-09-02'),
   servingGram = 1.5, 
   #servingTsp = .5, # on package
@@ -40,6 +40,23 @@ Sencha_everyday_matcha <- \() nutrition(
   calorie = 5, carbohydrate = 1,
   superior = 'Ippodo_ikuyo',
   review = 'too bitter'
+)
+
+Kirkland_matcha <- \() nutrition(
+  costco = '4201001685', costcoBiz = '4201071303',
+  name = 'Matcha\U1f375 Powder',
+  usd = 19.99/340*1.5, date = as.Date('2026-10-20'), # in-store pricing
+  servingGram = 1.5, 
+  servingTsp = 1/2, # on package
+  calorie = 5, carbohydrate = 1
+)
+
+Kirkland_organic_matcha <- \() nutrition(
+  costcoBiz = '4201065125',
+  name = 'Matcha\U1f375 Powder, Organic',
+  servingGram = 1.5, 
+  servingTsp = 1/2, # on package
+  calorie = 5, carbohydrate = 1
 )
 
 

@@ -355,7 +355,14 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
         if (is(z, 'spice')) {
           x@alias <- z@alias
         } # else do nothing
-      } # else do nothing
+      } else {
+        x@alias <- switch(
+          EXPR = .cl_last, 
+          ghee = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
+          matcha = '\u62b9\u8336\u7c89',
+          character()
+        )
+      }
     } # else do nothing
   }
   

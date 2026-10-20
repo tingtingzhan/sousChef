@@ -6,7 +6,11 @@ Quaker_oat <- \() nutrition(
   #servingGram = 40, servingCup = 1/2, # packaging
   servingGram = 40, servingCup = (1/2)/50*40, # actual experiment: 1/2 cup is 50g
   calorie = 150,
-  fat = 3, carbohydrate = 27, sugar = 1, protein = 5)
+  fat = 3, carbohydrate = 27, sugar = 1, protein = 5,
+  suggest = list(
+    water_cup = 1
+  )
+)
 
 
 

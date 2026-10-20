@@ -632,16 +632,18 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
   }
   
   
-  if (length(x@url)) cat(x@url, sep = '\n')
-  
-  cat('\n')
+  if (length(x@url)) {
+    cat(x@url, sep = '\n')
+    cat('\n')
+  }
   
   suggested_ <- x |> 
     as(Class = 'raw.')
-  if (length(suggested_)) show(suggested_) # I have not defined a NULL \linkS4class{recipe}
-  
-  cat('\n')
-  
+  if (length(suggested_)) {
+    show(suggested_) # I have not defined a NULL \linkS4class{recipe}
+    cat('\n')
+  }
+
   x@tool |>
     lapply(FUN = show)
   

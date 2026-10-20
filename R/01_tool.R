@@ -82,8 +82,6 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
   
   if (identical(x, new(Class = 'tool'))) return(invisible())
     
-  #c(x@alias, x@name) |>
-  #  paste(collapse = ' ') |>
   nm <- if (length(x@alias)) {
     sprintf(
       fmt = '\u2756 %s \u2756 %s \u2756\n',

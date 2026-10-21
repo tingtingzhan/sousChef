@@ -173,7 +173,9 @@ KingArthur_selfRising_homemade <- \() recipe(
   misc_cup = c(
     KingArthur_allPurposeFlr = 1
   ),
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 1.5),
+  misc_tsp = c(
+    TraderJoes_bakingPowder = 1.5
+  ),
   salt_tsp = 1/4)
 
 

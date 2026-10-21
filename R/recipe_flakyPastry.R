@@ -107,7 +107,7 @@ Dad_yolkPastry_shortDough <- \() recipe(
 PinNuo_oxTongue_waterDough <- \() recipe(
   flavor = '\u725b\u820c\u997c(\u6c34)',
   flour = c(KingArthur_allPurposeFlr = 500),
-  yeast = c(Fleischmanns_instant = 4), 
+  yeast = c(Fleischmanns_instant_yeast = 4), 
   Na2CO3 = 1, water = 320, 
   pino = 'fC2zXSK9PxM') # this video has no largeYouSu recipe!
 
@@ -171,7 +171,7 @@ Dad_sweetPastry_waterDough <- \() recipe(
   flavor = '\u7cd6\u9165\u997c(\u6c34)', 
   dad1966 = 'CEHbZrNHNG4',
   flour = c(KingArthur_allPurposeFlr = 500), 
-  yeast = c(Fleischmanns_instant = 4), water = 320)
+  yeast = c(Fleischmanns_instant_yeast = 4), water = 320)
 
 Dad_sweetPastry_shortDough <- \() recipe(
   flavor = '\u7cd6\u9165\u997c', 

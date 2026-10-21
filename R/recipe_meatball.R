@@ -4,7 +4,9 @@
 GaaDai_beefball <- \() recipe(
   youtube = '5nJKNVBRztM',
   meat = c(beef_eyeRound = 16*500),
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 4), # 1 Chinese soup spoon 
+  misc_tsp = c(
+    ArmHammer_NaHCO3 = 4 # 1 Chinese soup spoon 
+  ),
   water = c(c0 = 400), # looks like
   salt = 120,
   msg = c(Ajinomoto_msg = 50),

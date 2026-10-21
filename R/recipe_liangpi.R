@@ -35,5 +35,5 @@ mianjin <- \() recipe(
   youtube = 'rgmp-ulEeMk',
   misc = c(BobsRedMill_wheatGluten = 100),
   water = 150,
-  yeast = c(Fleischmanns_instant = 2)
+  yeast = c(Fleischmanns_instant_yeast = 2)
 )

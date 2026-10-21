@@ -16,8 +16,10 @@ AmishHeritage_carrotcake <- \() recipe(
   # 2.5 cup shredded carrots
   # 1 cup crushed pineapple, drained
   # ¾ c. chopped pecans or walnuts (optional)
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2),
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1.5),
+  misc_tsp = c(
+    TraderJoes_bakingPowder = 2,
+    ArmHammer_NaHCO3 = 1.5
+  ),
   salt_tsp = 1,
   spice_tsp = c(SimplyOrganic_Ceylon_cinnamon = 2)
 )

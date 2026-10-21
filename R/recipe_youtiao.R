@@ -18,7 +18,9 @@ xiaogaojie_youtiao <- \() recipe(
   flour = c(KingArthur_allPurposeFlr = 350),
   dairy = c(WegmansOrganic_whole_milk = 250),
   bakingPowder = c(TraderJoes_bakingPowder = 10),
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1/2),
+  misc_tsp = c(
+    ArmHammer_NaHCO3 = 1/2
+  ),
   salt_tsp = 1,
   oil_Tbsp = c(Wegmans_corn_starch = 1)
 )
@@ -28,7 +30,7 @@ mathstar_youtiao <- \() recipe(
   url = 'https://huaren.us/showtopic.html?topicid=3003916&fid=398',
   flour = c(KingArthur_allPurposeFlr = 500),
   bakingPowder = c(TraderJoes_bakingPowder = 12), 
-  yeast = c(Fleischmanns_instant = 6),
+  yeast = c(Fleischmanns_instant_yeast = 6),
   NaHCO3 = c(ArmHammer_NaHCO3 = 3),
   salt = 6,
   oil = c(Wegmans_corn_oil = 30), 
@@ -76,7 +78,7 @@ PinNuo_youtiao4 <- \() recipe(
   flavor = '\u6cb9\u67614', 
   pino = 'KAUdFDRD8l0',
   flour = c(KingArthur_allPurposeFlr = 1000),
-  yeast = c(Fleischmanns_instant = 10), 
+  yeast = c(Fleischmanns_instant_yeast = 10), 
   NaHCO3 = c(ArmHammer_NaHCO3 = 5), salt = 10, sugar = 8,
   egg_pc = c(eggYolk = 2, eggWhite = 2), 
   oil = c(Wegmans_corn_oil = 30), 

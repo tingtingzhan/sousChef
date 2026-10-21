@@ -5,7 +5,9 @@ Wegmans_cornbread_recipe <- \() recipe(
   wegmans = '3044',
   flavor = 'Cornbread',
   #Wegmans Avocado Oil Cooking Spray
-  bakingPowder_Tbsp = c(Wegmans_bakingPowder = 2),
+  misc_Tbsp = c(
+    Wegmans_bakingPowder = 2
+  ),
   Na2CO3_Tbsp = 1/2,
   salt_Tbsp = 1/2,
   misc_cup = c(
@@ -31,7 +33,9 @@ BethanyWeathersby_cornbread <- \() recipe(
     Kerrygold_butter = 1/2,
     OakFarms_buttermilk = 1
   ), 
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1/2), 
+  misc_tsp = c(
+    ArmHammer_NaHCO3 = 1/2
+  ), 
   salt_tsp = 1/4,
   allrecipes = '76594/grandmothers-buttermilk-cornbread/')
 
@@ -39,7 +43,9 @@ BethanyWeathersby_cornbread <- \() recipe(
 
 bluegirl_cornbread <- \() recipe(
   flavor = 'Cornbread', author = 'bluegirl',
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 3.5),
+  misc_tsp = c(
+    TraderJoes_bakingPowder = 3.5
+  ),
   salt_tsp = 1,
   misc_cup = c(
     KingArthur_allPurposeFlr = 1,
@@ -54,7 +60,9 @@ bluegirl_cornbread <- \() recipe(
 
 PreppyKitchen_cornbread <- \() recipe(
   flavor = 'Cornbread',
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2),
+  misc_tsp = c(
+    TraderJoes_bakingPowder = 2
+  ),
   salt_tsp = 1,
   misc_cup = c(
     Quaker_yellow_cornmeal = 1.5,
@@ -75,7 +83,9 @@ Quaker_cornbread <- \() recipe(
   oil_Tbsp = c(Wegmans_vegetable_oil = 2),
   flour_Tbsp = c(KingArthur_allPurposeFlr = 3),
   salt_tsp = 1,
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1),
+  misc_tsp = c(
+    ArmHammer_NaHCO3 = 1
+  ),
   misc_cup = c(
     Quaker_yellow_cornmeal = 1.5,
     OakFarms_buttermilk = 2
@@ -87,9 +97,11 @@ JoshuaWeissman_cornbread <- \() recipe(
   flavor = 'Cornbread', 
   # 1/2 bunch fresh sage 
   # 1/2 bunch fresh thyme 
-  misc_Tbsp = c(Domino_lightBrown = 3.5),
+  misc_Tbsp = c(
+    TraderJoes_bakingPowder = 1,
+    Domino_lightBrown = 3.5
+  ),
   salt = 6,
-  bakingPowder_Tbsp = c(TraderJoes_bakingPowder = 1),
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   misc_cup = c(
     Albertsons_yellow_cornmeal = 1.25,

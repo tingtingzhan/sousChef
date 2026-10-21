@@ -12,7 +12,9 @@ xiaogaojie_invertSugar <- \() recipe(
   sugar = 600, 
   water = c(c22 = 60, c100 = 300), 
   fruit_pc = c(lemon = 1),
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1/4),
+  misc_tsp = c(
+    ArmHammer_NaHCO3 = 1/4
+  ),
   xiaogaojie = 'ijG7Yn96B-g',
   pros = 'Great!!')
 

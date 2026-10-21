@@ -7,7 +7,7 @@
 # A: Mainly names, but these are all the same yeast! Use interchangeably.
 
 
-Fleischmanns_instant <- \() nutrition(
+Fleischmanns_instant_yeast <- \() nutrition(
   fleischmannsyeast = 'bread-machine', # or 'rapidrise' ?
   name = 'Instant Dry Yeast', alias = '\u901f\u53d1\u9175\u6bcd',
   bjs = 'fleischmanns-instant-dry-yeast-2-pk1-lb/3000000000000222175/',

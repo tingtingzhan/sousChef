@@ -142,5 +142,7 @@ JustOne_matcha_millecrepe <- \() recipe(
   dairy = c(Kerrygold_butter = 25),
   flour = c(Wegmans_pastryFlr = 138),
   matcha_Tbsp = c(Sencha_everyday_matcha = 2),
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = .5))
+  misc_tsp = c(
+    TraderJoes_bakingPowder = .5
+  ))
 

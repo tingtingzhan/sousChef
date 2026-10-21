@@ -32,7 +32,9 @@ xiaogaojie_sacima <- \() recipe(
   flavor = 'sacima', 
   xiaogaojie = 'VkgWeCxZfi4',
   flour = c(KingArthur_allPurposeFlr = 200),
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1/8),
+  misc_tsp = c(
+    ArmHammer_NaHCO3 = 1/8
+  ),
   water = 15,
   egg_pc = c(eggYolk = 2, eggWhite = 2))
 

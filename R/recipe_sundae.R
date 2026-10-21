@@ -7,8 +7,10 @@ xiaogaojie_icecream <- \() recipe(
   flavor = '\u51b0\u6dc7\uf9f5\U1f368', 
   xiaogaojie = 'IQ-t8eSSD3Y',
   egg_pc = c(eggYolk = 6),
-  dairy = c(Wegmans_heavyCream = 500,
-            WegmansOrganic_whole_milk = 250),
+  dairy = c(
+    Wegmans_heavyCream = 500,
+    WegmansOrganic_whole_milk = 250
+  ),
   misc_cup = c(
     Domino_granulated = 1/2
   )
@@ -20,7 +22,9 @@ happytears_icecream <- \() recipe(
   egg_pc = c(eggYolk = 5),
   misc = c(Domino_granulated = 150),
   beverage = c(Kara_coconutcream = 500),
-  dairy = c(Wegmans_heavyCream = 250),
+  dairy = c(
+    Wegmans_heavyCream = 250
+  ),
   happytears = 'UDVHsBR7s3Y')
 
 

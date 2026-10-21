@@ -24,8 +24,11 @@ AddaPinch_chocolate_cake <- \() recipe(
   flour = c(KingArthur_allPurposeFlr = 240), sugar = 396,
   cocoa = c(KingArthur_Bensdorp_cocoa = 63), 
   coffee = c(NescafeGold_blonde_coffee = 2.3),
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2), 
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1.5), salt = 2.8,
+  misc_tsp = c(
+    TraderJoes_bakingPowder = 2,
+    ArmHammer_NaHCO3 = 1.5
+  ), 
+  salt = 2.8,
   misc_cup = c(
     Wegmans_whole_milk = 1
   ),
@@ -39,9 +42,11 @@ PreppyKitchen_chocolate_cake <- \() recipe(
   flavor = 'Chocolate Cake',
   flour = c(KingArthur_allPurposeFlr = 240), sugar = 400,
   cocoa = c(KingArthur_Bensdorp_cocoa = 50),
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 1.5),
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1.5), 
-  salt_tsp = c(Morton_kosher_salt = 1/2),
+  misc_tsp = c(
+    TraderJoes_bakingPowder = 1.5,
+    ArmHammer_NaHCO3 = 1.5,
+    Morton_kosher_salt = 1/2
+  ),
   misc_cup = c(
     Wegmans_whole_milk = 1
   ), 
@@ -57,10 +62,12 @@ DessertFor2_matcha_cake <- \() recipe(
   dairy = c(Kerrygold_butter = 99),
   sugar = 200,
   egg_pc = c(eggYolk = 2, eggWhite = 2),
-  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
-  matcha_tsp = c(Sencha_everyday_matcha = 1.5*3),
   flour = c(KingArthur_allPurposeFlr = 120),
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 1),
+  misc_tsp = c(
+    NielsenMassey_Madagascar = 1,
+    Sencha_everyday_matcha = 1.5*3,
+    TraderJoes_bakingPowder = 1
+  ),
   misc_cup = c(
     OakFarms_buttermilk = 1/3
   ),
@@ -70,13 +77,13 @@ DessertFor2_matcha_cake <- \() recipe(
 Sallys_pumpkin_cake <- \() recipe(
   author = 'Sally\'s', flavor = 'Pumpkin Cake',
   flour = c(KingArthur_allPurposeFlr = 250),
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2),
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1),
-  salt_tsp = 1, 
-  spice_tsp = c(
+  misc_tsp = c(
+    TraderJoes_bakingPowder = 2,
+    ArmHammer_NaHCO3 = 1,
     SimplyOrganic_Ceylon_cinnamon = 1.5,
     SimplyOrganic_pumpkinSpice = 2
   ),
+  salt_tsp = 1, 
   oil = c(Wegmans_vegetable_oil = 240), # 1 cup (240ml) canola or vegetable oil*
   egg_pc = c(eggYolk = 4, eggWhite = 4),
   sugar = c(

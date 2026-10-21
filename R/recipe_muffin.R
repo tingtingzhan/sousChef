@@ -12,8 +12,10 @@ Brody_muffin <- \() recipe(
     SimpleTruth_yogurt = 1,
     Wegmans_whole_milk = 2/3
   ), 
-  vanilla_tsp = c(NielsenMassey_Madagascar = 2), # original
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2.5), # original
+  misc_tsp = c(
+    NielsenMassey_Madagascar = 2,
+    TraderJoes_bakingPowder = 2.5
+  ),
   salt_tsp = .5)
 
 
@@ -21,7 +23,9 @@ Introvert_muffin <- \() recipe(
   author = 'Introvert', flavor = 'Muffin', 
   url = 'https://www.bakedbyanintrovert.com/basic-muffin-recipe/',
   misc = c(Domino_granulated = 100),
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2),
+  misc_tsp = c(
+    TraderJoes_bakingPowder = 2
+  ),
   salt_tsp = .5,
   misc_cup = c(
     KingArthur_allPurposeFlr = 2,
@@ -35,15 +39,17 @@ CulinaryHill_muffin <- \() recipe(
   author = 'Culinary Hill', flavor = 'Muffin', 
   url = 'https://www.culinaryhill.com/blueberry-muffins/',
   flour = c(KingArthur_allPurposeFlr = 240),
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 2),
+  misc_tsp = c(
+    TraderJoes_bakingPowder = 2,
+    NielsenMassey_Madagascar = 1
+  ),
   salt_tsp = 1/2,
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   misc_cup = c(
     Domino_granulated = 1,
     Kerrygold_butter = 1/2,
     Wegmans_whole_milk = .5
-  ),
-  vanilla_tsp = c(NielsenMassey_Madagascar = 1))
+  ))
 
 
 Lori_muffin <- \() recipe(
@@ -51,7 +57,9 @@ Lori_muffin <- \() recipe(
   flavor = 'Muffin', 
   allrecipes = '6874/best-ever-muffins/',
   flour = c(KingArthur_allPurposeFlr = 240), 
-  bakingPowder_Tbsp = c(TraderJoes_bakingPowder = 1),
+  misc_Tbsp = c(
+    TraderJoes_bakingPowder = 1
+  ),
   salt_tsp = 1/2,
   egg_pc = c(eggYolk = 1, eggWhite = 1),
   misc_cup = c(
@@ -65,8 +73,8 @@ Lori_muffin <- \() recipe(
 Sallys_pumpkin_muffin <- \() recipe(
   author = 'Sally\'s', flavor = 'Pumpkin Muffin',
   url = 'https://sallysbakingaddiction.com/pumpkin-muffins-recipe/',
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1),
-  spice_tsp = c(
+  misc_tsp = c(
+    ArmHammer_NaHCO3 = 1,
     SimplyOrganic_ginger = 1/4,
     SimplyOrganic_Ceylon_cinnamon = 1.5,
     SimplyOrganic_pumpkinSpice = 1.5

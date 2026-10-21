@@ -56,7 +56,9 @@ ViewRoad_pumpkin_tortilla <- \() recipe(
 xiaogaojie_flatbread <- \() recipe(
   flavor = 'Flatbread',
   water = c(c22 = 150+15),
-  yeast_tsp = c(Fleischmanns_instant = 1/4),
+  misc_tsp = c(
+    Fleischmanns_instant_yeast = 1/4
+  ),
   misc = c(
     KingArthur_allPurposeFlr = 300,
     Kerrygold_butter = 40

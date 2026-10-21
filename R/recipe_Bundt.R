@@ -21,18 +21,20 @@
 PreppyKitchen_chocolate_Bundt <- \() recipe(
   flavor = 'Chocolate Bundt',
   water = c(c40 = 360),
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = 2.5),
+  misc_tsp = c(
+    NielsenMassey_Madagascar = 1,
+    ArmHammer_NaHCO3 = 2.5
+  ),
   salt_tsp = 1,
   dairy = c(Kerrygold_butter = 213),
   misc_cup = c(
     KingArthur_allPurposeFlr = 3.5,
+    Wegmans_vegetable_oil = 1/2,
     Daisy_sourCream = 1,
     Ghirardelli_cocoa = 1.25,
     Domino_granulated = 2.5
   ),
-  oil_tsp = c(Wegmans_vegetable_oil = 24),
   egg_pc = c(eggYolk = 4, eggWhite = 4),
-  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
   preppykitchen = c('_MqLza3bgbw' = 'chocolate-bundt-cake'))
 
 
@@ -40,8 +42,10 @@ PreppyKitchen_chocolate_Bundt <- \() recipe(
 PreppyKitchen_Bundt <- \() recipe(
   flavor = 'Bundt',
   flour = c(KingArthur_allPurposeFlr = 360),
-  bakingPowder_tsp = c(TraderJoes_bakingPowder = 1),
-  NaHCO3_tsp = c(ArmHammer_NaHCO3 = .5),
+  misc_tsp = c(
+    TraderJoes_bakingPowder = 1,
+    ArmHammer_NaHCO3 = .5
+  ),
   salt_tsp = 1.5,
   misc_brick = c(
     Philadelphia_creamCheese = 1,

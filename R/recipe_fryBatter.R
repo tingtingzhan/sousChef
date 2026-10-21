@@ -16,12 +16,13 @@ if (FALSE) {
       #starch = c(Wegmans_corn_starch = 75),
       flour = c(Wegmans_pastryFlr = 75),
       starch = c(Wegmans_corn_starch = 75, sweetPotato_starch = 75),
-      bakingPowder_tsp = c(TraderJoes_bakingPowder = .75),
+      misc_tsp = c(
+        TraderJoes_bakingPowder = .75,
+        ArmHammer_NaHCO3 = .25,
+        Chinata_paprika = .25,
+        Heinz_whiteVinegar = .5
+      ),
       salt_tsp = .125,
-      NaHCO3_tsp = c(ArmHammer_NaHCO3 = .25),
-      spice_tsp = c(Chinata_paprika = .25),
-      sauce_tsp = c(Heinz_whiteVinegar = .5),
-      # 白醋 2g  /  1/4 teaspoon
       youtube = '_-JdGn3EWZQ'
       )
   

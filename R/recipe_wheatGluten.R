@@ -7,8 +7,10 @@ shangshi_steamWheatGluten <- \() recipe(
   misc_cup = c(
     BobsRedMill_wheatGluten = 1
   ),
-  yeast_tsp = c(Fleischmanns_instant = 1),
-  sugar_tsp = c(Domino_10x = 1),
+  misc_tsp = c(
+    Domino_10x = 1,
+    Fleischmanns_instant_yeast = 1
+  ),
   water_cup = c(c22 = 1/2),
   shangshikitchen = 'f3lUVR6hJ6Q'
   # instruction (legacy) = c(

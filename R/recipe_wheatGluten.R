@@ -4,7 +4,9 @@
 
 shangshi_steamWheatGluten <- \() recipe(
   flavor = '\u84b8\u9762\u7b4b',
-  misc_cup = c(BobsRedMill_wheatGluten = 1),
+  misc_cup = c(
+    BobsRedMill_wheatGluten = 1
+  ),
   yeast_tsp = c(Fleischmanns_instant = 1),
   sugar_tsp = c(Domino_10x = 1),
   water_cup = c(c22 = 1/2),

@@ -53,9 +53,11 @@ if (FALSE) {
 
 Guga_rub <- \() recipe(
   guga = 'omXFw_JnP4E',
-  salt_cup = 1/4,
-  sugar_cup = c(Domino_darkBrown = 1/4),
-  spice_cup = c(Chinata_paprika = 1/4),
+  misc_cup = c(
+    Morton_salt = 1/4,
+    Domino_darkBrown = 1/4,
+    Chinata_paprika = 1/4
+  ),
   spice_Tbsp = c(
     McCormick_blackPepper = 1,
     McCormick_garlic = 1,

@@ -5,8 +5,10 @@
 
 pumpkin_creamCheeseDip_bakethat <- \() recipe(
   author = 'Bake That!',
-  dairy_brick = c(Philadelphia_creamCheese = 1),
-  sugar_cup = c(Domino_10x = 1.5),
+  misc_brick = c(Philadelphia_creamCheese = 1),
+  misc_cup = c(
+    Domino_10x = 1.5
+  ),
   puree = c(Libbys_pumpkin = 425), # 15 oz
   vanilla_tsp = c(NielsenMassey_Madagascar = 1),
   spice_Tbsp = c(SimplyOrganic_pumpkinSpice = 1/2),
@@ -17,9 +19,11 @@ pumpkin_creamCheeseDip_bakethat <- \() recipe(
 
 pumpkin_creamCheeseDip_Julie <- \() recipe(
   julieseatsandtreats = c('ktyuI7JHQ_Q' = 'sweet-pumpkin-dip'),
-  dairy_brick = c(Philadelphia_creamCheese = 2),
+  misc_brick = c(Philadelphia_creamCheese = 2),
   puree = c(Libbys_pumpkin = 425), # 15 oz
-  sugar_cup = c(Domino_10x = 2),
+  misc_cup = c(
+    Domino_10x = 2
+  ),
   spice_tsp = c(
     SimplyOrganic_ginger = 1,
     SimplyOrganic_Ceylon_cinnamon = 2

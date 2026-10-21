@@ -359,6 +359,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
       } else {
         x@alias <- switch(
           EXPR = .cl_last, 
+          cocoa =, cacao =  '\u53ef\u53ef\u7c89',
           ghee = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
           matcha = '\u62b9\u8336\u7c89',
           character()

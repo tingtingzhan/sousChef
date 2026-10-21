@@ -40,10 +40,13 @@ Ghirardelli_mochaFrappe <- \() nutrition(
 Pillsbury_mocha <- \() recipe(
   author = 'Pillsbury', flavor = 'Mocha Mix',
   url = 'https://www.pillsbury.com/recipes/mocha-mix/c93163dd-c5da-44ff-b3e6-9698e855fd5f',
-  misc_cup = c(Nestle_coffeeMate = 2.25),
-  sugar_cup = 1.5, # didnt say confectioners or granulated
-  coffee_cup = c(NescafeGold_blonde = 3/4),
-  cocoa_cup = c(KingArthur_Bensdorp = 3/4))
+  misc_cup = c(
+    Nestle_coffeeMate = 2.25,
+    NescafeGold_blonde_coffee = 3/4,
+    KingArthur_Bensdorp_cocoa = 3/4,
+    Domino_granulated = 1.5
+  )
+)
 
 
 
@@ -52,11 +55,13 @@ Pillsbury_mocha <- \() recipe(
 Rebecca_mocha <- \() recipe(
   author = 'Rebecca', flavor = 'Mocha Mix',
   allrecipes = '23828/hot-mocha-drink-mix/',
-  sugar_cup = c(Domino_granulated = 1),
-  dairy_cup = c(Carnation_drymilk = 1),
-  misc_cup = c(Nestle_coffeeMate = 1),
-  cocoa_cup = c(KingArthur_Bensdorp = 1/2),
-  coffee_cup = c(NescafeGold_blonde = 1/4))
+  misc_cup = c(
+    Carnation_drymilk = 1,
+    Nestle_coffeeMate = 1,
+    Domino_granulated = 1,
+    KingArthur_Bensdorp_cocoa = 1/2,
+    NescafeGold_blonde_coffee = 1/4
+  ))
 
 
 
@@ -64,8 +69,8 @@ Rebecca_mocha <- \() recipe(
 
 bargainmums_mocha <- \() recipe(
   author = 'Bargain Mums', flavor = 'Mocha Mix',
-  coffee = c(NescafeGold_blonde = 30), 
-  cocoa = c(KingArthur_Bensdorp = 50), 
+  coffee = c(NescafeGold_blonde_coffee = 30), 
+  cocoa = c(KingArthur_Bensdorp_cocoa = 50), 
   sugar = 100, 
   dairy = c(Carnation_drymilk = 110), 
   vanilla_tsp = c(NielsenMassey_Madagascar = 1)#,
@@ -93,7 +98,9 @@ Godiva_milkCocoa <- \() nutrition(
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
   fat = 2.5, sodium = .005, carbohydrate = 28, sugar = 24, addedSugar = 23, protein = 2,
-  suggest = list(dairy_cup = c(Wegmans_whole_milk = 1)))
+  suggest = list(misc_cup = c(
+    Wegmans_whole_milk = 1
+  )))
 
 
 
@@ -102,7 +109,9 @@ Godiva_cocoa <- \() nutrition(
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
   fat = 3.5, carbohydrate = 26, addedSugar = 20, protein = 3,
-  suggest = list(dairy_cup = c(Wegmans_whole_milk = 1)))
+  suggest = list(misc_cup = c(
+    Wegmans_whole_milk = 1
+  )))
 
 
 
@@ -116,7 +125,9 @@ SwissMiss_simplyCocoaMilk <- \() nutrition(
   calorie = 100,
   sodium = .15, carbohydrate = 22, addedSugar = 20, protein = 1,
   suggest = list(
-    dairy_cup = c(WegmansOrganic_2perc_milk = 1)
+    misc_cup = c(
+      WegmansOrganic_2perc_milk = 1
+    )
   ))
 
 
@@ -173,10 +184,13 @@ Nestle_cocoSupreme <- \() nutrition(
 EarlaTaylor_cocoa <- \() recipe(
   author = 'Earla Taylor', flavor = 'Cocoa Mix',
   allrecipes = '9335/hot-cocoa-mix/',
-  dairy_cup = c(Carnation_drymilk = 10),
-  sugar_cup = c(Domino_10x = 4.75),
-  cocoa_cup = c(KingArthur_Burgundy = 1.75),
-  misc_cup = c(Nestle_coffeeMate = 1.75))
+  misc_cup = c(
+    Carnation_drymilk = 10,
+    Nestle_coffeeMate = 1.75,
+    KingArthur_Burgundy_cocoa = 1.75,
+    Domino_10x = 4.75
+  )
+)
 
 
 
@@ -186,7 +200,7 @@ Mels_cocoa <- \() recipe(
   url = 'https://www.melskitchencafe.com/homemade-hot-chocolate-mix-another-simple-gift-idea/',
   dairy = c(Carnation_drymilk = 405),
   sugar = 228,
-  cocoa = c(KingArthur_Bensdorp = 128),
+  cocoa = c(KingArthur_Bensdorp_cocoa = 128),
   misc = c(Ghirardelli_whiteChocolate = 255),
   salt_tsp = 1/4)
 
@@ -197,7 +211,7 @@ AmandaRettke_cocoa <- \() recipe(
   author = 'Amanda Rettke', flavor = 'Cocoa Mix',
   url = 'https://iambaker.net/hot-cocoa-mix-recipe/',
   sugar = 250,
-  cocoa = c(KingArthur_Bensdorp = 118),
+  cocoa = c(KingArthur_Bensdorp_cocoa = 118),
   dairy = c(Carnation_drymilk = 170),
   starch_tsp = c(Wegmans_corn_starch = 2),
   salt_tsp = c(Morton_kosher_salt = 1)

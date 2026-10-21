@@ -1,11 +1,16 @@
 
 expect_no_error(
   object = nutritionlist(
-    subtract(sousChef:::Giallozafferano_LangueDeChat(), sugar = 45),
-    subtract(sousChef:::Ying_LangueDeChat(), sugar = 7.5),
-    subtract(sousChef:::Jadore_LangueDeChat(), sugar = 22),
-    subtract(sousChef:::cookingTree_LangueDeChat(), sugar = 55),
-    subtract(sousChef:::cookingTree_cocoa_LangueDeChat(), sugar = 28)
+    sousChef:::Giallozafferano_LangueDeChat() -
+      list(misc = c(Domino_10x = 45)),
+    sousChef:::Ying_LangueDeChat() -
+      list(misc = c(Domino_10x = 7.5)),
+    sousChef:::Jadore_LangueDeChat() -
+      list(misc = c(Domino_10x = 22)),
+    sousChef:::cookingTree_LangueDeChat() -
+      list(misc = c(Domino_10x = 55)),
+    sousChef:::cookingTree_cocoa_LangueDeChat() -
+      list(misc = c(Domino_10x = 28))
   ) |>
     print()
 )

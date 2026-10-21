@@ -34,7 +34,7 @@ iwen_cocoa_millecrepe <- \() recipe(
   author = 'iwen', flavor = '\u53ef\u53ef\u5343\u5c42',
   egg_pc = c(eggYolk = 6, eggWhite = 6),
   sugar = 75,
-  cocoa = c(KingArthur_Bensdorp = 23),
+  cocoa = c(KingArthur_Bensdorp_cocoa = 23),
   flour = c(KingArthur_allPurposeFlr = 240),
   salt_tsp = 1/2,
   dairy = c(Kerrygold_butter = 105,
@@ -46,7 +46,7 @@ iwen_cocoa_millecrepe <- \() recipe(
 qiong_cocoa_millecrepe <- \() recipe(
   author = '\u5927\u743c', flavor = '\u53ef\u53ef\u5343\u5c42', youtube = 'i8Ii4BZBkmg',
   egg_pc = c(eggYolk = 2, eggWhite = 2),
-  cocoa = c(KingArthur_Bensdorp = 10),
+  cocoa = c(KingArthur_Bensdorp_cocoa = 10),
   dairy = c(Kerrygold_butter = 40,
             WegmansOrganic_whole_milk = 400), # in grams in original recipe
   sugar = 50,
@@ -56,12 +56,12 @@ qiong_cocoa_millecrepe <- \() recipe(
 qiong_tiramisu_millecrepe <- \() recipe(
   author = '\u5927\u743c', flavor = 'tiramisu\u0300 millecrepe', youtube = 'xiVfrjTwaHw',
   egg_pc = c(eggYolk = 2, eggWhite = 2), #
-  cocoa = c(KingArthur_Bensdorp = 8), #
+  cocoa = c(KingArthur_Bensdorp_cocoa = 8), #
   dairy = c(Kerrygold_butter = 30, #
             WegmansOrganic_whole_milk = 410), # in grams in original recipe
   # 15ml  Coffee Rum    1tbsp
   sugar = 50, #
-  coffee = c(NescafeGold_blonde = 6.6), #
+  coffee = c(NescafeGold_blonde_coffee = 6.6), #
   flour = c(Wegmans_pastryFlr = 80)) #
 
 
@@ -132,8 +132,10 @@ lisa_mango_millecrepe <- \() recipe(
 JustOne_matcha_millecrepe <- \() recipe(
   flavor = '\u62b9\u8336\u5343\u5c42', 
   just1cookbook = c('vfUu0eedUYI' = 'matcha-mille-crepe-cake'),
-  dairy_cup = c(Wegmans_whole_milk = 1.75),
-  sugar = 12.5*3, # 3 Tbsp granulated sugar
+  misc_cup = c(
+    Wegmans_whole_milk = 1.75
+  ),
+  sugar_Tbsp = c(Domino_granulated = 3),
   egg_pc = c(eggYolk = 3, eggWhite = 3),
   dairy = c(Kerrygold_butter = 25),
   flour = c(Wegmans_pastryFlr = 138),

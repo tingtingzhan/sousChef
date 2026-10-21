@@ -1,6 +1,8 @@
 expect_no_error(
   object = nutritionlist(
-    subtract(sousChef:::JeanPierre_eggnog(), sugar = 25),
-    subtract(sousChef:::PreppyKitchen_eggnog(), sugar = 130)
+    sousChef:::JeanPierre_eggnog() -
+      list(misc = c(Domino_granulated = 25)),
+    sousChef:::PreppyKitchen_eggnog() -
+      list(misc = c(Domino_granulated = 120))
   ) |> print()
 )

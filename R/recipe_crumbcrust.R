@@ -3,7 +3,9 @@
 PreppyKitchen_grahamCrust1 <- \() recipe(
   flavor = 'Graham Crust',
   misc = c(HoneyMaid_graham = 180), # 1.5 cups
-  dairy_cup = c(Kerrygold_butter = 1/4),
+  misc_cup = c(
+    Kerrygold_butter = 1/4
+  ),
   preppykitchen = c('ZYoYffXWiwk' = 'cheesecake-recipe'))
 
 PreppyKitchen_grahamCrust2 <- \() recipe(
@@ -30,7 +32,9 @@ PreppyKitchen_grahamCrust4 <- \() recipe(
 PreppyKitchen_grahamCrust5 <- \() recipe(
   flavor = 'Graham Crust',
   misc = c(Nabisco_graham = 260), # 2 cups (should be 240g based on his other recipes)
-  dairy_cup = c(Kerrygold_butter = 1/2),
+  misc_cup = c(
+    Kerrygold_butter = 1/2
+  ),
   preppykitchen = c('V5YqfJSjYXE' = 'no-bake-cheesecake'))
 
 

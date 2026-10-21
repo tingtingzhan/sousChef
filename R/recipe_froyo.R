@@ -10,7 +10,10 @@
 emma_froyo <- \() recipe(
   author = 'Emma\'s Goodies', flavor = 'Froyo\U1f368',
   youtube = 'rzXkiFZM1Vc',
-  dairy_cup = c(Wegmans_heavyCream = 1.75),
-  dairy = c(FageTotal0_yogurtGreek = 170), 
-  sugar = 130)
+  misc_cup = c(
+    Wegmans_heavyCream = 1.75,
+    Domino_10x = 2/3
+  ),
+  dairy = c(FageTotal0_yogurtGreek = 170)
+)
 

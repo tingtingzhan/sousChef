@@ -10,9 +10,8 @@
 #' @param ... ingredients to be subtracted
 #' 
 #' @examples
-#' subtract(sousChef:::Keebler_grahamCrust(), sugar = 3)
-#' subtract(sousChef:::Keebler_grahamCrust(), sugar = 5.5)
-#' 
+#' sousChef:::Keebler_grahamCrust() |>
+#'  subtract(sugar = 3)
 #' @name subtract
 #' @export
 subtract <- \(x, ...) UseMethod(generic = 'subtract')
@@ -24,64 +23,7 @@ subtract <- \(x, ...) UseMethod(generic = 'subtract')
 #' @export
 subtract.raw. <- \(x, ...) {
   
-  x <- x
-  txt <- character()
-  
-  args <- list(...)
-  arg_nm <- names(args)
-  if (!length(arg_nm) || anyNA(arg_nm) || !all(nzchar(arg_nm))) stop('ingredients to be subtracted must be named')
-  
-  for (i in seq_along(args)) {
-    
-    inm <- arg_nm[i]
-    txt <- c(txt, inm)
-    
-    ival <- args[[i]]
-    if (!is.numeric(ival) || anyNA(ival)) {
-      arg_nm[i] |> 
-        sprintf(fmt = 'illegal `%s`') |> 
-        stop()
-      # `ival <= 0` allowed, 'adding' an ingredient
-    }
-    
-    if (inm %notin% slotNames(x)) {
-      inm |>
-        sprintf(fmt = '`%s` is not supported') |> 
-        stop()
-    }
-    
-    old <- slot(x, name = inm)
-    n_old <- length(old)
-    
-    if (!n_old) {
-      inm |>
-        sprintf(fmt = 'orginal recipe does not contain `@%s`') |> 
-        stop()
-    }
-    
-    if (n_old != length(ival)) {
-      inm |>
-        sprintf(fmt = 'length mismatch of `%s` in orginal recipe and subtract') |> 
-        stop()
-    }
-    
-    if (any(ival > old)) {
-      sprintf(fmt = 'too much `%s` (>%.1f grams) to be subtracted', inm, old) |> 
-      stop()
-    }
-    
-    slot(x, name = inm) <- (old - ival) |> # `names(old)` preserved
-      zero.omit()
-    
-  }
-
-  x@alias <- paste(
-    x@alias, 
-    paste0('-', paste0(unique.default(txt), collapse = '/')) |> 
-      col_grey() |> 
-      bg_br_green())
-  
-  return(x)
+  .Defunct(msg = '-,recipe,list-method')
   
 }
 

@@ -207,7 +207,28 @@ setMethod(f = '+', signature = c(e1 = 'recipe', e2 = 'list'), definition = \(e1,
   atr$call <- call(name = 'quote', atr$call) # for [recipe()]
   atr <- atr[lengths(atr) > 0L]
   
+  e2 <- e2[lengths(e2) > 0L]
+  
+  nm <- intersect(names(atr), names(e2))
+
+  for (i in nm) { # len-0 compatible!
+    atr[[i]] <- sum_by_name(atr[[i]], e2[[i]]) |>
+      zero.omit()
+    e2[[i]] <- NULL
+  }
+  
   c(atr, e2) |>
     do.call(what = 'recipe', args = _)
   
+})
+
+
+#' @rdname S4methods
+#' @aliases -,recipe,list-method
+#' @export
+setMethod(f = '-', signature = c(e1 = 'recipe', e2 = 'list'), definition = \(e1, e2) {
+  # negate
+  e2_n <- e2 |> 
+    lapply(FUN = `-`)
+  e1 + e2_n
 })

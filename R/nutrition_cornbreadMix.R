@@ -10,8 +10,10 @@ TraderJoes_cornbreadMix <- \() nutrition(
   sodium = .25*12, carbohydrate = 28*12, addedSugar = 10*12, protein = 2,
   suggest = list(
     egg_pc = c(eggYolk = 1, eggWhite = 1),
-    dairy_cup = c(Wegmans_whole_milk = 3/4),
-    oil_cup = c(Wegmans_vegetable_oil = 1/2)
+    misc_cup = c(
+      Wegmans_whole_milk = 3/4,
+      Wegmans_vegetable_oil = 1/2
+    )
   ),
   review = paste('Even', style_hyperlink(
     text = 'bon app\u00e9tit', 
@@ -32,8 +34,10 @@ WholeFoods365_cornbreadMix <- \() nutrition(
   sodium = .39*12, carbohydrate = 27*12, fiber = 1*12, addedSugar = 8*12, protein = 2*12,
   suggest = list(
     egg_pc = c(eggYolk = 2, eggWhite = 2),
-    dairy_cup = c(Wegmans_whole_milk = 1),
-    oil_cup = c(Wegmans_vegetable_oil = .5)
+    misc_cup = c(
+      Wegmans_whole_milk = 1,
+      Wegmans_vegetable_oil = .5
+    )
   ),
   review = paste(style_hyperlink(
     text = 'bon app\u00e9tit', 
@@ -49,7 +53,7 @@ Krusteaz_southern_cornbreadMix <- \() nutrition(
   calorie = 100*12, 
   fat = .5*12, sodium = .4*12, carbohydrate = 21*12, sugar = 4*12, protein = 2*12,
   suggest = list(
-    dairy_cup = c(
+    misc_cup = c(
       Kerrygold_butter = 1/3,
       OakFarms_buttermilk = 1
     ),
@@ -74,7 +78,9 @@ BobsRedMill_cornbreadMix <- \() nutrition(
   suggest = list(
     water_cup = 2.5,
     egg_pc = c(eggYolk = 2, eggWhite = 2),
-    oil_cup = c(Wegmans_vegetable_oil = 1/2)
+    misc_cup = c(
+      Wegmans_vegetable_oil = 1/2
+    )
   ),
   review = paste('A bad review from', style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix')))
 
@@ -92,8 +98,10 @@ Stonewall_cornbreadMix <- \() nutrition(
   sodium = .18*12, carbohydrate = 31*12, fiber = 1*12, addedSugar = 12*12, protein = 2*12,
   suggest = list(
     egg_pc = c(eggYolk = 1, eggWhite = 1),
-    dairy_cup = c(Wegmans_whole_milk = 1),
-    oil_cup = c(Wegmans_vegetable_oil = 1/3)
+    misc_cup = c(
+      Wegmans_vegetable_oil = 1/3,
+      Wegmans_whole_milk = 1
+    )
   ),
   review = paste(style_hyperlink(
     text = 'bon app\u00e9tit', 
@@ -114,7 +122,9 @@ Jiffy_cornMuffinMix <- \() nutrition(
   suggest = list(
     # url = 'https://www.jiffymix.com/recipe/air-fryer-corn-muffins/',
     egg_pc = c(eggYolk = 1, eggWhite = 1),
-    dairy_cup = c(Wegmans_whole_milk = 1/3)
+    misc_cup = c(
+      Wegmans_whole_milk = 1/3
+    )
   ),
   review = paste(style_hyperlink(
     text = 'bon app\u00e9tit', 
@@ -133,7 +143,7 @@ Fleischmanns_cornbreadMix <- \() nutrition(
   calorie = 100*16,
   fat = 1.5*16, sodium = .24*16, carbohydrate = 21*16, sugar = 8*16, protein = 1*16,
   suggest = list(
-    dairy_cup = c(
+    misc_cup = c(
       Kerrygold_butter = 1/3,
       Wegmans_whole_milk = 2/3
     ),

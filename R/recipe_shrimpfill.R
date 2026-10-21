@@ -12,7 +12,7 @@ Daat_shrimpfill <- \() recipe(
   daatgo = 'SYLIYqVV2N4',
   seafood = c(Kirkland_shrimp_c31 = 600), 
   fat = c(Epic_lard = 30), meat = c(pork_fat = 120),
-  vegetable = c(bambooShoot = 90),
+  misc = c(bambooShoot = 90),
   starch = c(Wegmans_corn_starch = 13),
   salt = 12, 
   msg = c(Ajinomoto_msg = 22),

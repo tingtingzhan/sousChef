@@ -4,15 +4,15 @@
 
 Brody_muffin <- \() recipe(
   author = 'Brody', flavor = 'Muffin', 
-  sugar = 300,
+  misc = c(Domino_granulated = 300),
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 224), # 1 cup, original
-  dairy_cup = c(
+  misc_cup = c(
+    KingArthur_allPurposeFlr = 2.25,
     SimpleTruth_yogurt = 1,
     Wegmans_whole_milk = 2/3
   ), 
   vanilla_tsp = c(NielsenMassey_Madagascar = 2), # original
-  flour_cup = c(KingArthur_allPurposeFlr = 2.25),
   bakingPowder_tsp = c(TraderJoes_bakingPowder = 2.5), # original
   salt_tsp = .5)
 
@@ -20,12 +20,14 @@ Brody_muffin <- \() recipe(
 Introvert_muffin <- \() recipe(
   author = 'Introvert', flavor = 'Muffin', 
   url = 'https://www.bakedbyanintrovert.com/basic-muffin-recipe/',
-  flour_cup = c(KingArthur_allPurposeFlr = 2),
-  sugar = 100,
+  misc = c(Domino_granulated = 100),
   bakingPowder_tsp = c(TraderJoes_bakingPowder = 2),
   salt_tsp = .5,
-  dairy_cup = c(Kerrygold_butter = 1/2,
-                Wegmans_whole_milk = .75),
+  misc_cup = c(
+    KingArthur_allPurposeFlr = 2,
+    Kerrygold_butter = 1/2,
+    Wegmans_whole_milk = .75
+  ),
   egg_pc = c(eggYolk = 2, eggWhite = 2))
 
 
@@ -33,12 +35,14 @@ CulinaryHill_muffin <- \() recipe(
   author = 'Culinary Hill', flavor = 'Muffin', 
   url = 'https://www.culinaryhill.com/blueberry-muffins/',
   flour = c(KingArthur_allPurposeFlr = 240),
-  sugar = 200,
   bakingPowder_tsp = c(TraderJoes_bakingPowder = 2),
   salt_tsp = 1/2,
   egg_pc = c(eggYolk = 2, eggWhite = 2),
-  dairy_cup = c(Kerrygold_butter = 1/2,
-                Wegmans_whole_milk = .5),
+  misc_cup = c(
+    Domino_granulated = 1,
+    Kerrygold_butter = 1/2,
+    Wegmans_whole_milk = .5
+  ),
   vanilla_tsp = c(NielsenMassey_Madagascar = 1))
 
 
@@ -49,9 +53,11 @@ Lori_muffin <- \() recipe(
   flour = c(KingArthur_allPurposeFlr = 240), 
   bakingPowder_Tbsp = c(TraderJoes_bakingPowder = 1),
   salt_tsp = 1/2,
-  sugar = 150, 
   egg_pc = c(eggYolk = 1, eggWhite = 1),
-  dairy_cup = c(Wegmans_whole_milk = 1),
+  misc_cup = c(
+    Domino_granulated = 3/4,
+    Wegmans_whole_milk = 1
+  ),
   oil = c(Wegmans_vegetable_oil = 224/4))
 
 
@@ -59,7 +65,6 @@ Lori_muffin <- \() recipe(
 Sallys_pumpkin_muffin <- \() recipe(
   author = 'Sally\'s', flavor = 'Pumpkin Muffin',
   url = 'https://sallysbakingaddiction.com/pumpkin-muffins-recipe/',
-  flour_cup = c(KingArthur_allPurposeFlr = 1.75),
   NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1),
   spice_tsp = c(
     SimplyOrganic_ginger = 1/4,
@@ -67,10 +72,14 @@ Sallys_pumpkin_muffin <- \() recipe(
     SimplyOrganic_pumpkinSpice = 1.5
   ),
   salt_tsp = 1/2,
-  oil_cup = c(Wegmans_vegetable_oil = 1/2),
-  sugar_cup = c(Domino_granulated = 1/2, Domino_darkBrown = 1/2),
   puree = c(Libbys_pumpkin = 340),
   egg_pc = c(eggYolk = 2, eggWhite = 2),
-  dairy_cup = c(Wegmans_whole_milk = 1/4)
+  misc_cup = c(
+    KingArthur_allPurposeFlr = 1.75,
+    Wegmans_whole_milk = 1/4,
+    Wegmans_vegetable_oil = 1/2,
+    Domino_granulated = 1/2, 
+    Domino_darkBrown = 1/2
+  )
 )
 

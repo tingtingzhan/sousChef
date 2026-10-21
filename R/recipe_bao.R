@@ -118,7 +118,9 @@ KingArthur_bao <- \() recipe(
   flavor = '\u5305\u5b50', 
   kingarthur = 'steamed-pork-buns-xian-rou-bao-recipe', author = 'Joy Huang',
   flour = c(KingArthur_allPurposeFlr = 360), 
-  dairy_cup = c(Wegmans_whole_milk = 1),
+  misc_cup = c(
+    Wegmans_whole_milk = 1
+  ),
   yeast_tsp = c(Fleischmanns_instant = 1), salt_tsp = .5,
   bakingPowder_tsp = c(TraderJoes_bakingPowder = .5),
   oil = c(Wegmans_vegetable_oil = 14))

@@ -22,11 +22,13 @@ AddaPinch_chocolate_cake <- \() recipe(
   flavor = 'Chocolate Cake',
   url = 'https://addapinch.com/the-best-chocolate-cake-recipe-ever/',
   flour = c(KingArthur_allPurposeFlr = 240), sugar = 396,
-  cocoa = c(KingArthur_Bensdorp = 63), 
-  coffee = c(NescafeGold_blonde = 2.3),
+  cocoa = c(KingArthur_Bensdorp_cocoa = 63), 
+  coffee = c(NescafeGold_blonde_coffee = 2.3),
   bakingPowder_tsp = c(TraderJoes_bakingPowder = 2), 
   NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1.5), salt = 2.8,
-  dairy_cup = c(Wegmans_whole_milk = 1),
+  misc_cup = c(
+    Wegmans_whole_milk = 1
+  ),
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 99),
   vanilla_tsp = c(NielsenMassey_Madagascar = 2),
@@ -36,11 +38,13 @@ AddaPinch_chocolate_cake <- \() recipe(
 PreppyKitchen_chocolate_cake <- \() recipe(
   flavor = 'Chocolate Cake',
   flour = c(KingArthur_allPurposeFlr = 240), sugar = 400,
-  cocoa = c(KingArthur_Bensdorp = 50),
+  cocoa = c(KingArthur_Bensdorp_cocoa = 50),
   bakingPowder_tsp = c(TraderJoes_bakingPowder = 1.5),
   NaHCO3_tsp = c(ArmHammer_NaHCO3 = 1.5), 
   salt_tsp = c(Morton_kosher_salt = 1/2),
-  dairy_cup = c(Wegmans_whole_milk = 1), 
+  misc_cup = c(
+    Wegmans_whole_milk = 1
+  ), 
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   oil = c(Wegmans_vegetable_oil = 14*8), # ½ cup vegetable oil (180mL)
   vanilla_Tbsp = c(NielsenMassey_Madagascar = 1),
@@ -57,7 +61,9 @@ DessertFor2_matcha_cake <- \() recipe(
   matcha_tsp = c(Sencha_everyday_matcha = 1.5*3),
   flour = c(KingArthur_allPurposeFlr = 120),
   bakingPowder_tsp = c(TraderJoes_bakingPowder = 1),
-  dairy_cup = c(OakFarms_buttermilk = 1/3),
+  misc_cup = c(
+    OakFarms_buttermilk = 1/3
+  ),
   url = 'https://www.dessertfortwo.com/matcha-cake/')
 
 

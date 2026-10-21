@@ -8,7 +8,7 @@
 xiaogaojie_pasteisdenata1 <- \() recipe(
   flavor = 'pasteisdenata1',
   water = 185,
-  sugar = 200,
+  misc = c(Domino_granulated = 200),
   #cinnamon stick 1
   #Lemon zest 2
   flour = c(Wegmans_pastryFlr = 25),
@@ -30,8 +30,10 @@ xiaogaojie_pasteisdenata2 <- \() recipe(
 Leites_pasteisdenata <- \() recipe(
   alias = 'leites',
   flour_Tbsp = c(KingArthur_allPurposeFlr = 3),
-  dairy_cup = c(Wegmans_whole_milk = 1.25),
-  sugar_cup = c(Domino_granulated = 4/3),
+  misc_cup = c(
+    Domino_granulated = 4/3,
+    Wegmans_whole_milk = 1.25
+  ),
   # 1 cinnamon stick
   water_cup = 2/3,
   vanilla_tsp = c(NielsenMassey_Madagascar = 1/2),
@@ -41,11 +43,13 @@ Leites_pasteisdenata <- \() recipe(
 
 TastingTable_pasteisdenata <- \() recipe(
   alias = 'TastingTable',
-  sugar_cup = c(Domino_granulated = 1),
   water_cup = 2/3,
   # 1 cinnamon stick
-  dairy_cup = c(Wegmans_whole_milk = (1 + 6/16)),
-  flour_cup = c(KingArthur_allPurposeFlr = 1/2),
+  misc_cup = c(
+    KingArthur_allPurposeFlr = 1/2,
+    Domino_granulated = 1,
+    Wegmans_whole_milk = (1 + 6/16)
+  ),
   egg_pc = c(eggYolk = 6),
   url = 'https://www.tastingtable.com/686035/portuguese-egg-tart-recipe-pastry/'
 )

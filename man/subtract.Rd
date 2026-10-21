@@ -21,7 +21,6 @@ subtract(x, ...)
 ..
 }
 \examples{
-subtract(sousChef:::Keebler_grahamCrust(), sugar = 3)
-subtract(sousChef:::Keebler_grahamCrust(), sugar = 5.5)
-
+sousChef:::Keebler_grahamCrust() |>
+ subtract(sugar = 3)
 }

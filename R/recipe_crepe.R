@@ -4,9 +4,11 @@
 jennyc819_crepe <- \() recipe(
   author = 'jennyc819', flavor = 'Crepe',
   allrecipes = '16383/basic-crepes/',
-  flour_cup = c(KingArthur_allPurposeFlr = 1),
   egg_pc = c(eggYolk = 2, eggWhite = 2),
-  dairy_cup = c(Wegmans_whole_milk = 1/2),
+  misc_cup = c(
+    KingArthur_allPurposeFlr = 1,
+    Wegmans_whole_milk = 1/2
+  ),
   water_cup = 1/2, 
   salt_tsp = 1/4,
   dairy_Tbsp = c(Kerrygold_butter = 2))
@@ -15,9 +17,11 @@ jennyc819_crepe <- \() recipe(
 cyberchef_crepeFrench <- \() recipe(
   author = 'cyberchef', flavor = 'French Crepe',
   allrecipes = '20931/french-crepes/',
-  flour_cup = c(KingArthur_allPurposeFlr = 1),
   egg_pc = c(eggYolk = 3, eggWhite = 3), # yes
-  dairy_cup = c(Wegmans_whole_milk = 2),
+  misc_cup = c(
+    KingArthur_allPurposeFlr = 1,
+    Wegmans_whole_milk = 2
+  ),
   sugar_tsp = 1,
   salt_tsp = 1/4,
   dairy_Tbsp = c(Kerrygold_butter = 2)
@@ -27,10 +31,12 @@ cyberchef_crepeFrench <- \() recipe(
 Carina_crepe <- \() recipe(
   author = 'Carina', flavor = 'Crepe',
   youtube = 'bX6ghyT6Ig0',
-  flour_cup = c(KingArthur_allPurposeFlr = 1),
   egg_pc = c(eggYolk = 2, eggWhite = 2),
   salt_tsp = 1/2,
-  dairy_cup = c(Wegmans_whole_milk = 1.25),
+  misc_cup = c(
+    KingArthur_allPurposeFlr = 1,
+    Wegmans_whole_milk = 1.25
+  ),
   dairy_Tbsp = c(Kerrygold_butter = 2)
 )
 
@@ -43,7 +49,9 @@ Aya_crepe <- \() recipe(
   salt_tsp = 1/2,
   egg_pc = c(eggYolk = 4, eggWhite = 4),
   dairy = c(Kerrygold_butter = 50),
-  dairy_cup = c(Wegmans_whole_milk = 2)
+  misc_cup = c(
+    Wegmans_whole_milk = 2
+  )
   # Dark rum: 1 Tbsp (or 2 Tbsp if you love it!)
 )
 
@@ -52,10 +60,12 @@ Natasha_crepe <- \() recipe(
   natashaskitchen = c('uA4KRfE_MNM' = 'easy-crepe-recipe'), 
   flavor = 'Crepe',
   water = 118.3,  # ½ cup lukewarm water
-  dairy_cup = c(Wegmans_whole_milk = 1),
+  misc_cup = c(
+    KingArthur_allPurposeFlr = 1,
+    Wegmans_whole_milk = 1
+  ),
   egg_pc = c(eggYolk = 4, eggWhite = 4),
   dairy_Tbsp = c(Kerrygold_butter = 4),
-  flour_cup = c(KingArthur_allPurposeFlr = 1),
   sugar_Tbsp = 2,
   salt_tsp = 1/2)
 

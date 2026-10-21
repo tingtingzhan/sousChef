@@ -1,8 +1,10 @@
 
 expect_no_error(
   object = nutritionlist(
-    subtract(sousChef:::pumpkin_creamCheeseDip_bakethat(), sugar = 135),
-    subtract(sousChef:::pumpkin_creamCheeseDip_Julie(), sugar = 180)
+    sousChef:::pumpkin_creamCheeseDip_bakethat() -
+      list(misc = c(Domino_10x = 135)),
+    sousChef:::pumpkin_creamCheeseDip_Julie() - 
+      list(misc = c(Domino_10x = 180))
   ) |> print()
 )
 

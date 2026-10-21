@@ -4,7 +4,7 @@
 # review = 'too sour!!'
 
 
-NescafeGold_blonde <- \() nutrition(
+NescafeGold_blonde_coffee <- \() nutrition(
   nescafeGold = 'gold-espresso-blonde-instant-coffee-35-oz-jar',
   walmart = '5066099259',
   costco = '4000376082',
@@ -23,7 +23,7 @@ NescafeGold_intense <- \() nutrition(
   name = 'Intense, Velvety Crema', alias = '\u901f\u6eb6\u5496\u5561',
   usd = 10.12/100,
   servingGram = 2, servingTsp = 1,
-  superior = 'NescafeGold_blonde'
+  superior = 'NescafeGold_blonde_coffee'
 )
 
 
@@ -34,7 +34,7 @@ NescafeGold_decaf <- \() nutrition(
   name = 'Decaf, Velvety Crema', alias = '\u901f\u6eb6\u5496\u5561',
   usd = 9.97/100,
   servingGram = 2, servingTsp = 1,
-  superior = 'NescafeGold_blonde'
+  superior = 'NescafeGold_blonde_coffee'
 )
 
 

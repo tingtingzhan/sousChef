@@ -8,7 +8,7 @@
 Navitas_cacao <- \() nutrition(
   navitas = 'cacao-powder',
   # bought at Costco once, but didn't see any more
-  name = 'Cacao Powder', alias = '\u53ef\u53ef\u7c89',
+  name = 'Cacao Powder',
   usd = 7/680*6, # price not sure
   servingGram = 6, 
   #servingTbsp = 1, # on package 
@@ -21,7 +21,7 @@ OrganicTraditions_cacao <- \() nutrition(
   brand = 'https://organictraditions.com/products/cacao-powder' |> 
     style_hyperlink(text = 'Organic Traditions\U1f1fa\U1f1f8') |>
     c(),
-  name = 'Cacao Powder', alias = '\u53ef\u53ef\u7c89',
+  name = 'Cacao Powder',
   usd = 38.99/2/454*20, costco = '100511406',
   servingGram = 20, servingTbsp = 3,
   fat = 2, carbohydrate = 11, fiber = 7, protein = 5, sodium = .03
@@ -44,9 +44,9 @@ KingArthur_blackCocoa <- \() nutrition(
 
 
 
-KingArthur_Bensdorp <- \() nutrition(
+KingArthur_Bensdorp_cocoa <- \() nutrition(
   kingarthur = '211698',
-  name = 'Bensdorp Cocoa', alias = '\u53ef\u53ef\u7c89',
+  name = 'Bensdorp Cocoa',
   usd = 14.95/397*6, # 2023-11-12
   servingGram = 6, 
   #servingTbsp = 1, # on package
@@ -56,9 +56,9 @@ KingArthur_Bensdorp <- \() nutrition(
 
 
 
-KingArthur_Burgundy <- \() nutrition(
+KingArthur_Burgundy_cocoa <- \() nutrition(
   kingarthur = '211822',
-  name = 'Burgundy Cocoa', alias = '\u53ef\u53ef\u7c89',
+  name = 'Burgundy Cocoa',
   usd = 14.95/397*5, # 2023-11-12
   servingGram = 5, 
   #servingTbsp = 1, # on package
@@ -66,7 +66,7 @@ KingArthur_Burgundy <- \() nutrition(
   calorie = 20,
   # no Carbohydrate!!
   fat = 1, carbohydrate = 1, fiber = 1, protein = 1,
-  superior = 'KingArthur_Bensdorp')
+  superior = 'KingArthur_Bensdorp_cocoa')
 
 
 
@@ -113,8 +113,8 @@ Ghirardelli_semisweet_chip <- \() nutrition(
 
 
 
-Ghirardelli_sunrise <- \() nutrition(
-  name = 'Sunrise, 15-17%\U1f9c8', alias = '\u53ef\u53ef\u7c89',
+Ghirardelli_sunrise_cocoa <- \() nutrition(
+  name = 'Sunrise, 15-17%\U1f9c8',
   ghirardelli = 'cocoa-powders-information',
   servingGram = 100, servingTbsp = 100/6, # packaging
   webstaurant = '40869069', usd = 176.49/(25*454)*100,
@@ -123,8 +123,8 @@ Ghirardelli_sunrise <- \() nutrition(
 
 
 
-Ghirardelli_majestic <- \() nutrition(
-  ghirardelli = 'cocoa-powders-information', alias = '\u53ef\u53ef\u7c89',
+Ghirardelli_majestic_cocoa <- \() nutrition(
+  ghirardelli = 'cocoa-powders-information',
   name = 'Majestic, 20-22%\U1f9c8',
   webstaurant = c('40869096', '40862100'), usd = 212.99/(25*454)*100,
   servingGram = 100, servingTbsp = 100/6, # packaging
@@ -133,9 +133,9 @@ Ghirardelli_majestic <- \() nutrition(
 
 
 
-Ghirardelli_superior <- \() nutrition(
+Ghirardelli_superior_cocoa <- \() nutrition(
   ghirardelli = 'cocoa-powders-information',
-  name = 'Superior, 10-12%\U1f9c8', alias = '\u53ef\u53ef\u7c89',
+  name = 'Superior, 10-12%\U1f9c8',
   servingGram = 100, servingTbsp = 100/6, # packaging
   webstaurant = '40869072', usd = 188.99/(25*454)*100,
   calorie = 220,

@@ -4,7 +4,7 @@
 xiaogaojie_cheesecakeJPN1 <- \() recipe(
   flavor = 'JPN Cheese Cake',
   egg_pc = c(eggYolk = 6, eggWhite = 6),
-  dairy_cup = c(
+  misc_cup = c(
     Wegmans_whole_milk = 1/4,
     Kerrygold_butter = 1/4
   ),

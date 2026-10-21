@@ -9,14 +9,16 @@ xiaogaojie_icecream <- \() recipe(
   egg_pc = c(eggYolk = 6),
   dairy = c(Wegmans_heavyCream = 500,
             WegmansOrganic_whole_milk = 250),
-  sugar = 120
+  misc_cup = c(
+    Domino_granulated = 1/2
+  )
   # Vanilla paste：8g, 1/2 teaspoons
 )
 
 happytears_icecream <- \() recipe(
   flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   egg_pc = c(eggYolk = 5),
-  sugar = 150,
+  misc = c(Domino_granulated = 150),
   beverage = c(Kara_coconutcream = 500),
   dairy = c(Wegmans_heavyCream = 250),
   happytears = 'UDVHsBR7s3Y')
@@ -31,7 +33,7 @@ xiaogaojie_cocoa_icecream <- \() recipe(
             WegmansOrganic_whole_milk = 250), 
   sugar = 60,
   flavor = c(Guittard_lustrous55 = 200), # semi-sweet chocolate：200g
-  coffee_tsp = c(NescafeGold_blonde = 1)) # 5g 1 tablespoon
+  coffee_tsp = c(NescafeGold_blonde_coffee = 1)) # 5g 1 tablespoon
   
 
 SweetDumpling_matcha_icecream <- \() recipe(
@@ -47,10 +49,11 @@ SweetDumpling_matcha_icecream <- \() recipe(
 cuisinart_icecream <- \() recipe(
   author = 'Cuisinart', flavor = '\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://www.cuisinart.com/recipes/desserts/simple-vanilla-ice-cream---5-cups-10-servings/',
-  dairy_cup = c(
+  misc_cup = c(
+    Domino_granulated = 3/4,
     Wegmans_heavyCream = 2,
-    Wegmans_whole_milk = 1),
-  sugar = 150, # ¾ cup granulated sugar 
+    Wegmans_whole_milk = 1
+  ),
   vanilla_tsp = c(NielsenMassey_Madagascar = 1))
 
 
@@ -68,7 +71,7 @@ Yumna_icecream <- \() recipe(
   author = 'Yumna', flavor = 'Cottage\u51b0\u6dc7\uf9f5\U1f368',
   url = 'https://feelgoodfoodie.net/recipe/cottage-cheese-ice-cream/',
   dairy = c(Daisy_cottageCheese = 425), # 15 oz,
-  sugar = 80 # 1/4 cup of honey weighs 85 grams
+  misc = c(Domino_10x = 80) # 1/4 cup of honey weighs 85 grams
 )
 
   

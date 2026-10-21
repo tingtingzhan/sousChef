@@ -170,7 +170,9 @@ KingArthur_selfRising_homemade <- \() recipe(
   flavor = 'Homemade Self-Rising Flour',
   author = 'brinna-sands',
   kingarthur = 'homemade-self-rising-flour-recipe',
-  flour_cup = c(KingArthur_allPurposeFlr = 1),
+  misc_cup = c(
+    KingArthur_allPurposeFlr = 1
+  ),
   bakingPowder_tsp = c(TraderJoes_bakingPowder = 1.5),
   salt_tsp = 1/4)
 

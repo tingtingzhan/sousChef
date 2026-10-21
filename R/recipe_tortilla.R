@@ -22,18 +22,22 @@
 ViewRoad_tortilla <- \() recipe(
   flavor = 'Tortilla',
   viewsontheroad = 'fA68XXQJN4Y', 
-  flour = c(KingArthur_allPurposeFlr = 2.5 * 120),
   salt_tsp = 1,
-  fat_cup = c(Morrell_lard = 1/2),
+  misc_cup = c(
+    KingArthur_allPurposeFlr = 2.5, # Gold Medal
+    Morrell_lard = 1/2
+  ),
   water_cup = 1)
 
 
 ViewRoad_pumpkin_tortilla <- \() recipe(
   flavor = 'Pumpkin Tortilla',
   viewsontheroad = 'hPMc1a19CsU', 
-  flour_cup = c(KingArthur_allPurposeFlr = 1.25),
-  puree_cup = c(Libbys_pumpkin = 1/3),
-  dairy_cup = c(Kerrygold_butter = 1/4), # butter vegetable shortening 
+  misc_cup = c(
+    KingArthur_allPurposeFlr = 1.25,
+    Libbys_pumpkin = 1/3,
+    Kerrygold_butter = 1/4  # butter vegetable shortening 
+  ),
   salt_tsp = 1/4,
   spice_tsp = c(SimplyOrganic_pumpkinSpice = 1.5),
   sugar = 12,

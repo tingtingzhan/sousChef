@@ -2,7 +2,7 @@
    
 
 PreppyKitchen_thumbprintCookie <- \() recipe(
-  dairy_brick = c(Kerrygold_butter = 1),
+  misc_brick = c(Kerrygold_butter = 1),
   sugar = 150,
   egg_pc = c(eggYolk = 2),
   vanilla_tsp = c(NielsenMassey_Madagascar = 1),

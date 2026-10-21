@@ -4,7 +4,7 @@
 
 
 
-Kahlua_coffee <- \() nutrition(
+Kahlua_coffee_liqueur <- \() nutrition(
   alias = '\u5496\u5561\u9152',
   kahlua = 'original-coffee-liqueur',
   name = 'Rum & Coffee Liqueur',

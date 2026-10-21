@@ -24,20 +24,23 @@ expect_no_error(
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::PreppyKitchen_cornbread() |>
-      subtract(sugar = 17),
-    sousChef:::BethanyWeathersby_cornbread() |> 
-      subtract(sugar = 105),
-    sousChef:::bluegirl_cornbread() |>
-      subtract(sugar = 108),
-    sousChef:::JoshuaWeissman_cornbread() |>
-      subtract(sugar = c(23, 64)),
+    sousChef:::PreppyKitchen_cornbread() -
+      list(misc = c(Domino_granulated = 17)),
+    sousChef:::BethanyWeathersby_cornbread() -
+      list(misc = c(Domino_granulated = 105)),
+    sousChef:::bluegirl_cornbread() -
+      list(misc = c(Domino_granulated = 108)),
+    sousChef:::JoshuaWeissman_cornbread() -
+      list(misc = c(
+        Domino_granulated = 64,
+        Domino_lightBrown = 15 
+      )),
     sousChef:::Jiffy_cornMuffinMix() |>
       as('raw.') |>
       as('nutrition') |>
       subtract(sugar = 32),
-    sousChef:::Wegmans_cornbread_recipe() |> 
-      subtract(sugar = 88),
+    sousChef:::Wegmans_cornbread_recipe() -
+      list(misc = c(Domino_granulated = 88)),
     sousChef:::Wegmans_cornbread() |>
       subtract(sugar = 10.5),
     sousChef:::WholeFoods365_cornbreadMix() |>

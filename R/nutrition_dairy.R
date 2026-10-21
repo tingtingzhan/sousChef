@@ -141,7 +141,8 @@ Carnation_condensMilk <- \() nutrition(
   # .87 * .4 = .35
   # condensed milk has .13 (solid) + .35 (remaining water)
   # water content .35/(.13 + .35) = 73% # ???
-  fat = 3.5, sodium = .045, sugar = 22, protein = 3) # remaining weight ~11g
+  fat = 3.5, sodium = .045, 
+  carbohydrate = 22, sugar = 22, addedSugar = 18, protein = 2) # remaining weight ~11g
 
 
 # whole milk contains 87% water https://www.hsph.harvard.edu/nutritionsource/milk/

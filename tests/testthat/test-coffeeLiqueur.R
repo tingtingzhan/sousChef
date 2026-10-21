@@ -3,7 +3,7 @@ expect_no_error(
   object = nutritionlist(
     sousChef:::Baileys_tiramisu(),
     sousChef:::Baileys_espresso(),
-    sousChef:::Kahlua_coffee(),
+    sousChef:::Kahlua_coffee_liqueur(),
     sousChef:::Kahlua_especial(),
     sousChef:::CafeGranita_coffee(),
     sousChef:::FratelliVincenzi_espresso(),

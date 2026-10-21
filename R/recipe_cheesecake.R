@@ -4,7 +4,6 @@
 
 Junior_cappuccino_cheesecake <- \() recipe(
   flavor = 'Cappuccino Cheesecake',
-  #dairy_brick = c(Philadelphia_creamCheese = 4),
   misc_brick = c(Philadelphia_creamCheese = 4),
   coffee_Tbsp = c(NescafeGold_blonde_coffee = 1),
   water = c(c100 = 15),

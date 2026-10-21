@@ -70,8 +70,10 @@ qiong_tiramisu_millecrepe <- \() recipe(
 
 amanda_matcha_millecrepe <- \() recipe(
   author = '\u66fc\u98df\u6162\u8bed', flavor = '\u62b9\u8336\u5343\u5c42',
-  dairy = c(Kerrygold_butter = 50,
-            WegmansOrganic_whole_milk = 650),
+  dairy = c(
+    Kerrygold_butter = 50,
+    WegmansOrganic_whole_milk = 650
+  ),
   flour = c(Wegmans_pastryFlr = 240),
   sugar = 90,
   egg_pc = c(eggWhite = 4, eggYolk = 4),

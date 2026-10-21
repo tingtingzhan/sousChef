@@ -15,12 +15,13 @@ cookingTree_LangueDeChat <- \() recipe(
 
 cookingTree_cocoa_LangueDeChat <- \() recipe(
   author = 'CookingTree', flavor = 'Cocoa Langue De Chat', youtube = 'V-PasuPZFS0',
-  misc = c(Domino_10x = 45),
+  misc = c(
+    Domino_10x = 45,
+    Kerrygold_butter = 45,
+    Wegmans_heavyCream = 20
+  ),
   egg_pc = c(eggYolk = 1),
   vanilla = c(NielsenMassey_Madagascar = 1),
-  dairy = c(
-    Kerrygold_butter = 45,
-    Wegmans_heavyCream = 20),
   flour = c(KingArthur_allPurposeFlr = 50),
   cocoa = c(KingArthur_Bensdorp_cocoa = 7))
 

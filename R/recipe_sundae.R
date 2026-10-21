@@ -38,12 +38,12 @@ xiaogaojie_cocoa_icecream <- \() recipe(
 
 SweetDumpling_matcha_icecream <- \() recipe(
   author = '\u7cd6\u997a\u5b50', flavor = '\u62b9\u8336\U1f375\u51b0\u6dc7\uf9f5\U1f368',
-  dairy = c(
+  misc = c(
     Wegmans_heavyCream = 250,
     WegmansOrganic_whole_milk = 50,
-    Carnation_condensMilk = 170
-  ),
-  matcha = c(Sencha_everyday_matcha = 15))
+    Carnation_condensMilk = 170,
+    Sencha_everyday_matcha = 15
+  ))
 
 
 cuisinart_icecream <- \() recipe(

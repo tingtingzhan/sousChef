@@ -4,12 +4,12 @@
 tiramisu_nytimes <- \() recipe(
   flavor = 'Tiramisu', 
   egg_pc = c(eggYolk = 4),
-  sugar = 100, 
-  dairy = c(Wegmans_heavyCream = 180),
   misc_cup = c(
-    BelGioioso_mascarpone = 1
+    Domino_granulated = 1/2,
+    BelGioioso_mascarpone = 1,
+    Wegmans_heavyCream = 3/4
   ),
-  nytimes = '1018684')
+  nytimes = '1018684-classic-tiramisu')
 
 
 

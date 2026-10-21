@@ -11,7 +11,9 @@ jennyc819_crepe <- \() recipe(
   ),
   water_cup = 1/2, 
   salt_tsp = 1/4,
-  dairy_Tbsp = c(Kerrygold_butter = 2))
+  misc_Tbsp = c(
+    Kerrygold_butter = 2
+  ))
 
 
 cyberchef_crepeFrench <- \() recipe(
@@ -24,7 +26,7 @@ cyberchef_crepeFrench <- \() recipe(
   ),
   sugar_tsp = 1,
   salt_tsp = 1/4,
-  dairy_Tbsp = c(Kerrygold_butter = 2)
+  misc_Tbsp = c(Kerrygold_butter = 2)
 )
 
 
@@ -37,7 +39,7 @@ Carina_crepe <- \() recipe(
     KingArthur_allPurposeFlr = 1,
     Wegmans_whole_milk = 1.25
   ),
-  dairy_Tbsp = c(Kerrygold_butter = 2)
+  misc_Tbsp = c(Kerrygold_butter = 2)
 )
 
 
@@ -65,8 +67,10 @@ Natasha_crepe <- \() recipe(
     Wegmans_whole_milk = 1
   ),
   egg_pc = c(eggYolk = 4, eggWhite = 4),
-  dairy_Tbsp = c(Kerrygold_butter = 4),
-  sugar_Tbsp = 2,
+  misc_Tbsp = c(
+    Kerrygold_butter = 4,
+    Domino_granulated = 2
+  ),
   salt_tsp = 1/2)
 
 

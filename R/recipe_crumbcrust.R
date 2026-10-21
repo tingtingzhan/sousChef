@@ -11,21 +11,21 @@ PreppyKitchen_grahamCrust1 <- \() recipe(
 PreppyKitchen_grahamCrust2 <- \() recipe(
   flavor = 'Graham Crust',
   misc = c(Nabisco_graham = 270), # 2.25 cups
-  dairy_Tbsp = c(Kerrygold_butter = 5),
+  misc_Tbsp = c(Kerrygold_butter = 5),
   preppykitchen = c('BSsv6sBD6ow' = 'strawberry-cheesecake'))
 
 
 PreppyKitchen_grahamCrust3 <- \() recipe(
   flavor = 'Graham Crust',
   misc = c(HoneyMaid_graham = 180), # 1.5 cups
-  dairy_Tbsp = c(Kerrygold_butter = 5),
+  misc_Tbsp = c(Kerrygold_butter = 5),
   preppykitchen = c('beDAwNsKZUA' = 'blueberry-cheesecake'))
 
 
 PreppyKitchen_grahamCrust4 <- \() recipe(
   flavor = 'Graham Crust',
   misc = c(Nabisco_graham = 270), # 2.25 cups
-  dairy_Tbsp = c(Kerrygold_butter = 6),
+  misc_Tbsp = c(Kerrygold_butter = 6),
   preppykitchen = c('x8ezFPOBtfo' = 'lemon-cheesecake'))
 
 

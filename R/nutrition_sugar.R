@@ -8,7 +8,14 @@
 # whiz 1 cup granulated sugar and 1 tablespoon cornstarch in a food processor 
 # for each cup of powdered sugar you need.
 
-
+KingArthur_sparkingSugar <- \() nutrition(
+  kingarthur = '100684',
+  name = 'Sparkling Sugar',
+  usd = 24.95/1360*6, date = as.Date('2026-10-22'),
+  servingGram = 6, 
+  servingTsp = 1, # on package
+  calorie = 25,
+  carbohydrate = 6, addedSugar = 6)
 
 Domino_10x <- \() nutrition(
   domino = 'powdered-sugar', # Ingredients: cane sugar, corn starch

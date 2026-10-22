@@ -55,7 +55,7 @@ Stonyfield_yogurt <- \() nutrition(
 
 Nancys_yogurt <- \() nutrition(
   nancysyogurt = 'organic-100-grass-fed-yogurt',
-  name = 'Organic 100% Grass-Fed Yogurt', alias = '\u9178\u5976',
+  name = '100% Grass-Fed Yogurt, Organic', alias = '\u9178\u5976',
   wegmans = '838502', usd = 5.99/680*170,
   servingGram = 170, 
   servingCup = 3/4, # no label
@@ -287,7 +287,7 @@ WholeFoods365_creamCheese <- \() nutrition(
 Nancys_creamCheese <- \() nutrition(
   nancysyogurt = 'organic-natural-cream-cheese',
   wegmans = '879678', usd = .62, date = as.Date('2026-09-17'),
-  name = 'Organic Cultured Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
+  name = 'Cultured Cream Cheese, Organic', alias = '\u5976\u6cb9\u5976\u916a',
   serving_oz = 1, servingTbsp = 2,
   calorie = 110,
   fat = 10, cholesterol = .025, sodium = .04, carbohydrate = 2, sugar = 1, protein = 1)
@@ -406,7 +406,7 @@ WegmansOrganic_whole_milk <- \() nutrition(
 
 
 Horizon_wholeDHA_milk <- \() nutrition(
-  name = 'Organic Whole Milk with DHA Omega-3', alias = '\u5168\u8102\u725b\u5976',
+  name = 'Whole Milk with DHA Omega-3, Organic', alias = '\u5168\u8102\u725b\u5976',
   horizon = 'organic-milk/organic-whole-dha-omega-3-milk',
   servingGram = 250, servingCup = 1,
   water = 250*.881, 

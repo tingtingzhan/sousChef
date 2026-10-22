@@ -22,14 +22,14 @@ Harney_UvaHighlands_tea <- \() nutrition(
 
 Harney_Assam_tea <- \() nutrition(
   harney = 'organic-assam',
-  name = 'Organic Assam',
+  name = 'Assam, Organic', alias = '\u0905\u0938\u092e',
   serving_lb = 1, usd = 30, date = as.Date('2026-10-22'),
   #machine (legacy) = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Good base black tea.')
 
 Harney_PuErh_tea <- \() nutrition(
   harney = 'pu-erh',
-  name = 'Pu-Erh',
+  name = 'Pu-Erh', alias = '\u666e\u6d31',
   serving_lb = 1, usd = 29, date = as.Date('2026-10-22'),
   #machine (legacy) = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Very distinct and delightful aroma when raw.')

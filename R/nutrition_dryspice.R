@@ -155,7 +155,7 @@ SpiceIslands_cumin <- \() nutrition(
 )
 
 Kirkland_noSaltSeasoning <- \() nutrition(
-  name = 'Organic No-Salt Seasoning',
+  name = 'No-Salt Seasoning, Organic',
   costco = '100334965',
   usd = 9.99/411*9,
   servingGram = 9, servingTbsp = 1, # actual

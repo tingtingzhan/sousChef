@@ -8,7 +8,7 @@ Kirkland_honey <- \() nutrition(
 
 Kirkland_rawHoney <- \() nutrition(
   costco = '100334136',
-  name = 'Organic Raw Honey\U1f36f', alias = '\u8702\u871c',
+  name = 'Raw Honey\U1f36f, Organic', alias = '\u8702\u871c',
   servingGram = 21, servingTbsp = 1, 
   calorie = 60, carbohydrate = 17, sugar = 16)
 

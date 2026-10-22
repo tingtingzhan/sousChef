@@ -54,7 +54,7 @@ Kirkland_cashew <- \() nutrition(
 
 Kirkland_organic_cashew <- \() nutrition(
   costco = '4000064056',
-  alias = '\u8170\u679c', name = 'Organic Cashews', # unsalted unroasted
+  alias = '\u8170\u679c', name = 'Cashews, Organic', # unsalted unroasted
   usd = 14.99/(2.5*454)*28,
   servingGram = 28, 
   calorie = 150,
@@ -62,7 +62,7 @@ Kirkland_organic_cashew <- \() nutrition(
 
 Kirkland_Brazilnut <- \() nutrition(
   costcoBiz = '100392410',
-  name = 'Organic Brazil Nuts',
+  name = 'Brazil Nuts, Organic',
   usd = 9.79/680*30,
   servingGram = 30,
   calorie = 210,

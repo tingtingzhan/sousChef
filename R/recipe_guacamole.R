@@ -2,6 +2,7 @@
 
 
 allrecipes_guacamole <- \() recipe(
+  key = 'guacamole',
   #class2 = 'Guacamole\U0001f951\U0001f963',
   misc_pc = c(
     avocado = 3, 

@@ -166,7 +166,7 @@ zero.omit <- \(x) {
       quote(`user-defined`)
     } else tmp[[1L]]
     
-  } else z <- x$call # not the best practice, just to comform to R grammar 
+  } else z <- x$call # not the best practice, just to conform to R grammar 
   
   #print(z)
   

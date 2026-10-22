@@ -76,12 +76,12 @@ Hellmanns_mayonnaise <- \() nutrition(
 
 Hellmanns_mayonnaise_organic <- \() nutrition(
   hellmanns = 'organic-mayonnaise.html/00048001572713',
-  name = 'Organic Mayonnaise',
+  name = 'Mayonnaise, Organic',
   servingTbsp = 1, servingGram = 14, fat = 11, sodium = .09)
 
 Hellmanns_mayonnaise_lite <- \() nutrition(
   hellmanns = 'light-mayonnaise.html/00048001213586',
-  name = 'Light Mayonnaise',
+  name = 'Mayonnaise, Light',
   servingTbsp = 1, servingGram = 15, fat = 3.5, sodium = .11)
 
 

@@ -4,10 +4,12 @@
 #' @rdname raw_recipe
 #' 
 #' @slot call \link[base]{name}, the function name to create this \linkS4class{recipe}
+#' 
 #' @slot key \link[base]{character} scalar
 #' @slot alias \link[base]{character} scalar with Unicode symbols
 #' @slot class2 \link[base]{character} scalar with Unicode symbols, name of class in an alternative language
 #' @slot flavor \link[base]{character} scalar with Unicode symbols
+#' 
 #' @slot author \link[base]{character} scalar
 #' @slot tool \link[base]{list} of \linkS4class{tool}s
 #' 

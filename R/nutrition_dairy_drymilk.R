@@ -14,7 +14,7 @@ Meyenberg_goat_drymilk <- \() nutrition(
 
 
 
-Meyenberg_goatWhole_drymilk <- \() nutrition(
+Meyenberg_goat_drywholemilk <- \() nutrition(
   meyenberg = 'powdered-goat-milk/powdered-whole-goat-milk',
   name = 'Whole Dry Goat\U1f410 Milk', alias = '\u5168\u8102\u7f8a\u5976\u7c89',
   #amazon = 'B08M2VSQ6N', usd = 89.98/6/340*28,

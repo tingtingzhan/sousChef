@@ -29,8 +29,8 @@ expect_no_error(
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::TraderJoes_goat_kefir(), 
-    sousChef:::Meyenberg_goat_kefir()
+    sousChef:::TraderJoes_goatKefir(), 
+    sousChef:::Meyenberg_goatKefir()
   ) |> print()
 )
 

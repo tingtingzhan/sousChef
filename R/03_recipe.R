@@ -205,17 +205,16 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   } else {
     if (length(author)) paste(x@class2, author) else x@class2
   }
-
   
   if (!length(x@flavor)) {
     x@flavor <- if ('_coffee$' %in% x) {
       if ('_liqueur$' %in% x) {
         'Tiramisu\u0300'
       } else if ('_cocoa$' %in% x) {
-        if ('_blackcocoa$' %in% x) {
+        if ('_blackCocoa$' %in% x) {
           warning('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
         }
-        if (length(x@tea) && ('_coconutBar$' %in% x)) {
+        if (('_tea$' %in% x) && ('_coconutBar$' %in% x)) {
           '\u751f\u6930\u9e33\u9e2f'
         } else if ('_coconutBar$' %in% x) {
           '\u751f\u6930'

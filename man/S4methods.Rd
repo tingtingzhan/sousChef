@@ -16,6 +16,8 @@
 \alias{+,raw.,list-method}
 \alias{+,recipe,list-method}
 \alias{-,recipe,list-method}
+\alias{+,nutrition,list-method}
+\alias{-,nutrition,list-method}
 \title{\code{S4} Methods}
 \usage{
 \S4method{*}{raw.,numeric}(e1, e2)
@@ -45,6 +47,10 @@
 \S4method{+}{recipe,list}(e1, e2)
 
 \S4method{-}{recipe,list}(e1, e2)
+
+\S4method{+}{nutrition,list}(e1, e2)
+
+\S4method{-}{nutrition,list}(e1, e2)
 }
 \arguments{
 \item{e1, e2}{see \strong{Usage}}

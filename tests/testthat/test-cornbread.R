@@ -6,19 +6,19 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::TraderJoes_cornbreadMix() |>
-      subtract(sugar = 9.2*12),
-    sousChef:::WholeFoods365_cornbreadMix() |>
-      subtract(sugar = 4*12),
-    sousChef:::Krusteaz_southern_cornbreadMix() |>
-      subtract(sugar = .5*12),
+    sousChef:::TraderJoes_cornbreadMix() - 
+      list(sugar = 9.2*12),
+    sousChef:::WholeFoods365_cornbreadMix() - 
+      list(sugar = 4*12),
+    sousChef:::Krusteaz_southern_cornbreadMix() - 
+      list(sugar = .5*12),
     sousChef:::BobsRedMill_cornbreadMix(),
-    sousChef:::Stonewall_cornbreadMix() |>
-      subtract(sugar = 8.1*12),
-    sousChef:::Jiffy_cornMuffinMix() |>
-      subtract(sugar = 5.5*3),
-    sousChef:::Fleischmanns_cornbreadMix() |>
-      subtract(sugar = 5.1*16)
+    sousChef:::Stonewall_cornbreadMix() - 
+      list(sugar = 8.1*12),
+    sousChef:::Jiffy_cornMuffinMix() - 
+      list(sugar = 5.5*3),
+    sousChef:::Fleischmanns_cornbreadMix() - 
+      list(sugar = 5.1*16)
   ) |> print()
 )
 
@@ -37,36 +37,36 @@ expect_no_error(
       )),
     sousChef:::Jiffy_cornMuffinMix() |>
       as('raw.') |>
-      as('nutrition') |>
-      subtract(sugar = 32),
+      as('nutrition') - 
+      list(sugar = 32),
     sousChef:::Wegmans_cornbread_recipe() -
       list(misc = c(Domino_granulated = 88)),
-    sousChef:::Wegmans_cornbread() |>
-      subtract(sugar = 10.5),
+    sousChef:::Wegmans_cornbread() - 
+      list(sugar = 10.5),
     sousChef:::WholeFoods365_cornbreadMix() |>
       as('raw.') |>
-      as('nutrition') |>
-      subtract(sugar = 64),
+      as('nutrition') - 
+      list(sugar = 64),
     sousChef:::Stonewall_cornbreadMix() |>
       as('raw.') |>
-      as('nutrition') |>
-      subtract(sugar = 117),
+      as('nutrition') - 
+      list(sugar = 117),
     sousChef:::TraderJoes_cornbreadMix() |>
       as('raw.') |>
-      as('nutrition') |>
-      subtract(sugar = 108),
+      as('nutrition') - 
+      list(sugar = 108),
     sousChef:::Krusteaz_southern_cornbreadMix() |>
       as('raw.') |>
-      as('nutrition') |>
-      subtract(sugar = 23),
+      as('nutrition') - 
+      list(sugar = 23),
     sousChef:::BobsRedMill_cornbreadMix() |>
       as('raw.') |>
-      as('nutrition') |>
-      subtract(sugar = 7),
+      as('nutrition') - 
+      list(sugar = 7),
     sousChef:::Fleischmanns_cornbreadMix() |>
       as('raw.') |>
-      as('nutrition') |>
-      subtract(sugar = 100),
+      as('nutrition') - 
+      list(sugar = 100),
     sousChef:::Quaker_cornbread()
   ) |> print()
 )

@@ -12,6 +12,17 @@ Wegmans_pumpkin_cheesecake <- \() nutrition(
 
 
 
+CheesecakeFactory_original <- \() nutrition(
+  name = 'Original',
+  cheesecakefactoryfreezer = 'original-cheesecake', cheesecakefactorybakery = 'original-dome',
+  target = 'A-15382641', usd = 18.39/964*120,
+  servingGram = 120, 
+  fat = 24, cholesterol = .105, sodium = .33, sugar = 28, addedSugar = 27, protein = 6)
+
+
+
+
+
 CheesecakeFactory_pumpkin <- \() nutrition(
   name = 'Pumpkin\U1f383',
   cheesecakefactoryfreezer = 'pumpkin-cheesecake',

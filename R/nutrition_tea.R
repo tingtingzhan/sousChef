@@ -4,176 +4,155 @@
 
 # Stassen; headquarter in Sri Lanka.
 
-Stassen_Ceylon <- \() nutrition(
-  stassentea = '100-etb-stassen-pure-ceylon-black-tea',
+Stassen_Ceylon_tea <- \() nutrition(
+  stassentea = '100-etb-stassen-pure-ceylon-black-tea', usd = 12/100, date = as.Date('2026-10-22'),
   name = 'Ceylon Black Tea',
-  servingGram = 2, usd = 12/100, date = as.Date('2023-11-09'),
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
+  pieceGram = 200/100, piece_fmt = '%.2g\U1f9e7',
   review = c(
     'Soymilk coagulates -- confirm again',
     'no other better choice yet'
   ))
 
 
-Harney_UvaHighlands <- \() nutrition(
+Harney_UvaHighlands_tea <- \() nutrition(
   harney = 'uva-highlands', 
   name = 'Uva Highlands',
-  servingGram = 454, usd = 20, date = as.Date('2023-11-09'),
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
-  superior = 'Harney_Assam')
+  serving_lb = 1, usd = 30, date = as.Date('2026-10-22'),
+  superior = 'Harney_Assam_tea')
 
-Harney_Assam <- \() nutrition(
+Harney_Assam_tea <- \() nutrition(
   harney = 'organic-assam',
   name = 'Organic Assam',
-  servingGram = 454, usd = 27, date = as.Date('2023-11-09'),
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
+  serving_lb = 1, usd = 30, date = as.Date('2026-10-22'),
   #machine (legacy) = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Good base black tea.')
 
-Harney_PuErh <- \() nutrition(
+Harney_PuErh_tea <- \() nutrition(
   harney = 'pu-erh',
   name = 'Pu-Erh',
-  servingGram = 454, usd = 26, # 2023-11-09
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
+  serving_lb = 1, usd = 29, date = as.Date('2026-10-22'),
   #machine (legacy) = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Very distinct and delightful aroma when raw.')
 
-Harney_decafCeylon <- \() nutrition(
+Harney_decafCeylon_tea <- \() nutrition(
   harney = 'decaf-ceylon',
   name = 'Decaf Ceylon',
-  servingGram = 454, usd = 32,
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7') # 2023-11-09
+  serving_lb = 1, usd = 35.20, date = as.Date('2026-10-22'))
 
-Harney_decafEarlGrey <- \() nutrition(
+Harney_decafEarlGrey_tea <- \() nutrition(
   harney = 'decaf-earl-grey',
   name = 'Decaf Earl Grey',
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
-  servingGram = 454, usd = 29) # 2023-11-09
+  serving_lb = 1, usd = 31.90, date = as.Date('2026-10-22'))
 
-Harney_EarlGreySupreme <- \() nutrition(
+Harney_EarlGreySupreme_tea <- \() nutrition(
   harney = 'earl-grey-supreme', 
   name = 'Earl Grey Supreme',
-  servingGram = 454, usd = 31, # 2023-11-09
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
+  serving_lb = 1, usd = 35, date = as.Date('2026-10-22'),
   review = 'bergamont too weak, tea too strong')
 
-Harney_LapSangSouChong <- \() nutrition(
+Harney_LapSangSouChong_tea <- \() nutrition(
   harney = 'lapsang-souchong',
   alias = '\u7acb\u5c71\u5c0f\u79cd', name = 'Lap Sang Sou Chong',
-  servingGram = 454, usd = 28, # 2023-11-09
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
+  serving_lb = 1, usd = 31, date = as.Date('2026-10-22'),
   #machine (legacy) = \(x) switch(x, cookie = c('Grind loose leaf tea using Niche Zero, Level 6')),
   review = 'Quite an acquired taste')
 
 
 # Twinings
 
-Twinings_EarlGrey <- \() nutrition(
+Twinings_EarlGrey_tea <- \() nutrition(
   twinings = 'earl-grey', 
   name = 'Earl Grey', alias = '\u4f5b\u624b\u67d1\u7ea2\u8336',
-  wegmans = '725500', usd = 12.79/100, date = as.Date('2026-09-26'),
-  servingGram = 2, 
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7')
+  wegmans = '725500', usd = 13.49/100, date = as.Date('2026-10-22'),
+  pieceGram = 200/100, piece_fmt = '%.2g\U1f9e7')
 
-Twinings_EarlGrey_loose <- \() nutrition(
+Twinings_EarlGrey_loose_tea <- \() nutrition(
   twinings = 'earl-grey-loose-tea',
   name = 'Earl Grey, Loose', alias = '\u4f5b\u624b\u67d1\u7ea2\u8336',
-  servingGram = 200, usd = 11.99) # 2023-11-09
+  servingGram = 200, usd = 12.99, date = as.Date('2026-10-22'))
 
-Twinings_strongEarlGrey <- \() nutrition(
+Twinings_strongEarlGrey_tea <- \() nutrition(
   twinings = 'earl-grey-strong',
   name = 'Earl Grey, Extra Strong', alias = '\u4f5b\u624b\u67d1\u7ea2\u8336',
-  # wegmans = 13354L,
+  wegmans = '722318', usd = 4.29/20, date = as.Date('2026-10-22'),
   webstaurant = '110TWNG13541',
-  servingGram = 2, usd = 4.99/20, # 20pcs of 2g-bag, 2023-11-16
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
+  pieceGram = 40/20, piece_fmt = '%.2g\U1f9e7',
   review = 'I love!!')
 
-Twinings_decafEarlGrey <- \() nutrition(
+Twinings_decafEarlGrey_tea <- \() nutrition(
   twinings = 'earl-grey-decaf', # no value pack, no loose leaf
   name = 'Earl Grey Decaf',
-  # wegmans = 47200L,
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
-  servingGram = 35/20, usd = 4.99/20) # 20pcs of 1.75g-bag, 2023-11-09
+  wegmans = '267873', usd = 4.29/20, date = as.Date('2026-10-22'),
+  pieceGram = 35/20, piece_fmt = '%.2g\U1f9e7')
 
-Twinings_LadyGrey <- \() nutrition(
-  twinings = 'lady-grey',
+Twinings_LadyGrey_tea <- \() nutrition(
+  twinings = 'lady-grey', usd = 16.99/100, date = as.Date('2026-10-22'),
   name = 'Lady Grey',
-  # wegmans = 31226L,
+  wegmans = '344618',
   walmart = '15556242',
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
-  servingGram = 2, usd = 15.99/100, # 100pcs of 2g-bag, 2023-11-09
+  pieceGram = 40/20, piece_fmt = '%.2g\U1f9e7',
   review = 'Great for soytea!')
   
-Twinings_ultraChai <- \() nutrition(
+Twinings_ultraChai_tea <- \() nutrition(
   twinings = 'ultra-spice-chai',
-  name = 'Ultra Spice Chai',
-  # wegmans = 49238L,
+  name = 'Chai, Ultra Spice',
+  wegmans = '543904', usd = 4.29/20, date = as.Date('2026-10-22'),
   webstaurant = '110TWNG07516',
   walmart = '29884542',
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
-  servingGram = 2, usd = 4.99/20, # 20pcs of 2g-bag, 2023-11-13
+  pieceGram = 40/20, piece_fmt = '%.2g\U1f9e7',
   review = 'I love!! Great potential for many recipes!!')
 
-Twinings_Darjeeling <- \() nutrition(
-  twinings = 'darjeeling',
+Twinings_Darjeeling_tea <- \() nutrition(
+  twinings = 'darjeeling', usd = 8.99/50, date = as.Date('2026-10-22'),
   name = 'Darjeeling', alias = '\u09a6\u09be\u09b0\u09cd\u099c\u09bf\u09b2\u09bf\u0982',
-  # wegmans = 30993L,
-  servingGram = 2, usd = 8.49/50, # 50pcs of 2g-bag, 2023-11-13
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
+  wegmans = '344614',
+  pieceGram = 40/20, piece_fmt = '%.2g\U1f9e7',
   review = 'lacks a signature flavor')
   
-Twinings_Ceylon <- \() nutrition(
-  twinings = 'ceylon-pure-black',
+Twinings_Ceylon_tea <- \() nutrition(
+  twinings = 'ceylon-pure-black', usd = 4.99/20, date = as.Date('2026-10-22'),
   name = 'Ceylon Orange Pekoe',
   webstaurant = '110TWNG05324',
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
-  servingGram = 2, usd = 4.99/20)
+  pieceGram = 40/20, piece_fmt = '%.2g\U1f9e7')
 
-Twinings_EnglishBreakfast <- \() nutrition(
+Twinings_EnglishBreakfast_tea <- \() nutrition(
   twinings = 'english-breakfast',
   name = 'English Breakfast', alias = '\u62fc\u914d\u7ea2\u8336',
+  wegmans = '730970', usd = 13.49/100, date = as.Date('2026-10-22'),
   #webstaurant = '110TWNG05324',
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
-  servingGram = 2, usd = 4.99/20)
+  pieceGram = 200/100, piece_fmt = '%.2g\U1f9e7')
 
 # Paromi
 
-Paromi_EarlGrey <- \() nutrition(
-  paromi = 'earl-grey-tea-bags', 
+Paromi_EarlGrey_tea <- \() nutrition(
+  paromi = 'earl-grey-tea-bags', usd = 12/15, date = as.Date('2026-10-22'),
   name = 'Earl Grey',
-  servingGram = 3, usd = 31/15, # website
-  # no longer at Wegmans
-  pieceGram = 3, piece_fmt = '%.2g\U1f9e7',
+  pieceGram = 45/15, piece_fmt = '%.2g\U1f9e7',
   review = 'Too spicy, do not buy')
 
-Paromi_cinnamonChai <- \() nutrition(
-  paromi = 'cinnamon-chai-tea-bags', 
+Paromi_cinnamonChai_tea <- \() nutrition(
+  paromi = 'cinnamon-chai-tea-bags', usd = 12/15, date = as.Date('2026-10-22'),
   name = 'Cinnamon Chai Rooibos',
-  pieceGram = 3, piece_fmt = '%.2g\U1f9e7',
-  servingGram = 3, usd = 12/15) # website
-  # no longer at Wegmans
+  pieceGram = 45/15, piece_fmt = '%.2g\U1f9e7')
 
 
 
-Yogi_licorice <- \() nutrition(
+Yogi_licorice_tea <- \() nutrition(
   yogi = 'egyptian-licorice-076950415164',
   name = 'Egyptian Licorice',
-  # wegmans = 31614L,
+  wegmans = '673624', usd = 4.99/16, date = as.Date('2026-10-22'),
   walmart = '26965528',
-  pieceGram = 36/16, piece_fmt = '%.2g\U1f9e7',
-  servingGram = 36/16, usd = 6.99/16)
+  pieceGram = 36/16, piece_fmt = '%.2g\U1f9e7')
 
 
 
 # Wegman's Just Tea
 
-JustTea_EarlGrey <- \() nutrition(
-  justtea = '229018',
+JustTea_EarlGrey_tea <- \() nutrition(
+  justtea = '229018', usd = 10.49/100, date = as.Date('2026-10-22'),
   name = 'Earl Grey',
-  servingGram = 2, usd = 9.49/100,
-  pieceGram = 2, piece_fmt = '%.2g\U1f9e7',
-  superior = 'Twinings_EarlGrey',
+  pieceGram = 199/100, piece_fmt = '%.2g\U1f9e7',
+  superior = 'Twinings_EarlGrey_tea',
   review = c(
     'Soymilk coagulates',
     'Bergamot has a different flavor from Twining\'s Earl Grey, which is okay'

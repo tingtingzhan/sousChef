@@ -1,6 +1,4 @@
 
-
-
 expect_no_error(
   object = nutritionlist(
     sousChef:::Rebecca_mocha(),

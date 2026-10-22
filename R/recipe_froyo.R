@@ -14,6 +14,8 @@ emma_froyo <- \() recipe(
     Wegmans_heavyCream = 1.75,
     Domino_10x = 2/3
   ),
-  dairy = c(FageTotal0_yogurtGreek = 170)
+  misc = c(
+    FageTotal0_yogurtGreek = 170
+  )
 )
 

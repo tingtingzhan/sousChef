@@ -8,13 +8,13 @@ BobsRedMill_tapioca_starch <- \() nutrition(
 BobsRedMill_potato_starch <- \() nutrition(
   bobsredmill = 'potato-starch', # very coarse!  I don't like!!
   name = 'Potato\U1f954 Starch', alias = '\u571f\u8c46\u6dc0\u7c89',
-  # wegmans = 7551L, usd = 5.19/623*12, # 2023-11-13
-  servingGram = 12, servingTbsp = 12)
+  wegmans = '736220', usd = 4.49/623*12, date = as.Date('2026-10-22'),
+  servingGram = 12, servingTbsp = 1)
 
 
 
 Wegmans_corn_starch <- \() nutrition(
-  # wegmans = 8127L, usd = 1.79/454*8, # 2023-11-11
+  wegmans = '90023', usd = 1.99/454*8, date = as.Date('2026-10-22'),
   name = 'Corn\U1f33d Starch', alias = '\u7389\u7c73\u6dc0\u7c89',
   servingGram = 8, 
   # servingTbsp = 1 # packaging

@@ -186,17 +186,16 @@ summary.raw. <- \(object, ...) {
   
   ret$perCocoa <- if (!inherits(x, what = c('tiramisuMix', 'tiramisu_'))) equiv(
     caption = 'Alkalized Cocoa', 
-    current = z / x@cocoa, target = c(
+    current = z / x['_cocoa$'], target = c(
       alcohol = devrecipe$alcohol2cocoa(x),
       drymilk = devrecipe$drymilk2cocoa(x),
       addedSugar = devrecipe$addedSugar2cocoa(x),
       coffee = devrecipe$coffee2cocoa(x)
     ))
   
-  
   ret$perTea <- equiv(
     caption = 'Tea\U1f343', 
-    current = z / x@tea)
+    current = z / sum(x['_tea$']))
   
   ret$perCreamCheese <- equiv(
     caption = 'Cream Cheese', 

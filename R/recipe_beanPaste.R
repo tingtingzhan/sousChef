@@ -3,12 +3,14 @@
 
 xiaogaojie_adzukiBeanPaste1 <- \() recipe(
   flavor = '\u7ea2\u8c46\u6c991',
-  bean = c(HaiTai_adzukibean = 500),
+  misc = c(
+    HaiTai_adzukibean = 500,
+    Wegmans_corn_oil = 12,
+    Domino_darkBrown = 75
+  ),
   water = c(c22 = 350), # actual water absorbed
-  oil = c(Wegmans_corn_oil = 12),
-  sugar = c(Domino_darkBrown = 75),
   homemade = c(xiaogaojie_invertSugar = 80),
-  salt_tsp = 1/4,
+  misc_tsp = c(Morton_salt = 1/4),
   xiaogaojie = 'mg1XeWsfHoQ')
 
 
@@ -16,12 +18,16 @@ xiaogaojie_adzukiBeanPaste1 <- \() recipe(
 xiaogaojie_adzukiBeanPaste2 <- \() recipe(
   flavor = '\u7ea2\u8c46\u6c992',
   xiaogaojie = 'Jsqhb8i4ntU',
-  bean = c(HaiTai_adzukibean = 200),
+  misc = c(
+    HaiTai_adzukibean = 200,
+    Wegmans_corn_oil = 120,
+    Domino_darkBrown = 100
+  ),
   water = 700, 
   #waterLost = 350, # this is high oil!   !!!to reach water 37.5% as xiaogaojie_adzukiBeanPaste1()
-  Na2CO3_tsp = 1/8,
-  oil = c(Wegmans_corn_oil = 120),
-  sugar = c(Domino_darkBrown = 100))
+  misc_tsp = c(
+    Na2CO3 = 1/8
+  ))
 
 
 #mungBeanPaste 

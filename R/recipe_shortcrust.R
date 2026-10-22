@@ -3,11 +3,10 @@
 
 
 #  class2 = 'Shortcrust',
-#  # flour = c(Wegmans_pastryFlr = 360), # original
-#  flour = c(Wegmans_pastryFlr = 370), # to have 50% fat:flour
+#  misc = c(Wegmans_pastryFlr = 360,
+#  Domino_granulated = 7.5), # original
 #  misc_brick = c(Kerrygold_butter = 1),
-#  sugar = 7.5,
-  # salt_tsp = 1/4,
+  # misc_tsp = c(Morton_salt = 1/4),
 #  water = c(c0 = 50), # 60g-90g,
   #instruction (legacy) = c(
   #  'food processor',

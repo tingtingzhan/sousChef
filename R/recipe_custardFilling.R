@@ -2,26 +2,26 @@
 
 
 Dad_custardFilling <- \() recipe(
-  egg_pc = c(eggYolk = 6),
-  dairy = c(
+  misc_pc = c(eggYolk = 6),
+  misc = c(
+    Wegmans_pastryFlr = 80,
+    BobsRedMill_potato_starch = 20,
     Wegmans_whole_milk = 300,
-    Kerrygold_butter = 60
+    Kerrygold_butter = 60,
+    Domino_granulated = 80
   ),
-  sugar = c(Domino_granulated = 80),
-  flour = c(Wegmans_pastryFlr = 80),
-  starch = c(BobsRedMill_potato_starch = 20),
   dad1966 = 'zy6eEihnHeI'
 )
 
 
 xiaogaojie_custardFilling <- \() recipe(
-  dairy = c(
+  misc = c(
+    ManSang_wheat_starch = 35,
     Carnation_drymilk = 60,
     Wegmans_whole_milk = 120,
+    Domino_granulated = 60,
     Kerrygold_butter = 50
   ),
-  starch = c(ManSang_wheat_starch = 35),
-  egg_pc = c(eggYolk = 3, eggWhite = 3),
-  sugar = c(Domino_granulated = 60),
+  misc_pc = c(eggYolk = 3, eggWhite = 3),
   xiaogaojie = 'L7a1d4dj1rs'
 )

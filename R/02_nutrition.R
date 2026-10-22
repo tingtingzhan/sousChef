@@ -280,6 +280,10 @@ nutrition <- \(...) {
     add_store_url(name = 'yamibuy', fmt = 'https://u.yamibuy.com/%s', store_brand = 'Yami\u4e9a\u7c73\U1f1fa\U1f1f8')
   
   # serving weight
+  if (length(x$pieceGram) && !length(x$servingGram)) {
+    x$servingGram <- x$pieceGram # useful for teabags
+  }
+  
   if (length(x$serving_oz)) {
     if (length(x$servingGram)) warning('`@servingGram` over written by `serving_oz`')
     x$servingGram <- x$serving_oz * 28.3495

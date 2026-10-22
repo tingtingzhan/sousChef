@@ -9,7 +9,7 @@ TraderJoes_cornbreadMix <- \() nutrition(
   calorie = 130*12,
   sodium = .25*12, carbohydrate = 28*12, addedSugar = 10*12, protein = 2,
   suggest = list(
-    egg_pc = c(eggYolk = 1, eggWhite = 1),
+    misc_pc = c(eggYolk = 1, eggWhite = 1),
     misc_cup = c(
       Wegmans_whole_milk = 3/4,
       Wegmans_vegetable_oil = 1/2
@@ -33,7 +33,7 @@ WholeFoods365_cornbreadMix <- \() nutrition(
   calorie = 120*12,
   sodium = .39*12, carbohydrate = 27*12, fiber = 1*12, addedSugar = 8*12, protein = 2*12,
   suggest = list(
-    egg_pc = c(eggYolk = 2, eggWhite = 2),
+    misc_pc = c(eggYolk = 2, eggWhite = 2),
     misc_cup = c(
       Wegmans_whole_milk = 1,
       Wegmans_vegetable_oil = .5
@@ -57,7 +57,7 @@ Krusteaz_southern_cornbreadMix <- \() nutrition(
       Kerrygold_butter = 1/3,
       OakFarms_buttermilk = 1
     ),
-    egg_pc = c(eggYolk = 2, eggWhite = 2)
+    misc_pc = c(eggYolk = 2, eggWhite = 2)
   ),
   # check out those fancier recipes https://www.krusteaz.com/recipes/cornbread/
   review = paste('A bad review from', style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix')))
@@ -77,7 +77,7 @@ BobsRedMill_cornbreadMix <- \() nutrition(
   protein = 6*12,
   suggest = list(
     water_cup = 2.5,
-    egg_pc = c(eggYolk = 2, eggWhite = 2),
+    misc_pc = c(eggYolk = 2, eggWhite = 2),
     misc_cup = c(
       Wegmans_vegetable_oil = 1/2
     )
@@ -97,7 +97,7 @@ Stonewall_cornbreadMix <- \() nutrition(
   calorie = 140*12,
   sodium = .18*12, carbohydrate = 31*12, fiber = 1*12, addedSugar = 12*12, protein = 2*12,
   suggest = list(
-    egg_pc = c(eggYolk = 1, eggWhite = 1),
+    misc_pc = c(eggYolk = 1, eggWhite = 1),
     misc_cup = c(
       Wegmans_vegetable_oil = 1/3,
       Wegmans_whole_milk = 1
@@ -121,7 +121,7 @@ Jiffy_cornMuffinMix <- \() nutrition(
   carbohydrate = 56*3, addedSugar = 15*3, protein = 4*3,
   suggest = list(
     # url = 'https://www.jiffymix.com/recipe/air-fryer-corn-muffins/',
-    egg_pc = c(eggYolk = 1, eggWhite = 1),
+    misc_pc = c(eggYolk = 1, eggWhite = 1),
     misc_cup = c(
       Wegmans_whole_milk = 1/3
     )
@@ -147,7 +147,7 @@ Fleischmanns_cornbreadMix <- \() nutrition(
       Kerrygold_butter = 1/3,
       Wegmans_whole_milk = 2/3
     ),
-    egg_pc = c(eggYolk = 1, eggWhite = 1)
+    misc_pc = c(eggYolk = 1, eggWhite = 1)
   )
 )
 

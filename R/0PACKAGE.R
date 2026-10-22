@@ -41,19 +41,19 @@ if (FALSE) {
     crumbcrust = if ('_blackSesame$' %in% x) .11 else .01, 
     ricepaste = .015,
     oatmeal = .018,
-    soytea = if (length(x@matcha)) .07 else .022, # matcha sweetness needs to be decreased!!!
-    bao = if (length(x@matcha) || ('_beet_pulv$' %in% x) || length(x@cocoa)) {
+    soytea = if ('_matcha$' %in% x) .07 else .022, # matcha sweetness needs to be decreased!!!
+    bao = if (('_matcha$' %in% x) || ('_beet_pulv$' %in% x) || ('_cocoa$' %in% x)) {
       .04 
     } else .03, # any lower, not delicious!
     snowSkin = if ('_beet_pulv$' %in% x) .03 else .023,
     porkfill = .023,
     stickyTortilla =, crepeCake =, pancake =, thinCrust = .03, 
     yuenyeungCoconut = .035,
-    millecrepe = if (length(x@matcha)) {
+    millecrepe = if ('_matcha$' %in% x) {
       .075
-    } else if (length(x@cocoa)) {
+    } else if ('_cocoa$' %in% x) {
       .095
-    } else if (length(x@liqueur)) {
+    } else if ('_liqueur$' %in% x) {
       .14 
     } else if ('_beet_pulv$' %in% x) {
       .08
@@ -76,20 +76,20 @@ if (FALSE) {
     } else NA_real_,
     pumpkinSpiceLatte_ = .06,
     matchaGoatLatte_ = .07, # early 2024; whole goat milk; try to reduce with tenju!
-    sundae = if (length(x@matcha)) {
+    sundae = if ('_matcha$' %in% x) {
       .095
-    } else if (length(x@coffee)) {
+    } else if ('_coffee$' %in% x) {
       .07
     } else if ('_pumpkin$' %in% x) {
       .09
-    } else if (length(x@cocoa)) {
+    } else if ('_cocoa$' %in% x) {
       NA_real_
     } else .07,
-    mascarponeFrosting =, mascarponeGanache =, whippedCream = if (length(x@liqueur)) {
+    mascarponeFrosting =, mascarponeGanache =, whippedCream = if ('_liqueur$' %in% x) {
       .07
-    } else if (length(x@matcha)) {
+    } else if ('_matcha$' %in% x) {
       .075 
-    } else if (length(x@cocoa)) {
+    } else if ('_cocoa$' %in% x) {
       .09
     } else if ('_pineapple$' %in% x) {
       .08
@@ -99,18 +99,18 @@ if (FALSE) {
     kefir =, goatKefir = .075,
     beanPaste = .09,
     lava = .1,
-    frosting =, ganache = if (length(x@matcha)) {
+    frosting =, ganache = if ('_matcha$' %in% x) {
       .125
-    } else if (length(x@cocoa)) {
+    } else if ('_cocoa$' %in% x) {
       .13
     } else NA_real_,
     creamCheeseSpread =, creamCheeseDip = .08,
     muffin = .08, # all sugar consumed by people # 1st try .09 too sweet
-    gateau = if (length(x@cocoa)) {
+    gateau = if ('_cocoa$' %in% x) {
       .11
     } else NA_real_,
-    bread = if (length(x@matcha) || length(x@cocoa)) {
-      .075 # great on @matcha 
+    bread = if (('_matcha$' %in% x) || ('_cocoa$' %in% x)) {
+      .075 # great on '_matcha$' 
     } else .045,
     cheesecake = if ('_pumpkin$' %in% x) .12 else .1,
     # froyo = NA_real_, # Greek yogurt flavor too strong to cover
@@ -123,14 +123,14 @@ if (FALSE) {
     } else .13,
     cookie = if ('_blackSesame$' %in% x) {
       .145
-    } else if (length(x@matcha) || ('_ginger$' %in% x)) {
+    } else if (('_matcha$' %in% x) || ('_ginger$' %in% x)) {
       .22 
     } else .2,
     tomyumStew = .16,
     mocaccino = .37,
     matchaLatteMix = .4,
     matchaGoatLatteMix = .515,
-    drinkmix = if (length(x@syrup)) {
+    drinkmix = if ('_syrup$' %in% x) {
       .515
     } else NA_real_,
     NA_real_)
@@ -156,12 +156,12 @@ if (FALSE) {
     stickyTortilla = .03,
     bread = .035, # perfect with match, coffee
     snowSkin =, custardFilling = .045, 
-    sundae = if (length(x@matcha)) {
+    sundae = if ('_matcha$' %in% x) {
       .077 
-    } else if (length(x@coffee)) {
+    } else if ('_coffee$' %in% x) {
       .075
     } else .055,
-    millecrepe = if (length(x@liqueur)) .05 else .06,
+    millecrepe = if ('_liqueur$' %in% x) .05 else .06,
     pudding = .05, # trying
     milktea_ = .065,
     caffeLatte_ = .065,
@@ -209,7 +209,7 @@ if (FALSE) {
     flan = .025, #tortillaOlive = .025, 
     caffeCoconut =, yuenyeungCoconut = .016,
     matchaLatteMix = .04, 
-    bread = if (length(x@cocoa)) .038 else .04, 
+    bread = if ('_cocoa$' %in% x) .038 else .04, 
     #tortilla = .04,
     riceMousse = .05, 
     beanPaste = .05,
@@ -219,7 +219,7 @@ if (FALSE) {
     custardFilling = .075,
     mocaccino = .077,
     muffin = .08, 
-    millecrepe = if (length(x@liqueur)) .075 else .1, 
+    millecrepe = if ('_liqueur$' %in% x) .075 else .1, 
     sundae = .11,
     beeffillLeeKumKee = .11,
     meatmash = .12,
@@ -239,7 +239,7 @@ if (FALSE) {
     # cheesecake = .24, # 100% Nancy's full fat, low sodium cream cheese
     porkfill = .25,
     crumbcrust = if ('_blackSesame$' %in% x) .23 else .28,
-    mascarponeGanache = if (length(x@liqueur)) {
+    mascarponeGanache = if ('_liqueur$' %in% x) {
       .36
     } else if (length(x@water)) {
       .3
@@ -263,7 +263,7 @@ if (FALSE) {
     meatmash =, meatball = .0025, # some salt cooks into soup
     shrimpfillCantonese = .003,
     mocaccino = .002,
-    drinkmix = if (length(x@coffee) && length(x@syrup)) {
+    drinkmix = if (('_coffee$' %in% x) && ('_syrup$' %in% x)) {
       .0028
     } else NA_real_,
     # fishBall = .003, # obviously too salt
@@ -355,8 +355,8 @@ if (FALSE) {
     snowSkin = .009, 
     caffeLatte_ = .01,
     mocaccino_ = .04, 
-    goatKefir = if (length(x@coffee)) .043 else NA_real_, 
-    cheesecake = if (length(x@cocoa)) .043 else NA_real_,
+    goatKefir = if ('_coffee$' %in% x) .043 else NA_real_, 
+    cheesecake = if ('_cocoa$' %in% x) .043 else NA_real_,
     # cookie = .04, 
     bao = .05, # tested!!
     bread = .05, # retry
@@ -373,10 +373,10 @@ if (FALSE) {
     caffeCoconut =, yuenyeungCoconut = .0065,
     mocaccino_ = .006, 
     tiramisu_ = .008,
-    goatKefir = if (length(x@cocoa)) .009 else NA_real_, # forgot if this is tested or hypothetical
-    cheesecake = if (length(x@liqueur)) {
+    goatKefir = if ('_cocoa$' %in% x) .009 else NA_real_, # forgot if this is tested or hypothetical
+    cheesecake = if ('_liqueur$' %in% x) {
       .0073
-    } else if (length(x@cocoa)) {
+    } else if ('_cocoa$' %in% x) {
       .009 
     } else .016, # to try
     pumpkinSpiceLatte_ = .0075,
@@ -384,7 +384,7 @@ if (FALSE) {
     bao =, bread = .015, # tested on bread() and love!
     caffeLatte_ = .015, # tested and love!!
     snowSkin = .016, # try
-    gateau = if (length(x@cocoa)) .002 else NA_real_,
+    gateau = if ('_cocoa$' %in% x) .002 else NA_real_,
     mocaccino = .05,
     caffeLatte = .14,
     NA_real_)
@@ -476,7 +476,7 @@ if (FALSE) {
   water <- \(x) switch(
     attr(x, which = 'key') %||% '', #x@key,
     mascarponeFrosting = .21,
-    mascarponeGanache = if (length(x@liqueur)) {
+    mascarponeGanache = if ('_liqueur$' %in% x) {
       .19 # liqueur flavor will also have `x@water`, so this `if` must be ahead of `@water`
     } else if (length(x@water)) {
       .29
@@ -486,7 +486,7 @@ if (FALSE) {
     whippedCream = .50,
     lava = if ('_blackSesame$' %in% x) .50 else if ('_coconutFlr$' %in% x) .67 else NA_real_,
     porkfill = .55,
-    sundae = if (length(x@matcha)) {
+    sundae = if ('_matcha$' %in% x) {
       .6
     } else NA_real_,
     beanPaste = if ('_redkidneybean$' %in% x) .66 else .6,
@@ -566,7 +566,7 @@ if (FALSE) {
   fat2breadFlr <- \(x) switch(
     attr(x, which = 'key') %||% '', #x@key, 
     bao = .03,
-    bread = if (length(x@cocoa)) .08 else .075,
+    bread = if ('_cocoa$' %in% x) .08 else .075,
     NA_real_)
   
   fat2gluten0Flr <- fn.

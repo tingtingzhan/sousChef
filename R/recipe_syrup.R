@@ -9,9 +9,13 @@
 
 xiaogaojie_invertSugar <- \() recipe(
   flavor = '\u8f6c\u5316\u7cd6\u6d46 Invert Sugar Syrup',
-  sugar = 600, 
+  misc = c(
+    Domino_granulated = 600
+  ), 
   water = c(c22 = 60, c100 = 300), 
-  fruit_pc = c(lemon = 1),
+  misc_pc = c(
+    lemon = 1
+  ),
   misc_tsp = c(
     ArmHammer_NaHCO3 = 1/4
   ),

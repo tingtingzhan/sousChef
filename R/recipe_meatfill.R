@@ -24,15 +24,19 @@ meatfill_note <- \() c(
 
 juntun_filling <- \() recipe(
   alias = '\u519b\u5c6f\u9505\u76d4\u9985',
-  #meat = c(pork_belly = 550), # too fat!!
-  meat = c(pork_belly = 250, pork_tenderloin = 300),
-  spice_tsp = c(
+  misc = c(
+    pork_belly = 250, # 550, # too fat!!
+    pork_tenderloin = 300
+  ),
+  misc_tsp = c(
     McCormick_whitePepper = .5,
     SimplyOrganic_ginger = .5,
-    SimplyOrganic_coriander = 1/4
+    SimplyOrganic_coriander = 1/4,
+    Morton_salt = .5
   ),
-  oil_Tbsp = c(YaoMaZi_rattanPepper_oil = 1), # perfect numbness!!
-  salt_tsp = .5,
+  misc_Tbsp = c(
+    YaoMaZi_rattanPepper_oil = 1 # perfect numbness!!
+  ),
   #instruction (legacy) = c(
   #  'Use KitchenAid meat grinder, not meat chopper!'
   #),
@@ -49,24 +53,23 @@ juntun_filling <- \() recipe(
 
 
 porkfill <- \() recipe(
-  meat = c(pork_tenderloin = 500, pork_belly = 500), # tiny too fat
-  oil_tsp = c(YaoMaZi_rattanPepper_oil = 1), 
-  oil_Tbsp = c(Kadoya_sesame_oil = 1),
-  spice_tsp = c(
-    McCormick_whitePepper = 1,  
-    SimplyOrganic_ginger = 1,
-    SimplyOrganic_coriander = 1/4
-  ), # 1/2 a tiny tiny too strong
-  sauce = c(
-    
+  misc = c(
+    pork_tenderloin = 500, 
+    pork_belly = 500, # tiny too fat
     LeeKumKee_5spiceMarinade = 70 # really nice already!!
-    
-    # remember to buy Worcestershire sauce haha
     #LeeKumKee_5spiceMarinade = 60,
     #LeaPerrins_Worcestershire = 30
-    
   ),
-  starch_Tbsp = c(Wegmans_corn_starch = 2.5),
+  misc_tsp = c(
+    YaoMaZi_rattanPepper_oil = 1,
+    McCormick_whitePepper = 1,  
+    SimplyOrganic_ginger = 1,
+    SimplyOrganic_coriander = 1/4 # 1/2 a tiny tiny too strong
+  ), 
+  misc_Tbsp = c(
+    Wegmans_corn_starch = 2.5,
+    Kadoya_sesame_oil = 1
+  ),
   water = 100,
   review = 'perfect!!')
 
@@ -75,21 +78,23 @@ porkfill <- \() recipe(
 
 Jenny_chickenfill <- \() recipe(
   author = 'Jenny', flavor = '\u9e21\u817f\u8089\u9985',
-  poultry = c(chicken_thigh = 500),
-  seafood = c(Kirkland_shrimp_c31 = 300),
+  misc = c(
+    chicken_thigh = 500,
+    Kirkland_shrimp_c31 = 300
+  ),
   #Rice wine 2Tbsp  / Vin de riz 2Tbsp
-  sauce_Tbsp = c(
+  misc_Tbsp = c(
+    Wegmans_corn_starch = 1,
     Kikkoman_soy = 2,
-    LeeKumKee_premium_oyster = 2
+    LeeKumKee_premium_oyster = 2,
+    Kadoya_sesame_oil = 2
   ),
-  sauce_tsp = c(
-    LeeKumKee_chickenBouillon = 1/2
+  misc_tsp = c(
+    LeeKumKee_chickenBouillon = 1/2,
+    Morton_salt = 1/2
   ),
-  salt_tsp = 1/2,
   #Chicken broth 3Tbsp / Bouillon de poulet 3Tbsp
-  starch_Tbsp = c(Wegmans_corn_starch = 1),
-  egg_pc = c(eggYolk = 1, eggWhite = 1),
-  oil_tsp = c(Kadoya_sesame_oil = 2*3)
+  misc_pc = c(eggYolk = 1, eggWhite = 1)
 )
 
 
@@ -101,19 +106,23 @@ xiaogaojie_lambfill <- \() recipe(
   flavor = '\u867e\u7f8a\u8089\u9985', 
   xiaogaojie = 'M6DD504lDac',
   portion = c(Baozi = 30),
-  meat = c(lamb_leg = 250),
-  seafood = c(Kirkland_shrimp_c31 = 400),
-  sauce_Tbsp = c(Kikkoman_soy = 1),
-  #葱白 50克
-  spice = c(SimplyOrganic_ginger = 2), 
-  salt_tsp = 1, 
-  spice_tsp = c(
-    McCormick_whitePepper = 1/4,
-    SimplyOrganic_5spice = 1/8
+  misc = c(
+    lamb_leg = 250,
+    Kirkland_shrimp_c31 = 400
   ),
+  misc_Tbsp = c(
+    Kikkoman_soy = 1
+  ), 
+  misc_tsp = c(
+    SimplyOrganic_ginger = 1.5,
+    Kadoya_sesame_oil = 1,
+    McCormick_whitePepper = 1/4,
+    SimplyOrganic_5spice = 1/8,
+    Morton_salt = 1
+  ),
+  #葱白 50克
   #花椒粉_tsp = 1/8,
-  egg_pc = c(eggWhite = 1),
-  oil_tsp = c(Kadoya_sesame_oil = 1)
+  misc_pc = c(eggWhite = 1)
 )
 
 
@@ -121,19 +130,21 @@ xiaogaojie_lambfill <- \() recipe(
 # below: no-so-successful experiments
 
 salmonfill <- \() recipe(
-  seafood = c(salmonAtlantic = 1000),
-  starch_Tbsp = c(Wegmans_corn_starch = 2),
-  sauce = c(
+  misc = c(
+    salmonAtlantic = 1000,
     mizkan_brownRiceVinegar = 40,
     Kikkoman_soyLite = 40
   ),
-  spice_Tbsp = c(FrontierCoop_harissa = 1), # 2Tbsp too much
-  spice_tsp = c(
+  misc_tsp = c(
     McCormick_whitePepper = 1/2,
-    SimplyOrganic_ginger = 1/4
+    SimplyOrganic_ginger = 1/4,
+    YaoMaZi_rattanPepper_oil = 1/2
   ),
-  oil_Tbsp = c(Kadoya_sesame_oil = 1),
-  oil_tsp = c(YaoMaZi_rattanPepper_oil = 1/2),
+  misc_Tbsp = c(
+    Wegmans_corn_starch = 2,
+    FrontierCoop_harissa = 1, # 2Tbsp too much
+    Kadoya_sesame_oil = 1
+  ),
   review = c(
     'Not enough gelatin. Texture not right',
     'Effie loves though!'

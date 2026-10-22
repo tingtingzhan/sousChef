@@ -16,7 +16,7 @@ Kahlua_coffee_liqueur <- \() nutrition(
   carbohydrate = 29.7, sugar = 29.7)
 
 
-Kahlua_especial <- \() nutrition(
+Kahlua_especial_liqueur <- \() nutrition(
   alias = '\u5496\u5561\u9152',
   kahlua = 'kahlua-especial',
   name = 'Especial Rum & Coffee Liqueur',
@@ -29,7 +29,7 @@ Kahlua_especial <- \() nutrition(
 
 
 
-CafeGranita_coffee <- \() nutrition(
+CafeGranita_coffee_liqueur <- \() nutrition(
   alias = '\u5496\u5561\u9152',
   #url = 
   brand = 'Cafe Granita\U1f1fa\U1f1f8', 
@@ -41,7 +41,7 @@ CafeGranita_coffee <- \() nutrition(
 )
 
 
-FratelliVincenzi_espresso <- \() nutrition(
+FratelliVincenzi_espresso_liqueur <- \() nutrition(
   alias = '\u5496\u5561\u9152',
   brand = style_hyperlink(text = 'Fratelli Vincenzi\U1f1ee\U1f1f9', url = 'https://www.distillerievincenzi.com/liquori/') |> c(),
   name = 'Espresso Liqueur',
@@ -51,7 +51,7 @@ FratelliVincenzi_espresso <- \() nutrition(
 )
 
 
-Kikisi_coffee <- \() nutrition(
+Kikisi_coffee_liqueur <- \() nutrition(
   alias = '\u5496\u5561\u9152',
   brand = 'Kikisi\U1f1f2\U1f1fd',
   name = 'Coffee Liqueur',
@@ -61,7 +61,7 @@ Kikisi_coffee <- \() nutrition(
 )
 
 
-CaffeBorghetti <- \() nutrition(
+CaffeBorghetti_liqueur <- \() nutrition(
   alias = '\u5496\u5561\u9152',
   brand = c(style_hyperlink(text = 'Caff\u00e8 Borghetti\U1f1ee\U1f1f9', url = 'https://www.brancausa.com/brands/caffe-borghetti')),
   name = 'di Vero Caff\u00e8 Espresso Liqueur',
@@ -70,7 +70,7 @@ CaffeBorghetti <- \() nutrition(
   AbV = .25
 )
 
-Grind_espresso <- \() nutrition(
+Grind_espresso_liqueur <- \() nutrition(
   alias = '\u5496\u5561\u9152',
   brand = c(style_hyperlink(text = 'Grind\U1f1fa\U1f1f8', url = 'https://grindespressoshot.com/home.html')),
   name = 'Espresso Shot',
@@ -81,7 +81,7 @@ Grind_espresso <- \() nutrition(
 
 
 
-Sabroso_coffee <- \() nutrition(
+Sabroso_coffee_liqueur <- \() nutrition(
   alias = '\u5496\u5561\u9152',
   brand = 'Sabroso\U1f1f2\U1f1fd',
   name = 'Licor de Caf\u00e9',
@@ -91,7 +91,7 @@ Sabroso_coffee <- \() nutrition(
 )
 
 
-Patron_XO <- \() nutrition(
+Patron_XO_liqueur <- \() nutrition(
   alias = '\u5496\u5561\u9152',
   brand = c(style_hyperlink(text = 'Patr\u00f3n\U1f1f2\U1f1fd', url = 'https://www.patrontequila.com/products/patron-xo-cafe-coffee-liquor.html')),
   name = 'XO Cafe',
@@ -100,7 +100,7 @@ Patron_XO <- \() nutrition(
   AbV = .35)
 
 
-Padrino_coffee <- \() nutrition(
+Padrino_coffee_liqueur <- \() nutrition(
   alias = '\u5496\u5561\u9152',
   # https://www.tequilapadrino.com/products # cannot find
   brand = 'El Padrino\U1f1f2\U1f1fd',
@@ -110,7 +110,7 @@ Padrino_coffee <- \() nutrition(
   AbV = .35)
 
 
-Amigos3_mocha <- \() nutrition(
+Amigos3_mocha_liqueur <- \() nutrition(
   alias = '\u5496\u5561\u9152',
   brand = c(style_hyperlink(text = '3 Amigos Tequila\U1f1f2\U1f1fd', url = 'https://3amigostequila.com/cafe-mocha/')),
   name = 'Cafe Mocha',

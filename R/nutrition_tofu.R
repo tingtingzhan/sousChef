@@ -1,11 +1,15 @@
 
 tofu <- \() recipe(
-  bean = c(Laura_soybean = 135), # small cup (45g) x3
-  water = 1200, # 1300ml waterline
-  sauce_tsp = c(
+  misc = c(
+    Laura_soybean = 135 # small cup (45g) x3
+  ),
+  misc_tsp = c(
     Heinz_whiteVinegar = 7
   ),
-  water = c(c0 = 33),
+  water = c(
+    c0 = 33, 
+    c22 = 1200 # 1300ml waterline
+  ),
   # waterLost = 100, # in coagulation (??)
   tool = list(JoyoungDJ13U(
     treatment = c(

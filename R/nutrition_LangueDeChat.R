@@ -6,55 +6,72 @@
 
 cookingTree_LangueDeChat <- \() recipe(
   author = 'CookingTree', flavor = 'Langue De Chat', youtube = 'V-PasuPZFS0',
-  dairy = c(Kerrygold_butter = 90),
-  misc = c(Domino_10x = 85),
-  egg_pc = c(eggYolk = 2),
-  vanilla = c(NielsenMassey_Madagascar = 2),
-  flour = c(KingArthur_allPurposeFlr = 110))
+  misc = c(
+    KingArthur_allPurposeFlr = 110,
+    Kerrygold_butter = 90,
+    Domino_10x = 85
+  ),
+  misc_pc = c(eggYolk = 2),
+  misc_tsp = c(NielsenMassey_Madagascar = 1/2))
 
 
 cookingTree_cocoa_LangueDeChat <- \() recipe(
   author = 'CookingTree', flavor = 'Cocoa Langue De Chat', youtube = 'V-PasuPZFS0',
   misc = c(
+    KingArthur_allPurposeFlr = 50,
+    KingArthur_Bensdorp_cocoa = 7,
     Domino_10x = 45,
     Kerrygold_butter = 45,
     Wegmans_heavyCream = 20
   ),
-  egg_pc = c(eggYolk = 1),
-  vanilla = c(NielsenMassey_Madagascar = 1),
-  flour = c(KingArthur_allPurposeFlr = 50),
-  cocoa = c(KingArthur_Bensdorp_cocoa = 7))
+  misc_pc = c(eggYolk = 1),
+  misc_tsp = c(NielsenMassey_Madagascar = 1/4)
+)
 
 
 Ying_LangueDeChat <- \() recipe(
-  author = 'Ying', flavor = 'Langue De Chat', youtube = '2tlPfiBA9i0',
-  misc = c(Domino_10x = 15),
-  egg_pc = c(eggYolk = 15/(17.3 + 34.7), eggWhite = 15/(17.3 + 34.7)),
-  dairy = c(Kerrygold_butter = 25,
-            Wegmans_heavyCream = 10),
-  vanilla_tsp = c(NielsenMassey_Madagascar = 1/8),
-  flour = c(KingArthur_allPurposeFlr = 25))
+  author = 'Ying', flavor = 'Langue De Chat', 
+  youtube = '2tlPfiBA9i0',
+  misc = c(
+    KingArthur_allPurposeFlr = 25,
+    Kerrygold_butter = 25,
+    Wegmans_heavyCream = 10,
+    Domino_10x = 15
+  ),
+  misc_pc = c(
+    eggYolk = 15/(17.3 + 34.7), 
+    eggWhite = 15/(17.3 + 34.7)
+  ),
+  misc_tsp = c(
+    NielsenMassey_Madagascar = 1/8
+  ))
 
 
 
 Jadore_LangueDeChat <- \() recipe(
   author = 'J\'adore', flavor = 'Langue De Chat', youtube = 'mZYO0xVMgOQ',
-  misc = c(Domino_10x = 34),
-  egg = c(eggWhite = 30),
-  flour = c(Wegmans_pastryFlr = 32,
-            BobsRedMill_almondFlour = 5),
-  vanilla_tsp = c(NielsenMassey_Madagascar = 1/4),
-  dairy = c(Kerrygold_butter = 43,
-            Wegmans_heavyCream = 13))
+  misc = c(
+    Wegmans_pastryFlr = 32,
+    BobsRedMill_almondFlour = 5,
+    eggWhite = 30,
+    Kerrygold_butter = 43,
+    Wegmans_heavyCream = 13,
+    Domino_10x = 34
+  ),
+  misc_tsp = c(
+    NielsenMassey_Madagascar = 1/4
+  ))
 
 
 Giallozafferano_LangueDeChat <- \() recipe( 
   flavor = 'Langue De Chat', 
   youtube = c(giallozafferano = 'CiVLx3zQBSw'),
-  dairy = c(Kerrygold_butter = 50),
-  misc = c(Domino_10x = 60),
-  egg = c(eggWhite = 50),
-  flour = c(KingArthur_allPurposeFlr = 50))
+  misc = c(
+    KingArthur_allPurposeFlr = 50,
+    eggWhite = 50,
+    Kerrygold_butter = 50,
+    Domino_10x = 60
+  ))
 
 
 

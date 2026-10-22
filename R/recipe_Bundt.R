@@ -23,10 +23,12 @@ PreppyKitchen_chocolate_Bundt <- \() recipe(
   water = c(c40 = 360),
   misc_tsp = c(
     NielsenMassey_Madagascar = 1,
-    ArmHammer_NaHCO3 = 2.5
+    ArmHammer_NaHCO3 = 2.5,
+    Morton_salt = 1
   ),
-  salt_tsp = 1,
-  dairy = c(Kerrygold_butter = 213),
+  misc = c(
+    Kerrygold_butter = 213
+  ),
   misc_cup = c(
     KingArthur_allPurposeFlr = 3.5,
     Wegmans_vegetable_oil = 1/2,
@@ -34,25 +36,29 @@ PreppyKitchen_chocolate_Bundt <- \() recipe(
     Ghirardelli_cocoa = 1.25,
     Domino_granulated = 2.5
   ),
-  egg_pc = c(eggYolk = 4, eggWhite = 4),
+  misc_pc = c(eggYolk = 4, eggWhite = 4),
   preppykitchen = c('_MqLza3bgbw' = 'chocolate-bundt-cake'))
 
 
 
 PreppyKitchen_Bundt <- \() recipe(
   flavor = 'Bundt',
-  flour = c(KingArthur_allPurposeFlr = 360),
+  misc = c(
+    KingArthur_allPurposeFlr = 360
+  ),
   misc_tsp = c(
     TraderJoes_bakingPowder = 1,
-    ArmHammer_NaHCO3 = .5
+    ArmHammer_NaHCO3 = .5,
+    Morton_salt = 1.5
   ),
-  salt_tsp = 1.5,
   misc_brick = c(
     Philadelphia_creamCheese = 1,
     Kerrygold_butter = 1
   ),
-  egg_pc = c(eggYolk = 6, eggWhite = 6),
-  vanilla_Tbsp = c(NielsenMassey_vanilla = 1),
+  misc_pc = c(eggYolk = 6, eggWhite = 6),
+  misc_Tbsp = c(
+    NielsenMassey_vanilla = 1
+  ),
   misc_cup = c(
     Domino_granulated = 2,
     Wegmans_whole_milk = 1

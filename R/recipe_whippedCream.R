@@ -3,7 +3,7 @@
 
 tiramisu_nytimes <- \() recipe(
   flavor = 'Tiramisu', 
-  egg_pc = c(eggYolk = 4),
+  misc_pc = c(eggYolk = 4),
   misc_cup = c(
     Domino_granulated = 1/2,
     BelGioioso_mascarpone = 1,
@@ -32,7 +32,9 @@ lifeloveandsugar_mascarponeFrosting <- \() recipe(
     Domino_10x = 3/4,
     Wegmans_heavyCream = 1.25
   ),
-  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
+  misc_tsp = c(
+    NielsenMassey_Madagascar = 1
+  ),
   misc_brick = c(BelGioioso_mascarpone = 1),
   url = 'https://www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
 
@@ -44,7 +46,9 @@ lifeloveandsugar_cocoa_mascarponeFrosting <- \() recipe(
     Domino_10x = 1/2,
     KingArthur_Bensdorp_cocoa = 1/4
   ),
-  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
+  misc_tsp = c(
+    NielsenMassey_Madagascar = 1
+  ),
   misc_brick = c(BelGioioso_mascarpone = 1),
   url = 'https://www.lifeloveandsugar.com/stabilized-mascarpone-whipped-cream/')
 
@@ -56,7 +60,9 @@ Marcellina_mascarponeFrosting <- \() recipe(
     BelGioioso_mascarpone = 1,
     Domino_10x = 1/4
   ),
-  vanilla_tsp = c(NielsenMassey_Madagascar = 2),
+  misc_tsp = c(
+    NielsenMassey_Madagascar = 2
+  ),
   url = 'https://www.marcellinaincucina.com/mascarpone-cream/')
 
 

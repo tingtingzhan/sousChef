@@ -3,7 +3,7 @@
 
 
 
-Baileys_espresso <- \() nutrition(
+Baileys_espresso_liqueur <- \() nutrition(
   baileys = 'espresso-creme',
   #url = 'www.baileys.com/en-us/products/baileys-espresso-creme' # no nutrition info
   name = 'Espresso Cre\u0300me', alias = '\u5496\u5561\u5976\u6cb9\u9152',
@@ -21,7 +21,7 @@ Baileys_espresso <- \() nutrition(
 
 
 
-Baileys_chocolatLuxe <- \() nutrition(
+Baileys_chocolatLuxe_liqueur <- \() nutrition(
   baileys = 'chocolat-luxe',
   name = 'Chocolat Luxe', alias = '\u5de7\u514b\u529b\u9152',
   servingGram = 100, # my guess
@@ -36,7 +36,7 @@ Baileys_chocolatLuxe <- \() nutrition(
 
 
 
-Baileys_chocolate <- \() nutrition(
+Baileys_chocolate_liqueur <- \() nutrition(
   baileys = 'chocolate-liqueur',
   # url = 'https://www.baileys.com/en-us/products/baileys-chocolate-liqueur' # nutrition info here
   name = 'Chocolate', alias = '\u5de7\u514b\u529b\u9152',
@@ -53,7 +53,7 @@ Baileys_chocolate <- \() nutrition(
 
 
 
-Baileys_colada <- \() nutrition( 
+Baileys_colada_liqueur <- \() nutrition( 
   baileys = 'colada',
   # creamy coconut and sweet, juicy pineapples.
   name = 'Colada', alias = '\u6930\u6d46\u83e0\u841d\u9152',
@@ -68,7 +68,7 @@ Baileys_colada <- \() nutrition(
 
 
 
-Baileys_tiramisu <- \() nutrition(
+Baileys_tiramisu_liqueur <- \() nutrition(
   baileys = 'tiramisu-cocktail',
   # mascarpone, espresso with hints of chocolate.
   name = 'Tiramisu Cocktail',
@@ -83,7 +83,7 @@ Baileys_tiramisu <- \() nutrition(
 
 
 
-Baileys_smores <- \() nutrition( 
+Baileys_smores_liqueur <- \() nutrition( 
   baileys = 's-mores',
   name = 'S\'mores', alias = '\u5de7\u514b\u529b\u68c9\u82b1\u7cd6\u9152',
   servingGram = 100,
@@ -100,7 +100,7 @@ Baileys_smores <- \() nutrition(
 
 
 
-Baileys_pumpkinSpice <- \() nutrition(
+Baileys_pumpkinSpice_liqueur <- \() nutrition(
   baileys = 'pumpkin-spice',
   name = 'Pumpkin\U1f383 Spice', alias = '\u5496\u5561\u9152',
   servingGram = 100,
@@ -117,7 +117,7 @@ Baileys_pumpkinSpice <- \() nutrition(
 
 
 
-Baileys_strawberry <- \() nutrition(
+Baileys_strawberry_liqueur <- \() nutrition(
   baileys = 'strawberries-cream',
   name = 'Strawberries\U1f353 & Cream', alias = '\u8349\u8393\u9152',
   servingGram = 100,
@@ -133,7 +133,7 @@ Baileys_strawberry <- \() nutrition(
 
 
 
-Baileys_almande <- \() nutrition(
+Baileys_almande_liqueur <- \() nutrition(
   baileys = 'almande',
   name = 'Almande', alias = '\u674f\u4ec1\u9152',
   servingGram = 100,
@@ -150,7 +150,7 @@ Baileys_almande <- \() nutrition(
 
 
 
-Baileys_icedCoffeeLatte <- \() nutrition(
+Baileys_icedCoffeeLatte_liqueur <- \() nutrition(
   baileys = 'iced-coffee-latte',
   name = 'Iced Coffee Latte',
   servingGram = 100, # my guess

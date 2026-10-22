@@ -7,8 +7,12 @@ GoodLifeEats_pumpkin_creamCheeseSpread <- \() recipe(
   misc_cup = c(
     Libbys_pumpkin = 2/3
   ),
-  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1.5),
-  sugar_Tbsp = c(Domino_darkBrown = 2),
+  misc_tsp = c(
+    SimplyOrganic_pumpkinSpice = 1.5
+  ),
+  misc_Tbsp = c(
+    Domino_darkBrown = 2
+  ),
   url = 'https://www.goodlifeeats.com/whipped-pumpkin-cream-cheese-and-8-ways-to-use-leftover-pumpkin/'
 )
 
@@ -20,6 +24,8 @@ Lynn_pumpkin_creamCheeseSpread <- \() recipe(
   misc_cup = c(
     Libbys_pumpkin = 1/2
   ),
-  spice_tsp = c(SimplyOrganic_pumpkinSpice = 1),
+  misc_tsp = c(
+    SimplyOrganic_pumpkinSpice = 1
+  ),
   youtube = 'OxmE0JeiWLo'
 )

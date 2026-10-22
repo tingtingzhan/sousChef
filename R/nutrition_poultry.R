@@ -13,7 +13,7 @@ rotisserie_chickenBreast <- \() nutrition(
 
 chicken_thigh <- \() nutrition(
   fdc = 172385L,
-  name = '(\u53bb\u76ae)\u9e21\u817f\u8089 Chicken Thigh',
+  name = 'Chicken Thigh', alias = '(\u53bb\u76ae)\u9e21\u817f\u8089',
   servingGram = 100, water = 66.5, fat = 16.6, protein = 16.5, sodium = .081)
 
 chicken_breast <- \() nutrition(

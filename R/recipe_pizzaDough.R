@@ -3,13 +3,17 @@
 
 
 KitchenAidUK_pizzaDough <- \() recipe(
-  flour = c(Wegmans_breadFlr = 250),
-  water = 150,
-  oil = c(Wegmans_olive_oil = 45),
-  misc_tsp = c(
-    Fleischmanns_instant_yeast = .5
+  water = c(c40 = 300),
+  misc = c(
+    KingArthur_allPurposeFlr = 500,
+    Fleischmanns_instant_yeast = 3.5
   ),
-  salt_tsp = .25,
-  sugar_tsp = .5,
+  misc_Tbsp = c(
+    Wegmans_olive_oil = 45
+  ),
+  misc_tsp = c(
+    Domino_granulated = 1,
+    Morton_salt = 3/4
+  ),
   kitchenaiduk2003 = c('WqolY3XZeGU' = 'best-pizza-dough')
 )

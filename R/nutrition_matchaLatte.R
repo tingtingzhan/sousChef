@@ -12,9 +12,11 @@ TraderJoes_matchaLatte <- \() nutrition(
 Ippodo_sayakaLatte <- \() recipe(
   flavor = 'Sayaka Latte', 
   ippodotea = 'sayaka-100g',
-  matcha = c(Ippodo_sayaka = 3), # matcha 1.5%
   water = c(c80 = 100), 
-  dairy = c(WegmansOrganic_whole_milk = 96))
+  misc = c(
+    Ippodo_sayaka_matcha = 3,  # matcha 1.5%
+    WegmansOrganic_whole_milk = 96
+  ))
 
 
 

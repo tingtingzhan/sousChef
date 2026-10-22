@@ -8,36 +8,42 @@
 xiaogaojie_pasteisdenata1 <- \() recipe(
   flavor = 'pasteisdenata1',
   water = 185,
-  misc = c(Domino_granulated = 200),
+  misc = c(
+    Wegmans_pastryFlr = 25,
+    Wegmans_corn_starch = 17,
+    Domino_granulated = 200,
+    WegmansOrganic_whole_milk = 250
+  ),
   #cinnamon stick 1
   #Lemon zest 2
-  flour = c(Wegmans_pastryFlr = 25),
-  starch = c(Wegmans_corn_starch = 17),
-  dairy = c(WegmansOrganic_whole_milk = 250),
-  egg_pc = c(eggYolk = 5),
+  misc_pc = c(eggYolk = 5),
   xiaogaojie = '-83188U6O8w')
 
 xiaogaojie_pasteisdenata2 <- \() recipe(
   flavor = 'pasteisdenata2',
-  dairy = c(
+  misc = c(
     Wegmans_heavyCream = 200,
-    WegmansOrganic_whole_milk = 180
-  ),
-  sugar = 60, 
-  egg_pc = c(eggYolk = 4, eggWhite = 1),
+    WegmansOrganic_whole_milk = 180,
+    Domino_granulated = 60
+  ), 
+  misc_pc = c(eggYolk = 4, eggWhite = 1),
   xiaogaojie = '-83188U6O8w')
 
 Leites_pasteisdenata <- \() recipe(
   alias = 'leites',
-  flour_Tbsp = c(KingArthur_allPurposeFlr = 3),
+  misc_Tbsp = c(
+    KingArthur_allPurposeFlr = 3
+  ),
   misc_cup = c(
     Domino_granulated = 4/3,
     Wegmans_whole_milk = 1.25
   ),
   # 1 cinnamon stick
   water_cup = 2/3,
-  vanilla_tsp = c(NielsenMassey_Madagascar = 1/2),
-  egg_pc = c(eggYolk = 6),
+  misc_tsp = c(
+    NielsenMassey_Madagascar = 1/2
+  ),
+  misc_pc = c(eggYolk = 6),
   url = 'https://leitesculinaria.com/7759/recipes-pasteis-de-nata.html')
 
 
@@ -50,7 +56,7 @@ TastingTable_pasteisdenata <- \() recipe(
     Domino_granulated = 1,
     Wegmans_whole_milk = (1 + 6/16)
   ),
-  egg_pc = c(eggYolk = 6),
+  misc_pc = c(eggYolk = 6),
   url = 'https://www.tastingtable.com/686035/portuguese-egg-tart-recipe-pastry/'
 )
 

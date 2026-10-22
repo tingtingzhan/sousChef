@@ -7,13 +7,13 @@
 
 MrHong_pumpkin_glutRiceBing <- \() recipe(
   # This wont work, based on my `pumpkin_stickyRice` !!
-  puree = c(Libbys_pumpkin = 200),
-  misc = c(fourC_panko = 20),
-  flour = c(
+  misc = c(
     Erawan_glutRiceFlr = 120, 
-    Erawan_riceFlr = 10
+    Erawan_riceFlr = 10,
+    Libbys_pumpkin = 200,
+    fourC_panko = 20,
+    Domino_granulated = 50
   ),
-  sugar = 50,
   mrhongkitchen = 'pdRdTzqB1Rk'
 )
 

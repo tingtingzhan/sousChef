@@ -13,8 +13,8 @@
 Domino_10x <- \() nutrition(
   domino = 'powdered-sugar', # Ingredients: cane sugar, corn starch
   name = 'Sugar\U0001f36c, Confectioners', alias = '10x\u7cd6\u7c89',
-  bjs = 'domino-confectioners-sugar-4-lbs/3000000000000139695', usd = 5.29/(4*454)*30, # 2023-11-11
-  # wegmans = 54235L,
+  bjs = 'domino-confectioners-sugar-4-lbs/3000000000000139695', usd = 5.29/(4*454)*30, date = as.Date('2026-10-22'),
+  wegmans = '182987', #usd = 3.69/(2*454)*30, date = as.Date('2026-10-22'),
   servingGram = 30, 
   # servingTsp = 12, # packaging
   servingTsp = 30/(33/12), # actual experiment: 1/4 cup = 33 grams
@@ -25,8 +25,8 @@ Domino_10x <- \() nutrition(
 Domino_granulated <- \() nutrition(
   domino = 'granulated-sugar',# Ingredients: cane sugar, 
   name = 'Granulated Sugar', alias = '\u767d\u7802\u7cd6',
-  walmart = '219588515', usd = 5.92/1590*8,
-  # wegmans = 23344L,
+  walmart = '219588515', #usd = 6.12/1590*8, date = as.Date('2026-10-22'),
+  wegmans = '482489', usd = 4.49/1810*8, date = as.Date('2026-10-22'),
   servingGram = 8, servingTsp = 2, # packaging
   calorie = 30,
   carbohydrate = 8, addedSugar = 8)
@@ -34,7 +34,7 @@ Domino_granulated <- \() nutrition(
 Domino_golden <- \() nutrition(
   domino = 'golden-sugar',
   name = 'Golden Sugar', alias = '\u7c97\u7802\u7cd6',
-  # wegmans = 26095611L, usd = 1.48/454*8,
+  wegmans = '929921', usd = 4.49/1590*8, date = as.Date('2026-10-22'),
   servingGram = 8, servingTsp = 2, # packaging
   calorie = 30,
   carbohydrate = 8, sugar = 8)
@@ -53,7 +53,6 @@ US_10x <- \() nutrition(
 
 
 Wegmans_darkBrown <- \() nutrition(
-  # wegmans = 23179103L,
   name = 'Dark Brown Sugar', alias = '\u7ea2\u7cd6',
   servingGram = 8, servingTsp = 2, 
   calorie = 30,
@@ -71,8 +70,8 @@ Domino_darkBrown <- \() nutrition(
 Domino_lightBrown <- \() nutrition(
   domino = 'light-brown-sugar',
   name = 'Light Brown Sugar', alias = '\u7ea2\u7cd6',
-  walmart = '35690427', usd = 5.54/1.81*8, # 4lb
-  # wegmans = 26106288L,
+  walmart = '1600519430', #usd = 3.78/907*8, date = as.Date('2026-10-07'),
+  wegmans = '962360', usd = 3.69/907*8, date = as.Date('2026-10-07'),
   servingGram = 8, servingTsp = 2, 
   calorie = 30,
   carbohydrate = 8, addedSugar = 8)

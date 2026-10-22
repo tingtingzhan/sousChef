@@ -4,30 +4,40 @@
 
 
 fauxReo <- \() recipe(
-  alias = '\u5c71\u5be8\u5965\u5229\u5965 Faux-Reos',
+  flavor = 'Faux-Reos',
+  alias = '\u5c71\u5be8\u5965\u5229\u5965',
   portion = c(cookie = 26),
-  sugar = 50,
-  oil = c(Wegmans_corn_oil = 50),
-  coffee_tsp = c(NescafeGold_blonde_coffee = 1),
+  misc_tsp = c(
+    NescafeGold_blonde_coffee = 1
+  ),
   water = c(c0 = 25), # add gradually!!
-  flour = c(Wegmans_breadFlr = 180),
-  cocoa = c(KingArthur_blackCocoa = 64))
+  misc = c(
+    Wegmans_breadFlr = 180,
+    Domino_granulated = 50,
+    KingArthur_blackCocoa = 64,
+    Wegmans_corn_oil = 50
+  )
+)
 
 
 KingArthur_fauxReo <- \() recipe(
   flavor = 'Faux-Reos',
   portion = c(cookie = 26),
-  sugar = 223,
-  dairy = c(Kerrygold_butter = 170),
-  salt_tsp = 1/2,
-  coffee_tsp = c(NescafeGold_blonde_coffee = 1),
-  egg_pc = c(eggYolk = 1, eggWhite = 1), 
+  misc = c(
+    Kerrygold_butter = 170,
+    Domino_granulated = 223,
+    KingArthur_blackCocoa = 64
+  ),
+  misc_tsp = c(
+    NescafeGold_blonde_coffee = 1,
+    NielsenMassey_Madagascar = 1,
+    Morton_salt = 1/2
+  ),
+  misc_pc = c(eggYolk = 1, eggWhite = 1), 
   water = c(c0 = 14),
-  vanilla_tsp = c(NielsenMassey_Madagascar = 1),
   misc_cup = c(
     KingArthur_allPurposeFlr = 1.5
   ),
-  cocoa = c(KingArthur_blackCocoa = 64),
   author = 'pj-hamel', kingarthur = 'faux-reos-recipe')
 
 

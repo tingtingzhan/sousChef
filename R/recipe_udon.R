@@ -10,17 +10,22 @@ amanda_udon <- \() recipe(
   author = '\u66fc\u98df\u6162\u8bed', 
   flavor = 'Udon', 
   youtube = 'q0gNH9vxiYY',
-  flour = c(KingArthur_allPurposeFlr = 300),
-  water = c(c22 = 130), salt = 15)
+  misc = c(
+    KingArthur_allPurposeFlr = 300, 
+    Morton_salt = 15
+  ),
+  water = c(c22 = 130))
 
 
 
 JustOne_udon <- \() recipe(
   flavor = 'Udon', 
   just1cookbook = c('luljUScGJm4' = 'udon-noodles'),
-  flour = c(KingArthur_allPurposeFlr = 200), # 7 oz
-  water = c(c22 = 90), # 6tbsp, 89g
-  salt = 10) # 0.35 oz
+  misc = c(
+    KingArthur_allPurposeFlr = 200,
+    Morton_salt = 10
+  ),
+  water = c(c22 = 90))
   
 
 
@@ -29,8 +34,10 @@ JustOne_udon <- \() recipe(
 Leo_udon <- \() recipe(
   author = 'Leo', flavor = 'Udon', 
   youtube = 'wgj51q9Hlq8',
-  flour = c(KingArthur_allPurposeFlr = 500), # 17.6 oz
-  salt = 23, # 0.8 oz
+  misc = c(
+    KingArthur_allPurposeFlr = 500,
+    Morton_salt = 23
+  ),
   water = c(c22 = 205) # 7.2 oz
   # Leo said https://youtu.be/wgj51q9Hlq8?feature=shared&t=60
   # (water + salt) / flour = 45%

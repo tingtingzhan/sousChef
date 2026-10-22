@@ -185,16 +185,16 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   
   x <- callNextMethod(.Object, ...)
   
-  if (length(x@yeast) && !length(x@sugarLost)) {
+  if (('_yeast$' %in% x) && !length(x@sugarLost)) {
     x@sugarLost <- if (is(x, 'bao')) {
       # After one hour brew time, ~0.35 grams of sugar per gram of yeast have been consumed, 
       # leaving ~0.65 grams of unfermented sugar per gram of yeast.
       # https://www.lallemand.com/BakerYeastNA/eng/PDFs/LBU%20PDF%20FILES/1_19WATR.PDF
-      sum(x@yeast) * .35
+      sum(x['_yeast$']) * .35
     } else {
       # I ferment overnight in fridge, lost 1.15 yeast
       # then ferment in room temperature, lost .35 yeast
-      sum(x@yeast) * 1.5
+      sum(x['_yeast$']) * 1.5
     }
   }
   
@@ -208,10 +208,10 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
 
   
   if (!length(x@flavor)) {
-    x@flavor <- if (length(x@coffee)) {
-      if (length(x@liqueur)) {
+    x@flavor <- if ('_coffee$' %in% x) {
+      if ('_liqueur$' %in% x) {
         'Tiramisu\u0300'
-      } else if (length(x@cocoa)) {
+      } else if ('_cocoa$' %in% x) {
         if ('_blackcocoa$' %in% x) {
           warning('Black cocoa is overly alkalized and not a good choice for hot cocoa and mocaccino!')
         }
@@ -219,11 +219,11 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
           '\u751f\u6930\u9e33\u9e2f'
         } else if ('_coconutBar$' %in% x) {
           '\u751f\u6930'
-        } else if (x@cocoa / x@coffee < 1) {
+        } else if (('_cocoa$' %in% x) && ('_coffee$' %in% x) && (x['_cocoa$'] / x['_coffee$'] < 1)) {
           'Caff\u00e8' 
         } else 'Caff\u00e8 Mocha'
-      } else if (length(x@syrup)) {
-        if ('_ryeWhisky$' %in% x) {
+      } else if ('_syrup$' %in% x) {
+        if ('_ryeWhisky_syrup$' %in% x) {
           'Rye Whiskey\u67ab\u7cd6 Tiramisu\u0300'
         } else stop('more syrup?')
       } else 'Caff\u00e8'
@@ -250,7 +250,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       '\u8170\u679c'
     } else if ('_chickpea$' %in% x) {
       '\u9e70\u5634\u8c46'
-    } else if (length(x@cocoa)) { # `cocoa` has higher priority than `coffee`
+    } else if ('_cocoa$' %in% x) { # `cocoa` has higher priority than `coffee`
       '\u5de7\u514b\u529b\U1f36b' # '\u53ef\u53ef\U1f36b'
     } else if ('_coconutFlr$' %in% x) {
       '\u6930\u84c9\U1f965'
@@ -262,7 +262,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       '\u6a58\u5b50\U1f34a'
     } else if ('_mango$' %in% x) {
       '\u8292\u679c\U1f96d'
-    } else if (length(x@matcha)) {
+    } else if ('_matcha$' %in% x) {
       '\u62b9\u8336\U1f375'
     } else if ('_pear$' %in% x) {
       '\u68a8\U1f350'
@@ -285,22 +285,16 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
       '\u732a\u8089'
     } else if ('_ginger$' %in% x) {
       '\u59dc\u9999\U1fada'
-    } else if (length(x@liqueur)) {
-      x@liqueur |> names() |> get_flavor_()
-    } else if (length(x@sauce)) {
-      if ('_tomyum$' %in% x) {
-        '\u51ac\u9634'
-      } else character()
-    } else if (length(x@syrup)) {
-      x@syrup |> names() |> get_flavor_()
-    } else if (length(x@tea)) {
-      x@tea |> names() |> get_flavor_()
-    } else if (length(x@spice)) {
-      x@spice |> names() |> setdiff(y = c(
-        'Kirkland_noSaltSeasoning'
-      )) |> get_flavor_()
-    } else if (length(x@grain)) {
-      x@grain |> names() |> get_flavor_()
+    } else if ('_liqueur$' %in% x) {
+      x['_liqueur$'] |> names() |> get_flavor_()
+    #} else if (length(x@sauce)) {
+    #  if ('_tomyum$' %in% x) {
+    #    '\u51ac\u9634'
+    #  } else character()
+    } else if ('_syrup$' %in% x) {
+      x['_syrup$'] |> names() |> get_flavor_()
+    } else if ('_tea$' %in% x) {
+      x['_tea$'] |> names() |> get_flavor_()
     } else if (length(x@homemade)) {
       x@homemade |> names() |> get_flavor_()
     } else switch(

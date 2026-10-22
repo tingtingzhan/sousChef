@@ -9,17 +9,16 @@ AmishHeritage_carrotcake <- \() recipe(
     Domino_darkBrown = 1,
     Wegmans_vegetable_oil = 1.5
   ),
-  egg_pc = c(eggYolk = 4, eggWhite = 4),
-  fruit = c(carrot = 300, 
-            pecan = 50, walnut = 50,
-            Dole_pineapple = 100), 
-  # 2.5 cup shredded carrots
-  # 1 cup crushed pineapple, drained
-  # ¾ c. chopped pecans or walnuts (optional)
+  misc_pc = c(eggYolk = 4, eggWhite = 4),
+  misc = c(
+    carrot = 300, # 2.5 cup shredded carrots
+    pecan = 50, walnut = 50, # ¾ c. chopped pecans or walnuts (optional)
+    Dole_pineapple = 100 # 1 cup crushed pineapple, drained
+  ), 
   misc_tsp = c(
     TraderJoes_bakingPowder = 2,
-    ArmHammer_NaHCO3 = 1.5
-  ),
-  salt_tsp = 1,
-  spice_tsp = c(SimplyOrganic_Ceylon_cinnamon = 2)
+    ArmHammer_NaHCO3 = 1.5,
+    SimplyOrganic_Ceylon_cinnamon = 2,
+    Morton_salt = 1
+  )
 )

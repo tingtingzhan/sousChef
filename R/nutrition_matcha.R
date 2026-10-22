@@ -71,7 +71,7 @@ maeda_matcha <- \() nutrition(
   servingGram = 2, servingTsp = 1, # packaging, also accurate!!
   usd = 23.24/28*2)
 
-Ippodo_sayaka <- \() nutrition(
+Ippodo_sayaka_matcha <- \() nutrition(
   ippodoglobal = 'matcha173512', ippodojpn = 'matcha103644', ippodousa = 'sayaka-100g',
   name = 'Sayaka', alias = '\u660e\u6614',
   servingGram = 2, servingTbsp = 2/7, # actual 1Tbsp = 7g

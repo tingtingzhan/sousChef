@@ -16,10 +16,10 @@ if (FALSE) {
   
   duckPaste <- \() recipe(
     alias = 'Duck Paste',
-    msg = c(Ajinomoto_msg = 6*50),
-    sugar = c(Domino_granulated = 500+2*50),
-    spice = c(McCormick_garlic = 2.5*500),
-    sauce = c(
+    misc = c(
+      Ajinomoto_msg = 6*50,
+      Domino_granulated = 500+2*50,
+      McCormick_garlic = 2.5*500,
       LeeKumKee_ChuHou = 4*500,
       LeeKumKee_hoisin = 2*500,
       LeeKumKee_sesameSauce = 500+2*50,
@@ -33,15 +33,15 @@ if (FALSE) {
   
   duckSalt <- \() recipe(
     alias = 'Duck Salt',
-    sugar = c(Domino_granulated = 10*500),
-    salt = 5*500,
-    msg = c(Ajinomoto_msg = 1*500),
-    oil = c(YaoMaZi_rattanPepper_oil = 3*50), # cannot find szechuan peppercorn powder
-    spice = c(
+    misc = c(
+      Domino_granulated = 10*500,
+      Ajinomoto_msg = 1*500,
+      YaoMaZi_rattanPepper_oil = 3*50, # cannot find szechuan peppercorn powder
       SimplyOrganic_5spice = 3*50,
       McCormick_whitePepper = 3*50,
       TakShing_starAnise = 3*50,
-      TakShing_KGalanga = 3*50
+      TakShing_KGalanga = 3*50,
+      Morton_salt = 5*500
     )
   )
 }
@@ -58,13 +58,15 @@ Guga_rub <- \() recipe(
     Domino_darkBrown = 1/4,
     Chinata_paprika = 1/4
   ),
-  spice_Tbsp = c(
+  misc_Tbsp = c(
     McCormick_blackPepper = 1,
     McCormick_garlic = 1,
     McCormick_onion = 1,
     McCormick_turmeric = 1
   ),
-  spice_tsp = c(SimplyOrganic_Ceylon_cinnamon = 1))
+  misc_tsp = c(
+    SimplyOrganic_Ceylon_cinnamon = 1
+  ))
 
 
 # Guga has more: https://www.youtube.com/watch?v=lF2uz5Nz02E

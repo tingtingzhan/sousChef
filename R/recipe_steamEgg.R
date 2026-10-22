@@ -8,10 +8,10 @@ shangshi_pudding <- \() recipe(
   # 4 croissants 可颂面包
   misc_cup = c(
     Wegmans_heavyCream = 1,
-    WegmansOrganic_whole_milk = 3
+    WegmansOrganic_whole_milk = 3,
+    Domino_granulated = 1/3
   ),
-  sugar = 75, # 1/3 cup
-  egg_pc = c(eggYolk = 5, eggWhite = 5)#, 
+  misc_pc = c(eggYolk = 5, eggWhite = 5)#, 
   #200g walnuts 核桃仁
   #120g raisins 葡萄干
 )

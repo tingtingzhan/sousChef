@@ -355,7 +355,8 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   x <- callNextMethod(.Object, ...)
   
   if (!length(x@alias)) {
-    if (x@key != as.character(x@call)) { # to prevent infinite recursion
+    if (!identical(x@call, quote(`<UNDEFINED>`)) &&
+        (x@key != as.character(x@call))) { # to prevent infinite recursion
       if (exists(x@key, where = asNamespace('sousChef'))) {
         z <- eval(call(name = x@key))
         if (is(z, 'spice')) {

@@ -187,7 +187,7 @@ Philadelphia_neufchatel <- \() nutrition(
 
 
 
-PhiladelphiaNeufchatel_creamCheeseSpread <- \() nutrition(
+Philadelphia_neufchatelSpread <- \() nutrition(
   philadelphia = '00021000000289',
   kraftheinzawayfromhome = '10021000726704',
   alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a\u62b9\u6599', name = 'Neufcha\u0302tel Cream Cheese Spread',

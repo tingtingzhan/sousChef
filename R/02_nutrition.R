@@ -8,6 +8,8 @@
 #' @slot brand \link[base]{character} scalar, manufacture brand
 #' 
 #' @slot name \link[base]{character} scalar, product name
+#' 
+#' @slot key \link[base]{character} scalar
 #' @slot alias \link[base]{character} scalar with Unicode symbols, product alias
 #' @slot call \link[base]{name}, the function name to create this \linkS4class{nutrition}
 #' 
@@ -51,6 +53,7 @@
 setClass(Class = 'nutrition', slots = c(
   
   call = 'name',
+  key = 'character',
   
   rep_names('character', nm = c(
     'brand',
@@ -105,6 +108,9 @@ nutrition <- \(...) {
   
   x <- list(...) |>
     .findCall(which = -2) # must stop the pipeline :)))
+  
+  x <- x |>
+    get_key_()
   
   x <- x |>
     add_brand_url(name = 'bachans', fmt = 'https://bachans.com/products/%s', text = 'Bachan\'s\U1f1fa\U1f1f8') |>
@@ -349,23 +355,21 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   x <- callNextMethod(.Object, ...)
   
   if (!length(x@alias)) {
-    cl <- x@call |>
-      as.character() |>
-      strsplit(split = '_')
-    .n <- length(cl[[1L]])
-    if (.n > 1L) { # to prevent infinite recursion
-      .cl_last <- cl[[1L]][.n]
-      if (exists(.cl_last, where = asNamespace('sousChef'))) {
-        z <- eval(call(name = .cl_last))
+    if (x@key != as.character(x@call)) { # to prevent infinite recursion
+      if (exists(x@key, where = asNamespace('sousChef'))) {
+        z <- eval(call(name = x@key))
         if (is(z, 'spice')) {
           x@alias <- z@alias
         } # else do nothing
       } else {
         x@alias <- switch(
-          EXPR = .cl_last, 
-          cocoa =, cacao =  '\u53ef\u53ef\u7c89',
+          EXPR = x@key, 
+          cocoa =, cacao = '\u53ef\u53ef\u7c89',
+          creamCheese = '\u5976\u6cb9\u5976\u916a',
           ghee = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
           matcha = '\u62b9\u8336\u7c89',
+          neufchatel = 'Neufcha\u0302tel\u4e73\u916a',
+          sourCream = '\u9178\u5976\u6cb9',
           character()
         )
       }
@@ -628,9 +632,11 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
     x@contain |>
       tolower() |>
       vapply(FUN = \(i) {
-        call(name = i) |>
-          eval() |>
-          format() # [format.spice], etc.
+        if (exists(i, where = asNamespace('sousChef'))) {
+          call(name = i) |>
+            eval() |>
+            format() # [format.spice], etc.
+        } else i
       }, FUN.VALUE = '') |>
       paste(collapse = ' ') |> 
       sprintf(fmt = 'Contains %s\n\n') |> 

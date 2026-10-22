@@ -29,6 +29,8 @@ The helper function \code{\link[=nutrition]{nutrition()}} converts raw user inpu
 
 \item{\code{name}}{\link[base]{character} scalar, product name}
 
+\item{\code{key}}{\link[base]{character} scalar}
+
 \item{\code{alias}}{\link[base]{character} scalar with Unicode symbols, product alias}
 
 \item{\code{call}}{\link[base]{name}, the function name to create this \linkS4class{nutrition}}

@@ -496,6 +496,7 @@ add_youtube_recipe <- \(x, name, text1, text2, ...) {
 
 get_key_ <- \(x) {
   # x is \link[base]{list}
+  # for [recipe()] and [nutrition()]
   if (!length(x$key)) {
     if (!identical(x$call, quote(`<UNDEFINED>`))) {
       z <- x$call[[2L]] |> # `x$call` is quote(name)

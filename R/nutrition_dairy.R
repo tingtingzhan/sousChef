@@ -155,7 +155,7 @@ Carnation_condensMilk <- \() nutrition(
 Philadelphia_creamCheese <- \() nutrition(
   kraftheinzawayfromhome = '10021000616005',
   philadelphia = '00021000612239',
-  name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
+  name = 'Cream Cheese',
   contain = c('carob bean gum'), # same as 'locust bean gum'
   serving_oz = 1, servingTbsp = 2,
   calorie = 100,
@@ -175,10 +175,10 @@ Philadelphia_creamCheeseSpread <- \() nutrition(
 
 
 
-PhiladelphiaNeufchatel_creamCheese <- \() nutrition(
+Philadelphia_neufchatel <- \() nutrition(
   kraftheinzawayfromhome = '10021000616401',
   philadelphia = '00021000612475',
-  name = 'Neufcha\u0302tel Cream Cheese', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a',
+  name = 'Neufcha\u0302tel Cheese',
   walmart = '36647454', usd = 4.98/16, # 2023-11-11
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
   serving_oz = 1, servingTbsp = 2,
@@ -200,17 +200,18 @@ PhiladelphiaNeufchatel_creamCheeseSpread <- \() nutrition(
 
 
 
-LucerneNeufchatel_creamCheese <- \() nutrition(
+Lucerne_neufchatel <- \() nutrition(
   acme = '137100657',
-  brand = 'Lucerne', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Neufcha\u0302tel Cheese',
+  brand = 'Lucerne',
+  name = 'Neufcha\u0302tel Cheese',
   serving_oz = 1, fat = 6, sodium = .105, sugar = 2, protein = 2)
 
 
 
 
-GreatValueNeufchatel_creamCheese <- \() nutrition(
+GreatValue_neufchatel <- \() nutrition(
   walmart = '10452358', usd = 1.48/8,
-  alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Neufcha\u0302tel Cheese',
+  name = 'Neufcha\u0302tel Cheese',
   serving_oz = 1, fat = 6, sodium = .105, sugar = 2, protein = 2)
 
 
@@ -219,16 +220,16 @@ GreatValueNeufchatel_creamCheese <- \() nutrition(
 
 Tillamook_creamCheese <- \() nutrition(
   brand = c(style_hyperlink(text = 'Tillamook', url = 'https://www.tillamook.com/products/cream-cheese/brick-cream-cheese')),
-  name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
+  name = 'Cream Cheese',
   servingTbsp = 2, serving_oz = 1,
   calorie = 100,
   fat	= 10, cholesterol	= .03, sodium = .105, carbohydrate = 2, sugar = 2, protein = 2)
 
 
 
-OrganicValleyNeufchatel_creamCheese <- \() nutrition(
+OrganicValley_neufchatel <- \() nutrition(
   organicvalley = 'cream-cheese/neufchatel/neufchatel-8-oz-bar',
-  alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Neufcha\u0302tel Cheese',
+  name = 'Neufcha\u0302tel Cheese',
   # wegmans = ???, usd = 4.59/8, # no longer at Wegmans
   serving_oz = 1, servingTbsp = 2,
   calorie = 70,
@@ -239,7 +240,7 @@ OrganicValleyNeufchatel_creamCheese <- \() nutrition(
 
 OrganicValley_creamCheese <- \() nutrition(
   organicvalley = 'cream-cheese/cream-cheese/cream-cheese-8-oz-bar/',
-  name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
+  name = 'Cream Cheese',
   wegmans = '888993', usd = .62, 
   date = as.Date('2026-09-17'),
   serving_oz = 1, servingTbsp = 2,
@@ -252,7 +253,7 @@ OrganicValley_creamCheese <- \() nutrition(
 
 TraderJoes_creamCheese <- \() nutrition(
   traderjoes = '012491',
-  name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
+  name = 'Cream Cheese',
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
   serving_oz = 1, servingTbsp = 2, 
   calorie = 90,
@@ -263,7 +264,9 @@ TraderJoes_creamCheese <- \() nutrition(
 
 
 TraderJoesLight_creamCheese <- \() nutrition(
-  brand = 'Trader Joe\'s', alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', name = 'Light Cream Cheese',
+  brand = 'Trader Joe\'s', 
+  alias = '\u4f4e\u8102\u5976\u6cb9\u5976\u916a', 
+  name = 'Light Cream Cheese',
   contain = c('whey proteins', 'xanthan gum', 'locust bean gum', 'guar gum', 'microbial rennet'),
   serving_oz = 1, 
   fat = 9, sodium = .095, sugar = 1)
@@ -274,7 +277,7 @@ TraderJoesLight_creamCheese <- \() nutrition(
 
 WholeFoods365_creamCheese <- \() nutrition(
   wholefoods = 'b074h6qz3j',
-  name = 'Cream Cheese', alias = '\u5976\u6cb9\u5976\u916a',
+  name = 'Cream Cheese',
   contain = 'locust bean gum',
   serving_oz = 1, servingTbsp = 2, 
   calorie = 100,
@@ -287,7 +290,7 @@ WholeFoods365_creamCheese <- \() nutrition(
 Nancys_creamCheese <- \() nutrition(
   nancysyogurt = 'organic-natural-cream-cheese',
   wegmans = '879678', usd = .62, date = as.Date('2026-09-17'),
-  name = 'Cultured Cream Cheese, Organic', alias = '\u5976\u6cb9\u5976\u916a',
+  name = 'Cultured Cream Cheese, Organic',
   serving_oz = 1, servingTbsp = 2,
   calorie = 110,
   fat = 10, cholesterol = .025, sodium = .04, carbohydrate = 2, sugar = 1, protein = 1)
@@ -297,7 +300,7 @@ Nancys_creamCheese <- \() nutrition(
 
 Daisy_sourCream <- \() nutrition(
   daisybrand = 'sour-cream', # no filler
-  name = 'Sour Cream', alias = '\u9178\u5976\u6cb9',
+  name = 'Sour Cream',
   servingGram = 30, servingTbsp = 2,
   calorie = 60,
   fdc = 171257L, water = 30*.731,

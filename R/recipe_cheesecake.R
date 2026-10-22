@@ -3,7 +3,7 @@
 
 
 Junior_cappuccino_cheesecake <- \() recipe(
-  flavor = 'Cappuccino Cheesecake',
+  flavor = 'Cappuccino',
   misc_brick = c(Philadelphia_creamCheese = 4),
   misc_Tbsp = c(
     NielsenMassey_Madagascar = 1,

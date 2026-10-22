@@ -86,9 +86,10 @@ raw. <- \(...) {
 
 .cleanSlots_raw. <- \(x) {
   
-  x <- x |> # alphabetically
+  x <- x |>
     # merge??(which = 'homemade') |> # has no vol
-    mergePc(which = 'misc') |> mergeVol(which = 'misc') |>
+    mergePc() |> 
+    mergeVol() |>
     mergeVol_H2O()
     
   for (i in slotNames(x = 'raw.')) {

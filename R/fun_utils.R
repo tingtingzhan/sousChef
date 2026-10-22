@@ -185,10 +185,9 @@ zero.omit <- \(x) {
 
 
 
-mergePc <- \(x, which, ...) {
+mergePc <- \(x, ...) {  
   
-  pc <- paste0(which, '_pc')
-  v <- x[[pc]]
+  v <- x[['misc_pc']]
   if (!length(v)) return(x)
   
   pieceGram <- names(v) |>
@@ -197,13 +196,13 @@ mergePc <- \(x, which, ...) {
     }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
   
   z <- sum_by_name(
-    x[[which]],
+    x[['misc']],
     v * pieceGram
   )
   
-  if (length(z)) x[[which]] <- z
+  if (length(z)) x[['misc']] <- z
   
-  x[[pc]] <- NULL
+  x[['misc_pc']] <- NULL
   
   return(x)
 }
@@ -249,28 +248,23 @@ mergeVol_H2O <- \(x) {
 }
 
 
-mergeVol <- \(x, which, ...) {
+mergeVol <- \(x, ...) {
   
-  tsp <- paste0(which, '_tsp')
-  Tbsp <- paste0(which, '_Tbsp')
-  cup <- paste0(which, '_cup')
-  brick <- paste0(which, '_brick')
-
   x_tsp <- sum_by_name(
-    addname1(x[[tsp]], ...),
-    3 * addname1(x[[Tbsp]], ...),
-    48 * addname1(x[[cup]], ...),
-    3 * 16 * addname1(x[[brick]], ...)
+    addname1(x[['misc_tsp']], ...),
+    3 * addname1(x[['misc_Tbsp']], ...),
+    48 * addname1(x[['misc_cup']], ...),
+    3 * 16 * addname1(x[['misc_brick']], ...)
   )
   
   z <- sum_by_name(
-    addname1(x[[which]], ...), # weight in gram 
+    addname1(x[['misc']], ...), # weight in gram 
     gram_per_tsp(names(x_tsp)) * x_tsp
   )
 
-  if (length(z)) x[[which]] <- z
+  if (length(z)) x[['misc']] <- z
   
-  x[[tsp]] <- x[[Tbsp]] <- x[[cup]] <- x[[brick]] <- NULL
+  x[['misc_tsp']] <- x[['misc_Tbsp']] <- x[['misc_cup']] <- x[['misc_brick']] <- NULL
   return(x)
   
 }

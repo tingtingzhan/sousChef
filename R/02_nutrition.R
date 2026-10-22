@@ -372,6 +372,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
           drywholemilk = '\u5168\u8102\u5976\u7c89',
           ghee = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
           goatKefir = '\u7f8a\u5976\u9152',
+          heavyCream = '\u91cd\u5976\u6cb9',
           kefir = '\u5976\u9152',
           heavyCrean = '\u91cd\u5976\u6cb9',
           matcha = '\u62b9\u8336\u7c89',

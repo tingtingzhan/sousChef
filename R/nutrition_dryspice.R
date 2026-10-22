@@ -89,7 +89,7 @@ McCormick_5spice <- \() nutrition(
 
 McCormick_ginger <- \() nutrition(
   mccormickculinary = 'ginger-ground',
-  alias = '\u59dc\u7c89', name = 'Ginger\U1fada, Ground',
+  name = 'Ginger\U1fada, Ground',
   servingGram = 1,
   servingTbsp = 1 #??
 )

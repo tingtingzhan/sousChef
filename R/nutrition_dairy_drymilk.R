@@ -31,7 +31,7 @@ Meyenberg_goatWhole_drymilk <- \() nutrition(
 Carnation_drymilk <- \() nutrition(
   nestle = '12428935',
   # also https://www.verybestbaking.com/carnation/products/instant-non-fat-dry-milk-9oz-can/
-  name = 'Carnation Nonfat Dry Milk', alias = '\u8131\u8102\u5976\u7c89',
+  name = 'Carnation Nonfat Dry Milk',
   walmart = '978118310', usd = 4.64/272*23, date = as.Date('2026-10-07'),
   # target = 'A-13898456', #usd = 4.89/272*23, # no longer available
   servingGram = 23, 
@@ -47,16 +47,16 @@ Carnation_drymilk <- \() nutrition(
 
 
 
-#Carnation_whole_drymilk <- \() nutrition(
+#Carnation_drywholemilk <- \() nutrition(
 #  nestle = '12428935', # no longer available
-#  name = 'Carnation Whole Milk Powder', alias = '\u5168\u8102\u5976\u7c89',
+#  name = 'Carnation Whole Milk Powder',
 #  servingGram = 30, servingCup = 1/4, # website does not have servingGram!!
 #  fat = 8, sodium = .105, sugar = 10, protein = 7)
 
 
 
-Nido_drymilk <- \() nutrition(
-  name = 'Dry Whole Milk', alias = '\u5168\u8102\u5976\u7c89',
+Nido_drywholemilk <- \() nutrition(
+  name = 'Dry Whole Milk',
   nido = 'fortificada-dry-whole-milk-beverage-564-oz/',
   walmart = '14869811', usd = 19.98/1600*30, # 2023-11-11
   servingGram = 30, servingCup = 1/4,
@@ -67,7 +67,7 @@ Nido_drymilk <- \() nutrition(
 
 KingArthur_baker_drymilk <- \() nutrition(
   kingarthur = '213100',
-  name = 'Baker\'s Special Dry Milk', alias = '\u8131\u8102\u5976\u7c89',
+  name = 'Baker\'s Special Dry Milk',
   usd = 12.95/454*28, # 2023-11-11
   servingGram = 28, 
   servingCup = 1/4, # packaging
@@ -77,9 +77,9 @@ KingArthur_baker_drymilk <- \() nutrition(
 
 
 
-KingArthur_drymilk <- \() nutrition(
+KingArthur_drywholemilk <- \() nutrition(
   kingarthur = '211706',
-  name = 'Dried Whole Milk', alias = '\u5168\u8102\u5976\u7c89',
+  name = 'Dried Whole Milk',
   usd = 12.95/397*6, # 2023-11-11
   servingGram = 6, 
   servingTbsp = 1, # packaging
@@ -91,7 +91,7 @@ KingArthur_drymilk <- \() nutrition(
 
 GreatValue_drymilk <- \() nutrition(
   walmart = '10415475',
-  name = 'Nonfat Dry Milk', alias = '\u8131\u8102\u5976\u7c89',
+  name = 'Nonfat Dry Milk',
   usd = 19.67/1810*23,
   servingGram = 23,
   servingCup = 1/3,
@@ -103,7 +103,7 @@ GreatValue_drymilk <- \() nutrition(
 
 MembersMark_drymilk <- \() nutrition(
   sams = 'prod21366487', 
-  name = 'Nonfat Dry Milk', alias = '\u8131\u8102\u5976\u7c89',
+  name = 'Nonfat Dry Milk',
   usd = 18.48/1990*23,
   servingGram = 23,
   servingCup = 1/3, # packaging
@@ -115,7 +115,7 @@ MembersMark_drymilk <- \() nutrition(
 
 BobsRedMill_drymilk <- \() nutrition(
   bobsredmill = 'non-fat-dry-milk-powder',
-  name = 'Nonfat Dry Milk', alias = '\u8131\u8102\u5976\u7c89',
+  name = 'Nonfat Dry Milk',
   # usd =
   servingGram = 24,
   servingTbsp = 3, # packaging
@@ -126,9 +126,9 @@ BobsRedMill_drymilk <- \() nutrition(
 
 
 
-Horizon_whole_drymilk <- \() nutrition(
+Horizon_drywholemilk <- \() nutrition(
   horizon = 'organic-milk/organic-dry-whole-milk',
-  name = 'Dry Whole Milk', alias = '\u5168\u8102\u5976\u7c89',
+  name = 'Dry Whole Milk',
   sams = 'prod25791985', usd = 23.22/(30.6*28.35)*29,
   walmart = '548381598', # usd = 26.94/(30.6*28.35)*29,
   costcoBiz = '100390940',

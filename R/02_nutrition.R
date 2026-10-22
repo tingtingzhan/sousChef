@@ -365,11 +365,18 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
       } else {
         x@alias <- switch(
           EXPR = x@key, 
+          butter = '\u9ec4\u6cb9',
           cocoa =, cacao = '\u53ef\u53ef\u7c89',
           creamCheese = '\u5976\u6cb9\u5976\u916a',
+          drymilk = '\u8131\u8102\u5976\u7c89',
+          drywholemilk = '\u5168\u8102\u5976\u7c89',
           ghee = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
+          goatKefir = '\u7f8a\u5976\u9152',
+          kefir = '\u5976\u9152',
+          heavyCrean = '\u91cd\u5976\u6cb9',
           matcha = '\u62b9\u8336\u7c89',
           neufchatel = 'Neufcha\u0302tel\u4e73\u916a',
+          saltedButter = '\u542b\u76d0\u9ec4\u6cb9',
           sourCream = '\u9178\u5976\u6cb9',
           character()
         )

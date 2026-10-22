@@ -3,7 +3,7 @@
 Kerrygold_butter <- \() nutrition(
   kerrygold = 'kerrygold-pure-irish-unsalted-butter',
   kerrygoldusa = 'unsalted-butter',
-  name = 'Irish Butter\U1f9c8', alias = '\u9ec4\u6cb9',
+  name = 'Irish Butter\U1f9c8',
   serving_oz = 8/16, servingTbsp = 1, 
   costco = '100439445', usd = 14.99/4/16, date = as.Date('2026-10-07'),
   costcoBiz = '100362700',
@@ -17,11 +17,11 @@ Kerrygold_butter <- \() nutrition(
 )
 
 
-Kerrygold_salted_butter <- \() nutrition(
+Kerrygold_saltedButter <- \() nutrition(
   kerrygoldusa = 'salted-butter',
   kerrygold = 'kerrygold-pure-irish-salted-butter',
   costcoBiz = '100339833',
-  name = 'Irish Salted Butter\U1f9c8', alias = '\u9ec4\u6cb9',
+  name = 'Irish Salted Butter\U1f9c8',
   serving_oz = 8/16, servingTbsp = 1, 
   calorie = 100,
   fat = 11, sodium = .1,
@@ -44,7 +44,7 @@ Kirkland_butter <- \() nutrition(
 
 Plugra_butter <- \() nutrition(
   brand = c(style_hyperlink(text = 'Plugr\u00e0\U1f1fa\U1f1f8', url = 'https://plugra.com/product/unsalted_8_oz_solid/')),
-  alias = '\u9ec4\u6cb9', name = 'European Butter\U1f9c8',
+  name = 'European Butter\U1f9c8',
   acme = '960051793', usd = 2.99/16, date = as.Date('2026-09-11'),
   serving_oz = 8/16, servingTbsp = 1, 
   calorie = 100,
@@ -56,7 +56,7 @@ Plugra_butter <- \() nutrition(
 
 Wuthrich_butter <- \() nutrition(
   brand = c(style_hyperlink(text = 'Wu\u0308thrich\U1f1fa\U1f1f8', url = 'https://www.grassland.com/product/wuthrich-83-european-style-unsalted-butter-solid/')),
-  name = 'European Butter\U1f9c8', alias = '\u9ec4\u6cb9',
+  name = 'European Butter\U1f9c8',
   webstaurant = '999RE3120', usd = 7.99/(16*2),
   serving_oz = 8/16, servingTbsp = 1, 
   calorie = 110,
@@ -67,7 +67,7 @@ Wuthrich_butter <- \() nutrition(
 
 Lucerne_European_butter <- \() nutrition(
   brand = 'Lucerne', 
-  name = 'European Butter\U1f9c8', alias = '\u9ec4\u6cb9',
+  name = 'European Butter\U1f9c8',
   acme = '960493010', usd = 3.29/16, date = as.Date('2026-09-17'),
   serving_oz = 8/16, servingTbsp = 1,
   calorie = 100,
@@ -79,7 +79,7 @@ Lucerne_European_butter <- \() nutrition(
 Minerva_Amish_butter <- \() nutrition(
   # wegmans = '638816', # this is the salted version
   brand = c(style_hyperlink(text = 'Minerva\U1f1fa\U1f1f8', url = 'https://minervadairy.com/product/unsalted/')),
-  name = 'Amish Butter\U1f9c8', alias = '\u9ec4\u6cb9',
+  name = 'Amish Butter\U1f9c8',
   url = 'https://minervadairy.com/product/2lbs-unsalted-roll-butter/',
   webstaurant = '874880039', usd = 92.49/6/(2*16),
   serving_oz = 8/16, servingTbsp = 1,
@@ -92,7 +92,7 @@ Minerva_Amish_butter <- \() nutrition(
 
 LandOLakes_butter <- \() nutrition(
   landolakes = 'butter-spreads/unsalted-butter',
-  name = 'Butter\U1f9c8', alias = '\u9ec4\u6cb9',
+  name = 'Butter\U1f9c8',
   serving_oz = 8/16, servingTbsp = 1,
   calorie = 100,
   fat = 226.796/16*.8, # on package 11g

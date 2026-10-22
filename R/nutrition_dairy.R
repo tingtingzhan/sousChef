@@ -434,7 +434,7 @@ Byrne_heavyCream <- \() nutrition(
   brand = 'https://www.byrnedairy.com/creams-near-ny-state/' |> 
     style_hyperlink(text = 'Byrne\U1f1fa\U1f1f8', url = _) |> 
     c(),
-  name = 'Heavy Cream 40%', alias = '\u91cd\u5976\u6cb9',
+  name = 'Heavy Cream 40%',
   # nutrition from https://www.fooducate.com/product/Byrne-Dairy-Heavy-Whipping-Cream/61EE9DAB-F8E3-1A30-4818-B69A923F5C70
   servingGram = 15, servingTbsp = 1,
   calorie = 50,
@@ -445,7 +445,7 @@ Byrne_heavyCream <- \() nutrition(
 
 Wegmans_heavyCream <- \() nutrition(
   fdc = 170859L,
-  name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
+  name = 'Heavy Cream',
   servingGram = 15, 
   servingTbsp = 1, # packaging
   wegmans = '58945', usd = 6.29/64, # 1floz = 2Tbsp; 32floz in total
@@ -457,7 +457,7 @@ Wegmans_heavyCream <- \() nutrition(
 
 WholeFoods365_heavyCream <- \() nutrition(
   wholefoods = 'b07qf6f984',
-  name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
+  name = 'Heavy Cream',
   servingGram = 15, servingTbsp = 1,
   calorie = 50,
   fat = 6, cholesterol = .015, water = 15 * .577)
@@ -465,7 +465,7 @@ WholeFoods365_heavyCream <- \() nutrition(
 
 
 TraderJoes_heavyCream <- \() nutrition(
-  brand = 'Trader Joe\'s', name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
+  brand = 'Trader Joe\'s', name = 'Heavy Cream',
   # the version labelled as 'organic' contains gellan gum
   # the version without 'organic' contains no filler
   servingGram = 15, servingTbsp = 1,
@@ -476,7 +476,7 @@ TraderJoes_heavyCream <- \() nutrition(
 
 NaturalByNature_heavyCream <- \() nutrition(
   brand = c(style_hyperlink(url = 'https://naturalbynaturedairy.com/products/dairy/', text = 'Natural By Nature')), 
-  name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
+  name = 'Heavy Cream',
   servingGram = 15, servingTbsp = 1,
   calorie = 60,
   fat = 6, cholesterol = .015, water = 15 * .577)
@@ -516,7 +516,7 @@ Lucerne_lightCream <- \() nutrition(
 
 
 Lucerne_heavyCream <- \() nutrition(
-  name = 'Heavy Cream', alias = '\u91cd\u5976\u6cb9',
+  name = 'Heavy Cream',
   fdc = 170859L,
   lucerne = '136150034', usd = 3.19/32, # disappeared?
   servingGram = 240/16, servingTbsp = 1, # actual experiment: 1 cup = 240g
@@ -529,9 +529,9 @@ Lucerne_heavyCream <- \() nutrition(
 
 
 
-TraderJoes_goat_kefir <- \() nutrition(
+TraderJoes_goatKefir <- \() nutrition(
   brand = 'Trader Joe\'s', 
-  name = 'Goat\U1f410 Milk Kefir', alias = '\u7f8a\u5976\u9152',
+  name = 'Goat\U1f410 Milk Kefir',
   usd = 5.69/32*8,
   servingGram = (1039-59)/32*8, servingCup = 1, # 8floz
   calorie = 140,
@@ -539,9 +539,9 @@ TraderJoes_goat_kefir <- \() nutrition(
 
 
 
-Meyenberg_goat_kefir <- \() nutrition(
+Meyenberg_goatKefir <- \() nutrition(
   meyenberg = 'goat-kefir/goat-kefir-plain',
-  name = 'Goat\U1f410 Kefir', alias = '\u7f8a\u5976\u9152',
+  name = 'Goat\U1f410 Kefir',
   wegmans = '948523', usd = 8.99/32*8, 
   servingGram = (1060-60)/4, servingCup = 1,
   # full bottle with cap 1060g; empty bottle with cap 60g
@@ -555,7 +555,7 @@ Meyenberg_goat_kefir <- \() nutrition(
 
 GreenValley_kefir <- \() nutrition(
   brand = c(style_hyperlink(text = 'Green Valley\U1f1fa\U1f1f8', url = 'https://greenvalleylactosefree.com/product/lactose-free-lowfat-kefir')),
-  name = 'Lowfat Kefir', alias = '\u4f4e\u8102\u725b\u5976\u9152',
+  name = 'Lowfat Kefir',
   wegmans = '979978', usd = 6.99/32*8,
   # full bottle (with cap): 1086g, 32floz
   # empty bottle (with cap): 59g
@@ -574,7 +574,7 @@ Siggis_filmjolk <- \() nutrition(
   servingGram = (1009-44)/32*6, serving_floz = 6,
   calorie = 60,
   cholesterol = .005, sodium = .115, carbohydrate = 9, sugar = 7, protein = 6,
-  superior = c('Meyenberg_goat_kefir', 'GreenValley_kefir'),
+  superior = c('Meyenberg_goatKefir', 'GreenValley_kefir'),
   review = 'too sour')
 
 

@@ -23,7 +23,7 @@ meatfill_note <- \() c(
 
 
 juntun_filling <- \() recipe(
-  alias = '\u519b\u5c6f\u9505\u76d4\u9985',
+  flavor = '\u519b\u5c6f\u9505\u76d4\u9985',
   misc = c(
     pork_belly = 250, # 550, # too fat!!
     pork_tenderloin = 300

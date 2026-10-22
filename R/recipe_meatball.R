@@ -18,7 +18,7 @@ GaaDai_beefball <- \() recipe(
 
 
 Daat_cuttlefishball <- \() recipe(
-  class2 = '\u4e38',
+  key = 'fishball', 
   flavor = '\u8fbe\u54e5\u53a8\u623f \u58a8\u9c7c',
   youtube = 'fLL-DPhSc_E',
   misc = c(

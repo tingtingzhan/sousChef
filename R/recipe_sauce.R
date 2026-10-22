@@ -1,7 +1,6 @@
 
 
 xiaogaojie_meatTenderizer <- \() recipe(
-  alias = '\u5ae9\u8089/\u6d17\u8840\u6c34',
   misc_tsp = c(
     ArmHammer_NaHCO3 = 1/4
   ), 

@@ -15,7 +15,7 @@
 if (FALSE) {
   
   duckPaste <- \() recipe(
-    alias = 'Duck Paste',
+    flavor = 'Duck Paste',
     misc = c(
       Ajinomoto_msg = 6*50,
       Domino_granulated = 500+2*50,
@@ -32,7 +32,7 @@ if (FALSE) {
   )
   
   duckSalt <- \() recipe(
-    alias = 'Duck Salt',
+    flavor = 'Duck Salt',
     misc = c(
       Domino_granulated = 10*500,
       Ajinomoto_msg = 1*500,

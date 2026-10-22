@@ -1,7 +1,6 @@
 
 
 GoodLifeEats_pumpkin_creamCheeseSpread <- \() recipe(
-  class2 = 'Spread\U1f96f', # 'Cream Cheese Spread',
   author = 'Good Life Eats',
   misc_brick = c(Philadelphia_creamCheese = 1),
   misc_cup = c(
@@ -18,7 +17,6 @@ GoodLifeEats_pumpkin_creamCheeseSpread <- \() recipe(
 
 
 Lynn_pumpkin_creamCheeseSpread <- \() recipe(
-  class2 = 'Spread\U1f96f', # 'Cream Cheese Spread',
   author = 'Lynn',
   misc_brick = c(Philadelphia_creamCheese = 1),
   misc_cup = c(

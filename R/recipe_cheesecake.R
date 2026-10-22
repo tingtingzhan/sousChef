@@ -81,8 +81,6 @@ PreppyKitchen_chocolate_cheesecake <- \() recipe(
 
 
 Natasha_pumpkin_cheesecake <- \() recipe(
-  key = 'cheesecake',
-  class2 = 'Cheesecake',
   natashaskitchen = 'pumpkin-cheesecake-recipe',
   misc_brick = c(Philadelphia_creamCheese = 3),
   misc = c(
@@ -129,8 +127,6 @@ Junior_pumpkin_cheesecake <- \() recipe(
 
 
 PreppyKitchen_pumpkin_cheesecake <- \() recipe(
-  key = 'cheesecake',
-  class2 = 'Cheesecake',
   misc_brick = c(Philadelphia_creamCheese = 3),
   misc_pc = c(eggYolk = 4, eggWhite = 4),
   misc_cup = c(

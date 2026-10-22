@@ -5,8 +5,7 @@
 # the custard
 
 
-xiaogaojie_pasteisdenata1 <- \() recipe(
-  flavor = 'pasteisdenata1',
+xiaogaojie1_pasteisdenata <- \() recipe(
   water = 185,
   misc = c(
     Wegmans_pastryFlr = 25,
@@ -19,8 +18,7 @@ xiaogaojie_pasteisdenata1 <- \() recipe(
   misc_pc = c(eggYolk = 5),
   xiaogaojie = '-83188U6O8w')
 
-xiaogaojie_pasteisdenata2 <- \() recipe(
-  flavor = 'pasteisdenata2',
+xiaogaojie2_pasteisdenata <- \() recipe(
   misc = c(
     Wegmans_heavyCream = 200,
     WegmansOrganic_whole_milk = 180,
@@ -30,7 +28,7 @@ xiaogaojie_pasteisdenata2 <- \() recipe(
   xiaogaojie = '-83188U6O8w')
 
 Leites_pasteisdenata <- \() recipe(
-  alias = 'leites',
+  author = 'leites',
   misc_Tbsp = c(
     KingArthur_allPurposeFlr = 3
   ),
@@ -48,7 +46,7 @@ Leites_pasteisdenata <- \() recipe(
 
 
 TastingTable_pasteisdenata <- \() recipe(
-  alias = 'TastingTable',
+  author = 'TastingTable',
   water_cup = 2/3,
   # 1 cinnamon stick
   misc_cup = c(

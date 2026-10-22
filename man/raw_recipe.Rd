@@ -40,10 +40,6 @@ The helper function \code{\link[=recipe]{recipe()}} converts raw user input into
 
 \item{\code{key}}{\link[base]{character} scalar}
 
-\item{\code{alias}}{\link[base]{character} scalar with Unicode symbols}
-
-\item{\code{class2}}{\link[base]{character} scalar with Unicode symbols, name of class in an alternative language}
-
 \item{\code{flavor}}{\link[base]{character} scalar with Unicode symbols}
 
 \item{\code{author}}{\link[base]{character} scalar}

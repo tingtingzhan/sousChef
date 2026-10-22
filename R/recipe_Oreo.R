@@ -4,8 +4,6 @@
 
 
 fauxReo <- \() recipe(
-  flavor = 'Faux-Reos',
-  alias = '\u5c71\u5be8\u5965\u5229\u5965',
   portion = c(cookie = 26),
   misc_tsp = c(
     NescafeGold_blonde_coffee = 1
@@ -21,7 +19,6 @@ fauxReo <- \() recipe(
 
 
 KingArthur_fauxReo <- \() recipe(
-  flavor = 'Faux-Reos',
   portion = c(cookie = 26),
   misc = c(
     Kerrygold_butter = 170,

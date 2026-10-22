@@ -494,6 +494,19 @@ add_youtube_recipe <- \(x, name, text1, text2, ...) {
 
 
 
+get_key_ <- \(x) {
+  # x is \link[base]{list}
+  if (!length(x$key)) {
+    if (!identical(x$call, quote(`<UNDEFINED>`))) {
+      z <- x$call[[2L]] |> # `x$call` is quote(name)
+        as.character() |>
+        strsplit(split = '_')
+      z <- z[[1L]]
+      x$key <- z[length(z)]
+    } # else do nothing
+  } # else do nothing
+  return(x)
+}
 
 
 get_flavor_ <- \(x) {

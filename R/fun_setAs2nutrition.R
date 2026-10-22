@@ -63,7 +63,9 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     unlist(use.names = FALSE) |>
     sum()
   
-  nutri@name <- x@alias
+  nutri@name <- x |>
+    labels.recipe()
+  
   # `numeric() - 3` returns `numeric()` 
   nutri@servingGram <- nutri@servingGram - waterLost - sum(x@sugarLost)
   nutri@sugar <- max(0, nutri@sugar - sum(x@sugarLost))

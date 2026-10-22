@@ -6,8 +6,7 @@
 #' @slot call \link[base]{name}, the function name to create this \linkS4class{recipe}
 #' 
 #' @slot key \link[base]{character} scalar
-#' @slot alias \link[base]{character} scalar with Unicode symbols
-#' @slot class2 \link[base]{character} scalar with Unicode symbols, name of class in an alternative language
+#' 
 #' @slot flavor \link[base]{character} scalar with Unicode symbols
 #' 
 #' @slot author \link[base]{character} scalar
@@ -36,13 +35,9 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
   
   call = 'name',
   key = 'character',
-  alias = 'character',
-  class2 = 'character', 
   flavor = 'character',
+  
   author = 'character',
-  tool = 'list',
-  date = 'Date',
-
   youtube = 'character',
   url = 'character',
   
@@ -50,11 +45,13 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
   review = 'character',
   pros = 'character', cons = 'character',
   portion = 'numeric',
+  tool = 'list',
+  date = 'Date',
   
   sugarLost = 'numeric'
   
 ), prototype = prototype(
-  key = 'null', # backward compatibility
+  # key = 'null', # backward compatibility (no longer needed!!)
   date = as.Date.numeric(numeric()) # must!!
 ))
 
@@ -74,7 +71,8 @@ recipe <- \(...) {
     .findCall(which = -2)
   
   x <- x |>
-    .cleanSlots_raw.()
+    .cleanSlots_raw.() |>
+    get_key_()
 
   # processing 'character'
   
@@ -200,14 +198,6 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
     }
   }
   
-  author <- if (length(x@author)) x@author |> col_green() |> c() # else NULL
-  
-  x@class2 <- if (!length(x@class2)) {
-    if (length(author)) author else character()
-  } else {
-    if (length(author)) paste(x@class2, author) else x@class2
-  }
-  
   if (!length(x@flavor)) {
     x@flavor <- if ('_coffee$' %in% x) {
       if ('_liqueur$' %in% x) {
@@ -299,7 +289,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
     } else if (length(x@homemade)) {
       x@homemade |> names() |> get_flavor_()
     } else switch(
-      class(x), 
+      EXPR = class(x), 
       matchaLatte_ =, matchaGoatLatte_ = {
         switch(class(x), matchaLatte_ = {
           '\u62b9\u8336\U1f375Latte'
@@ -311,16 +301,10 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
         if ('_lard$' %in% x) {
           '\u732a\u6cb9'
         }
+      #}, stop('must have @flavor !'))
       }, character())
     
   }
-  
-  if (!length(x@alias)) {
-    x@alias <- if (length(x@flavor) || length(x@class2)) {
-      c(x@flavor, x@class2) |> 
-        paste(collapse = ' ')
-    } else x@alias 
-  } # else do nothing
   
   return(x)
 })
@@ -332,16 +316,45 @@ labels.recipe <- \(object, ...) {
   
   x <- object; object <- NULL
   
-  if (identical(x@call, quote(`<UNDEFINED>`))) { 
-    # e.g., from setAs(from = 'nutrition', to = 'recipe')
-    x@alias |>
-      make_ansi_style('steelblue4')()
-  } else {
-    x@alias |>
+  # <flavor> <key> <author>
+  # e.g., Pumpkin Cheesecake Preppy Kitchen
+  # `<flavor> <key>` might have {.run } link
+  
+  key_txt <- switch(
+    EXPR = x@key,
+    beefball = '\u725b\u8089\u4e38',
+    cheesecake = 'NY Cheesecake\u91cd\u4e73\u916a\u86cb\u7cd5',
+    creamCheeseSpread = 'Cream Cheese Spread\U1f96f\u5976\u6cb9\u4e73\u916a\u9171',
+    fauxReo = '\u5c71\u5be8\u5965\u5229\u5965',
+    fishball = '\u9c7c\u4e38',
+    guacamole = 'Guacamole\u725b\u6cb9\u679c\U0001f951\u9171',
+    liangpi = '\u51c9\u76ae',
+    meatTenderizer = '\u5ae9\u8089\u6c34',
+    mianjin = '\u9762\u7b4b',
+    pasteisdenata = '\u8461\u5f0f\u86cb\u631e',
+    ricepi = '\u7c73\u76ae',
+    #stop('undefined @key ', sQuote(x@key))
+    character()
+  )
+  
+  nm <- c(x@flavor, key_txt) |> # allow len-0 x@flavor
+    paste(collapse = ' ') |>
+    make_ansi_style('steelblue4')()
+  
+  if (!identical(x@call, quote(`<UNDEFINED>`))) { 
+    # e.g., **not** from setAs(from = 'nutrition', to = 'recipe')
+    nm <- nm |>
       sprintf(fmt = '{.run [%s](sousChef::%s())}', . = _, as.character(x@call)) |> 
-      make_ansi_style('steelblue4')() |>
-      format_inline()
+      format_inline() # must!!
   }
+  
+  if (!length(x@author)) return(nm)
+  
+  paste(
+    nm, 
+    x@author |> 
+      col_green()
+  )
   
 }
 

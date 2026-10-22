@@ -2,7 +2,6 @@
 # preppykitchen = c('3_a4o30fTbA' = 'classic-pastry-crust')
 
 
-#  class2 = 'Shortcrust',
 #  misc = c(Wegmans_pastryFlr = 360,
 #  Domino_granulated = 7.5), # original
 #  misc_brick = c(Kerrygold_butter = 1),

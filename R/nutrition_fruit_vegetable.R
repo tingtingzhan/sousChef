@@ -384,13 +384,13 @@ WegmansOrganic_tomato <- \() nutrition(
 
 
 Motts_applesauce <- \() nutrition(
-  brand = style_hyperlink(text = 'Motts', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce') |> c(),
+  brand = style_hyperlink(text = 'Motts\U1f1fa\U1f1f8', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce') |> c(),
   name = 'Applesauce\U1f34e', alias = '\u82f9\u679c\u6ce5',
   fdc = 1102646L, # water 88.22% 
   wegmans = '534880', #usd = 2.99/680*123,
   costco = '100449967', usd = 7.99/(1300*3)*123, date = as.Date('2026-10-01'),
   # nutrition facts on bottle label (sold at Costco, Wegmans, etc), not from merchandise website
-  servingGram = 123, servingCup = 1/2, pieceGram = 1300, piece_fmt = '%.1f\U1f96b', 
+  servingGram = 123, servingCup = 1/2, pieceGram = 1304, piece_fmt = '%.1f\U1f96b', 
   calorie = 50,
   water = 123-14-1, # 123*.8822#, # matches
   carbohydrate = 14, sugar = 12)

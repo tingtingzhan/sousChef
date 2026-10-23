@@ -46,7 +46,6 @@ pork_fat <- \() nutrition(
 pork_tenderloin <- \() nutrition(
   swiftmeats = 'pork-tenderloin', 
   name = 'Pork\U1f416 Tenderloin', alias = '\u732a\u5c0f\u91cc\u810a',
-  # wegmans = 760L, usd = 2.69 / 454 * 100,
   fdc = 168249L, water = 112*.76, # fdc data
   costcoBiz = '100082095', usd = 2 / 454 * 112,
   servingGram = 112, 
@@ -121,25 +120,15 @@ beef_chuck <- \() nutrition(
   servingGram = 100, water = 68.7, protein = 19.4, fat = 10.7, sodium = .081,
   review = c(spam = 'Beef chuck has too much fat and connective tissue for spam'))
 
+
 beef_rib <- \() nutrition(
   fdc = 170783L, 
-  # wegmans = 42139L,
-  name = 'Beef\U1f402 Boneless Short Ribs',
-  usd = 15.49/454*100,
+  wegmans = '62792', usd = 15.99/454*100, date = as.Date('2026-10-22'),
+  name = 'Beef\U1f402  Boneless Short Ribs',
   calorie = 175,
   servingGram = 100, water = 68.7, protein = 19.4, fat = 10.7, sodium = .081)
 
-#beef_strip <- \() nutrition(
-#)
 
-
-beef_rib_Angus <- \() nutrition(
-  fdc = 170783L, 
-  # wegmans = 2874L,
-  name = 'Angus Beef\U1f402 Boneless Short Ribs',
-  usd = 15.99/454*100,
-  calorie = 175,
-  servingGram = 100, water = 68.7, protein = 19.4, fat = 10.7, sodium = .081)
 
 
 beef_eyeRound <- \() nutrition(

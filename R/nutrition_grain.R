@@ -36,8 +36,7 @@ Dynasty_brownRice <- \() nutrition(
   brand = 'Dynasty\U1f1fa\U1f1f8', 
   alias = '\u6cf0\u570b\u9999\u7cd9\u7c73', name = 'Brown Rice, Jasmine',
   jfc = '15682',
-  # wegmans = 42848L,
-  usd = 3.99/907*45,
+  wegmans = '114803', usd = 4.99/907*45, date = as.Date('2026-10-22'),
   servingGram = 45, servingCup = 1/4, 
   calorie = 160,
   carbohydrate = 37, protein = 2)
@@ -70,8 +69,7 @@ Botan_rice <- \() nutrition(
   brand = 'Botan\u5bcc\u8d35\u82b1',
   alias = '\u52a0\u5dde\u4e2d\u7c92\u7c73', name = 'Calrose Rice',
   jfc = '01714',
-  # wegmans = 143657L,
-  usd = 9.49/2270*45,
+  wegmans = '143657', usd = 8.99/2270*45, date = as.Date('2026-10-22'),
   servingGram = 45, servingCup = 1/4,
   calorie = 160,
   carbohydrate = 36, protein = 3

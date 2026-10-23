@@ -156,7 +156,7 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
   x@operation |>
     gsub(pattern = '\n', replacement = '') |>
     gsub(pattern = '^ *|(?<= ) | *$', replacement = '', perl = TRUE) |>
-    sprintf(fmt = ' \u21ac %s\n') |> 
+    sprintf(fmt = ' \U1f4a1 %s\n') |> 
     cat(sep = '')
   
   #cat('\n')
@@ -264,7 +264,7 @@ KSM8990_dough <- \(...) KSM8990(
   ...,
   name2 = KSM7BL3PSS_doughhook(),
   operation = c(
-    paste('\U1f4a1 blend canned or frozen fruit ', col_br_blue('e.g., pineapple, etc.')),
+    paste('Blend canned or frozen fruit ', col_br_blue('e.g., pineapple, etc.')),
     'Add 1\ufe0f\u20e3 water/puree; 2\ufe0f\u20e3 flour; 3\ufe0f\u20e3 baking powder/soda & yeast', # ; 4\ufe0f\u20e3 solid fat
     'Knead at Level 2; stop\U1f6d1 once no dry flour is visible',
     paste0('Press everything tight using ', 'Pastalinda' |> col_red() |> style_bold()),
@@ -377,7 +377,10 @@ JoyoungCJA9U <- \(
 #' @rdname tool-class
 #' @export
 JoyoungCJA9U_filling <- \(
-  operation = '\U1f4a1 manually stir frequently for high-sugar ingredient!',
+  operation = c(
+    'Manually stir frequently for high-sugar ingredient!',
+    'Let machine cool down between 15min-sessions!'
+  ),
   cooling = c(
     'fold added sugar into hot, cooked paste',
     'disassemble machine as early as possible; sugar syrup may stick'

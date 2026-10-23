@@ -257,7 +257,7 @@ nutrition <- \(...) {
       x$brand <- if (length(x$whistlepigwhiskey)) {
         x$whistlepigwhiskey |>
           fmtURL(fmt = 'https://shop.whistlepigwhiskey.com/products/%s', text = 'Whistlepig\U1f1fa\U1f1f8') |>
-          paste(runamok_, . = _, sep = '-')
+          paste(runamok_, . = _, sep = '\U1F98B')
       } else runamok_
       x$runamok <- x$whistlepigwhiskey <- NULL
     } #else do nothing

@@ -182,18 +182,40 @@ setMethod(f = '-', signature = c(e1 = 'raw.', e2 = 'nutrition'), definition = \(
 })
 
 
+
+plus_raw_list <- \(e1, e2) {
+  
+  atr <- attributes(e1)
+  atr$class <- NULL
+  
+  if (length(atr$call)) {
+    atr$call <- call(name = 'quote', atr$call)
+    # for [recipe()]
+  }
+  
+  atr <- atr[lengths(atr) > 0L]
+  
+  e2 <- e2[lengths(e2) > 0L]
+  
+  nm <- intersect(names(atr), names(e2))
+  
+  for (i in nm) { # len-0 compatible!
+    atr[[i]] <- sum_by_name(atr[[i]], e2[[i]]) |>
+      zero.omit()
+    e2[[i]] <- NULL
+  }
+  
+  c(atr, e2)
+  
+}
+
+
 #' @rdname S4methods
 #' @aliases +,raw.,list-method
 #' @export
 setMethod(f = '+', signature = c(e1 = 'raw.', e2 = 'list'), definition = \(e1, e2) {
-  
-  atr <- attributes(e1)
-  atr$class <- NULL
-  atr <- atr[lengths(atr) > 0L]
-  
-  c(atr, e2) |>
+  plus_raw_list(e1 = e1, e2 = e2) |>
     do.call(what = 'raw.', args = _)
-  
 })
 
 
@@ -201,25 +223,8 @@ setMethod(f = '+', signature = c(e1 = 'raw.', e2 = 'list'), definition = \(e1, e
 #' @aliases +,recipe,list-method
 #' @export
 setMethod(f = '+', signature = c(e1 = 'recipe', e2 = 'list'), definition = \(e1, e2) {
-  
-  atr <- attributes(e1)
-  atr$class <- NULL
-  atr$call <- call(name = 'quote', atr$call) # for [recipe()]
-  atr <- atr[lengths(atr) > 0L]
-  
-  e2 <- e2[lengths(e2) > 0L]
-  
-  nm <- intersect(names(atr), names(e2))
-
-  for (i in nm) { # len-0 compatible!
-    atr[[i]] <- sum_by_name(atr[[i]], e2[[i]]) |>
-      zero.omit()
-    e2[[i]] <- NULL
-  }
-  
-  c(atr, e2) |>
+  plus_raw_list(e1 = e1, e2 = e2) |>
     do.call(what = 'recipe', args = _)
-  
 })
 
 

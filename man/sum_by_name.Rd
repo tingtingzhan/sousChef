@@ -16,9 +16,6 @@ The function \code{\link[=sum_by_name]{sum_by_name()}} returns a \link[base]{num
 ..
 }
 \examples{
-sum_by_name(1, 2)
-sum_by_name(1, c(a = 2))
-
 x1 = c(a = 2, b = 3)
 x2 = c(b = 2, c = 1)
 x3 = c(a = 1, b = -2, c = -1)

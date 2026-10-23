@@ -72,37 +72,18 @@ rbind_unbalanced <- \(...) {
 #' The function [sum_by_name()] returns a \link[base]{numeric} \link[base]{vector}.
 #' 
 #' @examples
-#' sum_by_name(1, 2)
-#' sum_by_name(1, c(a = 2))
-#' 
 #' x1 = c(a = 2, b = 3)
 #' x2 = c(b = 2, c = 1)
 #' x3 = c(a = 1, b = -2, c = -1)
 #' sum_by_name(x1, x2, x3)
 #' @export
 sum_by_name <- \(...) {
-  
   xs <- list(...)
   xs <- xs[lengths(xs) > 0L]
   if (!length(xs)) return(numeric())
-  
-  ns <- lengths(xs, use.names = FALSE)
-  nms <- lapply(xs, FUN = names)
-  nms_len <- lengths(nms, use.names = FALSE)
-  if (all(ns == 1L)) {
-    ret <- sum(unlist(xs, use.names = FALSE))
-    if (all(nms_len == 0L)) return(ret)
-    if (sum(nms_len) == 1L) {
-      # beautiful! only one ingredient has name
-      names(ret) <- nms[[which(nms_len == 1L)]]
-      return(ret)
-    }
-  }
-  
   xs |>
     do.call(what = rbind_unbalanced, args = _) |> 
     colSums(na.rm = TRUE)
-  
 }
 
 
@@ -120,11 +101,16 @@ addname1 <- \(x, nm = stop('no default!'), ...) {
   
   if (nx == 1L) {
     xnm <- names(x)
-    if (!length(xnm) || is.na(xnm) || !nzchar(xnm)) names(x) <- nm
+    if (!length(xnm) || is.na(xnm) || !nzchar(xnm)) {
+      names(x) <- nm
+    } # else do nothing
   }
   
   xnm <- names(x) # re-do!
-  if (!length(xnm) || anyNA(xnm) || !all(nzchar(xnm))) stop('ill name')
+  if (!length(xnm) || anyNA(xnm) || !all(nzchar(xnm))) {
+    stop('ill name')
+  }
+  
   return(x)
   
 }
@@ -200,9 +186,9 @@ mergePc <- \(x, ...) {
     v * pieceGram
   )
   
-  if (length(z)) x[['misc']] <- z
+  if (length(z)) x$misc <- z
   
-  x[['misc_pc']] <- NULL
+  x$misc_pc <- NULL
   
   return(x)
 }
@@ -226,17 +212,24 @@ mergeH2O <- \(x) {
 
 mergeVol_H2O <- \(x) {
 
+  x$water <- x[['water']] |>
+    addname1(nm = 'c22')
+  x$water_tsp <- x[['water_tsp']] |>
+    addname1(nm = 'c22')
+  x$water_Tbsp <- x[['water_Tbsp']] |>
+    addname1(nm = 'c22')
+  x$water_cup <- x[['water_cup']] |>
+    addname1(nm = 'c22')
+  
   x_tsp <- sum_by_name(
-    x$water_tsp,
-    3 * x$water_Tbsp,
-    48 * x$water_cup
+    x[['water_tsp']],
+    3 * x[['water_Tbsp']],
+    48 * x[['water_cup']]
   )
   
   z <- sum_by_name(
-    x[['water']] |> # must be exact match!!
-      addname1(nm = 'c22'),
-    (4.92892 * x_tsp) |> # tsp -> ml
-      addname1(nm = 'c22')
+    x[['water']],
+    4.92892 * x_tsp # tsp -> ml
   )
   
   if (length(z)) x$water <- z
@@ -251,20 +244,20 @@ mergeVol_H2O <- \(x) {
 mergeVol <- \(x, ...) {
   
   x_tsp <- sum_by_name(
-    addname1(x[['misc_tsp']], ...),
-    3 * addname1(x[['misc_Tbsp']], ...),
-    48 * addname1(x[['misc_cup']], ...),
-    3 * 16 * addname1(x[['misc_brick']], ...)
+    x[['misc_tsp']],
+    3 * x[['misc_Tbsp']],
+    48 * x[['misc_cup']],
+    3 * 16 * x[['misc_brick']]
   )
   
   z <- sum_by_name(
-    addname1(x[['misc']], ...), # weight in gram 
+    x[['misc']], # weight in gram 
     gram_per_tsp(names(x_tsp)) * x_tsp
   )
 
-  if (length(z)) x[['misc']] <- z
+  if (length(z)) x$misc <- z
   
-  x[['misc_tsp']] <- x[['misc_Tbsp']] <- x[['misc_cup']] <- x[['misc_brick']] <- NULL
+  x$misc_tsp <- x$misc_Tbsp <- x$misc_cup <- x$misc_brick <- NULL
   return(x)
   
 }
@@ -407,7 +400,7 @@ fmtURL <- \(x, fmt, text, ...) {
 add_tool_url <- \(x, name, brand, ...) {
   v <- x[[name]]
   if (!length(v)) return(x)
-  x[['name']] <- v |>
+  x$name <- v |>
     fmtURL(text = paste(brand, x[['name']]), ...)
   x[[name]] <- NULL
   return(x)

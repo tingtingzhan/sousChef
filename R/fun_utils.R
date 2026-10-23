@@ -197,6 +197,7 @@ mergePc <- \(x, ...) {
 
 
 # combine water at different temperature
+#' @importFrom stats setNames
 mergeH2O <- \(x) {
   # `x` is \linkS4class{raw.}
   if (length(x@water)) {

@@ -90,16 +90,17 @@ setAs(from = 'nutrition', to = 'raw.', def = \(from) {
   
   if (!length(x@suggest)) return(invisible())
   
-  z <- list(
+  z <- raw.(
     misc = setNames(x@servingGram, nm = as.character(x@call))
-  ) |> 
-    c(x@suggest) |>
-    do.call(what = 'raw.', args = _)
+  ) + 
+    x@suggest
+  # setMethod(f = '+', signature = c(e1 = 'raw.', e2 = 'list'))
   
+  # \linkS4class{raw.} does not have slot `@name`
   attr(z, which = 'name') <- x |>
     labels.nutrition() |>
     sprintf(fmt = x@suggest_fmt) |> 
-    c() # \linkS4class{raw.} does not have slot `@name`
+    c() 
   
   return(z)
   

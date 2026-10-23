@@ -64,6 +64,7 @@ setMethod(f = '/', signature = signature(e1 = 'raw.', e2 = 'numeric'), definitio
 
 
 #' @rdname S4methods
+#' @importFrom stats setNames
 #' @aliases +,raw.,raw.-method
 #' @export
 setMethod(f = '+', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition = \(e1, e2) {

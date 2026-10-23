@@ -335,13 +335,6 @@ print.equivlist <- \(x, ...) {
 
 
 #' @importFrom consec cmod
-fmt_min <- \(x) {
-  x |>
-    cmod(e2 = c(d = 60*24, hr = 60, min = 1, sec = 1/60), n = 3L)
-}
-
-
-#' @importFrom consec cmod
 fmt_vol <- \(x, nm = names(x)) {
   
   nx <- length(x)

@@ -75,6 +75,7 @@ tool <- \(...) {
 
 #' @rdname tool-class
 #' @param object see **Usage**
+#' @importFrom consec cmod
 #' @export
 setMethod(f = show, signature = 'tool', definition = \(object) {
   
@@ -137,7 +138,10 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
   
   minute <- sprintf(
     fmt = '\u23f0%s %s', 
-    x@minute |> fmt_min() |> col_red() |> style_bold(),
+    x@minute |> 
+      cmod(e2 = c(d = 60*24, hr = 60, min = 1, sec = 1/60), n = 3L) |>
+      col_red() |> 
+      style_bold(),
     (names(x@minute) %||% '') |> bg_br_yellow()
   ) |>
     trimws()

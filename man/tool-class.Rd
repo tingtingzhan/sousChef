@@ -103,7 +103,8 @@ JoyoungDJ13U_cornjuice(
 JoyoungCJA9U(program = "爆炒程序 Stir Fry program", ...)
 
 JoyoungCJA9U_filling(
-  operation = "💡 manually stir frequently for high-sugar ingredient!",
+  operation = c("Manually stir frequently for high-sugar ingredient!",
+    "Let machine cool down between 15min-sessions!"),
   cooling = c("fold added sugar into hot, cooked paste",
     "disassemble machine as early as possible; sugar syrup may stick"),
   ...

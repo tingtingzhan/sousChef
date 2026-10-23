@@ -21,6 +21,7 @@ summary.nutrition <- \(object, ...) {
 }
 
 
+# \link[base]{summary} on \linkS4class{recipe} also dispatches here
 #' @importFrom equiv4 equiv
 #' @method summary raw.
 #' @export
@@ -66,7 +67,7 @@ summary.raw. <- \(object, ...) {
   
   ret$perServing <- equiv(
     caption = 'Serving', 
-    current = z / nutri@servingGram, target = c(
+    current = z / nutri@servingGram, target = if (is(x, 'recipe')) c(
       water = devrecipe$water(x), # um, this is wrong; raw-water / cooked-total
       #carbohydrate = devrecipe$carbohydrate(x),
       fat = devrecipe$fat(x), 
@@ -95,7 +96,7 @@ summary.raw. <- \(object, ...) {
   
   ret$perCornmeal <- equiv(
     caption = 'Cornmeal\U1f33d', 
-    current = z / sum(x['_cornmeal$']), target = c(
+    current = z / sum(x['_cornmeal$']), target = if (is(x, 'recipe')) c(
       flour = devrecipe$flour2cornmeal(x),
       breadFlr = devrecipe$breadFlr2cornmeal(x),
       pastryFlr = devrecipe$pastryFlr2cornmeal(x)
@@ -105,7 +106,7 @@ summary.raw. <- \(object, ...) {
     
     ret$perMixFlr <- equiv(
       caption = 'Mixed Wheat Flour', 
-      current = z / sum(mixWheatFlr), target = c(
+      current = z / sum(mixWheatFlr), target = if (is(x, 'recipe')) c(
         water = devrecipe$water2wheatFlrMix(x),
         fat = devrecipe$fat2wheatFlrMix(x),
         bakingPowder = devrecipe$bakingPowder2wheatFlrMix(x),
@@ -116,7 +117,7 @@ summary.raw. <- \(object, ...) {
     
     ret$perAllPurposeFlr <- if (!is(x, 'cheesecake')) equiv(
       caption = 'All-Purpose\U1f370\U1f35e Flour', 
-      current = z / sum(x['_allPurposeFlr$']), target = c(
+      current = z / sum(x['_allPurposeFlr$']), target = if (is(x, 'recipe')) c(
         water = devrecipe$water2flour(x),
         fat = devrecipe$fat2flour(x),
         sesame = devrecipe$blackSesame2flour(x),
@@ -130,7 +131,7 @@ summary.raw. <- \(object, ...) {
     
     ret$perPastryFlr <- equiv(
       caption = 'Pastry\U1f370 Flour', 
-      current = z / sum(x['_pastryFlr$']), target = c(
+      current = z / sum(x['_pastryFlr$']), target = if (is(x, 'recipe')) c(
         water = devrecipe$water2pastryFlr(x),
         fat = devrecipe$fat2pastryFlr(x),
         sesame = devrecipe$blackSesame2pastryFlr(x),
@@ -147,7 +148,7 @@ summary.raw. <- \(object, ...) {
     
     ret$perBreadFlr <- equiv(
       caption = 'Bread\U1f35e Flour', 
-      current = z / sum(x['_breadFlr$']), target = c(
+      current = z / sum(x['_breadFlr$']), target = if (is(x, 'recipe')) c(
         fat = devrecipe$fat2breadFlr(x),
         sesame = devrecipe$blackSesame2breadFlr(x),
         eggYolk = devrecipe$eggYolk2breadFlr(x),
@@ -163,7 +164,7 @@ summary.raw. <- \(object, ...) {
   
   ret$perGlutenFreeFlr <- if (('_breadFlr$' %notin% x) && ('_pastryFlr$' %notin% x) && ('_allPurposeFlr$' %notin% x)) equiv(
     caption = 'Gluten-Free Flour', 
-    current = z / sum(x['_gluten0Flr$']), target = c(
+    current = z / sum(x['_gluten0Flr$']), target = if (is(x, 'recipe')) c(
       water = devrecipe$water2gluten0Flr(x),
       fat = devrecipe$fat2gluten0Flr(x),
       sesame = devrecipe$blackSesame2gluten0Flr(x),
@@ -176,7 +177,7 @@ summary.raw. <- \(object, ...) {
   
   ret$perRiceFlr <- equiv(
     caption = 'Glutinous+Rice\U1f33e Flour', 
-    current = z / sum(x['_riceFlr$|_glutRiceFlr$']), target = c(
+    current = z / sum(x['_riceFlr$|_glutRiceFlr$']), target = if (is(x, 'recipe')) c(
       water = devrecipe$water2riceFlr(x),
       glutRice = devrecipe$glutRice2riceFlr(x),
       fat = devrecipe$fat2riceFlr(x),
@@ -186,7 +187,7 @@ summary.raw. <- \(object, ...) {
   
   ret$perCocoa <- if (!inherits(x, what = c('tiramisuMix', 'tiramisu_'))) equiv(
     caption = 'Alkalized Cocoa', 
-    current = z / x['_cocoa$'], target = c(
+    current = z / x['_cocoa$'], target = if (is(x, 'recipe')) c(
       alcohol = devrecipe$alcohol2cocoa(x),
       drymilk = devrecipe$drymilk2cocoa(x),
       addedSugar = devrecipe$addedSugar2cocoa(x),
@@ -210,11 +211,7 @@ summary.raw. <- \(object, ...) {
 }
 
 
-#' @export
-summary.recipe <- \(object, ...) {
-  object |>
-    summary.raw.(...)
-}
+
 
 
 

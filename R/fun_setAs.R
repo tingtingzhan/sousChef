@@ -24,7 +24,8 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   z <- crossprod(grams, info)[1, , drop = TRUE]
   
   new(
-    Class = 'nutrition',  
+    Class = 'nutrition',
+    call = quote(`<UNDEFINED>`), # mark explicitly as an ill-formatted \linkS4class{nutrition}
     name = labels.raw.(from),
     date = date,
     servingGram = sum(grams),
@@ -88,11 +89,21 @@ setAs(from = 'nutrition', to = 'raw.', def = \(from) {
   
   x <- from; from <- NULL
   
-  if (!length(x@suggest)) return(invisible())
+  if (identical(x@call, quote(`<UNDEFINED>`))) {
+    # created by one of setAs()
+    return(invisible())
+  }
   
-  z <- raw.(
-    misc = setNames(x@servingGram, nm = as.character(x@call))
-  ) + 
+  z <- x@servingGram |>
+    setNames(nm = as.character(x@call)) |> 
+    raw.(misc = _)
+    
+  if (!length(x@suggest)) {
+    #return(z) # no bug now :)
+    return(invisible())
+  }
+  
+  z <- z + 
     x@suggest
   # setMethod(f = '+', signature = c(e1 = 'raw.', e2 = 'list'))
   

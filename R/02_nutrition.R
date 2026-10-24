@@ -480,9 +480,10 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
       sprintf(fmt = '%.1f oz') |> 
       make_ansi_style('seagreen')() |> 
       style_bold(),
-    if (as.character(x@call) %in% c('asMethod', '<UNDEFINED>')) {
-      # from as(., Class = 'nutrition)
-      # do not have volume info
+    if (identical(x@call, quote(asMethod))) {
+      # legacy: from as(., Class = 'nutrition)
+      stop('wont happen')
+    } else if (identical(x@call, quote(`<UNDEFINED>`))) {
       ''
     } else {
       fmt_vol(x = x@servingGram, nm = as.character(x@call))
@@ -661,7 +662,7 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
   suggested_ <- x |> 
     as(Class = 'raw.')
   if (length(suggested_)) {
-    show(suggested_) # I have not defined a NULL \linkS4class{recipe}
+    show(suggested_) # I have not defined a NULL \linkS4class{raw.}
     cat('\n')
   }
 

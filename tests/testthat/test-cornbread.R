@@ -6,69 +6,44 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::TraderJoes_cornbreadMix() - 
-      list(sugar = 9.2*12),
-    sousChef:::WholeFoods365_cornbreadMix() - 
-      list(sugar = 4*12),
-    sousChef:::Krusteaz_southern_cornbreadMix() - 
-      list(sugar = .5*12),
+    sousChef:::TraderJoes_cornbreadMix(),
+    sousChef:::WholeFoods365_cornbreadMix(),
+    sousChef:::Krusteaz_southern_cornbreadMix(),
     sousChef:::BobsRedMill_cornbreadMix(),
-    sousChef:::Stonewall_cornbreadMix() - 
-      list(sugar = 8.1*12),
-    sousChef:::Jiffy_cornMuffinMix() - 
-      list(sugar = 5.5*3),
-    sousChef:::Fleischmanns_cornbreadMix() - 
-      list(sugar = 5.1*16)
-  ) |> print()
+    sousChef:::Stonewall_cornbreadMix(),
+    sousChef:::Jiffy_cornMuffinMix(),
+    sousChef:::Fleischmanns_cornbreadMix()
+  ) |> 
+    sort_by('sugar') |>
+    print()
 )
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::PreppyKitchen_cornbread() -
-      list(misc = c(Domino_granulated = 17)),
-    sousChef:::BethanyWeathersby_cornbread() -
-      list(misc = c(Domino_granulated = 105)),
-    sousChef:::bluegirl_cornbread() -
-      list(misc = c(Domino_granulated = 108)),
-    sousChef:::JoshuaWeissman_cornbread() -
-      list(misc = c(
-        Domino_granulated = 64,
-        Domino_lightBrown = 15 
-      )),
+    sousChef:::PreppyKitchen_cornbread(),
+    sousChef:::BethanyWeathersby_cornbread(),
+    sousChef:::bluegirl_cornbread(),
+    sousChef:::JoshuaWeissman_cornbread(),
     sousChef:::Jiffy_cornMuffinMix() |>
-      as('raw.') |>
-      as('nutrition') - 
-      list(sugar = 32),
-    sousChef:::Wegmans_cornbread_recipe() -
-      list(misc = c(Domino_granulated = 88)),
-    sousChef:::Wegmans_cornbread() - 
-      list(sugar = 10.5),
+      as('raw.'),
+    sousChef:::Wegmans_cornbread_recipe(),
+    sousChef:::Wegmans_cornbread(),
     sousChef:::WholeFoods365_cornbreadMix() |>
-      as('raw.') |>
-      as('nutrition') - 
-      list(sugar = 64),
+      as('raw.'),
     sousChef:::Stonewall_cornbreadMix() |>
-      as('raw.') |>
-      as('nutrition') - 
-      list(sugar = 117),
+      as('raw.'),
     sousChef:::TraderJoes_cornbreadMix() |>
-      as('raw.') |>
-      as('nutrition') - 
-      list(sugar = 108),
+      as('raw.'),
     sousChef:::Krusteaz_southern_cornbreadMix() |>
-      as('raw.') |>
-      as('nutrition') - 
-      list(sugar = 23),
+      as('raw.'),
     sousChef:::BobsRedMill_cornbreadMix() |>
-      as('raw.') |>
-      as('nutrition') - 
-      list(sugar = 7),
+      as('raw.'),
     sousChef:::Fleischmanns_cornbreadMix() |>
-      as('raw.') |>
-      as('nutrition') - 
-      list(sugar = 100),
+      as('raw.'),
     sousChef:::Quaker_cornbread()
-  ) |> print()
+  ) |> 
+    sort_by('sugar') |>
+    print()
 )
 
 

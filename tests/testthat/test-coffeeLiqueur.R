@@ -14,6 +14,8 @@ expect_no_error(
     sousChef:::Patron_XO_liqueur(),
     sousChef:::Padrino_coffee_liqueur(),
     sousChef:::Amigos3_mocha_liqueur()
-  ) |> print()
+  ) |> 
+    sort_by('alcohol') |>
+    print()
 )
 

@@ -3,7 +3,7 @@
 
 
 
-pumpkin_creamCheeseDip_bakethat <- \() recipe(
+bakethat_pumpkin_creamCheeseDip <- \() recipe(
   author = 'Bake That!',
   misc_brick = c(Philadelphia_creamCheese = 1),
   misc_cup = c(
@@ -23,7 +23,7 @@ pumpkin_creamCheeseDip_bakethat <- \() recipe(
 )
 
 
-pumpkin_creamCheeseDip_Julie <- \() recipe(
+Julie_pumpkin_creamCheeseDip <- \() recipe(
   julieseatsandtreats = c('ktyuI7JHQ_Q' = 'sweet-pumpkin-dip'),
   misc_brick = c(Philadelphia_creamCheese = 2),
   misc = c(

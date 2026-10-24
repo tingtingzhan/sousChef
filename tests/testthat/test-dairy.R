@@ -8,7 +8,9 @@ expect_no_error(
     sousChef:::OrganicValley_creamCheese(),
     sousChef:::TraderJoes_creamCheese(),
     sousChef:::Tillamook_creamCheese()
-  ) |> print()
+  ) |> 
+    sort_by('fat') |>
+    print()
 )
 
 expect_no_error(
@@ -16,7 +18,10 @@ expect_no_error(
     sousChef:::Philadelphia_creamCheese(), 
     sousChef:::Philadelphia_creamCheeseSpread(), 
     sousChef:::Philadelphia_neufchatel(), 
-    sousChef:::Philadelphia_neufchatelSpread()) |> print()
+    sousChef:::Philadelphia_neufchatelSpread()
+  ) |> 
+    sort_by('fat') |>
+    print()
 )
 
 expect_no_error(

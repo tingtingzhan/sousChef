@@ -1,28 +1,14 @@
 
 
-#' @importFrom equiv4 equiv equivs
 #' @export
 summary.nutrition <- \(object, ...) {
-  z <- object |>
-    as.double.nutrition(
-      incl_calorie = FALSE, 
-      incl_usd = FALSE, 
-      incl_water = FALSE, # **not** nutri@water
-      incl_carbohydrate = FALSE, 
-      rel = TRUE
-    ) |>
-    equiv(caption = 'Serving', current = _)
-  
-  names(z) <- names(z) |> 
-    .repl()
-  
-  equivs(perServing = z)
-  
+  # see 'nutritionMatrix'
+  return(invisible())
 }
 
 
 # \link[base]{summary} on \linkS4class{recipe} also dispatches here
-#' @importFrom equiv4 equiv
+#' @importFrom equiv4 equiv equivs
 #' @method summary raw.
 #' @export
 summary.raw. <- \(object, ...) {

@@ -2,12 +2,11 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::xiaogaojie1_pasteisdenata() -
-      list(misc = c(Domino_granulated = 130)),
+    sousChef:::xiaogaojie1_pasteisdenata(),
     sousChef:::xiaogaojie2_pasteisdenata(),
-    sousChef:::Leites_pasteisdenata() -
-      list(misc = c(Domino_granulated = 200)),
-    sousChef:::TastingTable_pasteisdenata() -
-      list(misc = c(Domino_granulated = 120))
-  ) |> print()
+    sousChef:::Leites_pasteisdenata(),
+    sousChef:::TastingTable_pasteisdenata()
+  ) |> 
+    sort_by('sugar') |>
+    print()
 )

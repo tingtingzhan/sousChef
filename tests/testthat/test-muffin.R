@@ -1,15 +1,13 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::Brody_muffin() -
-      list(misc = c(Domino_granulated = 237)),
-    sousChef:::Introvert_muffin() -
-      list(misc = c(Domino_granulated = 50)),
-    sousChef:::CulinaryHill_muffin() -
-      list(misc = c(Domino_granulated = 155)),
-    sousChef:::Lori_muffin() -
-      list(misc = c(Domino_granulated = 110))
-  ) |> print()
+    sousChef:::Brody_muffin(),
+    sousChef:::Introvert_muffin(),
+    sousChef:::CulinaryHill_muffin(),
+    sousChef:::Lori_muffin()
+  ) |> 
+    sort_by('sugar') |>
+    print()
 )
 
 

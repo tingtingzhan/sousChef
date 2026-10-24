@@ -12,7 +12,9 @@ expect_no_error(
     sousChef:::Guittard_31milk(),
     sousChef:::Guittard_heritage32milk(),
     sousChef:::Guittard_highSierra28white()
-  ) |> print()
+  ) |> 
+    sort_by('fat') |>
+    print()
 )
 
 

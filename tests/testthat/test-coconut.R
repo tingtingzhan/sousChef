@@ -9,7 +9,9 @@ expect_no_error(
     sousChef:::WegmansOrganic_coconutFlr(),
     sousChef:::AnthonysGoods_coconutFlr(),
     sousChef:::BobsRedMill_coconutFlr()
-  ) |> print()
+  ) |> 
+    sort_by('fat') |>
+    print()
 )
 
 
@@ -30,7 +32,9 @@ expect_no_error(
     sousChef:::Silk_coconutmilk(),
     sousChef:::SoDelicious_coconutmilk(),
     sousChef:::CalifiaFarms_coconutmilkwater()
-  ) |> print()
+  ) |> 
+    sort_by('fat') |>
+    print()
 )
 
 

@@ -18,6 +18,8 @@ expect_no_error(
       as('raw.'),
     sousChef:::ItoEn_sweet_matcha() |> 
       as('raw.')
-  ) |> print()
+  ) |> 
+    sort_by('sugar') |>
+    print()
 ) # compare drink
 

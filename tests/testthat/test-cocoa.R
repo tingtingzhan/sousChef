@@ -8,5 +8,7 @@ expect_no_error(
     sousChef:::Ghirardelli_sunrise_cocoa(),
     sousChef:::Ghirardelli_majestic_cocoa(),
     sousChef:::Navitas_cacao()
-  ) |> print()
+  ) |> 
+    sort_by('fat') |>
+    print()
 )

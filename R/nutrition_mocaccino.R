@@ -1,6 +1,6 @@
 
 
-WilliamsSonoma_mocha <- \() nutrition(
+WilliamsSonoma_mocha_hotCocoa <- \() nutrition(
   brand = style_hyperlink(text = 'Williams Sonoma\U1f1fa\U1f1f8', url = 'https://www.williams-sonoma.com/products/williams-sonoma-mocha-hot-chocolate/') |> c(),
   name = 'Mocha Hot Chocolate',
   servingGram = 41, servingTbsp = 5, 
@@ -24,10 +24,9 @@ Maxwell_mochaSuisse <- \() nutrition(
 
 Ghirardelli_mochaFrappe <- \() nutrition(
   amazon = 'B00D6Q9E3E',
-  webstaurant = '40866211',
+  webstaurant = '40866211', usd = 9.29/454*45, date = as.Date('2026-10-23'),
   ghirardelli = 'iced-blended-beverages-information',
   name = 'Mocha Frapp\u00e9',
-  usd = 21.49/1420*45,
   servingGram = 100, servingCup = (100/45)*(1/4), 
   calorie = 391.91,
   fat = 7.803, cholesterol = .991, sodium = .149358, 
@@ -41,7 +40,7 @@ Ghirardelli_mochaFrappe <- \() nutrition(
 
 
 
-SwissMiss_milkCocoa <- \() nutrition(
+SwissMiss_milk_hotCocoa <- \() nutrition(
   swissmiss = 'classics/milk-chocolate',
   name = 'Milk Chocolate',
   servingGram = 39, 
@@ -51,8 +50,9 @@ SwissMiss_milkCocoa <- \() nutrition(
 
 
 
-Godiva_milkCocoa <- \() nutrition(
-  godiva = '16024', name = 'Milk Chocolate Hot Cocoa',
+Godiva_milk_hotCocoa <- \() nutrition(
+  godiva = 'milk-chocolate-hot-cocoa', usd = 18.50/11, date = as.Date('2026-10-23'),
+  name = 'Milk Chocolate Hot Cocoa',
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
   fat = 2.5, sodium = .005, carbohydrate = 28, sugar = 24, addedSugar = 23, protein = 2,
@@ -62,8 +62,9 @@ Godiva_milkCocoa <- \() nutrition(
 
 
 
-Godiva_cocoa <- \() nutrition(
-  godiva = '16022', name = 'Dark Chocolate Hot Cocoa',
+Godiva_hotCocoa <- \() nutrition(
+  godiva = 'dark-chocolate-hot-cocoa-canister', usd = 18.50/12, date = as.Date('2026-10-23'),
+  name = 'Dark Chocolate Hot Cocoa',
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
   fat = 3.5, carbohydrate = 26, addedSugar = 20, protein = 3,
@@ -76,7 +77,7 @@ Godiva_cocoa <- \() nutrition(
 
 
 
-SwissMiss_simplyCocoaMilk <- \() nutrition(
+SwissMiss_simplyCocoa_milk_hotCocoa <- \() nutrition(
   swissmiss = 'simply-cocoa/simply-cocoa-milk-chocolate',
   name = 'Simply Cocoa Milk Chocolate',
   servingGram = 24, 
@@ -89,12 +90,25 @@ SwissMiss_simplyCocoaMilk <- \() nutrition(
   ))
 
 
+SwissMiss_simplyCocoa_hotCocoa <- \() nutrition(
+  swissmiss = 'simply-cocoa/simply-cocoa-dark-chocolate',
+  name = 'Simply Cocoa Dark Chocolate',
+  servingGram = 27, 
+  calorie = 110,
+  fat = .5,
+  sodium = .15, carbohydrate = 24, fiber = 2, sugar = 21, addedSugar = 20, protein = 2,
+  suggest = list(
+    misc_cup = c(
+      WegmansOrganic_2perc_milk = 1
+    )
+  ))
 
 
 
-Nestle_richChocolate <- \() nutrition(
-  url = 'https://www.nestleprofessional.us/hot-cocoa/rich-chocolate-6-50-x-071-oz',
-  brand = 'Nestl\u00e9\U1f1e8\U1f1ed', name = 'Rich Chocolate',
+
+Nestle_rich_hotCocoa <- \() nutrition(
+  nestleprofessional = 'hot-cocoa/rich-chocolate-6-50-x-071-oz',
+  name = 'Rich Chocolate',
   servingGram = 20, 
   calorie = 80,
   fat = 2, sodium = .19, carbohydrate = 16, sugar = 12, addedSugar = 10,
@@ -105,8 +119,8 @@ Nestle_richChocolate <- \() nutrition(
 
 
 
-Nestle_skimCocoa <- \() nutrition(
-  nestle = '12240821',
+Nestle_skim_hotCocoa <- \() nutrition(
+  nestleprofessional = 'nestle-hot-cocoa/ns-ff-choc-6-30-x-028-oz',
   name = 'Skim Hot Cocoa',
   servingGram = 8, 
   calorie = 25,
@@ -118,7 +132,7 @@ Nestle_skimCocoa <- \() nutrition(
 
 
 
-KingArthur_milkChocolate <- \() nutrition(
+KingArthur_milk_hotCocoa <- \() nutrition(
   kingarthur = '212571',
   name = 'Milk Hot Chocolate',
   usd = 12.95/510*28,
@@ -129,8 +143,8 @@ KingArthur_milkChocolate <- \() nutrition(
 
 
 
-Nestle_cocoSupreme <- \() nutrition(
-  nestle = '11002829',
+Nestle_supreme_hotCocoa <- \() nutrition(
+  # nestle = '11002829', # no longer offered
   name = 'Coco Supreme',
   servingGram = 33, fat = 2, sodium = .23, carbohydrate = 27, sugar = 24, addedSugar = 20, protein = 1)
 

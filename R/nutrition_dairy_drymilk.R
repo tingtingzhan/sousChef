@@ -29,7 +29,7 @@ Meyenberg_goat_drywholemilk <- \() nutrition(
 
 
 Carnation_drymilk <- \() nutrition(
-  nestle = '12428935',
+  nestleprofessional = 'nestle-carnation-nonfat-dry-milk-4-x-2275-oz',
   # also https://www.verybestbaking.com/carnation/products/instant-non-fat-dry-milk-9oz-can/
   name = 'Carnation Nonfat Dry Milk',
   walmart = '978118310', usd = 4.64/272*23, date = as.Date('2026-10-07'),

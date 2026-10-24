@@ -133,7 +133,7 @@ nutrition <- \(...) {
     add_brand_url(name = 'frontiercoop', fmt = 'https://www.frontiercoop.com/products/frontier-co-op-%s', text = 'Frontier Co-op\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'ghirardelli', fmt = 'https://www.ghirardelli.com/%s', text = 'Ghirardelli\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'greypoupon', fmt = 'https://www.kraftheinz.com/grey-poupon/products/%s', text = 'Grey Poupon\U1f1fa\U1f1f8') |> 
-    add_brand_url(name = 'godiva', fmt = 'https://www.godiva.com/%s.html', text = 'Godiva\U1f1e7\U1f1ea') |>
+    add_brand_url(name = 'godiva', fmt = 'https://www.godiva.com/products/%s.html', text = 'Godiva\U1f1e7\U1f1ea') |>
     add_brand_url(name = 'haagendazs', fmt = 'https://www.icecream.com/us/en/brands/haagen-dazs/products/%s-ice-cream', text = 'Ha\u0308agen-Dazs\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'haitaiusa', fmt = 'https://www.haitaiusa.com/product-page/%s', text = 'HaiTai\U1f1fa\U1f1f8') |> # not sure if same company # https://en.wikipedia.org/wiki/Haitai
     add_brand_url(name = 'harney', fmt = 'https://www.harney.com/products/%s', text = 'Harney & Sons\U1f1fa\U1f1f8') |> 
@@ -169,7 +169,8 @@ nutrition <- \(...) {
     add_brand_url(name = 'nancysyogurt', fmt = 'https://nancysyogurt.com/products/%s', text = 'Nancy\'s\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'navitas', fmt = 'https://navitasorganics.com/products/%s', text = 'Navitas\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'nescafeGold', fmt = 'https://www.nescafe.com/us/products/%s', text = 'Nescaf\u00e9 Gold Espresso\U1f1e8\U1f1ed') |>
-    add_brand_url(name = 'nestle', fmt = 'https://www.nestleprofessional.us/search?search=%s', text = 'Nestl\u00e9\U1f1e8\U1f1ed') |>
+    #add_brand_url(name = 'nestle', fmt = 'https://www.nestleprofessional.us/search?search=%s', text = 'Nestl\u00e9\U1f1e8\U1f1ed') |>
+    add_brand_url(name = 'nestleprofessional', fmt = 'https://www.nestleprofessional.us/%s', text = 'Nestl\u00e9\U1f1e8\U1f1ed') |>
     add_brand_url(name = 'nido', fmt = 'https://www.goodnes.com/nido/products/nido-%s', text = 'Nestl\u00e9 Nido\U1f1e8\U1f1ed') |>
     add_brand_url(name = 'nielsenmassey', fmt = 'https://nielsenmassey.com/products/%s', text = 'Nielsen-Massey\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'nishiki', fmt = 'https://www.jfc.com/product/item/%s', text = 'Nishiki\u9326\U1f1fa\U1f1f8') |>
@@ -373,6 +374,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
           ghee = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
           goatKefir = '\u7f8a\u5976\u9152',
           heavyCream = '\u91cd\u5976\u6cb9',
+          hotCocoa = '\u70ed\u53ef\u53ef\u51b2\u6ce1\u7c89',
           kefir = '\u5976\u9152',
           heavyCrean = '\u91cd\u5976\u6cb9',
           matcha = '\u62b9\u8336\u7c89',

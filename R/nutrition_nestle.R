@@ -1,7 +1,7 @@
 
 
 Nestle_coffeeMate <- \() nutrition(
-  nestle = '12482915',
+  nestleprofessional = 'coffee-mate/original-powdered-creamer-3-2x56oz',
   alias = '\u690d\u8102\u672b', name = 'Coffee Mate Creamer',
   servingGram = 2,
   servingTsp = 3/4, # website

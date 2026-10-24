@@ -84,7 +84,7 @@ Ghirardelli_cocoa <- \() nutrition(
 Ghirardelli_bittersweet <- \() nutrition(
   ghirardelli = '60-cacao-bittersweet-chocolate-premium-baking-chips-12-bags-61274cs',
   name = 'Bittersweet, Chips, 60% Cacao', alias = '\u70d8\u57f9\u5de7\u514b\u529b',
-  webstaurant = '40842319', usd = 248.49/(35*454)*100,
+  webstaurant = '40842319', usd = 8.72/454*100, date = as.Date('2026-10-23'),
   servingGram = 100,
   calorie = 503.884,
   fat = 37.731, cholesterol = 2.586e-3, 
@@ -105,7 +105,7 @@ Ghirardelli_semisweet_bar <- \() nutrition(
 Ghirardelli_semisweet_chip <- \() nutrition(
   ghirardelli = 'semisweet-chocolate-premium-baking-chips-chocolate-chips-for-baking-12-bags-64015cs',
   name = 'Semi-Sweet, Chips', alias = '\u70d8\u57f9\u5de7\u514b\u529b',
-  webstaurant = '40842246', usd = 196.49/(35*454)*100,
+  webstaurant = '40842246', usd = 6.81/454*100, date = as.Date('2026-10-23'),
   servingGram = 100,
   calorie = 472.512,
   fat = 26.557, cholesterol = .599e-3, carbohydrate = 67.799, fiber = 6.301, sugar = 55.839, addedSugar = 55.342, protein = 4.230)
@@ -117,7 +117,7 @@ Ghirardelli_sunrise_cocoa <- \() nutrition(
   name = 'Sunrise, 15-17%\U1f9c8',
   ghirardelli = 'cocoa-powders-information',
   servingGram = 100, servingTbsp = 100/6, # packaging
-  webstaurant = '40869069', usd = 176.49/(25*454)*100,
+  webstaurant = '40869069', usd = 10.80/454*100, date = as.Date('2026-10-23'),
   calorie = 233.14, 
   fat = 15.3, sodium = .03, carbohydrate = 49.7, sugar = .6, protein = 21.3)
 
@@ -126,7 +126,7 @@ Ghirardelli_sunrise_cocoa <- \() nutrition(
 Ghirardelli_majestic_cocoa <- \() nutrition(
   ghirardelli = 'cocoa-powders-information',
   name = 'Majestic, 20-22%\U1f9c8',
-  webstaurant = c('40869096', '40862100'), usd = 212.99/(25*454)*100,
+  webstaurant = c('40869096', '40862100'), usd = 11.40/454*100, date = as.Date('2026-10-23'),
   servingGram = 100, servingTbsp = 100/6, # packaging
   calorie = 295.311,
   fat = 23.71, sodium = .02, carbohydrate = 49.71, fiber = 33.9, sugar = 1.53, protein = 16.8)
@@ -137,7 +137,7 @@ Ghirardelli_superior_cocoa <- \() nutrition(
   ghirardelli = 'cocoa-powders-information',
   name = 'Superior, 10-12%\U1f9c8',
   servingGram = 100, servingTbsp = 100/6, # packaging
-  webstaurant = '40869072', usd = 188.99/(25*454)*100,
+  webstaurant = '40869072', usd = 10.80/454*100, date = as.Date('2026-10-23'),
   calorie = 220,
   fat = 13.1, sodium = .019, carbohydrate = 58.3, fiber = 29.8, sugar = 1.76, protein = 18.1)
 

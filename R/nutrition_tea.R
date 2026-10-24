@@ -119,7 +119,7 @@ Twinings_EnglishBreakfast_tea <- \() nutrition(
   twinings = 'english-breakfast',
   name = 'English Breakfast', alias = '\u62fc\u914d\u7ea2\u8336',
   wegmans = '730970', usd = 13.49/100, date = as.Date('2026-10-22'),
-  #webstaurant = '110TWNG05324',
+  webstaurant = '110TWN09181KT',
   pieceGram = 200/100, piece_fmt = '%.2g\U1f9e7')
 
 # Paromi

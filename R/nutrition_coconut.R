@@ -169,7 +169,7 @@ Luckin_coconutmilk <- \() nutrition(
 PacificFoods_coconutBar <- \() nutrition(
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
   brand = c(style_hyperlink(text = 'Pacific Foods\U1f1fa\U1f1f8', url = 'https://www.pacificfoodservice.com/barista-series/coconut-original/')),
-  webstaurant = '110PFBARCCNT', usd = 42.49/12/32*8,
+  webstaurant = '110PFBARCCNT', usd = 46.49/12/32*8, date = as.Date('2026-10-23'),
   servingGram = 240, servingCup = 1,
   calorie = 90,
   fat = 5, sodium = .125, carbohydrate = 10, sugar = 9, addedSugar = 8, protein = 1)

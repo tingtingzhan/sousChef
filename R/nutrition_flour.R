@@ -100,19 +100,17 @@ KingArthur_highGluten <- \() nutrition(
   carbohydrate = 21, protein = 30*.142) # 14.2% gluten-forming protein
 
 KingArthur_Lancelot <- \() nutrition(
-  webstaurant = '104NFL5100S',
+  webstaurant = '104NFL5100S', usd = .66/454*100, date = as.Date('2026-10-23'),
   kingarthurpro = 'sir-lancelot',
   name = 'Sir Lancelot', alias = '14%\u9ad8\u7b4b\u9762\u7c89',
-  usd = 28.49/(50*454)*100,
   servingGram = 100, servingCup = (100/30)*(1/4), # using [KingArthur_breadFlr] info
   calorie = 364, 
   fat = .98, carbohydrate = 70.5, fiber = 2.7, sugar = .27, protein = 14, water = 14)
 
 KingArthur_Galahad <- \() nutrition(
-  webstaurant = '104NFL5110S',
+  webstaurant = '104NFL5110S', usd = .73/454*100, date = as.Date('2026-10-23'),
   kingarthurpro = 'sir-galahad',
   name = 'Sir Galahad', alias = '11.7%\u4e2d\u7b4b\u9762\u7c89',
-  usd = 25.14/(50*454)*100,
   servingGram = 100, 
   calorie = 364, 
   fat = .98, carbohydrate = 72.82, fiber = 2.7, sugar = .27, protein = 11.7, water = 14)

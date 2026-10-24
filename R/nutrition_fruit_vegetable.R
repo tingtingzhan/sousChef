@@ -515,7 +515,6 @@ walnut <- \() nutrition(
 Bossen_pineapple <- \() nutrition(
   name = 'Pineapple\U1f34d Concentrated Syrup', alias = '\u83e0\u841d\u7cd6\u6d46',
   brand = style_hyperlink(text = '', url = 'https://www.bossenstore.com/products/pineapple-syrup-new') |> c(),
-  webstaurant = '535SYPPINAPL',
-  usd = 12.93/2500*25,
+  webstaurant = '535SYPPINAPL', usd = 14.83/2500*25, date = as.Date('2026-10-23'),
   # why all added sugar?
   servingGram = 25, carbohydrate = 17, sugar = 17, addedSugar = 17)

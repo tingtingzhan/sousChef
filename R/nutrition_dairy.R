@@ -104,7 +104,7 @@ OakFarms_buttermilk <- \() nutrition(
 
 
 Carnation_evapMilk <- \() nutrition(
-  nestle = '11002753',
+  nestleprofessional = 'nestle-carnation-evaporated-milk-6-x-97-fl-oz',
   # also 'https://www.verybestbaking.com/carnation/products/nestle-carnation-evaporated-milk/'
   name = 'Carnation Evaporated Milk', alias = '\u6de1\u5976',
   walmart = '10291864', usd = 1.72/12,

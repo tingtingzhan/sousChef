@@ -57,7 +57,7 @@ Plugra_butter <- \() nutrition(
 Wuthrich_butter <- \() nutrition(
   brand = c(style_hyperlink(text = 'Wu\u0308thrich\U1f1fa\U1f1f8', url = 'https://www.grassland.com/product/wuthrich-83-european-style-unsalted-butter-solid/')),
   name = 'European Butter\U1f9c8',
-  webstaurant = '999RE3120', usd = 7.99/(16*2),
+  webstaurant = '874RE3120', usd = .24/2, date = as.Date('2026-10-23'),
   serving_oz = 8/16, servingTbsp = 1, 
   calorie = 110,
   fat = 226.796/16*.83, # on package 12g
@@ -81,7 +81,7 @@ Minerva_Amish_butter <- \() nutrition(
   brand = c(style_hyperlink(text = 'Minerva\U1f1fa\U1f1f8', url = 'https://minervadairy.com/product/unsalted/')),
   name = 'Amish Butter\U1f9c8',
   url = 'https://minervadairy.com/product/2lbs-unsalted-roll-butter/',
-  webstaurant = '874880039', usd = 92.49/6/(2*16),
+  webstaurant = '874880039', usd = .52/2, date = as.Date('2026-10-23'),
   serving_oz = 8/16, servingTbsp = 1,
   calorie = 100,
   fat = 226.796/16*.85, # on package 12g

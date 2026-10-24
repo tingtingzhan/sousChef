@@ -156,7 +156,7 @@ Starbucks_crema_pumpkinSpice <- \() nutrition(
   carbohydrate = 16, sugar = 13, addedSugar = 9, protein = 1)
 
 
-Starbucks_cocoa <- \() nutrition(
+Starbucks_hotCocoa <- \() nutrition(
   # sams = 'P03020738', usd = 8.48/567*28, # no longer in store
   costco = '100071096', usd = 44.99/2/850*28,
   brand = 'Starbucks\U1f1fa\U1f1f8', name = 'Hot Cocoa, Tin',
@@ -175,7 +175,7 @@ Starbucks_mochaSauce <- \() nutrition(
 
 
 
-Starbucks_cocoa_Kcup <- \() nutrition(
+Starbucks_Kcup_hotCocoa <- \() nutrition(
   starbucks = 'classic-hot-cocoa',
   name = 'Hot Cocoa, K-cup',
   servingGram = 21, 

@@ -103,7 +103,7 @@ LeeKumKee_premium_oyster <- \() nutrition(
 LeeKumKee_oyster <- \() nutrition(
   lkkusa = 'panda-brand-oyster-flavored-sauce',
   name = 'Panda\u00ae Oyster\U0001f9aa Sauce', alias = '\u718a\u8c93\u724c\u9bae\u5473\u8814\u6cb9',
-  webstaurant = '999LKK0074', # source of nutrition info
+  webstaurant = '999LKK0074', usd = 0.15/28.35*19, date = as.Date('2026-10-23'), # source of nutrition info
   servingGram = 19, # my guess
   servingTbsp = 1,
   calorie = 20,

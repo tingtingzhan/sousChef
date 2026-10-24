@@ -1,16 +1,4 @@
 
-if (FALSE) {
-  nutritionlist(
-    LeeKumKee_satay(),
-    LeeKumKee_coconutCurry(),
-    LeeKumKee_chickenBouillon()
-  )
-  
-  # new function
-  sort_by.nutritionlist <- \(x, y, ...) {
-    # i.e., sort by sodium percentage
-  }
-}
 
 
 LeeKumKee_chickenBouillon <- \() nutrition(

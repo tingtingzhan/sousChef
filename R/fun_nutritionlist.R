@@ -16,16 +16,16 @@ nutritionlist <- \(...) {
   z <- x |>
     lapply(FUN = as, Class = 'nutrition')
   
+  if (!all(vapply(z, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) {
+    stop()
+  } 
+  
   sumx <- x |>
     lapply(FUN = summary)
   # [summary.nutrition]
   # [summary.raw.]
   # [summary.recipe]
   
-  if (!all(vapply(z, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) {
-    stop()
-  } 
-
   nm <- z |>
     vapply(FUN = labels.nutrition, FUN.VALUE = '')
   names(z) <- names(sumx) <- nm

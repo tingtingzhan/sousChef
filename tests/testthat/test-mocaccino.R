@@ -7,7 +7,9 @@ expect_no_error(
     sousChef:::Mels_cocoa(),
     sousChef:::AmandaRettke_cocoa(),
     sousChef:::bargainmums_mocha()
-  ) |> print()
+  ) |> 
+    sort_by('sugar') |>
+    print()
 ) # compare powder recipes
 
 expect_no_error(

@@ -4,7 +4,6 @@
 
 
 bakethat_pumpkin_creamCheeseDip <- \() recipe(
-  author = 'Bake That!',
   misc_brick = c(Philadelphia_creamCheese = 1),
   misc_cup = c(
     Domino_10x = 1.5
@@ -19,7 +18,7 @@ bakethat_pumpkin_creamCheeseDip <- \() recipe(
   misc_Tbsp = c(
     SimplyOrganic_pumpkinSpice = 1/2
   ),
-  youtube = 'G87HfZjdDwI'
+  bakethat = 'G87HfZjdDwI'
 )
 
 

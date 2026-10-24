@@ -2,7 +2,9 @@
 
 GoodLifeEats_pumpkin_creamCheeseSpread <- \() recipe(
   author = 'Good Life Eats',
-  misc_brick = c(Philadelphia_creamCheese = 1),
+  misc_brick = c(
+    Philadelphia_creamCheese = 1
+  ),
   misc_cup = c(
     Libbys_pumpkin = 2/3
   ),
@@ -17,13 +19,14 @@ GoodLifeEats_pumpkin_creamCheeseSpread <- \() recipe(
 
 
 Lynn_pumpkin_creamCheeseSpread <- \() recipe(
-  author = 'Lynn',
-  misc_brick = c(Philadelphia_creamCheese = 1),
+  misc_brick = c(
+    Philadelphia_creamCheese = 1
+  ),
   misc_cup = c(
     Libbys_pumpkin = 1/2
   ),
   misc_tsp = c(
     SimplyOrganic_pumpkinSpice = 1
   ),
-  youtube = 'OxmE0JeiWLo'
+  lynnsrecipes = c('OxmE0JeiWLo' = 'Pumpkin_Cream_Cheese')
 )

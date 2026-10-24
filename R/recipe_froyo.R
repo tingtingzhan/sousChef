@@ -8,8 +8,8 @@
 
 
 emma_froyo <- \() recipe(
-  author = 'Emma\'s Goodies', flavor = 'Froyo\U1f368',
-  youtube = 'rzXkiFZM1Vc',
+  flavor = 'Froyo\U1f368',
+  emmafontanella = c('rzXkiFZM1Vc' = 'instant-diy-frozen-yogurt'),
   misc_cup = c(
     Wegmans_heavyCream = 1.75,
     Domino_10x = 2/3

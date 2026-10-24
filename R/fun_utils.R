@@ -331,12 +331,12 @@ add_brand_url <- \(x, name, ...) {
 
 
 
-add_youtube <- \(x, name, ...) { # text
+add_youtube <- \(x, name, ...) {
   v <- x[[name]]
   nv <- length(v)
   if (!nv) return(x)
   if (nv > 1L) stop('only allow len-1 ', sQuote(name))
-  if (length(x$author)) return(x)
+  if (length(x[['author']])) return(x)
   x$author <- v |>
     fmtURL(fmt = 'https://youtu.be/%s', ...)
   x[[name]] <- NULL

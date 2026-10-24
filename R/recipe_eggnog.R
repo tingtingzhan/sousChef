@@ -22,7 +22,7 @@ JeanPierre_eggnog <- \() recipe(
   ),
   # 2 ounces Bourbon
   # 2 ounces Rum
-  chefjeanpierre = c('eggnog' = 'N_2vR1bBUdE'))
+  chefjeanpierre = c('N_2vR1bBUdE' = 'eggnog'))
 
 
 PreppyKitchen_eggnog <- \() recipe(

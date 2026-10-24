@@ -153,7 +153,7 @@ PreppyKitchen_pumpkin_cheesecake <- \() recipe(
 
 BrianLagerstrom_burntBasque <- \() recipe(
   flavor = 'Burnt Basque Cheesecake',
-  author = 'Brian Lagerstrom', youtube = 'eW-nF1xEFSA',
+  brianlagerstrom = c('eW-nF1xEFSA' = 'basque-cheesecake'),
   misc = c(
     KingArthur_allPurposeFlr = 50,
     Philadelphia_creamCheese = 800,

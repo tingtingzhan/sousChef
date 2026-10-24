@@ -5,7 +5,8 @@
 
 
 cookingTree_LangueDeChat <- \() recipe(
-  author = 'CookingTree', flavor = 'Langue De Chat', youtube = 'V-PasuPZFS0',
+  flavor = 'Langue De Chat', 
+  cookingtree = 'V-PasuPZFS0',
   misc = c(
     KingArthur_allPurposeFlr = 110,
     Kerrygold_butter = 90,
@@ -16,7 +17,8 @@ cookingTree_LangueDeChat <- \() recipe(
 
 
 cookingTree_cocoa_LangueDeChat <- \() recipe(
-  author = 'CookingTree', flavor = 'Cocoa Langue De Chat', youtube = 'V-PasuPZFS0',
+  flavor = 'Cocoa Langue De Chat', 
+  cookingtree = 'V-PasuPZFS0',
   misc = c(
     KingArthur_allPurposeFlr = 50,
     KingArthur_Bensdorp_cocoa = 7,

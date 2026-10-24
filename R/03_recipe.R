@@ -98,6 +98,8 @@ recipe <- \(...) {
   
   # youtubers
   x <- x |>
+    add_youtube(name = 'bakethat', text = 'Bake That!') |>
+    add_youtube(name = 'cookingtree', text = 'Cooking Tree \ucfe0\ud0b9\ud2b8\ub9ac') |>
     add_youtube(name = 'daatgo', text = '\u8fbe\u54e5\u53a8\u623f') |>
     add_youtube(name = 'dad1966', text = '\u8001\u7238\u7684\u98df\u5149') |>
     add_youtube(name = 'giallozafferano', text = 'Giallozafferano Italian Recipes') |>
@@ -125,10 +127,13 @@ recipe <- \(...) {
   }
   
   x <- x |>
+    add_youtube_recipe(name = 'brianlagerstrom', fmt = 'https://brianlagerstrom.com/recipes/%s', text1 = 'Brian', text2 = 'Lagerstrom') |>
     add_youtube_recipe(name = 'chefjeanpierre', fmt = 'https://chefjeanpierre.com/recipes/%s', text1 = 'Chef', text2 = 'Jean-Pierre') |>
+    add_youtube_recipe(name = 'emmafontanella', fmt = 'https://www.emmafontanella.com/%s', text1 = 'Emma', text2 = 'Fontanella') |>
     add_youtube_recipe(name = 'joshuaweissman', fmt = 'https://www.joshuaweissman.com/post/%s', text1 = 'Joshua', text2 = 'Weissman') |>
     add_youtube_recipe(name = 'julieseatsandtreats', fmt = 'https://www.julieseatsandtreats.com/%s', text1 = 'Julie\'s', text2 = 'Eats & Treats') |>
     add_youtube_recipe(name = 'just1cookbook', fmt = 'https://www.justonecookbook.com/%s', text1 = 'Just One', text2 = 'Cookbook') |>
+    add_youtube_recipe(name = 'lynnsrecipes', fmt = 'https://lynnsrecipes.com/recipes/%s.pdf', text1 = 'Lynn\'s', text2 = 'Recipes') |>  
     add_youtube_recipe(name = 'kitchenaiduk2003', fmt = 'https://www.kitchenaid.co.uk/recipes/%s', text1 = 'KitchenAid', text2 = 'UK') |>
     add_youtube_recipe(name = 'natashaskitchen', fmt = 'https://natashaskitchen.com/%s/', text1 = 'Natasha\'s', text2 = 'Kitchen') |>
     add_youtube_recipe(name = 'preppykitchen', fmt = 'https://preppykitchen.com/%s/', text1 = 'Preppy', text2 = 'Kitchen')# |>

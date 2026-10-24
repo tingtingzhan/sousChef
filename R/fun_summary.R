@@ -1,6 +1,6 @@
 
 
-#' @importFrom equiv4 equiv
+#' @importFrom equiv4 equiv equivs
 #' @export
 summary.nutrition <- \(object, ...) {
   z <- object |>
@@ -13,11 +13,11 @@ summary.nutrition <- \(object, ...) {
     ) |>
     equiv(caption = 'Serving', current = _)
   
-  ret <- list(perServing = z)
-  class(ret) <- c('equivs', class(ret)) |>
-    unique.default()
-  return(ret)
-
+  names(z) <- names(z) |> 
+    .repl()
+  
+  equivs(perServing = z)
+  
 }
 
 
@@ -202,40 +202,20 @@ summary.raw. <- \(object, ...) {
     caption = 'Cream Cheese', 
     current = z / sum(x['_creamCheese$']))
   
-  #class(ret) <- c('summary.raw.', class(ret)) |>
-  #  unique.default()
-  class(ret) <- c('equivs', class(ret)) |>
-    unique.default()
-  return(ret)
-    
-}
-
-
-
-
-
-
-# [print.equivs] vs. [print.equivlist]
-#' @export
-print.equivs <- \(x, ...) {
-  
-  id <- (lengths(x) > 0L)
-  if (!any(id)) return(invisible())
-  x <- x[id]
-  
-  xcap <- x |>
-    vapply(FUN = \(i) i@caption, FUN.VALUE = '') |>
-    duplicated.default()
-  if (any(xcap)) stop('all `equiv` elements must have unique `@caption`')
-  
-  x |>
-    lapply(FUN = \(i) { # do not want to print list names
+  ret |>
+    lapply(FUN = \(i) {
       names(i) <- names(i) |> 
         .repl()
-      print(i, fmt_caption = '\u214c %s\n') # ?equiv4:::print.equiv
-      cat('\n')
-    })
-  return(invisible())
+      return(i)
+    }) |>
+    do.call(what = equivs, args = _)
+
 }
+
+
+
+
+
+
 
 

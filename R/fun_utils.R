@@ -10,56 +10,6 @@
 
 
 
-#' @title Row-Bind Unbalanced Vectors
-#' 
-#' @param ... two or more \link[base]{vector}s of the same \link[base]{storage.mode}
-#' 
-#' @examples
-#' rbind_unbalanced(c(a = 1, b = 2), c(a = 11, c = 13))
-#' rbind_unbalanced(A = c(a = 1, b = 2), B = c(a = 11, c = 13))
-#' @export
-rbind_unbalanced <- \(...) {
-  
-  dots <- list(...)
-  
-  dots <- dots[lengths(dots) > 0L]
-  if (!length(dots)) return(invisible())
-  
-  nms <- dots |>
-    lapply(FUN = names)
-  
-  nms |>
-    lapply(FUN = \(i) {
-      if (!length(i)) stop('each element must be named')
-      if (anyNA(i) || !all(nzchar(i))) stop('each element must be named')
-    })
-  
-  m <- dots |>
-    vapply(FUN = storage.mode, FUN.VALUE = '') |>
-    unique.default()
-  if (length(m) != 1L) stop('all element should be one mode')
-  
-  rnm <- names(dots)
-  if (length(rnm)) {
-    if (anyNA(rnm) || !all(nzchar(rnm))) stop()
-  }
-  
-  cnm <- nms |>
-    unname() |> # in case `length(rnm)`
-    do.call(what = c, args = _) |>
-    unique.default() # union of names
-  
-  z <- switch(m, double = NA_real_, character = NA_character_, integer = NA_integer_) |>
-    array(dim = c(length(dots), length(cnm)), dimnames = list(rnm, cnm))
-  
-  for (i in seq_along(dots)) {
-    z[i, nms[[i]]] <- dots[[i]]
-  }
-  
-  return(z)
-  
-}
-
 
 
 #' @title Summation by Name
@@ -76,6 +26,7 @@ rbind_unbalanced <- \(...) {
 #' x2 = c(b = 2, c = 1)
 #' x3 = c(a = 1, b = -2, c = -1)
 #' sum_by_name(x1, x2, x3)
+#' @importFrom equiv4 rbind_unbalanced
 #' @export
 sum_by_name <- \(...) {
   xs <- list(...)
@@ -267,12 +218,12 @@ mergeVol <- \(x, ...) {
 
 
 
-#' @importFrom stats median.default
-#' @importFrom equiv4 binlabel
-median_binlabel <- \(x, ...) {
-  x |>
-    binlabel(median.default(x, na.rm = TRUE), ...)()
-}
+# @importFrom stats median.default
+# @importFrom equiv4 binlabel
+#median_binlabel <- \(x, ...) {
+#  x |>
+#    binlabel(median.default(x, na.rm = TRUE), ...)()
+#}
 
 #' @importFrom equiv4 binlabel
 max_binlabel <- \(x, ...) {
@@ -283,50 +234,6 @@ max_binlabel <- \(x, ...) {
 
 
 
-
-
-
-
-# [print.equivs] vs. [print.equivlist]
-#' @importFrom charwidth row_fmt_matrix
-#' @export
-print.equivlist <- \(x, ...) {
-  
-  x <- x[lengths(x) > 0L]
-  if (!length(x)) return(invisible())
-  
-  xcap <- x |> 
-    vapply(FUN = \(i) i@caption, FUN.VALUE = '') |>
-    duplicated.default()
-  if (!all(xcap[-1L])) stop('all `equiv` elements must have the same `@caption`')
-  
-  y1 <- x |>
-    lapply(FUN = \(i) i@current) |>
-    do.call(what = rbind_unbalanced, args = _)
-  
-  if (!length(y1)) return(invisible())
-  
-  y2 <- y1[, colMeans(is.na(y1)) != 1L, drop = FALSE]
-  #y3 <- y2[rowMeans(is.na(y2)) != 1L, , drop = FALSE]
-  y3 <- y2
-  if (!length(y3)) return(invisible())
-  if (all(is.na(y3))) return(invisible())
-  if (all(abs(y3) < .Machine$double.eps, na.rm = TRUE)) return(invisible())
-  
-  y <- y3 |>
-    apply(MARGIN = 2L, FUN = median_binlabel, accuracy = .1, simplify = FALSE) |>
-    do.call(what = cbind) # to make sure not getting a 'vector'
-  
-  x[[1L]]@caption |> 
-    sprintf(fmt = '\u214c %s\n') |> 
-    style_bold() |> bg_br_yellow() |> 
-    cat()
-  y |>
-    row_fmt_matrix() |>
-    cat(sep = '\n')
-  cat('\n')
-  return(invisible(y))
-}
 
 
 

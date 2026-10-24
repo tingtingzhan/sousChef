@@ -38,7 +38,7 @@ nutritionlist <- \(...) {
 
 
 
-
+#' @importFrom equiv4 equivlist
 #' @export
 print.nutritionlist <- \(x, ...) {
   
@@ -67,7 +67,8 @@ print.nutritionlist <- \(x, ...) {
           .repl()
         return(z)
       }) |>
-      print.equivlist()
+      do.call(what = equivlist, args = _) |>
+      print() # equiv4:::print.equivlist
   }
   
   return(invisible())
@@ -116,6 +117,9 @@ print.nutritionMatrix <- \(x, ...) {
   return(invisible())
   
 }
+
+
+
 
 
 # nomenclature

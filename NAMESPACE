@@ -7,8 +7,6 @@ S3method(format,spice)
 S3method(labels,nutrition)
 S3method(labels,raw.)
 S3method(labels,recipe)
-S3method(print,equivlist)
-S3method(print,equivs)
 S3method(print,nutrition)
 S3method(print,nutritionMatrix)
 S3method(print,nutritionlist)
@@ -49,7 +47,6 @@ export(nutribullet20)
 export(nutribullet24)
 export(nutrition)
 export(nutritionlist)
-export(rbind_unbalanced)
 export(recipe)
 export(sum_by_name)
 export(thermometer)
@@ -72,10 +69,12 @@ importFrom(charwidth,row_fmt_matrix)
 importFrom(consec,cmod)
 importFrom(equiv4,
   binlabel,
-  equiv
+  equiv,
+  equivlist,
+  equivs,
+  rbind_unbalanced
 )
 importFrom(stats,
-  median.default,
   na.omit,
   setNames
 )

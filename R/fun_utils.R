@@ -217,25 +217,11 @@ mergeVol <- \(x, ...) {
 
 
 
-
-# @importFrom stats median.default
-# @importFrom equiv4 binlabel
-#median_binlabel <- \(x, ...) {
-#  x |>
-#    binlabel(median.default(x, na.rm = TRUE), ...)()
-#}
-
 #' @importFrom equiv4 binlabel
 max_binlabel <- \(x, ...) {
   x |>
     binlabel(max(x, na.rm = TRUE), ...)()
 }
-
-
-
-
-
-
 
 
 

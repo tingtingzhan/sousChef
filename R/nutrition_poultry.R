@@ -1,9 +1,9 @@
 
 
-rotisserie_chickenBreast <- \() nutrition(
+Kirkland_rotisserie_chickenBreast <- \() nutrition(
   name = 'Rotisserie Chicken Breast',
   alias = '\u70e4\u9e21\u80f8\u8089',
-  costcoBiz = '11975863',
+  costcoBiz = '11975863', usd = 15.99/46*3, date = as.Date('2026-10-20'),
   serving_oz = 3,
   calorie = 110,
   fat = 2.5, cholesterol = .065, sodium = .4, 

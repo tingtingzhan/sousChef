@@ -188,16 +188,41 @@ summary.raw. <- \(object, ...) {
     caption = 'Cream Cheese', 
     current = z / sum(x['_creamCheese$']))
   
-  ret |>
+  out <- ret |>
     lapply(FUN = \(i) {
       names(i) <- names(i) |> 
         .repl()
       return(i)
     }) |>
     do.call(what = equivs, args = _)
-
+  
+  class(out) <- c(
+    ifelse(
+      test = is(x, 'recipe'), 
+      yes = 'summary.recipe', 
+      no = 'summary.raw.'
+    ),
+    class(out)
+  ) |>
+    unique.default()
+  
+  return(out)
+  
 }
 
+#' @method print summary.recipe
+#' @export
+print.summary.recipe <- \(x, fmt_caption = '\u214c %s', ...) {
+  NextMethod(generic = 'print', fmt_caption = fmt_caption, ...)
+  # ?equiv4:::print.equivs
+}
+
+#' @method print summary.raw.
+#' @export
+print.summary.raw. <- \(x, fmt_caption = '\u214c %s', ...) {
+  NextMethod(generic = 'print', fmt_caption = fmt_caption, ...)
+  # ?equiv4:::print.equivs
+}
 
 
 

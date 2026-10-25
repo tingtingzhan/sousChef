@@ -68,7 +68,7 @@ print.nutritionlist <- \(x, ...) {
         return(z)
       }) |>
       do.call(what = equivlist, args = _) |>
-      print() # equiv4:::print.equivlist
+      print(fmt_caption = '\u214c %s') # equiv4:::print.equivlist
   }
   
   return(invisible())

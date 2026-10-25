@@ -170,12 +170,15 @@ mergeVol_H2O <- \(x) {
     addname1(nm = 'c22')
   x$water_Tbsp <- x[['water_Tbsp']] |>
     addname1(nm = 'c22')
+  x$water_floz <- x[['water_floz']] |>
+    addname1(nm = 'c22')
   x$water_cup <- x[['water_cup']] |>
     addname1(nm = 'c22')
   
   x_tsp <- sum_by_name(
     x[['water_tsp']],
     3 * x[['water_Tbsp']],
+    6 * x[['water_floz']],
     48 * x[['water_cup']]
   )
   
@@ -186,7 +189,7 @@ mergeVol_H2O <- \(x) {
   
   if (length(z)) x$water <- z
   
-  x$water_tsp <- x$water_Tbsp <- x$water_cup <- NULL
+  x$water_tsp <- x$water_Tbsp <- x$water_floz <- x$water_cup <- NULL
   
   return(x)
   

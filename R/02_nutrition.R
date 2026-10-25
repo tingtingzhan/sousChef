@@ -368,6 +368,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
           EXPR = x@key, 
           butter = '\u9ec4\u6cb9',
           cocoa =, cacao = '\u53ef\u53ef\u7c89',
+          coffee = '\u901f\u6eb6\u5496\u5561',
           coffeeLiqueur =, espressoLiqueur = '\u5496\u5561\u9152',
           creamCheese = '\u5976\u6cb9\u5976\u916a',
           drymilk = '\u8131\u8102\u5976\u7c89',
@@ -382,6 +383,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
           neufchatel = 'Neufcha\u0302tel\u4e73\u916a',
           saltedButter = '\u542b\u76d0\u9ec4\u6cb9',
           sourCream = '\u9178\u5976\u6cb9',
+          yeast = '\u9175\u6bcd',
           character()
         )
       }
@@ -633,7 +635,7 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
     ) |> paste(collapse = ', ')) |>
       format_inline() |>
       cat()
-    cat('\n')
+    cat('\n\n')
   } 
   
   if (nrv <- length(x@review)) {

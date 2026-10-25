@@ -9,15 +9,14 @@
 
 Fleischmanns_instant_yeast <- \() nutrition(
   fleischmannsyeast = 'bread-machine', # or 'rapidrise' ?
-  name = 'Instant Dry Yeast', alias = '\u901f\u53d1\u9175\u6bcd',
-  bjs = 'fleischmanns-instant-dry-yeast-2-pk1-lb/3000000000000222175/',
-  usd = 6.59 / 528,
+  name = 'Instant Dry Yeast',
+  bjs = 'fleischmanns-instant-dry-yeast-2-pk1-lb/3000000000000222175/', usd = 6.59 / 528, date = as.Date('2026-10-24'),
   servingGram = .9, servingTsp = 1/4
   )
 
 
 
-Fleischmanns_active <- \() nutrition(
+Fleischmanns_active_yeast <- \() nutrition(
   fleischmannsyeast = 'active-dry',
   name = 'Active Dry Yeast',
   servingGram = 7.09, servingTsp = 2.25)

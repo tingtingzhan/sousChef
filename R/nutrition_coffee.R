@@ -7,33 +7,39 @@
 NescafeGold_blonde_coffee <- \() nutrition(
   nescafeGold = 'gold-espresso-blonde-instant-coffee-35-oz-jar',
   walmart = '5066099259',
-  costco = '4000376082',
-  name = 'Blonde, Velvety Crema', alias = '\u901f\u6eb6\u5496\u5561',
-  usd = 18.99/200*2, # costco package: 200g, 100 cups, 1tsp/cup
-  servingGram = 2, servingTsp = 1
+  costco = '4000376082', usd = 18.99/100, date = as.Date('2026-10-24'),
+  name = 'Blonde, Velvety Crema',
+  servingGram = 2, servingTsp = 1,
+  suggest = list(
+    water_floz = c(c95 = 2)
+  )
 )
 
 
 
 
 
-NescafeGold_intense <- \() nutrition(
+NescafeGold_intense_coffee <- \() nutrition(
   nescafeGold = 'gold-espresso-intense-instant-coffee-35-oz-jar',
-  walmart = '5066099258',
-  name = 'Intense, Velvety Crema', alias = '\u901f\u6eb6\u5496\u5561',
-  usd = 10.12/100,
+  walmart = '5066099258', usd = 10.18/50, date = as.Date('2026-10-24'),
+  name = 'Intense, Velvety Crema',
   servingGram = 2, servingTsp = 1,
+  suggest = list(
+    water_floz = c(c95 = 2)
+  ),
   superior = 'NescafeGold_blonde_coffee'
 )
 
 
 
-NescafeGold_decaf <- \() nutrition(
+NescafeGold_decaf_coffee <- \() nutrition(
   nescafeGold = 'gold-decaf-espresso-instant-coffee',
-  walmart = '12273958388',
-  name = 'Decaf, Velvety Crema', alias = '\u901f\u6eb6\u5496\u5561',
-  usd = 9.97/100,
+  walmart = '12273958388', usd = 9.97/50, date = as.Date('2026-10-24'),
+  name = 'Decaf, Velvety Crema',
   servingGram = 2, servingTsp = 1,
+  suggest = list(
+    water_floz = c(c95 = 2)
+  ),
   superior = 'NescafeGold_blonde_coffee'
 )
 

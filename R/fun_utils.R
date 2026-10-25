@@ -79,32 +79,25 @@ zero.omit <- \(x) {
 
 # name clash
 # ?stats::getCall
-.findCall <- \(x, which = -2) {
+
+
+.findCall <- \(which = -2) {
   
   # default `-2` frame is determined by 
   # [.findCall]
-  # helper function, e.g. [nutrition()]
+  # helper function, 
+  # e.g. [spice()], [nutrition()], [recipe()]
   
+  tmp <- tryCatch(expr = {
+    match.call(
+      definition = sys.function(which = which), 
+      call = sys.call(which = which)
+    )
+  }, error = identity)
   
-  # BUT!!!
-  # user may define: x <- new('recipe', ...)
-  
-  #if (identical(x$call, quote(`<UNDEFINED>`))) {
-  if (!length(x$call)) {
-    
-    tmp <- tryCatch(expr = {
-      match.call(
-        definition = sys.function(which = which), 
-        call = sys.call(which = which)
-      )
-    }, error = identity)
-    
-    z <- if (inherits(tmp, what = 'error')) {
-      quote(`user-defined`)
-    } else tmp[[1L]]
-    
-  } else z <- x$call # not the best practice, just to conform to R grammar 
-  
+  z <- if (inherits(tmp, what = 'error')) {
+    quote(`<UNDEFINED>`)
+  } else tmp[[1L]]
   #print(z)
   
   if (is.symbol(z)) {
@@ -114,12 +107,9 @@ zero.omit <- \(x) {
   } else stop('unsupported @call: ', sQuote(z))
   
   # for ?methods::new to work!!!
-  x$call <- call(name = 'quote', z) 
-  
-  return(x)
+  call(name = 'quote', z) 
   
 }
-
 
 
 mergePc <- \(x, ...) {  
@@ -372,12 +362,12 @@ add_youtube_recipe <- \(x, name, text1, text2, ...) {
 
 
 
-get_key_ <- \(x) {
+get_key_ <- \(x, no_eval) {
   # x is \link[base]{list}
   # for [recipe()] and [nutrition()]
   if (!length(x$key)) {
-    if (!identical(x$call, quote(`<UNDEFINED>`))) {
-      z <- x$call[[2L]] |> # `x$call` is quote(name)
+    if (!identical(no_eval, quote(`<UNDEFINED>`))) {
+      z <- no_eval[[2L]] |> # `no_eval` is quote(name)        
         as.character() |>
         strsplit(split = '_')
       z <- z[[1L]]

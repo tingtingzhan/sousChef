@@ -98,19 +98,23 @@ setClass(Class = 'nutrition', slots = c(
 
 #' @rdname nutrition-class
 #' 
+#' @param no_eval ..
+#' 
 #' @param ... raw user input
 #' 
 #' @details
 #' The helper function [nutrition()] converts raw user input into the (slots of) \linkS4class{nutrition}-class.
 #' 
 #' @export
-nutrition <- \(...) {
+nutrition <- \(no_eval = .findCall(which = -2), ...) {
   
-  x <- list(...) |>
-    .findCall(which = -2) # must stop the pipeline :)))
+  no_eval
+  # force(no_eval) # messes up envir!!
+  
+  x <- list(...)
   
   x <- x |>
-    get_key_()
+    get_key_(no_eval = no_eval)
   
   x <- x |>
     add_brand_url(name = 'bachans', fmt = 'https://bachans.com/products/%s', text = 'Bachan\'s\U1f1fa\U1f1f8') |>
@@ -347,7 +351,7 @@ nutrition <- \(...) {
     x$pubchem <- NULL
   }
   
-  c(list(Class = 'nutrition'), x) |> 
+  c(list(Class = 'nutrition', call = no_eval), x) |> 
     do.call(what = 'new', args = _)
 
 }

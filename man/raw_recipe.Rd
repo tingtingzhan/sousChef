@@ -12,12 +12,14 @@
 \usage{
 \S4method{show}{raw.}(object)
 
-recipe(...)
+recipe(no_eval = .findCall(which = -2), ...)
 
 \S4method{show}{recipe}(object)
 }
 \arguments{
 \item{object}{see \strong{Usage}}
+
+\item{no_eval}{..}
 
 \item{...}{raw user input}
 }

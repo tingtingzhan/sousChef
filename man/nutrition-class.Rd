@@ -7,11 +7,13 @@
 \alias{show,nutrition-method}
 \title{\linkS4class{nutrition}}
 \usage{
-nutrition(...)
+nutrition(no_eval = .findCall(which = -2), ...)
 
 \S4method{show}{nutrition}(object)
 }
 \arguments{
+\item{no_eval}{..}
+
 \item{...}{raw user input}
 
 \item{object}{a \linkS4class{nutrition} object}

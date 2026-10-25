@@ -59,20 +59,24 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
 
 #' @rdname raw_recipe
 #' 
+#' @param no_eval ..
+#' 
 #' @param ... raw user input
 #' 
 #' @details
 #' The helper function [recipe()] converts raw user input into the (slots of) \linkS4class{recipe}-class.
 #' 
 #' @export
-recipe <- \(...) {
+recipe <- \(no_eval = .findCall(which = -2), ...) {
   
-  x <- list(...) |>
-    .findCall(which = -2)
+  no_eval
+  # force(no_eval) # messes up envir!!
+  
+  x <- list(...)
   
   x <- x |>
     .cleanSlots_raw.() |>
-    get_key_()
+    get_key_(no_eval = no_eval)
 
   # processing 'character'
   
@@ -178,7 +182,7 @@ recipe <- \(...) {
   }
   
 
-  c(list(Class = 'recipe'), x) |> 
+  c(list(Class = 'recipe', call = no_eval), x) |> 
     do.call(what = 'new', args = _)
   
 }

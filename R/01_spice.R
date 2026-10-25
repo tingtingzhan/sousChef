@@ -17,13 +17,17 @@ setClass(Class = 'spice', slots = c(
 
 
 
-spice <- \(...) {
+
+
+
+spice <- \(no_eval = .findCall(which = -2), ...) {
   
-  x <- list(...) |>
-    .findCall(which = -2)
+  no_eval
+  
+  x <- list(...)
   
   if (!length(x$wiki)) {
-    x$wiki <- x$call[[2L]] |> # `x$call` is `quote(anise)` !!
+    x$wiki <- no_eval[[2L]] |> # `no_eval` is `quote(anise)` !!
       as.character()
   }
   
@@ -34,12 +38,10 @@ spice <- \(...) {
   
   x$wiki <- NULL
   
-  c(list(Class = 'spice'), x) |> 
+  c(list(Class = 'spice', call = no_eval), x) |> 
     do.call(what = 'new', args = _)
   
 }
-
-
 
 
 

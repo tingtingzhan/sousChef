@@ -189,9 +189,16 @@ plus_raw_list <- \(e1, e2) {
   atr <- attributes(e1)
   atr$class <- NULL
   
-  if (length(atr$call)) {
-    atr$call <- call(name = 'quote', atr$call)
-    # for [recipe()]
+  if (length(atr$call)) { # slot2attr
+    atr$no_eval <- call(
+      name = 'quote', 
+      call(
+        name = 'quote', 
+        atr$call
+      )
+    )
+    atr$call <- NULL
+    # for [recipe()] !!!
   }
   
   atr <- atr[lengths(atr) > 0L]

@@ -88,23 +88,19 @@ zero.omit <- \(x) {
   # helper function, 
   # e.g. [spice()], [nutrition()], [recipe()]
   
-  tmp <- tryCatch(expr = {
-    match.call(
-      definition = sys.function(which = which), 
-      call = sys.call(which = which)
-    )
-  }, error = identity)
+  tmp <- match.call(
+    definition = sys.function(which = which), 
+    call = sys.call(which = which)
+  ) # let err!!
   
-  z <- if (inherits(tmp, what = 'error')) {
-    quote(`<UNDEFINED>`)
-  } else tmp[[1L]]
+  z <- tmp[[1L]]
   #print(z)
   
   if (is.symbol(z)) {
     # do nothing
   } else if (as.character(z[[1L]]) %in% c('::', ':::')) {
     z <- z[[3L]]
-  } else stop('unsupported @call: ', sQuote(z))
+  } else stop('unsupported ', sQuote(z))
   
   # for ?methods::new to work!!!
   call(name = 'quote', z) 

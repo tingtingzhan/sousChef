@@ -272,8 +272,11 @@ nutrition <- \(...) {
     add_store_url(name = 'costco', fmt = 'https://www.costco.com/p/-/%s', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco') |>
     add_store_url(name = 'costcoBiz', fmt = 'https://www.costcobusinessdelivery.com/p/-/%s', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco Business Delivery') |>
     # add_store_url(name = 'giantfood', fmt = '???', store_brand = 'Giant Food\U1f1fa\U1f1f8') |>
+    add_store_url(name = 'foodservicedirect', fmt = 'https://www.foodservicedirect.com/%s', store_brand = NA_character_, store_name = 'Food Service Direct') |>
     add_store_url(name = 'jfc', fmt = 'https://www.jfc.com/product/item/%s', store_brand = NA_character_, store_name = 'JFC International Inc.') |>
     add_store_url(name = 'kraftheinzawayfromhome', fmt = 'https://www.kraftheinzawayfromhome.com/products/%s', store_brand = NA_character_, store_name = 'Kraft Heinz Away From Home\U1f1fa\U1f1f8') |>
+    add_store_url(name = 'kroger', fmt = 'https://www.kroger.com/p/%s', store_brand = NA_character_, store_name = 'Kroger\U1f1fa\U1f1f8') |>
+    add_store_url(name = 'krogerorganic', fmt = 'https://www.kroger.com/p/simple-truth-organic-%s', store_brand = 'Simple Truth Organic', store_name = 'Kroger\U1f1fa\U1f1f8') |>
     add_store_url(name = 'lucerne', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Lucerne\U1f1fa\U1f1f8') |>
     add_store_url(name = 'sams', fmt = 'https://www.samsclub.com/p/%s', store_brand = 'Member\'s Mark\U1f1fa\U1f1f8', store_name = 'Sam\'s Club') |>
     add_store_url(name = 'target', fmt = 'https://www.target.com/p/-/%s', store_brand = NA_character_, store_name = 'Target') |>

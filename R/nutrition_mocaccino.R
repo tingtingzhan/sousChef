@@ -113,8 +113,7 @@ Nestle_rich_hotCocoa <- \() nutrition(
   calorie = 80,
   fat = 2, sodium = .19, carbohydrate = 16, sugar = 12, addedSugar = 10,
   suggest = list(
-    #6 fl. oz. hot water or milk
-    water_cup = c(c80 = 6/8)
+    misc_floz = c(Wegmans_whole_milk = 6)
   ))
 
 
@@ -126,8 +125,7 @@ Nestle_skim_hotCocoa <- \() nutrition(
   calorie = 25,
   sodium = .135, carbohydrate = 5, sugar = 4, protein = 1,
   suggest = list(
-    # 6 fl. oz. hot water or milk
-    water_cup = c(c80 = 6/8)
+    misc_floz = c(Wegmans_whole_milk = 6)
   ))
 
 

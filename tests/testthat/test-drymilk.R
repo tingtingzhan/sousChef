@@ -4,6 +4,10 @@ expect_no_error(
   object = nutritionlist(
     sousChef:::Carnation_drymilk() |> 
       as('raw.'),
+    KingArthur_baker_drymilk() |>
+      as('raw.'),
+    KingArthur_drywholemilk() |>
+      as('raw.'),
     sousChef:::GreatValue_drymilk() |> 
       as('raw.'),
     sousChef:::MembersMark_drymilk() |> 

@@ -28,8 +28,7 @@ MembersMark_yogurtGreek <- \() nutrition(
 
 
 SimpleTruth_yogurt <- \() nutrition(
-  url = 'https://www.kroger.com/p/simple-truth-organic-plain-lowfat-yogurt/0001111045530',
-  brand = 'Simple Truth Organic', # Kroger is the parent company 
+  krogerorganic = 'plain-lowfat-yogurt/0001111045530',
   name = 'Low-Fat Yogurt', alias = '\u4f4e\u8102\u9178\u5976',
   servingGram = 170, servingCup = 2/3,
   calorie = 120,
@@ -104,14 +103,15 @@ OakFarms_buttermilk <- \() nutrition(
 
 
 Carnation_evapMilk <- \() nutrition(
-  nestleprofessional = 'nestle-carnation-evaporated-milk-6-x-97-fl-oz',
-  # also 'https://www.verybestbaking.com/carnation/products/nestle-carnation-evaporated-milk/'
-  name = 'Carnation Evaporated Milk', alias = '\u6de1\u5976',
-  walmart = '10291864', usd = 1.72/12,
+  #nestleprofessional = 'nestle-carnation-evaporated-milk-6-x-97-fl-oz',
+  carnationbaking = 'nestle-carnation-evaporated-milk',
+  name = 'Evaporated Milk', alias = '\u6de1\u5976',
+  walmart = '10291863', usd = 1.78/12, date = as.Date('2026-10-25'),
   # 12floz, full can 422g, empty can 46g,
   servingGram = (422 - 46)/12, serving_floz = 1, #servingTbsp = 2, # 12floz in total
   calorie = 40,
-  fat = 2, sugar = 3, sodium = .03, protein = 2)
+  fat = 2, cholesterol = .01, sodium = .03,
+  carbohydrate = 3, sugar = 3, protein = 2)
 
 # https://www.walmart.com/ip/Nestle-Carnation-Lowfat-2-Evaporated-Milk-Vitamins-A-and-D-Added-12-fl-oz/10804669?from=/search
 
@@ -120,11 +120,12 @@ Carnation_evapMilk <- \() nutrition(
 CarnationFatFree_evapMilk <- \() nutrition(
   carnationbaking = 'fat-free-evapored-milk',
   name = 'Fat Free Evaporated Milk', alias = '\u8131\u8102\u6de1\u5976',
-  walmart = '1363902922', usd = 6.88/4/12, # 2023-11-11
+  walmart = '1363902922', usd = 6.88/4/12, date = as.Date('2026-10-25'),
   # fullweight = 431, emptyweight = 46,
   servingGram = (431-46)/12, serving_floz = 1, #servingTbsp = 2,
   calorie = 25,
-  sodium = .035, sugar = 3, protein = 2)
+  sodium = .035, 
+  carbohydrate = 3, sugar = 3, protein = 2)
 
 
 
@@ -134,14 +135,14 @@ Carnation_condensMilk <- \() nutrition(
   carnationbaking = 'sweetened-condensed-milk',
   name = 'Sweetened Condensed Milk',
   servingGram = 397/10, servingTbsp = 2,
-  usd = 2.99/10,
+  kroger = 'nestl-carnation-sweetened-condensed-milk-shelf-milk-canned-milk/0005000011081', usd = 3.49/10, date = as.Date('2026-10-25'),
   fdc = 365332L,
   # https://en.wikipedia.org/wiki/Condensed_milk # 60% water removed. 
   # whole milk has 87% water.
   # .87 * .4 = .35
   # condensed milk has .13 (solid) + .35 (remaining water)
   # water content .35/(.13 + .35) = 73% # ???
-  fat = 3.5, sodium = .045, 
+  fat = 3.5, cholesterol = .015, sodium = .045, 
   carbohydrate = 22, sugar = 22, addedSugar = 18, protein = 2) # remaining weight ~11g
 
 
@@ -156,6 +157,7 @@ Philadelphia_creamCheese <- \() nutrition(
   kraftheinzawayfromhome = '10021000616005',
   philadelphia = '00021000612239',
   name = 'Cream Cheese',
+  webstaurant = '875KRA616005', usd = 88.74/6/48, date = as.Date('2026-10-25'),
   contain = c('carob bean gum'), # same as 'locust bean gum'
   serving_oz = 1, servingTbsp = 2,
   calorie = 100,
@@ -167,6 +169,7 @@ Philadelphia_creamCheeseSpread <- \() nutrition(
   philadelphia = '00021000000142',
   kraftheinzawayfromhome = '10021000614063',
   alias = '\u5976\u6cb9\u5976\u916a\u62b9\u6599', name = 'Cream Cheese Spread',
+  foodservicedirect = '151148', usd = 131.38/6/(3*454)*31, date = as.Date('2026-10-25'),
   contain = c('guar gum'),
   servingGram = 31, servingTbsp = 2,
   calorie = 80,

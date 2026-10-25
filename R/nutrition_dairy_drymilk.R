@@ -29,9 +29,9 @@ Meyenberg_goat_drywholemilk <- \() nutrition(
 
 
 Carnation_drymilk <- \() nutrition(
-  nestleprofessional = 'nestle-carnation-nonfat-dry-milk-4-x-2275-oz',
-  # also https://www.verybestbaking.com/carnation/products/instant-non-fat-dry-milk-9oz-can/
-  name = 'Carnation Nonfat Dry Milk',
+  #nestleprofessional = 'nestle-carnation-nonfat-dry-milk-4-x-2275-oz',
+  carnationbaking = 'instant-non-fat-dry-milk-9oz-can',
+  name = 'Nonfat Dry Milk',
   walmart = '978118310', usd = 4.64/272*23, date = as.Date('2026-10-07'),
   # target = 'A-13898456', #usd = 4.89/272*23, # no longer available
   servingGram = 23, 
@@ -72,8 +72,10 @@ KingArthur_baker_drymilk <- \() nutrition(
   servingGram = 28, 
   servingCup = 1/4, # packaging
   calorie = 100,
-  # no suggest on package!
-  cholesterol = .01, sodium = .11, carbohydrate = 14, sugar = 13, protein = 10)
+  cholesterol = .01, sodium = .11, carbohydrate = 14, sugar = 13, protein = 10,
+  suggest = list(
+    water_cup = c(c80 = 1)
+  ))
 
 
 
@@ -85,7 +87,10 @@ KingArthur_drywholemilk <- \() nutrition(
   servingTbsp = 1, # packaging
   calorie = 30,
   # no suggest on package!!!
-  fat = 1.5, cholesterol = .005, sodium = .02, carbohydrate = 2, sugar = 2, protein = 2)
+  fat = 1.5, cholesterol = .005, sodium = .02, carbohydrate = 2, sugar = 2, protein = 2,
+  suggest = list(
+    water_cup = c(c80 = 1/4)
+  ))
 
 
 
@@ -97,7 +102,9 @@ GreatValue_drymilk <- \() nutrition(
   servingCup = 1/3,
   calorie = 80,
   cholesterol = .005, sodium = .125, carbohydrate = 12, sugar = 12, protein = 8,
-  suggest = list(water_cup = c(c80 = 7/8)))
+  suggest = list(
+    water_cup = c(c80 = 7/8)
+  ))
 
 
 
@@ -109,7 +116,9 @@ MembersMark_drymilk <- \() nutrition(
   servingCup = 1/3, # packaging
   calorie = 80,
   cholesterol = .005, sodium = .125, carbohydrate = 12, sugar = 12, protein = 8,
-  suggest = list(water_cup = c(c80 = 7/8)))
+  suggest = list(
+    water_cup = c(c80 = 7/8)
+  ))
 
 
 
@@ -121,7 +130,9 @@ BobsRedMill_drymilk <- \() nutrition(
   servingTbsp = 3, # packaging
   calorie = 90,
   sodium = .1, carbohydrate = 13, sugar = 11, protein = 8,
-  suggest = list(water_cup = 1))
+  suggest = list(
+    water_cup = 1
+  ))
 
 
 

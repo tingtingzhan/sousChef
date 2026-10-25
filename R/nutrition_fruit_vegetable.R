@@ -344,10 +344,10 @@ Libbys_pumpkin <- \() nutrition(
     c(),
   name = 'Pumpkin\U1f383 Puree', alias = '\u5357\u74dc\u6ce5',
   usd = 7.58/(3*822)*122, sams = '162878', date = as.Date('2026-10-07'), # early Fall, regular price
-  # usd = 3.91/(3*822)*122, sams = '162878', # 2023-12-24, clearance?
-  # BJ's no longer have this at Christmas # 2023-12-24
+  # usd = 3.91/(3*822)*122, sams = '162878', date = as.Date('2023-12-24'), clearance?
   # Groupon's Sam's Club member is super cheap ($15) at Christmas! # 2023-12-24
-  # usd = 10.49/(3*822)*122, bjs = 'libbys-100-pure-pumpkin-3-pk29-oz/3000000000000146833', # 2023 Fall
+  bjs = 'libbys-100-pure-pumpkin-3-pk29-oz/3000000000000146833', # usd = 7.99/(3*822)*122, date = as.Date('2026-10-25'),
+  # BJ's no longer have this at Christmas # 2023-12-24
   servingGram = 122, servingCup = 1/2, 
   piece_fmt = '%.1f\U1f96b', pieceGram = 850, # label says 822 
   calorie = 45,

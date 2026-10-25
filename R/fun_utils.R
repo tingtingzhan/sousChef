@@ -201,6 +201,7 @@ mergeVol <- \(x, ...) {
   x_tsp <- sum_by_name(
     x[['misc_tsp']],
     3 * x[['misc_Tbsp']],
+    6 * x[['misc_floz']],
     48 * x[['misc_cup']],
     3 * 16 * x[['misc_brick']]
   )
@@ -212,7 +213,7 @@ mergeVol <- \(x, ...) {
 
   if (length(z)) x$misc <- z
   
-  x$misc_tsp <- x$misc_Tbsp <- x$misc_cup <- x$misc_brick <- NULL
+  x$misc_tsp <- x$misc_Tbsp <- x$misc_floz <- x$misc_cup <- x$misc_brick <- NULL
   return(x)
   
 }

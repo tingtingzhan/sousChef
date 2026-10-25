@@ -95,7 +95,8 @@ raw. <- \(...) {
   for (i in slotNames(x = 'raw.')) {
     if (length(x[[i]])) {
       x[[i]] <- x[[i]] |>
-        zero.omit()
+        zero.omit() |>
+        sort.default(decreasing = TRUE) # beautiful!
     }
   }
   

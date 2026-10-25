@@ -126,6 +126,7 @@ print.nutritionMatrix <- \(x, ...) {
 # dplyr::recode_values
 # dplyr::replace_values
 .repl <- \(x) {
+  x[x == 'addedWater'] <- '+water'
   x[x == 'addedSugar'] <- '+sugar'
   x[x == 'starch'] <- '+starch'
   x[x == 'carbohydrate'] <- 'carb' 

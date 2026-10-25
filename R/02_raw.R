@@ -126,18 +126,8 @@ as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
     ingredient
   } else {
     c(
-      c(
-        'water'
-      ) |>
-        vapply(FUN = \(i) {
-          v <- slot(x, name = i)
-          if (!length(v)) return(NA_real_)
-          return(sum(v))
-        }, FUN.VALUE = NA_real_, USE.NAMES = TRUE) |>
-        na.omit(),
-      
-      # addedSugar = x@sugar |> sum(), # wrong!! `@sugar` is **not** 100% sugar
-      
+      addedWater = x@water |> sum(),
+      # addedSugar = x['_sugar$'] |> sum(), # wrong!! `'_sugar$'` is **not** always 100% sugar
       yeast = x['_yeast$'] |> sum(),
       salt = x['_salt$'] |> sum(), # e.g., salt-2-flour, salt-2-yeast
       NaHCO3 = x['_NaHCO3$'] |> sum(),

@@ -105,7 +105,7 @@ LandOLakes_butter <- \() nutrition(
 
 WegmansOrganic_ghee <- \() nutrition(
   name = 'Ghee',
-  wegmans = '61329', usd = 8.99/213*15,
+  wegmans = '61329', usd = 8.99/213*15, date = as.Date('2026-10-24'),
   servingGram = 15, servingTbsp = 1, 
   calorie = 130, fat = 15)
 

@@ -368,6 +368,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
           EXPR = x@key, 
           butter = '\u9ec4\u6cb9',
           cocoa =, cacao = '\u53ef\u53ef\u7c89',
+          coffeeLiqueur =, espressoLiqueur = '\u5496\u5561\u9152',
           creamCheese = '\u5976\u6cb9\u5976\u916a',
           drymilk = '\u8131\u8102\u5976\u7c89',
           drywholemilk = '\u5168\u8102\u5976\u7c89',

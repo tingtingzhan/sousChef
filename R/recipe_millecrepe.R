@@ -76,7 +76,7 @@ qiong_tiramisu_millecrepe <- \() recipe(
     Domino_granulated = 50
   ),
   misc_Tbsp = c(
-    Kahlua_coffee_liqueur = 1
+    Kahlua_coffeeLiqueur = 1
   )
 )
 

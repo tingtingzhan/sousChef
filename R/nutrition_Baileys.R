@@ -3,10 +3,10 @@
 
 
 
-Baileys_espresso_liqueur <- \() nutrition(
+Baileys_espressoLiqueur <- \() nutrition(
   baileys = 'espresso-creme',
   #url = 'www.baileys.com/en-us/products/baileys-espresso-creme' # no nutrition info
-  name = 'Espresso Cre\u0300me', alias = '\u5496\u5561\u5976\u6cb9\u9152',
+  name = 'Espresso Cre\u0300me', alias = '\u5496\u5561\u5976\u9152',
   totalwine = '151853750', usd = 28.99/750*100, # 750ml
   servingGram = 100, # my guess
   serving_ml = 100,
@@ -23,7 +23,7 @@ Baileys_espresso_liqueur <- \() nutrition(
 
 Baileys_chocolatLuxe_liqueur <- \() nutrition(
   baileys = 'chocolat-luxe',
-  name = 'Chocolat Luxe', alias = '\u5de7\u514b\u529b\u9152',
+  name = 'Chocolat Luxe', alias = '\u5de7\u514b\u529b\u5976\u9152',
   servingGram = 100, # my guess
   serving_ml = 100,
   AbV = .157,
@@ -39,7 +39,7 @@ Baileys_chocolatLuxe_liqueur <- \() nutrition(
 Baileys_chocolate_liqueur <- \() nutrition(
   baileys = 'chocolate-liqueur',
   # url = 'https://www.baileys.com/en-us/products/baileys-chocolate-liqueur' # nutrition info here
-  name = 'Chocolate', alias = '\u5de7\u514b\u529b\u9152',
+  name = 'Chocolate', alias = '\u5de7\u514b\u529b\u5976\u9152',
   servingGram = 100, # my guess
   serving_ml = 100,
   usd = 26.99/750*100, totalwine = '2126221061',
@@ -55,8 +55,7 @@ Baileys_chocolate_liqueur <- \() nutrition(
 
 Baileys_colada_liqueur <- \() nutrition( 
   baileys = 'colada',
-  # creamy coconut and sweet, juicy pineapples.
-  name = 'Colada', alias = '\u6930\u6d46\u83e0\u841d\u9152',
+  name = 'Colada\U1f965\U1f34d', alias = '\u6930\u6d46\u83e0\u841d\u5976\u9152',
   totalwine = '235736750', usd = 30.99/750*100,
   servingGram = 100,
   serving_ml = 100,
@@ -85,7 +84,7 @@ Baileys_tiramisu_liqueur <- \() nutrition(
 
 Baileys_smores_liqueur <- \() nutrition( 
   baileys = 's-mores',
-  name = 'S\'mores', alias = '\u5de7\u514b\u529b\u68c9\u82b1\u7cd6\u9152',
+  name = 'S\'mores', alias = '\u5de7\u514b\u529b\u68c9\u82b1\u7cd6\u5976\u9152',
   servingGram = 100,
   serving_ml = 100,
   totalwine = '351020750', usd = 27.99/750*100,
@@ -102,7 +101,7 @@ Baileys_smores_liqueur <- \() nutrition(
 
 Baileys_pumpkinSpice_liqueur <- \() nutrition(
   baileys = 'pumpkin-spice',
-  name = 'Pumpkin\U1f383 Spice', alias = '\u5496\u5561\u9152',
+  name = 'Pumpkin\U1f383 Spice', alias = '\u5357\u74dc\u8089\u6842\u5976\u9152',
   servingGram = 100,
   serving_ml = 100,
   #totalwine = NA_character_, # not carried in totalwine
@@ -119,10 +118,10 @@ Baileys_pumpkinSpice_liqueur <- \() nutrition(
 
 Baileys_strawberry_liqueur <- \() nutrition(
   baileys = 'strawberries-cream',
-  name = 'Strawberries\U1f353 & Cream', alias = '\u8349\u8393\u9152',
+  name = 'Strawberries\U1f353 & Cream', alias = '\u8349\u8393\u5976\u9152',
   servingGram = 100,
   serving_ml = 100,
-  totalwine = '193107750', usd = 25.99/750*100,
+  totalwine = '193107750', usd = 28.99/750*100, date = as.Date('2026-10-24'),
   AbV = .17,
   calorie = 313,
   protein = 3, 
@@ -135,7 +134,7 @@ Baileys_strawberry_liqueur <- \() nutrition(
 
 Baileys_almande_liqueur <- \() nutrition(
   baileys = 'almande',
-  name = 'Almande', alias = '\u674f\u4ec1\u9152',
+  name = 'Almande', alias = '\u674f\u4ec1\u5976\u9152',
   servingGram = 100,
   serving_ml = 100,
   totalwine = '171638750', usd = 23.99/750*100,
@@ -150,7 +149,7 @@ Baileys_almande_liqueur <- \() nutrition(
 
 
 
-Baileys_icedCoffeeLatte_liqueur <- \() nutrition(
+Baileys_icedCoffeeLatte <- \() nutrition(
   baileys = 'iced-coffee-latte',
   name = 'Iced Coffee Latte',
   servingGram = 100, # my guess

@@ -18,7 +18,7 @@ JeanPierre_eggnog <- \() recipe(
   ),
   misc_Tbsp = c(
     NielsenMassey_Tahitian = 1,
-    Kahlua_coffee_liqueur = 8
+    Kahlua_coffeeLiqueur = 8
   ),
   # 2 ounces Bourbon
   # 2 ounces Rum
@@ -32,7 +32,7 @@ PreppyKitchen_eggnog <- \() recipe(
     Domino_granulated = 1,
     Wegmans_heavyCream = 1,
     Wegmans_whole_milk = 1.5, # 1 to 2 cups whole milk
-    Kahlua_coffee_liqueur = 1 # 1 cup bourbon (brandy and rum work as well) (240ml)
+    Kahlua_coffeeLiqueur = 1 # 1 cup bourbon (brandy and rum work as well) (240ml)
   ),
   misc_tsp = c(
     SimplyOrganic_nutmeg = 1/4

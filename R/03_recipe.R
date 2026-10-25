@@ -204,7 +204,9 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   }
   
   if (!length(x@flavor)) {
-    x@flavor <- if ('_coffee$' %in% x) {
+    x@flavor <- if ('_coffeeLiqueur$|_espressoLiqueur$' %in% x) {
+      'Tiramisu\u0300'
+    } else if ('_coffee$' %in% x) {
       if ('_liqueur$' %in% x) {
         'Tiramisu\u0300'
       } else if ('_cocoa$' %in% x) {

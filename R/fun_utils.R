@@ -33,7 +33,7 @@ sum_by_name <- \(...) {
   xs <- xs[lengths(xs) > 0L]
   if (!length(xs)) return(numeric())
   xs |>
-    do.call(what = rbind_unbalanced, args = _) |> 
+    do.call(what = 'rbind_unbalanced', args = _) |> 
     colSums(na.rm = TRUE)
 }
 

@@ -165,8 +165,6 @@ Kirkland_noSaltSeasoning <- \() nutrition(
 
 
 
-# @examples
-# fourC_panko() + fourC_panko_seasoned() / 3
 
 fourC_panko_seasoned <- \() nutrition(
   fourC = 'seasoned-panko-bread-crumbs',

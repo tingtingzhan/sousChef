@@ -194,7 +194,7 @@ summary.raw. <- \(object, ...) {
         .repl()
       return(i)
     }) |>
-    do.call(what = equivs, args = _)
+    do.call(what = 'equivs', args = _)
   
   class(out) <- c(
     ifelse(

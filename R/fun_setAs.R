@@ -14,11 +14,11 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   
   date <- z |> 
     lapply(FUN = slot, name = 'date') |>
-    do.call(what = c, args = _) |>
+    do.call(what = 'c', args = _) |>
     min(na.rm = FALSE)
   
   info <- z |>
-    do.call(what = nutritionlist, args = _) |>
+    do.call(what = 'nutritionlist', args = _) |>
     as.matrix.nutritionlist(incl_usd = TRUE, incl_calorie = TRUE, rel = TRUE)
   
   z <- crossprod(grams, info)[1, , drop = TRUE]

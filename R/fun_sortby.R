@@ -10,7 +10,7 @@ sort_by.nutritionlist <- \(x, y, ...) {
   o <- order(m[, y], ...)
   
   x[o] |>
-    do.call(what = nutritionlist, args = _)
+    do.call(what = 'nutritionlist', args = _)
   # note that only [summary.nutrition()] will be activated!!
   # input is no longer \linkS4class{recipe} nor \linkS4class{raw.} !!!
 }

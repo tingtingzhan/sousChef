@@ -76,12 +76,15 @@ setMethod(f = '+', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition =
   
   ret0 <- slotNames(x = 'raw.') |>
     setNames(nm = _) |>
-    lapply(FUN = \(i) sum_by_name(slot(e1, name = i), slot(e2, name = i)))
+    lapply(FUN = \(i) {
+      sum_by_name(
+        slot(e1, name = i), 
+        slot(e2, name = i)
+      )
+    })
 
-  ret <- do.call(what = new, args = c(list(
-    Class = 'raw.'
-  ), ret0[lengths(ret0) > 0L]))
-  return(ret)
+  ret0[lengths(ret0) > 0L] |>
+    do.call(what = 'raw.', args = _)
   
 })
 

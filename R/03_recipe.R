@@ -344,6 +344,7 @@ labels.recipe <- \(object, ...) {
     mianjin = '\u9762\u7b4b',
     pasteisdenata = '\u8461\u5f0f\u86cb\u631e',
     ricepi = '\u7c73\u76ae',
+    snowSkin = '\u51b0\u76ae',
     #stop('undefined @key ', sQuote(x@key))
     character()
   )

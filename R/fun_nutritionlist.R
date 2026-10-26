@@ -67,7 +67,7 @@ print.nutritionlist <- \(x, ...) {
           .repl()
         return(z)
       }) |>
-      do.call(what = equivlist, args = _) |>
+      do.call(what = 'equivlist', args = _) |>
       print(fmt_caption = '\u214c %s') # equiv4:::print.equivlist
   }
   
@@ -86,7 +86,7 @@ as.matrix.nutritionlist <- \(x, ...) {
   ret <- x |> 
     lapply(FUN = as, Class = 'nutrition') |> # make double sure
     lapply(FUN = as.double.nutrition, ...) |>
-    do.call(what = rbind, args = _) # matrix
+    do.call(what = 'rbind', args = _) # matrix
   
   class(ret) <- c('nutritionMatrix', class(ret)) |>
     unique.default()
@@ -103,7 +103,7 @@ print.nutritionMatrix <- \(x, ...) {
   
   z <- x[, colMeans(x == 0) != 1, drop = FALSE] |>
     apply(MARGIN = 2L, FUN = max_binlabel, accuracy = .1, simplify = FALSE) |>
-    do.call(what = cbind) # to make sure not getting a 'vector'
+    do.call(what = 'cbind', args = _) # to make sure not getting a 'vector'
   
   colnames(z) <- colnames(z) |>
     .repl()

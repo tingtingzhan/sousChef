@@ -2,21 +2,21 @@
 
 
 
-Stonewall_Bourbon_syrup <- \() nutrition(
+Stonewall_Bourbon_mapleSyrup <- \() nutrition(
   stonewall = '553167',
-  name = 'Bourbon Barrel-Aged Maple\U1f341 Syrup',
-  usd = 19.95/250*30, # 2023-11-11
+  name = 'Maple\U1f341 Syrup, Bourbon\U1fab5',
+  usd = 21.95/250*30, date = as.Date('2026-10-25'),
   servingGram = 40, servingTbsp = 2, #serving_ml = 30,
   sodium = .005, addedSugar = 24)
 
-Stonewall_maple_syrup <- \() nutrition(
+Stonewall_mapleSyrup <- \() nutrition(
   stonewall = '170801',
-  name = 'Maine Maple\U1f341 Syrup', alias = '\u67ab\u7cd6',
+  name = 'Maine Maple\U1f341 Syrup',
   # servingGram = 60, servingCup = 1/4, sodium = .005, addedSugar = 36) # webpage
   # empty bottle 253g
-  usd = 17.95/250*30, # 2023-11-11
+  usd = 19.95/250*30, date = as.Date('2026-10-25'),
   servingGram = 40, servingTbsp = 2, #serving_ml = 30,
-  sodium = .005, addedSugar = 24) # bottle label, I tasted it and think this is correct
+  sodium = .005, carbohydrate = 27, addedSugar = 24) # bottle label, I tasted it and think this is correct
 
 Stonewall_blueberry_syrup <- \() nutrition(
   stonewall = '170802',

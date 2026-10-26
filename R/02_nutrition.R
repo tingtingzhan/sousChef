@@ -111,9 +111,7 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
   no_eval
   # force(no_eval) # messes up envir!!
   
-  x <- list(...)
-  
-  x <- x |>
+  x <- list(...) |>
     get_key_(no_eval = no_eval)
   
   x <- x |>
@@ -307,7 +305,7 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
     x$servingGram <- x$serving_lb * 453.6
     x$serving_lb <- NULL
   }
-  if (!length(x$servingGram)) stop('must have `@servingGram` for nutrition object')
+  if (!length(x$servingGram)) stop('must have `@servingGram`')
   
   # serving volumn
   vol <- c(length(x$servingCup), length(x$servingTbsp), length(x$servingTsp), length(x$serving_floz), length(x$serving_ml))
@@ -386,6 +384,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
           hotCocoa = '\u70ed\u53ef\u53ef\u51b2\u6ce1\u7c89',
           kefir = '\u5976\u9152',
           heavyCrean = '\u91cd\u5976\u6cb9',
+          mapleSyrup = '\u67ab\u7cd6\u6d46',
           matcha = '\u62b9\u8336\u7c89',
           neufchatel = 'Neufcha\u0302tel\u4e73\u916a',
           saltedButter = '\u542b\u76d0\u9ec4\u6cb9',

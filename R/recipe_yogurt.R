@@ -3,7 +3,7 @@
 maple_yogurt <- \() recipe(
   misc = c(
     Nancys_yogurt = 150,
-    Stonewall_maple_syrup = 10
+    Stonewall_mapleSyrup = 10
   ),
   review = 'quite nice!'
 )
@@ -12,7 +12,7 @@ maple_yogurt <- \() recipe(
 ryeWhisky_yogurt_fail <- \() recipe(
   misc = c(
     Nancys_yogurt = 200,
-    Runamok_ryeWhisky_syrup = 45
+    Runamok_ryeWhisky_mapleSyrup = 45
   ),
   review = 'too sweet, not enough liquer flavor'
 )

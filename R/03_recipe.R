@@ -72,9 +72,7 @@ recipe <- \(no_eval = .findCall(which = -2), ...) {
   no_eval
   # force(no_eval) # messes up envir!!
   
-  x <- list(...)
-  
-  x <- x |>
+  x <- list(...) |>
     .cleanSlots_raw.() |>
     get_key_(no_eval = no_eval)
 

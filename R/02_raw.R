@@ -72,12 +72,10 @@ print.raw. <- \(x, ...) {
 
 
 raw. <- \(...) {
-  
   list(...) |>
     .cleanSlots_raw.() |>
     c(list(Class = 'raw.')) |> 
     do.call(what = 'new', args = _)
-  
 }
 
 

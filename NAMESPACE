@@ -52,7 +52,6 @@ export(nutribullet24)
 export(nutrition)
 export(nutritionlist)
 export(recipe)
-export(sum_by_name)
 export(thermometer)
 exportClasses(nutrition)
 exportClasses(raw.)
@@ -76,7 +75,7 @@ importFrom(equiv4,
   equiv,
   equivlist,
   equivs,
-  rbind_unbalanced
+  sum_by_name
 )
 importFrom(stats,
   na.omit,

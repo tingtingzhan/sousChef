@@ -65,6 +65,7 @@ setMethod(f = '/', signature = signature(e1 = 'raw.', e2 = 'numeric'), definitio
 
 #' @rdname S4methods
 #' @importFrom stats setNames
+#' @importFrom equiv4 sum_by_name
 #' @aliases +,raw.,raw.-method
 #' @export
 setMethod(f = '+', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition = \(e1, e2) {
@@ -187,6 +188,7 @@ setMethod(f = '-', signature = c(e1 = 'raw.', e2 = 'nutrition'), definition = \(
 
 
 
+#' @importFrom equiv4 sum_by_name
 plus_raw_list <- \(e1, e2) {
   
   atr <- attributes(e1)

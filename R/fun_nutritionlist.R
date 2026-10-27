@@ -16,7 +16,7 @@ nutritionlist <- \(...) {
   z <- x |>
     lapply(FUN = as, Class = 'nutrition')
   
-  if (!all(vapply(z, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) {
+  if (!all(vapply(z, FUN = is, class2 = 'nutrition', FUN.VALUE = NA))) {
     stop('a')
   } 
   

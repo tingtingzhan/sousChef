@@ -399,8 +399,7 @@ gram_per_tsp <- \(x) {
     
   x |> 
     vapply(FUN = \(i) {
-      v <- call(name = i) |>
-        eval() |>
+      v <- eval(call(name = i)) |>
         as(Class = 'nutrition')
       if (!is(v, 'nutrition')) {
         stop(sQuote(i), ' cannot be converted to `nutrition`')
@@ -427,9 +426,7 @@ fmt_pc <- \(x) {
     vapply(FUN = exists, where = asNamespace('sousChef'), inherits = FALSE, FUN.VALUE = NA)
   
   v_pc <- names(x)[id_pc] |>
-    lapply(FUN = \(i) {
-      eval(call(name = i))
-    })
+    lapply(FUN = \(i) eval(call(name = i)))
   
   pieceGram <- v_pc |> 
     vapply(FUN = slot, name = 'pieceGram', FUN.VALUE = NA_real_)

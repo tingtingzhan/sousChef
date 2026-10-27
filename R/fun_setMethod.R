@@ -111,7 +111,6 @@ setMethod(f = '-', signature = signature(e1 = 'raw.', e2 = 'raw.'), definition =
 setMethod(f = '%in%', signature = c(x = 'character', table = 'raw.'), definition = \(x, table) {
   
   slotNames('raw.') |>
-    grepv(pattern = '_tsp$|_Tbsp$|_cup$|_brick$|_pc$', invert = TRUE) |>
     setdiff(y = c('water')) |> 
     lapply(FUN = slot, object = table) |>
     unname() |>
@@ -136,7 +135,6 @@ setMethod(f = '%notin%', signature = c(x = 'character', table = 'raw.'), definit
 setMethod(f = '[', signature = c(x = 'raw.', i = 'character'), definition = \(x, i) {
   
   z <- slotNames('raw.') |>
-    grepv(pattern = '_tsp$|_Tbsp$|_cup$|_brick$|_pc$', invert = TRUE) |>
     setdiff(y = c('water')) |> 
     lapply(FUN = slot, object = x) |>
     unname() |>

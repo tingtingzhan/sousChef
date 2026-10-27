@@ -1,14 +1,15 @@
 
 
 
-DaoXiangCun_corn <- \() nutrition(
-  brand = '\u7a3b\u9999\u6751', name = 'Cornmeal\U1f33d \u7389\u7c73\u9762',
+DaoXiangCun_cornmeal <- \() nutrition(
+  brand = '\u7a3b\u9999\u6751', 
+  name = 'Cornmeal\U1f33d',
   servingGram = 50, servingCup = 1/2, # volume not accurate!!!
   fat = 1.5)
 
 
 Albertsons_yellow_cornmeal <- \() nutrition(
-  name = 'Yellow Cornmeal\U1f33d', alias = '\u9ec4\u7389\u7c73\u9762',
+  name = 'Yellow Cornmeal\U1f33d', 
   acme = '117010060', usd = 4.49/2270*30, date = as.Date('2026-09-17'),
   servingGram = 30, 
   # servingCup = 1/4, # packaging
@@ -40,7 +41,7 @@ IndianHead_yellow_cornmeal <- \() nutrition(
 
 Quaker_yellow_cornmeal <- \() nutrition(
   quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/yellow-corn-meal',
-  name = 'Yellow Cornmeal\U1f33d', alias = '\u9ec4\u7389\u7c73\u9762',
+  name = 'Yellow Cornmeal\U1f33d',
   wegmans = '25374', usd = 2.99/680*27,
   servingGram = 27, servingTbsp = 3, 
   calorie = 90,
@@ -49,7 +50,7 @@ Quaker_yellow_cornmeal <- \() nutrition(
 
 Quaker_white_cornmeal <- \() nutrition(
   quakeroats = 'more-products-from-quaker/specialty-items/corn-meal/white-corn-meal',
-  alias = '\u9ec4\u7389\u7c73\u9762', name = 'White Cornmeal\U1f33d',
+  name = 'White Cornmeal\U1f33d',
   servingGram = 27, servingTbsp = 3, 
   calorie = 90,
   fat = .5, carbohydrate = 21, protein = 2)

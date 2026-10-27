@@ -75,8 +75,7 @@ pork_trotter <- \() nutrition(
 
 
 beef_heel <- \() nutrition(
-  brand = #c(style_hyperlink(text = 
-    'Swift\U1f1fa\U1f1f8', 
+  brand = 'Swift\U1f1fa\U1f1f8', 
   name = 'Beef\U1f402 Round Heel Muscle', alias = '\u725b\u8171',
   weee = '11275', usd = 10.66/454*100,
   url = 'https://www.americanfoodsgroup.com/products/products/heel-meat-muscle-no-roll-2', # source of nutrition

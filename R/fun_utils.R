@@ -195,6 +195,8 @@ mergeUSD <- \(x, ...) {
   ) |>
     suppressWarnings() # min(numeric()) # has warning
   
+  if (is.infinite(x$usd)) x$usd <- NULL
+  
   x$jpy <- NULL
   
   return(x)

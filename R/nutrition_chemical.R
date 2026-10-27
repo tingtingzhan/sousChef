@@ -40,7 +40,8 @@ Ajinomoto_msg <- \() nutrition(
   pubchem = '23689119',
   # MSG is C5H10NO5Na
   # sodium 23/(12*5+2*10+14+16*5+23) = 11.67%
-  sodium = .117)
+  sodium = .125 # package
+)
 
 
 ArmHammer_NaHCO3 <- \() nutrition(

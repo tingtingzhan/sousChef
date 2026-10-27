@@ -117,6 +117,7 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
     add_brand_url(name = 'belgioioso', fmt = 'https://www.belgioioso.com/products/%s', text = 'BelGioioso\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'bobsredmill', fmt = 'https://www.bobsredmill.com/%s.html', text = 'Bob\'s Red Mill\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'bouchard', fmt = 'https://bouchardchocolate.com/products/%s', text = 'Bouchard\U1f1e7\U1f1ea') |>
+    add_brand_url(name = 'brucesyams', fmt = 'https://www.brucesyams.com/%s', text = 'Bruce\'s\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'carnationbaking', fmt = 'https://www.verybestbaking.com/carnation/products/%s', text = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'championproteins', fmt = 'https://championproteins.com/products/%s', text = 'Champion Proteins\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'clearwater', fmt = 'https://www.clearwater.ca/en/seafood-industry/%s', text = 'Clearwater\U1f1e8\U1f1e6') |> 
@@ -361,6 +362,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
           coffee = '\u901f\u6eb6\u5496\u5561',
           coffeeLiqueur =, espressoLiqueur = '\u5496\u5561\u9152',
           cookingWine = '\u6599\u9152',
+          cornmeal = '\u7389\u7c73\U1f33d\u9762',
           creamCheese = '\u5976\u6cb9\u5976\u916a',
           drymilk = '\u8131\u8102\u5976\u7c89',
           drywholemilk = '\u5168\u8102\u5976\u7c89',
@@ -376,6 +378,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
           neufchatel = 'Neufcha\u0302tel\u4e73\u916a',
           saltedButter = '\u542b\u76d0\u9ec4\u6cb9',
           sourCream = '\u9178\u5976\u6cb9',
+          soybean = '\u9ec4\u8c46',
           yeast = '\u9175\u6bcd',
           character()
         )

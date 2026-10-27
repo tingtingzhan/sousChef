@@ -209,7 +209,7 @@ DelMonte_peach <- \() nutrition(
   carbohydrate = 8, sugar = 7)
 
 Bruces_yam <- \() nutrition(
-  brand = c(style_hyperlink(text = 'Bruce\'s', url = 'brucesyams.com/products/bruces-yams-cut-sweet-potatoes-in-syrup/')),
+  brucesyams = 'sweet-potatoes-in-syrup',
   name = 'Yam',
   review = 'may need Vitamix immersion blender - dont know how to use, dont buy for now',
   servingGram = 166, sodium = .07, sugar = 9, protein = 2)
@@ -406,7 +406,7 @@ Motts_applesauce <- \() nutrition(
 
 Laura_soybean <- \() nutrition(
   fdc = 174270L,
-  name = 'Soy Bean', alias = '\u9ec4\u8c46',
+  name = 'Soy Bean',
   brand = c(style_hyperlink(text = 'Laura\U1f1fa\U1f1f8', url = 'https://laurasoybeans.com/product-category/laura-soybeans/')),
   amazon = 'B00C3FWXIC', 
   usd = 16.79/(5*453.6)*(100-8.54), # official website
@@ -416,7 +416,7 @@ Laura_soybean <- \() nutrition(
   protein = 36.5, fat = 19.9, sugar = 7.33, sodium = .002)
 
 Soymerica_soybean <- \() nutrition(
-  alias = '\u9ec4\u8c46', name = 'Soy Bean', 
+  name = 'Soy Bean', 
   brand = 'Soymerica\U1f1fa\U1f1f8', amazon = 'B0763GC8SB', usd = 24.99/(7*453.6)*(100-8.54),
   fdc = 174270L,
   servingGram = 100 - 8.54, 

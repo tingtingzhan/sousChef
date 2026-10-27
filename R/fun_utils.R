@@ -184,6 +184,26 @@ mergeVol <- \(x, ...) {
 
 
 
+mergeUSD <- \(x, ...) {
+  
+  x$usd <- min(
+    x$usd,
+    x$jpy / 153.507,
+    # x$jpy / quantmod::getQuote('USDJPY=X')$Last 
+    # may cause devtools::check() error
+    na.rm = TRUE
+  ) |>
+    suppressWarnings() # min(numeric()) # has warning
+  
+  x$jpy <- NULL
+  
+  return(x)
+
+}
+
+
+
+
 #' @importFrom equiv4 binlabel
 max_binlabel <- \(x, ...) {
   x |>

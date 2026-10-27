@@ -59,11 +59,7 @@ The helper function \code{\link[=nutrition]{nutrition()}} converts raw user inpu
 
 \item{\code{usd}}{\link[base]{numeric} scalar, price (in USD) \strong{per serving}}
 
-\item{\code{jpy}}{\link[base]{numeric} scalar, price (in Japanese Yen) \strong{per serving}}
-
 \item{\code{date}}{\code{'Date'}}
-
-\item{\code{cost_}}{\link[base]{character} scalar, price (in USD) \strong{per serving}, converted from all currencies}
 
 \item{\code{calorie}}{\link[base]{numeric} scalar, calories per serving}
 

@@ -31,9 +31,7 @@
 #' @slot piece_fmt \link[base]{character} scalar
 #' 
 #' @slot usd \link[base]{numeric} scalar, price (in USD) \strong{per serving}
-#' @slot jpy \link[base]{numeric} scalar, price (in Japanese Yen) \strong{per serving}
 #' @slot date `'Date'`
-#' @slot cost_ \link[base]{character} scalar, price (in USD) \strong{per serving}, converted from all currencies
 #' @slot calorie \link[base]{numeric} scalar, calories per serving
 #' @slot water \link[base]{numeric} scalar, water (in grams) per serving
 #' @slot carbohydrate \link[base]{numeric} scalar, total carbohydrate (in grams) per serving
@@ -74,12 +72,11 @@ setClass(Class = 'nutrition', slots = c(
   tool = 'list',
   
   date = 'Date',
-  cost_ = 'character',
-  
+
   rep_names('numeric', nm = c(
     'servingGram', 'servingTsp',
     'pieceGram',
-    'usd', 'jpy',
+    'usd',
     'calorie',
     'water',
     'fat', 'cholesterol', 'sodium',
@@ -112,9 +109,8 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
   # force(no_eval) # messes up envir!!
   
   x <- list(...) |>
-    get_key_(no_eval = no_eval)
-  
-  x <- x |>
+    get_key_(no_eval = no_eval) |>
+    mergeUSD() |>
     add_brand_url(name = 'bachans', fmt = 'https://bachans.com/products/%s', text = 'Bachan\'s\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'baileys', fmt = 'https://www.baileys.com/en/products/baileys-%s', text = 'Baileys\U1f1ee\U1f1ea') |>
     add_brand_url(name = 'bassetts', fmt = 'https://www.bassettsicecream.com/_files/ugd/%s.pdf', text = 'Bassetts\U1f368\U1f1fa\U1f1f8') |>
@@ -122,6 +118,7 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
     add_brand_url(name = 'bobsredmill', fmt = 'https://www.bobsredmill.com/%s.html', text = 'Bob\'s Red Mill\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'bouchard', fmt = 'https://bouchardchocolate.com/products/%s', text = 'Bouchard\U1f1e7\U1f1ea') |>
     add_brand_url(name = 'carnationbaking', fmt = 'https://www.verybestbaking.com/carnation/products/%s', text = 'Nestl\u00e9 Carnation\U1f1fa\U1f1f8') |>
+    add_brand_url(name = 'championproteins', fmt = 'https://championproteins.com/products/%s', text = 'Champion Proteins\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'clearwater', fmt = 'https://www.clearwater.ca/en/seafood-industry/%s', text = 'Clearwater\U1f1e8\U1f1e6') |> 
     add_brand_url(name = 'countrytime', fmt = 'https://www.kraftheinz.com/country-time/products/%s', text = 'Country Time\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'daisybrand', fmt = 'https://www.daisybrand.com/%s', text = 'Daisy\U1f1fa\U1f1f8') |> 
@@ -375,9 +372,11 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
           cocoa =, cacao = '\u53ef\u53ef\u7c89',
           coffee = '\u901f\u6eb6\u5496\u5561',
           coffeeLiqueur =, espressoLiqueur = '\u5496\u5561\u9152',
+          cookingWine = '\u6599\u9152',
           creamCheese = '\u5976\u6cb9\u5976\u916a',
           drymilk = '\u8131\u8102\u5976\u7c89',
           drywholemilk = '\u5168\u8102\u5976\u7c89',
+          gelatin = '\u5409\u5229\u4e01\u7247',
           ghee = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
           goatKefir = '\u7f8a\u5976\u9152',
           heavyCream = '\u91cd\u5976\u6cb9',
@@ -417,36 +416,6 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   
   if (!length(x@sugar) && length(x@addedSugar)) {
     x@sugar <- x@addedSugar
-  }
-  
-  cost_ <- c(
-    'usd' = if (length(x@usd)) x@usd else NA_real_,
-    'JP\U1f4b4' = if (length(x@jpy)) {
-      #x@jpy / quantmod::getQuote('USDJPY=X')$Last # may cause devtools::check() error
-      x@jpy / 153.507
-    } else NA_real_
-  )
-  cost_ <- cost_[!is.na(cost_)]
-  if (length(setdiff(names(cost_), 'usd'))) {
-    cost_source <- cost_ |> names() |> sprintf(fmt = '\u21a4%s') 
-    cost_source[names(cost_) == 'usd'] <- ''
-  } else cost_source <- ''
-  cost_txt0 <- sprintf(
-    fmt = 'US %s %s',
-    cost_ |> sprintf(fmt = '\U1f4b5%.2f') |> col_green() |> style_bold(), 
-    cost_source |> col_cyan() |> style_bold()
-  )
-  n_cost_ <- length(cost_)
-  if (!n_cost_) {
-    x@cost_ <- character()
-  } else if (n_cost_ == 1L) {
-    x@cost_ <- cost_txt0
-    x@usd <- unname(cost_)
-  } else {
-    cost_min <- which.min(cost_)
-    cost_txt0[cost_min] <- (cost_txt0[cost_min]) |> bg_br_yellow()
-    x@cost_ <- cost_txt0
-    x@usd <- unname(cost_[cost_min]) # to calculate price in 'recipe'
   }
   
   return(x)
@@ -512,16 +481,20 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
   
   cat('\n')
   
-  if (length(x@cost_)) {
+  if (length(x@usd)) {
+    usd_txt <- x@usd |> 
+      sprintf(fmt = '\U1f4b5%.2f') |> 
+      col_green() |> style_bold() |>
+      sprintf(fmt = 'US %s', . = _)
     if (is.na(x@date)) {
-      x@cost_ |>
-        cat(sep = '\n')
+      usd_txt |> 
+        cat('\n')
     } else {
       x@date |>
         #as.character() |> # no need
         make_ansi_style('grey70')() |>
-        sprintf(fmt = '%s  \U0001f5d3\ufe0f%s', x@cost_, . = _) |> 
-        cat(sep = '\n')
+        sprintf(fmt = '%s  \U0001f5d3\ufe0f%s', usd_txt, . = _) |> 
+        cat('\n')
     }
   }         
   

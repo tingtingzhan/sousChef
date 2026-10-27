@@ -244,8 +244,7 @@ OrganicValley_neufchatel <- \() nutrition(
 OrganicValley_creamCheese <- \() nutrition(
   organicvalley = 'cream-cheese/cream-cheese/cream-cheese-8-oz-bar/',
   name = 'Cream Cheese',
-  wegmans = '888993', usd = .62, 
-  date = as.Date('2026-09-17'),
+  wegmans = '888993', usd = .62, date = as.Date('2026-09-17'),
   serving_oz = 1, servingTbsp = 2,
   calorie = 110,
   fat = 10, cholesterol = .030, sodium = .1, 

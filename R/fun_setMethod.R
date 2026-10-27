@@ -308,8 +308,7 @@ setMethod(f = '+', signature = c(e1 = 'nutrition', e2 = 'list'), definition = \(
   
   e1@calorie <- numeric() # ideally I should be able to calculate this Haha
   
-  e1@cost_ <- character()
-  e1@usd <- e1@jpy <- numeric() # etc.
+  e1@usd <- numeric() # etc.
   
   slt <- getSlots('nutrition')
   for (inm in setdiff(names(slt)[which(slt == 'character')], c('name', 'brand'))) {

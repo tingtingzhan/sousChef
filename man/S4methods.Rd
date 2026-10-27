@@ -3,9 +3,10 @@
 \name{S4methods}
 \alias{S4methods}
 \alias{*,raw.,numeric-method}
-\alias{*,recipe,numeric-method}
 \alias{*,numeric,raw.-method}
 \alias{/,raw.,numeric-method}
+\alias{*,tool,numeric-method}
+\alias{/,tool,numeric-method}
 \alias{+,raw.,raw.-method}
 \alias{-,raw.,raw.-method}
 \alias{\%in\%,character,raw.-method}
@@ -14,19 +15,21 @@
 \alias{-,raw.,character-method}
 \alias{-,raw.,nutrition-method}
 \alias{+,raw.,list-method}
-\alias{+,recipe,list-method}
-\alias{-,recipe,list-method}
+\alias{-,raw.,list-method}
+\alias{-,raw,list-method}
 \alias{+,nutrition,list-method}
 \alias{-,nutrition,list-method}
 \title{\code{S4} Methods}
 \usage{
 \S4method{*}{raw.,numeric}(e1, e2)
 
-\S4method{*}{recipe,numeric}(e1, e2)
-
 \S4method{*}{numeric,raw.}(e1, e2)
 
 \S4method{/}{raw.,numeric}(e1, e2)
+
+\S4method{*}{tool,numeric}(e1, e2)
+
+\S4method{/}{tool,numeric}(e1, e2)
 
 \S4method{+}{raw.,raw.}(e1, e2)
 
@@ -44,9 +47,7 @@
 
 \S4method{+}{raw.,list}(e1, e2)
 
-\S4method{+}{recipe,list}(e1, e2)
-
-\S4method{-}{recipe,list}(e1, e2)
+\S4method{-}{raw.,list}(e1, e2)
 
 \S4method{+}{nutrition,list}(e1, e2)
 

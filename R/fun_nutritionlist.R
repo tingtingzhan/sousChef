@@ -17,7 +17,7 @@ nutritionlist <- \(...) {
     lapply(FUN = as, Class = 'nutrition')
   
   if (!all(vapply(z, FUN = inherits, what = 'nutrition', FUN.VALUE = NA))) {
-    stop()
+    stop('a')
   } 
   
   sumx <- x |>

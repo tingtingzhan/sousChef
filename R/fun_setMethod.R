@@ -21,45 +21,51 @@ setGeneric(name = '%notin%',
 #' @export
 setMethod(f = '*', signature = signature(e1 = 'raw.', e2 = 'numeric'), definition = \(e1, e2) {
   if (length(e2) != 1L || anyNA(e2)) stop('illegal `e2`')
-  for (i in slotNames(e1)) {
-    slot(e1, name = i) <- slot(e1, name = i) * e2
-  }
-  return(e1)
-})
-
-
-#' @rdname S4methods
-#' @aliases *,recipe,numeric-method
-setMethod(f = '*', signature = signature(e1 = 'recipe', e2 = 'numeric'), definition = \(e1, e2) {
-  if (length(e2) != 1L || anyNA(e2)) stop('illegal `e2`')
   for (i in slotNames('raw.')) {
     slot(e1, name = i) <- slot(e1, name = i) * e2
   }
-  if (length(e1@tool)) {
-    tmp <- e1@tool |>
-      lapply(FUN = \(i) {
-        if (!length(i@waterLost)) return(invisible())
-        tool(# other slots: len-0 compatible
-          name = i@name, name2 = i@name2, 
-          alias = i@alias,
-          waterLost = i@waterLost * e2 
-        )
-      })
-    e1@tool <- tmp[lengths(tmp) > 0L]
+  if (is(e1, 'recipe') && length(e1@tool)) {
+    e1@tool <- e1@tool |>
+      lapply(FUN = '*', e2 = e2)
   } # else do nothing
   return(e1)
 })
 
-
 #' @rdname S4methods
 #' @aliases *,numeric,raw.-method
 #' @export
-setMethod(f = '*', signature = signature(e1 = 'numeric', e2 = 'raw.'), definition = \(e1, e2) e2 * e1)
+setMethod(f = '*', signature = signature(e1 = 'numeric', e2 = 'raw.'), definition = \(e1, e2) {
+  e2 * e1
+})
 
 #' @rdname S4methods
 #' @aliases /,raw.,numeric-method
 #' @export
-setMethod(f = '/', signature = signature(e1 = 'raw.', e2 = 'numeric'), definition = \(e1, e2) e1 * (1/e2))
+setMethod(f = '/', signature = signature(e1 = 'raw.', e2 = 'numeric'), definition = \(e1, e2) {
+  e1 * (1/e2)
+})
+
+
+
+
+#' @rdname S4methods
+#' @aliases *,tool,numeric-method
+setMethod(f = '*', signature = signature(e1 = 'tool', e2 = 'numeric'), definition = \(e1, e2) {
+  if (length(e2) != 1L || anyNA(e2)) stop('illegal `e2`')
+  tool(
+    name = e1@name, name2 = e1@name2, 
+    alias = e1@alias,
+    # other slots: all suppressed
+    waterLost = e1@waterLost * e2 # !length(e1@waterLost) compatible!!
+  )
+})
+
+#' @rdname S4methods
+#' @aliases /,tool,numeric-method
+#' @export
+setMethod(f = '/', signature = signature(e1 = 'tool', e2 = 'numeric'), definition = \(e1, e2) e1 * (1/e2))
+
+
 
 
 
@@ -188,8 +194,12 @@ setMethod(f = '-', signature = c(e1 = 'raw.', e2 = 'nutrition'), definition = \(
 
 
 
+
+#' @rdname S4methods
 #' @importFrom equiv4 sum_by_name
-plus_raw_list <- \(e1, e2) {
+#' @aliases +,raw.,list-method
+#' @export
+setMethod(f = '+', signature = c(e1 = 'raw.', e2 = 'list'), definition = \(e1, e2) {
   
   atr <- attributes(e1)
   atr$class <- NULL
@@ -218,39 +228,27 @@ plus_raw_list <- \(e1, e2) {
     e2[[i]] <- NULL
   }
   
-  c(atr, e2)
-  
-}
+  ifelse(
+    test = is(e1, 'recipe'), 
+    yes = 'recipe', 
+    no = 'raw.'
+  ) |>
+    do.call(
+      what = _,
+      args = c(atr, e2)
+    )
 
-
-#' @rdname S4methods
-#' @aliases +,raw.,list-method
-#' @export
-setMethod(f = '+', signature = c(e1 = 'raw.', e2 = 'list'), definition = \(e1, e2) {
-  plus_raw_list(e1 = e1, e2 = e2) |>
-    do.call(what = 'raw.', args = _)
 })
 
-
 #' @rdname S4methods
-#' @aliases +,recipe,list-method
+#' @aliases -,raw,list-method
 #' @export
-setMethod(f = '+', signature = c(e1 = 'recipe', e2 = 'list'), definition = \(e1, e2) {
-  plus_raw_list(e1 = e1, e2 = e2) |>
-    do.call(what = 'recipe', args = _)
-})
-
-
-#' @rdname S4methods
-#' @aliases -,recipe,list-method
-#' @export
-setMethod(f = '-', signature = c(e1 = 'recipe', e2 = 'list'), definition = \(e1, e2) {
+setMethod(f = '-', signature = c(e1 = 'raw.', e2 = 'list'), definition = \(e1, e2) {
   # negate
   e2_n <- e2 |> 
     lapply(FUN = `-`)
   e1 + e2_n
 })
-
 
 
 #' @rdname S4methods
@@ -273,16 +271,16 @@ setMethod(f = '+', signature = c(e1 = 'nutrition', e2 = 'list'), definition = \(
     if (!is.numeric(ival) || length(ival) != 1L || is.na(ival)) { 
       arg_nm[i] |>
         sprintf(fmt = 'illegal `%s`') |> 
-        stop()
+        stop('b')
     }
     
     txt[i] <- paste0(ifelse(ival > 0, yes = '+', no = '-'), inm)
     
-    if (inm %notin% slotNames(e1)) sprintf(fmt = '`%s` is not a supported component', inm) |> stop()
+    if (inm %notin% slotNames(e1)) sprintf(fmt = '`%s` is not a supported component', inm) |> stop('d')
     old <- slot(e1, name = inm)
     if (ival > old) {
       sprintf(fmt = 'too much `%s` (>%.1f grams) to be subtracted', inm, old) |> 
-        stop()
+        stop('c')
     }
     new <- old + ival # \link[base]{names} preserved
     slot(e1, name = inm) <- if (new > 0) new else numeric()
@@ -323,7 +321,6 @@ setMethod(f = '+', signature = c(e1 = 'nutrition', e2 = 'list'), definition = \(
   
   
 })
-
 
 
 #' @rdname S4methods

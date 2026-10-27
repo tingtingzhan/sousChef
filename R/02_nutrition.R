@@ -331,8 +331,8 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
   }
   
   x <- x |>
-    add_url(name = 'fdc', fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', text = '\U1f4dd FoodData Central') |>
-    add_url(name = 'pubchem', fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', text = '\U1f4dd PubChem')
+    add_url(name = 'fdc', fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', text = '\U1f4d6 FoodData Central') |>
+    add_url(name = 'pubchem', fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', text = '\U1f4d6 PubChem')
   
   c(list(Class = 'nutrition', call = no_eval), x) |> 
     do.call(what = 'new', args = _)

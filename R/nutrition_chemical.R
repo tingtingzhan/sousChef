@@ -2,7 +2,7 @@
 
 MgCl2 <- \() nutrition(
   name = 'Magnesium Chloride MgCl\u2082', alias = '\u76d0\u5364',
-  pubchem = 'Magnesium-chloride-_MgCl2',
+  pubchem = '5360315',
   servingGram = 1)
   
 
@@ -37,10 +37,10 @@ Ajinomoto_msg <- \() nutrition(
   usd = 3.99/454, yamibuy = '25775165',
   servingGram = 1, 
   servingTsp = 1/4, # packaging
-  pubchem = 'Monosodium-Glutamate',
-  # MSG is C5H8NO4Na
-  # sodium 23/(12*5+2*8+14+16*4+23) = 12.99%
-  sodium = .125)
+  pubchem = '23689119',
+  # MSG is C5H10NO5Na
+  # sodium 23/(12*5+2*10+14+16*5+23) = 11.67%
+  sodium = .117)
 
 
 ArmHammer_NaHCO3 <- \() nutrition(

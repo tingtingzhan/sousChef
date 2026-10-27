@@ -330,21 +330,9 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
     x$AbV <- NULL
   }
   
-  if (length(x$fdc)) {
-    x$url <- c(x$url, style_hyperlink(
-      url = x$fdc |>
-        sprintf(fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients'), 
-      text = '\U1f4dd FoodData Central'))
-    x$fdc <- NULL
-  }
-  
-  if (length(x$pubchem)) {
-    x$url <- c(x$url, style_hyperlink(
-      url = x$pubchem |> 
-        sprintf(fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s'), 
-      text = '\U1f4dd PubChem'))
-    x$pubchem <- NULL
-  }
+  x <- x |>
+    add_url(name = 'fdc', fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', text = '\U1f4dd FoodData Central') |>
+    add_url(name = 'pubchem', fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', text = '\U1f4dd PubChem')
   
   c(list(Class = 'nutrition', call = no_eval), x) |> 
     do.call(what = 'new', args = _)

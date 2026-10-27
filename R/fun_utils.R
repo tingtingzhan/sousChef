@@ -354,6 +354,17 @@ add_youtube_recipe <- \(x, name, text1, text2, ...) {
 }
 
 
+add_url <- \(x, name, ...) {
+  if (!length(x[[name]])) return(x)
+  x$url <- c(
+    x$url, 
+    x[[name]] |> fmtURL(...)
+  )
+  x[[name]] <- NULL
+  return(x)
+}
+
+
 
 get_key_ <- \(x, no_eval) {
   # x is \link[base]{list}

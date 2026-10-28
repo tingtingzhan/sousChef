@@ -14,13 +14,13 @@
 #' @slot call \link[base]{name}, the function name to create this \linkS4class{nutrition}
 #' 
 #' @slot suggest \link[base]{list}
-#' @slot suggest_fmt \link[base]{character} scalar
 #' 
 #' @slot url \link[base]{character} scalar, link to manufacturer webpage
 #' 
 # @slot machine (legacy) \link[base]{function}
 #' 
 #' @slot review \link[base]{character} scalar or \link[base]{vector}, additional note to chef
+#' 
 #' @slot superior \link[base]{character} scalar
 #' @slot contain \link[base]{character} scalar or vector, names of additives
 #' 
@@ -32,8 +32,10 @@
 #' 
 #' @slot usd \link[base]{numeric} scalar, price (in USD) \strong{per serving}
 #' @slot date `'Date'`
+#' 
 #' @slot calorie \link[base]{numeric} scalar, calories per serving
 #' @slot water \link[base]{numeric} scalar, water (in grams) per serving
+#' 
 #' @slot carbohydrate \link[base]{numeric} scalar, total carbohydrate (in grams) per serving
 #' @slot fiber \link[base]{numeric} scalar, dietary fiber (in grams) per serving
 #' @slot sugar \link[base]{numeric} scalar, sugar (in grams) per serving
@@ -65,7 +67,6 @@ setClass(Class = 'nutrition', slots = c(
   )),
   
   suggest = 'list',
-  suggest_fmt = 'character',
   
   # machine = 'function', # legacy
   
@@ -85,7 +86,6 @@ setClass(Class = 'nutrition', slots = c(
   ))
 ), prototype = prototype(
   piece_fmt = '%.1fpcs',
-  suggest_fmt = '\U1f381 %s',
   # machine = \(x) NULL, # legacy
   calorie = 0,
   date = as.Date(NA_character_)

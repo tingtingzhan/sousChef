@@ -92,10 +92,16 @@ setAs(from = 'nutrition', to = 'raw.', def = \(from) {
     return(invisible())
   }
   
-  z <- x@servingGram |>
-    setNames(nm = as.character(x@call)) |> 
-    raw.(misc = _)
-    
+  z <- if (length(x@pieceGram)) {
+    1 |>
+      setNames(nm = as.character(x@call)) |>
+      raw.(misc_pc = _)
+  } else {
+    x@servingGram |>
+      setNames(nm = as.character(x@call)) |> 
+      raw.(misc = _)
+  }
+  
   if (!length(x@suggest)) {
     #return(z) # no bug now :)
     return(invisible())

@@ -150,6 +150,7 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
     add_brand_url(name = 'kingarthur', fmt = 'https://www.kingarthurbaking.com/search?query=%s', text = 'King Arthur\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'kingarthurpro', fmt = 'https://www.kingarthurbaking.com/pro/products/%s', text = 'King Arthur\U1f1fa\U1f1f8') |> 
     # url: https://www.kingarthurbaking.com/pro/products
+    add_brand_url(name = 'libbysbaking', fmt = 'https://www.verybestbaking.com/libbys/products/%s', text = 'Libby\'s\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'philadelphia', fmt = 'https://www.kraftheinz.com/philadelphia/products/%s', text = 'Philadelphia\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'krusteaz', fmt = 'https://www.krusteaz.com/products/%s', text = 'Krusteaz\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'landolakes', fmt = 'https://www.landolakes.com/products/%s', text = 'Land O Lakes\U1f1fa\U1f1f8') |> 

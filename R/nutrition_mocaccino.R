@@ -56,9 +56,7 @@ Godiva_milk_hotCocoa <- \() nutrition(
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
   fat = 2.5, sodium = .005, carbohydrate = 28, sugar = 24, addedSugar = 23, protein = 2,
-  suggest = list(misc_cup = c(
-    Wegmans_whole_milk = 1
-  )))
+  suggest = list(misc_cup = c(Wegmans_whole_milk = 1)))
 
 
 
@@ -68,9 +66,7 @@ Godiva_hotCocoa <- \() nutrition(
   servingGram = 34, servingTbsp = 3, 
   calorie = 140,
   fat = 3.5, carbohydrate = 26, addedSugar = 20, protein = 3,
-  suggest = list(misc_cup = c(
-    Wegmans_whole_milk = 1
-  )))
+  suggest = list(misc_cup = c(Wegmans_whole_milk = 1)))
 
 
 
@@ -83,11 +79,7 @@ SwissMiss_simplyCocoa_milk_hotCocoa <- \() nutrition(
   servingGram = 24, 
   calorie = 100,
   sodium = .15, carbohydrate = 22, addedSugar = 20, protein = 1,
-  suggest = list(
-    misc_cup = c(
-      WegmansOrganic_2perc_milk = 1
-    )
-  ))
+  suggest = list(misc_cup = c(WegmansOrganic_2perc_milk = 1)))
 
 
 SwissMiss_simplyCocoa_hotCocoa <- \() nutrition(
@@ -97,11 +89,7 @@ SwissMiss_simplyCocoa_hotCocoa <- \() nutrition(
   calorie = 110,
   fat = .5,
   sodium = .15, carbohydrate = 24, fiber = 2, sugar = 21, addedSugar = 20, protein = 2,
-  suggest = list(
-    misc_cup = c(
-      WegmansOrganic_2perc_milk = 1
-    )
-  ))
+  suggest = list(misc_cup = c(WegmansOrganic_2perc_milk = 1)))
 
 
 
@@ -112,9 +100,7 @@ Nestle_rich_hotCocoa <- \() nutrition(
   servingGram = 20, 
   calorie = 80,
   fat = 2, sodium = .19, carbohydrate = 16, sugar = 12, addedSugar = 10,
-  suggest = list(
-    misc_floz = c(Wegmans_whole_milk = 6)
-  ))
+  suggest = list(misc_floz = c(Wegmans_whole_milk = 6)))
 
 
 
@@ -124,9 +110,7 @@ Nestle_skim_hotCocoa <- \() nutrition(
   servingGram = 8, 
   calorie = 25,
   sodium = .135, carbohydrate = 5, sugar = 4, protein = 1,
-  suggest = list(
-    misc_floz = c(Wegmans_whole_milk = 6)
-  ))
+  suggest = list(misc_floz = c(Wegmans_whole_milk = 6)))
 
 
 

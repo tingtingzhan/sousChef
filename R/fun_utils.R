@@ -486,6 +486,9 @@ prt_vol_H2O <- \(x) {
   label[label == 'c80'] <- '80\u00b0C\u70ed\u6c34' |>
     col_orchid4() |>
     sprintf(fmt = '%s Hot Water, 175\u00b0F')
+  label[label == 'c85'] <- '85\u00b0C\u70ed\u6c34' |>
+    col_orchid4() |>
+    sprintf(fmt = '%s Hot Water, 185\u00b0F')
   label[label == 'c90'] <- '90\u00b0C\u70ed\u6c34' |>
     col_orchid4() |>
     sprintf(fmt = '%s Hot Water, 195\u00b0F')

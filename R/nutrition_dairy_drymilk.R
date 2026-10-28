@@ -73,9 +73,7 @@ KingArthur_baker_drymilk <- \() nutrition(
   servingCup = 1/4, # packaging
   calorie = 100,
   cholesterol = .01, sodium = .11, carbohydrate = 14, sugar = 13, protein = 10,
-  suggest = list(
-    water_cup = c(c80 = 1)
-  ))
+  suggest = list(water_cup = c(c80 = 1)))
 
 
 
@@ -88,9 +86,7 @@ KingArthur_drywholemilk <- \() nutrition(
   calorie = 30,
   # no suggest on package!!!
   fat = 1.5, cholesterol = .005, sodium = .02, carbohydrate = 2, sugar = 2, protein = 2,
-  suggest = list(
-    water_cup = c(c80 = 1/4)
-  ))
+  suggest = list(water_cup = c(c80 = 1/4)))
 
 
 
@@ -102,9 +98,7 @@ GreatValue_drymilk <- \() nutrition(
   servingCup = 1/3,
   calorie = 80,
   cholesterol = .005, sodium = .125, carbohydrate = 12, sugar = 12, protein = 8,
-  suggest = list(
-    water_cup = c(c80 = 7/8)
-  ))
+  suggest = list(water_cup = c(c80 = 7/8)))
 
 
 
@@ -116,9 +110,7 @@ MembersMark_drymilk <- \() nutrition(
   servingCup = 1/3, # packaging
   calorie = 80,
   cholesterol = .005, sodium = .125, carbohydrate = 12, sugar = 12, protein = 8,
-  suggest = list(
-    water_cup = c(c80 = 7/8)
-  ))
+  suggest = list(water_cup = c(c80 = 7/8)))
 
 
 
@@ -130,9 +122,7 @@ BobsRedMill_drymilk <- \() nutrition(
   servingTbsp = 3, # packaging
   calorie = 90,
   sodium = .1, carbohydrate = 13, sugar = 11, protein = 8,
-  suggest = list(
-    water_cup = 1
-  ))
+  suggest = list(water_cup = 1))
 
 
 

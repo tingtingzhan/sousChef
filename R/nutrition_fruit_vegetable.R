@@ -356,13 +356,19 @@ Libbys_pumpkin <- \() nutrition(
   water = 122-10-1-1) #122 * 240/300) # bao, I trust best
 
 Libbys_pumpkinPieMix <- \() nutrition(
-  brand = 'Libby\'s\U1f1fa\U1f1f8', 
+  libbysbaking = 'libbys-easy-pumpkin-pie-mix',
   name = 'Pumpkin\U1f383 Pie Mix', alias = '\u8c03\u5473\u5357\u74dc\u6ce5',
   target = 'A-14886100', usd = 4.49/850*87,
   servingGram = 87, servingCup = 1/3, 
+  pieceGram = 850,
   calorie = 80,
   water = (87-16) * 240/300, # using [Libbys_pumpkin] data
-  sodium = .11, sugar = 18, addedSugar = 16)
+  sodium = .11, sugar = 18, addedSugar = 16,
+  suggest = list(
+    misc_cup = c(Carnation_evapMilk = 2/3),
+    misc_pc = c(eggWhite = 2, eggYolk = 2)
+  )
+)
 
 
 

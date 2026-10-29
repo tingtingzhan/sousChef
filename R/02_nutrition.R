@@ -11,17 +11,17 @@
 #' 
 #' @slot key \link[base]{character} scalar
 #' @slot alias \link[base]{character} scalar with Unicode symbols, product alias
+#' 
 #' @slot call \link[base]{name}, the function name to create this \linkS4class{nutrition}
 #' 
 #' @slot suggest \link[base]{list}
 #' 
 #' @slot url \link[base]{character} scalar, link to manufacturer webpage
 #' 
-# @slot machine (legacy) \link[base]{function}
-#' 
 #' @slot review \link[base]{character} scalar or \link[base]{vector}, additional note to chef
 #' 
 #' @slot superior \link[base]{character} scalar
+#' 
 #' @slot contain \link[base]{character} scalar or vector, names of additives
 #' 
 #' @slot servingGram \link[base]{numeric} scalars, serving size in grams
@@ -68,8 +68,6 @@ setClass(Class = 'nutrition', slots = c(
   
   suggest = 'list',
   
-  # machine = 'function', # legacy
-  
   tool = 'list',
   
   date = 'Date',
@@ -86,7 +84,6 @@ setClass(Class = 'nutrition', slots = c(
   ))
 ), prototype = prototype(
   piece_fmt = '%.1fpcs',
-  # machine = \(x) NULL, # legacy
   calorie = 0,
   date = as.Date(NA_character_)
 ))
@@ -291,10 +288,6 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
     add_store_url(name = 'yamibuy', fmt = 'https://u.yamibuy.com/%s', store_brand = 'Yami\u4e9a\u7c73\U1f1fa\U1f1f8')
   
   # serving weight
-  if (length(x$pieceGram) && !length(x$servingGram)) {
-    x$servingGram <- x$pieceGram # useful for teabags
-  }
-  
   if (length(x$serving_oz)) {
     if (length(x$servingGram)) warning('`@servingGram` over written by `serving_oz`')
     x$servingGram <- x$serving_oz * 28.3495
@@ -303,6 +296,9 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
     if (length(x$servingGram)) warning('`@servingGram` over written by `serving_lb`')
     x$servingGram <- x$serving_lb * 453.6
     x$serving_lb <- NULL
+  }
+  if (length(x$pieceGram) && !length(x$servingGram)) {
+    x$servingGram <- x$pieceGram # useful for teabags
   }
   if (!length(x$servingGram)) stop('must have `@servingGram`')
   
@@ -367,6 +363,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
           creamCheese = '\u5976\u6cb9\u5976\u916a',
           drymilk = '\u8131\u8102\u5976\u7c89',
           drywholemilk = '\u5168\u8102\u5976\u7c89',
+          duck = '\u6574\u9e2d',
           gelatin = '\u5409\u5229\u4e01\u7247',
           ghee = '\u5370\u5ea6\u9165\u6cb9\u0918\u0943\u0924',
           goatKefir = '\u7f8a\u5976\u9152',
@@ -576,27 +573,19 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
   
   sprintf(
     fmt = '%s %.1f grams %s\n', 
-    'Alcohol' |> make_ansi_style('slateblue3')() |> style_bold(),
-    x@alcohol, 
-    fmt_perc(x, 'alcohol')
-  ) |> cat()
-  
-  sprintf(
-    fmt = '%s %.1f grams %s\n', 
     'Protein' |> make_ansi_style('slateblue3')() |> style_bold(),
     x@protein, 
     fmt_perc(x, 'protein')
   ) |> cat()
   
-  # cat(c(rep('\u058e', times = 25), '\n\n'), sep = '')
+  sprintf(
+    fmt = '%s %.1f grams %s\n', 
+    'Alcohol' |> make_ansi_style('slateblue3')() |> style_bold(),
+    x@alcohol, 
+    fmt_perc(x, 'alcohol')
+  ) |> cat()
+  
   cat('\n')
-  
-  
-  
-  #if (length(x@machine)) {
-  #  cat('\nMachine:\n')
-  #  sprintf(fmt = '%s: %s\n', names(x@machine), x@machine) |> cat(sep = '')
-  #}
   
   if (length(x@superior)) {
     c('\u274c I prefer ', sprintf(

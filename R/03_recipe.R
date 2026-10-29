@@ -18,8 +18,6 @@
 #' @slot youtube \link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe
 # @slot doi \link[base]{character} scalar or \link[base]{vector}
 #' 
-# @slot machine (legacy) \link[base]{list} of \link[base]{character} scalar or \link[base]{vector}, machine(s) used.  To be superceeded by slot `@tool`
-#' 
 #' @slot review \link[base]{character} scalar or \link[base]{vector}, people's comments
 #' @slot pros \link[base]{character} scalar or \link[base]{vector}, pros
 #' @slot cons \link[base]{character} scalar or \link[base]{vector}, cons

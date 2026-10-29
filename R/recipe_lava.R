@@ -69,23 +69,4 @@ daat_yolklava <- \() recipe(
   daatgo = '1h6YFS2KGA0')
 
 
-# not a good idea
-pineapple_lava <- \() recipe(
-  misc = c(
-    Dole_pineapple = 585
-  ), 
-  misc_pc = c(
-    Champion_gold_gelatin = 4
-  ),
-  # machine (legacy) = list(Nutribullet = 'One (1) recipe calls for a full can'),
-  tool = list(JoyoungCJA9U_filling(
-    minute = 8,
-    #waterLost = 100 # to confirmed
-  )),
-  review = c('Need to use gelatin=6', 'Too sour when hot, don\'t make in future.'))
-
-
-#date_lava <- \() new(
-#  Class = 'lava', flavor = '\u7ea2\u67a3',
-#  misc = c(SunnyFruit_date = 80))
 

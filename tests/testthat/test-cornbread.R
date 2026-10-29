@@ -26,7 +26,7 @@ expect_no_error(
     sousChef:::JoshuaWeissman_cornbread(),
     sousChef:::Jiffy_cornMuffinMix() |>
       as('raw.'),
-    sousChef:::Wegmans_cornbread_recipe(),
+    sousChef:::Wegmans_recipe_cornbread(),
     sousChef:::Wegmans_cornbread(),
     sousChef:::WholeFoods365_cornbreadMix() |>
       as('raw.'),

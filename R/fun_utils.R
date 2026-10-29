@@ -318,6 +318,17 @@ add_brand_url <- \(x, name, ...) {
 }
 
 
+add_author_url <- \(x, name, ..., text = x[['author']]) {
+  v <- x[[name]]
+  nv <- length(v)
+  if (!nv) return(x)
+  if (nv > 1L) stop('only allow len-1 ', sQuote(name))
+  if (!length(text)) return(x)
+  x$author <- v |>
+    fmtURL(text = text, ...)
+  x[[name]] <- NULL
+  return(x)
+}
 
 
 add_youtube <- \(x, name, ...) {
@@ -356,7 +367,7 @@ add_youtube_recipe <- \(x, name, text1, text2, ...) {
 }
 
 
-add_url <- \(x, name, ...) {
+append_url <- \(x, name, ...) {
   if (!length(x[[name]])) return(x)
   x$url <- c(
     x$url, 

@@ -147,7 +147,7 @@ PinNuo_bao3 <- \() recipe(
 
 KingArthur_bao <- \() recipe(
   flavor = '\u5305\u5b50', 
-  kingarthur = 'steamed-pork-buns-xian-rou-bao-recipe', author = 'betty-liu',
+  kingarthur = 'steamed-pork-buns-xian-rou-bao-recipe',
   misc_cup = c(
     KingArthur_allPurposeFlr = 3,
     Wegmans_whole_milk = 1
@@ -165,7 +165,7 @@ KingArthur_bao <- \() recipe(
 
 KingArthur_huajuan <- \() recipe(
   flavor = '\u82b1\u5377',
-  kingarthur = 'scallion-buns-recipe', author = 'frankie-gaw',
+  kingarthur = 'scallion-buns-recipe',
   misc_cup = c(
     KingArthur_breadFlr = 4
   ),

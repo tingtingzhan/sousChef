@@ -35,6 +35,6 @@ KingArthur_fauxReo <- \() recipe(
   misc_cup = c(
     KingArthur_allPurposeFlr = 1.5
   ),
-  author = 'pj-hamel', kingarthur = 'faux-reos-recipe')
+  kingarthur = 'faux-reos-recipe')
 
 

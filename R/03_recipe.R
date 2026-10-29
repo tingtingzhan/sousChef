@@ -76,27 +76,14 @@ recipe <- \(no_eval = .findCall(which = -2), ...) {
 
   # processing 'character'
   
-  if (length(x$author)) {
-    if (length(x$allrecipes)) {
-      #stop('where?')
-      x$author <- x$allrecipes |>
-        fmtURL(fmt = 'https://www.allrecipes.com/recipe/%s', text = x$author)
-      x$allrecipes <- NULL
-    } else if (length(x$youtube)) {
-      #stop('where?')
-      x$author <- x$youtube[1L] |>
-        fmtURL(fmt = 'https://youtu.be/%s', text = x$author)
-      x$youtube <- x$youtube[-1L]
-    } else if (length(x$url)) {
-      #stop('where?')
-      x$author <- x$url[1L] |>
-        style_hyperlink(url = _, text = x$author) |> 
-        c()
-      x$url <- x$url[-1L]
-    }
+  if (length(x$author) && length(x$url)) {
+    #stop('where?')
+    x$author <- x$url[1L] |>
+      style_hyperlink(url = _, text = x$author) |> 
+      c()
+    x$url <- x$url[-1L]
   } # before `if (!length(x@author))` !!!
   
-  # youtubers
   x <- x |>
     add_youtube(name = 'bakethat', text = 'Bake That!') |>
     add_youtube(name = 'cookingtree', text = 'Cooking Tree \ucfe0\ud0b9\ud2b8\ub9ac') |>
@@ -107,26 +94,10 @@ recipe <- \(no_eval = .findCall(which = -2), ...) {
     add_youtube(name = 'happytears', text = '\u5e78\u798f\u7684\u773c\u6cea') |>
     add_youtube(name = 'laofangu', text = '\u8001\u996d\u9aa8') |>
     add_youtube(name = 'mrhongkitchen', text = '\u963f\u9e3f\u53a8\u623f') |>
-    add_youtube(name = 'pino', text = '\u54c1\u8bfa') |> # http://www.pinochina.com # temporarily down
+    add_youtube(name = 'pino', text = '\u54c1\u8bfa') |>
     add_youtube(name = 'shangshikitchen', text = '\u5c1a\u98df\u53a8\u623f') |>
     add_youtube(name = 'viewsontheroad', text = 'Views on the road') |>
-    add_youtube(name = 'xiaogaojie', text = '\u5c0f\u9ad8\u59d0')
-  
-  if (length(x$ippodotea)) {
-    if (length(x$ippodotea) > 1L) stop('only allow len-1 `ippodotea`')
-    x$author <- x$ippodotea |>
-      fmtURL(fmt = 'https://ippodotea.com/products/%s', text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5')
-    x$ippodotea <- NULL
-  }
-  
-  if (length(x$ippodoteajpn)) {
-    if (length(x$ippodoteajpn) > 1L) stop('only allow len-1 `ippodoteajpn`')
-    x$author <- x$ippodoteajpn |> 
-      fmtURL(fmt = 'https://www.ippodo-tea.co.jp/products/%s', text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5')
-    x$ippodoteajpn <- NULL
-  }
-  
-  x <- x |>
+    add_youtube(name = 'xiaogaojie', text = '\u5c0f\u9ad8\u59d0') |>
     add_youtube_recipe(name = 'brianlagerstrom', fmt = 'https://brianlagerstrom.com/recipes/%s', text1 = 'Brian', text2 = 'Lagerstrom') |>
     add_youtube_recipe(name = 'chefjeanpierre', fmt = 'https://chefjeanpierre.com/recipes/%s', text1 = 'Chef', text2 = 'Jean-Pierre') |>
     add_youtube_recipe(name = 'emmafontanella', fmt = 'https://www.emmafontanella.com/%s', text1 = 'Emma', text2 = 'Fontanella') |>
@@ -136,48 +107,24 @@ recipe <- \(no_eval = .findCall(which = -2), ...) {
     add_youtube_recipe(name = 'lynnsrecipes', fmt = 'https://lynnsrecipes.com/recipes/%s.pdf', text1 = 'Lynn\'s', text2 = 'Recipes') |>  
     add_youtube_recipe(name = 'kitchenaiduk2003', fmt = 'https://www.kitchenaid.co.uk/recipes/%s', text1 = 'KitchenAid', text2 = 'UK') |>
     add_youtube_recipe(name = 'natashaskitchen', fmt = 'https://natashaskitchen.com/%s/', text1 = 'Natasha\'s', text2 = 'Kitchen') |>
-    add_youtube_recipe(name = 'preppykitchen', fmt = 'https://preppykitchen.com/%s/', text1 = 'Preppy', text2 = 'Kitchen')# |>
+    add_youtube_recipe(name = 'preppykitchen', fmt = 'https://preppykitchen.com/%s/', text1 = 'Preppy', text2 = 'Kitchen') |>
+    add_author_url(name = 'allrecipes', fmt = 'https://www.allrecipes.com/recipe/%s') |>
+    add_author_url(name = 'ippodotea', fmt = 'https://ippodotea.com/products/%s', text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5') |>
+    add_author_url(name = 'ippodoteajpn', fmt = 'https://www.ippodo-tea.co.jp/products/%s', text = 'Ippodo\U1f375\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5') |>
+    add_author_url(name = 'kingarthur', fmt = 'https://www.kingarthurbaking.com/recipes/%s', text = 'King Arthur\U1f1fa\U1f1f8') |>
+    add_author_url(name = 'nytimes', fmt = 'https://cooking.nytimes.com/recipes/%s', text = 'New York Times Cooking') |>
+    add_author_url(name = 'quakeroats', fmt = 'https://www.quakeroats.com/cooking-and-recipes/%s', text = 'Quaker\U1f1fa\U1f1f8') |>
+    add_author_url(name = 'wegmans', fmt = 'https://shop.wegmans.com/recipes/%s', text = 'Wegmans\U1f1fa\U1f1f8') |>
+    add_author_url(name = 'youtube', fmt = 'https://youtu.be/%s')
+  
+  # non-standard author
   
   if (length(x$juniorscheesecakecookbook)) {
     if (length(x$juniorscheesecakecookbook) > 1L) stop('only allow len-1 `juniorscheesecakecookbook`')
-    x$author <- style_hyperlink(url = 'https://www.juniorscheesecake.com/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook p.%d', x$juniorscheesecakecookbook)) |> c()
+    x$author <- style_hyperlink(url = 'https://www.juniorscheesecake.com/products/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook p.%d', x$juniorscheesecakecookbook)) |> c()
     x$juniorscheesecakecookbook <- NULL
   }
   
-  if (length(x$kingarthur)) {
-    if (length(x$kingarthur) > 1L) stop('only allow len-1 `kingarthur`')
-    if (!length(x$author)) stop('King Arthur employee name?')
-    x$author <- paste(
-      x$kingarthur |>
-        fmtURL(fmt = 'https://www.kingarthurbaking.com/recipes/%s', text = 'King Arthur'),
-      x$author |> 
-        fmtURL(fmt = 'https://www.kingarthurbaking.com/author/%s', text = 'Recipe')
-    )
-    x$kingarthur <- NULL
-  }
-  
-  if (length(x$nytimes)) {
-    if (length(x$nytimes) > 1L) stop('only allow len-1 `nytimes`')
-    x$author <- x$nytimes |>
-      fmtURL(fmt = 'https://cooking.nytimes.com/recipes/%s', text = 'New York Times Cooking')
-    x$nytimes <- NULL
-  }
-  
-  if (length(x$quakeroats)) {
-    if (length(x$quakeroats) > 1L) stop('only allow len-1 `quakeroats`')
-    x$author <- x$quakeroats |> 
-      fmtURL(fmt = 'https://www.quakeroats.com/cooking-and-recipes/%s', text = 'Quaker\U1f1fa\U1f1f8')
-    x$quakeroats <- NULL
-  }
-  
-  if (length(x$wegmans)) {
-    if (length(x$wegmans) > 1L) stop('only allow len-1 `wegmans`')
-    x$author <- x$wegmans |>
-      fmtURL(fmt = 'https://shop.wegmans.com/recipes/%s', text = 'Wegmans\U1f1fa\U1f1f8')
-    x$wegmans <- NULL
-  }
-  
-
   c(list(Class = 'recipe', call = no_eval), x) |> 
     do.call(what = 'new', args = _)
   
@@ -331,6 +278,7 @@ labels.recipe <- \(object, ...) {
     EXPR = x@key,
     beefball = '\u725b\u8089\u4e38',
     cheesecake = 'NY Cheesecake\u91cd\u4e73\u916a\u86cb\u7cd5',
+    cornbread = 'Cornbread',
     creamCheeseDip = 'Cream Cheese Dip\u5976\u6cb9\u4e73\u916a\u9171', 
     creamCheeseSpread = 'Cream Cheese Spread\U1f96f\u5976\u6cb9\u4e73\u916a\u9171',
     custardFilling = '\u5976\u9ec4\u9985',

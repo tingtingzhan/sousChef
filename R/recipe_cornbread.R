@@ -1,9 +1,8 @@
 
 
 
-Wegmans_cornbread_recipe <- \() recipe(
+Wegmans_recipe_cornbread <- \() recipe(
   wegmans = '3044',
-  flavor = 'Cornbread',
   #Wegmans Avocado Oil Cooking Spray
   misc_Tbsp = c(
     Wegmans_bakingPowder = 2,
@@ -26,7 +25,8 @@ Wegmans_cornbread_recipe <- \() recipe(
 
 
 BethanyWeathersby_cornbread <- \() recipe(
-  flavor = 'Cornbread', author = 'Bethany Weathersby',
+  #flavor = 'Cornbread', 
+  author = 'Bethany Weathersby',
   misc_pc = c(eggYolk = 2, eggWhite = 2),
   misc_cup = c(
     KingArthur_allPurposeFlr = 1,
@@ -82,7 +82,6 @@ PreppyKitchen_cornbread <- \() recipe(
   ))
 
 Quaker_cornbread <- \() recipe(
-  flavor = 'Cornbread',
   quakeroats = 'golden-cornbread',
   misc_Tbsp = c(
     KingArthur_allPurposeFlr = 3,

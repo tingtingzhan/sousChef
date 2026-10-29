@@ -25,7 +25,6 @@ Wegmans_recipe_cornbread <- \() recipe(
 
 
 BethanyWeathersby_cornbread <- \() recipe(
-  #flavor = 'Cornbread', 
   author = 'Bethany Weathersby',
   misc_pc = c(eggYolk = 2, eggWhite = 2),
   misc_cup = c(
@@ -44,7 +43,7 @@ BethanyWeathersby_cornbread <- \() recipe(
 
 
 bluegirl_cornbread <- \() recipe(
-  flavor = 'Cornbread', author = 'bluegirl',
+  author = 'bluegirl',
   misc_tsp = c(
     TraderJoes_bakingPowder = 3.5,
     Morton_salt = 1
@@ -61,7 +60,6 @@ bluegirl_cornbread <- \() recipe(
 
 
 PreppyKitchen_cornbread <- \() recipe(
-  flavor = 'Cornbread',
   misc_tsp = c(
     TraderJoes_bakingPowder = 2,
     Morton_salt = 1
@@ -99,7 +97,6 @@ Quaker_cornbread <- \() recipe(
 
 
 JoshuaWeissman_cornbread <- \() recipe(
-  flavor = 'Cornbread', 
   # 1/2 bunch fresh sage 
   # 1/2 bunch fresh thyme 
   misc_Tbsp = c(

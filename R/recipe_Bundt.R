@@ -19,7 +19,6 @@
 
 
 PreppyKitchen_chocolate_Bundt <- \() recipe(
-  flavor = 'Chocolate Bundt',
   water = c(c40 = 360),
   misc_tsp = c(
     NielsenMassey_Madagascar = 1,
@@ -42,7 +41,6 @@ PreppyKitchen_chocolate_Bundt <- \() recipe(
 
 
 PreppyKitchen_Bundt <- \() recipe(
-  flavor = 'Bundt',
   misc = c(
     KingArthur_allPurposeFlr = 360
   ),

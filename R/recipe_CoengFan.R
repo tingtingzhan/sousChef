@@ -10,8 +10,7 @@ if (FALSE) {
 }  
 
 
-Daat_CoengFan1 <- \() recipe(
-  flavor = 'Coeng Fan1', 
+Daat1_CoengFan <- \() recipe(
   misc = c(
     Erawan_riceFlr = 150,
     Argo_corn_starch = 40 + 45, 
@@ -21,8 +20,7 @@ Daat_CoengFan1 <- \() recipe(
   daatgo = 'MjBaHuCq9Rg')
 
 
-Daat_CoengFan2 <- \() recipe(
-  flavor = 'Coeng Fan2', 
+Daat2_CoengFan <- \() recipe(
   misc = c(
     Erawan_riceFlr = 100,
     ManSang_wheat_starch = 10, 

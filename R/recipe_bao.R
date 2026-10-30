@@ -2,7 +2,6 @@
 
 
 xiaogaojie_bao <- \() recipe(
-  flavor = '\u5305\u5b50', 
   xiaogaojie = 'M6DD504lDac',
   misc = c(
     KingArthur_allPurposeFlr = 750,
@@ -12,8 +11,7 @@ xiaogaojie_bao <- \() recipe(
   portion = c(baozi = 50))
 
 
-laofangu_bao1 <- \() recipe(
-  flavor = '\u5305\u5b501', 
+laofangu1_bao <- \() recipe(
   laofangu = 'F_4A-tuLJWU',
   misc = c(
     Wegmans_pastryFlr = 500,
@@ -29,8 +27,8 @@ laofangu_bao1 <- \() recipe(
 
 
 
-#laofangu_bao2 <- \() new(
-#  Class = 'laofangu', alias_flavor = '\u5305\u5b502', youtube = 'FhTVAgRwg6Q',
+#laofangu2_bao <- \() new(
+#  Class = 'laofangu', youtube = 'FhTVAgRwg6Q',
 # misc = c(KingArthur_allPurposeFlr = 500, # did not say..
 #  Fleischmanns_instant_yeast = 10,
 #  Domino_granulated = 7.5),
@@ -38,8 +36,8 @@ laofangu_bao1 <- \() recipe(
 #  water = 300)
 
 
-Dad_bao1 <- \() recipe(
-  flavor = '\u9171\u8089\u5305\u5b50',
+Dad1_bao <- \() recipe(
+  flavor = '\u9171\u8089',
   dad1966 = '1oZPlcHmHZc',
   misc = c(
     KingArthur_allPurposeFlr = 500, # either all-purpose flour or high-protein flour: 3:38,
@@ -50,8 +48,8 @@ Dad_bao1 <- \() recipe(
   water = 300
 )
 
-Dad_bao2 <- \() recipe(
-  flavor = '\u732a\u8089\u5927\u8471/\u8304\u5b50\u8089\u9985\u5305', 
+Dad2_bao <- \() recipe(
+  flavor = '\u732a\u8089\u5927\u8471/\u8304\u5b50\u8089\u9985', 
   dad1966 = 'l9gWI891tkE', 
   # same: 'YKi0Cn0iNIg',
   misc = c(
@@ -60,8 +58,8 @@ Dad_bao2 <- \() recipe(
   ), 
   water = 300)
 
-Dad_bao3 <- \() recipe(
-  flavor = '\u9999\u83c7\u8089\u4e01\u5305\u5b50', 
+Dad3_bao <- \() recipe(
+  flavor = '\u9999\u83c7\u8089\u4e01',
   dad1966 = 'ciBRu8y9ibs',
   misc = c(
     KingArthur_allPurposeFlr = 500,
@@ -70,8 +68,8 @@ Dad_bao3 <- \() recipe(
   water = 270)
 
 
-Dad_bao4 <- \() recipe(
-  flavor = '\u8377\u53f6\u84b8\u5305\u5b50', 
+Dad4_bao <- \() recipe(
+  flavor = '\u8377\u53f6\u84b8', 
   dad1966 = 'pARmud-OmB8',
   misc = c(
     KingArthur_allPurposeFlr = 500,
@@ -79,8 +77,8 @@ Dad_bao4 <- \() recipe(
   ), water = 280)
 
 
-Dad_bao5 <- \() recipe(
-  flavor = '\u7c89\u6761\u7d20\u714e\u5305\u5b50', 
+Dad5_bao <- \() recipe(
+  flavor = '\u7c89\u6761\u7d20\u714e', 
   dad1966 = 'fr65f2cIduk',
   misc = c(
     KingArthur_allPurposeFlr = 500,
@@ -90,8 +88,8 @@ Dad_bao5 <- \() recipe(
   ), water = 280)
 
 
-Dad_bao6 <- \() recipe(
-  flavor = '\u8c46\u6c99\u5305\u5b50', 
+Dad6_bao <- \() recipe(
+  flavor = '\u8c46\u6c99', 
   dad1966 = 'oW2Q_ZpXU74',
   misc = c(
     KingArthur_breadFlr = 500,
@@ -100,8 +98,8 @@ Dad_bao6 <- \() recipe(
   ), water = 270)
 
 
-Dad_bao7 <- \() recipe(
-  flavor = '\u7d20\u841d\u535c\u5305', 
+Dad7_bao <- \() recipe(
+  flavor = '\u7d20\u841d\u535c', 
   dad1966 = '2_h05UfwaSE',
   misc = c(
     KingArthur_allPurposeFlr = 500,
@@ -111,8 +109,7 @@ Dad_bao7 <- \() recipe(
 
 
 
-PinNuo_bao1 <- \() recipe(
-  flavor = '\u5305\u5b501', 
+PinNuo1_bao <- \() recipe(
   pino = 'WC9vGp78AIk',
   misc = c(
     KingArthur_allPurposeFlr = 500,
@@ -124,8 +121,7 @@ PinNuo_bao1 <- \() recipe(
   water = 250)
 
 
-PinNuo_bao2 <- \() recipe(
-  flavor = '\u5305\u5b502', 
+PinNuo2_bao <- \() recipe(
   pino = 'Rn9f38LAWmo',
   misc = c(
     KingArthur_allPurposeFlr = 1000,
@@ -133,8 +129,8 @@ PinNuo_bao2 <- \() recipe(
     Domino_granulated = 4
   ), water = 520)
 
-PinNuo_bao3 <- \() recipe(
-  flavor = '\u5305\u5b503', 
+
+PinNuo3_bao <- \() recipe(
   pino = 'd3gxTvl3bCg',
   misc = c(
     KingArthur_allPurposeFlr = 1000,
@@ -146,7 +142,6 @@ PinNuo_bao3 <- \() recipe(
   water = 500)
 
 KingArthur_bao <- \() recipe(
-  flavor = '\u5305\u5b50', 
   kingarthur = 'steamed-pork-buns-xian-rou-bao-recipe',
   misc_cup = c(
     KingArthur_allPurposeFlr = 3,
@@ -164,7 +159,6 @@ KingArthur_bao <- \() recipe(
 
 
 KingArthur_huajuan <- \() recipe(
-  flavor = '\u82b1\u5377',
   kingarthur = 'scallion-buns-recipe',
   misc_cup = c(
     KingArthur_breadFlr = 4
@@ -179,8 +173,7 @@ KingArthur_huajuan <- \() recipe(
   water_cup = c(c40 = 1.5))
 
 
-Daat_bao1 <- \() recipe(
-  flavor = '\u5927\u5305', 
+Daat1_bao <- \() recipe(
   daatgo = 'e5Y75U6GDzo',
   portion = c(bao = 90),
   misc = c(
@@ -193,8 +186,8 @@ Daat_bao1 <- \() recipe(
 
 
 
-Daat_bao2 <- \() recipe(
-  flavor = '\u732a\u8089\u5305', 
+Daat2_bao <- \() recipe(
+  flavor = '\u732a\u8089', 
   daatgo = 'sI1k0IIAqCs',
   misc = c(
     Wegmans_pastryFlr = 510,
@@ -206,12 +199,12 @@ Daat_bao2 <- \() recipe(
   water = 300)
 
 
-#Daat_bao3 <- \() recipe(
-#flavor = '\u53c9\u70e7\u5305', daatgo = 'udq9v_Osaho',
+#Daat3_bao <- \() recipe(
+#flavor = '\u53c9\u70e7', daatgo = 'udq9v_Osaho',
 # two-dough recipe)
 
-Daat_bao3 <- \() recipe(
-  flavor = '\u6d41\u6c99\u5305', 
+Daat3_bao <- \() recipe(
+  flavor = '\u6d41\u6c99', 
   daatgo = '1h6YFS2KGA0',
   misc = c(
     Wegmans_pastryFlr = 410,
@@ -224,8 +217,8 @@ Daat_bao3 <- \() recipe(
 
 
 
-Daat_bao4 <- \() recipe(
-  flavor = '\u751f\u714e\u8089\u5305', 
+Daat4_bao <- \() recipe(
+  flavor = '\u751f\u714e\u8089', 
   daatgo = 'IbkVuffYX7Y',
   misc = c(
     Wegmans_pastryFlr = 410,
@@ -254,7 +247,6 @@ Daat_lotusBun <- \() recipe(
 
 
 shangshi_bao <- \() recipe(
-  flavor = '\u5305\u5b50',
   shangshikitchen = '-JsUNhE3Kj4',
   misc = c(
     KingArthur_allPurposeFlr = 450,

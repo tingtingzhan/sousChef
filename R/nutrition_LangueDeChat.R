@@ -5,7 +5,6 @@
 
 
 cookingTree_LangueDeChat <- \() recipe(
-  flavor = 'Langue De Chat', 
   cookingtree = 'V-PasuPZFS0',
   misc = c(
     KingArthur_allPurposeFlr = 110,
@@ -17,7 +16,6 @@ cookingTree_LangueDeChat <- \() recipe(
 
 
 cookingTree_cocoa_LangueDeChat <- \() recipe(
-  flavor = 'Cocoa Langue De Chat', 
   cookingtree = 'V-PasuPZFS0',
   misc = c(
     KingArthur_allPurposeFlr = 50,
@@ -32,7 +30,7 @@ cookingTree_cocoa_LangueDeChat <- \() recipe(
 
 
 Ying_LangueDeChat <- \() recipe(
-  author = 'Ying', flavor = 'Langue De Chat', 
+  author = 'Ying',
   youtube = '2tlPfiBA9i0',
   misc = c(
     KingArthur_allPurposeFlr = 25,
@@ -51,7 +49,7 @@ Ying_LangueDeChat <- \() recipe(
 
 
 Jadore_LangueDeChat <- \() recipe(
-  author = 'J\'adore', flavor = 'Langue De Chat', youtube = 'mZYO0xVMgOQ',
+  author = 'J\'adore', youtube = 'mZYO0xVMgOQ',
   misc = c(
     Wegmans_pastryFlr = 32,
     BobsRedMill_almondFlour = 5,
@@ -66,7 +64,6 @@ Jadore_LangueDeChat <- \() recipe(
 
 
 Giallozafferano_LangueDeChat <- \() recipe( 
-  flavor = 'Langue De Chat', 
   youtube = c(giallozafferano = 'CiVLx3zQBSw'),
   misc = c(
     KingArthur_allPurposeFlr = 50,

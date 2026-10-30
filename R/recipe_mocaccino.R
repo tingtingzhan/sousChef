@@ -3,8 +3,8 @@
 
 
 
-Pillsbury_mocha <- \() recipe(
-  author = 'Pillsbury', flavor = 'Mocha Mix',
+Pillsbury_mochaMix <- \() recipe(
+  author = 'Pillsbury',
   url = 'https://www.pillsbury.com/recipes/mocha-mix/c93163dd-c5da-44ff-b3e6-9698e855fd5f',
   misc_cup = c(
     Nestle_coffeeMate = 2.25,
@@ -17,8 +17,8 @@ Pillsbury_mocha <- \() recipe(
 
 
 
-Rebecca_mocha <- \() recipe(
-  author = 'Rebecca', flavor = 'Mocha Mix',
+Rebecca_mochaMix <- \() recipe(
+  author = 'Rebecca',
   allrecipes = '23828/hot-mocha-drink-mix/',
   misc_cup = c(
     Carnation_drymilk = 1,
@@ -32,8 +32,8 @@ Rebecca_mocha <- \() recipe(
 
 
 
-bargainmums_mocha <- \() recipe(
-  author = 'Bargain Mums', flavor = 'Mocha Mix',
+bargainmums_mochaMix <- \() recipe(
+  author = 'Bargain Mums',
   misc = c(
     Carnation_drymilk = 110,
     NescafeGold_blonde_coffee = 30,
@@ -50,8 +50,8 @@ bargainmums_mocha <- \() recipe(
 
 
 
-EarlaTaylor_cocoa <- \() recipe(
-  author = 'Earla Taylor', flavor = 'Cocoa Mix',
+EarlaTaylor_cocoaMix <- \() recipe(
+  author = 'Earla Taylor',
   allrecipes = '9335/hot-cocoa-mix/',
   misc_cup = c(
     Carnation_drymilk = 10,
@@ -64,8 +64,8 @@ EarlaTaylor_cocoa <- \() recipe(
 
 
 
-Mels_cocoa <- \() recipe(
-  author = 'Mel\'s', flavor = 'Cocoa Mix',
+Mels_cocoaMix <- \() recipe(
+  author = 'Mel\'s',
   url = 'https://www.melskitchencafe.com/homemade-hot-chocolate-mix-another-simple-gift-idea/',
   misc_cup = c(
     Carnation_drymilk = 3,
@@ -80,8 +80,8 @@ Mels_cocoa <- \() recipe(
 
 
 
-AmandaRettke_cocoa <- \() recipe(
-  author = 'Amanda Rettke', flavor = 'Cocoa Mix',
+AmandaRettke_cocoaMix <- \() recipe(
+  author = 'Amanda Rettke',
   url = 'https://iambaker.net/hot-cocoa-mix-recipe/',
   misc_cup = c(KingArthur_Bensdorp_cocoa = 1),
   misc = c(

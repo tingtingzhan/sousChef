@@ -8,7 +8,6 @@
 
 amanda_udon <- \() recipe(
   author = '\u66fc\u98df\u6162\u8bed', 
-  flavor = 'Udon', 
   youtube = 'q0gNH9vxiYY',
   misc = c(
     KingArthur_allPurposeFlr = 300, 
@@ -19,7 +18,6 @@ amanda_udon <- \() recipe(
 
 
 JustOne_udon <- \() recipe(
-  flavor = 'Udon', 
   just1cookbook = c('luljUScGJm4' = 'udon-noodles'),
   misc = c(
     KingArthur_allPurposeFlr = 200,
@@ -32,7 +30,7 @@ JustOne_udon <- \() recipe(
 
 
 Leo_udon <- \() recipe(
-  author = 'Leo', flavor = 'Udon', 
+  author = 'Leo',
   youtube = 'wgj51q9Hlq8',
   misc = c(
     KingArthur_allPurposeFlr = 500,

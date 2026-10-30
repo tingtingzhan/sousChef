@@ -1,12 +1,12 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::Rebecca_mocha(),
-    sousChef:::Pillsbury_mocha(),
-    sousChef:::EarlaTaylor_cocoa(),
-    sousChef:::Mels_cocoa(),
-    sousChef:::AmandaRettke_cocoa(),
-    sousChef:::bargainmums_mocha()
+    sousChef:::Rebecca_mochaMix(),
+    sousChef:::Pillsbury_mochaMix(),
+    sousChef:::EarlaTaylor_cocoaMix(),
+    sousChef:::Mels_cocoaMix(),
+    sousChef:::AmandaRettke_cocoaMix(),
+    sousChef:::bargainmums_mochaMix()
   ) |> 
     sort_by('sugar') |>
     print()

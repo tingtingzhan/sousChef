@@ -21,7 +21,6 @@ Junior_cappuccino_cheesecake <- \() recipe(
 
 
 PreppyKitchen_cheesecake <- \() recipe(
-  flavor = 'Cheesecake',
   misc_brick = c(Philadelphia_creamCheese = 3),
   misc_tsp = c(
     NielsenMassey_Madagascar = 2,
@@ -56,7 +55,6 @@ Junior_cookbook <- \() recipe(
 
 
 PreppyKitchen_chocolate_cheesecake <- \() recipe(
-  flavor = 'Cheesecake',
   # 1/4 cup coffee hot ???
   # 1 cup bittersweet chocolate ???
   # 3/4 cup semisweet chocolate ???

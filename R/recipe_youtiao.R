@@ -13,7 +13,6 @@
 
 
 xiaogaojie_youtiao <- \() recipe(
-  flavor = '\u6cb9\u6761', 
   xiaogaojie = 'uRc3F6uwR3E',
   misc = c(
     KingArthur_allPurposeFlr = 350,
@@ -30,7 +29,7 @@ xiaogaojie_youtiao <- \() recipe(
 )
 
 mathstar_youtiao <- \() recipe(
-  author = 'MathStar', flavor = '\u6cb9\u6761',
+  author = 'MathStar',
   url = 'https://huaren.us/showtopic.html?topicid=3003916&fid=398',
   misc = c(
     KingArthur_allPurposeFlr = 500,
@@ -45,8 +44,7 @@ mathstar_youtiao <- \() recipe(
 
 
 
-PinNuo_youtiao1 <- \() recipe(
-  flavor = '\u6cb9\u67611', 
+PinNuo1_youtiao <- \() recipe(
   pino = 'xoFcbox1VDE',
   misc = c(
     KingArthur_allPurposeFlr = 500,
@@ -60,8 +58,7 @@ PinNuo_youtiao1 <- \() recipe(
   water = c(c22 = 250))
 
 
-PinNuo_youtiao2 <- \() recipe(
-  flavor = '\u6cb9\u67612', 
+PinNuo2_youtiao <- \() recipe(
   pino = 'cD2mJYDaXU0',
   misc = c(
     KingArthur_allPurposeFlr = 500,
@@ -73,8 +70,7 @@ PinNuo_youtiao2 <- \() recipe(
   water = c(c22 = 250))
 
 
-PinNuo_youtiao3 <- \() recipe(
-  flavor = '\u6cb9\u67613', 
+PinNuo3_youtiao <- \() recipe(
   pino = '8Af9_PiZx2Q',
   misc = c(
     KingArthur_allPurposeFlr = 1000,
@@ -87,8 +83,7 @@ PinNuo_youtiao3 <- \() recipe(
   misc_pc = c(eggYolk = 2, eggWhite = 2), 
   water = c(c22 = 480))
 
-PinNuo_youtiao4 <- \() recipe(
-  flavor = '\u6cb9\u67614', 
+PinNuo4_youtiao <- \() recipe(
   pino = 'KAUdFDRD8l0',
   misc = c(
     KingArthur_allPurposeFlr = 1000,
@@ -102,8 +97,7 @@ PinNuo_youtiao4 <- \() recipe(
   water = c(c22 = 500))
 
 
-PinNuo_youtiao5 <- \() recipe(
-  flavor = '\u6cb9\u67615', 
+PinNuo5_youtiao <- \() recipe(
   pino = 'bKZy7TGnMbE',
   misc = c(
     KingArthur_allPurposeFlr = 500,
@@ -116,8 +110,7 @@ PinNuo_youtiao5 <- \() recipe(
   misc_pc = c(eggYolk = 1, eggWhite = 1), 
   water = c(c22 = 260))
 
-PinNuo_youtiao6 <- \() recipe(
-  flavor = '\u6cb9\u67616', 
+PinNuo6_youtiao <- \() recipe(
   pino = 'YoEO04dWiz0',
   misc = c(
     KingArthur_allPurposeFlr = 500,
@@ -130,8 +123,7 @@ PinNuo_youtiao6 <- \() recipe(
   misc_pc = c(eggYolk = 1, eggWhite = 1), 
   water = c(c22 = 250))
 
-PinNuo_youtiao7 <- \() recipe(
-  flavor = '\u6cb9\u67617', 
+PinNuo7_youtiao <- \() recipe(
   pino = 'cv3JhX8NbNs',
   misc = c(
     KingArthur_allPurposeFlr = 1000,

@@ -291,7 +291,7 @@ add_store_url <- \(x, name, fmt, store_brand, store_name = store_brand) {
   store_url <- sprintf(fmt = fmt, v)
   if (!length(x$brand)) {
     if (is.na(store_brand)) stop('must have `store_brand`')
-    x$brand <- style_hyperlink(url = store_url, text = store_brand) |> c()
+    x$brand <- style_hyperlink(url = store_url, text = store_brand)
   } else {
     x$url <- c(
       x$url, 
@@ -364,7 +364,8 @@ add_youtube_recipe <- \(x, name, text1, text2, ...) {
       fmtURL(fmt = 'https://youtu.be/%s', text = text1),
     v |>
       fmtURL(text = text2, ...)
-  )
+  ) |>
+    ansi_string()
   x[[name]] <- NULL
   return(x)
 }

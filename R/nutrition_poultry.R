@@ -28,7 +28,7 @@ chicken_breast <- \() nutrition(
 
 MapleLeaf_duck <- \() nutrition(
   name = 'Duck\U1f986, Whole', 
-  brand = style_hyperlink(text = 'Maple Leaf Farms\U1f1fa\U1f1f8', url = 'https://shopmapleleaffarms.com/collections/duck-catalog') |> c(),
+  brand = style_hyperlink(text = 'Maple Leaf Farms\U1f1fa\U1f1f8', url = 'https://shopmapleleaffarms.com/collections/duck-catalog'),
   pieceGram = 3.5*454,
   serving_oz = 4,
   calorie = 310, 

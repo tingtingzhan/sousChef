@@ -1,7 +1,7 @@
 
 
 Mazola_corn_oil <- \() nutrition(
-  brand = style_hyperlink(text = 'Mazola', url = 'https://www.mazola.com/products/mazolareg-corn-oil/') |> c(),
+  brand = style_hyperlink(text = 'Mazola', url = 'https://www.mazola.com/products/mazolareg-corn-oil/'),
   alias = '\u7389\u7c73\u6cb9', name = 'Corn\U1f33d Oil',
   servingGram = 14, servingTbsp = 1, fat = 14)
 
@@ -51,10 +51,11 @@ Wegmans_olive_oil <- \() nutrition(
 
 
 Kadoya_sesame_oil <- \() nutrition(
-  brand = paste0(
-    style_hyperlink(text = 'Kadoya', url = 'https://www.kadoya.com/english/products/family.html') |> c(),
-    style_hyperlink(text = '\u52a0\u767b\u5c4b\u88fd\u6cb9\u6240\U1f1ef\U1f1f5', url = 'https://www.kadoya.com/products/page01.html') |> c()
-  ),
+  brand = c(
+    style_hyperlink(text = 'Kadoya', url = 'https://www.kadoya.com/english/products/family.html'),
+    style_hyperlink(text = '\u52a0\u767b\u5c4b\u88fd\u6cb9\u6240\U1f1ef\U1f1f5', url = 'https://www.kadoya.com/products/page01.html')
+  ) |> 
+    ansi_string(),
   name = 'Sesame Oil', alias = '\u829d\u9ebb\u6cb9',
   wegmans = '204259', usd = 18.99/43, date = as.Date('2026-10-22'),
   servingGram = 14, servingTbsp = 1, 

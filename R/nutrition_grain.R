@@ -42,8 +42,7 @@ Dynasty_brownRice <- \() nutrition(
 
 Koda_glutRice <- \() nutrition(
   brand = 'https://kodafarmsrice.com/products/sho-chiku-bai\u00ae-sweet-rice' |>
-    style_hyperlink(text = 'Koda Farms\u677e\u7af9\u6885') |>
-    c(),
+    style_hyperlink(text = 'Koda Farms\u677e\u7af9\u6885'),
   name = 'Glutinous Rice\U1f33e', alias = '\u7cef\u7c73',
   amazon = 'B0062EXR1C', usd = 22.99/50,
   servingGram = 45, servingCup = 1/4, # packaging

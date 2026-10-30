@@ -19,7 +19,7 @@ Albertsons_yellow_cornmeal <- \() nutrition(
 
 
 IndianHead_white_cornmeal <- \() nutrition(
-  brand = c(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
+  brand = style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/'),
   name = 'White Cornmeal\U1f33d',  
   wegmans = '344427', usd = 1.79/907*30,
   servingGram = 30, servingCup = 1/4,
@@ -29,7 +29,7 @@ IndianHead_white_cornmeal <- \() nutrition(
 
 
 IndianHead_yellow_cornmeal <- \() nutrition(
-  brand = c(style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/')),
+  brand = style_hyperlink(text = 'Indian Head\U1f1fa\U1f1f8', url = 'https://www.wrmills.com/products/consumer-products/'),
   name = 'Yellow Cornmeal\U1f33d',
   wegmans = '346429', usd = 1.79/907*30,
   servingGram = 30, servingCup = 1/4,

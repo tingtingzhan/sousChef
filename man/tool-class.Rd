@@ -141,7 +141,7 @@ SodaStream_bottle1L(...)
 \section{Slots}{
 
 \describe{
-\item{\code{name}}{\link[base]{character} scalar, brand and name of kitchen tool}
+\item{\code{name}}{\link[cli]{ansi_string} or \link[base]{character} scalar, brand and name of kitchen tool}
 
 \item{\code{alias}}{\link[base]{character} scalar}
 

@@ -43,7 +43,7 @@ Kirkland_butter <- \() nutrition(
 
 
 Plugra_butter <- \() nutrition(
-  brand = c(style_hyperlink(text = 'Plugr\u00e0\U1f1fa\U1f1f8', url = 'https://plugra.com/product/unsalted_8_oz_solid/')),
+  brand = style_hyperlink(text = 'Plugr\u00e0\U1f1fa\U1f1f8', url = 'https://plugra.com/product/unsalted_8_oz_solid/'),
   name = 'European Butter\U1f9c8',
   acme = '960051793', usd = 2.99/16, date = as.Date('2026-09-11'),
   serving_oz = 8/16, servingTbsp = 1, 
@@ -55,7 +55,7 @@ Plugra_butter <- \() nutrition(
 
 
 Wuthrich_butter <- \() nutrition(
-  brand = c(style_hyperlink(text = 'Wu\u0308thrich\U1f1fa\U1f1f8', url = 'https://www.grassland.com/product/wuthrich-83-european-style-unsalted-butter-solid/')),
+  brand = style_hyperlink(text = 'Wu\u0308thrich\U1f1fa\U1f1f8', url = 'https://www.grassland.com/product/wuthrich-83-european-style-unsalted-butter-solid/'),
   name = 'European Butter\U1f9c8',
   webstaurant = '874RE3120', usd = .24/2, date = as.Date('2026-10-23'),
   serving_oz = 8/16, servingTbsp = 1, 
@@ -78,7 +78,7 @@ Lucerne_European_butter <- \() nutrition(
 
 Minerva_Amish_butter <- \() nutrition(
   # wegmans = '638816', # this is the salted version
-  brand = c(style_hyperlink(text = 'Minerva\U1f1fa\U1f1f8', url = 'https://minervadairy.com/product/unsalted/')),
+  brand = style_hyperlink(text = 'Minerva\U1f1fa\U1f1f8', url = 'https://minervadairy.com/product/unsalted/'),
   name = 'Amish Butter\U1f9c8',
   url = 'https://minervadairy.com/product/2lbs-unsalted-roll-butter/',
   webstaurant = '874880039', usd = .52/2, date = as.Date('2026-10-23'),

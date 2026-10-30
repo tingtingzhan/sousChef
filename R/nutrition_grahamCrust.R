@@ -19,7 +19,7 @@ WholeFoods365_grahamCrust <- \() nutrition(
 
 
 MiDel_grahamCrust <- \() nutrition(
-  brand = style_hyperlink(url = 'https://midelcookies.com/products/graham-style-pie-crust/', text = 'MiDel') |> c(), 
+  brand = style_hyperlink(url = 'https://midelcookies.com/products/graham-style-pie-crust/', text = 'MiDel'), 
   name = 'Graham Crust',
   servingGram = 25, 
   calorie = 120,

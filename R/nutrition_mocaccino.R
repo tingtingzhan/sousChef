@@ -1,7 +1,7 @@
 
 
 WilliamsSonoma_mocha_hotCocoa <- \() nutrition(
-  brand = style_hyperlink(text = 'Williams Sonoma\U1f1fa\U1f1f8', url = 'https://www.williams-sonoma.com/products/williams-sonoma-mocha-hot-chocolate/') |> c(),
+  brand = style_hyperlink(text = 'Williams Sonoma\U1f1fa\U1f1f8', url = 'https://www.williams-sonoma.com/products/williams-sonoma-mocha-hot-chocolate/'),
   usd = 28.95/340*41, date = as.Date('2026-10-24'),
   name = 'Mocha Hot Chocolate',
   servingGram = 41, servingTbsp = 5, 
@@ -13,7 +13,7 @@ WilliamsSonoma_mocha_hotCocoa <- \() nutrition(
 
 
 Maxwell_mochaSuisse <- \() nutrition(
-  brand = style_hyperlink(text = 'Maxwell House\U1f1fa\U1f1f8', url = 'https://www.kraftheinz.com/maxwell-house/products/00043000004432') |> c(),
+  brand = style_hyperlink(text = 'Maxwell House\U1f1fa\U1f1f8', url = 'https://www.kraftheinz.com/maxwell-house/products/00043000004432'),
   name = 'Suisse Mocha',
   # target = 'A-12959531', usd = 3.59/117*11, # no longer available
   servingGram = 11, servingTbsp = 2, 

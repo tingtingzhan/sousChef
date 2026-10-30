@@ -19,8 +19,7 @@ Navitas_cacao <- \() nutrition(
 
 OrganicTraditions_cacao <- \() nutrition(
   brand = 'https://organictraditions.com/products/cacao-powder' |> 
-    style_hyperlink(text = 'Organic Traditions\U1f1fa\U1f1f8') |>
-    c(),
+    style_hyperlink(text = 'Organic Traditions\U1f1fa\U1f1f8'),
   name = 'Cacao Powder',
   usd = 38.99/2/454*20, costco = '100511406',
   servingGram = 20, servingTbsp = 3,

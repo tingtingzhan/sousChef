@@ -1,5 +1,7 @@
 
 
+
+
 #' @title \linkS4class{nutrition}
 #' 
 #' @description 
@@ -16,7 +18,7 @@
 #' 
 #' @slot suggest \link[base]{list}
 #' 
-#' @slot url \link[base]{character} scalar, link to manufacturer webpage
+#' @slot url \link[cli]{ansi_string} or \link[base]{character} scalar, link to manufacturer webpage
 #' 
 #' @slot review \link[base]{character} scalar or \link[base]{vector}, additional note to chef
 #' 
@@ -66,6 +68,8 @@ setClass(Class = 'nutrition', slots = c(
     'url'
   )),
   
+  # url = 'cli_ansi_string',
+  
   suggest = 'list',
   
   tool = 'list',
@@ -85,7 +89,8 @@ setClass(Class = 'nutrition', slots = c(
 ), prototype = prototype(
   piece_fmt = '%.1fpcs',
   calorie = 0,
-  date = as.Date(NA_character_)
+  date = as.Date(NA_character_),
+  url = character() |> ansi_string()
 ))
 
 
@@ -204,11 +209,10 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
   
   # process user-input `@url` first
   # `$ippodousa` writes to `$url` !!
-  if (length(x$url)) {
+  if (length(x$url) && !inherits(x$url, what = 'cli_ansi_string')) {
     x$url <- x$url |>
       gsub('^https://|^http://', replacement = '', x = _) |> 
-      style_hyperlink(url = x$url, text = _) |> 
-      c()
+      style_hyperlink(url = x$url, text = _)
   }
   
   # non-standard brands
@@ -226,7 +230,8 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
         x$url, 
         x$ippodousa |>
           fmtURL(fmt = 'https://ippodotea.com/products/%s', text = '\U1f6d2 US Shop')
-      )
+      ) |>
+        ansi_string()
       jpn_ <- x$ippodojpn |>
         fmtURL(fmt = 'https://www.ippodo-tea.co.jp/products/%s', text = '\u4e00\u4fdd\u5802\u8336\u8216\U1f1ef\U1f1f5')
       global_ <- x$ippodoglobal |>
@@ -245,7 +250,8 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
       } else kg_
       x$kerrygold <- x$kerrygoldusa <- NULL
     } else if (length(x$marukyu)) {
-      x$url <- c(x$url, style_hyperlink(url = 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf', text = '2024 Catalog'))
+      x$url <- c(x$url, style_hyperlink(url = 'https://www.marukyu-koyamaen.co.jp/english/catalog/Temporary_Simple_English_Catalog_for_Eng_HP_20240304.pdf', text = '2024 Catalog')) |>
+        ansi_string()
       x$brand <- paste(
         x$marukyu |>
           fmtURL(fmt = 'https://www.marukyu-koyamaen.co.jp/english/shop/products/%s', text = 'Marukyu Koyamaen\U1f375'),
@@ -350,6 +356,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   x <- callNextMethod(.Object, ...)
   
   if (!length(x@alias)) {
+    
     if (!identical(x@call, quote(`<UNDEFINED>`)) &&
         (x@key != as.character(x@call))) { # to prevent infinite recursion
       if (exists(x@key, where = asNamespace('sousChef'))) {
@@ -393,15 +400,13 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   if (length(x@alias)) {
     x@alias <- x@alias |>
       sprintf(fmt = '{.run [%s](sousChef::%s())}', . = _, as.character(x@call)) |> 
-      make_ansi_style('orchid4')() |>
-      c()
+      make_ansi_style('orchid4')()
   }
   
   if (length(x@brand)) {
     x@brand <- x@brand |> 
       make_ansi_style('sienna')() |> 
-      style_bold() |> 
-      c()
+      style_bold()
   }
   
   for (i in names(which(getSlots('nutrition') == 'numeric'))) {

@@ -82,8 +82,7 @@ recipe <- \(no_eval = .findCall(which = -2), ...) {
   if (length(x$author) && length(x$url)) {
     #stop('where?')
     x$author <- x$url[1L] |>
-      style_hyperlink(url = _, text = x$author) |> 
-      c()
+      style_hyperlink(url = _, text = x$author)
     x$url <- x$url[-1L]
   } # before `if (!length(x@author))` !!!
   
@@ -124,7 +123,7 @@ recipe <- \(no_eval = .findCall(which = -2), ...) {
   
   if (length(x$juniorscheesecakecookbook)) {
     if (length(x$juniorscheesecakecookbook) > 1L) stop('only allow len-1 `juniorscheesecakecookbook`')
-    x$author <- style_hyperlink(url = 'https://www.juniorscheesecake.com/products/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook p.%d', x$juniorscheesecakecookbook)) |> c()
+    x$author <- style_hyperlink(url = 'https://www.juniorscheesecake.com/products/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook p.%d', x$juniorscheesecakecookbook))
     x$juniorscheesecakecookbook <- NULL
   }
   

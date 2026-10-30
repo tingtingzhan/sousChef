@@ -123,7 +123,7 @@ ThaiKitchen_redCurry <- \() nutrition(
 
 
 Squid_fishSauce <- \() nutrition(
-  brand = style_hyperlink(text = 'Squid\U1f1f9\U1f1ed', url = 'https://squidbrand.com/en/product-category/export-en/') |> c(),
+  brand = style_hyperlink(text = 'Squid\U1f1f9\U1f1ed', url = 'https://squidbrand.com/en/product-category/export-en/'),
   name = 'Fish\U1f41f Sauce', alias = '\u9c7c\u9732',
   weee = '27743',
   serving_ml = 15, servingGram = 15, #?

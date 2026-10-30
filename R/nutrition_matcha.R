@@ -23,14 +23,14 @@ Marukyu_tenju <- \() nutrition(
 # all other matcha
 
 Sencha_matcha <- \() nutrition(
-  brand = style_hyperlink(url = 'https://senchanaturals.com/collections/shop-all/products/emperors-matcha-4oz', text = 'Sencha Naturals\U1f1fa\U1f1f8') |> c(),
+  brand = style_hyperlink(url = 'https://senchanaturals.com/collections/shop-all/products/emperors-matcha-4oz', text = 'Sencha Naturals\U1f1fa\U1f1f8'),
   name = 'Emperor\'s Matcha\U1f375',
   usd = 54.95/120*1.5, date = as.Date('2026-09-02'), # 120g package
   servingGram = 1.5, servingTsp = .5, # on package
   calorie = 5, carbohydrate = 1)
 
 Sencha_everyday_matcha <- \() nutrition(
-  #brand = style_hyperlink(url = 'https://senchanaturals.com/collections/pure-matcha-powders/products/organic-matcha-powder', text = 'Sencha Naturals\U1f1fa\U1f1f8') |> c(), 
+  #brand = style_hyperlink(url = 'https://senchanaturals.com/collections/pure-matcha-powders/products/organic-matcha-powder', text = 'Sencha Naturals\U1f1fa\U1f1f8'), 
   brand = 'Sencha Naturals\U1f1fa\U1f1f8', # no longer on official website, Sep 2026
   name = 'Matcha\U1f375 Powder',
   usd = 54.99/(3*340)*1.5, costco = '100705701', date = as.Date('2026-09-02'),

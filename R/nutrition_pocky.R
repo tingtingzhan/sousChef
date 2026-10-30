@@ -1,7 +1,7 @@
 
 
 Pocky_matcha <- \() nutrition(
-  brand = style_hyperlink(text = 'Ezaki\u6c5f\u5d0eGlico\U1f1ef\U1f1f5', url = 'https://www.pocky.com/products/') |> c(),
+  brand = style_hyperlink(text = 'Ezaki\u6c5f\u5d0eGlico\U1f1ef\U1f1f5', url = 'https://www.pocky.com/products/'),
   name = 'Matcha Pocky',
   servingGram = 40,
   calorie = 200,

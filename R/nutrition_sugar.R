@@ -49,7 +49,7 @@ Domino_golden <- \() nutrition(
 US_10x <- \() nutrition(
   costco = '100436353',
   costcoBiz = '11830701',
-  brand = style_hyperlink(text = 'U.S.\U1f1fa\U1f1f8', url = 'https://unitedsugarpr.com/product-category/powdered-sugar/') |> c(),
+  brand = style_hyperlink(text = 'U.S.\U1f1fa\U1f1f8', url = 'https://unitedsugarpr.com/product-category/powdered-sugar/'),
   name = 'Sugar\U0001f36c, Confectioners', alias = '10x\u7cd6\u7c89',
   usd = 4.99/3180*30,
   servingGram = 30,

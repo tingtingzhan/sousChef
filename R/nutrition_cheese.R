@@ -136,7 +136,7 @@ Wegmans_cranberryGoat <- \() nutrition(
 
 
 NaturalKosher_mozzarella <- \() nutrition(
-  brand = style_hyperlink(text = 'Natural & Kosher', url = 'https://naturalandkosher.com/products/') |> c(),
+  brand = style_hyperlink(text = 'Natural & Kosher', url = 'https://naturalandkosher.com/products/'),
   name = 'Shredded Mozzarella',
   serving_oz = 1, fat = 6, sodium = .135, protein = 6)
 
@@ -165,8 +165,7 @@ Wegmans_mozzarella_whole <- \() nutrition(
 
 KraftNatural_mozzarella_fatFree <- \() nutrition(
   brand = 'https://kraftnaturalcheese.com/product/shredded-cheese/mozzarella-fat-free/' |>
-    style_hyperlink(url = _, text = 'Kraft Natural Cheese') |>
-    c(),
+    style_hyperlink(url = _, text = 'Kraft Natural Cheese'),
   name = 'Shredded Mozzarella, Fat Free',
   servingGram = 28, servingCup = 1/4,
   calorie = 45,

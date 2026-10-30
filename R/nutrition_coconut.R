@@ -95,7 +95,7 @@ ThaiKitchen_coconutcream <- \() nutrition(
 
 Kara_coconutcream <- \() nutrition(
   name = 'Coconut\U1f965 Cream', alias = '\u6930\u8102',
-  brand = c(style_hyperlink(text = 'Kara\U1f1ee\U1f1e9', url = 'https://kara-coconut.com/cn/product/uht-coconut-cream/')),
+  brand = style_hyperlink(text = 'Kara\U1f1ee\U1f1e9', url = 'https://kara-coconut.com/cn/product/uht-coconut-cream/'),
   usd = 1.89/200*15, # https://www.yamibuy.com/zh/p/kara-coconut-cream-200ml/1020034401 # out of stock right now
   servingGram = 15, serving_ml = 15, # guessed weight
   calorie = 35,
@@ -109,7 +109,7 @@ Kara_coconutcream <- \() nutrition(
 # fdc = 1097553L
 
 Silk_coconutmilk <- \() nutrition(
-  brand = c(style_hyperlink(url = 'https://silk.com/plant-based-products/coconutmilk/unsweet-coconutmilk/', text = 'Silk\U1f1fa\U1f1f8')), 
+  brand = style_hyperlink(url = 'https://silk.com/plant-based-products/coconutmilk/unsweet-coconutmilk/', text = 'Silk\U1f1fa\U1f1f8'), 
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
   target = 'A-15423909', usd = 4.99/8,
   servingGram = 240, servingCup = 1, 
@@ -119,10 +119,10 @@ Silk_coconutmilk <- \() nutrition(
 
 SoDelicious_coconutmilk <- \() nutrition(
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
-  brand = c(style_hyperlink(text = 'So Delicious\U1f1fa\U1f1f8', url = c(
+  brand = style_hyperlink(text = 'So Delicious\U1f1fa\U1f1f8', url = c(
     # 'https://sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-32oz' # shelf stable
     'https://sodeliciousdairyfree.com/dairy-free-foods/plant-based-beverages/coconutmilk/organic-unsweetened-original-64oz' # need to chill
-  ))),
+  )),
   wegmans = '356837', usd = 5.29/64*8, # need to chill
   # walmart = '667624971', # usd = 2.68/4, # shelf-stable
   # costco = '100449940', usd = 12.99/6/4, # shelf-stable 32 oz, 6-Count
@@ -138,7 +138,7 @@ SoDelicious_coconutmilk <- \() nutrition(
 
 Freenow_0sugar_coconutBar <- \() nutrition(
   name = 'Barista Coconut\U1f965, No Sugar', alias = '0\u7cd6\u539a\u6930\u4e73',
-  brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'https://www.freenowmilk.com/sys-por/6.html')),
+  brand = style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'https://www.freenowmilk.com/sys-por/6.html'),
   yamibuy = '26796422', usd = 6.29/1e3*1e2,
   servingGram = 100, serving_ml = 100, # guess
   calorie = 70,
@@ -149,7 +149,7 @@ Freenow_0sugar_coconutBar <- \() nutrition(
 
 Freenow_coconutBar <- \() nutrition(
   name = 'Barista Coconut\U1f965', alias = '\u539a\u6930\u4e73',
-  brand = c(style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'https://www.freenowmilk.com/sys-por/5.html')),
+  brand = style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'https://www.freenowmilk.com/sys-por/5.html'),
   weee = '89394', usd = 5.49/980*240, 
   servingGram = 240, serving_ml = 240, # guess
   calorie = 110/30*240,
@@ -158,7 +158,7 @@ Freenow_coconutBar <- \() nutrition(
 
 Luckin_coconutmilk <- \() nutrition(
   name = 'Barista Coconut\U1f965', alias = '\u751f\u6930\u6d46',
-  brand = c(style_hyperlink(text = '\u745e\u5e78\U1f1e8\U1f1f3', url = 'https://www.luckincoffee.com')),
+  brand = style_hyperlink(text = '\u745e\u5e78\U1f1e8\U1f1f3', url = 'https://www.luckincoffee.com'),
   weee = '106361', usd = 4.49/3/600*100,
   servingGram = 100, serving_ml = 100, # guess
   calorie = 80,
@@ -168,7 +168,7 @@ Luckin_coconutmilk <- \() nutrition(
 
 PacificFoods_coconutBar <- \() nutrition(
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
-  brand = c(style_hyperlink(text = 'Pacific Foods\U1f1fa\U1f1f8', url = 'https://www.pacificfoodservice.com/barista-series/coconut-original/')),
+  brand = style_hyperlink(text = 'Pacific Foods\U1f1fa\U1f1f8', url = 'https://www.pacificfoodservice.com/barista-series/coconut-original/'),
   webstaurant = '110PFBARCCNT', usd = 46.49/12/32*8, date = as.Date('2026-10-23'),
   servingGram = 240, servingCup = 1,
   calorie = 90,
@@ -176,7 +176,7 @@ PacificFoods_coconutBar <- \() nutrition(
 
 CalifiaFarms_coconutBar <- \() nutrition(
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
-  brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/coconut-barista-blend/')),
+  brand = style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/coconut-barista-blend/'),
   wholefoods = 'b0c6hdj3d5', usd = 5.29/32*8,
   servingGram = 240, servingCup = 1,
   calorie = 80,
@@ -184,7 +184,7 @@ CalifiaFarms_coconutBar <- \() nutrition(
 
 CalifiaFarms_coconutmilkwater <- \() nutrition(
   name = 'Coconut\U1f965 Milk & Water Blend', alias = '\u6930\u5976',
-  brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/go-coconuts-coconutmilk/')),
+  brand = style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/go-coconuts-coconutmilk/'),
   wegmans = '978006', usd = 4.29/48*8,
   servingGram = 240, servingCup = 1,
   calorie = 45,
@@ -197,7 +197,7 @@ CalifiaFarms_coconutmilkwater <- \() nutrition(
 
 Dream_coconutBar <- \() nutrition(
   name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
-  brand = c(style_hyperlink(text = 'Dream\U1f1fa\U1f1f8', url = 'https://dreamplantbased.com/products/barista-blend-products/coconutmilk-barista/')),
+  brand = style_hyperlink(text = 'Dream\U1f1fa\U1f1f8', url = 'https://dreamplantbased.com/products/barista-blend-products/coconutmilk-barista/'),
   # While not available at Retail, these exceptional products are utilized at select coffee shops.
   servingGram = 240, servingCup = 1,
   calorie = 90,
@@ -205,9 +205,9 @@ Dream_coconutBar <- \() nutrition(
 
 CoconutPalm_coconutmilk <- \() nutrition(
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
-  brand = c(style_hyperlink(text = '\u6930\u6811Coconut Palm\U1f1e8\U1f1f3', url = c(
+  brand = style_hyperlink(text = '\u6930\u6811Coconut Palm\U1f1e8\U1f1f3', url = c(
     'http://www.yeshu.com/guoyan/liucheng.html'
-  ))),
+  )),
   # https://www.yamibuy.com/zh/p/coconut-oalm-brand-coconut-juice-1l/1020035561
   servingGram = 250, servingCup = 1, 
   calorie = 120,
@@ -216,7 +216,7 @@ CoconutPalm_coconutmilk <- \() nutrition(
 
 CalifiaFarms_coconutmilk <- \() nutrition(
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
-  brand = c(style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/organic-coconutmilk/')),
+  brand = style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/organic-coconutmilk/'),
   target = 'A-92783096', usd = 4.99/48*8,
   servingGram = 240, servingCup = 1,
   calorie = 90,

@@ -267,8 +267,7 @@ fmt_perc <- \(x, name) {
 fmtURL <- \(x, fmt, text, ...) {
   x |>    
     sprintf(fmt = fmt) |>
-    style_hyperlink(text = text, url = _) |> 
-    c()
+    style_hyperlink(text = text, url = _)
 }
 
 
@@ -294,7 +293,11 @@ add_store_url <- \(x, name, fmt, store_brand, store_name = store_brand) {
     if (is.na(store_brand)) stop('must have `store_brand`')
     x$brand <- style_hyperlink(url = store_url, text = store_brand) |> c()
   } else {
-    x$url <- c(x$url, style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name)))
+    x$url <- c(
+      x$url, 
+      style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name))
+    ) |>
+      ansi_string()
   }
   x[[name]] <- NULL
   return(x)
@@ -372,7 +375,8 @@ append_url <- \(x, name, ...) {
   x$url <- c(
     x$url, 
     x[[name]] |> fmtURL(...)
-  )
+  ) |>
+    ansi_string()
   x[[name]] <- NULL
   return(x)
 }

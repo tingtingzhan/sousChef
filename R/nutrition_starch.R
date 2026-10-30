@@ -24,7 +24,7 @@ Wegmans_corn_starch <- \() nutrition(
 
 
 Argo_corn_starch <- \() nutrition(
-  brand = style_hyperlink(text = 'Argo\U1f1fa\U1f1f8', url = 'https://argostarch.com/products/#corn-starch') |> c(),
+  brand = style_hyperlink(text = 'Argo\U1f1fa\U1f1f8', url = 'https://argostarch.com/products/#corn-starch'),
   name = 'Corn\U1f33d Starch', alias = '\u7389\u7c73\u6dc0\u7c89',
   wegmans = '783259', usd = 2.79/454*8, date = as.Date('2026-10-07'),
   servingGram = 8, 

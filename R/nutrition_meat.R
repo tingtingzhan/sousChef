@@ -22,19 +22,15 @@ eggWhite <- \() nutrition(
 
 
 egg <- \() {
-  
   c(
-    (eggYolk() + eggWhite()) |>
-      as.list(), 
+    eggYolk() + eggWhite(),
     list(
       call = quote(quote(quote(egg))), # wow..
       name = 'Egg\U1f95a, Large',
-      alias = '\u9e21\u86cb',
-      piece_fmt = '%.1f\U1f95a'
+      alias = '\u9e21\u86cb'
     )
   ) |>
     do.call(what = 'nutrition', args = _)
-  
 }
 
 

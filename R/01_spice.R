@@ -4,15 +4,12 @@
 #' 
 #' @slot call \link[base]{name}, the function name to create this \linkS4class{spice}, which serves as the English name of the spice
 #' 
-#' @slot alias \link[base]{character} scalar, the name of spice in an alternative language
-#' 
-#' @slot url \link[base]{character} scalar
+#' @slot alias \link[cli]{ansi_string} or \link[base]{character} scalar, the name of spice in an alternative language
 #' 
 #' @export
 setClass(Class = 'spice', slots = c(
   call = 'name',
-  alias = 'character',
-  url = 'character'
+  alias = 'character'
 ))
 
 
@@ -40,6 +37,13 @@ spice <- \(no_eval = .findCall(which = -2), ...) {
   
   x$wiki <- NULL
   
+  if (!inherits(x$alias, what = 'cli_ansi_string')) {
+    x$alias <- x$alias |>
+      style_hyperlink(url = x$url)
+  }
+  
+  x$url <- NULL
+  
   c(list(Class = 'spice'), x) |> 
     do.call(what = 'new', args = _)
   
@@ -53,7 +57,7 @@ spice <- \(no_eval = .findCall(which = -2), ...) {
 format.spice <- \(x, ...) {
   
   alias <- x@alias |>
-    style_hyperlink(url = x@url) |>
+    #style_hyperlink(url = x@url) |>
     col_blue()
   
   name <- x@call |>

@@ -155,7 +155,19 @@ setMethod(f = '+', signature = c(e1 = 'nutrition', e2 = 'nutrition'), definition
         slot(e2, name = i)
       )
     }, FUN.VALUE = NA_real_) |>
-    zero.omit()
+    zero.omit() |>
+    as.list() |>
+    c(list(
+      piece_fmt = if (pc1 && (e1@piece_fmt == e2@piece_fmt)) {
+        e1@piece_fmt
+      } else character(),
+      date = if (!is.na(e1@date) || !is.na(e2@date)) {
+        min(e1@date, e2@date, na.rm = TRUE)
+      } else as.Date(NA),
+      url = c(e1@url, e2@url) |> 
+        unique.default() |>
+        ansi_string()
+    ))
   
 })
 

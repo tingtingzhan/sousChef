@@ -114,8 +114,7 @@ setAs(from = 'nutrition', to = 'raw.', def = \(from) {
   # \linkS4class{raw.} does not have slot `@name`
   attr(z, which = 'name') <- x |>
     labels.nutrition() |>
-    sprintf(fmt = '\U1f381 %s') |> 
-    c() 
+    sprintf(fmt = '\U1f381 %s')
   
   return(z)
   

@@ -9,7 +9,7 @@
 #' 
 #' @param treatment,program,waterLost,operation,cooling,... see **Slots**
 #' 
-#' @slot name \link[base]{character} scalar, brand and name of kitchen tool
+#' @slot name \link[cli]{ansi_string} or \link[base]{character} scalar, brand and name of kitchen tool
 #' 
 #' @slot alias \link[base]{character} scalar
 #' 
@@ -196,28 +196,27 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
 #' @export
 Pastalinda260 <- \(...) tool(
   name = 'https://www.pastalindausa.com/collections/pasta-maker-classic-260' |>
-    style_hyperlink(text = 'Pasta Maker Classic 260', url = _) |>
-    c(),
+    style_hyperlink(text = 'Pasta Maker Classic 260', url = _),
   ...
 )
 
 #' @rdname tool-class
 #' @export
 SamsungME21R706BAT <- \(...) tool(
-  name = style_hyperlink(text = 'Samsung ME21R706BAT/AA 2.1ft\u00b3 Over-The-Range Microwave', url = 'https://samsungparts.com/products/me21r706bat-aa') |> c(),
+  name = style_hyperlink(text = 'Samsung ME21R706BAT/AA 2.1ft\u00b3 Over-The-Range Microwave', url = 'https://samsungparts.com/products/me21r706bat-aa'),
   ...)
 
 
 #' @rdname tool-class
 #' @export
 thermometer <- \(...) tool(
-  name = style_hyperlink(text = 'Etekcity Lasergrip 1260', url = 'https://etekcity.com/products/lasergrip-1260-infrared-thermometer') |> c(), 
+  name = style_hyperlink(text = 'Etekcity Lasergrip 1260', url = 'https://etekcity.com/products/lasergrip-1260-infrared-thermometer'), 
   ...)
 
 #' @rdname tool-class
 #' @export
 CuisinartICE70 <- \(...) tool(
-  name = style_hyperlink(text = 'Cuisinart Ice Cream Maker ICE-70', url = 'https://www.cuisinart.com/ICE-70P1.html') |> c(),
+  name = style_hyperlink(text = 'Cuisinart Ice Cream Maker ICE-70', url = 'https://www.cuisinart.com/ICE-70P1.html'),
   ...)
 
 #' @rdname tool-class
@@ -294,27 +293,27 @@ KSEG950ESS <- \(...) tool(
 #' @rdname tool-class
 #' @export
 RobamCT763 <- \(...) tool(
-  name = style_hyperlink(text = 'Robam R-Box CT763 Combi Steam Oven', url = 'https://robamliving.com/products/robam-ct763') |> c(),
+  name = style_hyperlink(text = 'Robam R-Box CT763 Combi Steam Oven', url = 'https://robamliving.com/products/robam-ct763'),
   ...)
 
 #' @rdname tool-class
 #' @export
 PhilipsHD9867 <- \(...) tool(
-  name = style_hyperlink(text = 'Philips Airfryer XXL HD9867', url = 'https://www.usa.philips.com/c-p/HD9867_16') |> c(), 
+  name = style_hyperlink(text = 'Philips Airfryer XXL HD9867', url = 'https://www.usa.philips.com/c-p/HD9867_16'), 
   alias = '\u7a7a\u6c14\u70b8\u9505',
   ...)
 
 #' @rdname tool-class
 #' @export
 SanyoECJS35S <- \(...) tool(
-  name = style_hyperlink(text = 'Sanyo Rice Cooker ECJ-S35S', url = 'https://kitchen.manualsonline.com/manuals/mfg/sanyo/ecjs35s.html') |> c(), 
+  name = style_hyperlink(text = 'Sanyo Rice Cooker ECJ-S35S', url = 'https://kitchen.manualsonline.com/manuals/mfg/sanyo/ecjs35s.html'), 
   alias = '\u7535\u996d\u7172', 
   ...)
 
 #' @rdname tool-class
 #' @export
 JoyoungDJ13U <- \(...) tool(
-  name = style_hyperlink(text = 'Joyoung Soymilk Maker DJ13U-P10', url = 'https://en.huarenstore.com/joyoung-soy-milk-maker-dj13u-p10.html') |> c(), 
+  name = style_hyperlink(text = 'Joyoung Soymilk Maker DJ13U-P10', url = 'https://en.huarenstore.com/joyoung-soy-milk-maker-dj13u-p10.html'), 
   alias = '\u8c46\u6d46\u673a', 
   ...)
 
@@ -322,7 +321,7 @@ JoyoungDJ13U <- \(...) tool(
 #' @rdname tool-class
 #' @export
 JoyoungDJ06M <- \(...) tool(
-  name = style_hyperlink(text = 'Joyoung Mini Soymilk Maker DJ06M', url = 'https://en.huarenstore.com/joyoung-soymilk-maker-dj06m.html') |> c(), 
+  name = style_hyperlink(text = 'Joyoung Mini Soymilk Maker DJ06M', url = 'https://en.huarenstore.com/joyoung-soymilk-maker-dj06m.html'), 
   alias = '\u8ff7\u4f60\u8c46\u6d46\u673a', 
   ...)
 
@@ -371,8 +370,7 @@ JoyoungCJA9U <- \(
 ) new(
   Class = 'tool',
   name = 'https://en.huarenstore.com/joyoung-cooking-machine-cj-a9u.html' |>
-    style_hyperlink(text = 'Joyoung Stir-Frying Machine CJ-A9U', url = _) |> 
-    c(), 
+    style_hyperlink(text = 'Joyoung Stir-Frying Machine CJ-A9U', url = _), 
   alias = '\u7092\u83dc\u673a',
   program = program, 
   ...)

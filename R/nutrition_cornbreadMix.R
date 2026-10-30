@@ -115,8 +115,7 @@ Stonewall_cornbreadMix <- \() nutrition(
 
 
 Jiffy_cornMuffinMix <- \() nutrition(
-  brand = style_hyperlink(text = 'Jiffy\U1f1fa\U1f1f8', url = 'https://www.jiffymix.com/products/corn-muffin-mix/') |>
-    c(),
+  brand = style_hyperlink(text = 'Jiffy\U1f1fa\U1f1f8', url = 'https://www.jiffymix.com/products/corn-muffin-mix/'),
   name = 'Corn Muffin Mix',
   servingGram = 240, pieceGram = 240, piece_fmt = '%.1fbag',
   calorie = 320*3,
@@ -138,8 +137,7 @@ Jiffy_cornMuffinMix <- \() nutrition(
 
 
 Fleischmanns_cornbreadMix <- \() nutrition(
-  brand = style_hyperlink(text = 'Fleischmann\'s\U1f1fa\U1f1f8', url = 'https://www.simplyhomemade.com/products') |> 
-    c(),
+  brand = style_hyperlink(text = 'Fleischmann\'s\U1f1fa\U1f1f8', url = 'https://www.simplyhomemade.com/products'),
   name = 'Cornbread Mix',
   walmart = '38065267', usd = 2.38, date = as.Date('2026-10-19'),
   servingGram = 425, pieceGram = 425, piece_fmt = '%.1fbag',

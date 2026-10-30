@@ -35,7 +35,7 @@ CafeGranita_coffeeLiqueur <- \() nutrition(
 
 
 FratelliVincenzi_espressoLiqueur <- \() nutrition(
-  brand = style_hyperlink(text = 'Fratelli Vincenzi\U1f1ee\U1f1f9', url = 'https://www.distillerievincenzi.com/liquori/') |> c(),
+  brand = style_hyperlink(text = 'Fratelli Vincenzi\U1f1ee\U1f1f9', url = 'https://www.distillerievincenzi.com/liquori/'),
   name = 'Espresso Liqueur',
   totalwine = '348072750', usd = 21.99/750*44, date = as.Date('2026-10-24'),
   servingGram = 44, servingTsp = 9, # `servingTsp` my guess
@@ -53,7 +53,7 @@ Kikisi_coffeeLiqueur <- \() nutrition(
 
 
 CaffeBorghetti_espressoLiqueur <- \() nutrition(
-  brand = c(style_hyperlink(text = 'Caff\u00e8 Borghetti\U1f1ee\U1f1f9', url = 'https://www.brancausa.com/brands/caffe-borghetti')),
+  brand = style_hyperlink(text = 'Caff\u00e8 Borghetti\U1f1ee\U1f1f9', url = 'https://www.brancausa.com/brands/caffe-borghetti'),
   name = 'di Vero Caff\u00e8 Espresso Liqueur',
   totalwine = '130512750', usd = 26.99/750*44, date = as.Date('2026-10-24'),
   servingGram = 44, servingTsp = 9,
@@ -61,7 +61,7 @@ CaffeBorghetti_espressoLiqueur <- \() nutrition(
 )
 
 Grind_espressoLiqueur <- \() nutrition(
-  brand = c(style_hyperlink(text = 'Grind\U1f1fa\U1f1f8', url = 'https://grindespressoshot.com/home.html')),
+  brand = style_hyperlink(text = 'Grind\U1f1fa\U1f1f8', url = 'https://grindespressoshot.com/home.html'),
   name = 'Espresso Shot',
   totalwine = '159626750', usd = 19.99/750*44, date = as.Date('2026-10-24'),
   servingGram = 44, servingTsp = 9,
@@ -80,7 +80,7 @@ Sabroso_coffeeLiqueur <- \() nutrition(
 
 
 Patron_XO_coffeeLiqueur <- \() nutrition(
-  brand = c(style_hyperlink(text = 'Patr\u00f3n\U1f1f2\U1f1fd', url = 'https://www.patrontequila.com/products/patron-xo-cafe-coffee-liquor.html')),
+  brand = style_hyperlink(text = 'Patr\u00f3n\U1f1f2\U1f1fd', url = 'https://www.patrontequila.com/products/patron-xo-cafe-coffee-liquor.html'),
   name = 'XO Cafe',
   totalwine = '96430750', usd = 45.99/1750*44, date = as.Date('2026-10-24'),
   servingGram = 44, servingTsp = 9,
@@ -97,7 +97,7 @@ Padrino_coffeeLiqueur <- \() nutrition(
 
 
 Amigos3_coffeeLiqueur <- \() nutrition(
-  brand = c(style_hyperlink(text = '3 Amigos Tequila\U1f1f2\U1f1fd', url = 'https://3amigostequila.com/cafe-mocha/')),
+  brand = style_hyperlink(text = '3 Amigos Tequila\U1f1f2\U1f1fd', url = 'https://3amigostequila.com/cafe-mocha/'),
   name = 'Cafe Mocha',
   totalwine = '244117750', usd = 28.99/750*44, date = as.Date('2026-10-24'),
   servingGram = 44, servingTsp = 9,

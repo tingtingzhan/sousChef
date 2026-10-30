@@ -7,7 +7,7 @@ MgCl2 <- \() nutrition(
   
 
 Ohsawa_nigari <- \() nutrition(
-  brand = style_hyperlink(url = 'https://www.goldminenaturalfoods.com/collections/ohsawa/products/3004-1001', text = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U1f1ef\U1f1f5') |> c(), 
+  brand = style_hyperlink(url = 'https://www.goldminenaturalfoods.com/collections/ohsawa/products/3004-1001', text = 'Ohsawa\u6afb\u6fa4\u5982\u4e00\U1f1ef\U1f1f5'), 
   name = 'Nigari', alias = '\u82e6\u6c41/\u6ef7\u6c41',
   amazon = 'B0019L8KUG',
   usd = 8.79/454*6,
@@ -32,7 +32,7 @@ Morton_kosher_salt <- \() nutrition(
 
 
 Ajinomoto_msg <- \() nutrition(
-  brand = c(style_hyperlink(url = 'https://www.ajinomoto.com/msg', text = 'Ajinomoto\u5473\u306e\u7d20\U1f1ef\U1f1f5')), 
+  brand = style_hyperlink(url = 'https://www.ajinomoto.com/msg', text = 'Ajinomoto\u5473\u306e\u7d20\U1f1ef\U1f1f5'), 
   name = 'Monosodium Glutamate', alias = '\u5473\u7cbe',
   usd = 3.99/454, yamibuy = '25775165',
   servingGram = 1, 
@@ -45,7 +45,7 @@ Ajinomoto_msg <- \() nutrition(
 
 
 ArmHammer_NaHCO3 <- \() nutrition(
-  brand = style_hyperlink(url = 'https://www.armandhammer.com/en/baking-soda/baking-soda-products/pure-baking-soda/baking-soda-box-8-oz', text = 'Arm & Hammer\U1f1fa\U1f1f8') |> c(),
+  brand = style_hyperlink(url = 'https://www.armandhammer.com/en/baking-soda/baking-soda-products/pure-baking-soda/baking-soda-box-8-oz', text = 'Arm & Hammer\U1f1fa\U1f1f8'),
   name = 'Baking Soda, NaHCO\u2083', alias = '\u5c0f\u82cf\u6253',
   pubchem = '516892',
   servingGram = .6, 

@@ -2,8 +2,7 @@
 
 
 FageTotal0_yogurtGreek <- \() nutrition(
-  brand = style_hyperlink(text = 'Fage Total 0%', url = 'https://usa.fage/products/yogurt/fage-total-0') |> 
-    c(),
+  brand = style_hyperlink(text = 'Fage Total 0%', url = 'https://usa.fage/products/yogurt/fage-total-0'),
   name = 'Nonfat Greek\U0001f1ec\U0001f1f7 Yogurt', alias = '\u8131\u8102\u5e0c\u814a\u9178\u5976',
   servingGram = 170, # sold at Costco, 3lb, 1360g
   servingCup = 3/4, # packaging
@@ -79,7 +78,7 @@ UpstateFarms_buttermilk <- \() nutrition(
 
 
 NaturalByNature_buttermilk <- \() nutrition(
-  brand = c(style_hyperlink(url = 'https://naturalbynaturedairy.com/products/dairy/', text = 'Natural By Nature')), 
+  brand = style_hyperlink(url = 'https://naturalbynaturedairy.com/products/dairy/', text = 'Natural By Nature'), 
   name = 'Low-Fat Buttermilk', alias = '\u4f4e\u8102\u916a\u6d46',
   servingGram = 240, servingCup = 1,
   calorie = 80,
@@ -90,7 +89,7 @@ NaturalByNature_buttermilk <- \() nutrition(
 
 
 OakFarms_buttermilk <- \() nutrition(
-  brand = c(style_hyperlink(text = 'Oak Farms\U1f1fa\U1f1f8', url = 'https://oakfarmsdairy.com/products/bulgarian-buttermilk-plastic-half-gallon/')),
+  brand = style_hyperlink(text = 'Oak Farms\U1f1fa\U1f1f8', url = 'https://oakfarmsdairy.com/products/bulgarian-buttermilk-plastic-half-gallon/'),
   name = 'Bulgarian\U1f1e7\U1f1ec Buttermilk', alias = '\u916a\u6d46',
   servingGram = 240, servingCup = 1,
   calorie = 160,
@@ -222,7 +221,7 @@ GreatValue_neufchatel <- \() nutrition(
 
 
 Tillamook_creamCheese <- \() nutrition(
-  brand = c(style_hyperlink(text = 'Tillamook', url = 'https://www.tillamook.com/products/cream-cheese/brick-cream-cheese')),
+  brand = style_hyperlink(text = 'Tillamook', url = 'https://www.tillamook.com/products/cream-cheese/brick-cream-cheese'),
   name = 'Cream Cheese',
   servingTbsp = 2, serving_oz = 1,
   calorie = 100,
@@ -434,8 +433,7 @@ Wawa_2perc_milk <- \() nutrition(
 
 Byrne_heavyCream <- \() nutrition(
   brand = 'https://www.byrnedairy.com/creams-near-ny-state/' |> 
-    style_hyperlink(text = 'Byrne\U1f1fa\U1f1f8', url = _) |> 
-    c(),
+    style_hyperlink(text = 'Byrne\U1f1fa\U1f1f8', url = _),
   name = 'Heavy Cream 40%',
   # nutrition from https://www.fooducate.com/product/Byrne-Dairy-Heavy-Whipping-Cream/61EE9DAB-F8E3-1A30-4818-B69A923F5C70
   servingGram = 15, servingTbsp = 1,
@@ -477,7 +475,7 @@ TraderJoes_heavyCream <- \() nutrition(
 
 
 NaturalByNature_heavyCream <- \() nutrition(
-  brand = c(style_hyperlink(url = 'https://naturalbynaturedairy.com/products/dairy/', text = 'Natural By Nature')), 
+  brand = style_hyperlink(url = 'https://naturalbynaturedairy.com/products/dairy/', text = 'Natural By Nature'), 
   name = 'Heavy Cream',
   servingGram = 15, servingTbsp = 1,
   calorie = 60,
@@ -556,7 +554,7 @@ Meyenberg_goatKefir <- \() nutrition(
 
 
 GreenValley_kefir <- \() nutrition(
-  brand = c(style_hyperlink(text = 'Green Valley\U1f1fa\U1f1f8', url = 'https://greenvalleylactosefree.com/product/lactose-free-lowfat-kefir')),
+  brand = style_hyperlink(text = 'Green Valley\U1f1fa\U1f1f8', url = 'https://greenvalleylactosefree.com/product/lactose-free-lowfat-kefir'),
   name = 'Lowfat Kefir',
   wegmans = '979978', usd = 6.99/32*8,
   # full bottle (with cap): 1086g, 32floz

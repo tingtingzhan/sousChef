@@ -14,19 +14,19 @@ Kirkland_rawHoney <- \() nutrition(
 
 # dried fruits
 OceanSpray_cranberry <- \() nutrition(
-  brand = c(style_hyperlink(url = 'https://www.oceanspray.com/products/craisins-original-dried-cranberries-6-oz', text = 'Ocean Spray')), 
+  brand = style_hyperlink(url = 'https://www.oceanspray.com/products/craisins-original-dried-cranberries-6-oz', text = 'Ocean Spray'), 
   name = 'Dried Cranberries',
   costco = '100400518',
   servingGram = 40, sugar = 29)
 
 SunnyFruit_fig <- \() nutrition(
-  brand = c(style_hyperlink(url = 'https://sunnyfruit.com/products/organic-dried-figs', text = 'Sunny Fruit')), 
-                  name = 'Dried Figs',
+  brand = style_hyperlink(url = 'https://sunnyfruit.com/products/organic-dried-figs', text = 'Sunny Fruit'), 
+  name = 'Dried Figs',
   costcoBiz = '100362726',
   servingGram = 40, sugar = 21)
 
 SunnyFruit_date <- \() nutrition(
-  brand = c(style_hyperlink(url = 'https://sunnyfruit.com/products/organic-pitted-dates', text = 'Sunny Fruit')), 
+  brand = style_hyperlink(url = 'https://sunnyfruit.com/products/organic-pitted-dates', text = 'Sunny Fruit'), 
   name = 'Pitted Dates',
   servingGram = 40, sugar = 30)
 
@@ -340,8 +340,7 @@ watermelon <- \() nutrition(
 
 Libbys_pumpkin <- \() nutrition(
   brand = 'https://www.nestleprofessional.us/libbys/libbys-100-pure-pumpkin-6-x-106-oz-cans' |> 
-    style_hyperlink(text = 'Libby\'s\U1f1fa\U1f1f8', url = ) |>
-    c(),
+    style_hyperlink(text = 'Libby\'s\U1f1fa\U1f1f8', url = ),
   name = 'Pumpkin\U1f383 Puree', alias = '\u5357\u74dc\u6ce5',
   usd = 7.58/(3*822)*122, sams = '162878', date = as.Date('2026-10-07'), # early Fall, regular price
   # usd = 3.91/(3*822)*122, sams = '162878', date = as.Date('2023-12-24'), clearance?
@@ -390,7 +389,7 @@ WegmansOrganic_tomato <- \() nutrition(
 
 
 Motts_applesauce <- \() nutrition(
-  brand = style_hyperlink(text = 'Motts\U1f1fa\U1f1f8', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce') |> c(),
+  brand = style_hyperlink(text = 'Motts\U1f1fa\U1f1f8', url = 'https://www.motts.com/products/applesauce/no-sugar-added-apple-applesauce'),
   name = 'Applesauce\U1f34e', alias = '\u82f9\u679c\u6ce5',
   fdc = 1102646L, # water 88.22% 
   wegmans = '534880', #usd = 2.99/680*123,
@@ -413,7 +412,7 @@ Motts_applesauce <- \() nutrition(
 Laura_soybean <- \() nutrition(
   fdc = 174270L,
   name = 'Soy Bean',
-  brand = c(style_hyperlink(text = 'Laura\U1f1fa\U1f1f8', url = 'https://laurasoybeans.com/product-category/laura-soybeans/')),
+  brand = style_hyperlink(text = 'Laura\U1f1fa\U1f1f8', url = 'https://laurasoybeans.com/product-category/laura-soybeans/'),
   amazon = 'B00C3FWXIC', 
   usd = 16.79/(5*453.6)*(100-8.54), # official website
   servingGram = 100 - 8.54, 
@@ -476,8 +475,7 @@ HaiTai_adzukibean <- \() nutrition(
 Iberia_redkidneybean <- \() nutrition(
   fdc = 173744L,
   alias = '\u7ea2\u82b8\u8c46', name = 'Red Kidney Bean\U1fad8', 
-  brand = style_hyperlink(text = 'Iberia\U1f1fa\U1f1f8', url = 'https://iberiafoods.com/product/iberia-red-kidney-beans-4-lbs/') |>
-    c(),
+  brand = style_hyperlink(text = 'Iberia\U1f1fa\U1f1f8', url = 'https://iberiafoods.com/product/iberia-red-kidney-beans-4-lbs/'),
   amazon = 'B079S8D2YP', usd = 8.86/(4*454)*42,
   #servingGram = 100 - 11.8, protein = 22.5, fat = 1.06, sugar = 2.1, sodium = .012 # fdc
   servingGram = 42, servingCup = 1/4, sodium = .005, carbohydrate = 26, sugar = 1, protein = 9)
@@ -520,7 +518,7 @@ walnut <- \() nutrition(
 
 Bossen_pineapple <- \() nutrition(
   name = 'Pineapple\U1f34d Concentrated Syrup', alias = '\u83e0\u841d\u7cd6\u6d46',
-  brand = style_hyperlink(text = '', url = 'https://www.bossenstore.com/products/pineapple-syrup-new') |> c(),
+  brand = style_hyperlink(text = '', url = 'https://www.bossenstore.com/products/pineapple-syrup-new'),
   webstaurant = '535SYPPINAPL', usd = 14.83/2500*25, date = as.Date('2026-10-23'),
   # why all added sugar?
   servingGram = 25, carbohydrate = 17, sugar = 17, addedSugar = 17)

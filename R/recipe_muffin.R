@@ -7,7 +7,7 @@ Brody_muffin <- \() recipe(
   misc = c(
     Domino_granulated = 300
   ),
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   misc_cup = c(
     KingArthur_allPurposeFlr = 2.25,
     SimpleTruth_yogurt = 1,
@@ -36,7 +36,7 @@ Introvert_muffin <- \() recipe(
     Kerrygold_butter = 1/2,
     Wegmans_whole_milk = .75
   ),
-  misc_pc = c(eggYolk = 2, eggWhite = 2))
+  misc_pc = c(egg = 2))
 
 
 CulinaryHill_muffin <- \() recipe(
@@ -47,7 +47,7 @@ CulinaryHill_muffin <- \() recipe(
     NielsenMassey_Madagascar = 1,
     Morton_salt = 1/2
   ),
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   misc_cup = c(
     KingArthur_allPurposeFlr = 2,
     Domino_granulated = 1,
@@ -64,7 +64,7 @@ Lori_muffin <- \() recipe(
     TraderJoes_bakingPowder = 1
   ),
   misc_tsp = c(Morton_salt = 1/2),
-  misc_pc = c(eggYolk = 1, eggWhite = 1),
+  misc_pc = c(egg = 1),
   misc_cup = c(
     KingArthur_allPurposeFlr = 2,
     Domino_granulated = 3/4,
@@ -88,7 +88,7 @@ Sallys_pumpkin_muffin <- \() recipe(
   misc = c(
     Libbys_pumpkin = 340
   ),
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   misc_cup = c(
     KingArthur_allPurposeFlr = 1.75,
     Wegmans_whole_milk = 1/4,

@@ -197,7 +197,7 @@ laofangu_durianSu_waterDough <- \() recipe(
     Epic_lard = 25, 
     Domino_granulated = 25
   ), 
-  misc_pc = c(eggYolk = 1, eggWhite = 1), water = 100)
+  misc_pc = c(egg = 1), water = 100)
 
 
 laofangu_durianSu_shortDough <- \() recipe(

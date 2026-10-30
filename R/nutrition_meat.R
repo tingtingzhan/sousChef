@@ -21,6 +21,23 @@ eggWhite <- \() nutrition(
   fat = .17, sugar = .71, sodium = .166)
 
 
+egg <- \() {
+  
+  c(
+    (eggYolk() + eggWhite()) |>
+      as.list(), 
+    list(
+      call = quote(quote(quote(egg))), # wow..
+      name = 'Egg\U1f95a, Large',
+      alias = '\u9e21\u86cb',
+      piece_fmt = '%.1f\U1f95a'
+    )
+  ) |>
+    do.call(what = 'nutrition', args = _)
+  
+}
+
+
 
 pork_belly <- \() nutrition(
   fdc = 167812L,

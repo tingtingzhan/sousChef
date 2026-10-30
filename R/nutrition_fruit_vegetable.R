@@ -366,7 +366,7 @@ Libbys_pumpkinPieMix <- \() nutrition(
   sodium = .11, sugar = 18, addedSugar = 16,
   suggest = list(
     misc_cup = c(Carnation_evapMilk = 2/3),
-    misc_pc = c(eggWhite = 2, eggYolk = 2)
+    misc_pc = c(egg = 2)
   )
 )
 

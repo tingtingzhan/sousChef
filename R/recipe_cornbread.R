@@ -18,7 +18,7 @@ Wegmans_recipe_cornbread <- \() recipe(
     Daisy_sourCream = 453.6,
     Wegmans_creamCorn = 418*2  #2 cans (14.75 oz each)
   ),
-  misc_pc = c(eggYolk = 6, eggWhite = 6)
+  misc_pc = c(egg = 6)
 )
 
 
@@ -26,7 +26,7 @@ Wegmans_recipe_cornbread <- \() recipe(
 
 BethanyWeathersby_cornbread <- \() recipe(
   author = 'Bethany Weathersby',
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   misc_cup = c(
     KingArthur_allPurposeFlr = 1,
     Albertsons_yellow_cornmeal = 1,
@@ -55,7 +55,7 @@ bluegirl_cornbread <- \() recipe(
     Wegmans_whole_milk = 1,
     Wegmans_vegetable_oil = 1/3
   ),
-  misc_pc = c(eggYolk = 1, eggWhite = 1),
+  misc_pc = c(egg = 1),
   allrecipes = '17891/golden-sweet-cornbread/')
 
 
@@ -71,7 +71,7 @@ PreppyKitchen_cornbread <- \() recipe(
     LandOLakes_butter = 1/4,
     Horizon_wholeDHA_milk = 1.5
   ),
-  misc_pc = c(eggYolk = 1, eggWhite = 1),
+  misc_pc = c(egg = 1),
   misc_Tbsp = c(
     Wesson_soy_oil = 1
   ),
@@ -93,7 +93,7 @@ Quaker_cornbread <- \() recipe(
     Quaker_yellow_cornmeal = 1.5,
     OakFarms_buttermilk = 2
   ),
-  misc_pc = c(eggYolk = 1, eggWhite = 1))
+  misc_pc = c(egg = 1))
 
 
 JoshuaWeissman_cornbread <- \() recipe(
@@ -106,7 +106,7 @@ JoshuaWeissman_cornbread <- \() recipe(
   misc = c(
     Morton_salt = 6
   ),
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   misc_cup = c(
     Albertsons_yellow_cornmeal = 1.25,
     KingArthur_allPurposeFlr = 1.25,

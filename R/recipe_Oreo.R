@@ -30,7 +30,7 @@ KingArthur_fauxReo <- \() recipe(
     NielsenMassey_Madagascar = 1,
     Morton_salt = 1/2
   ),
-  misc_pc = c(eggYolk = 1, eggWhite = 1), 
+  misc_pc = c(egg = 1), 
   water = c(c0 = 14),
   misc_cup = c(
     KingArthur_allPurposeFlr = 1.5

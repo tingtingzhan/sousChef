@@ -1,7 +1,7 @@
 
 OnceUponAChef_crabCake <- \() recipe(
   flavor = 'Crab Cake',
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   misc_tsp = c(
     Hellmanns_mayonnaise = 2.5,
     GreyPoupon_Dijon = 1.5,

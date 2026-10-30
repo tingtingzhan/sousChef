@@ -26,6 +26,8 @@ spice <- \(no_eval = .findCall(which = -2), ...) {
   
   x <- list(...)
   
+  if (!length(x$call)) x$call <- no_eval
+  
   if (!length(x$wiki)) {
     x$wiki <- no_eval[[2L]] |> # `no_eval` is `quote(anise)` !!
       as.character()
@@ -38,7 +40,7 @@ spice <- \(no_eval = .findCall(which = -2), ...) {
   
   x$wiki <- NULL
   
-  c(list(Class = 'spice', call = no_eval), x) |> 
+  c(list(Class = 'spice'), x) |> 
     do.call(what = 'new', args = _)
   
 }

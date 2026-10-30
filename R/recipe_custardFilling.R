@@ -22,6 +22,6 @@ xiaogaojie_custardFilling <- \() recipe(
     Domino_granulated = 60,
     Kerrygold_butter = 50
   ),
-  misc_pc = c(eggYolk = 3, eggWhite = 3),
+  misc_pc = c(egg = 3),
   xiaogaojie = 'L7a1d4dj1rs'
 )

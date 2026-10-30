@@ -10,7 +10,7 @@ JeanPierre_eggnog <- \() recipe(
     Wegmans_whole_milk = 2,
     Domino_granulated = 2/3
   ),
-  misc_pc = c(eggYolk = 6, eggWhite = 6),
+  misc_pc = c(egg = 6),
   misc_tsp = c(
     SimplyOrganic_Ceylon_cinnamon = 1/4,
     SimplyOrganic_nutmeg = 1/4,
@@ -27,7 +27,7 @@ JeanPierre_eggnog <- \() recipe(
 
 PreppyKitchen_eggnog <- \() recipe(
   flavor = 'Eggnog',
-  misc_pc = c(eggYolk = 6, eggWhite = 6),
+  misc_pc = c(egg = 6),
   misc_cup = c(
     Domino_granulated = 1,
     Wegmans_heavyCream = 1,

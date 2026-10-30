@@ -379,12 +379,12 @@ append_url <- \(x, name, ...) {
 
 
 
-get_key_ <- \(x, no_eval) {
+get_key_ <- \(x) {
   # x is \link[base]{list}
   # for [recipe()] and [nutrition()]
   if (!length(x$key)) {
-    if (!identical(no_eval, quote(`<UNDEFINED>`))) {
-      z <- no_eval[[2L]] |> # `no_eval` is quote(name)        
+    if (!identical(x$call, quote(`<UNDEFINED>`))) {
+      z <- x$call[[2L]] |> # `x$call` is quote(name)        
         as.character() |>
         strsplit(split = '_')
       z <- z[[1L]]

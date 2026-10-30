@@ -18,12 +18,12 @@ xiaogaojie_millecrepe <- \() recipe(
     WegmansOrganic_whole_milk = 300,
     Domino_granulated = 12
   ), 
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   xiaogaojie = 'uZ626SU5T2I')
 
 iwen_mango_millecrepe <- \() recipe(
   author = 'iwen', flavor = 'mango millecrepe',
-  misc_pc = c(eggYolk = 6, eggWhite = 6),
+  misc_pc = c(egg = 6),
   misc = c(
     Wegmans_pastryFlr = 300,
     Domino_granulated = 75,
@@ -36,7 +36,7 @@ iwen_mango_millecrepe <- \() recipe(
 
 iwen_cocoa_millecrepe <- \() recipe(
   author = 'iwen', flavor = '\u53ef\u53ef\u5343\u5c42',
-  misc_pc = c(eggYolk = 6, eggWhite = 6),
+  misc_pc = c(egg = 6),
   misc = c(
     KingArthur_allPurposeFlr = 240,
     Wegmans_corn_starch = 37.5,
@@ -53,7 +53,7 @@ qiong_cocoa_millecrepe <- \() recipe(
   author = '\u5927\u743c', 
   flavor = '\u53ef\u53ef\u5343\u5c42', 
   youtube = 'i8Ii4BZBkmg',
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   misc = c(
     Wegmans_pastryFlr = 80,
     KingArthur_Bensdorp_cocoa = 10,
@@ -66,7 +66,7 @@ qiong_cocoa_millecrepe <- \() recipe(
 
 qiong_tiramisu_millecrepe <- \() recipe(
   author = '\u5927\u743c', flavor = 'tiramisu\u0300 millecrepe', youtube = 'xiVfrjTwaHw',
-  misc_pc = c(eggYolk = 2, eggWhite = 2), #
+  misc_pc = c(egg = 2), #
   misc = c(
     Wegmans_pastryFlr = 80,
     NescafeGold_blonde_coffee = 6.6,
@@ -92,7 +92,7 @@ amanda_matcha_millecrepe <- \() recipe(
     WegmansOrganic_whole_milk = 650,
     Domino_granulated = 90
   ),
-  misc_pc = c(eggWhite = 4, eggYolk = 4),
+  misc_pc = c(egg = 4),
   misc_tsp = c(
     Sencha_everyday_matcha = 4
   ),
@@ -110,13 +110,13 @@ sweetTaste_matcha_millecrepe <- \() recipe(
     WegmansOrganic_whole_milk = 250,
     Domino_granulated = 30
   ),
-  misc_pc = c(eggYolk = 2, eggWhite = 2)
+  misc_pc = c(egg = 2)
 )
 
 
 oreomachi_matcha_millecrepe <- \() recipe(
   author = 'oreomachi', flavor = '\u62b9\u8336\u5343\u5c42', youtube = '2WESa5wNK0o',
-  misc_pc = c(eggYolk = 4, eggWhite = 4),
+  misc_pc = c(egg = 4),
   misc = c(
     Kerrygold_butter = 52,
     Domino_granulated = 80,
@@ -132,7 +132,7 @@ oreomachi_matcha_millecrepe <- \() recipe(
 
 lisa_matcha_millecrepe <- \() recipe(
   author = '\u8428\u59d0', flavor = '\u62b9\u8336\u5343\u5c42', youtube = 'lP0p7qh3E1I',
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   misc = c(
     Wegmans_pastryFlr = 90,
     Domino_granulated = 35,
@@ -147,7 +147,7 @@ lisa_mango_millecrepe <- \() recipe(
   author = '\u8428\u59d0', 
   flavor = 'mango millecrepe', 
   youtube = '_Pz6_nKaebw',
-  misc_pc = c(eggYolk = 2, eggWhite = 2), 
+  misc_pc = c(egg = 2), 
   misc = c(
     Wegmans_pastryFlr = 70, 
     Domino_granulated = 30,
@@ -167,7 +167,7 @@ JustOne_matcha_millecrepe <- \() recipe(
     Domino_granulated = 3,
     Sencha_everyday_matcha = 2
   ),
-  misc_pc = c(eggYolk = 3, eggWhite = 3),
+  misc_pc = c(egg = 3),
   misc = c(
     Wegmans_pastryFlr = 138,
     Kerrygold_butter = 25

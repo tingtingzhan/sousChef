@@ -70,9 +70,12 @@ recipe <- \(no_eval = .findCall(which = -2), ...) {
   no_eval
   # force(no_eval) # messes up envir!!
   
-  x <- list(...) |>
+  x <- list(...)
+  if (!length(x$call)) x$call <- no_eval
+  
+  x <- x |>
     .cleanSlots_raw.() |>
-    get_key_(no_eval = no_eval)
+    get_key_()
 
   # processing 'character'
   
@@ -125,7 +128,7 @@ recipe <- \(no_eval = .findCall(which = -2), ...) {
     x$juniorscheesecakecookbook <- NULL
   }
   
-  c(list(Class = 'recipe', call = no_eval), x) |> 
+  c(list(Class = 'recipe'), x) |> 
     do.call(what = 'new', args = _)
   
 }
@@ -282,7 +285,7 @@ labels.recipe <- \(object, ...) {
     cheesecake = 'NY Cheesecake\u91cd\u4e73\u916a\u86cb\u7cd5',
     cocoaMix = 'Cocoa Mix',
     CoengFan = '\u80a0\u7c89',
-    cornbread = 'Cornbread',
+    cornbread = 'Cornbread\U1f33d',
     creamCheeseDip = 'Cream Cheese Dip\u5976\u6cb9\u4e73\u916a\u9171', 
     creamCheeseSpread = 'Cream Cheese Spread\U1f96f\u5976\u6cb9\u4e73\u916a\u9171',
     custardFilling = '\u5976\u9ec4\u9985',

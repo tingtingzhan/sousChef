@@ -24,7 +24,7 @@ xiaogaojie2_pasteisdenata <- \() recipe(
     WegmansOrganic_whole_milk = 180,
     Domino_granulated = 60
   ), 
-  misc_pc = c(eggYolk = 4, eggWhite = 1),
+  misc_pc = c(eggYolk = 3, egg = 1),
   xiaogaojie = '-83188U6O8w')
 
 Leites_pasteisdenata <- \() recipe(

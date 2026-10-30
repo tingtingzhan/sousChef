@@ -4,7 +4,7 @@
 jennyc819_crepe <- \() recipe(
   author = 'jennyc819', flavor = 'Crepe',
   allrecipes = '16383/basic-crepes/',
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   misc_cup = c(
     KingArthur_allPurposeFlr = 1,
     Wegmans_whole_milk = 1/2
@@ -19,7 +19,7 @@ jennyc819_crepe <- \() recipe(
 cyberchef_crepeFrench <- \() recipe(
   author = 'cyberchef', flavor = 'French Crepe',
   allrecipes = '20931/french-crepes/',
-  misc_pc = c(eggYolk = 3, eggWhite = 3), # yes
+  misc_pc = c(egg = 3), # yes
   misc_cup = c(
     KingArthur_allPurposeFlr = 1,
     Wegmans_whole_milk = 2
@@ -37,7 +37,7 @@ cyberchef_crepeFrench <- \() recipe(
 Carina_crepe <- \() recipe(
   author = 'Carina', flavor = 'Crepe',
   youtube = 'bX6ghyT6Ig0',
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   misc_tsp = c(Morton_salt = 1/2),
   misc_cup = c(
     KingArthur_allPurposeFlr = 1,
@@ -58,7 +58,7 @@ Aya_crepe <- \() recipe(
     Domino_granulated = 50
   ), 
   misc_tsp = c(Morton_salt = 1/2),
-  misc_pc = c(eggYolk = 4, eggWhite = 4),
+  misc_pc = c(egg = 4),
   misc_cup = c(
     Wegmans_whole_milk = 2
   )
@@ -74,7 +74,7 @@ Natasha_crepe <- \() recipe(
     KingArthur_allPurposeFlr = 1,
     Wegmans_whole_milk = 1
   ),
-  misc_pc = c(eggYolk = 4, eggWhite = 4),
+  misc_pc = c(egg = 4),
   misc_Tbsp = c(
     Kerrygold_butter = 4,
     Domino_granulated = 2
@@ -85,7 +85,7 @@ Natasha_crepe <- \() recipe(
 
 Daat_crepe <- \() recipe(
   flavor = 'crepe',
-  misc_pc = c(eggYolk = 3, eggWhite = 3),
+  misc_pc = c(egg = 3),
   misc = c(
     KingArthur_allPurposeFlr = 230,
     Kerrygold_butter = 15,

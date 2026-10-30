@@ -39,7 +39,7 @@ mathstar_youtiao <- \() recipe(
     Wegmans_corn_oil = 30,
     Morton_salt = 6
   ),
-  misc_pc = c(eggYolk = 1, eggWhite = 1),
+  misc_pc = c(egg = 1),
   water = c(c22 = 280))
 
 
@@ -54,7 +54,7 @@ PinNuo1_youtiao <- \() recipe(
     Domino_granulated = 5, 
     Morton_salt = 5
   ),
-  misc_pc = c(eggYolk = 1, eggWhite = 1), 
+  misc_pc = c(egg = 1), 
   water = c(c22 = 250))
 
 
@@ -80,7 +80,7 @@ PinNuo3_youtiao <- \() recipe(
     Morton_salt = 8
   ), 
   # youtiao puffing mix = 10,
-  misc_pc = c(eggYolk = 2, eggWhite = 2), 
+  misc_pc = c(egg = 2), 
   water = c(c22 = 480))
 
 PinNuo4_youtiao <- \() recipe(
@@ -93,7 +93,7 @@ PinNuo4_youtiao <- \() recipe(
     Domino_granulated = 8, 
     Morton_salt = 10
   ),
-  misc_pc = c(eggYolk = 2, eggWhite = 2), 
+  misc_pc = c(egg = 2), 
   water = c(c22 = 500))
 
 
@@ -107,7 +107,7 @@ PinNuo5_youtiao <- \() recipe(
     Morton_salt = 3
   ),
   # youtiao puffing mix = 5
-  misc_pc = c(eggYolk = 1, eggWhite = 1), 
+  misc_pc = c(egg = 1), 
   water = c(c22 = 260))
 
 PinNuo6_youtiao <- \() recipe(
@@ -120,7 +120,7 @@ PinNuo6_youtiao <- \() recipe(
     Morton_salt = 5
   ), 
   # youtiao su-cui mix = 5,
-  misc_pc = c(eggYolk = 1, eggWhite = 1), 
+  misc_pc = c(egg = 1), 
   water = c(c22 = 250))
 
 PinNuo7_youtiao <- \() recipe(
@@ -134,5 +134,5 @@ PinNuo7_youtiao <- \() recipe(
     Morton_salt = 10
   ), 
   # youtiao su-cui mix = 8
-  misc_pc = c(eggYolk = 2, eggWhite = 2), 
+  misc_pc = c(egg = 2), 
   water = c(c22 = 500))

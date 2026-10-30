@@ -9,7 +9,7 @@ AmishHeritage_carrotcake <- \() recipe(
     Domino_darkBrown = 1,
     Wegmans_vegetable_oil = 1.5
   ),
-  misc_pc = c(eggYolk = 4, eggWhite = 4),
+  misc_pc = c(egg = 4),
   misc = c(
     carrot = 300, # 2.5 cup shredded carrots
     pecan = 50, walnut = 50, # ¾ c. chopped pecans or walnuts (optional)

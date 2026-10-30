@@ -27,7 +27,7 @@ shangshi_sacima <- \() recipe(
   misc = c(
     KingArthur_allPurposeFlr = 240
   ),
-  misc_pc = c(eggYolk = 3, eggWhite = 3))
+  misc_pc = c(egg = 3))
 
 
 xiaogaojie_sacima <- \() recipe(
@@ -40,7 +40,7 @@ xiaogaojie_sacima <- \() recipe(
     ArmHammer_NaHCO3 = 1/8
   ),
   water = 15,
-  misc_pc = c(eggYolk = 2, eggWhite = 2))
+  misc_pc = c(egg = 2))
 
 
 Dad_sacima <- \() recipe(
@@ -50,5 +50,5 @@ Dad_sacima <- \() recipe(
     KingArthur_allPurposeFlr = 270,
     ArmHammer_NaHCO3 = 1
   ),
-  misc_pc = c(eggYolk = 3, eggWhite = 3))
+  misc_pc = c(egg = 3))
 

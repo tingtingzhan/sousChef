@@ -94,7 +94,7 @@ Jenny_chickenfill <- \() recipe(
     Morton_salt = 1/2
   ),
   #Chicken broth 3Tbsp / Bouillon de poulet 3Tbsp
-  misc_pc = c(eggYolk = 1, eggWhite = 1)
+  misc_pc = c(egg = 1)
 )
 
 

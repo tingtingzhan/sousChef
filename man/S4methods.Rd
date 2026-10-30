@@ -3,8 +3,11 @@
 \name{S4methods}
 \alias{S4methods}
 \alias{*,raw.,numeric-method}
+\alias{*,nutrition,numeric-method}
 \alias{*,numeric,raw.-method}
+\alias{*,numeric,nutrition-method}
 \alias{/,raw.,numeric-method}
+\alias{/,nutrition,numeric-method}
 \alias{*,tool,numeric-method}
 \alias{/,tool,numeric-method}
 \alias{+,raw.,raw.-method}
@@ -19,13 +22,20 @@
 \alias{-,raw,list-method}
 \alias{+,nutrition,list-method}
 \alias{-,nutrition,list-method}
+\alias{+,nutrition,nutrition-method}
 \title{\code{S4} Methods}
 \usage{
 \S4method{*}{raw.,numeric}(e1, e2)
 
+\S4method{*}{nutrition,numeric}(e1, e2)
+
 \S4method{*}{numeric,raw.}(e1, e2)
 
+\S4method{*}{numeric,nutrition}(e1, e2)
+
 \S4method{/}{raw.,numeric}(e1, e2)
+
+\S4method{/}{nutrition,numeric}(e1, e2)
 
 \S4method{*}{tool,numeric}(e1, e2)
 
@@ -52,6 +62,8 @@
 \S4method{+}{nutrition,list}(e1, e2)
 
 \S4method{-}{nutrition,list}(e1, e2)
+
+\S4method{+}{nutrition,nutrition}(e1, e2)
 }
 \arguments{
 \item{e1, e2}{see \strong{Usage}}

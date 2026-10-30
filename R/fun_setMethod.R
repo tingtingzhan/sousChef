@@ -31,6 +31,25 @@ setMethod(f = '*', signature = signature(e1 = 'raw.', e2 = 'numeric'), definitio
   return(e1)
 })
 
+
+#' @name S4methods
+#' @aliases *,nutrition,numeric-method
+#' @export
+setMethod(f = '*', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = \(e1, e2) {
+  if (length(e2) != 1L || anyNA(e2)) stop('illegal `e2`')
+  slt <- (getSlots('nutrition') == 'numeric') |>
+    which() |>
+    names() |>
+    setdiff(y = 'pieceGram') # important!!
+  for (i in slt) {
+    slot(e1, name = i) <- slot(e1, name = i) * e2
+  }
+  return(e1)
+})
+
+
+
+
 #' @rdname S4methods
 #' @aliases *,numeric,raw.-method
 #' @export
@@ -39,12 +58,27 @@ setMethod(f = '*', signature = signature(e1 = 'numeric', e2 = 'raw.'), definitio
 })
 
 #' @rdname S4methods
+#' @aliases *,numeric,nutrition-method
+#' @export
+setMethod(f = '*', signature = signature(e1 = 'numeric', e2 = 'nutrition'), definition = \(e1, e2) {
+  e2 * e1
+})
+
+
+#' @rdname S4methods
 #' @aliases /,raw.,numeric-method
 #' @export
 setMethod(f = '/', signature = signature(e1 = 'raw.', e2 = 'numeric'), definition = \(e1, e2) {
   e1 * (1/e2)
 })
 
+
+#' @rdname S4methods
+#' @aliases /,nutrition,numeric-method
+#' @export
+setMethod(f = '/', signature = signature(e1 = 'nutrition', e2 = 'numeric'), definition = \(e1, e2) {
+  e1 * (1/e2)
+})
 
 
 
@@ -331,5 +365,34 @@ setMethod(f = '-', signature = c(e1 = 'nutrition', e2 = 'list'), definition = \(
   e1 + e2_n
 })
 
+
+
+#' @rdname S4methods
+#' @aliases +,nutrition,nutrition-method
+#' @export
+setMethod(f = '+', signature = c(e1 = 'nutrition', e2 = 'nutrition'), definition = \(e1, e2) {
+  
+  pc1 <- length(e1@pieceGram)
+  pc2 <- length(e2@pieceGram)
+  
+  if (xor(pc1, pc2)) stop('two inputs must both having, or none having, `pieceGram`')
+  
+  if (pc1) {
+    e1 <- e1 / e1@servingGram * e1@pieceGram
+    e2 <- e2 / e2@servingGram * e2@pieceGram
+  }
+  
+  (getSlots('nutrition') == 'numeric') |>
+    which() |>
+    names() |>
+    vapply(FUN = \(i) {
+      sum(
+        slot(e1, name = i),
+        slot(e2, name = i)
+      )
+    }, FUN.VALUE = NA_real_) |>
+    zero.omit()
+
+})
 
 

@@ -11,7 +11,7 @@ shangshi_pudding <- \() recipe(
     WegmansOrganic_whole_milk = 3,
     Domino_granulated = 1/3
   ),
-  misc_pc = c(eggYolk = 5, eggWhite = 5)#, 
+  misc_pc = c(egg = 5)#, 
   #200g walnuts 核桃仁
   #120g raisins 葡萄干
 )

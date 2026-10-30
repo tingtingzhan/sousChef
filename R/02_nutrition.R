@@ -105,8 +105,11 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
   no_eval
   # force(no_eval) # messes up envir!!
   
-  x <- list(...) |>
-    get_key_(no_eval = no_eval) |>
+  x <- list(...)
+  if (!length(x$call)) x$call <- no_eval
+  
+  x <- x |>
+    get_key_() |>
     mergeUSD() |>
     add_brand_url(name = 'bachans', fmt = 'https://bachans.com/products/%s', text = 'Bachan\'s\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'baileys', fmt = 'https://www.baileys.com/en/products/baileys-%s', text = 'Baileys\U1f1ee\U1f1ea') |>
@@ -300,7 +303,10 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
   if (length(x$pieceGram) && !length(x$servingGram)) {
     x$servingGram <- x$pieceGram # useful for teabags
   }
-  if (!length(x$servingGram)) stop('must have `@servingGram`')
+  if (!length(x$servingGram)) {
+    print(x)
+    stop('must have `@servingGram`')
+  }
   
   # serving volumn
   vol <- c(length(x$servingCup), length(x$servingTbsp), length(x$servingTsp), length(x$serving_floz), length(x$serving_ml))
@@ -332,7 +338,7 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
     append_url(name = 'fdc', fmt = 'https://fdc.nal.usda.gov/fdc-app.html#/food-details/%s/nutrients', text = '\U1f4d6 FoodData Central') |>
     append_url(name = 'pubchem', fmt = 'https://pubchem.ncbi.nlm.nih.gov/compound/%s', text = '\U1f4d6 PubChem')
   
-  c(list(Class = 'nutrition', call = no_eval), x) |> 
+  c(list(Class = 'nutrition'), x) |> 
     do.call(what = 'new', args = _)
 
 }

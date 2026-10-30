@@ -11,7 +11,7 @@ Junior_cappuccino_cheesecake <- \() recipe(
     KingArthur_Bensdorp_cocoa = 1
   ),
   water = c(c100 = 15),
-  misc_pc = c(eggYolk = 2/3.25*4, eggWhite = 2/3.25*4), # 2 extra-large eggs  https://en.wikipedia.org/wiki/Chicken_egg_sizes
+  misc_pc = c(egg = 2/3.25*4), # 2 extra-large eggs  https://en.wikipedia.org/wiki/Chicken_egg_sizes
   misc_cup = c(
     Wegmans_heavyCream = 3/4,
     Domino_granulated = 1+2/3,
@@ -26,7 +26,7 @@ PreppyKitchen_cheesecake <- \() recipe(
     NielsenMassey_Madagascar = 2,
     Morton_salt = 1/4
   ),
-  misc_pc = c(eggYolk = 3, eggWhite = 3),
+  misc_pc = c(egg = 3),
   misc_cup = c(
     Domino_granulated = 1,
     Daisy_sourCream = 1/2
@@ -43,7 +43,7 @@ Junior_cookbook <- \() recipe(
   misc_Tbsp = c(
     NielsenMassey_Madagascar = 1
   ),
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   misc_cup = c(
     Domino_granulated = 1+2/3,
     Wegmans_corn_starch = 1/4,
@@ -67,7 +67,7 @@ PreppyKitchen_chocolate_cheesecake <- \() recipe(
   misc = c(
     Domino_granulated = 200
   ),
-  misc_pc = c(eggYolk = 4, eggWhite = 4),
+  misc_pc = c(egg = 4),
   misc_cup = c(
     Daisy_sourCream = 1/4
   ),
@@ -88,7 +88,7 @@ Natasha_pumpkin_cheesecake <- \() recipe(
     KingArthur_allPurposeFlr = 2,
     NielsenMassey_Madagascar = 1
   ), 
-  misc_pc = c(eggYolk = 4, eggWhite = 4),
+  misc_pc = c(egg = 4),
   misc_cup = c(
     Domino_lightBrown = 1.5,
     Daisy_sourCream = 1/4
@@ -108,7 +108,7 @@ Junior_pumpkin_cheesecake <- \() recipe(
   misc_Tbsp = c(
     NielsenMassey_Madagascar = 1
   ),
-  misc_pc = c(eggYolk = 2, eggWhite = 2),
+  misc_pc = c(egg = 2),
   misc_cup = c(
     Libbys_pumpkin = 1,
     Domino_granulated = 1+2/3,
@@ -126,7 +126,7 @@ Junior_pumpkin_cheesecake <- \() recipe(
 
 PreppyKitchen_pumpkin_cheesecake <- \() recipe(
   misc_brick = c(Philadelphia_creamCheese = 3),
-  misc_pc = c(eggYolk = 4, eggWhite = 4),
+  misc_pc = c(egg = 4),
   misc_cup = c(
     Libbys_pumpkin = 1,
     Domino_granulated = 3/4,
@@ -160,7 +160,7 @@ BrianLagerstrom_burntBasque <- \() recipe(
     Domino_granulated = 350,
     Morton_salt = 5
   ),
-  misc_pc = c(eggYolk = 5, eggWhite = 5))
+  misc_pc = c(egg = 5))
 
 
 

@@ -35,7 +35,7 @@ PreppyKitchen_chocolate_Bundt <- \() recipe(
     Ghirardelli_cocoa = 1.25,
     Domino_granulated = 2.5
   ),
-  misc_pc = c(eggYolk = 4, eggWhite = 4),
+  misc_pc = c(egg = 4),
   preppykitchen = c('_MqLza3bgbw' = 'chocolate-bundt-cake'))
 
 
@@ -53,7 +53,7 @@ PreppyKitchen_Bundt <- \() recipe(
     Philadelphia_creamCheese = 1,
     Kerrygold_butter = 1
   ),
-  misc_pc = c(eggYolk = 6, eggWhite = 6),
+  misc_pc = c(egg = 6),
   misc_Tbsp = c(
     NielsenMassey_vanilla = 1
   ),

@@ -37,6 +37,8 @@ spice <- \(no_eval = .findCall(which = -2), ...) {
   
   x$wiki <- NULL
   
+  if (!length(x$alias)) stop('must provide `@alias`')
+  
   if (!inherits(x$alias, what = 'cli_ansi_string')) {
     x$alias <- x$alias |>
       style_hyperlink(url = x$url)
@@ -57,7 +59,6 @@ spice <- \(no_eval = .findCall(which = -2), ...) {
 format.spice <- \(x, ...) {
   
   alias <- x@alias |>
-    #style_hyperlink(url = x@url) |>
     col_blue()
   
   name <- x@call |>
@@ -65,6 +66,7 @@ format.spice <- \(x, ...) {
     col_br_magenta()
   
   paste0(alias, name)
+  
 }
 
 

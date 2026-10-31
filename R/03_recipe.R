@@ -298,6 +298,7 @@ labels.recipe <- \(object, ...) {
     meatTenderizer = '\u5ae9\u8089\u6c34',
     mianjin = '\u9762\u7b4b',
     mochaMix = 'Mocha Mix',
+    oatmeal = 'Oatmeal\u71d5\u9ea6\u7ca5',
     pasteisdenata = '\u8461\u5f0f\u86cb\u631e',
     ricepi = '\u7c73\u76ae',
     snowSkin = '\u51b0\u76ae',

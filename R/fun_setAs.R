@@ -57,10 +57,8 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     as(Class = 'raw.') |>
     as(Class = 'nutrition')
   
-  waterLost <- x@tool |>
-    lapply(FUN = \(i) i@waterLost) |> 
-    unlist(use.names = FALSE) |>
-    sum()
+  waterLost <- x |>
+    waterLost.recipe()
   
   nutri@name <- x |>
     labels.recipe()

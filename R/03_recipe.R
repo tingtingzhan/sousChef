@@ -267,6 +267,17 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
 
 
 
+
+waterLost.recipe <- \(x) {
+  x@tool |> # \link[base]{list} of \linkS4class{tool}s
+    lapply(FUN = \(i) i@waterLost) |> 
+    unlist(use.names = FALSE) |>
+    sum()
+}
+
+
+
+
 #' @export
 labels.recipe <- \(object, ...) {
   
@@ -342,7 +353,7 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   cat('\n')
   
   x@date |> # len0-compatible
-    format.Date(format = '%A, %B %e, %Y\n\n') |> 
+    format.Date(format = '%A, %B %e, %Y\n') |> 
     gsub(pattern = '^ *|(?<= ) | *$', replacement = '', perl = TRUE) |>
     col_green() |> style_bold() |> cat()
   

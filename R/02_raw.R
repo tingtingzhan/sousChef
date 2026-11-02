@@ -63,6 +63,16 @@ print.raw. <- \(x, ...) {
 
   cat('\n')
   
+  if (is(x, 'recipe') && waterLost.recipe(x)) {
+    sum(x@homemade, x@misc, x@water) |>
+      sprintf(fmt = '%.0f grams') |>
+      make_ansi_style('deeppink4')() |>
+      bg_br_yellow() |>
+      style_bold() |>
+      sprintf(fmt = 'Raw Total %s\n\n') |>
+      cat()
+  }
+
   x |>
     as(Class = 'nutrition') |>
     print.nutrition(prt_label = FALSE)

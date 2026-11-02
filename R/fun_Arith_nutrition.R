@@ -158,9 +158,12 @@ setMethod(f = '+', signature = c(e1 = 'nutrition', e2 = 'nutrition'), definition
     zero.omit() |>
     as.list() |>
     c(list(
-      piece_fmt = if (pc1 && (e1@piece_fmt == e2@piece_fmt)) {
+      piece_fmt = if (pc1 && identical(e1@piece_fmt, e2@piece_fmt)) {
         e1@piece_fmt
       } else character(),
+      brand = if (identical(e1@brand, e2@brand)) {
+        e1@brand
+      } else character(), 
       date = if (!is.na(e1@date) || !is.na(e2@date)) {
         min(e1@date, e2@date, na.rm = TRUE)
       } else as.Date(NA),

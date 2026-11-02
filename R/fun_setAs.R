@@ -57,19 +57,19 @@ setAs(from = 'recipe', to = 'nutrition', def = \(from) {
     as(Class = 'raw.') |>
     as(Class = 'nutrition')
   
-  waterLost <- x |>
-    waterLost.recipe()
+  waterEvap <- x |>
+    waterEvap.recipe()
   
   nutri@name <- x |>
     labels.recipe()
   
   # `numeric() - 3` returns `numeric()` 
-  nutri@servingGram <- nutri@servingGram - waterLost - sum(x@sugarLost)
+  nutri@servingGram <- nutri@servingGram - waterEvap - sum(x@sugarLost)
   nutri@sugar <- max(0, nutri@sugar - sum(x@sugarLost))
   nutri@addedSugar <- if (length(nutri@addedSugar)) {
     max(0, nutri@addedSugar - sum(x@sugarLost))
   } else numeric()
-  nutri@water <- max(0, nutri@water - waterLost) # tzh has not put @water info for all \linkS4class{nutrition} objects
+  nutri@water <- max(0, nutri@water - waterEvap) # tzh has not put @water info for all \linkS4class{nutrition} objects
   
   return(nutri)
 

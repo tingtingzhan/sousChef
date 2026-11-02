@@ -63,7 +63,7 @@ print.raw. <- \(x, ...) {
 
   cat('\n')
   
-  if (is(x, 'recipe') && waterLost.recipe(x)) {
+  if (is(x, 'recipe') && waterEvap.recipe(x)) {
     sum(x@homemade, x@misc, x@water) |>
       sprintf(fmt = '%.0f grams') |>
       make_ansi_style('deeppink4')() |>
@@ -169,7 +169,7 @@ as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
       cornmeal = x['_cornmeal$'] |> sum(),
       glutRice = x['_glutRice$|_glutRiceFlr$'] |> sum(),
       eggYolk = x['^eggYolk$'] |> sum()
-      # 'eggWhite' = x['^eggWhite$'] |> sum()#, # waterLost after cooking!!
+      # 'eggWhite' = x['^eggWhite$'] |> sum()#, # waterEvap after cooking!!
     )
   }
   if (!length(z)) stop('shouldnt happen!!!')

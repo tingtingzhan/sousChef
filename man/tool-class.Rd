@@ -81,7 +81,7 @@ JoyoungDJ13U_soymilk(
   treatment = c(paste("Soak dry beans",
     col_br_blue("e.g., soybean, chickpea, mung bean, etc."), "overnight in fridge")),
   program = "老豆浆程序 Classic Soymilk program, 1300ml water line",
-  waterLost = 45,
+  waterEvap = 45,
   ...
 )
 
@@ -89,7 +89,7 @@ JoyoungDJ06M_soymilk(
   treatment = c(paste0("Soak dry beans ",
     col_br_blue("e.g., soybean, chickpea, mung bean, etc."), " overnight in fridge")),
   program = "豆浆程序 Soymilk program, 600ml water line",
-  waterLost = 5,
+  waterEvap = 5,
   ...
 )
 
@@ -133,7 +133,7 @@ SodaStream_bottle1L(...)
 \arguments{
 \item{object}{see \strong{Usage}}
 
-\item{treatment, program, waterLost, operation, cooling, ...}{see \strong{Slots}}
+\item{treatment, program, waterEvap, operation, cooling, ...}{see \strong{Slots}}
 }
 \description{
 ..
@@ -163,6 +163,6 @@ SodaStream_bottle1L(...)
 
 \item{\code{dont}}{\link[base]{character} scalar or \link[base]{vector}}
 
-\item{\code{waterLost}}{\link[base]{numeric} scalar, water evaporated in cooking (in grams)}
+\item{\code{waterEvap}}{\link[base]{numeric} scalar, water evaporated in cooking (in grams)}
 }}
 

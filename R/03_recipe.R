@@ -24,7 +24,7 @@
 #' 
 #' @slot portion \link[base]{numeric} scalar or \link[base]{vector}, weight of raw portion (in grams)
 #' 
-# difficult to quantify `fatLost` vs `waterLost`
+# difficult to quantify `fatLost` vs `waterEvap`
 #' @slot sugarLost \link[base]{numeric} scalar, weight of sugar (in grams) consumed by yeast in fermentation
 #' 
 #' @aliases recipe-class
@@ -268,12 +268,7 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
 
 
 
-waterLost.recipe <- \(x) {
-  x@tool |> # \link[base]{list} of \linkS4class{tool}s
-    lapply(FUN = \(i) i@waterLost) |> 
-    unlist(use.names = FALSE) |>
-    sum()
-}
+
 
 
 

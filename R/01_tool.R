@@ -7,7 +7,7 @@
 #' 
 #' @description ..
 #' 
-#' @param treatment,program,waterLost,operation,cooling,... see **Slots**
+#' @param treatment,program,waterEvap,operation,cooling,... see **Slots**
 #' 
 #' @slot name \link[cli]{ansi_string} or \link[base]{character} scalar, brand and name of kitchen tool
 #' 
@@ -31,7 +31,7 @@
 #' 
 #' @slot dont \link[base]{character} scalar or \link[base]{vector}
 #' 
-#' @slot waterLost \link[base]{numeric} scalar, water evaporated in cooking (in grams) 
+#' @slot waterEvap \link[base]{numeric} scalar, water evaporated in cooking (in grams) 
 #' 
 #' @export
 setClass(Class = 'tool', slots = c(
@@ -39,7 +39,7 @@ setClass(Class = 'tool', slots = c(
   capacity = 'numeric',
   fahrenheit = 'numeric',
   minute = 'numeric',
-  waterLost = 'numeric',
+  waterEvap = 'numeric',
   
   rep_names('character', nm = c(
     'name', 'alias',
@@ -169,7 +169,7 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     sprintf(fmt = ' \u21ac %s\n') |> 
     cat(sep = '')
   
-  x@waterLost |> 
+  x@waterEvap |> 
     sprintf(fmt = ' \u2668 water evaporated: %.0f grams\n') |> 
     cat(sep = '')
   
@@ -333,9 +333,9 @@ JoyoungDJ13U_soymilk <- \(
     paste('Soak dry beans', col_br_blue('e.g., soybean, chickpea, mung bean, etc.'), 'overnight in fridge')
   ),
   program = '\u8001\u8c46\u6d46\u7a0b\u5e8f Classic Soymilk program, 1300ml water line',
-  waterLost = 45, # whole machine, 4175 - 4131, 2024-09-15
+  waterEvap = 45, # whole machine, 4175 - 4131, 2024-09-15
   ...
-) JoyoungDJ13U(treatment = treatment, program = program, waterLost = waterLost, ...)
+) JoyoungDJ13U(treatment = treatment, program = program, waterEvap = waterEvap, ...)
 
 
 #' @rdname tool-class
@@ -345,9 +345,9 @@ JoyoungDJ06M_soymilk <- \(
     paste0('Soak dry beans ', col_br_blue('e.g., soybean, chickpea, mung bean, etc.'), ' overnight in fridge')
   ),
   program = '\u8c46\u6d46\u7a0b\u5e8f Soymilk program, 600ml water line',
-  waterLost = 5, # soymilk 2130 - 2126, confirmed 2024-10-08
+  waterEvap = 5, # soymilk 2130 - 2126, confirmed 2024-10-08
   ...
-) JoyoungDJ06M(treatment = treatment, program = program, waterLost = waterLost, ...)
+) JoyoungDJ06M(treatment = treatment, program = program, waterEvap = waterEvap, ...)
 
 
 #' @rdname tool-class

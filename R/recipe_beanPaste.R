@@ -24,7 +24,7 @@ xiaogaojie_adzukiBeanPaste2 <- \() recipe(
     Domino_darkBrown = 100
   ),
   water = 700, 
-  #waterLost = 350, # this is high oil!   !!!to reach water 37.5% as xiaogaojie_adzukiBeanPaste1()
+  #waterEvap = 350, # this is high oil!   !!!to reach water 37.5% as xiaogaojie_adzukiBeanPaste1()
   misc_tsp = c(
     Na2CO3 = 1/8
   ))

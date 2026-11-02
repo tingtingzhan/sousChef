@@ -18,7 +18,7 @@ setMethod(f = '*', signature = signature(e1 = 'tool', e2 = 'numeric'), definitio
     name = e1@name, name2 = e1@name2, 
     alias = e1@alias,
     # other slots: all suppressed
-    waterLost = e1@waterLost * e2 # !length(e1@waterLost) compatible!!
+    waterEvap = e1@waterEvap * e2 # !length(e1@waterEvap) compatible!!
   )
 })
 

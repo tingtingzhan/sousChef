@@ -24,7 +24,6 @@
 #' 
 #' @slot portion \link[base]{numeric} scalar or \link[base]{vector}, weight of raw portion (in grams)
 #' 
-# difficult to quantify `fatLost` vs `waterEvap`
 #' @slot sugarLost \link[base]{numeric} scalar, weight of sugar (in grams) consumed by yeast in fermentation
 #' 
 #' @aliases recipe-class

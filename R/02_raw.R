@@ -63,7 +63,7 @@ print.raw. <- \(x, ...) {
 
   cat('\n')
   
-  if (is(x, 'recipe') && waterEvap.recipe(x)) {
+  if (sum(waterEvap(x))) {
     sum(x@homemade, x@misc, x@water) |>
       sprintf(fmt = '%.0f grams') |>
       make_ansi_style('deeppink4')() |>

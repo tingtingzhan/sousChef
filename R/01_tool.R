@@ -73,6 +73,25 @@ tool <- \(...) {
 
 
 
+#' @export
+labels.tool <- \(object, ...) {
+  
+  z <- if (length(object@alias)) {
+    sprintf(
+      fmt = '\u2756 %s \u2756 %s \u2756',
+      object@alias, object@name
+    )
+  } else {
+    sprintf(
+      fmt = '\u2756 %s \u2756',
+      object@name
+    )
+  }
+  z |>
+    make_ansi_style('royalblue')()
+  
+}
+
 
 #' @rdname tool-class
 #' @param object see **Usage**
@@ -84,32 +103,20 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
   
   if (identical(x, new(Class = 'tool'))) return(invisible())
     
-  nm <- if (length(x@alias)) {
-    sprintf(
-      fmt = '\u2756 %s \u2756 %s \u2756\n',
-      x@alias, x@name
-    )
-  } else {
-    sprintf(
-      fmt = '\u2756 %s \u2756\n',
-      x@name
-    )
-  }
-  nm |>
-    make_ansi_style('royalblue')() |> 
-    cat()
+  x |>
+    labels.tool() |>
+    cat('\n')
   
-  nm2 <- if (is.character(x@name2)) {
-    x@name2
+  if (is.character(x@name2)) {
+    x@name2 |>
+      sprintf(fmt = '\u2756 %s \u2756') |> 
+      make_ansi_style('royalblue')() |> 
+      cat('\n')
   } else if (is(x@name2, 'tool')) {
-    x@name2@name
-  } else if (!length(x@name2)) {
-    character()
-  } else stop('unsupported `@name2`')
-  nm2 |> 
-    sprintf(fmt = '\u2756 %s \u2756\n') |> 
-    make_ansi_style('royalblue')() |> 
-    cat()
+    x@name2 |>
+      labels.tool() |> 
+      cat('\n')
+  } # else do nothing
   
   if (length(x@capacity)) {
     x@capacity |> 
@@ -463,6 +470,19 @@ Staub_deepSkillet <- \(...) tool(
   name = 'Deep Skillet, 8.5 inch', staub = '1029479', alias = '\u94f8\u94c1\u5e73\u5e95\u9505',
   ...
 )
+
+
+#' @rdname tool-class
+#' @export 
+Staub_ovalSeaBass <- \(...) tool(
+  #name = 'Oval Gratin with Sea Bass Embossed Lid',
+  #brand = 'Staub',
+  name = 'Staub Oval Gratin with Sea Bass Embossed Lid' |>
+    style_hyperlink(url = 'https://www.williams-sonoma.com/products/staub-cast-iron-gratin-embossed-lid/'),
+  alias = '\u9c88\u9c7c\u7eb9\u692d\u5706\u94f8\u94c1\u9505',
+  ...
+)
+
 
 
 #' @rdname tool-class

@@ -33,8 +33,10 @@
 \alias{Stanley14}
 \alias{Stanley40}
 \alias{StanleyJar36}
+\alias{Owala12}
 \alias{Staub_vertRoaster}
 \alias{Staub_deepSkillet}
+\alias{Staub_ovalSeaBass}
 \alias{SodaStream_Art}
 \alias{SodaStream_bottle1L}
 \title{Kitchen \linkS4class{tool}s}
@@ -122,9 +124,13 @@ Stanley40(...)
 
 StanleyJar36(...)
 
+Owala12(...)
+
 Staub_vertRoaster(...)
 
 Staub_deepSkillet(...)
+
+Staub_ovalSeaBass(...)
 
 SodaStream_Art(...)
 

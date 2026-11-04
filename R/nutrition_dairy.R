@@ -376,7 +376,7 @@ TraderJoesLight_sourCream <- \() nutrition(
 Wegmans_whole_milk <- \() nutrition(
   fdc = 171265L,
   wegmans = '94427', usd = 4.09/16, # 1 gal
-  name = 'Vitamin D, Whole Milk', alias = '\u5168\u8102\u725b\u5976',
+  name = 'Vitamin D, Whole Milk\U1f95b', alias = '\u5168\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
   calorie = 150,
   water = 250*.881, 
@@ -387,7 +387,7 @@ Wegmans_whole_milk <- \() nutrition(
 WegmansOrganic_2perc_milk <- \() nutrition(
   fdc = 2483143L,
   wegmans = '33312', usd = 6.99/16, # 1 gal
-  name = '2% Reduced Fat Milk', alias = '\u534a\u8102\u725b\u5976',
+  name = '2% Reduced Fat Milk\U1f95b', alias = '\u534a\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
   calorie = 120,
   water = 250*.891, 
@@ -401,7 +401,7 @@ WegmansOrganic_2perc_milk <- \() nutrition(
 WegmansOrganic_whole_milk <- \() nutrition(
   fdc = 171265L, 
   wegmans = '33261', usd = 6.99/16, # 1 gal
-  name = 'Vitamin D, Whole Milk', alias = '\u5168\u8102\u725b\u5976',
+  name = 'Vitamin D, Whole Milk\U1f95b', alias = '\u5168\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
   water = 250*.881, 
   calorie = 150,
@@ -410,7 +410,7 @@ WegmansOrganic_whole_milk <- \() nutrition(
 
 
 Horizon_wholeDHA_milk <- \() nutrition(
-  name = 'Whole Milk with DHA Omega-3, Organic', alias = '\u5168\u8102\u725b\u5976',
+  name = 'Whole Milk\U1f95b with DHA Omega-3, Organic', alias = '\u5168\u8102\u725b\u5976',
   horizon = 'organic-milk/organic-whole-dha-omega-3-milk',
   servingGram = 250, servingCup = 1,
   water = 250*.881, 
@@ -421,7 +421,7 @@ Horizon_wholeDHA_milk <- \() nutrition(
 
 Wawa_2perc_milk <- \() nutrition(
   wawa = '4ff1fb27-adc2-4cfc-95be-08f519fd8f32',
-  name = '2% Reduced Fat Milk',
+  name = '2% Reduced Fat Milk\U1f95b',
   servingGram = 240, servingCup = 1,
   usd = 2.75/8,
   calorie = 120,

@@ -133,6 +133,7 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
     add_brand_url(name = 'delmonte', fmt = 'https://www.delmonte.com/products/%s', text = 'Del Monte\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'dolesunshine', fmt = 'https://www.dolesunshine.com/us/en/products/%s', text = 'Dole\U1f33a') |> 
     add_brand_url(name = 'domino', fmt = 'https://www.dominosugar.com/products/%s', text = 'Domino\U1f1fa\U1f1f8') |> 
+    add_brand_url(name = 'dreambarista', fmt = 'https://dreamplantbased.com/products/barista-blend-products/%s', text = 'Dream\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'edwardandsons', fmt = 'https://store.edwardandsons.com/collections/%s', text = 'Edward & Sons\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'epicprovisions', fmt = 'https://epicprovisions.com/products/%s', text = 'Epic\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'fleischmannsyeast', fmt = 'https://www.fleischmannsyeast.com/product-page/#%s', text = 'Fleischmann\'s\U1f1fa\U1f1f8') |>

@@ -21,7 +21,7 @@ Stonewall_mapleSyrup <- \() nutrition(
 Stonewall_blueberry_syrup <- \() nutrition(
   stonewall = '170802',
   name = 'Wild Maine Blueberry\U1fad0 Syrup', alias = '\u84dd\u8393\u7cd6\u6d46',
-  usd = 8.95/250*60, # 2023-11-11
+  usd = 9.95/250*60, date = as.Date('2026-11-04'),
   servingGram = 80, servingCup = 1/4, #serving_ml = 60,
   addedSugar = 34)
 
@@ -29,7 +29,7 @@ Stonewall_raspberry_syrup <- \() nutrition(
   stonewall = '170804',
   name = 'Raspberry Syrup', alias = '\u8986\u76c6\u5b50\u7cd6\u6d46',
   # full bottle 580g
-  usd = 9.95/250*60, # 2023-11-11
+  usd = 10.95/250*60, date = as.Date('2026-11-04'),
   servingGram = 80, servingCup = 1/4, #serving_ml = 60,
   addedSugar = 35)
 
@@ -39,6 +39,8 @@ Stonewall_fig <- \() nutrition(
   stonewall = '100825',
   name = 'Classic Fig Jam, Organic',
   servingGram = 21, sodium = .01, sugar = 11, review = 'okay')
+
+
 
 Stonewall_figWalnut <- \() nutrition(
   stonewall = '161014',

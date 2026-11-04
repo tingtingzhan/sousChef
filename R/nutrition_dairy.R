@@ -181,7 +181,7 @@ Philadelphia_neufchatel <- \() nutrition(
   kraftheinzawayfromhome = '10021000616401',
   philadelphia = '00021000612475',
   name = 'Neufcha\u0302tel Cheese',
-  walmart = '36647454', usd = 4.98/16, # 2023-11-11
+  walmart = '36647454', usd = 4.98/16, date = as.Date('2026-11-04'),
   contain = c('xanthan gum', 'carob bean gum', 'guar gum'),
   serving_oz = 1, servingTbsp = 2,
   calorie = 70,

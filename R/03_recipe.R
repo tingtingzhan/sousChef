@@ -164,7 +164,9 @@ setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
         if (('_tea$' %in% x) && ('_coconutBar$' %in% x)) {
           '\u751f\u6930\u9e33\u9e2f'
         } else if ('_coconutBar$' %in% x) {
-          '\u751f\u6930'
+          if (('_coffee$' %in% x) && ('_drymilk$|_milk$' %in% x)) {
+            '\u751f\u6930\u62ff\u94c1'
+          } else '\u751f\u6930'
         } else if (('_cocoa$' %in% x) && ('_coffee$' %in% x) && (x['_cocoa$'] / x['_coffee$'] < 1)) {
           'Caff\u00e8' 
         } else 'Caff\u00e8 Mocha'

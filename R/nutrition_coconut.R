@@ -33,6 +33,7 @@ Edward_coconutFlr <- \() nutrition(
   calorie = 60,
   fat = 2, sodium = .005, carbohydrate = 9, sugar = 1, protein = 2)
 
+
 BobsRedMill_coconutFlr <- \() nutrition(
   bobsredmill = 'organic-coconut-flour',
   alias = '\u6930\u8089\u7c89', name = 'Coconut\U1f965 Flour',
@@ -40,6 +41,7 @@ BobsRedMill_coconutFlr <- \() nutrition(
   servingTbsp = 2, # packaging
   calorie = 60,
   fat = 1.5, sodium = .01, carbohydrate = 9, sugar = 3, protein = 3)
+
 
 AnthonysGoods_coconutFlr <- \() nutrition(
   url = 'anthonysgoods.com/products/anthonys-organic-coconut-flour-4lb',
@@ -64,11 +66,11 @@ WegmansOrganic_coconutFlr <- \() nutrition(
 
 
 
-ThaiKitchen_coconutmilkLite <- \() nutrition(
+ThaiKitchen_lite_coconutmilk <- \() nutrition(
   thaikitchen = 'thai-kitchen-lite-coconut-milk-25-36-fl-oz',
-  name = 'Coconut\U1f965 Milk, Lite', alias = '\u4f4e\u8102\u6930\u6d46',
-  walmart = '23591412', usd = 2.46/403*80, # 2023-11-07
-  # fullweight = 475, emptyweight = 59,
+  name = 'Coconutmilk\U1f965, Lite', alias = '\u4f4e\u8102\u6930\u6d46',
+  acme = '960524083', # no price?
+  # fullweight = 475, emptyweight = 59, # tin can
   servingGram = (475-59)/403*80, serving_ml = 80,
   calorie = 50,
   fat = 5, sodium = .02, carbohydrate = 1, sugar = 1)
@@ -76,12 +78,13 @@ ThaiKitchen_coconutmilkLite <- \() nutrition(
 
 ThaiKitchen_coconutmilk <- \() nutrition(
   thaikitchen = 'thai-kitchen-coconut-milk-25-36-fl-oz',
-  name = 'Coconut\U1f965 Milk', alias = '\u6930\u6d46',
-  costco = '100452749', usd = (12.99/6)/403*80, # price retrieved 2024-09-02
+  name = 'Coconutmilk\U1f965', alias = '\u6930\u6d46',
+  costco = '100452749', usd = (12.99/6)/403*80, date = as.Date('2026-11-04'),
   # fullweight = ??, emptyweight = ??, 
   servingGram = (475-59)/403*80, serving_ml = 80,
   calorie = 120,
   fat = 12, sodium = .03, carbohydrate = 2, sugar = 1)
+
 
 ThaiKitchen_coconutcream <- \() nutrition(
   thaikitchen = 'thai-kitchen-unsweetened-coconut-cream-6-pack',
@@ -137,7 +140,7 @@ SoDelicious_coconutmilk <- \() nutrition(
   ))
 
 Freenow_0sugar_coconutBar <- \() nutrition(
-  name = 'Barista Coconut\U1f965, No Sugar', alias = '0\u7cd6\u539a\u6930\u4e73',
+  name = 'Barista Coconutmilk\U1f965, No Sugar', alias = '0\u7cd6\u539a\u6930\u4e73',
   brand = style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'https://www.freenowmilk.com/sys-por/6.html'),
   yamibuy = '26796422', usd = 6.29/1e3*1e2,
   servingGram = 100, serving_ml = 100, # guess
@@ -148,16 +151,17 @@ Freenow_0sugar_coconutBar <- \() nutrition(
   review = 'too sweet (too much sugar alchohol)')
 
 Freenow_coconutBar <- \() nutrition(
-  name = 'Barista Coconut\U1f965', alias = '\u539a\u6930\u4e73',
+  name = 'Barista Coconutmilk\U1f965', alias = '\u539a\u6930\u4e73',
   brand = style_hyperlink(text = '\u83f2\u8bfaFreeNow\U1f1e8\U1f1f3', url = 'https://www.freenowmilk.com/sys-por/5.html'),
-  weee = '89394', usd = 5.49/980*240, 
+  weee = '89394', usd = 6.49/980*240, date = as.Date('2026-11-04'), 
+  # yamibuy = '1020074911',
   servingGram = 240, serving_ml = 240, # guess
   calorie = 110/30*240,
   water = 240 - 15 - 15 - 5,
   fat = 15, sodium = .23, carbohydrate = 15, fiber = 1, sugar = 13, addedSugar = 11, protein = 3)
 
-Luckin_coconutmilk <- \() nutrition(
-  name = 'Barista Coconut\U1f965', alias = '\u751f\u6930\u6d46',
+Luckin_coconutBar <- \() nutrition(
+  name = 'Barista Coconutmilk\U1f965', alias = '\u751f\u6930\u6d46',
   brand = style_hyperlink(text = '\u745e\u5e78\U1f1e8\U1f1f3', url = 'https://www.luckincoffee.com'),
   weee = '106361', usd = 4.49/3/600*100,
   servingGram = 100, serving_ml = 100, # guess
@@ -166,21 +170,25 @@ Luckin_coconutmilk <- \() nutrition(
   superior = 'Freenow_coconutBar',
   review = 'too sweet')
 
+
 PacificFoods_coconutBar <- \() nutrition(
-  name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
+  name = 'Barista Coconutmilk\U1f965', alias = '\u6930\u4e73',
   brand = style_hyperlink(text = 'Pacific Foods\U1f1fa\U1f1f8', url = 'https://www.pacificfoodservice.com/barista-series/coconut-original/'),
   webstaurant = '110PFBARCCNT', usd = 46.49/12/32*8, date = as.Date('2026-10-23'),
   servingGram = 240, servingCup = 1,
   calorie = 90,
   fat = 5, sodium = .125, carbohydrate = 10, sugar = 9, addedSugar = 8, protein = 1)
 
+
 CalifiaFarms_coconutBar <- \() nutrition(
-  name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
+  name = 'Barista Coconutmilk\U1f965', alias = '\u6930\u4e73',
   brand = style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/coconut-barista-blend/'),
-  wholefoods = 'b0c6hdj3d5', usd = 5.29/32*8,
+  wholefoods = 'b0c6hdj3d5', # usd = 5.29/32*8,
+  webstaurant = '110CFACCOBAR', usd = 42.99/12/32*8, date = as.Date('2026-11-04'),
   servingGram = 240, servingCup = 1,
   calorie = 80,
   fat = 5, sodium = .110, carbohydrate = 9, sugar = 7, addedSugar = 5, protein = 1)
+
 
 CalifiaFarms_coconutmilkwater <- \() nutrition(
   name = 'Coconut\U1f965 Milk & Water Blend', alias = '\u6930\u5976',
@@ -195,13 +203,16 @@ CalifiaFarms_coconutmilkwater <- \() nutrition(
     'almost no coconut flavor'
   ))
 
+
 Dream_coconutBar <- \() nutrition(
-  name = 'Barista Coconut\U1f965', alias = '\u6930\u4e73',
-  brand = style_hyperlink(text = 'Dream\U1f1fa\U1f1f8', url = 'https://dreamplantbased.com/products/barista-blend-products/coconutmilk-barista/'),
-  # While not available at Retail, these exceptional products are utilized at select coffee shops.
+  name = 'Barista Coconutmilk\U1f965', alias = '\u6930\u4e73',
+  dreambarista = 'coconutmilk-barista',
+  foodservicedirect = '257884', usd = 48.95/12/32*8, date = as.Date('2026-11-04'),
   servingGram = 240, servingCup = 1,
   calorie = 90,
-  fat = 5, sodium = .140, carbohydrate = 10, addedSugar = 9, protein = 1)
+  fat = 5, sodium = .14, carbohydrate = 10, addedSugar = 9, protein = 1)
+
+
 
 CoconutPalm_coconutmilk <- \() nutrition(
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
@@ -217,7 +228,7 @@ CoconutPalm_coconutmilk <- \() nutrition(
 CalifiaFarms_coconutmilk <- \() nutrition(
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
   brand = style_hyperlink(text = 'Califia Farms\U1f1fa\U1f1f8', url = 'https://www.califiafarms.com/products/organic-coconutmilk/'),
-  target = 'A-92783096', usd = 4.99/48*8,
+  target = 'A-92783096', usd = 6.39/48*8, date = as.Date('2026-11-04'),
   servingGram = 240, servingCup = 1,
   calorie = 90,
   fat = 8, sodium = .080, carbohydrate = 3, sugar = 2)

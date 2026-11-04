@@ -31,7 +31,7 @@ OrganicTraditions_cacao <- \() nutrition(
 KingArthur_blackCocoa <- \() nutrition(
   kingarthur = '211821', 
   name = 'Black Cocoa', alias = '\u9ed1\u53ef\u53ef\u7c89',
-  usd = 14.95/397*5, # 2023-11-12
+  usd = 16.95/397*5, date = as.Date('2026-11-04'),
   servingGram = 5, 
   # servingTbsp = 1, # on package
   servingTbsp = 5/7, # actual experiment: 1tbsp = 7g
@@ -46,7 +46,7 @@ KingArthur_blackCocoa <- \() nutrition(
 KingArthur_Bensdorp_cocoa <- \() nutrition(
   kingarthur = '211698',
   name = 'Bensdorp Cocoa',
-  usd = 14.95/397*6, # 2023-11-12
+  usd = 16.95/397*6, date = as.Date('2026-11-04'),
   servingGram = 6, 
   #servingTbsp = 1, # on package
   servingTbsp = 6/9, # actual experiment, 1tbsp = 9g
@@ -58,7 +58,7 @@ KingArthur_Bensdorp_cocoa <- \() nutrition(
 KingArthur_Burgundy_cocoa <- \() nutrition(
   kingarthur = '211822',
   name = 'Burgundy Cocoa',
-  usd = 14.95/397*5, # 2023-11-12
+  usd = 16.95/397*5, date = as.Date('2026-11-04'),
   servingGram = 5, 
   #servingTbsp = 1, # on package
   servingTbsp = 5/(24/8*3), # actual experiment 24g = 8tsp

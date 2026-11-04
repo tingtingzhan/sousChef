@@ -61,6 +61,7 @@ tool <- \(...) {
     add_tool_url(name = 'kitchenaid', fmt = 'https://www.kitchenaid.com/p.%s.html', brand = 'Kitchen Aid') |>
     add_tool_url(name = 'instantpot', fmt = 'https://instantpot.com/products/%s', brand = 'Instant Pot') |>
     add_tool_url(name = 'nutribullet', fmt = 'https://www.nutribullet.com/shop/%s', brand = 'Nutribullet') |>
+    add_tool_url(name = 'owala', fmt = 'https://owalalife.com/products/%s', brand = 'Owala') |>
     add_tool_url(name = 'sodastream', fmt = 'https://sodastream.com/products/%s', brand = 'SodaStream') |>
     add_tool_url(name = 'staub', fmt = 'https://www.zwilling.com/us/%s.html', brand = 'Staub') |>
     add_tool_url(name = 'stanley1913', fmt = 'https://www.stanley1913.com/products/%s', brand = 'Stanley')
@@ -440,6 +441,13 @@ StanleyJar36 <- \(...) tool(
   name = 'Food Jar 36oz', 
   ...)
 
+
+#' @rdname tool-class
+#' @export
+Owala12 <- \(...) tool(
+  owala = 'smoothsip-slider',
+  name = 'SmoothSip Slider 12oz',
+  ...)
 
 
 #' @rdname tool-class

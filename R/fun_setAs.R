@@ -24,7 +24,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   new(
     Class = 'nutrition',
     call = quote(`<UNDEFINED>`), # mark explicitly as an ill-formatted \linkS4class{nutrition}
-    name = labels.raw.(from),
+    name = labels.raw.(from) %||% character(),
     date = date,
     servingGram = sum(grams),
     usd = z['usd'] |> unname(),

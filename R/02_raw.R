@@ -40,8 +40,11 @@ setMethod(f = show, signature = 'raw.', definition = \(object) print.raw.(object
 #' @method labels raw.
 #' @export
 labels.raw. <- \(object, ...) {
-  attr(object, which = 'name', exact = TRUE) %||% 
-    character() # see setAs(from = 'nutrition', to = 'raw.')
+  object |>
+    attr(which = 'name', exact = TRUE)
+  # see 
+  # setAs(from = 'raw.', to = 'nutrition')
+  # setAs(from = 'nutrition', to = 'raw.')
 }
 
 
@@ -51,11 +54,13 @@ print.raw. <- \(x, ...) {
   
   cat('\n')
   
-  x |> 
-    labels() |> # [labels.raw.] or [labels.recipe]
-    #col_grey() |> 
-    style_bold() |> 
-    cat('\n\n')
+  if (is(x, 'recipe')) {
+    x |> 
+      labels() |> # [labels.recipe]
+      #col_grey() |> 
+      style_bold() |> 
+      cat('\n\n')
+  } # else do nothing
 
   prt_vol(x@homemade)
   prt_vol(x@misc)

@@ -128,9 +128,14 @@ as.double.raw. <- \(x, ...) {
   
 
 setValidity(Class = 'raw.', method = \(object) {
+  
   ingredient <- object |>
     as.double.raw.()
-  if (anyDuplicated.default(names(ingredient))) stop('do not allow!!!')
+  
+  if (anyDuplicated.default(names(ingredient))) {
+    stop('do not allow!!!')
+  }
+  
 })
   
   

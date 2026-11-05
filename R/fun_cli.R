@@ -1,6 +1,6 @@
 
 
-#' @title [.cli_run]
+#' @title Create `.run` \link[cli]{cli_text}
 #' 
 #' @param text \link[base]{character} scalar
 #' 
@@ -9,6 +9,11 @@
 #' @param fun \link[base]{character} scalar
 #' 
 #' @param ... additional parameters, currently of no use
+#' 
+#' @references
+#' \url{https://cli.r-lib.org/reference/links.html?q=.run#click-to-run-code}
+#' 
+#' \url{https://cli.r-lib.org/reference/links.html?q=.run#security-considerations}
 #' 
 #' @examples
 #' .cli_run(text = 'cocoa', pkg = 'sousChef', 

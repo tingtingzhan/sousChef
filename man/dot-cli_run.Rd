@@ -2,7 +2,7 @@
 % Please edit documentation in R/fun_cli.R
 \name{.cli_run}
 \alias{.cli_run}
-\title{\link{.cli_run}}
+\title{Create \code{.run} \link[cli]{cli_text}}
 \usage{
 .cli_run(text, pkg, fun, ...)
 }
@@ -16,7 +16,7 @@
 \item{...}{additional parameters, currently of no use}
 }
 \description{
-\link{.cli_run}
+Create \code{.run} \link[cli]{cli_text}
 }
 \examples{
 .cli_run(text = 'cocoa', pkg = 'sousChef', 
@@ -25,4 +25,9 @@
 foo = \() print('hello world')
 .cli_run(text = 'foo', pkg = 'sousChef', fun = 'foo') |> cat()
   
+}
+\references{
+\url{https://cli.r-lib.org/reference/links.html?q=.run#click-to-run-code}
+
+\url{https://cli.r-lib.org/reference/links.html?q=.run#security-considerations}
 }

@@ -549,31 +549,31 @@ prt_vol_H2O <- \(x) {
     sprintf(fmt = '%s Ice\U1f9ca Cubes')
   label[label == 'c0'] <- '0\u00b0C\u51b0\u6c34' |>
     col_orchid4() |>
-    sprintf(fmt = '%s Iced Water, 32\u00b0F')
+    sprintf(fmt = '%s Iced Water \U0001f32132\u00b0F')
   label[label == 'c22'] <- '22\u00b0C\u5e38\u6e29\u6c34' |>
     col_orchid4() |>
-    sprintf(fmt = '%s Water, 72\u00b0F')
+    sprintf(fmt = '%s Water \U0001f32172\u00b0F')
   label[label == 'c40'] <- '40\u00b0C\u6e29\u6c34' |>
     col_orchid4() |>
-    sprintf(fmt = '%s Warm Water, 104\u00b0F')
+    sprintf(fmt = '%s Warm Water \U0001f321104\u00b0F')
   label[label == 'c70'] <- '70\u00b0C\u70ed\u6c34' |>
     col_orchid4() |>
-    sprintf(fmt = '%s Hot Water, 160\u00b0F')
+    sprintf(fmt = '%s Hot Water \U0001f321160\u00b0F')
   label[label == 'c80'] <- '80\u00b0C\u70ed\u6c34' |>
     col_orchid4() |>
-    sprintf(fmt = '%s Hot Water, 175\u00b0F')
+    sprintf(fmt = '%s Hot Water \U0001f321175\u00b0F')
   label[label == 'c85'] <- '85\u00b0C\u70ed\u6c34' |>
     col_orchid4() |>
-    sprintf(fmt = '%s Hot Water, 185\u00b0F')
+    sprintf(fmt = '%s Hot Water \U0001f321185\u00b0F')
   label[label == 'c90'] <- '90\u00b0C\u70ed\u6c34' |>
     col_orchid4() |>
-    sprintf(fmt = '%s Hot Water, 195\u00b0F')
+    sprintf(fmt = '%s Hot Water \U0001f321195\u00b0F')
   label[label == 'c95'] <- '95\u00b0C\u70ed\u6c34' |>
     col_orchid4() |>
-    sprintf(fmt = '%s Hot Water, 203\u00b0F')
+    sprintf(fmt = '%s Hot Water \U0001f321203\u00b0F')
   label[label == 'c100'] <- '100\u00b0C\u5f00\u6c34' |>
     col_orchid4() |>
-    sprintf(fmt = '%s Boiling Water, 212\u00b0F')
+    sprintf(fmt = '%s Boiling Water \U0001f321212\u00b0F')
   
   sprintf(fmt = '%s %.0f grams %s\n', label, x, z) |>
     format_inline() |>

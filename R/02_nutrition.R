@@ -48,6 +48,7 @@
 #' @slot protein \link[base]{numeric} scalar, protein (in grams) per serving
 #' @slot alcohol \link[base]{numeric} scalar, alcohol (in grams) per serving
 # @slot portion see \linkS4class{recipe}
+#' @slot caffeine \link[base]{numeric} scalar, caffeine (in grams) per serving
 #' 
 #' @slot tool \link[base]{list} of \linkS4class{tool}s
 #' 
@@ -84,7 +85,8 @@ setClass(Class = 'nutrition', slots = c(
     'water',
     'fat', 'cholesterol', 'sodium',
     'carbohydrate', 'fiber', 'sugar', 'addedSugar',
-    'protein', 'alcohol'
+    'protein', 
+    'alcohol', 'caffeine'
   ))
 ), prototype = prototype(
   piece_fmt = '%.1fpcs',
@@ -196,6 +198,7 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
     add_brand_url(name = 'starbucks', fmt = 'https://athome.starbucks.com/products/%s', text = 'Starbucks\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'starbucks_hot', fmt = 'https://www.starbucks.com/menu/product/%s/hot/nutrition', text = 'Starbucks\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'starbucks_iced', fmt = 'https://www.starbucks.com/menu/product/%s/iced/nutrition', text = 'Starbucks\U1f1fa\U1f1f8') |> 
+    add_brand_url(name = 'starbucks_pepsico', fmt = 'https://www.pepsicoproductfacts.com/Home/product?gtin=%s', text = 'Starbucks\U1F98BPepsiCo') |>
     add_brand_url(name = 'stassentea', fmt = 'https://www.stassentea.com/shop-now/%s', text = 'Stassen\U1f1f1\U1f1f0') |> 
     add_brand_url(name = 'stonewall', fmt = 'https://www.stonewallkitchen.com/%s.html', text = 'Stonewall Kitchen\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'stonyfield', fmt = 'https://www.stonyfield.com/products/%s', text = 'Stonyfield\U1f1fa\U1f1f8') |> 
@@ -545,6 +548,13 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
     x@alcohol, 
     fmt_perc(x, 'alcohol')
   ) |> cat()
+
+  sprintf(
+    fmt = '%s %.1f grams %s\n', 
+    'Caffeine' |> make_ansi_style('slateblue3')() |> style_bold(),
+    x@caffeine, 
+    fmt_perc(x, 'caffeine')
+  ) |> cat()
   
   cat('\n')
   
@@ -637,7 +647,8 @@ as.double.nutrition <- \(
     cholesterol = x@cholesterol |> sum(),
     sodium = x@sodium |> sum(),
     protein = x@protein |> sum(),
-    alcohol = x@alcohol |> sum()
+    alcohol = x@alcohol |> sum(),
+    caffeine = x@caffeine |> sum()
   )
   if (!rel) return(z)
   return(z / x@servingGram)

@@ -81,6 +81,8 @@ The helper function \code{\link[=nutrition]{nutrition()}} converts raw user inpu
 
 \item{\code{alcohol}}{\link[base]{numeric} scalar, alcohol (in grams) per serving}
 
+\item{\code{caffeine}}{\link[base]{numeric} scalar, caffeine (in grams) per serving}
+
 \item{\code{tool}}{\link[base]{list} of \linkS4class{tool}s}
 }}
 

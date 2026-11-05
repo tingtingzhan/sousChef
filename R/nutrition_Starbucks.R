@@ -10,23 +10,23 @@ Starbucks_pumpkinSpiceLatte <- \() nutrition(
   starbucks_hot = '418',
   name = 'Pumpkin Spice Latte',
   servingGram = 470, serving_floz = 16,
-  #caffeine 150 mg*
+  caffeine = .150,
   calorie = 390, 
   fat = 14, cholesterol = .05, sodium = .23, carbohydrate = 52, sugar = 50, protein = 14)
 
 
 Starbucks_pumpkinSpiceFrappuccino <- \() nutrition(
   starbucks_iced = '427',
-  name = 'Pumpkin Spice Frappuccino',
+  name = 'Pumpkin\U1f383 Spice Frappuccino',
   servingGram = 470, serving_floz = 16,
-  #caffeine 100 mg*
+  caffeine = .1,
   calorie = 420, 
   fat = 15, cholesterol = .05, sodium = .28, carbohydrate = 66, sugar = 65, protein = 6)
 
 
 Starbucks_strawberryFrappuccino <- \() nutrition(
   starbucks_iced = '2122724',
-  name = 'Strawberry Frappuccino',
+  name = 'Strawberry\U1f353 Frappuccino',
   servingGram = 470, serving_floz = 16,
   calorie = 370,
   fat = 16, cholesterol = .05, sodium = .24,
@@ -37,18 +37,35 @@ Starbucks_caffeLatte <- \() nutrition(
   starbucks_hot = '407',
   name = 'Caff\u00e8 Latte',
   servingGram = 470, serving_floz = 16,
-  #caffeine 150 mg*
+  caffeine = .150,
   calorie = 190, 
   fat = 7, cholesterol = .030, sodium = .170, carbohydrate = 19, sugar = 18, protein = 13)
 
 
-Starbucks_coffeeFrappuccino_bottle <- \() nutrition(
+StarbucksPepsiCo_coffeeFrappe <- \() nutrition(
   name = 'Coffee Frappuccino',
-  brand = 'Starbucks (Bottled)',
-  walmart = '14532479', target = 'A-12959301',
+  starbucks_pepsico = '00012000001802',
+  walmart = '14532479', 
+  target = 'A-12959301', usd = 3.39, date = as.Date('2026-11-04'),
   serving_floz = 13.7, servingGram = 405, # use water density
   calorie = 300,
   fat = 4.5, cholesterol = .02, sodium = .14, carbohydrate = 54, sugar = 47, addedSugar = 34, protein = 9)
+
+
+StarbucksPepsiCo_pumpkinSpiceFrappe <- \() nutrition(
+  name = 'Pumpkin\U1f383 Spice Frappuccino',
+  starbucks_pepsico = '00012000160103',
+  serving_floz = 13.7, servingGram = 405, # use water density
+  calorie = 300,
+  fat = 4.5, cholesterol = .02, sodium = .15, carbohydrate = 54, fiber = 1, sugar = 46, addedSugar = 32, protein = 9)
+
+
+StarbucksPepsiCo_0sugar_pumpkinSpiceFrappe <- \() nutrition(
+  name = 'Pumpkin\U1f383 Spice Frappuccino, No Sugar',
+  starbucks_pepsico = '00098100101734',
+  serving_floz = 13.7, servingGram = 405, # use water density
+  calorie = 150,
+  fat = 5, cholesterol = .02, sodium = .15, carbohydrate = 15, sugar = 13, protein = 9)
 
 
 
@@ -58,7 +75,8 @@ Starbucks_matchaLatte <- \() nutrition(
   servingGram = 450, serving_floz = 16,
   usd = 4.95, # Spring 2024
   calorie = 240,
-  fat = 7, cholesterol = .025, sodium = .16, sugar = 32, protein = 12)
+  fat = 7, cholesterol = .025, sodium = .16, sugar = 32, protein = 12, 
+  caffeine = .065)
 
 
 Starbucks_matchaFrappuccino <- \() nutrition(
@@ -67,7 +85,8 @@ Starbucks_matchaFrappuccino <- \() nutrition(
   servingGram = 450, serving_floz = 16,
   usd = 5.45, # Spring 2024
   calorie = 420,
-  fat = 16, cholesterol = .050, sodium = .240, carbohydrate = 62, sugar = 61, protein = 6)
+  fat = 16, cholesterol = .050, sodium = .240, carbohydrate = 62, sugar = 61, protein = 6,
+  caffeine = .065)
 
 
 Starbucks_matchaLatteMix <- \() nutrition(
@@ -85,7 +104,7 @@ Starbucks_mocha <- \() nutrition(
   starbucks_hot = '408',
   name = 'Caff\u00e8 Mocha',
   servingGram = 470, serving_floz = 16,
-  #caffeine 175 mg*
+  caffeine = .175,
   calorie = 370, 
   fat = 15, cholesterol = .045, sodium = .150, carbohydrate = 43, sugar = 35, protein = 14)
 
@@ -97,14 +116,24 @@ Starbucks_mochaFrappuccino <- \() nutrition(
   name = 'Mocha Frappuccino',
   servingGram = 470, serving_floz = 16,
   calorie = 370,
-  # Caffeine 100 mg*
-  fat = 15, cholesterol = .045, sodium = .220, carbohydrate = 54, sugar = 51, protein = 5)
+  fat = 15, cholesterol = .045, sodium = .220, 
+  carbohydrate = 54, sugar = 51, protein = 5,
+  caffeine = .1)
 
 
+Starbucks_coffeeFrappuccino <- \() nutrition(
+  starbucks_iced = '483',
+  name = 'Coffee Frappuccino',
+  servingGram = 470, serving_floz = 16,
+  calorie = 230,
+  fat = 3, cholesterol = .01, sodium = .23,
+  carbohydrate = 46, sugar = 45, protein = 3,
+  caffeine = .095)
 
-Starbucks_mochaFrappuccino_bottle <- \() nutrition(
+
+StarbucksPepsiCo_mochaFrappe <- \() nutrition(
   name = 'Mocha Frappuccino',
-  brand = 'Starbucks (Bottled)',
+  starbucks_pepsico = '00012000004520',
   walmart = '14532482', costcoBiz = '100228968', target = 'A-81793567',
   serving_floz = 13.7, servingGram = 405, # use water density
   calorie = 260,

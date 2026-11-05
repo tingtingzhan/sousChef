@@ -9,7 +9,11 @@ Meyenberg_goat_drymilk <- \() nutrition(
   servingCup = 28/40*(1/4), # actual experiment: 40g = 1/4cup !!!
   calorie = 90,
   cholesterol = .010, sodium = .1, carbohydrate = 12, sugar = 12, protein = 10,
-  suggest = list(water_cup = c(c80 = 1)))
+  suggest = list(water_cup = c(c80 = 1)),
+  review = c(
+    'Effie hates it for the lack of aroma',
+    'Very hard to dissolve, must use room-temperature water'
+  ))
 
 
 
@@ -23,7 +27,11 @@ Meyenberg_goat_drywholemilk <- \() nutrition(
   servingCup = 28/30*(1/4), # actual experiment: 1/4cup = 30g
   calorie = 140,
   fat = 8, cholesterol = .035, sodium = .085, carbohydrate = 10, sugar = 10, protein = 7,
-  suggest = list(water_cup = c(c80 = 1)))
+  suggest = list(water_cup = c(c80 = 1)),
+  review = c(
+    'Effie loves the aroma!',
+    'Too gamey for human'
+  ))
 
 
 

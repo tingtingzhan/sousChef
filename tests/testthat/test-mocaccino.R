@@ -37,7 +37,7 @@ expect_no_error(
   object = nutritionlist(
     sousChef:::Starbucks_mocha(),
     sousChef:::Starbucks_mochaFrappuccino(),
-    sousChef:::Starbucks_mochaFrappuccino_bottle()
+    sousChef:::StarbucksPepsiCo_mochaFrappe()
   ) |> print()
 ) # compare drink
 

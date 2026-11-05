@@ -35,18 +35,18 @@
   if (in_GlobalEnv) {
     z <- sprintf(fmt = '{.run [%s](%s())}', text, fun) |>
       format_inline()
-    # why does not work??
+    # does not work.. as.Date('2026-11-05')
     return(z)
   }
   
   if (is_exported) {
     fmt <- '{.run [%s](%s::%s())}'
   } else if (is_unexported) {
-    #fmt <- '{.run [%s](utils::getFromNamespace(ns = \'%s\', x = \'%s\')())}' # Gemini
-    # but does not work..
+    #fmt <- '{.run [%s](utils::getFromNamespace(ns = \'%s\', x = \'%s\')())}'
+    # does not work.. as.Date('2026-11-05')
     # AND breaks my [.findCall()]
-    fmt <- '{.run [%s](%s:::%s())}' # for now
-    # Positron will display code for user to copy
+    fmt <- '{.run [%s](%s:::%s())}'
+    # does not work.. as.Date('2026-11-05')
   }
 
   sprintf(fmt = fmt, text, pkg, fun) |>

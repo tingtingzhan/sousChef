@@ -3,7 +3,6 @@
 
 
 Daat_sesamelava <- \() recipe(
-  flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   daatgo = 'FvS_W_qnlxc',
   misc = c(
     Greenmax_blackSesame = 160+20,
@@ -20,7 +19,7 @@ Daat_sesamelava <- \() recipe(
 
 
 xiaomin_sesamelava <- \() recipe(
-  author = '\u5c0f\u654f', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
+  author = '\u5c0f\u654f',
   youtube = 'uCbXXVp4h40',
   misc = c(
     Greenmax_blackSesame = 120,
@@ -32,7 +31,7 @@ xiaomin_sesamelava <- \() recipe(
 
 
 FancyNotes_sesamelava <- \() recipe(
-  author = '\u4e54\u4e54\u5988', flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
+  author = '\u4e54\u4e54\u5988',
   misc = c(
     Greenmax_blackSesame = 150,
     Kerrygold_butter = 80,
@@ -43,7 +42,6 @@ FancyNotes_sesamelava <- \() recipe(
 
 
 xiaogaojie_sesamelava <- \() recipe(
-  flavor = '\u9ed1\u829d\u9ebb\u6d41\u5fc3\u9985',
   xiaogaojie = 't-pop_dGsgc',
   misc = c(
     Greenmax_blackSesame = 80,

@@ -164,7 +164,7 @@ KingArthur_selfRising <- \() nutrition(
   sodium = .36, carbohydrate = 22, protein = 30*.08) # < 8.5% protein content
 
 
-KingArthur_selfRising_homemade <- \() recipe(
+KingArthur_selfRising_recipe <- \() recipe(
   flavor = 'Homemade Self-Rising Flour',
   author = 'brinna-sands',
   kingarthur = 'homemade-self-rising-flour-recipe',

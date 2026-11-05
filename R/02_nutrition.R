@@ -401,7 +401,6 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
       style_bold() |> 
       cat('\n\n')
   }
-  #cat('Nutrition Facts\n\n')
   
   sprintf(
     fmt = 'Serving Size %s %s %s\n', 

@@ -120,8 +120,6 @@ setAs(from = 'nutrition', to = 'raw.', def = \(from) {
   
   return(z)
   
-  # how to use such result in `@homemade` ??
-  
 })
 
 

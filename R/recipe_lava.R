@@ -35,9 +35,9 @@ FancyNotes_sesamelava <- \() recipe(
   misc = c(
     Greenmax_blackSesame = 150,
     Kerrygold_butter = 80,
-    Domino_granulated = 40
+    Domino_granulated = 40,
+    xiaogaojie_invertSugar = 50
   ), 
-  homemade = c(xiaogaojie_invertSugar = 50), 
   youtube = 'PC3YOs77lgE') 
 
 

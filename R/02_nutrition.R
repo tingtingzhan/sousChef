@@ -69,8 +69,6 @@ setClass(Class = 'nutrition', slots = c(
     'url'
   )),
   
-  # url = 'cli_ansi_string',
-  
   suggest = 'list',
   
   tool = 'list',

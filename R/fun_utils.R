@@ -612,8 +612,6 @@ add_flavor <- \(x) {
     x['_syrup$'] |> names() |> get_flavor_()
   } else if ('_tea$' %in% x) {
     x['_tea$'] |> names() |> get_flavor_()
-  } else if (length(x@homemade)) {
-    x@homemade |> names() |> get_flavor_()
   } else switch(
     EXPR = class(x), 
     matchaLatte_ =, matchaGoatLatte_ = {
@@ -764,7 +762,7 @@ prt_vol <- \(x) {
     
   id <- ingredient |>
     vapply(FUN = \(i) {
-      if (!is(i, 'nutrition')) return(FALSE) # could be @homemade \linkS4class{recipe}
+      if (!is(i, 'nutrition')) return(FALSE) # could be homemade \linkS4class{recipe}
       length(i@pieceGram) > 0L
     }, FUN.VALUE = NA)
   
@@ -775,7 +773,7 @@ prt_vol <- \(x) {
   label <- ingredient |>
     vapply(FUN = labels, FUN.VALUE = '') 
   # [labels.nutrition]; or 
-  # [labels.recipe] (when dealing with `@homemade`)
+  # [labels.recipe] (when dealing with homemade ingredients)
     
   sprintf(fmt = '%s %.0f grams %s\n', label, x, z) |>
     format_inline() |>

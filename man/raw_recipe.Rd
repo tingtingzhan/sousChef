@@ -32,8 +32,6 @@ The helper function \code{\link[=recipe]{recipe()}} converts raw user input into
 \section{Slots}{
 
 \describe{
-\item{\code{homemade}}{\link[base]{numeric} \link[base]{vector}}
-
 \item{\code{misc}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of miscellaneous ingredients}
 
 \item{\code{water}}{\link[base]{numeric} \link[base]{vector}, weight (in grams) of water}

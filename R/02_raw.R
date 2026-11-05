@@ -4,8 +4,6 @@
 #' @description 
 #' \linkS4class{raw.} allows negative ingredients.
 #' 
-#' @slot homemade \link[base]{numeric} \link[base]{vector}
-#' 
 #' @slot misc \link[base]{numeric} \link[base]{vector}, weight (in grams) of miscellaneous ingredients
 #' 
 #' @slot water \link[base]{numeric} \link[base]{vector}, weight (in grams) of water
@@ -17,7 +15,6 @@ setClass(
   Class = 'raw.', 
   # dQuote('raw') has a sealed class definition and cannot be redefined
   slots = c(
-    homemade = 'numeric',
     misc = 'numeric',
     water = 'numeric'
   )
@@ -62,14 +59,13 @@ print.raw. <- \(x, ...) {
       cat('\n\n')
   } # else do nothing
 
-  prt_vol(x@homemade)
   prt_vol(x@misc)
   prt_vol_H2O(x@water)
 
   cat('\n')
   
   if (sum(waterEvap(x))) {
-    sum(x@homemade, x@misc, x@water) |>
+    sum(x@misc, x@water) |>
       sprintf(fmt = '%.0f grams') |>
       make_ansi_style('deeppink4')() |>
       bg_br_yellow() |>
@@ -97,7 +93,6 @@ raw. <- \(...) {
 .cleanSlots_raw. <- \(x) {
   
   x <- x |>
-    # merge??(which = 'homemade') |> # has no vol
     mergePc() |> 
     mergeVol() |>
     mergeVol_H2O()

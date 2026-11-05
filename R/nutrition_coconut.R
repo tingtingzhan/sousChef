@@ -216,9 +216,7 @@ Dream_coconutBar <- \() nutrition(
 
 CoconutPalm_coconutmilk <- \() nutrition(
   name = 'Coconutmilk\U1f965', alias = '\u6930\u5976',
-  brand = style_hyperlink(text = '\u6930\u6811Coconut Palm\U1f1e8\U1f1f3', url = c(
-    'http://www.yeshu.com/guoyan/liucheng.html'
-  )),
+  brand = style_hyperlink(text = '\u6930\u6811Coconut Palm\U1f1e8\U1f1f3', url = 'http://www.yeshu.com/guoyan/liucheng.html'),
   # https://www.yamibuy.com/zh/p/coconut-oalm-brand-coconut-juice-1l/1020035561
   servingGram = 250, servingCup = 1, 
   calorie = 120,

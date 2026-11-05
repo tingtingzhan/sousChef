@@ -164,7 +164,7 @@
     x@key,
     cheesecake = if ('_pumpkin$' %in% x) {
       .5 
-    } else if (length(x@homemade) && grepl('pineapple', names(x@homemade))) {
+    } else if ('_pineapple$' %in% x) {
       .55
     } else .7,
     NA_real_)
@@ -208,7 +208,7 @@
     mousse = .15,
     cheesecake = if ('_pumpkin$' %in% x) {
       .14 
-    } else if (length(x@homemade) && grep('pineapple', names(x@homemade))) {
+    } else if ('_pineapple$' %in% x) {
       .145
     } else .18, # 3:1 mixed cheese
     lava = if ('_blackSesame$' %in% x) .17 else if ('_coconutFlr$' %in% x) .08 else NA_real_,
@@ -524,7 +524,7 @@
     x@key,
     cheesecake = if ('_pumpkin$' %in% x) {
       .6 
-    } else if (length(x@homemade) && grepl('pineapple', names(x@homemade))) {
+    } else if ('_pineapple$' %in% x) {
       .5
     } else .25,
     NA_real_)

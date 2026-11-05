@@ -31,20 +31,20 @@ spice <- \(no_eval = .findCall(which = -2), ...) {
   }
   
   if (!length(x$url)) {
-    x$url <- x$wiki |>
-      sprintf(fmt = 'https://en.wikipedia.org/wiki/%s')
+    if (length(x$wiki)) {
+      x$url <- x$wiki |>
+        sprintf(fmt = 'https://en.wikipedia.org/wiki/%s')
+      x$wiki <- NULL
+    }
   }
-  
-  x$wiki <- NULL
-  
+
   if (!length(x$alias)) stop('must provide `@alias`')
   
   if (!inherits(x$alias, what = 'cli_ansi_string')) {
     x$alias <- x$alias |>
       style_hyperlink(url = x$url)
+    x$url <- NULL
   }
-  
-  x$url <- NULL
   
   c(list(Class = 'spice'), x) |> 
     do.call(what = 'new', args = _)

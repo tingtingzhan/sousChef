@@ -11,7 +11,6 @@
 #' 
 #' @slot name \link[base]{character} scalar, product name
 #' 
-#' @slot key \link[base]{character} scalar
 #' @slot alias \link[base]{character} scalar with Unicode symbols, product alias
 #' 
 #' @slot call \link[base]{name}, the function name to create this \linkS4class{nutrition}
@@ -56,36 +55,45 @@
 setClass(Class = 'nutrition', slots = c(
   
   call = 'name',
-  key = 'character',
   
-  rep_names('character', nm = c(
-    'brand',
-    'alias',
-    'name',
-    'pros', 'cons',
-    'superior',
-    'contain',
-    'piece_fmt',
-    'url'
-  )),
+  brand = 'character',
+  alias = 'character',
+  name = 'character',
+  
+  pros = 'character', 
+  cons = 'character',
+  superior = 'character',
+  
+  contain = 'character',
+  
+  url = 'character',
   
   suggest = 'list',
-  
   tool = 'list',
-  
   date = 'Date',
 
-  rep_names('numeric', nm = c(
-    'servingGram', 'servingTsp',
-    'pieceGram',
-    'usd',
-    'calorie',
-    'water',
-    'fat', 'cholesterol', 'sodium',
-    'carbohydrate', 'fiber', 'sugar', 'addedSugar',
-    'protein', 
-    'alcohol', 'caffeine'
-  ))
+  servingGram = 'numeric', 
+  servingTsp = 'numeric',
+  
+  pieceGram = 'numeric',
+  piece_fmt = 'character',
+  
+  usd = 'numeric',
+  
+  calorie = 'numeric',
+  
+  water = 'numeric',
+  fat = 'numeric', 
+  cholesterol = 'numeric', 
+  sodium = 'numeric',
+  carbohydrate = 'numeric', 
+  fiber = 'numeric', 
+  sugar = 'numeric', 
+  addedSugar = 'numeric',
+  protein = 'numeric', 
+  alcohol = 'numeric', 
+  caffeine = 'numeric'
+  
 ), prototype = prototype(
   piece_fmt = '%.1fpcs',
   calorie = 0,
@@ -114,9 +122,6 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
   if (!length(x$call)) x$call <- no_eval
   
   x <- x |>
-    get_key_() |>
-    key2alias_nutrition() |>
-    call2alias() |>
     mergeUSD() |>
     add_brand_url(name = 'bachans', fmt = 'https://bachans.com/products/%s', text = 'Bachan\'s\U1f1fa\U1f1f8') |>
     add_brand_url(name = 'baileys', fmt = 'https://www.baileys.com/en/products/baileys-%s', text = 'Baileys\U1f1ee\U1f1ea') |>
@@ -213,7 +218,7 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
   
   # process user-input `@url` first
   # `$ippodousa` writes to `$url` !!
-  if (length(x$url) && !inherits(x$url, what = 'cli_ansi_string')) {
+  if (length(x$url) && !ansi_has_any(x$url, link = TRUE)) {
     x$url <- x$url |>
       gsub('^https://|^http://', replacement = '', x = _) |> 
       style_hyperlink(url = x$url, text = _)
@@ -369,6 +374,10 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   if (!length(x@sugar) && length(x@addedSugar)) {
     x@sugar <- x@addedSugar
   }
+  
+  x <- x |>
+    key2alias_nutrition() |>
+    call2alias()
   
   return(x)
   

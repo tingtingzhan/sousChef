@@ -38,8 +38,6 @@ The helper function \code{\link[=recipe]{recipe()}} converts raw user input into
 
 \item{\code{call}}{\link[base]{name}, the function name to create this \linkS4class{recipe}}
 
-\item{\code{key}}{\link[base]{character} scalar}
-
 \item{\code{flavor}}{\link[base]{character} scalar with Unicode symbols}
 
 \item{\code{author}}{\link[base]{character} scalar}

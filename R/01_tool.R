@@ -35,21 +35,25 @@
 #' 
 #' @export
 setClass(Class = 'tool', slots = c(
+  
+  name = 'character',
   name2 = 'ANY',
+  alias = 'character',
+  
   capacity = 'numeric',
+  
+  treatment = 'character',
+  
+  operation = 'character',
+  program = 'character',
   fahrenheit = 'numeric',
   minute = 'numeric',
   waterEvap = 'numeric',
   
-  rep_names('character', nm = c(
-    'name', 'alias',
-    'treatment',
-    'program',
-    'operation',
-    'cooling',
-    'dont'#,
-    # 'note'
-  ))
+  cooling = 'character',
+  
+  dont = 'character'
+  
 ))
 
 

@@ -5,8 +5,6 @@
 #' 
 #' @slot call \link[base]{name}, the function name to create this \linkS4class{recipe}
 #' 
-#' @slot key \link[base]{character} scalar
-#' 
 #' @slot flavor \link[base]{character} scalar with Unicode symbols
 #' 
 #' @slot author \link[base]{character} scalar
@@ -27,7 +25,6 @@
 setClass(Class = 'recipe', contains = 'raw.', slots = c(
   
   call = 'name',
-  key = 'character',
   flavor = 'character',
   
   author = 'character',
@@ -67,7 +64,6 @@ recipe <- \(no_eval = .findCall(which = -2), ...) {
   
   x <- x |>
     .cleanSlots_raw.() |>
-    get_key_() |>
     add_author_url1() |>
     add_youtube(name = 'bakethat', text = 'Bake That!') |>
     add_youtube(name = 'cookingtree', text = 'Cooking Tree \ucfe0\ud0b9\ud2b8\ub9ac') |>
@@ -138,7 +134,7 @@ labels.recipe <- \(object, ...) {
   # `<flavor> <key>` might have {.run } link
   
   key_txt <- switch(
-    EXPR = x@key,
+    EXPR = key(x),
     bao = '\u5305\u5b50\u76ae',
     beefball = '\u725b\u8089\u4e38',
     Bundt = 'Bundt\u86cb\u7cd5',
@@ -167,7 +163,7 @@ labels.recipe <- \(object, ...) {
     sodastream = 'SodaStream\u6c7d\u6c34',
     udon = '\u9942\u98e9\u3046\u3069\u3093',
     youtiao = '\u6cb9\u6761',
-    #stop('undefined @key ', sQuote(x@key))
+    #stop('undefined @key ', sQuote(key(x)))
     character()
   )
   

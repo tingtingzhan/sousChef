@@ -40,7 +40,7 @@ spice <- \(no_eval = .findCall(which = -2), ...) {
 
   if (!length(x$alias)) stop('must provide `@alias`')
   
-  if (!inherits(x$alias, what = 'cli_ansi_string')) {
+  if (!ansi_has_any(x$alias, link = TRUE)) {
     x$alias <- x$alias |>
       style_hyperlink(url = x$url)
     x$url <- NULL

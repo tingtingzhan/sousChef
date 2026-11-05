@@ -30,7 +30,8 @@
   } else if (is_unexported) {
     fmt <- '{.run [%s](utils::getFromNamespace(ns = \'%s\', x = \'%s\')())}' # Gemini
     # but does not work..
-    #fmt <- '{.run [%s](%s::%s())}' # for now
+    # AND breaks my [.findCall()]
+    fmt <- '{.run [%s](%s:::%s())}' # for now
   }
 
   sprintf(fmt = fmt, text, pkg, fun) |>

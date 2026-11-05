@@ -3,7 +3,7 @@
 setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   
   grams <- from |> 
-    as.double.raw.(detail = TRUE, rel = FALSE)
+    as.double.raw.()
   
   z <- grams |>
     names() |> 

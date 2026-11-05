@@ -101,7 +101,7 @@ raw. <- \(...) {
     if (length(x[[i]])) {
       x[[i]] <- x[[i]] |>
         zero.omit() |>
-        sort.default(decreasing = TRUE) # beautiful!
+        sort.default(decreasing = TRUE)
     }
   }
   
@@ -111,71 +111,28 @@ raw. <- \(...) {
 
 
 
-#' @importFrom stats na.omit
+
 #' @method as.double raw.
 #' @export
-as.double.raw. <- \(x, detail = TRUE, rel = FALSE, ...) {
+as.double.raw. <- \(x, ...) {
   
   x <- x |>
     mergeH2O()
   
   # detailed ingredients
-  ingredient <- attributes(x)[slotNames(x = 'raw.')] |>
+  attributes(x)[slotNames(x = 'raw.')] |>
     unname() |>
-    unlist(use.names = TRUE) |> # no need to remove len-0 element
-    zero.omit()
+    unlist(use.names = TRUE) # no need to remove len-0 element
   
-  if (anyDuplicated.default(names(ingredient))) stop('do not allow!!!')
-  
-  z <- if (detail) {
-    ingredient
-  } else {
-    c(
-      addedWater = x@water |> sum(),
-      # addedSugar = x['_sugar$'] |> sum(), # wrong!! `'_sugar$'` is **not** always 100% sugar
-      yeast = x['_yeast$'] |> sum(),
-      salt = x['_salt$'] |> sum(), # e.g., salt-2-flour, salt-2-yeast
-      NaHCO3 = x['_NaHCO3$'] |> sum(),
-      Na2CO3 = x['^NaHCO3$'] |> sum(), # exact match!!
-      bakingPowder = x['_bakingPowder$'] |> sum(),
-      gelatin = x['_gelatin$'] |> sum(),
-      matcha = x['_matcha$'] |> sum(),
-      cocoa = x['_cocoa$'] |> sum(),
-      coffee = x['_coffee$'] |> sum(),
-      ssmOil = x['_sesame_oil$'] |> sum(),
-      rattanPpOil = x['_rattanPepper_oil$'] |> sum(),
-      drymilk = x['_drymilk$'] |> sum(),
-      creamChz = x['_creamCheese$'] |> sum(),
-      beet = x['_beet_pulv$'] |> sum(),
-      acai = x['_acai_pulv$'] |> sum(),
-      ginger = x['_ginger$'] |> sum(),
-      cumin = x['_cumin$'] |> sum(),
-      cilantro = x['_cilantro$'] |> sum(),
-      garlic = x['_garlic$'] |> sum(),
-      onion = x['_onion$'] |> sum(),
-      whitePp = x['_whitePepper$'] |> sum(),
-      blackPp = x['_blackPepper$'] |> sum(),
-      turmeric = x['_turmeric$'] |> sum(),
-      cinnamon = x['_cinnamon$'] |> sum(),
-      paprika = x['_paprika$'] |> sum(),
-      coriander = x['_coriander$'] |> sum(),
-      pumpkinSpice = x['_pumpkinSpice$'] |> sum(),
-      sesame = x['_blackSesame$'] |> sum(),
-      coconutFlr = x['_coconutFlr$'] |> sum(),
-      coconutBar = x['_coconutBar$'] |> sum(),
-      flour = x['_allPurposeFlr$'] |> sum(),
-      breadFlr = x['_breadFlr$'] |> sum(),
-      pastryFlr = x['_pastryFlr$'] |> sum(),
-      cornmeal = x['_cornmeal$'] |> sum(),
-      glutRice = x['_glutRice$|_glutRiceFlr$'] |> sum(),
-      eggYolk = x['^eggYolk$'] |> sum()
-      # 'eggWhite' = x['^eggWhite$'] |> sum()#, # waterEvap after cooking!!
-    )
-  }
-  if (!length(z)) stop('shouldnt happen!!!')
-  if (rel) return(z / sum(ingredient))
-  return(z)
 }
+  
 
+setValidity(Class = 'raw.', method = \(object) {
+  ingredient <- object |>
+    as.double.raw.()
+  if (anyDuplicated.default(names(ingredient))) stop('do not allow!!!')
+})
+  
+  
   
 

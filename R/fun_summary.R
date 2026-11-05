@@ -15,23 +15,67 @@ summary.raw. <- \(object, ...) {
   
   x <- object; object <- NULL
   
-  nutri <- x |>
+  x_nutri <- x |>
     as(Class = 'nutrition')
   # setAs(from = 'raw.', to = 'nutrition')
   # setAs(from = 'recipe', to = 'nutrition')
   
+  x_rawtotal <- x |>
+    as.double.raw.() |> # `x` could be \linkS4class{recipe}
+    sum()
+  
+  x_overview <- c(
+    addedWater = x@water |> sum(),
+    # addedSugar = x['_sugar$'] |> sum(), # wrong!! `'_sugar$'` is **not** always 100% sugar
+    yeast = x['_yeast$'] |> sum(),
+    salt = x['_salt$'] |> sum(), # e.g., salt-2-flour, salt-2-yeast
+    NaHCO3 = x['_NaHCO3$'] |> sum(),
+    Na2CO3 = x['^NaHCO3$'] |> sum(), # exact match!!
+    bakingPowder = x['_bakingPowder$'] |> sum(),
+    gelatin = x['_gelatin$'] |> sum(),
+    matcha = x['_matcha$'] |> sum(),
+    cocoa = x['_cocoa$'] |> sum(),
+    coffee = x['_coffee$'] |> sum(),
+    ssmOil = x['_sesame_oil$'] |> sum(),
+    rattanPpOil = x['_rattanPepper_oil$'] |> sum(),
+    drymilk = x['_drymilk$'] |> sum(),
+    creamChz = x['_creamCheese$'] |> sum(),
+    beet = x['_beet_pulv$'] |> sum(),
+    acai = x['_acai_pulv$'] |> sum(),
+    ginger = x['_ginger$'] |> sum(),
+    cumin = x['_cumin$'] |> sum(),
+    cilantro = x['_cilantro$'] |> sum(),
+    garlic = x['_garlic$'] |> sum(),
+    onion = x['_onion$'] |> sum(),
+    whitePp = x['_whitePepper$'] |> sum(),
+    blackPp = x['_blackPepper$'] |> sum(),
+    turmeric = x['_turmeric$'] |> sum(),
+    cinnamon = x['_cinnamon$'] |> sum(),
+    paprika = x['_paprika$'] |> sum(),
+    coriander = x['_coriander$'] |> sum(),
+    pumpkinSpice = x['_pumpkinSpice$'] |> sum(),
+    sesame = x['_blackSesame$'] |> sum(),
+    coconutFlr = x['_coconutFlr$'] |> sum(),
+    coconutBar = x['_coconutBar$'] |> sum(),
+    flour = x['_allPurposeFlr$'] |> sum(),
+    breadFlr = x['_breadFlr$'] |> sum(),
+    pastryFlr = x['_pastryFlr$'] |> sum(),
+    cornmeal = x['_cornmeal$'] |> sum(),
+    glutRice = x['_glutRice$|_glutRiceFlr$'] |> sum(),
+    eggYolk = x['^eggYolk$'] |> sum()
+    # 'eggWhite' = x['^eggWhite$'] |> sum()#, # waterEvap after cooking!!
+  )
+  
   z <- c(
-    nutri |>
+    x_nutri |>
       as.double.nutrition(
         incl_calorie = FALSE, 
         incl_usd = FALSE, 
-        incl_water = FALSE, # **not** nutri@water
+        incl_water = FALSE, # **not** x_nutri@water
         incl_carbohydrate = FALSE, 
         rel = FALSE
       ),
-    x |>
-      as(Class = 'raw.') |>
-      as.double.raw.(detail = FALSE, rel = FALSE)
+    x_overview
   ) |>
     zero.omit()
   
@@ -46,14 +90,12 @@ summary.raw. <- \(object, ...) {
 
   ret <- list()
   
-  ret$perRaw <- x |>
-    as(Class = 'raw.') |>
-    as.double.raw.(detail = FALSE, rel = TRUE) |>
+  ret$perRaw <- (x_overview / x_rawtotal) |>
     equiv(caption = 'Raw Ingredients', current = _)
   
   ret$perServing <- equiv(
     caption = 'Serving', 
-    current = z / nutri@servingGram, target = if (is(x, 'recipe')) c(
+    current = z / x_nutri@servingGram, target = if (is(x, 'recipe')) c(
       water = devrecipe$water(x), # um, this is wrong; raw-water / cooked-total
       #carbohydrate = devrecipe$carbohydrate(x),
       fat = devrecipe$fat(x), 

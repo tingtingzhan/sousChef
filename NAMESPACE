@@ -83,7 +83,4 @@ importFrom(equiv4,
   equivs,
   sum_by_name
 )
-importFrom(stats,
-  na.omit,
-  setNames
-)
+importFrom(stats,setNames)

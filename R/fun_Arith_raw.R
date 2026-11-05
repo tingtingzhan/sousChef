@@ -93,7 +93,7 @@ setMethod(f = '-', signature = c(e1 = 'raw.', e2 = 'character'), definition = \(
   }
   
   nm1 <- e1 |>
-    as.double.raw.(detail = TRUE, rel = FALSE) |>
+    as.double.raw.() |>
     names()
   id <- (nm1 == e2)
   if (!sum(id)) {

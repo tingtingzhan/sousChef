@@ -155,14 +155,14 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     trimws()
   
   if (length(minute) && length(temperature)) {
-    sprintf(fmt = '   %s %s', temperature, minute) |> 
-      cat(sep = '\n')
+    sprintf(fmt = '   %s %s\n', temperature, minute) |> 
+      cat(sep = '')
   } else if (length(minute)) {
-    sprintf(fmt = '   %s', minute) |> 
-      cat(sep = '\n')
+    sprintf(fmt = '   %s\n', minute) |> 
+      cat(sep = '')
   } else if (length(temperature)) {
-    sprintf(fmt = '   %s', temperature) |> 
-      cat(sep = '\n')
+    sprintf(fmt = '   %s\n', temperature) |> 
+      cat(sep = '')
   } # else do nothing
   
   x@operation |>

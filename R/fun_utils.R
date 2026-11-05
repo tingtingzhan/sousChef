@@ -7,7 +7,13 @@
 # water in flour is *not* included!!!
 
 
-
+if (FALSE) {
+  character(0) |> 
+    cat(sep = '\n') # an empty line
+  character(0) |> 
+    sprintf(fmt = '%s\n') |>
+    cat(sep = '') # no empty line. preferred!!
+}
 
 
 
@@ -457,6 +463,7 @@ key2alias_nutrition <- \(x) {
       mapleSyrup = '\u67ab\u7cd6\u6d46',
       matcha = '\u62b9\u8336\u7c89',
       neufchatel = 'Neufcha\u0302tel\u4e73\u916a',
+      pineapple = '\u83e0\u841d',
       saltedButter = '\u542b\u76d0\u9ec4\u6cb9',
       sourCream = '\u9178\u5976\u6cb9',
       soybean = '\u9ec4\u8c46',

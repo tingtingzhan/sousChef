@@ -224,7 +224,7 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   if (length(x@portion)) {
     r <- y@servingGram / x@portion
     sprintf(
-      fmt = '\u058d %.1f \u00d7 %.0f grams %s %s %s', # '\u058e'
+      fmt = '\u058d %.1f \u00d7 %.0f grams %s %s %s\n', # '\u058e'
       r,
       x@portion, 
       (y@usd / r) |> 
@@ -239,33 +239,27 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
         names() |> 
         col_magenta() |> style_bold()
     ) |> 
-      cat(sep = '\n')
+      cat(sep = '')
     cat('\n')
   } # else NULL
   
   x@tool |>
     lapply(FUN = show)
   
-  if (length(x@review)) {
-    x@review |> 
-      sprintf(fmt = '\U1f4dd %s') |> 
-      cat(sep = '\n')
-    cat('\n')
-  }
+  x@review |> 
+    sprintf(fmt = '\U1f4dd %s\n') |> 
+    cat(sep = '')
+  if (length(x@review)) cat('\n')
   
-  if (length(x@pros)) {
-    x@pros |> 
-      sprintf(fmt = '\U1f389 %s') |> 
-      cat(sep = '\n')
-    cat('\n')
-  }
+  x@pros |> 
+    sprintf(fmt = '\U1f389 %s\n') |> 
+    cat(sep = '')
+  if (length(x@pros)) cat('\n')
   
-  if (length(x@cons)) {
-    x@cons |> 
-      sprintf(fmt = '\U1f940 %s') |> 
-      cat(sep = '\n')
-    cat('\n')
-  }
+  x@cons |> 
+    sprintf(fmt = '\U1f940 %s\n') |> 
+    cat(sep = '')
+  if (length(x@cons)) cat('\n')
   
   if (length(x@url) || length(x@youtube)) {
     

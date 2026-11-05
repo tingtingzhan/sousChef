@@ -281,6 +281,7 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
   x <- x |>
     add_store_url(name = 'acme', fmt = 'https://www.acmemarkets.com/shop/product-details.%s.html', store_brand = 'Albertsons\U1f1fa\U1f1f8', store_name = 'Acme Market') |>
     add_store_url(name = 'amazon', fmt = 'https://www.amazon.com/gp/product/%s', store_brand = 'Amazon Basic', store_name = 'Amazon') |>
+    add_store_url(name = 'aldi', fmt = 'https://www.aldi.us/store/aldi/products/%s', store_brand = 'Aldi', store_name = 'Aldi') |>
     add_store_url(name = 'bjs', fmt = 'https://www.bjs.com/product/%s', store_brand = 'BJ\'s', store_name = 'BJ\'s') |> # Wellsley Farms and Berkley Jensen
     add_store_url(name = 'costco', fmt = 'https://www.costco.com/p/-/%s', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco') |>
     add_store_url(name = 'costcoBiz', fmt = 'https://www.costcobusinessdelivery.com/p/-/%s', store_brand = 'Kirkland\U1f1fa\U1f1f8', store_name = 'Costco Business Delivery') |>
@@ -458,14 +459,18 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
   
   sprintf(
     fmt = '%s %.1f grams %s\n', 
-    'Water' |> make_ansi_style('slateblue3')() |> style_bold(),
+    'Water' |> 
+      make_ansi_style('slateblue3')() |> 
+      style_bold(),
     x@water, 
     fmt_perc(x, 'water')
   ) |> cat()
   
   sprintf(
     fmt = '%s %.1f grams %s\n', 
-    'Fat' |> make_ansi_style('slateblue3')() |> style_bold(),
+    'Fat' |> 
+      make_ansi_style('slateblue3')() |> 
+      style_bold(),
     x@fat, 
     fmt_perc(x, 'fat')
   ) |> cat()
@@ -474,14 +479,18 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
     if (x@cholesterol > 1) {
       sprintf(
         fmt = '%s %.1f grams %s\n', 
-        'Cholesterol' |> make_ansi_style('slateblue3')() |> style_bold(),
+        'Cholesterol' |> 
+          make_ansi_style('slateblue3')() |> 
+          style_bold(),
         x@cholesterol, 
         fmt_perc(x, 'cholesterol')
       ) |> cat()
     } else {
       sprintf(
         fmt = '%s %.0f milligrams %s\n', 
-        'Cholesterol' |> make_ansi_style('slateblue3')() |> style_bold(),
+        'Cholesterol' |> 
+          make_ansi_style('slateblue3')() |> 
+          style_bold(),
         1e3 * x@cholesterol, 
         fmt_perc(x, 'cholesterol')
       ) |> cat()
@@ -492,14 +501,18 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
     if (x@sodium > 1) {
       sprintf(
         fmt = '%s %.1f grams %s\n',
-        'Sodium' |> make_ansi_style('slateblue3')() |> style_bold(),
+        'Sodium' |> 
+          make_ansi_style('slateblue3')() |> 
+          style_bold(),
         x@sodium, 
         fmt_perc(x, 'sodium')
       ) |> cat()
     } else {
       sprintf(
         fmt = '%s %.0f milligrams %s\n', 
-        'Sodium' |> make_ansi_style('slateblue3')() |> style_bold(),
+        'Sodium' |> 
+          make_ansi_style('slateblue3')() |> 
+          style_bold(),
         1e3 * x@sodium, 
         fmt_perc(x, 'sodium')
       ) |> cat()
@@ -508,49 +521,63 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
   
   sprintf(
     fmt = '%s %.1f grams %s\n', 
-    'Total Carbohydrate' |> make_ansi_style('slateblue3')() |> style_bold(),
+    'Total Carbohydrate' |> 
+      make_ansi_style('slateblue3')() |> 
+      style_bold(),
     x@carbohydrate, 
     fmt_perc(x, 'carbohydrate')
   ) |> cat()
   
   sprintf(
     fmt = ' \u21ac %s %.1f grams %s\n', 
-    'Dietary Fiber' |> make_ansi_style('slateblue3')() |> style_bold(),
+    'Dietary Fiber' |> 
+      make_ansi_style('slateblue3')() |> 
+      style_bold(),
     x@fiber, 
     fmt_perc(x, 'fiber')
   ) |> cat()
   
   sprintf(
     fmt = ' \u21ac %s %.1f grams %s\n', 
-    'Sugar' |> make_ansi_style('slateblue3')() |> style_bold(),
+    'Sugar' |> 
+      make_ansi_style('slateblue3')() |> 
+      style_bold(),
     x@sugar, 
     fmt_perc(x, 'sugar')
   ) |> cat()
   
   sprintf(
     fmt = ' \u21ac %s %.1f grams %s\n',
-    'Added Sugar' |> make_ansi_style('slateblue3')() |> style_bold(),
+    'Added Sugar' |> 
+      make_ansi_style('slateblue3')() |> 
+      style_bold(),
     x@addedSugar, 
     fmt_perc(x, 'addedSugar')
   ) |> cat()
   
   sprintf(
     fmt = '%s %.1f grams %s\n', 
-    'Protein' |> make_ansi_style('slateblue3')() |> style_bold(),
+    'Protein' |> 
+      make_ansi_style('slateblue3')() |> 
+      style_bold(),
     x@protein, 
     fmt_perc(x, 'protein')
   ) |> cat()
   
   sprintf(
     fmt = '%s %.1f grams %s\n', 
-    'Alcohol' |> make_ansi_style('slateblue3')() |> style_bold(),
+    'Alcohol' |> 
+      make_ansi_style('slateblue3')() |> 
+      style_bold(),
     x@alcohol, 
     fmt_perc(x, 'alcohol')
   ) |> cat()
 
   sprintf(
     fmt = '%s %.1f grams %s\n', 
-    'Caffeine' |> make_ansi_style('slateblue3')() |> style_bold(),
+    'Caffeine' |> 
+      make_ansi_style('slateblue3')() |> 
+      style_bold(),
     x@caffeine, 
     fmt_perc(x, 'caffeine')
   ) |> cat()
@@ -568,10 +595,10 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
     cat('\n\n')
   } 
   
-  if (nrv <- length(x@review)) {
-    x@review |> sprintf(fmt = '\U1f4dd %s\n') |> cat(sep = '')
-    cat('\n')
-  }
+  x@review |> 
+    sprintf(fmt = '\U1f4dd %s\n') |> 
+    cat(sep = '')
+  if (length(x@review)) cat('\n')
   
   if (length(x@contain)) {
     x@contain |>

@@ -134,29 +134,36 @@ NobleHarvest_durian <- \() nutrition(
   review = 'I have severe bad reaction to real durian')
 
 
-
+aldi_pineapple <- \() nutrition(
+  name = 'Pineapple\U1f34d, Crushed',
+  aldi = '18649312',
+  servingGram = 122, servingCup = 1/2#,
+  # no nutrition info online
+  #calorie = 70,
+  #carbohydrate = 16, fiber = 1, sugar = 13
+)
 
 
 Wegmans_pineapple <- \() nutrition(
-  name = 'Crushed Pineapple\U1f34d', alias = '\u83e0\u841d\u7f50\u5934',
+  name = 'Pineapple\U1f34d, Crushed',
   wegmans = '34266',
   servingGram = 122, servingCup = 1/2, 
   calorie = 70,
-  carbohydrate = 16, sugar = 13, 
+  carbohydrate = 16, fiber = 1, sugar = 13, 
   superior = 'Dole_pineapple')
 
 Libbys_pineapple <- \() nutrition(
   wegmans = '186434',
   brand = 'Libby\'s\U1f1fa\U1f1f8', 
-  name = 'Crushed Pineapple\U1f34d', alias = '\u83e0\u841d\u7f50\u5934',
+  name = 'Pineapple\U1f34d, Crushed',
   servingGram = 122, servingCup = 1/2, 
-  carbohydrate = 17, sugar = 15, 
+  carbohydrate = 16, fiber = 1, sugar = 13, 
   superior = 'Dole_pineapple')
 
 
 Dole_pineapple <- \() nutrition(
   dolesunshine = 'canned-crushed-pineapple-in-100-pineapple-juice-20oz',
-  name = 'Pineapple\U1f34d in \U1f4afJuice', alias = '\u83e0\u841d\u7f50\u5934',
+  name = 'Pineapple\U1f34d, Crushed',
   # fdc = 167767L, # water = 83.5%, not accurate!!
   amazon = 'B00GFROV7A', usd = 22.46/12/575*122, 
   wegmans = '561977',

@@ -74,18 +74,8 @@ recipe <- \(no_eval = .findCall(which = -2), ...) {
   
   x <- x |>
     .cleanSlots_raw.() |>
-    get_key_()
-
-  # processing 'character'
-  
-  if (length(x$author) && length(x$url)) {
-    #stop('where?')
-    x$author <- x$url[1L] |>
-      style_hyperlink(url = _, text = x$author)
-    x$url <- x$url[-1L]
-  } # before `if (!length(x@author))` !!!
-  
-  x <- x |>
+    get_key_() |>
+    add_author_url1() |>
     add_youtube(name = 'bakethat', text = 'Bake That!') |>
     add_youtube(name = 'cookingtree', text = 'Cooking Tree \ucfe0\ud0b9\ud2b8\ub9ac') |>
     add_youtube(name = 'daatgo', text = '\u8fbe\u54e5\u53a8\u623f') |>

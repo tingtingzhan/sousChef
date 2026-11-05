@@ -344,6 +344,17 @@ add_author_url <- \(x, name, ..., text = x[['author']]) {
 }
 
 
+add_author_url1 <- \(x) {
+  if (!length(x$author)) return(x)
+  if (ansi_has_any(x$author, link = TRUE)) return(x)
+  if (!length(x$url)) return(x)
+  x$author <- x$url[1L] |>
+    style_hyperlink(url = _, text = x$author)
+  x$url <- x$url[-1L]
+  return(x)
+}
+
+
 add_youtube <- \(x, name, ...) {
   v <- x[[name]]
   nv <- length(v)

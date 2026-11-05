@@ -174,8 +174,10 @@ labels.recipe <- \(object, ...) {
   if (!identical(x@call, quote(`<UNDEFINED>`))) { 
     # e.g., **not** from setAs(from = 'nutrition', to = 'recipe')
     nm <- nm |>
-      sprintf(fmt = '{.run [%s](sousChef::%s())}', . = _, as.character(x@call)) |> 
-      format_inline() # must!!
+      .cli_run(
+        pkg = 'sousChef',
+        fun = as.character(x@call)
+      )
   }
   
   if (!length(x@author)) return(nm)

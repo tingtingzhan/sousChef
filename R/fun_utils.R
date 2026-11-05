@@ -89,12 +89,15 @@ zero.omit <- \(x) {
 }
 
 
-call2alias <- \(x) {
+call2alias_nutrition <- \(x) {
   if (!length(x@alias)) return(x)
   if (grepl(pattern = '\\.run', as.character(x@alias))) return(x) 
   
   x@alias <- x@alias |>
-    sprintf(fmt = '{.run [%s](sousChef::%s())}', . = _, as.character(x@call))
+    .cli_run(
+      pkg = 'sousChef',
+      fun = as.character(x@call)
+    )
   return(x)
 }
 

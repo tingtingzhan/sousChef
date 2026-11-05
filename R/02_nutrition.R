@@ -377,7 +377,7 @@ setMethod(f = initialize, signature = 'nutrition', definition = \(.Object, ...) 
   
   x <- x |>
     key2alias_nutrition() |>
-    call2alias()
+    call2alias_nutrition()
   
   return(x)
   
@@ -592,11 +592,13 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
   cat('\n')
   
   if (length(x@superior)) {
-    c('\u274c I prefer ', sprintf(
-      fmt = '{.run [%s](sousChef::%s())}', 
-      x@superior |> make_ansi_style('sienna')() |> style_bold(),
-      x@superior
-    ) |> paste(collapse = ', ')) |>
+    .cli_run(
+      text = x@superior |> make_ansi_style('sienna')() |> style_bold(),
+      pkg = 'sousChef',
+      fun = x@superior
+    ) |>
+      paste(collapse = ', ') |>
+      c('\u274c I prefer ', . = _) |>
       format_inline() |>
       cat()
     cat('\n\n')

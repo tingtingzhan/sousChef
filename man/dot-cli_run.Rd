@@ -22,5 +22,7 @@
 .cli_run(text = 'cocoa', pkg = 'sousChef', 
   fun = 'KingArthur_Bensdorp_cocoa') |> cat()
 
-
+foo = \() print('hello world')
+.cli_run(text = 'foo', pkg = 'sousChef', fun = 'foo') |> cat()
+  
 }

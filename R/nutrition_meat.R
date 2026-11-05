@@ -130,7 +130,8 @@ beef_chuck <- \() nutrition(
   alias = '\u725b\u524d\u80a9\u80db', name = 'Beef\U1f402 Chuck Short Ribs',
   usd = 14/454*100, #brand = 'Kirkland\U1f1fa\U1f1f8', # costco
   servingGram = 100, water = 68.7, protein = 19.4, fat = 10.7, sodium = .081,
-  review = c(spam = 'Beef chuck has too much fat and connective tissue for spam'))
+  cons = 'Beef chuck has too much fat and connective tissue for spam'
+)
 
 
 beef_rib <- \() nutrition(
@@ -164,8 +165,7 @@ beef_stew <- \() nutrition(
 lamb_leg <- \() nutrition(
   fdc = 174311L,
   alias = '\u7f8a\u817f(\u53bb\u8102\u80aa)', name = 'Lamb\U1f411 Leg',
-  servingGram = 100, water = 64.3, fat = 17.1, protein = 17.9, sodium = .056,
-  review = c(spam = 'Must fully remove fat cap from lamb leg, otherwise lamb fat will separate'))
+  servingGram = 100, water = 64.3, fat = 17.1, protein = 17.9, sodium = .056)# Must fully remove fat cap from lamb leg, otherwise lamb fat will separate
 
 lamb_loinchop <- \() nutrition(
   fdc = 1098346L,

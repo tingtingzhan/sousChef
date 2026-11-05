@@ -8,7 +8,7 @@ Ippodo_ikuyo <- \() nutrition(
   #servingTsp = 1, # packaging
   usd = 81/100*2, jpy = 6000/100*2, # global site, shipping excluded
   date = as.Date('2026-09-02'),
-  review = c('a cheaper sado-grade matcha I like; use in baking, for now'))
+  pros = c('a cheaper sado-grade matcha I like; use in baking, for now'))
 
 
 
@@ -17,7 +17,7 @@ Marukyu_tenju <- \() nutrition(
   servingGram = 2, 
   servingTbsp = 2/7, # using ikuyo/sayaka data
   jpy = 40120/40*2, date = as.Date('2026-09-02'),
-  review = 'the most expensive product of Marukyu Koyama-En')
+  pros = 'the most expensive product of Marukyu Koyama-En')
 
 
 # all other matcha
@@ -39,7 +39,7 @@ Sencha_everyday_matcha <- \() nutrition(
   servingTsp = 1.5/7.5*3, # experiment: 1Tbsp = 7.5grams
   calorie = 5, carbohydrate = 1,
   superior = 'Ippodo_ikuyo',
-  review = 'too bitter'
+  cons = 'too bitter'
 )
 
 Kirkland_matcha <- \() nutrition(

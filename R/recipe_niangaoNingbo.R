@@ -33,4 +33,4 @@ LuLu_niangaoNingbo <- \() recipe(
     Morton_salt = 2
   ),
   water = 280,
-  review = 'watch the video; this is too sticky')
+  cons = 'watch the video; this is too sticky')

@@ -40,7 +40,6 @@ juntun_filling <- \() recipe(
   #instruction (legacy) = c(
   #  'Use KitchenAid meat grinder, not meat chopper!'
   #),
-  review = 'try again!!',
   youtube = 'cohQ56AqXkg'
 )
 
@@ -71,7 +70,7 @@ porkfill <- \() recipe(
     Kadoya_sesame_oil = 1
   ),
   water = 100,
-  review = 'perfect!!')
+  pros = 'perfect!!')
 
 
 
@@ -145,7 +144,6 @@ salmonfill <- \() recipe(
     FrontierCoop_harissa = 1, # 2Tbsp too much
     Kadoya_sesame_oil = 1
   ),
-  review = c(
-    'Not enough gelatin. Texture not right',
-    'Effie loves though!'
-  ))
+  cons = 'Not enough gelatin. Texture not right',
+  pros = 'Effie loves!'
+)

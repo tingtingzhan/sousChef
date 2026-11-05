@@ -15,7 +15,7 @@ TraderJoes_cornbreadMix <- \() nutrition(
       Wegmans_vegetable_oil = 1/2
     )
   ),
-  review = paste('Even', style_hyperlink(
+  cons = paste('Even', style_hyperlink(
     text = 'bon app\u00e9tit', 
     url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'
   ), 'thinks this is too sweet'))
@@ -40,7 +40,7 @@ WholeFoods365_cornbreadMix <- \() nutrition(
       Wegmans_vegetable_oil = .5
     )
   ),
-  review = paste(style_hyperlink(
+  pros = paste(style_hyperlink(
     text = 'bon app\u00e9tit', 
     url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'
   ), 'loves it'))
@@ -62,7 +62,7 @@ Krusteaz_southern_cornbreadMix <- \() nutrition(
     misc_pc = c(egg = 2)
   ),
   # check out those fancier recipes https://www.krusteaz.com/recipes/cornbread/
-  review = paste('A bad review from', style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix')))
+  cons = paste('A bad review from', style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix')))
   
 
 
@@ -84,7 +84,7 @@ BobsRedMill_cornbreadMix <- \() nutrition(
       Wegmans_vegetable_oil = 1/2
     )
   ),
-  review = paste('A bad review from', style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix')))
+  cons = paste('A bad review from', style_hyperlink(text = 'bon app\u00e9tit', url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix')))
 
 
 
@@ -106,7 +106,7 @@ Stonewall_cornbreadMix <- \() nutrition(
       Wegmans_whole_milk = 1
     )
   ),
-  review = paste(style_hyperlink(
+  pros = paste(style_hyperlink(
     text = 'bon app\u00e9tit', 
     url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'
   ), 'loves it'))
@@ -128,7 +128,7 @@ Jiffy_cornMuffinMix <- \() nutrition(
       Wegmans_whole_milk = 1/3
     )
   ),
-  review = paste(style_hyperlink(
+  cons = paste(style_hyperlink(
     text = 'bon app\u00e9tit', 
     url = 'https://www.bonappetit.com/story/best-boxed-cornbread-mix'
   ), 'says it\'s just okay'))

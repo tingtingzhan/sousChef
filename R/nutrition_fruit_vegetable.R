@@ -118,7 +118,7 @@ LuckyTaro_durian <- \() nutrition(
   servingGram = 200, usd = 25/2, # vague memory
   fat = .4, sodium = .023, 
   carbohydrate = 44, sugar = 19.6, protein = 1.2,
-  review = 'I have severe bad reaction to real durian')
+  cons = 'I have severe bad reaction to real durian')
 
 
 NobleHarvest_durian <- \() nutrition(
@@ -131,7 +131,7 @@ NobleHarvest_durian <- \() nutrition(
   fat = 14, sodium = .01, 
   carbohydrate = 130,
   sugar = 64, protein = 11,
-  review = 'I have severe bad reaction to real durian')
+  cons = 'I have severe bad reaction to real durian')
 
 
 aldi_pineapple <- \() nutrition(
@@ -181,7 +181,7 @@ Dole_sweetened_pineapple <- \() nutrition(
   calorie = 100,
   water = 123-26,
   carbohydrate = 26, fiber = 2, sugar = 25, addedSugar = 10,
-  review = 'looks like they only added sugar, but not evaporated water',
+  cons = 'looks like they only added sugar, but not evaporated water',
   superior = 'Dole_pineapple')
 
 
@@ -218,7 +218,7 @@ DelMonte_peach <- \() nutrition(
 Bruces_yam <- \() nutrition(
   brucesyams = 'sweet-potatoes-in-syrup',
   name = 'Yam',
-  review = 'may need Vitamix immersion blender - dont know how to use, dont buy for now',
+  cons = 'may need Vitamix immersion blender - dont know how to use, dont buy for now',
   servingGram = 166, sodium = .07, sugar = 9, protein = 2)
 
 
@@ -283,8 +283,8 @@ FlavorFarmer_whitePeach <- \() nutrition(
   fdc = 1102677L,
   brand = 'Flavor Farmer', name = 'White Peach, Fresh',
   servingGram = 100, pieceGram = 130, piece_fmt = '%.1f\U1f351',
-  water = 88.3, protein = .91, fat = .27, sodium = .013, sugar = 8.39,
-  review = 'Fresh white peach sold at Costco in summer'#,
+  water = 88.3, protein = .91, fat = .27, sodium = .013, sugar = 8.39#,
+  # 'Fresh white peach sold at Costco in summer'#,
   #machine (legacy) = \(x) switch(x, bread = 'Wait until fully ripened, then store in fridge. Remove skin and pit, then blend.')
   )
 
@@ -455,7 +455,7 @@ HaiTai_mungbean <- \() nutrition(
   servingGram = 38, servingCup = 1/4, sodium = .006, carbohydrate = 24, sugar = 3, protein = 8, # package
   #servingGram = 100 - 9.05, protein = 23.9, fat = 1.15, sugar = 6.6, sodium = .015, # fdc
   #machine (legacy) = \(x) switch(x, cookie = c('Grind dry beans using Niche Zero, Level 9')),
-  review = 'Must use peeled mung bean for dessert!')
+  cons = 'Not peeled!')
 
 Khazana_mungDal <- \() nutrition(
   khazanathetreasure = 'khazana-organic-mung-dal-yellow',
@@ -465,7 +465,8 @@ Khazana_mungDal <- \() nutrition(
   usd = 15.99/3180*100, date = as.Date('2026-10-20'), # in store price
   servingGram = 100, servingCup = 1/2,
   calorie = 340,
-  carbohydrate = 63, fiber = 11, protein = 22 # really?
+  carbohydrate = 63, fiber = 11, protein = 22, # really?
+  pros = 'Peeled!'
 )
 
 

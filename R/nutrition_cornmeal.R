@@ -25,7 +25,7 @@ IndianHead_white_cornmeal <- \() nutrition(
   servingGram = 30, servingCup = 1/4,
   calorie = 110,
   fat = 1, protein = 2, 
-  review = 'Too coarse, do not buy!')
+  cons = 'Too coarse, do not buy!')
 
 
 IndianHead_yellow_cornmeal <- \() nutrition(
@@ -36,7 +36,7 @@ IndianHead_yellow_cornmeal <- \() nutrition(
   calorie = 110,
   fat = 1, carbohydrate = 23, sugar = .5, protein = 2, 
   superior = 'Albertsons_yellow_cornmeal',
-  review = 'Extremely coarse')
+  cons = 'Extremely coarse')
 
 
 Quaker_yellow_cornmeal <- \() nutrition(

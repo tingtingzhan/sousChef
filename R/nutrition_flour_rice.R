@@ -27,6 +27,6 @@ KingArthur_gluten0Flr <- \() nutrition(
   servingTbsp = 4, # packaging
   calorie = 100,
   sodium = .015, carbohydrate = 25, protein = 1,
-  review = 'dont buy in future!',
+  cons = 'dont buy in future!',
   contain = c('rice flour, whole grain brown rice flour, whole sorghum flour, tapioca starch, potato starch, cellulose, xanthan gum, vitamin and mineral blend [calcium carbonate, niacinamide (vitamin b3), reduced iron, thiamin hydrochloride (vitamin b1), riboflavin (vitamin b2)]'))
 

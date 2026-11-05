@@ -60,7 +60,7 @@ Nancys_yogurt <- \() nutrition(
   fat = 6, sodium = .115, cholesterol = .025,
   carbohydrate = 11, sugar = 11, protein = 7,
   fdc = 171284L, water = 170*.879,
-  review = 'has a very pleasant signature flavor')
+  pros = 'has a very pleasant signature flavor')
 
 
 
@@ -314,7 +314,7 @@ DaisyLight_sourCream <- \() nutrition(
   calorie = 35,
   fdc = 173443L, water = 30*.781,
   fat = 2.5, cholesterol = .01, sodium = .015, sugar = 1, protein = 2,
-  review = 'Do not buy. This is a mixture of cultured cream and skim milk')
+  cons = 'Do not buy. This is a mixture of cultured cream and skim milk')
 
 #WegmansOrganic_sourCream <- \() nutrition(
 #  wegmans = '63577',
@@ -575,7 +575,7 @@ Siggis_filmjolk <- \() nutrition(
   calorie = 60,
   cholesterol = .005, sodium = .115, carbohydrate = 9, sugar = 7, protein = 6,
   superior = c('Meyenberg_goatKefir', 'GreenValley_kefir'),
-  review = 'too sour')
+  cons = 'too sour')
 
 
 Nanak_mango_rasmalai <- \() nutrition(

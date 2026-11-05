@@ -10,7 +10,7 @@ Meyenberg_goat_drymilk <- \() nutrition(
   calorie = 90,
   cholesterol = .010, sodium = .1, carbohydrate = 12, sugar = 12, protein = 10,
   suggest = list(water_cup = c(c80 = 1)),
-  review = c(
+  cons = c(
     'Effie hates it for the lack of aroma',
     'Very hard to dissolve, must use room-temperature water'
   ))
@@ -28,10 +28,9 @@ Meyenberg_goat_drywholemilk <- \() nutrition(
   calorie = 140,
   fat = 8, cholesterol = .035, sodium = .085, carbohydrate = 10, sugar = 10, protein = 7,
   suggest = list(water_cup = c(c80 = 1)),
-  review = c(
-    'Effie loves the aroma!',
-    'Too gamey for human'
-  ))
+  pros = 'Effie loves the aroma!',
+  cons = 'Too gamey for human'
+)
 
 
 

@@ -479,10 +479,8 @@ key2alias_nutrition <- \(x) {
 
 get_sugarLost <- \(x) {
   
-  if (length(x@sugarLost)) return(x)
-  
   if ('_yeast$' %in% x) {
-    x@sugarLost <- if (x@key %in% c('bao')) {
+    z <- if (x@key %in% c('bao')) {
       # After one hour brew time, ~0.35 grams of sugar per gram of yeast have been consumed, 
       # leaving ~0.65 grams of unfermented sugar per gram of yeast.
       # https://www.lallemand.com/BakerYeastNA/eng/PDFs/LBU%20PDF%20FILES/1_19WATR.PDF
@@ -492,9 +490,9 @@ get_sugarLost <- \(x) {
       # then ferment in room temperature, lost .35 yeast
       sum(x['_yeast$']) * 1.5
     }
-  } # else do nothing
+  } else z <- numeric()
   
-  return(x)
+  return(z)
   
 }
 

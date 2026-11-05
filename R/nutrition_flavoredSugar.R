@@ -8,7 +8,7 @@ CountryTime_Lemonade <- \() nutrition(
   # 3/4 scoop # packaging
   servingTbsp = 26/11, # actual experiment 1tbsp = 11g
   sugar = 24, sodium = .035,
-  review = 'Too coarse and granular for cookie.')
+  cons = 'Too coarse and granular for cookie.')
 
 
 CountryTime_blackCherryLemonade <- \() nutrition(

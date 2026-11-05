@@ -38,7 +38,7 @@ Stonewall_raspberry_syrup <- \() nutrition(
 Stonewall_fig <- \() nutrition(
   stonewall = '100825',
   name = 'Classic Fig Jam, Organic',
-  servingGram = 21, sodium = .01, sugar = 11, review = 'okay')
+  servingGram = 21, sodium = .01, sugar = 11, pros = 'okay')
 
 
 
@@ -48,39 +48,40 @@ Stonewall_figWalnut <- \() nutrition(
   servingGram = 15, servingTbsp = 1,
   usd = 9.50/361*15,
   calorie = 40,
-  carbohydrate = 9, sugar = 8, addedSugar = 6)#, review = 'okay')
+  carbohydrate = 9, sugar = 8, addedSugar = 6, pros = 'okay')
 
 Stonewall_mimosa <- \() nutrition(
   stonewall = '101340',
   name = 'Mimosa Jam',
-  servingGram = 19, sugar = 10, review = 'super nice to eat directly!')
+  servingGram = 19, sugar = 10, 
+  pros = 'super nice to eat directly!')
 
 
 
 Stonewall_apricot <- \() nutrition(
   stonewall = '101328',
   name = 'Apricot Jam',
-  servingGram = 15, sugar = 7, review = 'okay')
+  servingGram = 15, sugar = 7, pros = 'okay')
 
 
 
 Stonewall_wildBlueberryJam <- \() nutrition(
   stonewall = '101305',
   name = 'Wild Maine Blueberry\U1fad0 Jam',
-  servingGram = 15, sugar = 7, review = 'Nice!')
+  servingGram = 15, sugar = 7, pros = 'Nice!')
 
 
 
 Stonewall_raspberryJam <- \() nutrition(
   stonewall = '101339',
   servingGram = 19, sugar = 10,
-  review = 'Not good for cooking, purely pectin.  Do not buy non-seedless version!')
+  cons = 'Not good for cooking, purely pectin.  Do not buy non-seedless version!')
 
 
 
 Stonewall_blackRaspberry <- \() nutrition(
   stonewall = '101353',
-  servingGram = 15, sugar = 8, review = 'try.  Do not buy non-seedless version!')
+  servingGram = 15, sugar = 8) # Do not buy non-seedless version!'
 
 
 
@@ -89,27 +90,30 @@ Stonewall_blackRaspberry <- \() nutrition(
 Stonewall_lemonHerbAioli <- \() nutrition(
   name = 'Lemon Herb Aioli',
   stonewall = '111310',
-  servingGram = 15, fat = 10, sodium = .105, review = 'I like it.')
+  servingGram = 15, fat = 10, sodium = .105, 
+  pros = 'I like it.')
 
 
 
 Stonewall_basilPestoAioli <- \() nutrition(
   name = 'Basil Pesto Aioli',
   stonewall = '111314',
-  servingGram = 13, fat = 9, sodium = .085, review = 'Not crazy about it')
+  servingGram = 13, fat = 9, sodium = .085, cons = 'Not crazy about it')
 
 
 
 Stonewall_srirachaAioli <- \() nutrition(
   name = 'Sriracha Aioli',
   stonewall = '111317',
-  servingGram = 14, fat = 8, sodium = .08, review = 'love it!!')
+  servingGram = 14, fat = 8, sodium = .08, 
+  pros = 'love it!!')
 
 
 
 Stonewall_horseradishCreamSauce <- \() nutrition(
   name = 'Horseradish Cream Sauce',
   stonewall = '551900',
-  servingGram = 31, fat = 4.5, sodium = .11, sugar = 2, protein = 1, review = 'love it!!')
+  servingGram = 31, fat = 4.5, sodium = .11, sugar = 2, protein = 1, 
+  pros = 'love it!!')
 
 

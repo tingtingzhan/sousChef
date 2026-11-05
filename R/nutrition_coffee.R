@@ -1,7 +1,7 @@
 
 # NESCAFE TASTER'S CHOICE Decaf House Blend Instant Coffee
 # https://www.nescafe.com/us/products/decaf-medium-light-roast-coffee-7-oz/
-# review = 'too sour!!'
+# cons = 'too sour!!'
 
 
 NescafeGold_blonde_coffee <- \() nutrition(

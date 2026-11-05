@@ -38,7 +38,7 @@ Oreo_thins_tiramisu <- \() nutrition(
   servingGram = 29, 
   calorie = 140,
   fat = 6, sodium = .095, carbohydrate = 21, fiber = 1, sugar = 11, addedSugar = 11, protein = 1,
-  review = 'I love!!')
+  pros = 'I love!!')
 
 Oreo_thins_lemon <- \() nutrition(
   oreo = 'oreo-thins-lemon-cookies',
@@ -47,7 +47,7 @@ Oreo_thins_lemon <- \() nutrition(
   servingGram = 29, 
   calorie = 140,
   fat = 6, sodium = .095, carbohydrate = 21, sugar = 11, addedSugar = 11, protein = 1,
-  review = 'not bad')
+  pros = 'not bad')
 
 
 Oreo_thins_mint <- \() nutrition(
@@ -57,7 +57,7 @@ Oreo_thins_mint <- \() nutrition(
   servingGram = 29, 
   calorie = 140,
   fat = 6, sodium = .095, carbohydrate = 21, fiber = 1, sugar = 12, addedSugar = 12, protein = 1,
-  review = 'mint flavor too strong for me!')
+  cons = 'mint flavor too strong for me!')
 
 # NOT using full Oreo as cheesecake crust :)))
 # https://youtu.be/1h7RCGoZKG8?t=322

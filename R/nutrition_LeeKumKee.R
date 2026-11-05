@@ -86,7 +86,7 @@ LeeKumKee_premium_oyster <- \() nutrition(
   servingGram = 19, servingTbsp = 1, # weight and volumn on bottle
   calorie = 30, 
   sodium = .83, carbohydrate = 6, addedSugar = 4, protein = 1,
-  review = 'MSG flavor too strong, I do not like')
+  cons = 'MSG flavor too strong, I do not like')
 
 LeeKumKee_oyster <- \() nutrition(
   lkkusa = 'panda-brand-oyster-flavored-sauce',

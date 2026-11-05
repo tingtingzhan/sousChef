@@ -41,7 +41,7 @@ The helper function \code{\link[=nutrition]{nutrition()}} converts raw user inpu
 
 \item{\code{url}}{\link[cli]{ansi_string} or \link[base]{character} scalar, link to manufacturer webpage}
 
-\item{\code{review}}{\link[base]{character} scalar or \link[base]{vector}, additional note to chef}
+\item{\code{pros,cons}}{\link[base]{character} scalars or \link[base]{vector}s, additional note to chef}
 
 \item{\code{superior}}{\link[base]{character} scalar}
 

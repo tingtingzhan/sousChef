@@ -8,7 +8,7 @@ TraderJoes_tiramisu <- \() nutrition(
   fat = 23, cholesterol = .305, sodium = .18,
   carbohydrate = 36, fiber = 2, sugar = 21, addedSugar = 20,
   protein = 11,
-  review = 'perfect sweetness!!'
+  pros = 'perfect sweetness!!'
 )
 
 

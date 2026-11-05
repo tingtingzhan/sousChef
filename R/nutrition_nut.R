@@ -67,4 +67,4 @@ Kirkland_Brazilnut <- \() nutrition(
   servingGram = 30,
   calorie = 210,
   fat = 20, carbohydrate = 4, sugar = 1, protein = 4,
-  review = 'I do not like much..')
+  cons = 'I do not like much..')

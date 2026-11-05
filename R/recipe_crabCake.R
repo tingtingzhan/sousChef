@@ -14,5 +14,4 @@ OnceUponAChef_crabCake <- \() recipe(
     celeriac = 25, #  .25 cup finely diced celery, from one stalk 
     parsleyFresh = 3.84 * 2 # 2 tablespoons finely chopped fresh parsley
   ),
-  url = 'https://www.onceuponachef.com/recipes/maryland-crab-cakes-with-quick-tartar-sauce.html',
-  review = 'try')
+  url = 'https://www.onceuponachef.com/recipes/maryland-crab-cakes-with-quick-tartar-sauce.html')

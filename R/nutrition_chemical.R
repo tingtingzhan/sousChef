@@ -61,8 +61,8 @@ Na2CO3 <- \() nutrition(
   # weight on right: (23*2+12+16*3)
   servingTsp = ArmHammer_NaHCO3()@servingTsp, 
   servingGram = ArmHammer_NaHCO3()@servingGram * (23*2+12+16*3) / (2*(23+1+12+16*3)),
-  sodium = ArmHammer_NaHCO3()@sodium,
-  review = 'Made from baking Arm and Hammer baking soda, 200\u00b0F/30min')
+  sodium = ArmHammer_NaHCO3()@sodium)
+  # Made from baking Arm and Hammer baking soda, 200\u00b0F/30min
 
 
 

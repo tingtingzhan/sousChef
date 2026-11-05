@@ -40,8 +40,8 @@ Wegmans_wheatFlr <- \() nutrition(
   servingCup = 1/4, # packaging
   calorie = 90,
   fat = .5, carbohydrate = 20, protein = 4,
-  superior = 'Wegmans_white_wheatFlr')
-  #review = 'color Too dark')
+  superior = 'Wegmans_white_wheatFlr',
+  cons = 'Color too dark')
 
 
 

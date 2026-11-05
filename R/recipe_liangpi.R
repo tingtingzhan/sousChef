@@ -1,15 +1,6 @@
 
 
 
-liangpi <- \() recipe(
-  misc = c(
-    Wegmans_pastryFlr = 350,
-    ManSang_wheat_starch = 150
-  ),
-  water = 800,
-  review = 'try'
-)
-
 
 
 PinNuo_liangpi <- \() recipe(

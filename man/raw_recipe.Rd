@@ -54,14 +54,8 @@ The helper function \code{\link[=recipe]{recipe()}} converts raw user input into
 
 \item{\code{youtube}}{\link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe}
 
-\item{\code{review}}{\link[base]{character} scalar or \link[base]{vector}, people's comments}
-
-\item{\code{pros}}{\link[base]{character} scalar or \link[base]{vector}, pros}
-
-\item{\code{cons}}{\link[base]{character} scalar or \link[base]{vector}, cons}
+\item{\code{pros,cons}}{\link[base]{character} scalars or \link[base]{vector}s, pros and cons}
 
 \item{\code{portion}}{\link[base]{numeric} scalar or \link[base]{vector}, weight of raw portion (in grams)}
-
-\item{\code{sugarLost}}{\link[base]{numeric} scalar, weight of sugar (in grams) consumed by yeast in fermentation}
 }}
 

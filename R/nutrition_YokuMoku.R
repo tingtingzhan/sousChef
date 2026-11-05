@@ -7,4 +7,4 @@ YokuMoku_cigare <- \() nutrition(
   calorie = 180,
   fat = 11, cholesterol = .03, sodium = .055, 
   carbohydrate = 17, sugar = 11, addedSugar = 8, protein = 2,
-  review = 'Too sweet!  Do not buy again!')
+  cons = 'Too sweet!  Do not buy again!')

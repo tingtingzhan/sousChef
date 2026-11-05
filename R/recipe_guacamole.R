@@ -12,5 +12,5 @@ Maryellen_guacamole <- \() recipe(
     Morton_salt = 1/4
   ),
   author = 'Maryellen', allrecipes = '14231/guacamole/',
-  review = 'not bad!'
+  pros = 'not bad!'
 )

@@ -16,9 +16,9 @@ xiaogaojie_meatTenderizer <- \() recipe(
   #  'Rinse thoroughly and squeeze dry',
   #  'Marinade with (corn starch and) favorite sauce'
   #),
-  youtube = 'Etf9zxVjhKM',
-  review = c('Cut against grain: lamb leg, beef chuck short ribs, beef chuck',
-             'Cut along grain: beef flank',
-             'Significantly improves: beef eye round',
-             'Do not use: pork tenderloin (spam instead)'))
+  youtube = 'Etf9zxVjhKM')#,
+  #  c('Cut against grain: lamb leg, beef chuck short ribs, beef chuck',
+  #           'Cut along grain: beef flank',
+  #           'Significantly improves: beef eye round',
+  #           'Do not use: pork tenderloin (spam instead)'))
 

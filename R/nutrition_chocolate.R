@@ -109,7 +109,7 @@ Bouchard_dark72 <- \() nutrition(
   name = 'Dark Chocolate Napolitains (72% Cacao)',
   bouchard = 'dark-chocolate-napolitains',
   costco = '100661366', usd = 46.99/2/910*30, date = as.Date('2026-10-23'),
-  review = 'Quite sour, after I get to know Dutch-processed cocoa!',
+  cons = 'Quite sour, after I get to know Dutch-processed cocoa!',
   servingGram = 30,
   calorie = 140,
   fat = 12, sugar = 8, protein = 3)

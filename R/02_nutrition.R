@@ -20,7 +20,7 @@
 #' 
 #' @slot url \link[cli]{ansi_string} or \link[base]{character} scalar, link to manufacturer webpage
 #' 
-#' @slot review \link[base]{character} scalar or \link[base]{vector}, additional note to chef
+#' @slot pros,cons \link[base]{character} scalars or \link[base]{vector}s, additional note to chef
 #' 
 #' @slot superior \link[base]{character} scalar
 #' 
@@ -62,7 +62,7 @@ setClass(Class = 'nutrition', slots = c(
     'brand',
     'alias',
     'name',
-    'review',
+    'pros', 'cons',
     'superior',
     'contain',
     'piece_fmt',
@@ -595,10 +595,15 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
     cat('\n\n')
   } 
   
-  x@review |> 
-    sprintf(fmt = '\U1f4dd %s\n') |> 
+  x@pros |> 
+    sprintf(fmt = '\U1f389 %s\n') |> 
     cat(sep = '')
-  if (length(x@review)) cat('\n')
+  if (length(x@pros)) cat('\n')
+  
+  x@cons |> 
+    sprintf(fmt = '\U1f940 %s\n') |> 
+    cat(sep = '')
+  if (length(x@cons)) cat('\n')
   
   if (length(x@contain)) {
     x@contain |>

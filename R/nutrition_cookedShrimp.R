@@ -31,4 +31,4 @@ Wegmans_garlicShrimp <- \() nutrition(
   servingGram = 85,
   calorie = 130,
   fat = 6, cholesterol = .155, sodium = .500, carbohydrate = 1, protein = 19,
-  review = 'a little too salty, otherwise perfect!!')
+  pros = 'a little too salty, otherwise perfect!!')

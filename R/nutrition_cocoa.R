@@ -37,7 +37,7 @@ KingArthur_blackCocoa <- \() nutrition(
   servingTbsp = 5/7, # actual experiment: 1tbsp = 7g
   calorie = 15,
   fat = .5, carbohydrate = 2, fiber = 2, protein = 1,
-  review = c(
+  cons = c(
     'I don\'t like it for hot chocolate'
   ))
 

@@ -18,13 +18,9 @@
 #' @slot youtube \link[base]{character} scalar or \link[base]{vector}, YouTube ID of original recipe
 # @slot doi \link[base]{character} scalar or \link[base]{vector}
 #' 
-#' @slot review \link[base]{character} scalar or \link[base]{vector}, people's comments
-#' @slot pros \link[base]{character} scalar or \link[base]{vector}, pros
-#' @slot cons \link[base]{character} scalar or \link[base]{vector}, cons
+#' @slot pros,cons \link[base]{character} scalars or \link[base]{vector}s, pros and cons
 #' 
 #' @slot portion \link[base]{numeric} scalar or \link[base]{vector}, weight of raw portion (in grams)
-#' 
-#' @slot sugarLost \link[base]{numeric} scalar, weight of sugar (in grams) consumed by yeast in fermentation
 #' 
 #' @aliases recipe-class
 #' @export
@@ -39,13 +35,10 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
   url = 'character',
   
   #doi = 'character',
-  review = 'character',
   pros = 'character', cons = 'character',
   portion = 'numeric',
   tool = 'list',
-  date = 'Date',
-  
-  sugarLost = 'numeric'
+  date = 'Date'
   
 ), prototype = prototype(
   # key = 'null', # backward compatibility (no longer needed!!)
@@ -127,7 +120,6 @@ recipe <- \(no_eval = .findCall(which = -2), ...) {
 setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
   
   callNextMethod(.Object, ...) |>
-    get_sugarLost() |>
     add_flavor()
   
 })
@@ -245,11 +237,6 @@ setMethod(f = show, signature = 'recipe', definition = \(object) {
   
   x@tool |>
     lapply(FUN = show)
-  
-  x@review |> 
-    sprintf(fmt = '\U1f4dd %s\n') |> 
-    cat(sep = '')
-  if (length(x@review)) cat('\n')
   
   x@pros |> 
     sprintf(fmt = '\U1f389 %s\n') |> 

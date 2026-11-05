@@ -9,7 +9,7 @@ Edward_lite_coconutShrd <- \() nutrition(
   calorie = 90,
   fat = 7, sodium = .005, carbohydrate = 7, sugar = 1, protein = 1,
   superior = 'WegmansOrganic_coconutFlr',
-  review = 'Too coarse, do not buy!'
+  cons = 'Too coarse, do not buy!'
 )
 
 
@@ -22,7 +22,7 @@ Edward_coconutShrd <- \() nutrition(
   calorie = 100,
   fat = 10, sodium = .005, carbohydrate = 4, sugar = 1, protein = 1,
   superior = 'WegmansOrganic_coconutFlr',
-  review = 'Too coarse, do not buy!')
+  cons = 'Too coarse, do not buy!')
 
 Edward_coconutFlr <- \() nutrition(
   edwardandsons = 'lets-do-organic/products/lets-do-organic-coconut-flour',
@@ -134,7 +134,7 @@ SoDelicious_coconutmilk <- \() nutrition(
   calorie = 45,
   fat = 4, sodium = .01,
   superior = 'Freenow_coconutBar',
-  review = c(
+  cons = c(
     'too much thickener',
     'almost no coconut flavor'
   ))
@@ -148,7 +148,7 @@ Freenow_0sugar_coconutBar <- \() nutrition(
   fat = 5.6, sodium = .081, carbohydrate = 3.9, protein = 1.1,
   contain = c('erythritol'),
   superior = 'Freenow_coconutBar',
-  review = 'too sweet (too much sugar alchohol)')
+  cons = 'too sweet (too much sugar alchohol)')
 
 Freenow_coconutBar <- \() nutrition(
   name = 'Barista Coconutmilk\U1f965', alias = '\u539a\u6930\u4e73',
@@ -168,7 +168,7 @@ Luckin_coconutBar <- \() nutrition(
   calorie = 80,
   fat = 5, sodium = .110, carbohydrate = 6, addedSugar = 2, protein = 1,
   superior = 'Freenow_coconutBar',
-  review = 'too sweet')
+  cons = 'too sweet')
 
 
 PacificFoods_coconutBar <- \() nutrition(
@@ -198,7 +198,7 @@ CalifiaFarms_coconutmilkwater <- \() nutrition(
   calorie = 45,
   fat = 4, sodium = .140, carbohydrate = 2, sugar = 1,
   superior = 'Freenow_coconutBar',
-  review = c(
+  cons = c(
     'too much thickener',
     'almost no coconut flavor'
   ))

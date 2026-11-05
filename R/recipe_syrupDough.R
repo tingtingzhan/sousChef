@@ -12,7 +12,7 @@ xiaogaojie_CantoneseMooncakeShell <- \() recipe(
     Kerrygold_butter = 30
   ),
   xiaogaojie = 'rtL8TVynNyg',
-  review = 'do NOT reduce invert sugar syrup!  But really sweet...'
+  cons = 'do NOT reduce invert sugar syrup!  But really sweet...'
 )
 
 

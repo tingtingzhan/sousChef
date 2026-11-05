@@ -8,7 +8,7 @@ Wegmans_CambozolaBlueTorte <- \() nutrition(
   # wegmans = ??, # not on website right now
   name = 'Cambozola Blue Caramel Torte Cheese',
   serving_oz = 1, fat = 11, sodium = .125, sugar = 2, protein = 3,
-  review = 'Super nice! Not too salty, not too sweet.  Try to assemble using my invert-sugar-syrup, mixed nuts (from Costco)')
+  pros = 'Super nice! Not too salty, not too sweet.  Try to assemble using my invert-sugar-syrup, mixed nuts (from Costco)')
 
 
 
@@ -26,7 +26,7 @@ Wegmans_mildBrie <- \() nutrition(
   serving_oz = 1, 
   calorie = 100,
   fat = 9, cholesterol = .030, sodium = .16, protein = 4,
-  review = 'my all-time love!!')
+  pros = 'my all-time love!!')
 
 
 
@@ -38,7 +38,7 @@ Wegmans_mildTripleCreme <- \() nutrition(
   serving_oz = 1, 
   calorie = 110,
   fat = 11, cholesterol = .040, sodium = .22, protein = 3,
-  review = 'too salty!!')
+  cons = 'too salty!!')
 
 
 Wegmans_mildBonVivant <- \() nutrition(
@@ -78,7 +78,7 @@ Wegmans_mildGoatBrie <- \() nutrition(
   servingGram = 30, 
   calorie = 90,
   fat = 7, cholesterol = .025, sodium = .13, protein = 6,
-  review = 'Stinks!! Dont buy!!!!')
+  cons = 'Stinks!! Dont buy!!!!')
 
 
 BelGioioso_mascarpone <- \() nutrition(
@@ -113,7 +113,7 @@ Wegmans_Castelbelo <- \() nutrition(
   # wegmans = ???, # not on website right now
   name = 'Caseificio dell\'Alta Langa Castelbelo Cheese',
   serving_oz = 1, fat = 8, sodium = .14, protein = 5,
-  review = 'Much much less salty than Wegmans_mildBrie(), otherwise very similar.  Like it!')
+  pros = 'Much much less salty than Wegmans_mildBrie(), otherwise very similar.  Like it!')
 
 
 Wegmans_goat_cheese <- \() nutrition(
@@ -132,7 +132,7 @@ Wegmans_cranberryGoat <- \() nutrition(
   serving_oz = 1, fat = 5, 
   sodium = .16, # website says `sodium = .86`, must be wrong
   protein = 4, 
-  review = 'Nice!')
+  pros = 'Nice!')
 
 
 NaturalKosher_mozzarella <- \() nutrition(
@@ -149,7 +149,7 @@ Wegmans_mozzarella_skim <- \() nutrition(
   calorie = 80,
   fat = 5, cholesterol = .015, sodium = .180, 
   carbohydrate = 2, sugar = 1, protein = 6,
-  review = 'Not that great. Do not buy again')
+  cons = 'Not that great. Do not buy again')
 
 
 

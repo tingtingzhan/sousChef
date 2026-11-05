@@ -108,7 +108,8 @@ ThaiKitchen_greenCurry <- \() nutrition(
   usd = 6.49/19, date = as.Date('2026-09-25'),
   servingGram = 6, servingTsp = 1, 
   calorie = 5,
-  carbohydrate = 1, sodium = .14, review = 'Love!')
+  carbohydrate = 1, sodium = .14, 
+  pros = 'Love!')
 
 ThaiKitchen_redCurry <- \() nutrition(
   thaikitchen = 'thai-kitchen-r-gluten-free-red-curry-paste-4-oz',
@@ -118,7 +119,7 @@ ThaiKitchen_redCurry <- \() nutrition(
   calorie = 120, 
   fat = 12, 
   carbohydrate = 2, sodium = .03, protein = 1, 
-  review = 'Love!')
+  pros = 'Love!')
 
 
 
@@ -153,7 +154,7 @@ TraderJoes_jalapenoSauce <- \() nutrition(
   fat = 10, 
   sodium = .11,
   carbohydrate = 2,
-  review = 'I do not like this chili profile'
+  cons = 'I do not like this chili profile'
 )
 
 TraderJoes_srirachaBBQ <- \() nutrition(

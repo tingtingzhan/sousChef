@@ -91,6 +91,7 @@ Stonewall_lemonHerbAioli <- \() nutrition(
   name = 'Lemon Herb Aioli',
   stonewall = '111310',
   servingGram = 15, fat = 10, sodium = .105, 
+  #Canola Oil, Salted Eggs (whole eggs, salt), Lemon Juice, White Vinegar, Mustard Powder, Dried Dill, Dried Tarragon, Granulated Onion, Dried Garlic, Pure Lemon Oil, Natural Flavor and Tocopherols (natural antioxidant)
   pros = 'I like it.')
 
 
@@ -98,7 +99,9 @@ Stonewall_lemonHerbAioli <- \() nutrition(
 Stonewall_basilPestoAioli <- \() nutrition(
   name = 'Basil Pesto Aioli',
   stonewall = '111314',
-  servingGram = 13, fat = 9, sodium = .085, cons = 'Not crazy about it')
+  servingGram = 13, fat = 9, sodium = .085,
+  #Canola Oil, Basil Pesto (basil, canola oil, lemon juice, parmesan cheese [cultured, pasteurized, part-skim milk, salt, enzymes], olive oil, basil oil [sunflower oil, olive oil, basil], pine nuts [treenut], ground walnuts [treenut], garlic, salt, citric acid, dried garlic, black pepper), Salted Eggs (whole eggs, salt), Lemon Juice, Dijon Mustard (vinegar, water, mustard seed, salt, white wine, citric acid, turmeric, tartaric acid, spices), Mustard Powder, White Vinegar, Water, Natural Flavor and Tocopherols (natural antioxidant)
+  cons = 'Not crazy about it')
 
 
 
@@ -106,6 +109,7 @@ Stonewall_srirachaAioli <- \() nutrition(
   name = 'Sriracha Aioli',
   stonewall = '111317',
   servingGram = 14, fat = 8, sodium = .08, 
+  #Canola Oil, Salted Eggs (whole eggs, salt), Sriracha Sauce (red chili peppers, vinegar, garlic, sugar, salt), Garlic, White Vinegar, Roasted Red Peppers (peppers, water, salt, citric acid, calcium chloride), Pure Cane Sugar, Water, Mustard Powder, Habanero Oil (sunflower oil, olive oil, habanero peppers), Garlic Powder, Natural Flavor and Tocopherols [natural antioxidant], Gum Acacia, Xanthan gum
   pros = 'love it!!')
 
 
@@ -114,6 +118,7 @@ Stonewall_horseradishCreamSauce <- \() nutrition(
   name = 'Horseradish Cream Sauce',
   stonewall = '551900',
   servingGram = 31, fat = 4.5, sodium = .11, sugar = 2, protein = 1, 
+  #Grated Horseradish Roots, Water, White Distilled Vinegar, Soybean Oil, High Fructose Corn Syrup, Eggs, Sugar, Salt, Lemon Juice, Xanthan Gum, Mustard Seed, Artificial Flavors, Sodium Metabisulfite (Preservative), Citric Acid, Spices, Sodium Benzoate (Preservative), Corn Syrup, Calcium Disodium EDTA (Retains Product Freshness)
   pros = 'love it!!')
 
 

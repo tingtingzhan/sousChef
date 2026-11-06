@@ -207,6 +207,7 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
     add_brand_url(name = 'stonyfield', fmt = 'https://www.stonyfield.com/products/%s', text = 'Stonyfield\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'swiftmeats', fmt = 'https://swiftmeats.com/products/%s', text = 'Swift\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'swissmiss', fmt = 'https://www.swissmiss.com/%s', text = 'Swiss Miss\U1f1fa\U1f1f8') |> 
+    add_brand_url(name = 'taylorportwine', fmt = 'https://www.taylorportwine.com/%s.html', text = 'Taylor') |>
     add_brand_url(name = 'thaikitchen', fmt = 'https://www.mccormick.com/collections/thai-kitchen/products/%s', text = 'Thai Kitchen\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'traderjoes', fmt = 'https://www.traderjoes.com/home/products/pdp/%s', text = 'Trader Joe\'s\U1f1fa\U1f1f8') |> 
     add_brand_url(name = 'tsemporium', fmt = 'https://www.tsemporium.com/en_us/xproduct/index/index/s/%s', text = 'Tak Shing Hong\u5fb7\u6210\u884c\U1f1fa\U1f1f8') |> 

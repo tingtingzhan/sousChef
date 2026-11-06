@@ -46,7 +46,7 @@ key2alias_nutrition <- \(x) {
       cocoa =, cacao = '\u53ef\u53ef\u7c89',
       coffee = '\u901f\u6eb6\u5496\u5561',
       coffeeLiqueur =, espressoLiqueur = '\u5496\u5561\u9152',
-      cookingWine = '\u6599\u9152',
+      cookingWine =, Marsala =, Sherry = '\u6599\u9152',
       cornmeal = '\u7389\u7c73\U1f33d\u9762',
       creamCheese = '\u5976\u6cb9\u5976\u916a',
       drymilk = '\u8131\u8102\u5976\u7c89',

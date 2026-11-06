@@ -103,6 +103,19 @@ call2alias_nutrition <- \(x) {
 
 
 
+
+# ansiURL('https://www.google.com')
+ansiURL <- \(x) {
+  if (length(x) != 1L) stop()
+  if (ansi_has_any(x, link = TRUE)) return(x)
+  x |>
+    gsub('^https://|^http://', replacement = '', x = _) |> 
+    style_hyperlink(url = x, text = _)
+}
+
+
+
+
 #' @importFrom equiv4 sum_by_name
 mergePc <- \(x, ...) {  
   

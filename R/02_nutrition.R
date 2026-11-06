@@ -219,12 +219,12 @@ nutrition <- \(no_eval = .findCall(which = -2), ...) {
   
   # process user-input `@url` first
   # `$ippodousa` writes to `$url` !!
-  if (length(x$url) && !ansi_has_any(x$url, link = TRUE)) {
+  if (length(x$url)) {
     x$url <- x$url |>
-      gsub('^https://|^http://', replacement = '', x = _) |> 
-      style_hyperlink(url = x$url, text = _)
+      lapply(FUN = ansiURL) |>
+      unlist()
   }
-  
+
   # non-standard brands
   if (!length(x$brand)) {
     if (length(x$cheesecakefactoryfreezer)) {

@@ -34,6 +34,18 @@ egg <- \() {
 }
 
 
+salted_duck_eggYolk <- \() nutrition(
+  url = 'https://nutriscan.app/calories-nutrition/salted-egg-yolk',
+  name = 'Salted Duck Egg\U1f95a Yolk', 
+  alias = '\u54b8\u86cb\u9ec4',
+  servingGram = 100, 
+  pieceGram = 20, piece_fmt = '%.1f\U1f95a',
+  calorie = 275,
+  fat = 22.9,
+  cholesterol	= .912, sodium = 10.461, 
+  carbohydrate = 1.8,
+  protein = 14.1
+)
 
 pork_belly <- \() nutrition(
   fdc = 167812L,

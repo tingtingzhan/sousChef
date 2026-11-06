@@ -2,7 +2,7 @@
 
 
 
-Daat_sesamelava <- \() recipe(
+Daat1_lava <- \() recipe(
   daatgo = 'FvS_W_qnlxc',
   misc = c(
     Greenmax_blackSesame = 160+20,
@@ -18,7 +18,7 @@ Daat_sesamelava <- \() recipe(
   portion = c(bao = 28))
 
 
-xiaomin_sesamelava <- \() recipe(
+xiaomin_lava <- \() recipe(
   author = '\u5c0f\u654f',
   youtube = 'uCbXXVp4h40',
   misc = c(
@@ -30,7 +30,7 @@ xiaomin_sesamelava <- \() recipe(
   water = 20)
 
 
-FancyNotes_sesamelava <- \() recipe(
+FancyNotes_lava <- \() recipe(
   author = '\u4e54\u4e54\u5988',
   misc = c(
     Greenmax_blackSesame = 150,
@@ -41,7 +41,7 @@ FancyNotes_sesamelava <- \() recipe(
   youtube = 'PC3YOs77lgE') 
 
 
-xiaogaojie_sesamelava <- \() recipe(
+xiaogaojie_lava <- \() recipe(
   xiaogaojie = 't-pop_dGsgc',
   misc = c(
     Greenmax_blackSesame = 80,
@@ -53,9 +53,9 @@ xiaogaojie_sesamelava <- \() recipe(
 
 
 
-daat_yolklava <- \() recipe(
-  flavor = '\u54b8\u86cb\u9ec4\u6d41\u5fc3\u9985',
-  misc_pc = c(eggYolk = 12), # salted duck egg yolk 12pc, 144g
+Daat2_lava <- \() recipe(
+  flavor = '\u54b8\u86cb\u9ec4',
+  misc_pc = c(salted_duck_eggYolk = 12),
   misc = c(
     Kerrygold_butter = 180,
     Wegmans_corn_starch = 35,

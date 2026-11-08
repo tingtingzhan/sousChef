@@ -19,7 +19,16 @@ if (FALSE) {
 
 
 
+paste_names <- \(x, ...) {
+  if (!length(x)) return(x)
+  names(x) <- paste(names(x), ...)
+  return(x)
+}
 
+gsub_names <- \(x, ...) {
+  names(x) <- gsub(x = names(x), ...)
+  return(x)
+}
 
 
 

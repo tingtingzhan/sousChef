@@ -86,149 +86,76 @@ summary.raw. <- \(object, ...) {
     x['_wheatFlr$'] |> sum()
   )
   
-  devrecipe <- getOption('devrecipe')
-
+  target <- if (is(x, 'recipe')) {
+    xpref <- x |>
+      key() |>
+      paste0('_prefer')
+    if (exists(xpref, envir = .GlobalEnv)) {
+      do.call(what = xpref, args = list(x))
+    } # else do nothing
+  } # else do nothing
+  
   ret <- list()
   
   ret$perRaw <- (x_overview / x_rawtotal) |>
     equiv(caption = 'Raw Ingredients', current = _)
   
-  ret$perServing <- equiv(
-    caption = 'Serving', 
-    current = z / x_nutri@servingGram, target = if (is(x, 'recipe')) c(
-      water = devrecipe$water(x), # um, this is wrong; raw-water / cooked-total
-      #carbohydrate = devrecipe$carbohydrate(x),
-      fat = devrecipe$fat(x), 
-      bakingPowder = devrecipe$bakingPowder(x),
-      starch = devrecipe$starch(x),
-      alcohol = devrecipe$alcohol(x),
-      sugar = devrecipe$sugar(x), 
-      addedSugar = devrecipe$addedSugar(x),
-      ssmOil = devrecipe$sesameOil(x),
-      rattanPpOil = devrecipe$rattanPepperOil(x),
-      sodium = devrecipe$sodium(x),
-      drymilk = devrecipe$drymilk(x),
-      creamChz = devrecipe$creamcheese(x),
-      matcha = devrecipe$matcha(x),
-      beet = devrecipe$beet(x),
-      ginger = devrecipe$ginger.(x),
-      garlic = devrecipe$garlic(x),
-      whitePp = devrecipe$whitePepper(x),
-      coriander = devrecipe$coriander(x),
-      pumpkinSpice = devrecipe$pumpkinSpice(x),
-      sesame = devrecipe$blackSesame(x),
-      cocoa = devrecipe$cocoa(x),
-      coffee = devrecipe$coffee(x),
-      acai = devrecipe$acai(x)
-    ))#)
+  ret$perServing <- (z / x_nutri@servingGram) |>
+    equiv(caption = 'Serving', current = _, target = target)
   
-  ret$perCornmeal <- equiv(
-    caption = 'Cornmeal\U1f33d', 
-    current = z / sum(x['_cornmeal$']), target = if (is(x, 'recipe')) c(
-      flour = devrecipe$flour2cornmeal(x),
-      breadFlr = devrecipe$breadFlr2cornmeal(x),
-      pastryFlr = devrecipe$pastryFlr2cornmeal(x)
-    ))#) 
+  ret$perCornmeal <- (z / sum(x['_cornmeal$'])) |>
+    paste_names('2cornmeal', sep = '') |>
+    equiv(caption = 'Cornmeal\U1f33d', current = , target = target) |>
+    gsub_names(pattern = '2cornmeal$', replacement = '')
   
   if (sum(mixWheatFlr > 0) > 1L) {
     
-    ret$perMixFlr <- equiv(
-      caption = 'Mixed Wheat Flour', 
-      current = z / sum(mixWheatFlr), target = if (is(x, 'recipe')) c(
-        water = devrecipe$water2wheatFlrMix(x),
-        fat = devrecipe$fat2wheatFlrMix(x),
-        bakingPowder = devrecipe$bakingPowder2wheatFlrMix(x),
-        yeast = devrecipe$yeast2wheatFlrMix(x)
-      ))
+    ret$perMixFlr <- (z / sum(mixWheatFlr)) |>
+      paste_names('2wheatFlrMix', sep = '') |>
+      equiv(caption = 'Mixed Wheat Flour', current = _, target = target) |>
+      gsub_names(pattern = '2wheatFlrMix$', replacement = '')
     
   } else {
     
-    ret$perAllPurposeFlr <- if (!is(x, 'cheesecake')) equiv(
-      caption = 'All-Purpose\U1f370\U1f35e Flour', 
-      current = z / sum(x['_allPurposeFlr$']), target = if (is(x, 'recipe')) c(
-        water = devrecipe$water2flour(x),
-        fat = devrecipe$fat2flour(x),
-        sesame = devrecipe$blackSesame2flour(x),
-        eggYolk = devrecipe$eggYolk2flour(x),
-        Na2CO3 = devrecipe$Na2CO3_2flour(x),
-        bakingPowder = devrecipe$bakingPowder2flour(x),
-        salt = devrecipe$salt2flour(x),
-        yeast = devrecipe$yeast2flour(x)
-      ))
+    ret$perAllPurposeFlr <- (z / sum(x['_allPurposeFlr$'])) |>
+      paste_names('2flour', sep = '') |>
+      equiv(caption = 'All-Purpose\U1f370\U1f35e Flour', current = _, target = target) |>
+      gsub_names(pattern = '2flour$', replacement = '')
     
-    
-    ret$perPastryFlr <- equiv(
-      caption = 'Pastry\U1f370 Flour', 
-      current = z / sum(x['_pastryFlr$']), target = if (is(x, 'recipe')) c(
-        water = devrecipe$water2pastryFlr(x),
-        fat = devrecipe$fat2pastryFlr(x),
-        sesame = devrecipe$blackSesame2pastryFlr(x),
-        eggYolk = devrecipe$eggYolk2pastryFlr(x),
-        Na2CO3 = devrecipe$Na2CO3_2pastryFlr(x),
-        bakingPowder = devrecipe$bakingPowder2pastryFlr(x),
-        salt = devrecipe$salt2pastryFlr(x),
-        yeast = devrecipe$yeast2pastryFlr(x),
-        matcha = devrecipe$matcha2pastryFlr(x),
-        beet = devrecipe$beet2pastryFlr(x),
-        acai = devrecipe$acai2pastryFlr(x)
-      ))
-    
-    
-    ret$perBreadFlr <- equiv(
-      caption = 'Bread\U1f35e Flour', 
-      current = z / sum(x['_breadFlr$']), target = if (is(x, 'recipe')) c(
-        fat = devrecipe$fat2breadFlr(x),
-        sesame = devrecipe$blackSesame2breadFlr(x),
-        eggYolk = devrecipe$eggYolk2breadFlr(x),
-        Na2CO3 = devrecipe$Na2CO3_2breadFlr(x),
-        bakingPowder = devrecipe$bakingPowder2breadFlr(x),
-        salt = devrecipe$salt2breadFlr(x),
-        yeast = devrecipe$yeast2breadFlr(x),
-        matcha = devrecipe$matcha2breadFlr(x),
-        beet = devrecipe$beet2breadFlr(x)
-      ))
+    ret$perPastryFlr <- (z / sum(x['_pastryFlr$'])) |> 
+      paste_names('2pastryFlr', sep = '') |>
+      equiv(caption = 'Pastry\U1f370 Flour', current = _, target = target) |>
+      gsub_names(pattern = '2pastryFlr$', replacement = '')
+
+    ret$perBreadFlr <- (z / sum(x['_breadFlr$'])) |>
+      paste_names('2breadFlr', sep = '') |>
+      equiv(caption = 'Bread\U1f35e Flour', current = _, target = target) |>
+      gsub_names(pattern = '2breadFlr$', replacement = '')
     
   }
   
-  ret$perGlutenFreeFlr <- if (('_breadFlr$' %notin% x) && ('_pastryFlr$' %notin% x) && ('_allPurposeFlr$' %notin% x)) equiv(
-    caption = 'Gluten-Free Flour', 
-    current = z / sum(x['_gluten0Flr$']), target = if (is(x, 'recipe')) c(
-      water = devrecipe$water2gluten0Flr(x),
-      fat = devrecipe$fat2gluten0Flr(x),
-      sesame = devrecipe$blackSesame2gluten0Flr(x),
-      eggYolk = devrecipe$eggYolk2gluten0Flr(x),
-      Na2CO3 = devrecipe$Na2CO3_2gluten0Flr(x),
-      bakingPowder = devrecipe$bakingPowder2gluten0Flr(x),
-      salt = devrecipe$salt2gluten0Flr(x),
-      yeast = devrecipe$yeast2gluten0Flr(x)
-    ))
+  ret$perGlutenFreeFlr <- if (('_breadFlr$' %notin% x) && ('_pastryFlr$' %notin% x) && ('_allPurposeFlr$' %notin% x)) {
+    (z / sum(x['_gluten0Flr$'])) |>
+      paste_names('2gluten0Flr', sep = '') |>
+      equiv(caption = 'Gluten-Free Flour', current = _, target = target) |>
+      gsub_names(pattern = '2gluten0Flr$', replacement = '')
+  }
+
+  ret$perRiceFlr <- (z / sum(x['_riceFlr$|_glutRiceFlr$'])) |>
+    paste_names('2riceFlr', sep = '') |>
+    equiv(caption = 'Glutinous+Rice\U1f33e Flour', current = _, target = target) |> 
+    gsub_names(pattern = '2riceFlr$', replacement = '')
+
+  ret$perCocoa <- (z / x['_cocoa$']) |> 
+    paste_names('2cocoa', sep = '') |>
+    equiv(caption = 'Alkalized Cocoa', current = _, target = target) |>
+    gsub_names(pattern = '2cocoa$', replacement = '')
   
-  ret$perRiceFlr <- equiv(
-    caption = 'Glutinous+Rice\U1f33e Flour', 
-    current = z / sum(x['_riceFlr$|_glutRiceFlr$']), target = if (is(x, 'recipe')) c(
-      water = devrecipe$water2riceFlr(x),
-      glutRice = devrecipe$glutRice2riceFlr(x),
-      fat = devrecipe$fat2riceFlr(x),
-      starch = devrecipe$starch2riceFlr(x),
-      matcha = devrecipe$matcha2riceFlr(x)
-    ))
+  ret$perTea <- (z / sum(x['_tea$'])) |>
+    equiv(caption = 'Tea\U1f343', current = _)
   
-  ret$perCocoa <- if (!inherits(x, what = c('tiramisuMix', 'tiramisu_'))) equiv(
-    caption = 'Alkalized Cocoa', 
-    current = z / x['_cocoa$'], target = if (is(x, 'recipe')) c(
-      alcohol = devrecipe$alcohol2cocoa(x),
-      drymilk = devrecipe$drymilk2cocoa(x),
-      addedSugar = devrecipe$addedSugar2cocoa(x),
-      coffee = devrecipe$coffee2cocoa(x)
-    ))
-  
-  ret$perTea <- equiv(
-    caption = 'Tea\U1f343', 
-    current = z / sum(x['_tea$']))
-  
-  ret$perCreamCheese <- equiv(
-    caption = 'Cream Cheese', 
-    current = z / sum(x['_creamCheese$']))
+  ret$perCreamCheese <- (z / sum(x['_creamCheese$'])) |>
+    equiv(caption = 'Cream Cheese', current = _)
   
   out <- ret |>
     lapply(FUN = \(i) {

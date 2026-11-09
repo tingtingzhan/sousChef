@@ -4,7 +4,7 @@
 
 
 
-  sacima = '\u8428\u5176\u9a6c'
+  
   #instruction (legacy) = c(
   #  'Manually knead pastry flour, egg and yeast',
   #  # 'Pastalinda; Thickness 7, 3 cm long, 2.5 mm cut',
@@ -22,7 +22,6 @@
 
 
 shangshi_sacima <- \() recipe(
-  flavor = 'sacima', 
   shangshikitchen = 'dV6phomugvA',
   misc = c(
     KingArthur_allPurposeFlr = 240
@@ -31,7 +30,6 @@ shangshi_sacima <- \() recipe(
 
 
 xiaogaojie_sacima <- \() recipe(
-  flavor = 'sacima', 
   xiaogaojie = 'VkgWeCxZfi4',
   misc = c(
     KingArthur_allPurposeFlr = 200
@@ -44,7 +42,6 @@ xiaogaojie_sacima <- \() recipe(
 
 
 Dad_sacima <- \() recipe(
-  flavor = 'sacima', 
   dad1966 = 'ZK4ZoCewr0E',
   misc = c(
     KingArthur_allPurposeFlr = 270,

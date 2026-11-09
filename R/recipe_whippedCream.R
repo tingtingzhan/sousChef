@@ -1,8 +1,7 @@
 
 
 
-tiramisu_nytimes <- \() recipe(
-  flavor = 'Tiramisu', 
+nytimes_tiramisu <- \() recipe(
   misc_pc = c(eggYolk = 4),
   misc_cup = c(
     Domino_granulated = 1/2,

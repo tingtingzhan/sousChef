@@ -20,7 +20,6 @@
 
 
 ViewRoad_tortilla <- \() recipe(
-  flavor = 'Tortilla',
   viewsontheroad = 'fA68XXQJN4Y', 
   misc_tsp = c(
     Morton_salt = 1
@@ -33,7 +32,6 @@ ViewRoad_tortilla <- \() recipe(
 
 
 ViewRoad_pumpkin_tortilla <- \() recipe(
-  flavor = 'Pumpkin Tortilla',
   viewsontheroad = 'hPMc1a19CsU', 
   misc_cup = c(
     KingArthur_allPurposeFlr = 1.25,

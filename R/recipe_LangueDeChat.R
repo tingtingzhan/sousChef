@@ -1,9 +1,4 @@
 
-
-
-
-
-
 cookingTree_LangueDeChat <- \() recipe(
   cookingtree = 'V-PasuPZFS0',
   misc = c(
@@ -71,10 +66,6 @@ Giallozafferano_LangueDeChat <- \() recipe(
     Kerrygold_butter = 50,
     Domino_10x = 60
   ))
-
-
-
-
 
 
 

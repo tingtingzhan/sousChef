@@ -3,7 +3,6 @@
 
 
 PinNuo_gyoza <- \() recipe(
-  flavor = '\u997a\u5b50\u76ae',
   misc = c(
     KingArthur_allPurposeFlr = 500,
     BobsRedMill_potato_starch = 20,
@@ -13,8 +12,7 @@ PinNuo_gyoza <- \() recipe(
   water = 240,
   pino = 'zh51m2CH_Ok')
 
-xiaogaojie_gyoza1 <- \() recipe(
-  flavor = '\u997a\u5b50\u76ae1',
+xiaogaojie1_gyoza <- \() recipe(
   xiaogaojie = 'OBZVkExf27I', 
   # xiaogaojie = '76K8D_cwcvU',
   #  'no acurate weight' = 'Jcn-gbF7JyU'
@@ -25,8 +23,7 @@ xiaogaojie_gyoza1 <- \() recipe(
   water = 192
 )
 
-xiaogaojie_gyoza2 <- \() recipe(
-  flavor = '\u997a\u5b50\u76ae2',
+xiaogaojie2_gyoza <- \() recipe(
   xiaogaojie = 'lRhN263_W_Y',
   misc = c(
     KingArthur_allPurposeFlr = 420
@@ -38,13 +35,12 @@ xiaogaojie_gyoza2 <- \() recipe(
 
 
 #laofangu_gyoza <- \() new(
-#  Class = 'laofangu', alias_flavor = 'JiaoZi', youtube = 'ngBCZxri3-s',
+#  laofangu = 'ngBCZxri3-s',
 #  # no data!!!
 #)
 
 
 PinNuo_wonton <- \() recipe(
-  flavor = '\u9984\u9968\u76ae',
   misc = c(
     KingArthur_allPurposeFlr = 500,
     Na2CO3 = 1, 

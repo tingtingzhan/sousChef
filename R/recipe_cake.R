@@ -21,7 +21,6 @@
 
 AddaPinch_chocolate_cake <- \() recipe(
   author = 'Add-A-Pinch', 
-  flavor = 'Chocolate Cake',
   url = 'https://addapinch.com/the-best-chocolate-cake-recipe-ever/',
   misc_tsp = c(
     NescafeGold_blonde_coffee = 1,
@@ -42,7 +41,6 @@ AddaPinch_chocolate_cake <- \() recipe(
 
 
 PreppyKitchen_chocolate_cake <- \() recipe(
-  flavor = 'Chocolate Cake',
   misc = c(
     KingArthur_allPurposeFlr = 240,
     KingArthur_Bensdorp_cocoa = 50, 
@@ -66,7 +64,7 @@ PreppyKitchen_chocolate_cake <- \() recipe(
 
 
 DessertFor2_matcha_cake <- \() recipe(
-  author = 'DessertFor2', flavor = 'Matcha Cake',
+  author = 'DessertFor2',
   misc = c(
     KingArthur_allPurposeFlr = 120,
     Kerrygold_butter = 99,
@@ -85,7 +83,7 @@ DessertFor2_matcha_cake <- \() recipe(
 
 
 Sallys_pumpkin_cake <- \() recipe(
-  author = 'Sally\'s', flavor = 'Pumpkin Cake',
+  author = 'Sally\'s',
   misc_tsp = c(
     TraderJoes_bakingPowder = 2,
     ArmHammer_NaHCO3 = 1,

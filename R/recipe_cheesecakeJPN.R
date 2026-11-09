@@ -1,8 +1,7 @@
 
 
 
-xiaogaojie_cheesecakeJPN1 <- \() recipe(
-  flavor = 'JPN Cheese Cake',
+xiaogaojie1_cheesecakeJPN <- \() recipe(
   misc_pc = c(egg = 6),
   misc_cup = c(
     Wegmans_whole_milk = 1/4,
@@ -20,8 +19,7 @@ xiaogaojie_cheesecakeJPN1 <- \() recipe(
 
 
 
-xiaogaojie_cheesecakeJPN2 <- \() recipe(
-  flavor = 'JPN Cheese Cake',
+xiaogaojie2_cheesecakeJPN <- \() recipe(
   misc_pc = c(egg = 3),
   misc = c(
     Wegmans_pastryFlr = 25,

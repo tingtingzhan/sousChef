@@ -305,7 +305,8 @@ Daisy_sourCream <- \() nutrition(
   servingGram = 30, servingTbsp = 2,
   calorie = 60,
   fdc = 171257L, water = 30*.731,
-  fat = 5, cholesterol = .02, sodium = .015, sugar = 1, protein = 1)
+  fat = 5, cholesterol = .02, sodium = .015, 
+  carbohydrate = 1, sugar = 1, protein = 1)
 
 DaisyLight_sourCream <- \() nutrition(
   daisybrand = 'sour-cream',

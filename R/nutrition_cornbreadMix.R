@@ -6,8 +6,8 @@ TraderJoes_cornbreadMix <- \() nutrition(
   # nutrition info & recipe: https://www.ebay.com/itm/285813474004
   servingGram = 35,
   pieceGram = 425, piece_fmt = '%.1fbag',
-  calorie = 130,
-  sodium = .25, carbohydrate = 28, addedSugar = 10, protein = 2,
+  calorie = 130, sodium = .25, 
+  carbohydrate = 28, fiber = 1, addedSugar = 10, protein = 2,
   suggest = list(
     misc_pc = c(egg = 1),
     misc_cup = c(
@@ -53,7 +53,8 @@ Krusteaz_southern_cornbreadMix <- \() nutrition(
   servingGram = 27,
   pieceGram = 326, piece_fmt = '%.1fbag',
   calorie = 100, 
-  fat = .5, sodium = .4, carbohydrate = 21, sugar = 4, protein = 2,
+  fat = .5, sodium = .4, 
+  carbohydrate = 21, fiber = 1, sugar = 4, protein = 2,
   suggest = list(
     misc_cup = c(
       Kerrygold_butter = 1/3,
@@ -117,10 +118,11 @@ Stonewall_cornbreadMix <- \() nutrition(
 Jiffy_cornMuffinMix <- \() nutrition(
   brand = style_hyperlink(text = 'Jiffy\U1f1fa\U1f1f8', url = 'https://www.jiffymix.com/products/corn-muffin-mix/'),
   name = 'Corn Muffin Mix',
-  servingGram = 240, pieceGram = 240, piece_fmt = '%.1fbag',
-  calorie = 320*3,
-  fat = 9*3, cholesterol = .01*3, sodium = .69*3,
-  carbohydrate = 56*3, addedSugar = 15*3, protein = 4*3,
+  servingGram = 78, servingCup = 1/2,
+  pieceGram = 240, piece_fmt = '%.1fbag',
+  calorie = 320,
+  fat = 9, cholesterol = .01, sodium = .69,
+  carbohydrate = 56, fiber = 2, addedSugar = 15, protein = 4,
   suggest = list(
     # url = 'https://www.jiffymix.com/recipe/air-fryer-corn-muffins/',
     misc_pc = c(egg = 1),

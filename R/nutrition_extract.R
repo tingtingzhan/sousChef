@@ -25,7 +25,8 @@ NielsenMassey_Madagascar <- \() nutrition(
   fdc = 173471L,
   servingGram = 100,
   servingCup = 100/208, # see tab 'Measures' on fdc website
-  water = 52.6, fat = .06, sugar = 12.6, sodium = .009, protein = .06)
+  water = 52.6, fat = .06, 
+  carbohydrate = 12.6, sugar = 12.6, sodium = .009, protein = .06)
 
 NielsenMassey_Madagascar_paste <- \() nutrition(
   alias = '\u9999\u8349\u6ce5',

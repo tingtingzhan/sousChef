@@ -63,9 +63,8 @@ print.nutritionlist <- \(x, ...) {
       lapply(FUN = \(i) {
         z <- i[[which]]
         if (!length(z)) return(invisible())
-        names(z) <- names(z) |>
-          .repl()
-        return(z)
+        z |>
+          .repl_names()
       }) |>
       do.call(what = 'equivlist', args = _) |>
       print(fmt_caption = '\u214c %s') # equiv4:::print.equivlist
@@ -86,6 +85,7 @@ as.matrix.nutritionlist <- \(x, ...) {
   ret <- x |> 
     lapply(FUN = as, Class = 'nutrition') |> # make double sure
     lapply(FUN = as.double.nutrition, ...) |>
+    #lapply(FUN = .repl_names) |> # why error?
     do.call(what = 'rbind', args = _) # matrix
   
   class(ret) <- c('nutritionMatrix', class(ret)) |>
@@ -146,11 +146,11 @@ print.nutritionMatrix <- \(x, ...) {
 }
 
 
-#.repl_colnames <- \(x) {
-#  colnames(x) <- colnames(x) |>
-#    .repl()
-#  return(x)
-#}
+.repl_names <- \(x) {
+  names(x) <- names(x) |>
+    .repl()
+  return(x)
+}
 
 
 

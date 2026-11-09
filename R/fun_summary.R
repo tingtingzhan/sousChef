@@ -158,11 +158,7 @@ summary.raw. <- \(object, ...) {
     equiv(caption = 'Cream Cheese', current = _)
   
   out <- ret |>
-    lapply(FUN = \(i) {
-      names(i) <- names(i) |> 
-        .repl()
-      return(i)
-    }) |>
+    lapply(FUN = .repl_names) |>
     do.call(what = 'equivs', args = _)
   
   class(out) <- c(

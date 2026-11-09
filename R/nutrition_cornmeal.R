@@ -23,8 +23,10 @@ IndianHead_white_cornmeal <- \() nutrition(
   name = 'White Cornmeal\U1f33d',  
   wegmans = '344427', usd = 1.79/907*30,
   servingGram = 30, servingCup = 1/4,
-  calorie = 110,
-  fat = 1, protein = 2, 
+  calorie = 100,
+  fat = 1, 
+  carbohydrate = 20, fiber = 2,
+  protein = 3, 
   cons = 'Too coarse, do not buy!')
 
 
@@ -34,7 +36,7 @@ IndianHead_yellow_cornmeal <- \() nutrition(
   wegmans = '346429', usd = 1.79/907*30,
   servingGram = 30, servingCup = 1/4,
   calorie = 110,
-  fat = 1, carbohydrate = 23, sugar = .5, protein = 2, 
+  fat = 1, carbohydrate = 23, fiber = 2, sugar = .5, protein = 2, 
   superior = 'Albertsons_yellow_cornmeal',
   cons = 'Extremely coarse')
 
@@ -45,7 +47,7 @@ Quaker_yellow_cornmeal <- \() nutrition(
   wegmans = '25374', usd = 2.99/680*27,
   servingGram = 27, servingTbsp = 3, 
   calorie = 90,
-  carbohydrate = 21, protein = 2)
+  carbohydrate = 21, fiber = 1, protein = 2)
 
 
 Quaker_white_cornmeal <- \() nutrition(

@@ -2,13 +2,13 @@
 
 waterEvap <- \(x) UseMethod(generic = 'waterEvap')
 
-#' @exportS3Method
+#' @export
 waterEvap.default <- \(x) numeric()
 
-#' @exportS3Method
+#' @export
 waterEvap.tool <- \(x) x@waterEvap
 
-#' @exportS3Method
+#' @export
 waterEvap.recipe <- \(x) {
   x@tool |>
     lapply(FUN = waterEvap.tool) |> 

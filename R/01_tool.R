@@ -142,17 +142,17 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     cat(sep = '')
   
   temperature <- sprintf(
-    fmt = '\U1f321%.0f\u00b0F %.0f\u00b0C',
+    fmt = '\U1f321%.0f\u00b0F %.1f\u00b0C',
     x@fahrenheit,
     (x@fahrenheit - 32) * 5/9 # celsius
   ) |> 
-    col_blue() |> style_bold()
+    col_br_blue() |> style_bold()
   
   minute <- sprintf(
     fmt = '\u23f0%s %s', 
     x@minute |> 
-      cmod(e2 = c(d = 60*24, hr = 60, min = 1, sec = 1/60), n = 3L) |>
-      col_red() |> 
+      cmod(e2 = consec::minute, n = 3L) |>
+      col_br_magenta() |> 
       style_bold(),
     (names(x@minute) %||% '') |> bg_br_yellow()
   ) |>

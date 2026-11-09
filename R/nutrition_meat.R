@@ -106,7 +106,15 @@ beef_heel <- \() nutrition(
   url = 'https://www.americanfoodsgroup.com/products/products/heel-meat-muscle-no-roll-2', # source of nutrition
   servingGram = 100, # 3.5 oz
   calorie = 130,
-  fat = 4, cholesterol = .040, sodium = .065, protein = 22)
+  fat = 4, cholesterol = .040, sodium = .065, protein = 22,
+  tool = list(
+    InstantPot(
+      program = 'Sous Vide',
+      fahrenheit = 203,
+      minute = 120,
+      cooling = c('Leave covered on the counter overnight')
+    )
+  ))
 
 beef_brisket_flat <- \() nutrition(
   fdc = c(

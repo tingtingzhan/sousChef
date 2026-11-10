@@ -254,7 +254,7 @@ KSM8990 <- \(...) tool(
 #' @rdname tool-class
 #' @export
 KSM7BL3PSS_doughhook <- \(...) tool(
-  name = 'Dough Hook, Stainless Steel',
+  name = 'Dough Hook', # , Stainless Steel
   kitchenaid = 'KSM7BL3PSS',
   ...)
 
@@ -262,14 +262,14 @@ KSM7BL3PSS_doughhook <- \(...) tool(
 #' @rdname tool-class
 #' @export
 KSM7BL3PSS_flatbeater <- \(...) tool(
-  name = 'Flat Beater, Stainless Steel',
+  name = 'Flat Beater', # , Stainless Steel
   kitchenaid = 'KSM7BL3PSS',
   ...)
 
 #' @rdname tool-class
 #' @export
 KSM7BL3PSS_wirewhip <- \(...) tool(
-  name = 'Wire Whip, Stainless Steel',
+  name = 'Wire Whip', # , Stainless Steel
   kitchenaid = 'KSM7BL3PSS',
   ...)
 

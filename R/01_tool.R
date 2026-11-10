@@ -306,6 +306,7 @@ KSEG950ESS <- \(...) tool(
 #' @export
 RobamCT763 <- \(...) tool(
   name = style_hyperlink(text = 'Robam R-Box CT763 Combi Steam Oven', url = 'https://robamliving.com/products/robam-ct763'),
+  alias = '\u84b8\u70e4\u7bb1',
   ...)
 
 #' @rdname tool-class

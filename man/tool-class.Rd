@@ -153,6 +153,8 @@ SodaStream_bottle1L(...)
 
 \item{\code{name2}}{any R object, currently supports \link[base]{character} or \linkS4class{tool}, brand and name of the auxiliary tool}
 
+\item{\code{gram}}{\link[base]{numeric} scalar, weight of the container, in grams}
+
 \item{\code{capacity}}{\link[base]{numeric} scalar, maximum capacity, in times of recipe}
 
 \item{\code{treatment}}{\link[base]{character} scalar, pre-treatment}

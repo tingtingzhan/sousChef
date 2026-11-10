@@ -5,6 +5,7 @@
 \alias{*,tool,numeric-method}
 \alias{*,numeric,tool-method}
 \alias{/,tool,numeric-method}
+\alias{-,numeric,tool-method}
 \title{\link[methods]{Arith} Methods of \linkS4class{tool}}
 \usage{
 \S4method{*}{tool,numeric}(e1, e2)
@@ -12,6 +13,8 @@
 \S4method{*}{numeric,tool}(e1, e2)
 
 \S4method{/}{tool,numeric}(e1, e2)
+
+\S4method{-}{numeric,tool}(e1, e2)
 }
 \arguments{
 \item{e1, e2}{see \strong{Usage}}

@@ -15,6 +15,8 @@
 #' 
 #' @slot name2 any R object, currently supports \link[base]{character} or \linkS4class{tool}, brand and name of the auxiliary tool
 #' 
+#' @slot gram \link[base]{numeric} scalar, weight of the container, in grams
+#' 
 #' @slot capacity \link[base]{numeric} scalar, maximum capacity, in times of recipe
 #' 
 #' @slot treatment \link[base]{character} scalar, pre-treatment
@@ -39,6 +41,8 @@ setClass(Class = 'tool', slots = c(
   name = 'character',
   name2 = 'ANY',
   alias = 'character',
+  
+  gram = 'numeric',
   
   capacity = 'numeric',
   
@@ -249,6 +253,7 @@ KSMICM <- \(...) tool(
 #' @export
 KSM8990 <- \(...) tool(
   name = 'Stand Mixer KSM8990, 8 Quart', kitchenaid = 'ksmc895ob',
+  gram = 1230,
   ...)
 
 #' @rdname tool-class
@@ -385,6 +390,7 @@ JoyoungCJA9U <- \(
   name = 'https://en.huarenstore.com/joyoung-cooking-machine-cj-a9u.html' |>
     style_hyperlink(text = 'Joyoung Stir-Frying Machine CJ-A9U', url = _), 
   alias = '\u7092\u83dc\u673a',
+  gram = 930,
   program = program, 
   ...)
 

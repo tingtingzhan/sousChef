@@ -38,3 +38,9 @@ setMethod(f = '*', signature = signature(e1 = 'numeric', e2 = 'tool'), definitio
 setMethod(f = '/', signature = signature(e1 = 'tool', e2 = 'numeric'), definition = \(e1, e2) e1 * (1/e2))
 
 
+
+#' @rdname Arith_tool
+#' @aliases -,numeric,tool-method
+#' @export
+setMethod(f = '-', signature = signature(e1 = 'numeric', e2 = 'tool'), definition = \(e1, e2) e1 - e2@gram)
+

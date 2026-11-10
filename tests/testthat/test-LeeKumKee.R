@@ -2,7 +2,7 @@
 expect_no_error(
   object = nutritionlist(
     LeeKumKee_satay(),
-    LeeKumKee_coconutCurry(),
+    LeeKumKee_coconut_curry(),
     LeeKumKee_chickenBouillon()
   ) |>
     sort_by('sodium') |>

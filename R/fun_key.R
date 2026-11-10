@@ -49,6 +49,7 @@ key2alias_nutrition <- \(x) {
       cookingWine =, Marsala =, Sherry = '\u6599\u9152',
       cornmeal = '\u7389\u7c73\U1f33d\u9762',
       creamCheese = '\u5976\u6cb9\u5976\u916a',
+      curry = '\u5496\u55b1\u0b95\u0bb1\u0bbf',
       drymilk = '\u8131\u8102\u5976\u7c89',
       drywholemilk = '\u5168\u8102\u5976\u7c89',
       duck = '\u6574\u9e2d',

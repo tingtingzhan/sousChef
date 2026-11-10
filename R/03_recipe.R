@@ -162,6 +162,7 @@ labels.recipe <- \(object, ...) {
     oatmeal = 'Oatmeal\u71d5\u9ea6\u7ca5',
     pasteisdenata = '\u8461\u5f0f\u86cb\u631e',
     ricepi = '\u7c73\u76ae',
+    rub = '\u814c\u6599',
     sacima = '\u8428\u5176\u9a6c',
     snowSkin = '\u51b0\u76ae',
     sodastream = 'SodaStream\u6c7d\u6c34',

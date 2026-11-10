@@ -102,7 +102,7 @@ DukesLight_mayonnaise <- \() nutrition(
 
 
 
-ThaiKitchen_greenCurry <- \() nutrition(
+ThaiKitchen_green_curry <- \() nutrition(
   thaikitchen = 'thai-kitchen-r-gluten-free-green-curry-paste-4-oz',
   name = 'Green Curry Paste',
   usd = 6.49/19, date = as.Date('2026-09-25'),
@@ -111,7 +111,7 @@ ThaiKitchen_greenCurry <- \() nutrition(
   carbohydrate = 1, sodium = .14, 
   pros = 'Love!')
 
-ThaiKitchen_redCurry <- \() nutrition(
+ThaiKitchen_red_curry <- \() nutrition(
   thaikitchen = 'thai-kitchen-r-gluten-free-red-curry-paste-4-oz',
   name = 'Red Curry Paste',
   usd = 6.49/5, date = as.Date('2026-09-25'),

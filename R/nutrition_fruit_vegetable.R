@@ -264,7 +264,7 @@ bambooShoot <- \() nutrition(
   name = 'Bamboo Shoots', alias = '\u7af9\u7b0b', # \U1f38d
   servingGram = 100, water = 91, protein = 2.6, fat = .3, sugar = 3, sodium = .004)
 
-garlic <- \() nutrition(
+garlic_fresh <- \() nutrition(
   fdc = 2597546L,
   name = 'Garlic\U1f9c4, Fresh', alias = '\u849c\u84c9',
   servingGram = 100, carbohydrate = 20)

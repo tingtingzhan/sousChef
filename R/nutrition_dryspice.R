@@ -354,7 +354,7 @@ FrontierCoop_5spice <- \() nutrition(
   servingGram = 54)
 
 
-FrontierCoop_vindaloo <- \() nutrition(
+FrontierCoop_vindaloo_curry <- \() nutrition(
   frontiercoop = 'vindaloo-curry-seasoning-organic-1-lb',
   name = 'Vindaloo Curry Seasoning', # \u5496\u55b1\u7c89 
   contain = c(
@@ -363,7 +363,7 @@ FrontierCoop_vindaloo <- \() nutrition(
   usd = 31.20/454*3.5, 
   servingGram = 3.5, servingTsp = 2, # packaging
   calorie = 10,
-  carbohydrate = 2)
+  carbohydrate = 2, fiber = 1)
 
 
 

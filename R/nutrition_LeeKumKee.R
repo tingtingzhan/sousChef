@@ -113,7 +113,7 @@ LeeKumKee_blackPepper <- \() nutrition(
   calorie = 25, sodium = .6, carbohydrate = 5, addedSugar = 3)
 
 
-LeeKumKee_coconutCurry <- \() nutrition(
+LeeKumKee_coconut_curry <- \() nutrition(
   lkkusa = 'coconut-flavored-curry-sauce',
   name = 'Coconut Curry Sauce', alias = '\u8461\u570b\u96de\u6c41',
   usd = 4.29/235*18,

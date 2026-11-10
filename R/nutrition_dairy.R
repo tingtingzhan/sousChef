@@ -276,7 +276,7 @@ TraderJoesLight_creamCheese <- \() nutrition(
 
 
 
-WholeFoods365_creamCheese <- \() nutrition(
+WholeFoods_creamCheese <- \() nutrition(
   wholefoods = 'b074h6qz3j',
   name = 'Cream Cheese',
   contain = 'locust bean gum',
@@ -456,7 +456,7 @@ Wegmans_heavyCream <- \() nutrition(
 
 
 
-WholeFoods365_heavyCream <- \() nutrition(
+WholeFoods_heavyCream <- \() nutrition(
   wholefoods = 'b07qf6f984',
   name = 'Heavy Cream',
   servingGram = 15, servingTbsp = 1,

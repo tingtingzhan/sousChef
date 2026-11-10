@@ -25,7 +25,7 @@ TraderJoes_cornbreadMix <- \() nutrition(
 
 
 
-WholeFoods365_cornbreadMix <- \() nutrition(
+WholeFoods_cornbreadMix <- \() nutrition(
   wholefoods = 'b07d7bdyh6',
   name = 'Cornbread Mix', 
   usd = 3.59, # out of stock as of 2026-10-19

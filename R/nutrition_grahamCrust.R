@@ -9,7 +9,7 @@ Keebler_grahamCrust <- \() nutrition(
 
 
 
-WholeFoods365_grahamCrust <- \() nutrition(
+WholeFoods_grahamCrust <- \() nutrition(
   wholefoods = 'b08ly5bys5',
   name = 'Graham Crust',
   servingGram = 21, 

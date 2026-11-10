@@ -7,7 +7,7 @@
 expect_no_error(
   object = nutritionlist(
     sousChef:::TraderJoes_cornbreadMix(),
-    sousChef:::WholeFoods365_cornbreadMix(),
+    sousChef:::WholeFoods_cornbreadMix(),
     sousChef:::Krusteaz_southern_cornbreadMix(),
     sousChef:::BobsRedMill_cornbreadMix(),
     sousChef:::Stonewall_cornbreadMix(),
@@ -28,7 +28,7 @@ expect_no_error(
       as('raw.'),
     sousChef:::Wegmans_recipe_cornbread(),
     sousChef:::Wegmans_cornbread(),
-    sousChef:::WholeFoods365_cornbreadMix() |>
+    sousChef:::WholeFoods_cornbreadMix() |>
       as('raw.'),
     sousChef:::Stonewall_cornbreadMix() |>
       as('raw.'),

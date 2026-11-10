@@ -269,6 +269,7 @@ KSM7BL3PSS_doughhook <- \(...) tool(
 KSM7BL3PSS_flatbeater <- \(...) tool(
   name = 'Flat Beater', # , Stainless Steel
   kitchenaid = 'KSM7BL3PSS',
+  gram = 550,
   ...)
 
 #' @rdname tool-class

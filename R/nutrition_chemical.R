@@ -78,7 +78,7 @@ TraderJoes_bakingPowder <- \() nutrition(
   brand = 'Trader Joe\'s\U1f1fa\U1f1f8', 
   name = 'Baking Powder, 2x Acting', alias = '\u6ce1\u6253\u7c89',
   contain = c('NaHCO\u2083', 'Ca(H\u2082PO\u2084)\u2082', 'corn starch'),
-  amazon = 'B00AAOVIB6', usd = 12.93/(2*383),
+  amazon = 'B00AAOVIB6', usd = 12.93/(2*383), date = as.Date('2026-11-10'), # not on webpage
   servingGram = 230/383, # 0.6g 
   servingTsp = 1/8, # packaging
   sodium = .055)

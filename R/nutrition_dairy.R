@@ -449,7 +449,7 @@ Wegmans_heavyCream <- \() nutrition(
   name = 'Heavy Cream',
   servingGram = 15, 
   servingTbsp = 1, # packaging
-  wegmans = '58945', usd = 6.29/64, # 1floz = 2Tbsp; 32floz in total
+  wegmans = '58945', usd = 3.99/64, date = as.Date('2026-11-10'),
   calorie = 50,
   fat = 6, cholesterol = .02, sodium = .005, water = 15 * .577) 
 

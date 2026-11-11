@@ -130,7 +130,7 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     x@capacity |> 
       sprintf(fmt = '\u00d7%.1f recipes') |>
       bg_br_yellow() |>
-      sprintf(fmt = ' \u2726 Max. Capacity: %s\n') |> 
+      sprintf(fmt = ' \U1f9fa Max. Capacity: %s\n') |> 
       cat()
   }
   
@@ -139,7 +139,7 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     cat(sep = '')
   
   sprintf(
-    fmt = ' \u2726 %s %s\n',
+    fmt = ' \u2699\ufe0f %s %s\n',
     x@program,
     (names(x@program) %||% '') |> bg_br_yellow()
   ) |> 
@@ -182,7 +182,7 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
   #cat('\n')
   
   x@cooling |> 
-    sprintf(fmt = ' \u21ac %s\n') |> 
+    sprintf(fmt = ' \U1f192 %s\n') |> 
     cat(sep = '')
   
   x@waterEvap |> 

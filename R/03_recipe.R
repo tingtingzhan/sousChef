@@ -167,6 +167,7 @@ labels.recipe <- \(object, ...) {
     snowSkin = '\u51b0\u76ae',
     sodastream = 'SodaStream\u6c7d\u6c34',
     tiramisu = 'Tirames\u00f9', # Venetian (not Italian)
+    tomyumStew = '\u94f8\u94c1\u9505\u7116\u6d77\u9c9c \u51ac\u9634\u9171',
     tortilla = 'Tortilla',
     udon = '\u9942\u98e9\u3046\u3069\u3093',
     wonton = '\u9984\u9968\u76ae',

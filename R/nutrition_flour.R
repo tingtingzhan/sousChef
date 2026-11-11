@@ -6,7 +6,7 @@
 Wegmans_pastryFlr <- \() nutrition(
   name = 'Pastry\U1f370 Flour',
   alias = '\u4f4e\u7b4b\u9762\u7c89',
-  wegmans = '46510', usd = 3.69/2270*30,
+  wegmans = '46510', usd = 3.49/2270*30, date = as.Date('2026-11-10'),
   servingGram = 30, 
   servingCup = 1/4, # packaging
   calorie = 100,

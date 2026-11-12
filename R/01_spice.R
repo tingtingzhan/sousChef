@@ -17,7 +17,7 @@ setClass(Class = 'spice', slots = c(
 
 
 
-spice <- \(no_eval = .findCall(which = -2), ...) {
+spice <- \(no_eval = sys_call_name(which = -2), ...) {
   
   no_eval
   

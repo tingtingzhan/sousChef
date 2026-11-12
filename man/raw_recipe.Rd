@@ -12,7 +12,7 @@
 \usage{
 \S4method{show}{raw.}(object)
 
-recipe(no_eval = .findCall(which = -2), ...)
+recipe(no_eval = sys_call_name(which = -2), ...)
 
 \S4method{show}{recipe}(object)
 }

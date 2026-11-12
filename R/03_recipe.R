@@ -54,7 +54,7 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
 #' The helper function [recipe()] converts raw user input into the (slots of) \linkS4class{recipe}-class.
 #' 
 #' @export
-recipe <- \(no_eval = .findCall(which = -2), ...) {
+recipe <- \(no_eval = sys_call_name(which = -2), ...) {
   
   no_eval
   # force(no_eval) # messes up envir!!

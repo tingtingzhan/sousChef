@@ -7,7 +7,7 @@
 \alias{show,nutrition-method}
 \title{\linkS4class{nutrition}}
 \usage{
-nutrition(no_eval = .findCall(which = -2), ...)
+nutrition(no_eval = sys_call_name(which = -2), ...)
 
 \S4method{show}{nutrition}(object)
 }

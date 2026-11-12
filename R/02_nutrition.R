@@ -113,7 +113,7 @@ setClass(Class = 'nutrition', slots = c(
 #' The helper function [nutrition()] converts raw user input into the (slots of) \linkS4class{nutrition}-class.
 #' 
 #' @export
-nutrition <- \(no_eval = .findCall(which = -2), ...) {
+nutrition <- \(no_eval = sys_call_name(which = -2), ...) {
   
   no_eval
   # force(no_eval) # messes up envir!!

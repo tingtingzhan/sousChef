@@ -42,9 +42,6 @@
   if (is_exported) {
     fmt <- '{.run [%s](%s::%s())}'
   } else if (is_unexported) {
-    #fmt <- '{.run [%s](utils::getFromNamespace(ns = \'%s\', x = \'%s\')())}'
-    # does not work.. as.Date('2026-11-05')
-    # AND breaks my [.findCall()]
     fmt <- '{.run [%s](%s:::%s())}'
     # does not work.. as.Date('2026-11-05')
   }

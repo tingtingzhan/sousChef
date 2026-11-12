@@ -97,15 +97,20 @@ zero.omit <- \(x) {
 # name clash
 # ?stats::getCall
 
-
-.findCall <- \(which = -2) {
+#' @title \link[base]{name} Part of \link[base]{sys.call}
+#' 
+#' @description
+#' The \link[base]{name} part of the \link[base]{sys.call}, returned as a \link[base]{call}.
+#' 
+#' @param ... parameters of the function \link[base]{sys.call}
+#' 
+#' @returns
+#' The function [sys_call_name()] returns a \link[base]{call} (not a \link[base]{name}!) for the downstream function \link[methods]{new}.
+#' 
+#' @export
+sys_call_name <- \(...) {
   
-  # default `-2` frame is determined by 
-  # [.findCall]
-  # helper function, 
-  # e.g. [spice()], [nutrition()], [recipe()]
-  
-  tmp <- sys.call(which = which) # let err!!
+  tmp <- sys.call(...) # let err!!
   z <- tmp[[1L]]
   #print(z)
   
@@ -115,8 +120,7 @@ zero.omit <- \(x) {
     z <- z[[3L]]
   } else stop('unsupported ', sQuote(z))
   
-  # for ?methods::new to work!!!
-  call(name = 'quote', z) 
+  call(name = 'quote', z) # for ?methods::new to work!!!
   
 }
 

@@ -23,10 +23,10 @@ spice <- \(no_eval = sys_call_name(which = -2), ...) {
   
   x <- list(...)
   
-  if (!length(x$call)) x$call <- no_eval
+  if (!length(x$call)) x$call <- call(name = 'quote', no_eval)
   
   if (!length(x$wiki)) {
-    x$wiki <- no_eval[[2L]] |> # `no_eval` is `quote(anise)` !!
+    x$wiki <- no_eval |> 
       as.character()
   }
   

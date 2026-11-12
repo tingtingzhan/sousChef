@@ -135,15 +135,14 @@ setMethod(f = '+', signature = c(e1 = 'raw.', e2 = 'list'), definition = \(e1, e
   atr$class <- NULL
   
   if (length(atr$call)) { # slot2attr
-    atr$no_eval <- call(
+    atr$call <- call(
       name = 'quote', 
       call(
         name = 'quote', 
         atr$call
       )
     )
-    atr$call <- NULL
-    # for [recipe()] !!!
+    # for [recipe()] or [raw.()] !!
   }
   
   atr <- atr[lengths(atr) > 0L]

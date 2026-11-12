@@ -100,13 +100,19 @@ zero.omit <- \(x) {
 #' @title \link[base]{name} Part of \link[base]{sys.call}
 #' 
 #' @description
-#' The \link[base]{name} part of the \link[base]{sys.call}, returned as a \link[base]{call}.
+#' The \link[base]{name} part of the \link[base]{sys.call}.
 #' 
 #' @param ... parameters of the function \link[base]{sys.call}
 #' 
 #' @returns
-#' The function [sys_call_name()] returns a \link[base]{call} (not a \link[base]{name}!) for the downstream function \link[methods]{new}.
+#' The function [sys_call_name()] returns a \link[base]{name}.
 #' 
+#' @examples
+#' foo = \() {
+#'   sys_call_name(which = -1L)
+#' }
+#' foo()
+#' @keywords function-call-stack name
 #' @export
 sys_call_name <- \(...) {
   
@@ -120,7 +126,8 @@ sys_call_name <- \(...) {
     z <- z[[3L]]
   } else stop('unsupported ', sQuote(z))
   
-  call(name = 'quote', z) # for ?methods::new to work!!!
+  return(z)
+  #call(name = 'quote', z) # for ?methods::new to work!!!
   
 }
 

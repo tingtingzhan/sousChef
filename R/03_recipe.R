@@ -57,10 +57,9 @@ setClass(Class = 'recipe', contains = 'raw.', slots = c(
 recipe <- \(no_eval = sys_call_name(which = -2), ...) {
   
   no_eval
-  # force(no_eval) # messes up envir!!
   
   x <- list(...)
-  if (!length(x$call)) x$call <- no_eval
+  if (!length(x$call)) x$call <- call(name = 'quote', no_eval)
   
   x <- x |>
     .cleanSlots_raw.() |>

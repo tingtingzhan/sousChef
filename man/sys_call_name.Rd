@@ -10,8 +10,16 @@ sys_call_name(...)
 \item{...}{parameters of the function \link[base]{sys.call}}
 }
 \value{
-The function \code{\link[=sys_call_name]{sys_call_name()}} returns a \link[base]{call} (not a \link[base]{name}!) for the downstream function \link[methods]{new}.
+The function \code{\link[=sys_call_name]{sys_call_name()}} returns a \link[base]{name}.
 }
 \description{
-The \link[base]{name} part of the \link[base]{sys.call}, returned as a \link[base]{call}.
+The \link[base]{name} part of the \link[base]{sys.call}.
 }
+\examples{
+foo = \() {
+  sys_call_name(which = -1L)
+}
+foo()
+}
+\keyword{function-call-stack}
+\keyword{name}

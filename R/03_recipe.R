@@ -146,6 +146,7 @@ labels.recipe <- \(object, ...) {
     creamCheeseDip = 'Cream Cheese Dip\u5976\u6cb9\u4e73\u916a\u9171', 
     creamCheeseSpread = 'Cream Cheese Spread\U1f96f\u5976\u6cb9\u4e73\u916a\u9171',
     custardFilling = '\u5976\u9ec4\u9985',
+    dip = '\u8638\u6c34',
     fauxReo = '\u5c71\u5be8\u5965\u5229\u5965',
     fishball = '\u9c7c\u4e38',
     grahamCrust = 'Graham Crust',

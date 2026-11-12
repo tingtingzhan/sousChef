@@ -32,6 +32,33 @@ gsub_names <- \(x, ...) {
 
 
 
+eval_ <- \(x) {
+  if (identical(x, make.names(x))) {
+    x |>
+      call(name = _) |>
+      eval()
+  } else {
+    x |>
+      str2lang() |>
+      eval()
+  }
+}
+
+
+exists_ <- \(x, ...) {
+  if (identical(x, make.names(x))) {
+    x |>
+      exists(...)
+  } else {
+    tryCatch(expr = {
+      x |>
+        str2lang() |>
+        eval()
+    }, error = identity) |>
+      Negate(inherits)(what = 'error')
+  }
+}
+
 
 
 # add name to len-1 vector
@@ -132,9 +159,8 @@ mergePc <- \(x, ...) {
   if (!length(v)) return(x)
   
   pieceGram <- names(v) |>
-    vapply(FUN = \(i) {
-      eval(call(name = i))@pieceGram
-    }, FUN.VALUE = NA_real_, USE.NAMES = TRUE)
+    lapply(FUN = eval_) |>
+    vapply(FUN = slot, name = 'pieceGram', FUN.VALUE = NA_real_, USE.NAMES = TRUE)
   
   z <- sum_by_name(
     x[['misc']],
@@ -463,7 +489,8 @@ get_sugarLost <- \(x) {
 get_flavor_ <- \(x) {
   # `x` is base::character base::vector
   x |>
-    lapply(FUN = \(i) eval(call(name = i))) |>
+    #lapply(FUN = \(i) eval(call(name = i))) |> # still works
+    lapply(FUN = eval_) |>
     vapply(FUN = \(i) {
       if (is(i, 'nutrition')) {
         i@name
@@ -610,7 +637,9 @@ gram_per_tsp <- \(x) {
     
   x |> 
     vapply(FUN = \(i) {
-      v <- eval(call(name = i)) |>
+      #v <- eval(call(name = i)) |> # still works
+      v <- i |> 
+        eval_() |>
         as(Class = 'nutrition')
       if (!is(v, 'nutrition')) {
         stop(sQuote(i), ' cannot be converted to `nutrition`')
@@ -634,10 +663,10 @@ fmt_pc <- \(x) {
   if (!length(x)) return(invisible())
     
   id_pc <- names(x) |>
-    vapply(FUN = exists, where = asNamespace('sousChef'), inherits = FALSE, FUN.VALUE = NA)
+    vapply(FUN = exists_, where = asNamespace('sousChef'), inherits = FALSE, FUN.VALUE = NA)
   
   v_pc <- names(x)[id_pc] |>
-    lapply(FUN = \(i) eval(call(name = i)))
+    lapply(FUN = eval_)
   
   pieceGram <- v_pc |> 
     vapply(FUN = slot, name = 'pieceGram', FUN.VALUE = NA_real_)
@@ -720,7 +749,7 @@ prt_vol <- \(x) {
     names()
   
   ingredient <- nm |>
-    lapply(FUN = \(i) eval(call(name = i)))
+    lapply(FUN = eval_)
     
   id <- ingredient |>
     vapply(FUN = \(i) {

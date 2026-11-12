@@ -620,7 +620,7 @@ print.nutrition <- \(x, prt_label = TRUE, ...) {
       tolower() |>
       vapply(FUN = \(i) {
         if (exists(i, where = asNamespace('sousChef'))) {
-          eval(call(name = i)) |>
+          eval(call(name = i)) |> # dont use [eval_()] yet
             format() # [format.spice], etc.
         } else i
       }, FUN.VALUE = '') |>

@@ -11,7 +11,8 @@ Junior_cappuccino_cheesecake <- \() recipe(
     KingArthur_Bensdorp_cocoa = 1
   ),
   water = c(c100 = 15),
-  misc_pc = c(egg = 2/3.25*4), # 2 extra-large eggs  https://en.wikipedia.org/wiki/Chicken_egg_sizes
+  #misc_pc = c(egg = 2/3.25*4), # 2 extra-large eggs  https://en.wikipedia.org/wiki/Chicken_egg_sizes
+  misc_pc = c('egg(\'extralarge\')' = 2),
   misc_cup = c(
     Wegmans_heavyCream = 3/4,
     Domino_granulated = 1+2/3,

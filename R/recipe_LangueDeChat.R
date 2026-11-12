@@ -31,11 +31,8 @@ Ying_LangueDeChat <- \() recipe(
     KingArthur_allPurposeFlr = 25,
     Kerrygold_butter = 25,
     Wegmans_heavyCream = 10,
-    Domino_10x = 15
-  ),
-  misc_pc = c(
-    eggYolk = 15/(17.3 + 34.7), 
-    eggWhite = 15/(17.3 + 34.7)
+    Domino_10x = 15,
+    egg = 15
   ),
   misc_tsp = c(
     NielsenMassey_Madagascar = 1/8

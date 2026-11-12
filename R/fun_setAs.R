@@ -8,7 +8,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   z <- grams |>
     names() |> 
     setNames(nm = _) |>
-    lapply(FUN = \(i) eval(call(name = i)))
+    lapply(FUN = eval_)
   
   date <- z |> 
     lapply(FUN = slot, name = 'date') |>

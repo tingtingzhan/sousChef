@@ -37,11 +37,11 @@ eggWhite <- \(size = c('large', 'extralarge', 'jumbo')) {
     fat = .17, sugar = .71, sodium = .166)
 }
 
-#egg <- \(...) {
+#egg <- \(...) { # works :)
 egg <- \(size = c('large', 'extralarge', 'jumbo')) {
   size <- match.arg(size)
   c(
-    #eggYolk(...) + eggWhite(...), # error with [.findCall()]; do not understand why..
+    #eggYolk(...) + eggWhite(...), # works :) but `name` requires `size`
     eggYolk(size = size) + eggWhite(size = size),
     list(
       call = quote(quote(quote(egg))), # wow..

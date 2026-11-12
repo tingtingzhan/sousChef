@@ -105,11 +105,7 @@ zero.omit <- \(x) {
   # helper function, 
   # e.g. [spice()], [nutrition()], [recipe()]
   
-  tmp <- match.call(
-    definition = sys.function(which = which), 
-    call = sys.call(which = which)
-  ) # let err!!
-  
+  tmp <- sys.call(which = which) # let err!!
   z <- tmp[[1L]]
   #print(z)
   

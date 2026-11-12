@@ -2,7 +2,7 @@ Package: sousChef
 Type: Package
 Title: sousChef
 Version: 0.1.0
-Date: 2026-11-07
+Date: 2026-11-11
 Description: The S4 objects 'tool', 'nutrition', 'spice', 'raw.' and 'recipe'. 
 Authors@R: c(person(given = "Tingting", family = "Zhan", role = c("aut", "cre"), email = "tingtingzhan@gmail.com"))
 Language: en-US
@@ -10,9 +10,8 @@ Encoding: UTF-8
 License: GPL-2
 Depends: R (>= 4.6)
 Imports: methods, cli (== 3.6.6), charwidth, consec, equiv4
+Suggests: testthat (>= 3.0.0)
 Config/roxygen2/version: 8.1.1
 Config/roxygen2/markdown: TRUE
-Suggests: 
-    testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Config/testthat/parallel: true

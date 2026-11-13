@@ -9,6 +9,9 @@ waterEvap.default <- \(x) numeric()
 waterEvap.tool <- \(x) x@waterEvap
 
 #' @export
+waterEvap.raw. <- \(x) 0
+
+#' @export
 waterEvap.recipe <- \(x) {
   x@tool |>
     lapply(FUN = waterEvap.tool) |> 

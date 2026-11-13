@@ -97,11 +97,13 @@ summary.raw. <- \(object, ...) {
   
   ret <- list()
   
-  ret$perRaw <- (x_overview / x_rawtotal) |>
-    paste_names('2raw', sep = '') |>
-    equiv(caption = 'Raw Ingredients', current = _, target = target) |>
-    gsub_names(pattern = '2raw$', replacement = '')
-  
+  ret$perRaw <- if (waterEvap(x)) {
+    (x_overview / x_rawtotal) |>
+      paste_names('2raw', sep = '') |>
+      equiv(caption = 'Raw Ingredients', current = _, target = target) |>
+      gsub_names(pattern = '2raw$', replacement = '')
+  }
+    
   ret$perServing <- (z / x_nutri@servingGram) |>
     equiv(caption = 'Serving', current = _, target = target)
   

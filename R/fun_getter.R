@@ -8,6 +8,7 @@ waterEvap.default <- \(x) 0
 #' @export
 waterEvap.tool <- \(x) x@waterEvap |> sum()
 
+#' @method waterEvap raw.
 #' @export
 waterEvap.raw. <- \(x) 0
 

@@ -116,18 +116,15 @@ zero.omit <- \(x) {
 #' @export
 sys_call_name <- \(...) {
   
-  tmp <- sys.call(...) # let err!!
-  z <- tmp[[1L]]
-  #print(z)
+  z <- sys.call(...)[[1L]] # let err!!
   
-  if (is.symbol(z)) {
-    # do nothing
-  } else if (as.character(z[[1L]]) %in% c('::', ':::')) {
-    z <- z[[3L]]
-  } else stop('unsupported ', sQuote(z))
+  if (is.symbol(z)) return(z)
   
-  return(z)
-  #call(name = 'quote', z) # for ?methods::new to work!!!
+  if (as.character(z[[1L]]) %in% c('::', ':::')) {
+    return(z[[3L]])
+  } 
+  
+  stop('unsupported ', sQuote(z))
   
 }
 
@@ -142,6 +139,7 @@ call2alias_nutrition <- \(x) {
       fun = as.character(x@call)
     )
   return(x)
+  
 }
 
 

@@ -3,10 +3,10 @@
 waterEvap <- \(x) UseMethod(generic = 'waterEvap')
 
 #' @export
-waterEvap.default <- \(x) numeric()
+waterEvap.default <- \(x) 0
 
 #' @export
-waterEvap.tool <- \(x) x@waterEvap
+waterEvap.tool <- \(x) x@waterEvap |> sum()
 
 #' @export
 waterEvap.raw. <- \(x) 0

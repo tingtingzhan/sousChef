@@ -164,6 +164,7 @@ labels.recipe <- \(object, ...) {
     ricepi = '\u7c73\u76ae',
     rub = '\u814c\u6599',
     sacima = '\u8428\u5176\u9a6c',
+    skinGlaze = '\u8106\u76ae\u7cd6\u6d46',
     snowSkin = '\u51b0\u76ae',
     sodastream = 'SodaStream\u6c7d\u6c34',
     tiramisu = 'Tirames\u00f9', # Venetian (not Italian)

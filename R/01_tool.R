@@ -124,7 +124,15 @@ setMethod(f = show, signature = 'tool', definition = \(object) {
     x@name2 |>
       labels.tool() |> 
       cat('\n')
-  } # else do nothing
+  } else if (is.list(x@name2)) {
+    x@name2 |>
+      vapply(FUN = \(i) {
+        if (!is(i, 'tool')) stop()
+        i |>
+          labels.tool()
+      }, FUN.VALUE = '') |>
+      cat(sep = '\n')
+  }
   
   if (length(x@capacity)) {
     x@capacity |> 
@@ -225,7 +233,7 @@ SamsungME21R706BAT <- \(...) tool(
 
 #' @rdname tool-class
 #' @export
-thermometer <- \(...) tool(
+Etekcity1260 <- \(...) tool(
   name = style_hyperlink(text = 'Etekcity Lasergrip 1260', url = 'https://etekcity.com/products/lasergrip-1260-infrared-thermometer'), 
   ...)
 
@@ -468,6 +476,14 @@ Owala12 <- \(...) tool(
   name = 'SmoothSip Slider 12oz',
   ...)
 
+
+#' @rdname tool-class
+#' @export
+GreenPan3qt <- \(...) tool(
+  name = 'GreenPan Premiere Max Saucepan, 3 Qt' |>
+    style_hyperlink(url = 'https://www.williams-sonoma.com/products/greenpan-premiere-stainless-steel-ceramic-nonstick-saucepan-set-1-12-qt-3-qt/'),
+  ...
+)
 
 #' @rdname tool-class
 #' @export

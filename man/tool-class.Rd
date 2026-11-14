@@ -6,7 +6,7 @@
 \alias{show,tool-method}
 \alias{Pastalinda260}
 \alias{SamsungME21R706BAT}
-\alias{thermometer}
+\alias{Etekcity1260}
 \alias{CuisinartICE70}
 \alias{InstantPot}
 \alias{KSMICM}
@@ -34,6 +34,7 @@
 \alias{Stanley40}
 \alias{StanleyJar36}
 \alias{Owala12}
+\alias{GreenPan3qt}
 \alias{Staub_vertRoaster}
 \alias{Staub_deepSkillet}
 \alias{Staub_ovalSeaBass}
@@ -47,7 +48,7 @@ Pastalinda260(...)
 
 SamsungME21R706BAT(...)
 
-thermometer(...)
+Etekcity1260(...)
 
 CuisinartICE70(...)
 
@@ -125,6 +126,8 @@ Stanley40(...)
 StanleyJar36(...)
 
 Owala12(...)
+
+GreenPan3qt(...)
 
 Staub_vertRoaster(...)
 

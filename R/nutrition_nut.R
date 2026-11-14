@@ -23,6 +23,7 @@ Greenmax_blackSesame <- \() nutrition(
   alias = '\u9ed1\u829d\u9ebb\u7c89', name = 'Black Sesame Powder',
   usd = 5.99/400*40,
   servingGram = 40, 
+  pieceGram = 400, piece_fmt = '%.1f\U1fad9',
   calorie = 240,
   fat = 20.5, sodium = .005, carbohydrate = 7, protein = 9)
 

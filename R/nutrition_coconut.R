@@ -61,7 +61,8 @@ WegmansOrganic_coconutFlr <- \() nutrition(
   #servingTbsp = 2, # packaging
   servingTbsp = 14/(66*2) * 16, # actual experiment: 66g = 1/2 cup
   calorie = 60,
-  fat = 2, sodium = .01, carbohydrate = 8, sugar = 1, protein = 2)
+  fat = 2, sodium = .01, carbohydrate = 8, sugar = 1, protein = 2,
+  pros = 'has tremendous water obsorbancy')
 
 
 

@@ -496,6 +496,7 @@ Staub_vertRoaster <- \(...) tool(
 #' @export
 Staub_deepSkillet <- \(...) tool(
   name = 'Deep Skillet, 8.5 inch', staub = '1029479', alias = '\u94f8\u94c1\u5e73\u5e95\u9505',
+  gram = 2065,
   ...
 )
 

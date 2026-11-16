@@ -67,7 +67,7 @@ Na2CO3 <- \() nutrition(
 
 
 Wegmans_bakingPowder <- \() nutrition(
-  name = 'Baking Powder, 2x Acting', alias = '\u6ce1\u6253\u7c89',
+  name = 'Baking Powder, 2x Acting',
   wegmans = '45049', usd = 2.49/383,
   contain = c('NaHCO\u2083', 'Ca(H\u2082PO\u2084)\u2082', 'corn starch'),
   servingTsp = 1/8, servingGram = 230/383, sodium = .05)
@@ -76,7 +76,7 @@ Wegmans_bakingPowder <- \() nutrition(
 TraderJoes_bakingPowder <- \() nutrition(
   fdc = 172804L,
   brand = 'Trader Joe\'s\U1f1fa\U1f1f8', 
-  name = 'Baking Powder, 2x Acting', alias = '\u6ce1\u6253\u7c89',
+  name = 'Baking Powder, 2x Acting',
   contain = c('NaHCO\u2083', 'Ca(H\u2082PO\u2084)\u2082', 'corn starch'),
   amazon = 'B00AAOVIB6', usd = 12.93/(2*383), date = as.Date('2026-11-10'), # not on webpage
   servingGram = 230/383, # 0.6g 

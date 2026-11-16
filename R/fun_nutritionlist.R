@@ -142,6 +142,8 @@ print.nutritionMatrix <- \(x, ...) {
   x[x == 'eggWhite'] <- '\U0001f95awhite'
   x[x == 'cornmeal'] <- '\U1f33d'
   x[x == 'onion'] <- '\U1f9c5'
+  x[x == 'ssmOil'] <- 'ssmOil\n\u829d\u9ebb\u6cb9'
+  x[x == 'rattanPpOil'] <- 'rattanPpOil\n\u85e4\u6912\u6cb9'
   return(x)
 }
 

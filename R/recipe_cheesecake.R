@@ -90,7 +90,7 @@ Natasha_pumpkin_cheesecake <- \() recipe(
   ), 
   misc_pc = c(egg = 4),
   misc_cup = c(
-    Domino_lightBrown = 1.5,
+    Domino_light_brownSugar = 1.5,
     Daisy_sourCream = 1/4
   ),
   misc_tsp = c(
@@ -130,7 +130,7 @@ PreppyKitchen_pumpkin_cheesecake <- \() recipe(
   misc_cup = c(
     Libbys_pumpkin = 1,
     Domino_granulated = 3/4,
-    Domino_lightBrown = 1/2,
+    Domino_light_brownSugar = 1/2,
     Daisy_sourCream = 1/2
   ),
   misc_tsp = c(

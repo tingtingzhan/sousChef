@@ -43,6 +43,7 @@ key2alias_nutrition <- \(x) {
     x@alias <- switch(
       EXPR = xkey, 
       bakingPowder = '\u6ce1\u6253\u7c89',
+      brownSugar = '\u7ea2\u7cd6',
       butter = '\u9ec4\u6cb9',
       cocoa =, cacao = '\u53ef\u53ef\u7c89',
       coffee = '\u901f\u6eb6\u5496\u5561',

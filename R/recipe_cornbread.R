@@ -101,7 +101,7 @@ JoshuaWeissman_cornbread <- \() recipe(
   # 1/2 bunch fresh thyme 
   misc_Tbsp = c(
     TraderJoes_bakingPowder = 1,
-    Domino_lightBrown = 3.5
+    Domino_light_brownSugar = 3.5
   ),
   misc = c(
     Morton_salt = 6

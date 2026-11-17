@@ -6,7 +6,7 @@ xiaogaojie_adzukiBeanPaste1 <- \() recipe(
   misc = c(
     HaiTai_adzukibean = 500,
     Wegmans_corn_oil = 12,
-    Domino_darkBrown = 75,
+    Domino_dark_brownSugar = 75,
     xiaogaojie_invertSugar = 80
   ),
   water = c(c22 = 350), # actual water absorbed
@@ -21,7 +21,7 @@ xiaogaojie_adzukiBeanPaste2 <- \() recipe(
   misc = c(
     HaiTai_adzukibean = 200,
     Wegmans_corn_oil = 120,
-    Domino_darkBrown = 100
+    Domino_dark_brownSugar = 100
   ),
   water = 700, 
   #waterEvap = 350, # this is high oil!   !!!to reach water 37.5% as xiaogaojie_adzukiBeanPaste1()

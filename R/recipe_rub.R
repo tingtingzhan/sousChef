@@ -55,7 +55,7 @@ Guga_rub <- \() recipe(
   guga = 'omXFw_JnP4E',
   misc_cup = c(
     Morton_salt = 1/4,
-    Domino_darkBrown = 1/4,
+    Domino_dark_brownSugar = 1/4,
     Chinata_paprika = 1/4
   ),
   misc_Tbsp = c(

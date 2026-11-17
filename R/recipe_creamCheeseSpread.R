@@ -12,7 +12,7 @@ GoodLifeEats_pumpkin_creamCheeseSpread <- \() recipe(
     SimplyOrganic_pumpkinSpice = 1.5
   ),
   misc_Tbsp = c(
-    Domino_darkBrown = 2
+    Domino_dark_brownSugar = 2
   ),
   url = 'https://www.goodlifeeats.com/whipped-pumpkin-cream-cheese-and-8-ways-to-use-leftover-pumpkin/'
 )

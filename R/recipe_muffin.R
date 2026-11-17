@@ -94,7 +94,7 @@ Sallys_pumpkin_muffin <- \() recipe(
     Wegmans_whole_milk = 1/4,
     Wegmans_vegetable_oil = 1/2,
     Domino_granulated = 1/2, 
-    Domino_darkBrown = 1/2
+    Domino_dark_brownSugar = 1/2
   )
 )
 

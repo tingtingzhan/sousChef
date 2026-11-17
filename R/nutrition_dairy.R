@@ -377,7 +377,7 @@ TraderJoesLight_sourCream <- \() nutrition(
 Wegmans_whole_milk <- \() nutrition(
   fdc = 171265L,
   wegmans = '94427', usd = 4.09/16, # 1 gal
-  name = 'Vitamin D, Whole Milk\U1f95b', alias = '\u5168\u8102\u725b\u5976',
+  name = 'Whole Milk\U1f95b, Vitamin D', alias = '\u5168\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
   calorie = 150,
   water = 250*.881, 
@@ -402,7 +402,7 @@ WegmansOrganic_2perc_milk <- \() nutrition(
 WegmansOrganic_whole_milk <- \() nutrition(
   fdc = 171265L, 
   wegmans = '33261', usd = 6.99/16, # 1 gal
-  name = 'Vitamin D, Whole Milk\U1f95b', alias = '\u5168\u8102\u725b\u5976',
+  name = 'Whole Milk\U1f95b, Vitamin D', alias = '\u5168\u8102\u725b\u5976',
   servingGram = 250, servingCup = 1, 
   water = 250*.881, 
   calorie = 150,
@@ -411,7 +411,7 @@ WegmansOrganic_whole_milk <- \() nutrition(
 
 
 Horizon_wholeDHA_milk <- \() nutrition(
-  name = 'Whole Milk\U1f95b with DHA Omega-3, Organic', alias = '\u5168\u8102\u725b\u5976',
+  name = 'Whole Milk\U1f95b, DHA Omega-3, Organic', alias = '\u5168\u8102\u725b\u5976',
   horizon = 'organic-milk/organic-whole-dha-omega-3-milk',
   servingGram = 250, servingCup = 1,
   water = 250*.881, 
@@ -422,7 +422,7 @@ Horizon_wholeDHA_milk <- \() nutrition(
 
 Wawa_2perc_milk <- \() nutrition(
   wawa = '4ff1fb27-adc2-4cfc-95be-08f519fd8f32',
-  name = '2% Reduced Fat Milk\U1f95b',
+  name = 'Milk\U1f95b, 2% Reduced Fat',
   servingGram = 240, servingCup = 1,
   usd = 2.75/8,
   calorie = 120,
@@ -433,7 +433,7 @@ Wawa_2perc_milk <- \() nutrition(
 # fdc = 170859L
 
 Byrne_heavyCream <- \() nutrition(
-  brand = 'https://www.byrnedairy.com/creams-near-ny-state/' |> 
+  brand = 'https://byrne1933.com' |> 
     style_hyperlink(text = 'Byrne\U1f1fa\U1f1f8', url = _),
   name = 'Heavy Cream 40%',
   # nutrition from https://www.fooducate.com/product/Byrne-Dairy-Heavy-Whipping-Cream/61EE9DAB-F8E3-1A30-4818-B69A923F5C70

@@ -99,7 +99,7 @@ Sallys_pumpkin_cake <- \() recipe(
   misc = c(
     KingArthur_allPurposeFlr = 250,
     Libbys_pumpkin = 425, #1 (15 ounce) can
-    Domino_darkBrown = 200,
+    Domino_dark_brownSugar = 200,
     US_10x = 100
   ),
   url = 'https://sallysbakingaddiction.com/best-pumpkin-cake/#tasty-recipes-67484')

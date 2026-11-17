@@ -6,7 +6,7 @@ AmishHeritage_carrotcake <- \() recipe(
   misc_cup = c(
     KingArthur_allPurposeFlr = 2,
     Domino_granulated = 1,
-    Domino_darkBrown = 1,
+    Domino_dark_brownSugar = 1,
     Wegmans_vegetable_oil = 1.5
   ),
   misc_pc = c(egg = 4),

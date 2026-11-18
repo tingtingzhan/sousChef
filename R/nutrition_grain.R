@@ -23,7 +23,7 @@ HaiTai_blackRice <- \() nutrition(
 
 
 Nishiki_brownRice <- \() nutrition(
-  nishiki = '69969', alias = '\u7384\u7c73', name = 'Premium Brown Rice',
+  nishiki = '69969', name = 'Premium Brown Rice',
   wegmans = '115278', usd = 11.99/2270*39, date = as.Date('2026-10-22'),
   amazon = 'B006SFAS6C',
   servingGram = 39, servingCup = 1/4, # packaging, actual 47.5g
@@ -31,9 +31,22 @@ Nishiki_brownRice <- \() nutrition(
   fat = 1, carbohydrate = 29, fiber = 1, protein = 3)
 
 
+
+Nishiki_rice <- \() nutrition(
+  nishiki = '01706',
+  name = 'Premium Rice',
+  wegmans = '162789', usd = 11.99/2270*45, date = as.Date('2026-11-18'),
+  servingGram = 45, servingCup = 1/4, # packaging
+  calorie = 160,
+  carbohydrate = 36, protein = 3)
+
+
+
+
+
 Dynasty_brownRice <- \() nutrition(
   brand = 'Dynasty\U1f1fa\U1f1f8', 
-  alias = '\u6cf0\u570b\u9999\u7cd9\u7c73', name = 'Brown Rice, Jasmine',
+  name = 'Brown Rice, Jasmine',
   jfc = '15682',
   wegmans = '114803', usd = 4.99/907*45, date = as.Date('2026-10-22'),
   servingGram = 45, servingCup = 1/4, 
@@ -58,9 +71,6 @@ Hakubai_glutRice <- \() nutrition(
   calorie = 150,
   carbohydrate = 33, fiber = 1, protein = 3
 )
-
-
-
 
 
 Botan_rice <- \() nutrition(

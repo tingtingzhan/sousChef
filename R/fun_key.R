@@ -48,6 +48,7 @@ key2alias_nutrition <- \(x) {
   x@alias <- switch(
     EXPR = xkey, 
     bakingPowder = '\u6ce1\u6253\u7c89',
+    brownRice = '\u7384\u7c73/\u7cd9\u7c73',
     brownSugar = '\u7ea2\u7cd6',
     butter = '\u9ec4\u6cb9',
     cocoa =, cacao = '\u53ef\u53ef\u7c89',
@@ -71,6 +72,7 @@ key2alias_nutrition <- \(x) {
     matcha = '\u62b9\u8336\u7c89',
     neufchatel = 'Neufcha\u0302tel\u4e73\u916a',
     pineapple = '\u83e0\u841d',
+    rice = '\u7c73',
     saltedButter = '\u542b\u76d0\u9ec4\u6cb9',
     sourCream = '\u9178\u5976\u6cb9',
     soybean = '\u9ec4\u8c46',

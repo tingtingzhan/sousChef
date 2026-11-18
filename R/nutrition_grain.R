@@ -36,7 +36,8 @@ Nishiki_rice <- \() nutrition(
   nishiki = '01706',
   name = 'Premium Rice',
   wegmans = '162789', usd = 11.99/2270*45, date = as.Date('2026-11-18'),
-  servingGram = 45, servingCup = 1/4, # packaging
+  servingGram = 45, # servingCup = 1/4, # packaging
+  servingCup = 45/50 * 1/4, # actual: 1/2 cup is 100g
   calorie = 160,
   carbohydrate = 36, protein = 3)
 

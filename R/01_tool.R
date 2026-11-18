@@ -335,6 +335,7 @@ PhilipsHD9867 <- \(...) tool(
 SanyoECJS35S <- \(...) tool(
   name = style_hyperlink(text = 'Sanyo Rice Cooker ECJ-S35S', url = 'https://kitchen.manualsonline.com/manuals/mfg/sanyo/ecjs35s.html'), 
   alias = '\u7535\u996d\u7172', 
+  gram = 674,
   ...)
 
 #' @rdname tool-class

@@ -5,7 +5,9 @@
 \alias{*,tool,numeric-method}
 \alias{*,numeric,tool-method}
 \alias{/,tool,numeric-method}
+\alias{+,numeric,tool-method}
 \alias{-,numeric,tool-method}
+\alias{-,tool,missing-method}
 \title{\link[methods]{Arith} Methods of \linkS4class{tool}}
 \usage{
 \S4method{*}{tool,numeric}(e1, e2)
@@ -14,11 +16,15 @@
 
 \S4method{/}{tool,numeric}(e1, e2)
 
+\S4method{+}{numeric,tool}(e1, e2)
+
 \S4method{-}{numeric,tool}(e1, e2)
+
+\S4method{-}{tool,missing}(e1, e2)
 }
 \arguments{
 \item{e1, e2}{see \strong{Usage}}
 }
 \description{
-\link[methods]{Arith} methods involving \linkS4class{tool} class.
+\link[methods]{Arith} methods involving the \code{S4} \linkS4class{tool} class.
 }

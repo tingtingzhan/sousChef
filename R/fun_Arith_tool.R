@@ -3,7 +3,7 @@
 #' @title \link[methods]{Arith} Methods of \linkS4class{tool}
 #' 
 #' @description
-#' \link[methods]{Arith} methods involving \linkS4class{tool} class.
+#' \link[methods]{Arith} methods involving the `S4` \linkS4class{tool} class.
 #' 
 #' @param e1,e2 see **Usage**
 #' 
@@ -38,9 +38,21 @@ setMethod(f = '*', signature = signature(e1 = 'numeric', e2 = 'tool'), definitio
 setMethod(f = '/', signature = signature(e1 = 'tool', e2 = 'numeric'), definition = \(e1, e2) e1 * (1/e2))
 
 
+#' @rdname Arith_tool
+#' @aliases +,numeric,tool-method
+#' @export
+setMethod(f = '+', signature = signature(e1 = 'numeric', e2 = 'tool'), definition = \(e1, e2) e1 + e2@gram)
+
 
 #' @rdname Arith_tool
 #' @aliases -,numeric,tool-method
 #' @export
 setMethod(f = '-', signature = signature(e1 = 'numeric', e2 = 'tool'), definition = \(e1, e2) e1 - e2@gram)
+
+
+# unary operator
+#' @rdname Arith_tool
+#' @aliases -,tool,missing-method
+#' @export
+setMethod(f = '-', signature = signature(e1 = 'tool', e2 = 'missing'), definition = \(e1, e2) - e1@gram)
 

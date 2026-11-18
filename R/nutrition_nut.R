@@ -69,3 +69,15 @@ Kirkland_Brazilnut <- \() nutrition(
   calorie = 210,
   fat = 20, carbohydrate = 4, sugar = 1, protein = 4,
   cons = 'I do not like much..')
+
+
+GustoEtna_pistachio_paste <- \() nutrition(
+  wholesaleitalianfood = 'gusto-etna-pure-pistachio-paste-3kg-tub-100-pistachio',
+  brand = 'Gusto Etna',
+  name = '100% Pistachio Paste',
+  usd = 149.4/3e3 * 30, date = as.Date('2026-11-18'),
+  servingGram = 30, servingTbsp = 2,
+  calorie = 160,
+  fat = 15, sodium = .01,
+  carbohydrate = 6, sugar = 3, addedSugar = 2, protein = 3)
+

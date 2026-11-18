@@ -334,7 +334,8 @@ lime <- \() nutrition( # juice
 lemonZest <- \() nutrition(
   fdc = 167749L,
   name = 'Lemon\U1f34b Peel',
-  servingGram = 100, water = 81.6, protein = 1.5, fat = .3, sugar = 4.17, sodium = .006)
+  servingGram = 100, servingTsp = 50, # Gemini said..
+  water = 81.6, protein = 1.5, fat = .3, sugar = 4.17, sodium = .006)
 
 
 watermelon <- \() nutrition(
@@ -491,7 +492,8 @@ Iberia_redkidneybean <- \() nutrition(
 pistachio <- \() nutrition(
   fdc = 170184L,
   name = 'Pistachio, raw',
-  servingGram = 100, protein = 20.2, fat = 45.3, sugar = 7.66, sodium = .001)
+  servingGram = 100, servingCup = .85, # Gemini said..
+  protein = 20.2, fat = 45.3, sugar = 7.66, sodium = .001)
 
 
 OsmanthusFragrans <- \() nutrition(

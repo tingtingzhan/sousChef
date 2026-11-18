@@ -137,6 +137,7 @@ labels.recipe <- \(object, ...) {
     bao = '\u5305\u5b50\u76ae',
     beefball = '\u725b\u8089\u4e38',
     Bundt = 'Bundt\u86cb\u7cd5',
+    caffeCoconut = '\u751f\u6930\u62ff\u94c1',
     cake = '\u86cb\u7cd5\U1f370',
     cheesecake = 'NY Cheesecake\u91cd\u4e73\u916a\u86cb\u7cd5',
     cheesecakeJPN = '\u65e5\u5f0f\u8f7b\u4e73\u916a\u86cb\u7cd5',
@@ -167,6 +168,7 @@ labels.recipe <- \(object, ...) {
     skinGlaze = '\u8106\u76ae\u7cd6\u6d46',
     snowSkin = '\u51b0\u76ae',
     sodastream = 'SodaStream\u6c7d\u6c34',
+    teaCaffeCoconut = '\u751f\u6930\u9e33\u9e2f',
     tiramisu = 'Tirames\u00f9', # Venetian (not Italian)
     tomyumStew = '\u94f8\u94c1\u9505\u7116\u6d77\u9c9c \u51ac\u9634\u9171',
     tortilla = 'Tortilla',

@@ -20,37 +20,6 @@ if (FALSE) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 add_author_url <- \(x, name, ..., text = x[['author']]) {
   v <- x[[name]]
   nv <- length(v)
@@ -117,26 +86,6 @@ add_youtube_recipe <- \(x, name, text1, text2, ...) {
 
 
 
-get_sugarLost <- \(x) {
-  
-  if ('_yeast$' %in% x) {
-    z <- if (key(x) %in% c('bao')) {
-      # After one hour brew time, ~0.35 grams of sugar per gram of yeast have been consumed, 
-      # leaving ~0.65 grams of unfermented sugar per gram of yeast.
-      # https://www.lallemand.com/BakerYeastNA/eng/PDFs/LBU%20PDF%20FILES/1_19WATR.PDF
-      sum(x['_yeast$']) * .35
-    } else {
-      # I ferment overnight in fridge, lost 1.15 yeast
-      # then ferment in room temperature, lost .35 yeast
-      sum(x['_yeast$']) * 1.5
-    }
-  } else z <- numeric()
-  
-  return(z)
-  
-}
-
-
 
 get_flavor_ <- \(x) {
   # `x` is base::character base::vector
@@ -181,32 +130,8 @@ add_flavor <- \(x) {
       } else stop('more syrup?')
     } else 'Caff\u00e8'
     
-  } else if ('_adzukibean$' %in% x) {
-    '\u7ea2\u8c46'
-  } else if ('_mungbean$' %in% x) {
-    '\u7eff\u8c46'
-  } else if ('_redkidneybean$' %in% x) {
-    '\u7ea2\u82b8\u8c46'
-  } else if ('_applesauce$' %in% x) {
-    '\u82f9\u679c\U1f34e'
-  } else if ('_acai_pulv$' %in% x) {
-    '\u5df4\u897f\u8393'
-  } else if ('_beet_pulv$' %in% x) {
-    '\u751c\u83dc'
-  } else if ('_blackRice$' %in% x) {
-    '\u9ed1\u7c73'
-  } else if ('_blackSesame$' %in% x) {
-    '\u9ed1\u829d\u9ebb'
-  } else if ('_brownRice$' %in% x) {
-    '\u7cd9\u7c73'
-  } else if ('_cashew$' %in% x) {
-    '\u8170\u679c'
-  } else if ('_chickpea$' %in% x) {
-    '\u9e70\u5634\u8c46'
   } else if ('_cocoa$' %in% x) { # `cocoa` has higher priority than `coffee`
     '\u5de7\u514b\u529b\U1f36b' # '\u53ef\u53ef\U1f36b'
-  } else if ('_coconutFlr$' %in% x) {
-    '\u6930\u84c9\U1f965'
   } else if ('_coconutBar$' %in% x) {
     '\u6930\u5976\U1f965'
   } else if ('_darkCherry$' %in% x) {

@@ -1,10 +1,10 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::Brody_muffin(),
-    sousChef:::Introvert_muffin(),
-    sousChef:::CulinaryHill_muffin(),
-    sousChef:::Lori_muffin()
+    Brody_muffin(),
+    Introvert_muffin(),
+    CulinaryHill_muffin(),
+    Lori_muffin()
   ) |> 
     sort_by('sugar') |>
     print()
@@ -14,8 +14,8 @@ expect_no_error(
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::Sallys_pumpkin_muffin(), 
-    sousChef:::Sallys_pumpkin_cake()
+    Sallys_pumpkin_muffin(), 
+    Sallys_pumpkin_cake()
   ) |> print()
 )
 

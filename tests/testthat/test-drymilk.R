@@ -2,30 +2,30 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::Carnation_drymilk() |> 
+    sousChef.nutrition:::Carnation_drymilk() |> 
       as('raw.'),
-    KingArthur_baker_drymilk() |>
+    sousChef.nutrition:::KingArthur_baker_drymilk() |>
       as('raw.'),
-    KingArthur_drywholemilk() |>
+    sousChef.nutrition:::KingArthur_drywholemilk() |>
       as('raw.'),
-    sousChef:::GreatValue_drymilk() |> 
+    sousChef.nutrition:::GreatValue_drymilk() |> 
       as('raw.'),
-    sousChef:::MembersMark_drymilk() |> 
+    sousChef.nutrition:::MembersMark_drymilk() |> 
       as('raw.'),
-    sousChef:::BobsRedMill_drymilk() |> 
+    sousChef.nutrition:::BobsRedMill_drymilk() |> 
       as('raw.'),
-    sousChef:::Nido_drywholemilk() |> 
+    sousChef.nutrition:::Nido_drywholemilk() |> 
       as('raw.'),
-    sousChef:::Horizon_drywholemilk() |> 
+    sousChef.nutrition:::Horizon_drywholemilk() |> 
       as('raw.')
   ) |> print()
 )
   
 expect_no_error(
   object = nutritionlist(
-    sousChef:::Meyenberg_goat_drymilk() |> 
+    sousChef.nutrition:::Meyenberg_goat_drymilk() |> 
       as('raw.'),
-    sousChef:::Meyenberg_goat_drywholemilk() |> 
+    sousChef.nutrition:::Meyenberg_goat_drywholemilk() |> 
       as('raw.')
   ) |> print()
 )

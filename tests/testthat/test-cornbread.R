@@ -4,43 +4,30 @@
 
 
 
-expect_no_error(
-  object = nutritionlist(
-    sousChef:::TraderJoes_cornbreadMix(),
-    sousChef:::WholeFoods_cornbreadMix(),
-    sousChef:::Krusteaz_southern_cornbreadMix(),
-    sousChef:::BobsRedMill_cornbreadMix(),
-    sousChef:::Stonewall_cornbreadMix(),
-    sousChef:::Jiffy_cornMuffinMix(),
-    sousChef:::Fleischmanns_cornbreadMix()
-  ) |> 
-    sort_by('sugar') |>
-    print()
-)
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::PreppyKitchen_cornbread(),
-    sousChef:::BethanyWeathersby_cornbread(),
-    sousChef:::bluegirl_cornbread(),
-    sousChef:::JoshuaWeissman_cornbread(),
-    sousChef:::Jiffy_cornMuffinMix() |>
+    PreppyKitchen_cornbread(),
+    BethanyWeathersby_cornbread(),
+    bluegirl_cornbread(),
+    JoshuaWeissman_cornbread(),
+    sousChef.nutrition:::Jiffy_cornMuffinMix() |>
       as('raw.'),
-    sousChef:::Wegmans_recipe_cornbread(),
-    sousChef:::Wegmans_cornbread(),
-    sousChef:::WholeFoods_cornbreadMix() |>
+    Wegmans_recipe_cornbread(),
+    sousChef.nutrition:::Wegmans_cornbread(),
+    sousChef.nutrition:::WholeFoods_cornbreadMix() |>
       as('raw.'),
-    sousChef:::Stonewall_cornbreadMix() |>
+    sousChef.nutrition:::Stonewall_cornbreadMix() |>
       as('raw.'),
-    sousChef:::TraderJoes_cornbreadMix() |>
+    sousChef.nutrition:::TraderJoes_cornbreadMix() |>
       as('raw.'),
-    sousChef:::Krusteaz_southern_cornbreadMix() |>
+    sousChef.nutrition:::Krusteaz_southern_cornbreadMix() |>
       as('raw.'),
-    sousChef:::BobsRedMill_cornbreadMix() |>
+    sousChef.nutrition:::BobsRedMill_cornbreadMix() |>
       as('raw.'),
-    sousChef:::Fleischmanns_cornbreadMix() |>
+    sousChef.nutrition:::Fleischmanns_cornbreadMix() |>
       as('raw.'),
-    sousChef:::Quaker_cornbread()
+    Quaker_cornbread()
   ) |> 
     sort_by('sugar') |>
     print()

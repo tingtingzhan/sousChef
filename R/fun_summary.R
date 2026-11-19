@@ -1,10 +1,5 @@
 
 
-#' @export
-summary.nutrition <- \(object, ...) {
-  # see 'nutritionMatrix'
-  return(invisible())
-}
 
 
 # \link[base]{summary} on \linkS4class{recipe} also dispatches here
@@ -68,7 +63,8 @@ summary.raw. <- \(object, ...) {
   
   z <- c(
     x_nutri |>
-      as.double.nutrition(
+      as.double(
+        # sousChef.nutrition:::as.double.nutrition
         incl_calorie = FALSE, 
         incl_usd = FALSE, 
         incl_water = FALSE, # **not** x_nutri@water

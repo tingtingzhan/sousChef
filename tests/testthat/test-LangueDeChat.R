@@ -1,11 +1,11 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::Giallozafferano_LangueDeChat(),
-    sousChef:::Ying_LangueDeChat(),
-    sousChef:::Jadore_LangueDeChat(),
-    sousChef:::cookingTree_LangueDeChat(),
-    sousChef:::cookingTree_cocoa_LangueDeChat()
+    Giallozafferano_LangueDeChat(),
+    Ying_LangueDeChat(),
+    Jadore_LangueDeChat(),
+    cookingTree_LangueDeChat(),
+    cookingTree_cocoa_LangueDeChat()
   ) |>
     print()
 )

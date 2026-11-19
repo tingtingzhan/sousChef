@@ -24,21 +24,8 @@ expect_no_error(
     sousChef:::emma_froyo() -
       list(misc = c(Domino_10x = 84)),
     sousChef:::Yumna_icecream() -
-      list(misc = c(Domino_10x = 58)),
-    
-    
-    sousChef:::Bassetts_coffee() - 
-      list(sugar = 12.7),
-    sousChef:::Bassetts_pumpkin() - 
-      list(sugar = 11),
-    sousChef:::HaagenDazs_coffee() - 
-      list(sugar = 16),
-    sousChef:::Bassetts_matcha() - 
-      list(sugar = 11.7),
-    sousChef:::HaagenDazs_matcha() - 
-      list(sugar = 15),
-    sousChef:::maeda_matcha_icecream() - 
-      list(sugar = 9.55)
+      list(misc = c(Domino_10x = 58))
+
   ) |> print()
 )
 

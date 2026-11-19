@@ -2,10 +2,11 @@
 
 #' @import cli
 #' @import methods
+#' @import sousChef.utils
 #' @import sousChef.tool
 # tons of kitchen tools
 #' @import sousChef.spice
-#' @import sousChef.utils
+#' @import sousChef.nutrition
 '_PACKAGE'
 
 

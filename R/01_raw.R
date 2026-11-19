@@ -76,7 +76,7 @@ print.raw. <- \(x, ...) {
 
   x |>
     as(Class = 'nutrition') |>
-    print.nutrition(prt_label = FALSE)
+    print(prt_label = FALSE) # sousChef.nutrition:::print.nutrition
   
 }
 

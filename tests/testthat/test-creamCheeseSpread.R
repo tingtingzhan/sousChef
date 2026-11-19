@@ -1,8 +1,8 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::GoodLifeEats_pumpkin_creamCheeseSpread(),
-    sousChef:::Lynn_pumpkin_creamCheeseSpread()
+    GoodLifeEats_pumpkin_creamCheeseSpread(),
+    Lynn_pumpkin_creamCheeseSpread()
   ) |> 
     sort_by('sugar') |>
     print()

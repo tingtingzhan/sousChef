@@ -6,37 +6,37 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::Dad_yolkPastry_waterDough(),
-    sousChef:::Dad_oxTongue1_waterDough(), 
-    sousChef:::Dad_oxTongue2_waterDough(),
-    sousChef:::Dad_blackSesamePastry_waterDough(), 
-    sousChef:::Dad_pepperPastry_waterDough(),
-    sousChef:::laofangu_durianSu_waterDough(),
-    sousChef:::Dad_flowerPastry_waterDough(), 
-    sousChef:::shangshi_oxTongue_waterDough(),
-    sousChef:::laofangu_magnolia_waterDough(),
-    sousChef:::PinNuo_oxTongue_waterDough(),
-    sousChef:::Dad_sweetPastry_waterDough()
+    Dad_yolkPastry_waterDough(),
+    Dad_oxTongue1_waterDough(), 
+    Dad_oxTongue2_waterDough(),
+    Dad_blackSesamePastry_waterDough(), 
+    Dad_pepperPastry_waterDough(),
+    laofangu_durianSu_waterDough(),
+    Dad_flowerPastry_waterDough(), 
+    shangshi_oxTongue_waterDough(),
+    laofangu_magnolia_waterDough(),
+    PinNuo_oxTongue_waterDough(),
+    Dad_sweetPastry_waterDough()
   ) |> print()
 )
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::shangshi_oxTongue_shortDough(),
-    sousChef:::Dad_flowerPastry_shortDough(),
-    sousChef:::Dad_oxTongue1_shortDough(),
-    sousChef:::Dad_yolkPastry_shortDough(),
-    sousChef:::laofangu_magnolia_shortDough(),
-    sousChef:::Dad_sweetPastry_shortDough(),
-    sousChef:::Dad_pepperPastry_shortDough(),
-    sousChef:::laofangu_durianSu_shortDough()
+    shangshi_oxTongue_shortDough(),
+    Dad_flowerPastry_shortDough(),
+    Dad_oxTongue1_shortDough(),
+    Dad_yolkPastry_shortDough(),
+    laofangu_magnolia_shortDough(),
+    Dad_sweetPastry_shortDough(),
+    Dad_pepperPastry_shortDough(),
+    laofangu_durianSu_shortDough()
   ) |> print()
 )
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::Dad_blackSesamePastry_largeYouSu(),
-    sousChef:::PinNuo_largeYouSu()
+    Dad_blackSesamePastry_largeYouSu(),
+    PinNuo_largeYouSu()
   ) |> print()
 )
 

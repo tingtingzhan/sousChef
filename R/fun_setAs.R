@@ -8,7 +8,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   z <- grams |>
     names() |> 
     setNames(nm = _) |>
-    lapply(FUN = eval_)
+    lapply(FUN = eval_, envir = asNamespace('sousChef.nutrition'))
   
   date <- z |> 
     lapply(FUN = slot, name = 'date') |>
@@ -17,7 +17,7 @@ setAs(from = 'raw.', to = 'nutrition', def = \(from) {
   
   info <- z |>
     do.call(what = 'nutritionlist', args = _) |>
-    as.matrix.nutritionlist(incl_usd = TRUE, incl_calorie = TRUE, rel = TRUE)
+    as.matrix(incl_usd = TRUE, incl_calorie = TRUE, rel = TRUE) # sousChef.nutrition:::as.matrix.nutritionlist
   
   z <- crossprod(grams, info)[1, , drop = TRUE]
   
@@ -115,7 +115,7 @@ setAs(from = 'nutrition', to = 'raw.', def = \(from) {
   
   # \linkS4class{raw.} does not have slot `@name`
   attr(z, which = 'name') <- x |>
-    labels.nutrition() |>
+    labels() |> # sousChef.nutrition:::labels.nutrition
     sprintf(fmt = '\U1f381 %s')
   
   return(z)

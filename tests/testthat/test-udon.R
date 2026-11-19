@@ -2,9 +2,9 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::Leo_udon(),
-    sousChef:::JustOne_udon(),
-    sousChef:::amanda_udon()
+    Leo_udon(),
+    JustOne_udon(),
+    amanda_udon()
   ) |> print()
 )
 

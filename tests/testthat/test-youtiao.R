@@ -2,15 +2,15 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::mathstar_youtiao(),
-    sousChef:::xiaogaojie_youtiao(),
-    sousChef:::PinNuo1_youtiao(),
-    sousChef:::PinNuo2_youtiao(),
-    sousChef:::PinNuo3_youtiao(),
-    sousChef:::PinNuo4_youtiao(),
-    sousChef:::PinNuo5_youtiao(),
-    sousChef:::PinNuo6_youtiao(),
-    sousChef:::PinNuo7_youtiao()
+    mathstar_youtiao(),
+    xiaogaojie_youtiao(),
+    PinNuo1_youtiao(),
+    PinNuo2_youtiao(),
+    PinNuo3_youtiao(),
+    PinNuo4_youtiao(),
+    PinNuo5_youtiao(),
+    PinNuo6_youtiao(),
+    PinNuo7_youtiao()
   ) |> print()
 )
 

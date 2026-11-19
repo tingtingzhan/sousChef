@@ -32,15 +32,15 @@ gsub_names <- \(x, ...) {
 
 
 
-eval_ <- \(x) {
+eval_ <- \(x, ...) {
   if (identical(x, make.names(x))) {
     x |>
       call(name = _) |>
-      eval()
+      eval(...)
   } else {
     x |>
       str2lang() |>
-      eval()
+      eval(...)
   }
 }
 
@@ -85,14 +85,6 @@ addname1 <- \(x, nm = stop('no default!'), ...) {
 
 
 
-# nomenclature
-# stats::na.omit
-zero.omit <- \(x) {
-  if (anyNA(x)) stop('input cannot contain missingness')
-  x[abs(x) > .Machine$double.eps] # len0 compatible
-}
-
-
 
 # name clash
 # ?stats::getCall
@@ -100,30 +92,9 @@ zero.omit <- \(x) {
 
 
 
-call2alias_nutrition <- \(x) {
-  if (!length(x@alias)) return(x)
-  if (grepl(pattern = '\\.run', as.character(x@alias))) return(x) 
-  
-  x@alias <- x@alias |>
-    .cli_run(
-      pkg = 'sousChef',
-      fun = as.character(x@call)
-    )
-  return(x)
-  
-}
 
 
 
-
-# ansiURL('https://www.google.com')
-ansiURL <- \(x) {
-  if (length(x) != 1L) stop()
-  if (ansi_has_any(x, link = TRUE)) return(x)
-  x |>
-    gsub('^https://|^http://', replacement = '', x = _) |> 
-    style_hyperlink(url = x, text = _)
-}
 
 
 
@@ -135,7 +106,7 @@ mergePc <- \(x, ...) {
   if (!length(v)) return(x)
   
   pieceGram <- names(v) |>
-    lapply(FUN = eval_) |>
+    lapply(FUN = eval_, envir = asNamespace('sousChef.nutrition')) |>
     vapply(FUN = slot, name = 'pieceGram', FUN.VALUE = NA_real_, USE.NAMES = TRUE)
   
   z <- sum_by_name(
@@ -228,33 +199,6 @@ mergeVol <- \(x, ...) {
 
 
 
-mergeUSD <- \(x, ...) {
-  
-  x$usd <- min(
-    x$usd,
-    x$jpy / 153.507,
-    # x$jpy / quantmod::getQuote('USDJPY=X')$Last 
-    # may cause devtools::check() error
-    na.rm = TRUE
-  ) |>
-    suppressWarnings() # min(numeric()) # has warning
-  
-  if (is.infinite(x$usd)) x$usd <- NULL
-  
-  x$jpy <- NULL
-  
-  return(x)
-
-}
-
-
-
-
-#' @importFrom equiv4 binlabel
-max_binlabel <- \(x, ...) {
-  x |>
-    binlabel(max(x, na.rm = TRUE), ...)()
-}
 
 
 
@@ -262,7 +206,7 @@ max_binlabel <- \(x, ...) {
 
 
 #' @importFrom consec cmod
-fmt_vol <- \(x, nm = names(x)) {
+fmt_vol_OLD <- \(x, nm = names(x)) {
   
   nx <- length(x)
   if (!nx) return(character())
@@ -295,16 +239,6 @@ fmt_vol_H2O <- \(x) {
 
 
 
-fmt_perc <- \(x, name) {
-  # `x` is \linkS4class{nutrition}
-  x_ <- slot(x, name = name)
-  if (!length(x_) || (x_ == 0)) return(character())
-  pct <- x_ / x@servingGram
-  pct |> 
-    binlabel(pct, accuracy = .1)() |> 
-    make_ansi_style('olivedrab')() |> 
-    style_bold()
-}
 
 
 
@@ -314,40 +248,6 @@ fmt_perc <- \(x, name) {
 
 
 
-add_store_url <- \(x, name, fmt, store_brand, store_name = store_brand) {
-  v <- x[[name]]
-  if (!length(v)) return(x)
-  store_url <- sprintf(fmt = fmt, v)
-  if (!length(x$brand)) {
-    if (is.na(store_brand)) stop('must have `store_brand`')
-    x$brand <- style_hyperlink(url = store_url, text = store_brand)
-  } else {
-    x$url <- c(
-      x$url, 
-      style_hyperlink(url = store_url, text = paste('\U1f6d2', store_name))
-    ) |>
-      ansi_string()
-  }
-  x[[name]] <- NULL
-  return(x)
-}
-
-
-
-
-
-
-add_brand_url <- \(x, name, ...) {
-  v <- x[[name]]
-  if (!length(v)) return(x)
-  if (length(x$brand)) {
-    stop('`brand` already exists!')
-  }
-  x$brand <- v |> 
-    fmtURL(...)
-  x[[name]] <- NULL
-  return(x)
-}
 
 
 add_author_url <- \(x, name, ..., text = x[['author']]) {
@@ -413,16 +313,6 @@ add_youtube_recipe <- \(x, name, text1, text2, ...) {
 }
 
 
-append_url <- \(x, name, ...) {
-  if (!length(x[[name]])) return(x)
-  x$url <- c(
-    x$url, 
-    x[[name]] |> fmtURL(...)
-  ) |>
-    ansi_string()
-  x[[name]] <- NULL
-  return(x)
-}
 
 
 
@@ -450,8 +340,7 @@ get_sugarLost <- \(x) {
 get_flavor_ <- \(x) {
   # `x` is base::character base::vector
   x |>
-    #lapply(FUN = \(i) eval(call(name = i))) |> # still works
-    lapply(FUN = eval_) |>
+    lapply(FUN = eval_, envir = asNamespace('sousChef.nutrition')) |>
     vapply(FUN = \(i) {
       if (is(i, 'nutrition')) {
         i@name
@@ -596,7 +485,7 @@ gram_per_tsp <- \(x) {
     vapply(FUN = \(i) {
       #v <- eval(call(name = i)) |> # still works
       v <- i |> 
-        eval_() |>
+        eval_(envir = asNamespace('sousChef.nutrition')) |>
         as(Class = 'nutrition')
       if (!is(v, 'nutrition')) {
         stop(sQuote(i), ' cannot be converted to `nutrition`')
@@ -620,10 +509,10 @@ fmt_pc <- \(x) {
   if (!length(x)) return(invisible())
     
   id_pc <- names(x) |>
-    vapply(FUN = exists_, where = asNamespace('sousChef'), inherits = FALSE, FUN.VALUE = NA)
+    vapply(FUN = exists_, where = asNamespace('sousChef.nutrition'), inherits = FALSE, FUN.VALUE = NA)
   
   v_pc <- names(x)[id_pc] |>
-    lapply(FUN = eval_)
+    lapply(FUN = eval_, envir = asNamespace('sousChef.nutrition'))
   
   pieceGram <- v_pc |> 
     vapply(FUN = slot, name = 'pieceGram', FUN.VALUE = NA_real_)
@@ -706,7 +595,7 @@ prt_vol <- \(x) {
     names()
   
   ingredient <- nm |>
-    lapply(FUN = eval_)
+    lapply(FUN = eval_, envir = asNamespace('sousChef.nutrition'))
     
   id <- ingredient |>
     vapply(FUN = \(i) {
@@ -716,7 +605,7 @@ prt_vol <- \(x) {
   
   z <- character(length = nx)
   z[id] <- fmt_pc(x[id])
-  z[!id] <- fmt_vol(x[!id])
+  z[!id] <- fmt_vol_OLD(x[!id])
   
   label <- ingredient |>
     vapply(FUN = labels, FUN.VALUE = '') 

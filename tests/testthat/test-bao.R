@@ -3,11 +3,11 @@
 expect_no_error(
   object = {
     nutritionlist(
-      sousChef:::Daat1_bao(), 
-      sousChef:::Daat2_bao(), 
-      sousChef:::Daat3_bao(), 
-      sousChef:::Daat4_bao(),
-      sousChef:::Daat_lotusBun()
+      Daat1_bao(), 
+      Daat2_bao(), 
+      Daat3_bao(), 
+      Daat4_bao(),
+      Daat_lotusBun()
     ) |> print()
   }
 )
@@ -15,31 +15,31 @@ expect_no_error(
 expect_no_error(
   object = {
     nutritionlist(      
-      sousChef:::PinNuo1_bao(), 
-      sousChef:::PinNuo2_bao(), 
-      sousChef:::PinNuo3_bao()
+      PinNuo1_bao(), 
+      PinNuo2_bao(), 
+      PinNuo3_bao()
     ) |> print()
   }
 )
 
-#      sousChef:::KingArthur_bao(),
+#      KingArthur_bao(),
       
-#      sousChef:::shangshi_bao(),
+#      shangshi_bao(),
       
-#      sousChef:::laofangu1_bao(),
+#      laofangu1_bao(),
       
-#      sousChef:::xiaogaojie_bao(),
+#      xiaogaojie_bao(),
       
 expect_no_error(
   object = {
     nutritionlist(      
-      sousChef:::Dad1_bao(), 
-      sousChef:::Dad2_bao(), 
-      sousChef:::Dad3_bao(), 
-      sousChef:::Dad4_bao(), 
-      sousChef:::Dad5_bao(), 
-      sousChef:::Dad6_bao(), 
-      sousChef:::Dad7_bao()
+      Dad1_bao(), 
+      Dad2_bao(), 
+      Dad3_bao(), 
+      Dad4_bao(), 
+      Dad5_bao(), 
+      Dad6_bao(), 
+      Dad7_bao()
     ) |> print()
   }
 )

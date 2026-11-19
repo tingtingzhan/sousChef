@@ -2,10 +2,10 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::foodandjourneys_mascarponeFrosting(),
-    sousChef:::lifeloveandsugar_mascarponeFrosting(),
-    sousChef:::lifeloveandsugar_cocoa_mascarponeFrosting(),
-    sousChef:::Marcellina_mascarponeFrosting()
+    foodandjourneys_mascarponeFrosting(),
+    lifeloveandsugar_mascarponeFrosting(),
+    lifeloveandsugar_cocoa_mascarponeFrosting(),
+    Marcellina_mascarponeFrosting()
   ) |> print()
 )
 

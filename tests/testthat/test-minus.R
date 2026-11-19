@@ -5,8 +5,3 @@ expect_no_error(
     print()
 )
 
-expect_no_error(
-  object = (sousChef:::Junior_original() -
-    list(sugar = 12)) |>
-    print()
-)

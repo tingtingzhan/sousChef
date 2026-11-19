@@ -2,8 +2,8 @@
 
 expect_no_error(
   object = nutritionlist(
-    sousChef:::whiteSwan_shrimpfill(),
-    sousChef:::Daat_shrimpfill() -
+    whiteSwan_shrimpfill(),
+    Daat_shrimpfill() -
       list(misc = c(bambooShoot = 90))
   ) |> print()
 )

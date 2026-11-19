@@ -42,7 +42,7 @@ The helper function \code{\link[=recipe]{recipe()}} converts raw user input into
 
 \item{\code{author}}{\link[base]{character} scalar}
 
-\item{\code{tool}}{\link[base]{list} of \linkS4class{tool}s}
+\item{\code{tool}}{\link[base]{list} of kitchen \link[sousChef.tool]{tool-class}es}
 
 \item{\code{date}}{\link[base]{Date} scalar}
 

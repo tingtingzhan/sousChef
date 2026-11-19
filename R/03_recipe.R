@@ -8,7 +8,7 @@
 #' @slot flavor \link[base]{character} scalar with Unicode symbols
 #' 
 #' @slot author \link[base]{character} scalar
-#' @slot tool \link[base]{list} of \linkS4class{tool}s
+#' @slot tool \link[base]{list} of kitchen \link[sousChef.tool]{tool-class}es
 #' 
 #' @slot date \link[base]{Date} scalar
 #' 

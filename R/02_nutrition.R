@@ -49,7 +49,7 @@
 # @slot portion see \linkS4class{recipe}
 #' @slot caffeine \link[base]{numeric} scalar, caffeine (in grams) per serving
 #' 
-#' @slot tool \link[base]{list} of \linkS4class{tool}s
+#' @slot tool \link[base]{list} of kitchen \link[sousChef.tool]{tool-class}es
 #' 
 #' @export
 setClass(Class = 'nutrition', slots = c(

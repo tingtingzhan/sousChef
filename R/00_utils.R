@@ -2,6 +2,8 @@
 
 #' @import cli
 #' @import methods
+#' @import sousChef.tool
+# tons of kitchen tools
 '_PACKAGE'
 
 # functions for methods::setClass

@@ -81,6 +81,6 @@ The helper function \code{\link[=nutrition]{nutrition()}} converts raw user inpu
 
 \item{\code{caffeine}}{\link[base]{numeric} scalar, caffeine (in grams) per serving}
 
-\item{\code{tool}}{\link[base]{list} of \linkS4class{tool}s}
+\item{\code{tool}}{\link[base]{list} of kitchen \link[sousChef.tool]{tool-class}es}
 }}
 

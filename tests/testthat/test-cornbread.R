@@ -12,21 +12,21 @@ expect_no_error(
     bluegirl_cornbread(),
     JoshuaWeissman_cornbread(),
     sousChef.nutrition:::Jiffy_cornMuffinMix() |>
-      as('raw.'),
+      as('ingredient'),
     Wegmans_recipe_cornbread(),
     sousChef.nutrition:::Wegmans_cornbread(),
     sousChef.nutrition:::WholeFoods_cornbreadMix() |>
-      as('raw.'),
+      as('ingredient'),
     sousChef.nutrition:::Stonewall_cornbreadMix() |>
-      as('raw.'),
+      as('ingredient'),
     sousChef.nutrition:::TraderJoes_cornbreadMix() |>
-      as('raw.'),
+      as('ingredient'),
     sousChef.nutrition:::Krusteaz_southern_cornbreadMix() |>
-      as('raw.'),
+      as('ingredient'),
     sousChef.nutrition:::BobsRedMill_cornbreadMix() |>
-      as('raw.'),
+      as('ingredient'),
     sousChef.nutrition:::Fleischmanns_cornbreadMix() |>
-      as('raw.'),
+      as('ingredient'),
     Quaker_cornbread()
   ) |> 
     sort_by('sugar') |>

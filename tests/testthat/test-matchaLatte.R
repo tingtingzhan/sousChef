@@ -6,11 +6,11 @@ expect_no_error(
     sousChef.nutrition:::Starbucks_matchaLatte(),
     sousChef.nutrition:::Starbucks_matchaFrappuccino(),
     sousChef.nutrition:::Starbucks_matchaLatteMix() |> 
-      as('raw.'),
+      as('ingredient'),
     sousChef.nutrition:::Ippodo_uji_shimizu() |> 
-      as('raw.'),
+      as('ingredient'),
     sousChef.nutrition:::ItoEn_sweet_matcha() |> 
-      as('raw.')
+      as('ingredient')
   ) |> 
     sort_by('sugar') |>
     print()

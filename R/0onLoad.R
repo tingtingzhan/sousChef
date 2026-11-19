@@ -7,6 +7,7 @@
 # tons of kitchen tools
 #' @import sousChef.spice
 #' @import sousChef.nutrition
+#' @import sousChef.ingredient
 '_PACKAGE'
 
 

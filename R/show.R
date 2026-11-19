@@ -21,6 +21,7 @@ print.recipe <- \(x, ...) {
   
   x |> 
     print.ingredient()
+  #NextMethod(generic = 'show', object = x) # Error: no method to invoke
   #NextMethod(generic = 'print', object = x) # Error: C stack usage  7955168 is too close to the limit
   
   y <- x |>

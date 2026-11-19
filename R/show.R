@@ -3,14 +3,11 @@
 #' @param object a \linkS4class{recipe} object
 #' @export
 setMethod(f = show, signature = 'recipe', definition = \(object) {
-  object |>
-    print.recipe()
-})
-
-
-
-#' @export
-print.recipe <- \(x, ...) {
+  
+  x <- object;
+  
+  #rm(object)
+  # must keep `object` for ?methods::callNextMethod
   
   cat('\n')
   
@@ -19,10 +16,10 @@ print.recipe <- \(x, ...) {
     gsub(pattern = '^ *|(?<= ) | *$', replacement = '', perl = TRUE) |>
     col_green() |> style_bold() |> cat()
   
-  x |> 
-    print.ingredient()
-  #NextMethod(generic = 'show', object = x) # Error: no method to invoke
-  #NextMethod(generic = 'print', object = x) # Error: C stack usage  7955168 is too close to the limit
+  callNextMethod() # show,ingredients
+  # ?methods::callNextMethod
+  # 'A call to callNextMethod can only appear inside a method definition', i.e., cannot be inside a [print.recipe()] function
+  # S4 analogue to ?base::NextMethod
   
   y <- x |>
     as(Class = 'nutrition')
@@ -68,14 +65,15 @@ print.recipe <- \(x, ...) {
     if (length(x@url)) cat('', x@url, sep = '\n') # len0 compatible
     if (n_ytb <- length(x@youtube)) {
       if (n_ytb != 1L) stop('only allow scalar @youtube')
-      cat(' \U1f4f9', 
-          x@youtube |> 
-            fmtURL(fmt = 'https://youtu.be/%s', text = x@youtube), 
-          '\n')
+      x@youtube |> 
+        fmtURL(fmt = 'https://youtu.be/%s') |>
+        cat(' \U1f4f9', . = _, '\n')
     }
     #if (length(x@doi)) cat(styleURL(url_ = sprintf(fmt = 'https://doi.org/%s', x@doi), text_ = names(x@doi)), sep = '\n')
     cat('\n')
     
   }
   
-}
+})
+
+

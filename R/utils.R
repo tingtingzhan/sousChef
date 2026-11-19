@@ -106,6 +106,8 @@ get_flavor_ <- \(x) {
 
 
 add_flavor <- \(x) {
+  
+  .Deprecated()
   # is(x, 'recipe')
   
   if (length(x@flavor)) return(x)
@@ -132,37 +134,12 @@ add_flavor <- \(x) {
     
   } else if ('_cocoa$' %in% x) { # `cocoa` has higher priority than `coffee`
     '\u5de7\u514b\u529b\U1f36b' # '\u53ef\u53ef\U1f36b'
-  } else if ('_coconutBar$' %in% x) {
-    '\u6930\u5976\U1f965'
-  } else if ('_darkCherry$' %in% x) {
-    '\u751c\u6a31\u6843\U1f352'
-  } else if ('_mandarine$' %in% x) {
-    '\u6a58\u5b50\U1f34a'
-  } else if ('_mango$' %in% x) {
-    '\u8292\u679c\U1f96d'
-  } else if ('_matcha$' %in% x) {
-    '\u62b9\u8336\U1f375'
-  } else if ('_pear$' %in% x) {
-    '\u68a8\U1f350'
-  } else if ('_pineapple$' %in% x) {
-    # '\u83e0\u841d\U1f34d'
-    'Pineapple\U1f34d'
-  } else if ('_pumpkin$|_pumpkinPieMix$' %in% x) {
-    'Pumpkin\U1f383'
-  } else if ('_strawberry$' %in% x) {
-    '\u8349\u8393\U1f353'
-  } else if ('_tomato$' %in% x) {
-    '\u897f\u7ea2\u67ff\U1f345'
-  } else if ('_yellowCorn$' %in% x) {
-    '\u7389\u7c73\U1f33d'
   } else if ('shrimp' %in% x) {
     '\u867e\U1f990'
   } else if ('^beef_' %in% x) {
     '\u725b\u8089'
   } else if ('^pork_' %in% x) {
     '\u732a\u8089'
-  } else if ('_ginger$' %in% x) {
-    '\u59dc\u9999\U1fada'
   } else if ('_liqueur$' %in% x) {
     x['_liqueur$'] |> names() |> get_flavor_()
     #} else if (length(x@sauce)) {

@@ -115,12 +115,10 @@ recipe <- \(no_eval = sys_call_name(which = -2), ...) {
 
 
 
-setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
-  
-  callNextMethod(.Object, ...) |>
-    add_flavor()
-  
-})
+#setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
+#  callNextMethod(.Object, ...) |>
+#    add_flavor() # .Deprecated()
+#})
 
 
 

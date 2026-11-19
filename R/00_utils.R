@@ -4,6 +4,7 @@
 #' @import methods
 #' @import sousChef.tool
 # tons of kitchen tools
+#' @import sousChef.spice
 '_PACKAGE'
 
 # functions for methods::setClass

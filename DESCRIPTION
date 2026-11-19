@@ -8,7 +8,7 @@ Authors@R: c(person(given = "Tingting", family = "Zhan", role = c("aut", "cre"),
 Language: en-US
 Encoding: UTF-8
 License: GPL-2
-Depends: R (>= 4.6), sousChef.tool
+Depends: R (>= 4.6), sousChef.tool, sousChef.spice
 Imports: methods, cli (== 3.6.6), charwidth, consec, equiv4
 Suggests: testthat (>= 3.0.0)
 Config/roxygen2/version: 8.1.1

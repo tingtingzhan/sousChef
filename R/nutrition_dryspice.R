@@ -315,14 +315,14 @@ Chinata_paprika <- \() nutrition(
 
 TakShing_starAnise <- \() nutrition(
   tsemporium = '640769115159',
-  name = 'Dried Star Anise Powder', alias = `star anise`()@alias,
+  name = 'Dried Star Anise Powder', 
   serving_oz = 16, usd = 9.99
 )
 
 
 TakShing_KGalanga <- \() nutrition(
   tsemporium = '610232022673',
-  name = 'Kaempferia Galanga Powder', alias = `Kaempferia galanga`()@alias,
+  name = 'Kaempferia Galanga Powder', 
   serving_oz = 16, usd = 10.99
 )
 

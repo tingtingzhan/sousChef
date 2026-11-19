@@ -29,8 +29,8 @@ key2alias_nutrition <- \(x) {
   # to prevent infinite recursion
   if (xkey == as.character(x@call)) return(x)
   
-  if (exists(xkey, where = asNamespace('sousChef'))) {
-    z <- eval(call(name = xkey))
+  if (exists(xkey, where = asNamespace('sousChef.spice'))) {
+    z <- eval(call(name = xkey), envir = asNamespace('sousChef.spice'))
     if (is(z, 'spice')) {
       x@alias <- z@alias
     } # else do nothing

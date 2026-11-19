@@ -26,7 +26,9 @@ Nishiki_brownRice <- \() nutrition(
   nishiki = '69969', name = 'Premium Brown Rice',
   wegmans = '115278', usd = 11.99/2270*39, date = as.Date('2026-10-22'),
   amazon = 'B006SFAS6C',
-  servingGram = 39, servingCup = 1/4, # packaging, actual 47.5g
+  servingGram = 39, #servingCup = 1/4, # packaging
+  servingCup = 39/47.5 * (1/4),
+  # actual 47.5g for 1/4cup (95g for 1/2cup)
   calorie = 140,
   fat = 1, carbohydrate = 29, fiber = 1, protein = 3)
 

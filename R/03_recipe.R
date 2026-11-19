@@ -144,6 +144,7 @@ labels.recipe <- \(object, ...) {
     cocoaMix = 'Cocoa Mix',
     CoengFan = '\u80a0\u7c89',
     cornbread = 'Cornbread\U1f33d',
+    cookedBrownRice = '\u7cd9\u7c73\u996d',
     cookedRice = '\u7c73\u996d',
     creamCheeseDip = 'Cream Cheese Dip\u5976\u6cb9\u4e73\u916a\u9171', 
     creamCheeseSpread = 'Cream Cheese Spread\U1f96f\u5976\u6cb9\u4e73\u916a\u9171',

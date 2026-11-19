@@ -343,6 +343,7 @@ SanyoECJS35S <- \(...) tool(
 JoyoungDJ13U <- \(...) tool(
   name = style_hyperlink(text = 'Joyoung Soymilk Maker DJ13U-P10', url = 'https://en.huarenstore.com/joyoung-soy-milk-maker-dj13u-p10.html'), 
   alias = '\u8c46\u6d46\u673a', 
+  gram = 2875, # with lid!!
   ...)
 
 

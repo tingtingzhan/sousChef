@@ -5,11 +5,8 @@
 #' @import sousChef.tool
 # tons of kitchen tools
 #' @import sousChef.spice
+#' @import sousChef.utils
 '_PACKAGE'
-
-# functions for methods::setClass
-
-setOldClass(Classes = c('cli_ansi_string', 'ansi_string', 'character'))
 
 
 

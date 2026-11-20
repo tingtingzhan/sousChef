@@ -9,7 +9,7 @@ Language: en-US
 Encoding: UTF-8
 License: GPL-2
 Depends: R (>= 4.6), sousChef.tool
-Imports: methods, cli (== 3.6.6), sousChef.spice, sousChef.nutrition, sousChef.ingredient, sousChef.utils
+Imports: methods, cli (== 3.6.6), generics (== 0.1.4), sousChef.spice, sousChef.nutrition, sousChef.ingredient, sousChef.utils
 Suggests: testthat (>= 3.0.0)
 Config/roxygen2/version: 8.1.1
 Config/roxygen2/markdown: TRUE

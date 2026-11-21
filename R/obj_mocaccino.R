@@ -72,7 +72,7 @@ Mels_cocoaMix <- \() recipe(
     KingArthur_Bensdorp_cocoa = 1.5
   ),
   misc = c(
-    Ghirardelli_whiteChocolate = 1.5,
+    Ghirardelli_white = 1.5,
     Domino_granulated = 228
   ),
   misc_tsp = c(Morton_salt = 1/4))

@@ -35,6 +35,7 @@ labels.recipe <- \(object, ...) {
     LangueDeChat = 'Langue de Chat\u732b\u820c\u997c',
     lava = '\u6d41\u5fc3\u9985',
     liangpi = '\u51c9\u76ae',
+    matchaCoconut = '\u751f\u6930\u62b9\u8336',
     meatTenderizer = '\u5ae9\u8089\u6c34',
     mianjin = '\u9762\u7b4b',
     mochaMix = 'Mocha Mix',

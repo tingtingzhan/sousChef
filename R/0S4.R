@@ -103,7 +103,9 @@ recipe <- \(no_eval = sys_call_name(which = -2), ...) {
   
   if (length(x$juniorscheesecakecookbook)) {
     if (length(x$juniorscheesecakecookbook) > 1L) stop('only allow len-1 `juniorscheesecakecookbook`')
-    x$author <- style_hyperlink(url = 'https://www.juniorscheesecake.com/products/juniors-cheesecake-cookbook', text = sprintf('Junior\'s Cheesecake Cookbook p.%d', x$juniorscheesecakecookbook))
+    x$author <- x$juniorscheesecakecookbook |>
+      sprintf(fmt = 'Junior\'s Cheesecake Cookbook p.%d') |>
+      style_hyperlink(url = 'https://www.juniorscheesecake.com/products/juniors-cheesecake-cookbook', text = _)
     x$juniorscheesecakecookbook <- NULL
   }
   
@@ -111,21 +113,6 @@ recipe <- \(no_eval = sys_call_name(which = -2), ...) {
     do.call(what = 'new', args = _)
   
 }
-
-
-
-
-#setMethod(f = initialize, signature = 'recipe', definition = \(.Object, ...) {
-#  callNextMethod(.Object, ...) |>
-#    add_flavor() # .Deprecated()
-#})
-
-
-
-
-
-
-
 
 
 

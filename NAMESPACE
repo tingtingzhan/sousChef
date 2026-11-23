@@ -3,7 +3,7 @@
 S3method(generics::prune,recipe)
 S3method(labels,recipe)
 S3method(print,summary.recipe)
-S3method(waterEvap,recipe)
+S3method(sousChef.utils::waterEvap,recipe)
 export(recipe)
 exportClasses(recipe)
 exportMethods(show)

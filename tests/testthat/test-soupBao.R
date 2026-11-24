@@ -1,3 +1,10 @@
+
+
+
+system.file('extR', 'soupBao.R', package = 'sousChef') |>
+  source()
+
+
 expect_no_error(
   object = nutritionlist(
     Daat_soupBao(),

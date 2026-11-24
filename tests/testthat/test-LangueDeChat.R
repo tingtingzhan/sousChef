@@ -1,4 +1,8 @@
 
+system.file('extR', 'LangueDeChat.R', package = 'sousChef') |>
+  source()
+
+
 expect_no_error(
   object = nutritionlist(
     Giallozafferano_LangueDeChat(),

@@ -1,4 +1,8 @@
 
+system.file('extR', c('muffin.R', 'cake.R'), package = 'sousChef') |>
+  lapply(FUN = source)
+
+
 expect_no_error(
   object = nutritionlist(
     Brody_muffin(),

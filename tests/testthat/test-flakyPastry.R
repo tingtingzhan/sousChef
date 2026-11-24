@@ -2,6 +2,9 @@
 # read carefully
 #https://www.sohu.com/a/147900654_177351
 
+system.file('extR', 'flakyPastry.R', package = 'sousChef') |>
+  source()
+
 
 
 expect_no_error(

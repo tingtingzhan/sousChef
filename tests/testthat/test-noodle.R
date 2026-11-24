@@ -1,4 +1,10 @@
 
+
+system.file('extR', 'noodle.R', package = 'sousChef') |>
+  source()
+
+
+
 expect_no_error(
   object = nutritionlist(
     PinNuo_noodleSliced(),

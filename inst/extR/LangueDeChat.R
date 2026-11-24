@@ -44,7 +44,7 @@ Jadore_LangueDeChat <- \() recipe(
   author = 'J\'adore', youtube = 'mZYO0xVMgOQ',
   misc = c(
     Wegmans_pastryFlr = 32,
-    BobsRedMill_almondFlour = 5,
+    BobsRedMill_almondFlr = 5,
     eggWhite = 30,
     Kerrygold_butter = 43,
     Wegmans_heavyCream = 13,

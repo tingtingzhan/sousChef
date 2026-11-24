@@ -1,4 +1,6 @@
 
+system.file('extR', 'fauxReo.R', package = 'sousChef') |>
+  source()
 
 expect_no_error(
   object = nutritionlist(

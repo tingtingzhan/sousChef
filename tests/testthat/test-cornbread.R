@@ -2,7 +2,11 @@
 # @references 
 # \url{https://en.wikipedia.org/wiki/Batter_bread}
 
+system.file('extR', 'cornbread.R', package = 'sousChef') |>
+  source()
 
+system.file('extR', 'cornbread.R', package = 'sousChef.nutrition') |>
+  source()
 
 
 expect_no_error(
@@ -14,7 +18,7 @@ expect_no_error(
     sousChef.nutrition:::Jiffy_cornMuffinMix() |>
       as('ingredient'),
     Wegmans_recipe_cornbread(),
-    sousChef.nutrition:::Wegmans_cornbread(),
+    Wegmans_cornbread(),
     sousChef.nutrition:::WholeFoods_cornbreadMix() |>
       as('ingredient'),
     sousChef.nutrition:::Stonewall_cornbreadMix() |>

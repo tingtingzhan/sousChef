@@ -1,3 +1,8 @@
+
+
+system.file('extR', 'wrapper.R', package = 'sousChef') |>
+  source()
+
 expect_no_error(
   object = nutritionlist(
     PinNuo_wonton(),

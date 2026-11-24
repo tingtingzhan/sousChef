@@ -1,10 +1,20 @@
 
 
+library(sousChef.nutrition) # need, do not know why..
+
+
+system.file('extR', 'matchaLatte.R', package = 'sousChef') |>
+  source()
+
+system.file('extR', 'Starbucks.R', package = 'sousChef.nutrition') |>
+  source()
+
+
 expect_no_error(
   object = nutritionlist(
-    sousChef:::Ippodo_sayakaLatte(),
-    sousChef.nutrition:::Starbucks_matchaLatte(),
-    sousChef.nutrition:::Starbucks_matchaFrappuccino(),
+    Ippodo_sayakaLatte(),
+    Starbucks_matchaLatte(),
+    Starbucks_matchaFrappuccino(),
     sousChef.nutrition:::Starbucks_matchaLatteMix() |> 
       as('ingredient'),
     sousChef.nutrition:::Ippodo_uji_shimizu() |> 

@@ -1,11 +1,20 @@
 
 
+library(sousChef.nutrition) # need, do not know why..
+
+system.file('extR', 'cheesecake.R', package = 'sousChef') |>
+  source()
+
+system.file('extR', 'cheesecake.R', package = 'sousChef.nutrition') |>
+  source()
+
+
 expect_no_error(
   object = nutritionlist(
     PreppyKitchen_cheesecake(),
-    sousChef.nutrition:::Junior_original(),
+    Junior_original(),
     Junior_cookbook(),
-    sousChef.nutrition:::CheesecakeFactory_original()
+    CheesecakeFactory_original()
   ) |> 
     sort_by('sugar') |>
     print()

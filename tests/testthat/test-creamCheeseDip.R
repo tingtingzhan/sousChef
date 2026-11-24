@@ -1,4 +1,8 @@
 
+system.file('extR', 'creamCheeseDip.R', package = 'sousChef') |>
+  source()
+
+
 expect_no_error(
   object = nutritionlist(
     bakethat_pumpkin_creamCheeseDip(),

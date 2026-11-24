@@ -1,4 +1,7 @@
 
+system.file('extR', 'filling.R', package = 'sousChef') |>
+  source()
+
 expect_no_error(
   object = nutritionlist(
     Dad_blackSesame_filling1(),

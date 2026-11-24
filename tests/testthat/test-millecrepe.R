@@ -1,5 +1,8 @@
 
 
+system.file('extR', 'millecrepe.R', package = 'sousChef') |>
+  source()
+
 expect_no_error(
   object = nutritionlist(
     xiaogaojie_millecrepe(),

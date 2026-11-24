@@ -1,6 +1,10 @@
 
+
+system.file('extR', 'cheesecake.R', package = 'sousChef') |>
+  source()
+
 expect_no_error(
-  object = (sousChef:::PreppyKitchen_cheesecake() - 
+  object = (PreppyKitchen_cheesecake() - 
     list(misc = c(Domino_granulated = 125))) |>
     print()
 )
